@@ -13,7 +13,7 @@ PS: Não precisa se preocupar em consumir nenhuma API. Crie mocks para as reques
 ## O que é obrigatório
 
 - As estruturas de tela devem ser desenvolvidas em View Code
-- Usar APIs nativas. Projetos com dependências externas serão descartados
+- Preferencialmente, utilizae apenas APIs nativas, com excessão dos targets de teste.
 - Testes unitários e testes de snapshot
 
 ## Ganha pontos se tiver
@@ -22,3 +22,6 @@ PS: Não precisa se preocupar em consumir nenhuma API. Crie mocks para as reques
 - Testes instrumentados
 - Base de distribuição - CI/CD
 - Documentação
+
+## Importante
+Se surgir qualquer dúvida durante o desenvolvimento, não exite em perguntar. Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
