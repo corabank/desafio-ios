@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C967C6BBC20BADA4C8BE2A1 /* Pods_DesafioCoraBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */; };
+		B69D0157643C9F794ACEF424 /* Pods_DesafioCoraBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FA6BA8FEEE8EF7EE70C805 /* Pods_DesafioCoraBankUITests.framework */; };
+		BF41AA677B6EBDADAFA75E2C /* Pods_DesafioCoraBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */; };
 		D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABB244B8BD1001D313D /* AppDelegate.swift */; };
 		D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */; };
 		D8E84AC5244B8BD5001D313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC4244B8BD5001D313D /* Assets.xcassets */; };
@@ -34,6 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11B58EF4DF23314A8771C4CB /* Pods-DesafioCoraBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBank.release.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBank/Pods-DesafioCoraBank.release.xcconfig"; sourceTree = "<group>"; };
+		44FA6BA8FEEE8EF7EE70C805 /* Pods_DesafioCoraBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6069C4556E9536B073AB781B /* Pods-DesafioCoraBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBankUITests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBankUITests/Pods-DesafioCoraBankUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6C0FE1AEC41552D4823BF395 /* Pods-DesafioCoraBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBankTests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBankTests/Pods-DesafioCoraBankTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C934C9E8EDB15812DE4D56A /* Pods-DesafioCoraBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBankTests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBankTests/Pods-DesafioCoraBankTests.release.xcconfig"; sourceTree = "<group>"; };
+		A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E84AB8244B8BD1001D313D /* DesafioCoraBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCoraBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E84ABB244B8BD1001D313D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +57,8 @@
 		D8E84ADD244B8BD5001D313D /* DesafioCoraBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraBankUITests.swift; sourceTree = "<group>"; };
 		D8E84ADF244B8BD5001D313D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E84AEB244B8CED001D313D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5A5E73D5B67E1D7ABDFA75A /* Pods-DesafioCoraBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBankUITests/Pods-DesafioCoraBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E77C192D4175BFFB3058E7A7 /* Pods-DesafioCoraBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBank.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBank/Pods-DesafioCoraBank.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C967C6BBC20BADA4C8BE2A1 /* Pods_DesafioCoraBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF41AA677B6EBDADAFA75E2C /* Pods_DesafioCoraBankTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69D0157643C9F794ACEF424 /* Pods_DesafioCoraBankUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DDA3BA32010677EE4210C6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */,
+				A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */,
+				44FA6BA8FEEE8EF7EE70C805 /* Pods_DesafioCoraBankUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8E84AAF244B8BD1001D313D = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				D8E84AD1244B8BD5001D313D /* DesafioCoraBankTests */,
 				D8E84ADC244B8BD5001D313D /* DesafioCoraBankUITests */,
 				D8E84AB9244B8BD1001D313D /* Products */,
+				DF362C1D541843962DEA6EA9 /* Pods */,
+				3DDA3BA32010677EE4210C6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +192,20 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		DF362C1D541843962DEA6EA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E77C192D4175BFFB3058E7A7 /* Pods-DesafioCoraBank.debug.xcconfig */,
+				11B58EF4DF23314A8771C4CB /* Pods-DesafioCoraBank.release.xcconfig */,
+				6C0FE1AEC41552D4823BF395 /* Pods-DesafioCoraBankTests.debug.xcconfig */,
+				8C934C9E8EDB15812DE4D56A /* Pods-DesafioCoraBankTests.release.xcconfig */,
+				E5A5E73D5B67E1D7ABDFA75A /* Pods-DesafioCoraBankUITests.debug.xcconfig */,
+				6069C4556E9536B073AB781B /* Pods-DesafioCoraBankUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8E84AE2244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBank" */;
 			buildPhases = (
+				BFF61F662A41AA417F7B4786 /* [CP] Check Pods Manifest.lock */,
 				D8E84AB4244B8BD1001D313D /* Sources */,
 				D8E84AB5244B8BD1001D313D /* Frameworks */,
 				D8E84AB6244B8BD1001D313D /* Resources */,
@@ -189,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8E84AE5244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBankTests" */;
 			buildPhases = (
+				06B95D28A276C830B2D663D2 /* [CP] Check Pods Manifest.lock */,
 				D8E84ACA244B8BD5001D313D /* Sources */,
 				D8E84ACB244B8BD5001D313D /* Frameworks */,
 				D8E84ACC244B8BD5001D313D /* Resources */,
+				F53B7ECFA93765F85DA70FC2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8E84AE8244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBankUITests" */;
 			buildPhases = (
+				BF62B5493D6B189574B40E48 /* [CP] Check Pods Manifest.lock */,
 				D8E84AD5244B8BD5001D313D /* Sources */,
 				D8E84AD6244B8BD5001D313D /* Frameworks */,
 				D8E84AD7244B8BD5001D313D /* Resources */,
+				2E7050D5689F819EB43F0C70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,6 +335,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06B95D28A276C830B2D663D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioCoraBankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E7050D5689F819EB43F0C70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCoraBankUITests/Pods-DesafioCoraBankUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCoraBankUITests/Pods-DesafioCoraBankUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioCoraBankUITests/Pods-DesafioCoraBankUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF62B5493D6B189574B40E48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioCoraBankUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFF61F662A41AA417F7B4786 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioCoraBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F53B7ECFA93765F85DA70FC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCoraBankTests/Pods-DesafioCoraBankTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCoraBankTests/Pods-DesafioCoraBankTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioCoraBankTests/Pods-DesafioCoraBankTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8E84AB4244B8BD1001D313D /* Sources */ = {
@@ -460,6 +609,7 @@
 		};
 		D8E84AE3244B8BD5001D313D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E77C192D4175BFFB3058E7A7 /* Pods-DesafioCoraBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +628,7 @@
 		};
 		D8E84AE4244B8BD5001D313D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11B58EF4DF23314A8771C4CB /* Pods-DesafioCoraBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +647,7 @@
 		};
 		D8E84AE6244B8BD5001D313D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C0FE1AEC41552D4823BF395 /* Pods-DesafioCoraBankTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +670,7 @@
 		};
 		D8E84AE7244B8BD5001D313D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C934C9E8EDB15812DE4D56A /* Pods-DesafioCoraBankTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +693,7 @@
 		};
 		D8E84AE9244B8BD5001D313D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5A5E73D5B67E1D7ABDFA75A /* Pods-DesafioCoraBankUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +714,7 @@
 		};
 		D8E84AEA244B8BD5001D313D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6069C4556E9536B073AB781B /* Pods-DesafioCoraBankUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
