@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='DesafioCoraBankUITests.xctest' tests='4' failures='0'>
+  <testsuite name='DesafioCoraBankTests.DesafioCoraBankTests' tests='2' failures='0'>
+    <testcase classname='DesafioCoraBankTests.DesafioCoraBankTests' name='testExample' time='0.001'/>
+    <testcase classname='DesafioCoraBankTests.DesafioCoraBankTests' name='testPerformanceExample' time='0.351'/>
+  </testsuite>
+  <testsuite name='DesafioCoraBankUITests.DesafioCoraBankUITests' tests='2' failures='0'>
+    <testcase classname='DesafioCoraBankUITests.DesafioCoraBankUITests' name='testExample' time='1.651'/>
+    <testcase classname='DesafioCoraBankUITests.DesafioCoraBankUITests' name='testLaunchPerformance' time='15.058'/>
+  </testsuite>
+</testsuites>

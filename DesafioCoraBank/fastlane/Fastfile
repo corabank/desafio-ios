@@ -1,0 +1,27 @@
+platform :ios do
+  before_all do
+    cocoapods
+  end
+
+  desc "Runs all the tests"
+  lane :complete_test do
+    scan(scheme: "DesafioCoraBank")
+    slather(
+      output_directory: "coverage",
+      workspace: "DesafioCoraBank.xcworkspace",
+      scheme: "DesafioCoraBank",
+      proj: "DesafioCoraBank.xcodeproj",
+      html: true
+    )
+  end
+
+  lane :coverage do
+    slather(
+      output_directory: "coverage",
+      workspace: "DesafioCoraBank.xcworkspace",
+      scheme: "DesafioCoraBank",
+      proj: "DesafioCoraBank.xcodeproj",
+      html: true
+    )
+  end
+end
