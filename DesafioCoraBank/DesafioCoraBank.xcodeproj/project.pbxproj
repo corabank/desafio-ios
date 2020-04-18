@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABB244B8BD1001D313D /* AppDelegate.swift */; };
+		D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */; };
+		D8E84AC5244B8BD5001D313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC4244B8BD5001D313D /* Assets.xcassets */; };
+		D8E84AC8244B8BD5001D313D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC6244B8BD5001D313D /* LaunchScreen.storyboard */; };
+		D8E84AD3244B8BD5001D313D /* DesafioCoraBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84AD2244B8BD5001D313D /* DesafioCoraBankTests.swift */; };
+		D8E84ADE244B8BD5001D313D /* DesafioCoraBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ADD244B8BD5001D313D /* DesafioCoraBankUITests.swift */; };
+		D8E84AEC244B8CED001D313D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84AEB244B8CED001D313D /* LoginViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8E84ACF244B8BD5001D313D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8E84AB0244B8BD1001D313D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8E84AB7244B8BD1001D313D;
+			remoteInfo = DesafioCoraBank;
+		};
+		D8E84ADA244B8BD5001D313D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8E84AB0244B8BD1001D313D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8E84AB7244B8BD1001D313D;
+			remoteInfo = DesafioCoraBank;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8E84AB8244B8BD1001D313D /* DesafioCoraBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCoraBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E84ABB244B8BD1001D313D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D8E84AC4244B8BD5001D313D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8E84AC7244B8BD5001D313D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8E84AC9244B8BD5001D313D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E84ACE244B8BD5001D313D /* DesafioCoraBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E84AD2244B8BD5001D313D /* DesafioCoraBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraBankTests.swift; sourceTree = "<group>"; };
+		D8E84AD4244B8BD5001D313D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E84AD9244B8BD5001D313D /* DesafioCoraBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E84ADD244B8BD5001D313D /* DesafioCoraBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraBankUITests.swift; sourceTree = "<group>"; };
+		D8E84ADF244B8BD5001D313D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E84AEB244B8CED001D313D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8E84AB5244B8BD1001D313D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84ACB244B8BD5001D313D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84AD6244B8BD5001D313D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8E84AAF244B8BD1001D313D = {
+			isa = PBXGroup;
+			children = (
+				D8E84ABA244B8BD1001D313D /* DesafioCoraBank */,
+				D8E84AD1244B8BD5001D313D /* DesafioCoraBankTests */,
+				D8E84ADC244B8BD5001D313D /* DesafioCoraBankUITests */,
+				D8E84AB9244B8BD1001D313D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8E84AB9244B8BD1001D313D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84AB8244B8BD1001D313D /* DesafioCoraBank.app */,
+				D8E84ACE244B8BD5001D313D /* DesafioCoraBankTests.xctest */,
+				D8E84AD9244B8BD5001D313D /* DesafioCoraBankUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8E84ABA244B8BD1001D313D /* DesafioCoraBank */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84AED244B8FCF001D313D /* Source */,
+				D8E84AEE244B8FD4001D313D /* Resource */,
+			);
+			path = DesafioCoraBank;
+			sourceTree = "<group>";
+		};
+		D8E84AD1244B8BD5001D313D /* DesafioCoraBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84AD2244B8BD5001D313D /* DesafioCoraBankTests.swift */,
+				D8E84AD4244B8BD5001D313D /* Info.plist */,
+			);
+			path = DesafioCoraBankTests;
+			sourceTree = "<group>";
+		};
+		D8E84ADC244B8BD5001D313D /* DesafioCoraBankUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84ADD244B8BD5001D313D /* DesafioCoraBankUITests.swift */,
+				D8E84ADF244B8BD5001D313D /* Info.plist */,
+			);
+			path = DesafioCoraBankUITests;
+			sourceTree = "<group>";
+		};
+		D8E84AED244B8FCF001D313D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84AEF244B8FE0001D313D /* Main Files */,
+				D8E84AF1244B9008001D313D /* Data */,
+				D8E84AF0244B8FFD001D313D /* Features */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D8E84AEE244B8FD4001D313D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84AC4244B8BD5001D313D /* Assets.xcassets */,
+				D8E84AC6244B8BD5001D313D /* LaunchScreen.storyboard */,
+				D8E84AC9244B8BD5001D313D /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D8E84AEF244B8FE0001D313D /* Main Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84ABB244B8BD1001D313D /* AppDelegate.swift */,
+				D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */,
+			);
+			path = "Main Files";
+			sourceTree = "<group>";
+		};
+		D8E84AF0244B8FFD001D313D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D8E84AEB244B8CED001D313D /* LoginViewController.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D8E84AF1244B9008001D313D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8E84AB7244B8BD1001D313D /* DesafioCoraBank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8E84AE2244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBank" */;
+			buildPhases = (
+				D8E84AB4244B8BD1001D313D /* Sources */,
+				D8E84AB5244B8BD1001D313D /* Frameworks */,
+				D8E84AB6244B8BD1001D313D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesafioCoraBank;
+			productName = DesafioCoraBank;
+			productReference = D8E84AB8244B8BD1001D313D /* DesafioCoraBank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8E84ACD244B8BD5001D313D /* DesafioCoraBankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8E84AE5244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBankTests" */;
+			buildPhases = (
+				D8E84ACA244B8BD5001D313D /* Sources */,
+				D8E84ACB244B8BD5001D313D /* Frameworks */,
+				D8E84ACC244B8BD5001D313D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8E84AD0244B8BD5001D313D /* PBXTargetDependency */,
+			);
+			name = DesafioCoraBankTests;
+			productName = DesafioCoraBankTests;
+			productReference = D8E84ACE244B8BD5001D313D /* DesafioCoraBankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8E84AD8244B8BD5001D313D /* DesafioCoraBankUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8E84AE8244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBankUITests" */;
+			buildPhases = (
+				D8E84AD5244B8BD5001D313D /* Sources */,
+				D8E84AD6244B8BD5001D313D /* Frameworks */,
+				D8E84AD7244B8BD5001D313D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8E84ADB244B8BD5001D313D /* PBXTargetDependency */,
+			);
+			name = DesafioCoraBankUITests;
+			productName = DesafioCoraBankUITests;
+			productReference = D8E84AD9244B8BD5001D313D /* DesafioCoraBankUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8E84AB0244B8BD1001D313D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = RogerSanoli;
+				TargetAttributes = {
+					D8E84AB7244B8BD1001D313D = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					D8E84ACD244B8BD5001D313D = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = D8E84AB7244B8BD1001D313D;
+					};
+					D8E84AD8244B8BD5001D313D = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = D8E84AB7244B8BD1001D313D;
+					};
+				};
+			};
+			buildConfigurationList = D8E84AB3244B8BD1001D313D /* Build configuration list for PBXProject "DesafioCoraBank" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8E84AAF244B8BD1001D313D;
+			productRefGroup = D8E84AB9244B8BD1001D313D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8E84AB7244B8BD1001D313D /* DesafioCoraBank */,
+				D8E84ACD244B8BD5001D313D /* DesafioCoraBankTests */,
+				D8E84AD8244B8BD5001D313D /* DesafioCoraBankUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8E84AB6244B8BD1001D313D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E84AC8244B8BD5001D313D /* LaunchScreen.storyboard in Resources */,
+				D8E84AC5244B8BD5001D313D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84ACC244B8BD5001D313D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84AD7244B8BD5001D313D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8E84AB4244B8BD1001D313D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E84AEC244B8CED001D313D /* LoginViewController.swift in Sources */,
+				D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */,
+				D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84ACA244B8BD5001D313D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E84AD3244B8BD5001D313D /* DesafioCoraBankTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84AD5244B8BD5001D313D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E84ADE244B8BD5001D313D /* DesafioCoraBankUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8E84AD0244B8BD5001D313D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8E84AB7244B8BD1001D313D /* DesafioCoraBank */;
+			targetProxy = D8E84ACF244B8BD5001D313D /* PBXContainerItemProxy */;
+		};
+		D8E84ADB244B8BD5001D313D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8E84AB7244B8BD1001D313D /* DesafioCoraBank */;
+			targetProxy = D8E84ADA244B8BD5001D313D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8E84AC6244B8BD5001D313D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8E84AC7244B8BD5001D313D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8E84AE0244B8BD5001D313D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D8E84AE1244B8BD5001D313D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8E84AE3244B8BD5001D313D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QSTG3492K;
+				INFOPLIST_FILE = DesafioCoraBank/Resource/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8E84AE4244B8BD5001D313D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QSTG3492K;
+				INFOPLIST_FILE = DesafioCoraBank/Resource/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D8E84AE6244B8BD5001D313D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QSTG3492K;
+				INFOPLIST_FILE = DesafioCoraBankTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioCoraBank.app/DesafioCoraBank";
+			};
+			name = Debug;
+		};
+		D8E84AE7244B8BD5001D313D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QSTG3492K;
+				INFOPLIST_FILE = DesafioCoraBankTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioCoraBank.app/DesafioCoraBank";
+			};
+			name = Release;
+		};
+		D8E84AE9244B8BD5001D313D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QSTG3492K;
+				INFOPLIST_FILE = DesafioCoraBankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DesafioCoraBank;
+			};
+			name = Debug;
+		};
+		D8E84AEA244B8BD5001D313D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QSTG3492K;
+				INFOPLIST_FILE = DesafioCoraBankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DesafioCoraBank;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8E84AB3244B8BD1001D313D /* Build configuration list for PBXProject "DesafioCoraBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E84AE0244B8BD5001D313D /* Debug */,
+				D8E84AE1244B8BD5001D313D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8E84AE2244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E84AE3244B8BD5001D313D /* Debug */,
+				D8E84AE4244B8BD5001D313D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8E84AE5244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E84AE6244B8BD5001D313D /* Debug */,
+				D8E84AE7244B8BD5001D313D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8E84AE8244B8BD5001D313D /* Build configuration list for PBXNativeTarget "DesafioCoraBankUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E84AE9244B8BD5001D313D /* Debug */,
+				D8E84AEA244B8BD5001D313D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8E84AB0244B8BD1001D313D /* Project object */;
+}
