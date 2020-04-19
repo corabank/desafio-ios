@@ -3,13 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2C967C6BBC20BADA4C8BE2A1 /* Pods_DesafioCoraBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */; };
 		B69D0157643C9F794ACEF424 /* Pods_DesafioCoraBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FA6BA8FEEE8EF7EE70C805 /* Pods_DesafioCoraBankUITests.framework */; };
 		BF41AA677B6EBDADAFA75E2C /* Pods_DesafioCoraBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */; };
+		D8D6CFD5244CED7B002DE152 /* PaladinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */; };
+		D8D6CFD6244CED7B002DE152 /* PaladinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D6CFD9244CEE0E002DE152 /* WizardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */; };
+		D8D6CFDA244CEE0F002DE152 /* WizardKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D6CFDC244CEE93002DE152 /* RogueKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDB244CEE93002DE152 /* RogueKit.framework */; };
+		D8D6CFDD244CEE93002DE152 /* RogueKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDB244CEE93002DE152 /* RogueKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D6CFDF244CF079002DE152 /* DungeonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDE244CF079002DE152 /* DungeonKit.framework */; };
+		D8D6CFE0244CF079002DE152 /* DungeonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDE244CF079002DE152 /* DungeonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABB244B8BD1001D313D /* AppDelegate.swift */; };
 		D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */; };
 		D8E84AC5244B8BD5001D313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC4244B8BD5001D313D /* Assets.xcassets */; };
@@ -36,6 +44,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D8D6CFD7244CED7B002DE152 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D8D6CFE0244CF079002DE152 /* DungeonKit.framework in Embed Frameworks */,
+				D8D6CFDD244CEE93002DE152 /* RogueKit.framework in Embed Frameworks */,
+				D8D6CFDA244CEE0F002DE152 /* WizardKit.framework in Embed Frameworks */,
+				D8D6CFD6244CED7B002DE152 /* PaladinKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		11B58EF4DF23314A8771C4CB /* Pods-DesafioCoraBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBank.release.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBank/Pods-DesafioCoraBank.release.xcconfig"; sourceTree = "<group>"; };
 		44FA6BA8FEEE8EF7EE70C805 /* Pods_DesafioCoraBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +69,10 @@
 		6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C934C9E8EDB15812DE4D56A /* Pods-DesafioCoraBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBankTests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBankTests/Pods-DesafioCoraBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PaladinKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WizardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D6CFDB244CEE93002DE152 /* RogueKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RogueKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D6CFDE244CF079002DE152 /* DungeonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DungeonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E84AB8244B8BD1001D313D /* DesafioCoraBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCoraBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E84ABB244B8BD1001D313D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +95,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D6CFDC244CEE93002DE152 /* RogueKit.framework in Frameworks */,
+				D8D6CFD9244CEE0E002DE152 /* WizardKit.framework in Frameworks */,
 				2C967C6BBC20BADA4C8BE2A1 /* Pods_DesafioCoraBank.framework in Frameworks */,
+				D8D6CFDF244CF079002DE152 /* DungeonKit.framework in Frameworks */,
+				D8D6CFD5244CED7B002DE152 /* PaladinKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +125,10 @@
 		3DDA3BA32010677EE4210C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8D6CFDE244CF079002DE152 /* DungeonKit.framework */,
+				D8D6CFDB244CEE93002DE152 /* RogueKit.framework */,
+				D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */,
+				D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */,
 				6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */,
 				A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */,
 				44FA6BA8FEEE8EF7EE70C805 /* Pods_DesafioCoraBankUITests.framework */,
@@ -202,7 +239,6 @@
 				E5A5E73D5B67E1D7ABDFA75A /* Pods-DesafioCoraBankUITests.debug.xcconfig */,
 				6069C4556E9536B073AB781B /* Pods-DesafioCoraBankUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,6 +253,7 @@
 				D8E84AB4244B8BD1001D313D /* Sources */,
 				D8E84AB5244B8BD1001D313D /* Frameworks */,
 				D8E84AB6244B8BD1001D313D /* Resources */,
+				D8D6CFD7244CED7B002DE152 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -613,13 +650,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QSTG3492K;
+				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBank/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBank;
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.desafio.CoraBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -632,13 +669,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QSTG3492K;
+				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBank/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBank;
+				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.desafio.CoraBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
