@@ -18,6 +18,9 @@
 		D8D6CFDD244CEE93002DE152 /* RogueKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDB244CEE93002DE152 /* RogueKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6CFDF244CF079002DE152 /* DungeonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDE244CF079002DE152 /* DungeonKit.framework */; };
 		D8D6CFE0244CF079002DE152 /* DungeonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDE244CF079002DE152 /* DungeonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D6CFE7244CF90C002DE152 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6CFE6244CF90C002DE152 /* Colors.swift */; };
+		D8D6CFE9244CF915002DE152 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6CFE8244CF915002DE152 /* Fonts.swift */; };
+		D8D6CFED244CF932002DE152 /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6CFEC244CF932002DE152 /* Margins.swift */; };
 		D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABB244B8BD1001D313D /* AppDelegate.swift */; };
 		D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */; };
 		D8E84AC5244B8BD5001D313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC4244B8BD5001D313D /* Assets.xcassets */; };
@@ -73,6 +76,9 @@
 		D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WizardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D6CFDB244CEE93002DE152 /* RogueKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RogueKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D6CFDE244CF079002DE152 /* DungeonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DungeonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D6CFE6244CF90C002DE152 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D8D6CFE8244CF915002DE152 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D8D6CFEC244CF932002DE152 /* Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
 		D8E84AB8244B8BD1001D313D /* DesafioCoraBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCoraBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E84ABB244B8BD1001D313D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +142,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D8D6CFE2244CF6CC002DE152 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6CFE5244CF74C002DE152 /* Styles */,
+				D8D6CFE4244CF727002DE152 /* CBTextField */,
+				D8D6CFE3244CF711002DE152 /* CBActionButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D8D6CFE3244CF711002DE152 /* CBActionButton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CBActionButton;
+			sourceTree = "<group>";
+		};
+		D8D6CFE4244CF727002DE152 /* CBTextField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CBTextField;
+			sourceTree = "<group>";
+		};
+		D8D6CFE5244CF74C002DE152 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6CFE6244CF90C002DE152 /* Colors.swift */,
+				D8D6CFE8244CF915002DE152 /* Fonts.swift */,
+				D8D6CFEC244CF932002DE152 /* Margins.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		D8E84AAF244B8BD1001D313D = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +231,7 @@
 				D8E84AEF244B8FE0001D313D /* Main Files */,
 				D8E84AF1244B9008001D313D /* Data */,
 				D8E84AF0244B8FFD001D313D /* Features */,
+				D8D6CFE2244CF6CC002DE152 /* Components */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -482,8 +523,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E84AEC244B8CED001D313D /* LoginViewController.swift in Sources */,
+				D8D6CFE9244CF915002DE152 /* Fonts.swift in Sources */,
+				D8D6CFE7244CF90C002DE152 /* Colors.swift in Sources */,
 				D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */,
 				D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */,
+				D8D6CFED244CF932002DE152 /* Margins.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
