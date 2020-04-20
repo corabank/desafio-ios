@@ -14,7 +14,7 @@ public extension UIFont {
     private static let fontName = "Helvetica"
     
     static func cbRegular(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "\(fontName)-Regular", size: size)!
+        return UIFont(name: "\(fontName)", size: size)!
     }
     
     static func cbItalic(_ size: CGFloat) -> UIFont {

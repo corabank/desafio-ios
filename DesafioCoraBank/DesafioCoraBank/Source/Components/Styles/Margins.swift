@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 public extension CGFloat {
-    static let cbDefaultMargin = 17.0
-    static let cbLineBreakMargin = 10.0
+    static let cbLeftMargin: CGFloat  = 20.0
+    static let cbRightMargin: CGFloat  = -20.0
+    static let cbLineBreakMargin: CGFloat = 10.0
+    static let cbCornerRadius: CGFloat = 10.0
 }
