@@ -10,6 +10,10 @@
 		2C967C6BBC20BADA4C8BE2A1 /* Pods_DesafioCoraBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */; };
 		B69D0157643C9F794ACEF424 /* Pods_DesafioCoraBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FA6BA8FEEE8EF7EE70C805 /* Pods_DesafioCoraBankUITests.framework */; };
 		BF41AA677B6EBDADAFA75E2C /* Pods_DesafioCoraBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */; };
+		D8736423244D04FA00ACFC52 /* CBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8736422244D04FA00ACFC52 /* CBTextField.swift */; };
+		D8736426244E0CAD00ACFC52 /* CBActionButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8736425244E0CAD00ACFC52 /* CBActionButtonSpec.swift */; };
+		D873642C244E21A300ACFC52 /* CBTextFieldSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873642B244E21A300ACFC52 /* CBTextFieldSpec.swift */; };
+		D8736430244E446A00ACFC52 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873642F244E446A00ACFC52 /* LoginView.swift */; };
 		D8D6CFD5244CED7B002DE152 /* PaladinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */; };
 		D8D6CFD6244CED7B002DE152 /* PaladinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6CFD9244CEE0E002DE152 /* WizardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */; };
@@ -18,6 +22,11 @@
 		D8D6CFDD244CEE93002DE152 /* RogueKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDB244CEE93002DE152 /* RogueKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6CFDF244CF079002DE152 /* DungeonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDE244CF079002DE152 /* DungeonKit.framework */; };
 		D8D6CFE0244CF079002DE152 /* DungeonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFDE244CF079002DE152 /* DungeonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D6CFE7244CF90C002DE152 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6CFE6244CF90C002DE152 /* Colors.swift */; };
+		D8D6CFE9244CF915002DE152 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6CFE8244CF915002DE152 /* Fonts.swift */; };
+		D8D6CFED244CF932002DE152 /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6CFEC244CF932002DE152 /* Margins.swift */; };
+		D8DC12EA244CFFA5009C695E /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC12E9244CFFA5009C695E /* CodeView.swift */; };
+		D8DC12EC244D01ED009C695E /* CBActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC12EB244D01ED009C695E /* CBActionButton.swift */; };
 		D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABB244B8BD1001D313D /* AppDelegate.swift */; };
 		D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */; };
 		D8E84AC5244B8BD5001D313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC4244B8BD5001D313D /* Assets.xcassets */; };
@@ -69,10 +78,19 @@
 		6DCCAF9C5BF5CF30BE125446 /* Pods_DesafioCoraBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C934C9E8EDB15812DE4D56A /* Pods-DesafioCoraBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraBankTests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCoraBankTests/Pods-DesafioCoraBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		A62732C5FB85D19938B5FDE4 /* Pods_DesafioCoraBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8736422244D04FA00ACFC52 /* CBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTextField.swift; sourceTree = "<group>"; };
+		D8736425244E0CAD00ACFC52 /* CBActionButtonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBActionButtonSpec.swift; sourceTree = "<group>"; };
+		D873642B244E21A300ACFC52 /* CBTextFieldSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTextFieldSpec.swift; sourceTree = "<group>"; };
+		D873642F244E446A00ACFC52 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PaladinKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WizardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D6CFDB244CEE93002DE152 /* RogueKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RogueKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D6CFDE244CF079002DE152 /* DungeonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DungeonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D6CFE6244CF90C002DE152 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D8D6CFE8244CF915002DE152 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D8D6CFEC244CF932002DE152 /* Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
+		D8DC12E9244CFFA5009C695E /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		D8DC12EB244D01ED009C695E /* CBActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBActionButton.swift; sourceTree = "<group>"; };
 		D8E84AB8244B8BD1001D313D /* DesafioCoraBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCoraBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E84ABB244B8BD1001D313D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +154,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D8736424244E0C9700ACFC52 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D8736425244E0CAD00ACFC52 /* CBActionButtonSpec.swift */,
+				D873642B244E21A300ACFC52 /* CBTextFieldSpec.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D8D6CFE2244CF6CC002DE152 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D8DC12E9244CFFA5009C695E /* CodeView.swift */,
+				D8D6CFE5244CF74C002DE152 /* Styles */,
+				D8D6CFE4244CF727002DE152 /* CBTextField */,
+				D8D6CFE3244CF711002DE152 /* CBActionButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D8D6CFE3244CF711002DE152 /* CBActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				D8DC12EB244D01ED009C695E /* CBActionButton.swift */,
+			);
+			path = CBActionButton;
+			sourceTree = "<group>";
+		};
+		D8D6CFE4244CF727002DE152 /* CBTextField */ = {
+			isa = PBXGroup;
+			children = (
+				D8736422244D04FA00ACFC52 /* CBTextField.swift */,
+			);
+			path = CBTextField;
+			sourceTree = "<group>";
+		};
+		D8D6CFE5244CF74C002DE152 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6CFE6244CF90C002DE152 /* Colors.swift */,
+				D8D6CFE8244CF915002DE152 /* Fonts.swift */,
+				D8D6CFEC244CF932002DE152 /* Margins.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		D8E84AAF244B8BD1001D313D = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +234,7 @@
 		D8E84AD1244B8BD5001D313D /* DesafioCoraBankTests */ = {
 			isa = PBXGroup;
 			children = (
+				D8736424244E0C9700ACFC52 /* Components */,
 				D8E84AD2244B8BD5001D313D /* DesafioCoraBankTests.swift */,
 				D8E84AD4244B8BD5001D313D /* Info.plist */,
 			);
@@ -191,6 +256,7 @@
 				D8E84AEF244B8FE0001D313D /* Main Files */,
 				D8E84AF1244B9008001D313D /* Data */,
 				D8E84AF0244B8FFD001D313D /* Features */,
+				D8D6CFE2244CF6CC002DE152 /* Components */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -218,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				D8E84AEB244B8CED001D313D /* LoginViewController.swift */,
+				D873642F244E446A00ACFC52 /* LoginView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -482,8 +549,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E84AEC244B8CED001D313D /* LoginViewController.swift in Sources */,
+				D8D6CFE9244CF915002DE152 /* Fonts.swift in Sources */,
+				D8D6CFE7244CF90C002DE152 /* Colors.swift in Sources */,
 				D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */,
 				D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */,
+				D8D6CFED244CF932002DE152 /* Margins.swift in Sources */,
+				D8DC12EC244D01ED009C695E /* CBActionButton.swift in Sources */,
+				D8DC12EA244CFFA5009C695E /* CodeView.swift in Sources */,
+				D8736430244E446A00ACFC52 /* LoginView.swift in Sources */,
+				D8736423244D04FA00ACFC52 /* CBTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +566,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E84AD3244B8BD5001D313D /* DesafioCoraBankTests.swift in Sources */,
+				D873642C244E21A300ACFC52 /* CBTextFieldSpec.swift in Sources */,
+				D8736426244E0CAD00ACFC52 /* CBActionButtonSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,7 +765,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QSTG3492K;
+				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBankTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -712,7 +788,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QSTG3492K;
+				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBankTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -734,7 +810,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QSTG3492K;
+				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBankUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -755,7 +831,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QSTG3492K;
+				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBankUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
