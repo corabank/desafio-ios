@@ -15,7 +15,7 @@
 		D84D665022DBF4EE008B5703 /* DKAbstractInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D664922DBF4ED008B5703 /* DKAbstractInteractor.swift */; };
 		D84D665122DBF4EE008B5703 /* DKPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D664A22DBF4EE008B5703 /* DKPresenter.swift */; };
 		D84D665222DBF4EE008B5703 /* DKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D664B22DBF4EE008B5703 /* DKViewController.swift */; };
-		D84D665322DBF4EE008B5703 /* DKAbstractSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D664C22DBF4EE008B5703 /* DKAbstractSceneFactory.swift */; };
+		D84D665322DBF4EE008B5703 /* DKAbstractRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D664C22DBF4EE008B5703 /* DKAbstractRouter.swift */; };
 		D84D665422DBF4EE008B5703 /* DKInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D664D22DBF4EE008B5703 /* DKInteractor.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		D84D664922DBF4ED008B5703 /* DKAbstractInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAbstractInteractor.swift; sourceTree = "<group>"; };
 		D84D664A22DBF4EE008B5703 /* DKPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKPresenter.swift; sourceTree = "<group>"; };
 		D84D664B22DBF4EE008B5703 /* DKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKViewController.swift; sourceTree = "<group>"; };
-		D84D664C22DBF4EE008B5703 /* DKAbstractSceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAbstractSceneFactory.swift; sourceTree = "<group>"; };
+		D84D664C22DBF4EE008B5703 /* DKAbstractRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAbstractRouter.swift; sourceTree = "<group>"; };
 		D84D664D22DBF4EE008B5703 /* DKInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +106,7 @@
 			children = (
 				D84D664922DBF4ED008B5703 /* DKAbstractInteractor.swift */,
 				D84D664822DBF4ED008B5703 /* DKAbstractPresenter.swift */,
-				D84D664C22DBF4EE008B5703 /* DKAbstractSceneFactory.swift */,
+				D84D664C22DBF4EE008B5703 /* DKAbstractRouter.swift */,
 				D84D664722DBF4ED008B5703 /* DKAbstractView.swift */,
 				D84D664D22DBF4EE008B5703 /* DKInteractor.swift */,
 				D84D664A22DBF4EE008B5703 /* DKPresenter.swift */,
@@ -225,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84D665322DBF4EE008B5703 /* DKAbstractSceneFactory.swift in Sources */,
+				D84D665322DBF4EE008B5703 /* DKAbstractRouter.swift in Sources */,
 				D84D665022DBF4EE008B5703 /* DKAbstractInteractor.swift in Sources */,
 				D84D664E22DBF4EE008B5703 /* DKAbstractView.swift in Sources */,
 				D84D664F22DBF4EE008B5703 /* DKAbstractPresenter.swift in Sources */,

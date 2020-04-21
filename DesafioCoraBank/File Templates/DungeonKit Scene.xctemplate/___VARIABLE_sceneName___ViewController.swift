@@ -9,7 +9,7 @@
 import Foundation
 import DungeonKit
 
-class ___FILEBASENAMEASIDENTIFIER___: DKViewController<___VARIABLE_sceneName___SceneFactory> {
+class ___FILEBASENAMEASIDENTIFIER___: DKViewController<___VARIABLE_sceneName___Router> {
     
     fileprivate var interactor: ___VARIABLE_sceneName___InteractorProtocol? { return self.getAbstractInteractor() as? ___VARIABLE_sceneName___InteractorProtocol }
     

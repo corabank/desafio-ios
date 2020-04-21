@@ -9,15 +9,15 @@
 import Foundation
 import DungeonKit
 
-class ___FILEBASENAMEASIDENTIFIER___: DKAbstractSceneFactory {
+class ___FILEBASENAMEASIDENTIFIER___: DKAbstractRouter {
     
     required init() {}
     
-    func generateInteractor() -> DKAbstractInteractor {
+    func generateInteractor(_ args: Any?) -> DKAbstractInteractor {
         return ___VARIABLE_sceneName___Interactor()
     }
     
-    func generatePresenter() -> DKAbstractPresenter {
+    func generatePresenter(_ args: Any?) -> DKAbstractPresenter {
         return ___VARIABLE_sceneName___Presenter()
     }
 }

@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  DesafioCoraBank
+
+  Created by Roger Sanoli on 21/04/20.
+  Copyright © 2020 RogerSanoli. All rights reserved.
+*/
+
+/*
+    FEATURE - LOGIN
+ */
+
+"login_username_placeholder" = "Name or email";
+"login_password_placeholder" = "Password";
+"login_error_invalid" = "Invalid credentials";
+"login_button_access" = "Access my account";
+"login_button_forgot_password" = "Forgot password";
