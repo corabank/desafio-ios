@@ -34,11 +34,7 @@ final class LoginAuthView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public func shake() {
-        print("so far so good")
+        return nil
     }
 }
 
@@ -71,5 +67,13 @@ extension LoginAuthView: CodeView {
     func setupAdditionalConfiguration() {
         loginTextField.placeholderText = "login_username_placeholder".localized
         passwordTextField.placeholderText = "login_password_placeholder".localized
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+}
+
+extension LoginAuthView: CBTextFieldDelegate {
+    func textfieldValueChanged() {
+        errorText = ""
     }
 }

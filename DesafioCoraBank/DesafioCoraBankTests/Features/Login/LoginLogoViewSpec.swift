@@ -21,6 +21,11 @@ class LoginLogoViewSpec: QuickSpec {
                 logoView.heightAnchor.constraint(equalToConstant: 80).isActive = true
                 expect(logoView) == snapshot("LoginLogoView")
             }
+            
+            it("should not init with coder") {
+                let logoView = LoginLogoView(coder: NSCoder())
+                expect(logoView).to(beNil())
+            }
         }
     }
 }

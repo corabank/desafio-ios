@@ -10,5 +10,6 @@ import Foundation
 import DungeonKit
 
 protocol LoginViewControllerProtocol: DKAbstractView {
-
+    func completeLogin(_ user: UserEntity)
+    func loginFailed()
 }

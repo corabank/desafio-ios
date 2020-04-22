@@ -8,11 +8,22 @@
 
 import Foundation
 import DungeonKit
+import RogueKit
 
 class LoginPresenter: DKPresenter {
     fileprivate var view: LoginViewControllerProtocol? { return self.getAbstractView() as? LoginViewControllerProtocol }
 }
 
 extension LoginPresenter: LoginPresenterProtocol {
-
+    func processLogin(_ user: UserEntity) {
+        sync {
+            self.view?.completeLogin(user)
+        }
+    }
+    
+    func processLoginError() {
+        sync {
+            self.view?.loginFailed()
+        }
+    }
 }

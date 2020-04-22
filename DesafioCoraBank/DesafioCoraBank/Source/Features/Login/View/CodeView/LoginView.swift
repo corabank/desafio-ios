@@ -17,10 +17,13 @@ final class LoginView: UIView {
     
     public var authView = LoginAuthView()
     private var authCenterConstraint: NSLayoutConstraint?
+    private var authLeadingConstraint: NSLayoutConstraint?
+    private var authTrailingConstraint: NSLayoutConstraint?
     
     public var actionButton = CBActionButton()
-    private var actionButtonBottomConstraint: NSLayoutConstraint?
+    public var actionButtonBottomConstraint: NSLayoutConstraint?
     
+    public var loading = CBLoading()
     
     private lazy var forgotButton: UIButton = {
         let button = UIButton(frame: .zero)
@@ -33,7 +36,7 @@ final class LoginView: UIView {
     }()
     private var forgotButtonBottomConstraint: NSLayoutConstraint?
     
-    private var actionButtonBottomConstant: CGFloat = -70
+    public var actionButtonBottomConstant: CGFloat = -70
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -41,7 +44,7 @@ final class LoginView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
     public func animateViews(_ forUITests: Bool = false) {
@@ -101,6 +104,21 @@ final class LoginView: UIView {
             self.layoutIfNeeded()
         }, completion: nil)
     }
+    
+    public func shake() {
+        authLeadingConstraint?.constant = .cbLeftMargin - 15
+        authTrailingConstraint?.constant = .cbRightMargin - 15
+        
+        UIView.animate(withDuration: 0.05, delay: 0.2, options: .curveLinear, animations: {
+            self.layoutIfNeeded()
+        }) { (_) in
+            self.authLeadingConstraint?.constant = .cbLeftMargin
+            self.authTrailingConstraint?.constant = .cbRightMargin
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0.15, options: .curveEaseInOut, animations: {
+                self.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
 }
 
 extension LoginView: CodeView {
@@ -109,6 +127,7 @@ extension LoginView: CodeView {
         addSubview(authView)
         addSubview(actionButton)
         addSubview(forgotButton)
+        addSubview(loading)
     }
     
     func setupConstraints() {
@@ -120,8 +139,10 @@ extension LoginView: CodeView {
         logoCenterConstraint?.isActive = true
         logoView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
         
-        authView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: .cbLeftMargin).isActive = true
-        authView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .cbRightMargin).isActive = true
+        authLeadingConstraint = authView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: .cbLeftMargin)
+        authLeadingConstraint?.isActive = true
+        authTrailingConstraint = authView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .cbRightMargin)
+        authTrailingConstraint?.isActive = true
         authView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         authCenterConstraint = authView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 70)
         authCenterConstraint?.isActive = true
@@ -137,6 +158,11 @@ extension LoginView: CodeView {
         forgotButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         forgotButtonBottomConstraint = forgotButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 20)
         forgotButtonBottomConstraint?.isActive = true
+        
+        loading.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+        loading.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        loading.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        loading.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
     }
     
     func setupAdditionalConfiguration() {
@@ -145,5 +171,6 @@ extension LoginView: CodeView {
         actionButton.alpha = 0
         actionButton.title = "login_button_access".localized
         forgotButton.alpha = 0
+        loading.isHidden = true
     }
 }

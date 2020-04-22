@@ -38,7 +38,7 @@ public extension UIView {
     
     @objc open func keyboardWillHide() {}
 
-    @objc private func dismissKeyboard() {
+    @objc open func dismissKeyboard() {
         self.endEditing(true)
     }
 }

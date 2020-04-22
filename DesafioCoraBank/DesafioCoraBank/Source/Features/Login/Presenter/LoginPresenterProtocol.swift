@@ -8,7 +8,9 @@
 
 import Foundation
 import DungeonKit
+import RogueKit
 
 protocol LoginPresenterProtocol: DKAbstractPresenter {
-
+    func processLogin(_ user: UserEntity)
+    func processLoginError()
 }

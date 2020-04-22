@@ -14,11 +14,10 @@ class LoginRouter: DKAbstractRouter {
     required init() {}
     
     func generateInteractor(_ args: Any?) -> DKAbstractInteractor {
-        return LoginInteractor()
+        return LoginInteractor(enableMocks: true)
     }
     
     func generatePresenter(_ args: Any?) -> DKAbstractPresenter {
         return LoginPresenter()
-        
     }
 }

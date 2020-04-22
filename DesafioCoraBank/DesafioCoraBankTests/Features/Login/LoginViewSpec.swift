@@ -54,6 +54,11 @@ class LoginViewSpec: QuickSpec {
                     expect(loginView) == snapshot("LoginView11ProMax")
                 }
             }
+            
+            it("should not init with coder") {
+                let loginView = LoginView(coder: NSCoder())
+                expect(loginView).to(beNil())
+            }
         }
     }
 }

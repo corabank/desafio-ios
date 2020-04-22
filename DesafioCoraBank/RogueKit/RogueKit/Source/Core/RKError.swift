@@ -36,7 +36,7 @@ public enum RKErrorType {
 public struct RKError: Error {
     public let errorType: RKErrorType
     
-    init(_ errorType: RKErrorType) {
+    public init(_ errorType: RKErrorType) {
         self.errorType = errorType
     }
     

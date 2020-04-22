@@ -29,6 +29,11 @@ class LoginAuthViewSpec: QuickSpec {
                 authView.heightAnchor.constraint(equalToConstant: 140).isActive = true
                 expect(authView) == snapshot("LoginAuthViewError")
             }
+            
+            it("should not init with coder") {
+                let authView = LoginAuthView(coder: NSCoder())
+                expect(authView).to(beNil())
+            }
         }
     }
 }

@@ -13,8 +13,13 @@ class LoginViewController: DKViewController<LoginRouter> {
     
     fileprivate var interactor: LoginInteractorProtocol? { return self.getAbstractInteractor() as? LoginInteractorProtocol }
     
+    var loginView: LoginView? {
+        get { return view as? LoginView }
+        set { view = newValue }
+    }
+    
     override func loadView() {
-        self.view = LoginView()
+        self.loginView = LoginView()
     }
     
     override func viewDidLoad() {
@@ -41,24 +46,37 @@ class LoginViewController: DKViewController<LoginRouter> {
     
     private func setupAuthAction() {
         
-        guard let loginView = self.view as? LoginView else { return }
-        
-        loginView.actionButton.onTouch = { [weak self] in
+        loginView?.actionButton.onTouch = { [weak self] in
+            self?.loginView?.dismissKeyboard()
+            
             guard
-                let userName = loginView.authView.loginTextField.text,
-                let password = loginView.authView.passwordTextField.text,
+                let userName = self?.loginView?.authView.loginTextField.text,
+                let password = self?.loginView?.authView.passwordTextField.text,
                 !userName.isEmpty,
                 !password.isEmpty
             else { return }
             
+            self?.showLoading(true)
             self?.async {
                 self?.interactor?.loginUser(userName: userName, password: password)
             }
         }
     }
     
+    func showLoading(_ visible: Bool) {
+        loginView?.loading.isHidden = !visible
+    }
 }
 
 extension LoginViewController: LoginViewControllerProtocol {
-
+    func completeLogin(_ user: UserEntity) {
+        showLoading(false)
+        print("voltow")
+    }
+    
+    func loginFailed() {
+        loginView?.authView.errorText = "login_error_invalid".localized
+        showLoading(false)
+        loginView?.shake()
+    }
 }
