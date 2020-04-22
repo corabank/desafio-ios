@@ -17,6 +17,7 @@ public enum CBTextFieldType: String {
 
 final class CBTextField: UIView {
     
+    public weak var delegate: CBTextFieldDelegate?
     private var type: CBTextFieldType
     
     public var text: String? {
@@ -84,7 +85,7 @@ final class CBTextField: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
 }
 
@@ -151,6 +152,8 @@ extension CBTextField: CodeView {
                 self.textField.transform = CGAffineTransform(translationX: 0, y: 10)
             }, completion:nil)
         }
+        
+        delegate?.textfieldValueChanged()
     }
     
     private func setupEyeGesture() {
@@ -172,4 +175,8 @@ extension CBTextField: CodeView {
         
         eyeImage.image = textField.isSecureTextEntry ? hiddenImage : visibleImage
     }
+}
+
+protocol CBTextFieldDelegate: class {
+    func textfieldValueChanged()
 }

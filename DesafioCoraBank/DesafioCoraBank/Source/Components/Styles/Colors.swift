@@ -11,8 +11,8 @@ import UIKit
 
 public extension UIColor {
     static let cbPink: UIColor = #colorLiteral(red: 0.7968528867, green: 0.2006137669, blue: 0.3420485258, alpha: 1)
-    static let cbDarkBlue: UIColor = #colorLiteral(red: 0.087076433, green: 0.1769888997, blue: 0.245241046, alpha: 1)
-    static let cbLightBlue: UIColor = #colorLiteral(red: 0, green: 0.6852945685, blue: 0.8273320794, alpha: 1)
+    static let cbDarkBlue: UIColor = #colorLiteral(red: 0.0862745098, green: 0.1764705882, blue: 0.2470588235, alpha: 1)
+    static let cbLightBlue: UIColor = #colorLiteral(red: 0, green: 0.6862745098, blue: 0.8274509804, alpha: 1)
     static let cbGreen: UIColor = #colorLiteral(red: 0.3190773427, green: 0.8109046817, blue: 0.5239287019, alpha: 1)
     static let cbRed: UIColor = #colorLiteral(red: 0.9900668263, green: 0.2676967978, blue: 0.3305349946, alpha: 1)
     static let cbWhite: UIColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.9998808503, alpha: 1)

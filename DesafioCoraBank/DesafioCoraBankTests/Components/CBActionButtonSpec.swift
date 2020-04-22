@@ -22,6 +22,24 @@ class CBActionButtonSpec: QuickSpec {
                 button.title = "Acessar minha conta"
                 expect(button) == snapshot("CBActionButton")
             }
+            it("should not init with coder") {
+                let button = CBActionButton(coder: NSCoder())
+                expect(button).to(beNil())
+            }
+            it("should be tappable") {
+                let button = CBActionButton()
+                var tapped = false
+                button.onTouch = {
+                    tapped = true
+                }
+                button.handleTap()
+                expect(tapped).to(beTrue())
+            }
+            it("should have an accessible title") {
+                let button = CBActionButton()
+                button.title = "Titulo"
+                expect(button.title).to(be("Titulo"))
+            }
         }
     }
 }

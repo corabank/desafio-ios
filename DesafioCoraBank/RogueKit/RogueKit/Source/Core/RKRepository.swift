@@ -27,4 +27,5 @@ import Foundation
 public protocol RKRepository {
     var domain: String { get }
     func createRequest() throws -> RKRequest
+    func createMockForRequest<T: Entity>(completion: @escaping(ResultCallback<T>))
 }

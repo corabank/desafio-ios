@@ -40,7 +40,7 @@ final class CBActionButton: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
 }
 
@@ -80,7 +80,7 @@ extension CBActionButton: CodeView {
         isUserInteractionEnabled = true
     }
     
-    @objc private func handleTap() {
+    @objc public func handleTap() {
         onTouch?()
     }
 }

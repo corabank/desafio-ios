@@ -36,6 +36,16 @@ class CBTextFieldSpec: QuickSpec {
                 expect(textField) == snapshot("CBTextFieldLoginFulfilled")
             }
             
+            it("should be able to return to its original state") {
+                let textField = CBTextField(frame, type: .login)
+                textField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+                textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                textField.placeholderText = "Nome ou email"
+                textField.text = "Lucas Vallim da Costa"
+                textField.text = ""
+                expect(textField) == snapshot("CBTextFieldLoginEmpty")
+            }
+            
             it("should have an empty password state") {
                 let textField = CBTextField(frame, type: .password)
                 textField.widthAnchor.constraint(equalToConstant: 300).isActive = true
@@ -61,6 +71,22 @@ class CBTextFieldSpec: QuickSpec {
                 textField.text = "password"
                 textField.toogleSecurity()
                 expect(textField) == snapshot("CBTextFieldPasswordOpen")
+            }
+            
+            it("should be able to return to secure state") {
+                let textField = CBTextField(frame, type: .password)
+                textField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+                textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                textField.placeholderText = "Senha"
+                textField.text = "password"
+                textField.toogleSecurity()
+                textField.toogleSecurity()
+                expect(textField) == snapshot("CBTextFieldPasswordFulfilled")
+            }
+            
+            it("should not init with coder") {
+                let textField = CBTextField(coder: NSCoder())
+                expect(textField).to(beNil())
             }
         }
     }

@@ -22,7 +22,7 @@
 
 import Foundation
 
-open class DKViewController<T: DKAbstractSceneFactory>: UIViewController, DKAbstractView {
+open class DKViewController<T: DKAbstractRouter>: UIViewController, DKAbstractView {
 
     internal var interactor: DKAbstractInteractor?
     
@@ -32,9 +32,9 @@ open class DKViewController<T: DKAbstractSceneFactory>: UIViewController, DKAbst
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        let factory: DKAbstractSceneFactory = T.init()
-        let presenter = factory.generatePresenter(presenterArgs)
-        let interactor = factory.generateInteractor(interactorArgs)
+        let router: DKAbstractRouter = T.init()
+        let presenter = router.generatePresenter(presenterArgs)
+        let interactor = router.generateInteractor(interactorArgs)
  
         interactor.setPresenter(presenter)
         presenter.setView(self)

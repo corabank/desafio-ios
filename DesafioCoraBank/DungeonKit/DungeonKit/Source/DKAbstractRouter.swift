@@ -1,5 +1,5 @@
 //
-//  DKAbstractSceneFactory.swift
+//  DKAbstractRouter.swift
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
 
 import Foundation
 
-public protocol DKAbstractSceneFactory {
+public protocol DKAbstractRouter {
     init()
     func generateInteractor(_ args: Any?) -> DKAbstractInteractor
     func generatePresenter(_ args: Any?) -> DKAbstractPresenter

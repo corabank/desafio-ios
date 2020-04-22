@@ -25,8 +25,11 @@ import Foundation
 open class DKInteractor: DKAbstractInteractor {
     
     internal var presenter: DKAbstractPresenter?
+    public let enableMocks: Bool
     
-    public init() {}
+    public init(enableMocks: Bool = false) {
+        self.enableMocks = enableMocks
+    }
     
     public func setPresenter(_ presenter: DKAbstractPresenter) {
         self.presenter = presenter
