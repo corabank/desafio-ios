@@ -7,20 +7,19 @@
 //
 
 import Foundation
-
-
 import UIKit
 
 class LoginViewController: UIViewController {
     
     override func loadView() {
-        let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = .red
+        let view = LoginView()
+        view.backgroundColor = .cbDarkBlue
         self.view = view
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
