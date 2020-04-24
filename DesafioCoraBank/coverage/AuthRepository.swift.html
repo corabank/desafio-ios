@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "AuthRepository.swift" : </span><span class="cov_high">95.65%</span>
+<span>Coverage for "AuthRepository.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(22 of 23 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(23 of 23 relevant lines covered)</h4>
 <h4 class="cov_filepath">DesafioCoraBank/Source/Data/Repository/AuthRepository.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -135,32 +135,32 @@
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">    public func createMockForRequest&lt;T: Entity&gt;(completion: @escaping(ResultCallback&lt;T&gt;)) {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
 <td class="src"><pre><code class="objc">        switch self {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">        case let .loginUser(requestUser):</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">                if requestUser.userName == "Roger" &amp;&amp; requestUser.password == "cora" {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">30</td>
 <td class="src"><pre><code class="objc">                    if let loggedUser = UserEntity(userName: "Roger", password: nil, accessToken: "abcd") as? T {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">31</td>
@@ -170,22 +170,22 @@
 <tr class="covered">
 <td class="num">32</td>
 <td class="src"><pre><code class="objc">                    } else {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">33</td>
 <td class="src"><pre><code class="objc">                        completion(.failure(RKError(.invalidData)))</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="covered">
 <td class="num">34</td>
 <td class="src"><pre><code class="objc">                    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">35</td>
 <td class="src"><pre><code class="objc">                } else {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">36</td>
@@ -195,22 +195,22 @@
 <tr class="covered">
 <td class="num">37</td>
 <td class="src"><pre><code class="objc">                }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">38</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">39</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">40</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">41</td>

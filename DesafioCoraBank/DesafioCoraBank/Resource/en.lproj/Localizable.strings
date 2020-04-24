@@ -9,9 +9,46 @@
 /*
     FEATURE - LOGIN
  */
-
 "login_username_placeholder" = "Name or email";
 "login_password_placeholder" = "Password";
 "login_error_invalid" = "Invalid credentials";
 "login_button_access" = "Access my account";
 "login_button_forgot_password" = "Forgot password";
+
+/*
+   FEATURE - ORDER LIST
+ */
+"order_header_hello" = "Hello, ";
+"order_header_title" = "Orders";
+"order_header_subtitle" = "ORDER_COUNT orders, adding up to ORDER_TOTAL_VALUE";
+"order_status_paid" = "Paid";
+"order_status_not_paid" = "Not Paid";
+"order_status_waiting" = "Waiting";
+"order_type_credit" = "Credit card";
+"order_buyer" = "Buyer";
+"order_email" = "Email";
+"order_created_at" = "Created at";
+"order_status" = "Status";
+"order_financial_summary" = "Financial summary";
+"order_total_value" = "Total value";
+"order_taxes" = "Taxes";
+"order_my_receipt" = "My receipt";
+"order_sandbox" = "sandbox";
+
+/*
+   DATE - FRIENDLY DESCRIPTION
+ */
+"time_ago" = "ago";
+"time_year" = "year";
+"time_year_plural" = "years";
+"time_month" = "month";
+"time_month_plural" = "months";
+"time_week" = "week";
+"time_week_plural" = "weeks";
+"time_day" = "day";
+"time_day_plural" = "days";
+"time_hour" = "hour";
+"time_hour_plural" = "hours";
+"time_minute" = "minute";
+"time_minute_plural" = "minutes";
+"time_just_now" = "just now";

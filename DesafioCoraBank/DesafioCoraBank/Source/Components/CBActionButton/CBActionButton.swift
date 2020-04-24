@@ -20,7 +20,7 @@ final class CBActionButton: UIView {
     private lazy var arrowImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "icon_arrow")
+        imageView.image = UIImage(named: "icon-arrow")
         imageView.tintColor = .cbWhite
         imageView.contentMode = .scaleAspectFit
         return imageView

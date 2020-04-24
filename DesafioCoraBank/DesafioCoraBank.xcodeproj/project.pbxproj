@@ -19,6 +19,35 @@
 		D86F24192450BCE500B9B0FD /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24182450BCE500B9B0FD /* LoginPresenterTests.swift */; };
 		D86F241B2450C45300B9B0FD /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F241A2450C45300B9B0FD /* LoginViewControllerTests.swift */; };
 		D86F241E2450EBD000B9B0FD /* AuthRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F241D2450EBD000B9B0FD /* AuthRepositoryTests.swift */; };
+		D86F24272451C0F200B9B0FD /* OrderListInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24202451C0F200B9B0FD /* OrderListInteractorProtocol.swift */; };
+		D86F24282451C0F200B9B0FD /* OrderListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24212451C0F200B9B0FD /* OrderListRouter.swift */; };
+		D86F24292451C0F200B9B0FD /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24222451C0F200B9B0FD /* OrderListViewController.swift */; };
+		D86F242A2451C0F200B9B0FD /* OrderListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24232451C0F200B9B0FD /* OrderListInteractor.swift */; };
+		D86F242B2451C0F200B9B0FD /* OrderListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24242451C0F200B9B0FD /* OrderListPresenter.swift */; };
+		D86F242C2451C0F200B9B0FD /* OrderListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24252451C0F200B9B0FD /* OrderListPresenterProtocol.swift */; };
+		D86F242D2451C0F200B9B0FD /* OrderListViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24262451C0F200B9B0FD /* OrderListViewControllerProtocol.swift */; };
+		D86F24352451C2CE00B9B0FD /* OrderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24342451C2CE00B9B0FD /* OrderCellViewModel.swift */; };
+		D86F24372451C2DA00B9B0FD /* OrderHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24362451C2DA00B9B0FD /* OrderHeaderViewModel.swift */; };
+		D86F24392451C2EF00B9B0FD /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24382451C2EF00B9B0FD /* OrderEntity.swift */; };
+		D86F243B2451C30000B9B0FD /* OrderListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F243A2451C30000B9B0FD /* OrderListEntity.swift */; };
+		D86F24412451CC8B00B9B0FD /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24402451CC8B00B9B0FD /* OrderRepository.swift */; };
+		D86F24442451ED9600B9B0FD /* DateFriendly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24432451ED9600B9B0FD /* DateFriendly.swift */; };
+		D86F244D2451F66000B9B0FD /* OrderDetailInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24462451F66000B9B0FD /* OrderDetailInteractorProtocol.swift */; };
+		D86F244E2451F66000B9B0FD /* OrderDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24472451F66000B9B0FD /* OrderDetailRouter.swift */; };
+		D86F244F2451F66000B9B0FD /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24482451F66000B9B0FD /* OrderDetailViewController.swift */; };
+		D86F24502451F66000B9B0FD /* OrderDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24492451F66000B9B0FD /* OrderDetailInteractor.swift */; };
+		D86F24512451F66000B9B0FD /* OrderDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F244A2451F66000B9B0FD /* OrderDetailPresenter.swift */; };
+		D86F24522451F66000B9B0FD /* OrderDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F244B2451F66000B9B0FD /* OrderDetailPresenterProtocol.swift */; };
+		D86F24532451F66000B9B0FD /* OrderDetailViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F244C2451F66000B9B0FD /* OrderDetailViewControllerProtocol.swift */; };
+		D86F245F2452014900B9B0FD /* OrderListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F245E2452014900B9B0FD /* OrderListInteractorTests.swift */; };
+		D86F24612452015B00B9B0FD /* OrderDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24602452015B00B9B0FD /* OrderDetailInteractorTests.swift */; };
+		D86F24632452016900B9B0FD /* OrderListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24622452016900B9B0FD /* OrderListPresenterTests.swift */; };
+		D86F24652452019900B9B0FD /* OrderDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24642452019900B9B0FD /* OrderDetailPresenterTests.swift */; };
+		D87088EE2452527400C4438F /* OrderDetailIconInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87088ED2452527400C4438F /* OrderDetailIconInfoViewModel.swift */; };
+		D87088F0245252A600C4438F /* OrderDetailSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87088EF245252A600C4438F /* OrderDetailSectionHeaderViewModel.swift */; };
+		D87088F2245252C600C4438F /* OrderDetailTextInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87088F1245252C600C4438F /* OrderDetailTextInfoViewModel.swift */; };
+		D87088F42452530F00C4438F /* OrderDetailSandboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87088F32452530F00C4438F /* OrderDetailSandboxViewModel.swift */; };
+		D87088F62452738300C4438F /* OrderRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87088F52452738300C4438F /* OrderRepositoryTests.swift */; };
 		D8736423244D04FA00ACFC52 /* CBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8736422244D04FA00ACFC52 /* CBTextField.swift */; };
 		D8736426244E0CAD00ACFC52 /* CBActionButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8736425244E0CAD00ACFC52 /* CBActionButtonSpec.swift */; };
 		D873642C244E21A300ACFC52 /* CBTextFieldSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873642B244E21A300ACFC52 /* CBTextFieldSpec.swift */; };
@@ -107,6 +136,35 @@
 		D86F24182450BCE500B9B0FD /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		D86F241A2450C45300B9B0FD /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		D86F241D2450EBD000B9B0FD /* AuthRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryTests.swift; sourceTree = "<group>"; };
+		D86F24202451C0F200B9B0FD /* OrderListInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListInteractorProtocol.swift; sourceTree = "<group>"; };
+		D86F24212451C0F200B9B0FD /* OrderListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListRouter.swift; sourceTree = "<group>"; };
+		D86F24222451C0F200B9B0FD /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		D86F24232451C0F200B9B0FD /* OrderListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListInteractor.swift; sourceTree = "<group>"; };
+		D86F24242451C0F200B9B0FD /* OrderListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListPresenter.swift; sourceTree = "<group>"; };
+		D86F24252451C0F200B9B0FD /* OrderListPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListPresenterProtocol.swift; sourceTree = "<group>"; };
+		D86F24262451C0F200B9B0FD /* OrderListViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewControllerProtocol.swift; sourceTree = "<group>"; };
+		D86F24342451C2CE00B9B0FD /* OrderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellViewModel.swift; sourceTree = "<group>"; };
+		D86F24362451C2DA00B9B0FD /* OrderHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderViewModel.swift; sourceTree = "<group>"; };
+		D86F24382451C2EF00B9B0FD /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
+		D86F243A2451C30000B9B0FD /* OrderListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListEntity.swift; sourceTree = "<group>"; };
+		D86F24402451CC8B00B9B0FD /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
+		D86F24432451ED9600B9B0FD /* DateFriendly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFriendly.swift; sourceTree = "<group>"; };
+		D86F24462451F66000B9B0FD /* OrderDetailInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailInteractorProtocol.swift; sourceTree = "<group>"; };
+		D86F24472451F66000B9B0FD /* OrderDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailRouter.swift; sourceTree = "<group>"; };
+		D86F24482451F66000B9B0FD /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		D86F24492451F66000B9B0FD /* OrderDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailInteractor.swift; sourceTree = "<group>"; };
+		D86F244A2451F66000B9B0FD /* OrderDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailPresenter.swift; sourceTree = "<group>"; };
+		D86F244B2451F66000B9B0FD /* OrderDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailPresenterProtocol.swift; sourceTree = "<group>"; };
+		D86F244C2451F66000B9B0FD /* OrderDetailViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewControllerProtocol.swift; sourceTree = "<group>"; };
+		D86F245E2452014900B9B0FD /* OrderListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListInteractorTests.swift; sourceTree = "<group>"; };
+		D86F24602452015B00B9B0FD /* OrderDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailInteractorTests.swift; sourceTree = "<group>"; };
+		D86F24622452016900B9B0FD /* OrderListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListPresenterTests.swift; sourceTree = "<group>"; };
+		D86F24642452019900B9B0FD /* OrderDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailPresenterTests.swift; sourceTree = "<group>"; };
+		D87088ED2452527400C4438F /* OrderDetailIconInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailIconInfoViewModel.swift; sourceTree = "<group>"; };
+		D87088EF245252A600C4438F /* OrderDetailSectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailSectionHeaderViewModel.swift; sourceTree = "<group>"; };
+		D87088F1245252C600C4438F /* OrderDetailTextInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailTextInfoViewModel.swift; sourceTree = "<group>"; };
+		D87088F32452530F00C4438F /* OrderDetailSandboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailSandboxViewModel.swift; sourceTree = "<group>"; };
+		D87088F52452738300C4438F /* OrderRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepositoryTests.swift; sourceTree = "<group>"; };
 		D8736422244D04FA00ACFC52 /* CBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTextField.swift; sourceTree = "<group>"; };
 		D8736425244E0CAD00ACFC52 /* CBActionButtonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBActionButtonSpec.swift; sourceTree = "<group>"; };
 		D873642B244E21A300ACFC52 /* CBTextFieldSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTextFieldSpec.swift; sourceTree = "<group>"; };
@@ -205,8 +263,165 @@
 			isa = PBXGroup;
 			children = (
 				D86F241D2450EBD000B9B0FD /* AuthRepositoryTests.swift */,
+				D87088F52452738300C4438F /* OrderRepositoryTests.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		D86F241F2451C0BD00B9B0FD /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+				D86F242E2451C0FA00B9B0FD /* View */,
+				D86F24312451C11700B9B0FD /* Interactor */,
+				D86F24322451C11D00B9B0FD /* Presenter */,
+				D86F24332451C12200B9B0FD /* Router */,
+			);
+			path = OrderList;
+			sourceTree = "<group>";
+		};
+		D86F242E2451C0FA00B9B0FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D86F242F2451C10500B9B0FD /* Controller */,
+				D86F24302451C10B00B9B0FD /* CodeView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D86F242F2451C10500B9B0FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24222451C0F200B9B0FD /* OrderListViewController.swift */,
+				D86F24262451C0F200B9B0FD /* OrderListViewControllerProtocol.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D86F24302451C10B00B9B0FD /* CodeView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodeView;
+			sourceTree = "<group>";
+		};
+		D86F24312451C11700B9B0FD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24232451C0F200B9B0FD /* OrderListInteractor.swift */,
+				D86F24202451C0F200B9B0FD /* OrderListInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D86F24322451C11D00B9B0FD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24242451C0F200B9B0FD /* OrderListPresenter.swift */,
+				D86F24252451C0F200B9B0FD /* OrderListPresenterProtocol.swift */,
+				D86F24342451C2CE00B9B0FD /* OrderCellViewModel.swift */,
+				D86F24362451C2DA00B9B0FD /* OrderHeaderViewModel.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D86F24332451C12200B9B0FD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24212451C0F200B9B0FD /* OrderListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D86F24422451ED7C00B9B0FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24432451ED9600B9B0FD /* DateFriendly.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D86F24452451F64C00B9B0FD /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24542451F66900B9B0FD /* View */,
+				D86F24572451F68D00B9B0FD /* Interactor */,
+				D86F24582451F69200B9B0FD /* Presenter */,
+				D86F24592451F69800B9B0FD /* Router */,
+			);
+			path = OrderDetail;
+			sourceTree = "<group>";
+		};
+		D86F24542451F66900B9B0FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24552451F66E00B9B0FD /* Controller */,
+				D86F24562451F67300B9B0FD /* CodeView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D86F24552451F66E00B9B0FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24482451F66000B9B0FD /* OrderDetailViewController.swift */,
+				D86F244C2451F66000B9B0FD /* OrderDetailViewControllerProtocol.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D86F24562451F67300B9B0FD /* CodeView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodeView;
+			sourceTree = "<group>";
+		};
+		D86F24572451F68D00B9B0FD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24492451F66000B9B0FD /* OrderDetailInteractor.swift */,
+				D86F24462451F66000B9B0FD /* OrderDetailInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D86F24582451F69200B9B0FD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D86F244A2451F66000B9B0FD /* OrderDetailPresenter.swift */,
+				D86F244B2451F66000B9B0FD /* OrderDetailPresenterProtocol.swift */,
+				D87088ED2452527400C4438F /* OrderDetailIconInfoViewModel.swift */,
+				D87088EF245252A600C4438F /* OrderDetailSectionHeaderViewModel.swift */,
+				D87088F1245252C600C4438F /* OrderDetailTextInfoViewModel.swift */,
+				D87088F32452530F00C4438F /* OrderDetailSandboxViewModel.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D86F24592451F69800B9B0FD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24472451F66000B9B0FD /* OrderDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D86F245C2451FEDB00B9B0FD /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+				D86F245E2452014900B9B0FD /* OrderListInteractorTests.swift */,
+				D86F24622452016900B9B0FD /* OrderListPresenterTests.swift */,
+			);
+			path = OrderList;
+			sourceTree = "<group>";
+		};
+		D86F245D2451FF1600B9B0FD /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D86F24602452015B00B9B0FD /* OrderDetailInteractorTests.swift */,
+				D86F24642452019900B9B0FD /* OrderDetailPresenterTests.swift */,
+			);
+			path = OrderDetail;
 			sourceTree = "<group>";
 		};
 		D8736424244E0C9700ACFC52 /* Components */ = {
@@ -241,6 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				D8173D642450735200C12343 /* UserEntity.swift */,
+				D86F24382451C2EF00B9B0FD /* OrderEntity.swift */,
+				D86F243A2451C30000B9B0FD /* OrderListEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -249,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				D8173D682450745C00C12343 /* AuthRepository.swift */,
+				D86F24402451CC8B00B9B0FD /* OrderRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -293,6 +511,8 @@
 			isa = PBXGroup;
 			children = (
 				D873644D244F4E6800ACFC52 /* Login */,
+				D86F245C2451FEDB00B9B0FD /* OrderList */,
+				D86F245D2451FF1600B9B0FD /* OrderDetail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -417,6 +637,7 @@
 				D8E84AF1244B9008001D313D /* Data */,
 				D8E84AF0244B8FFD001D313D /* Features */,
 				D8D6CFE2244CF6CC002DE152 /* Components */,
+				D86F24422451ED7C00B9B0FD /* Extensions */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -445,6 +666,8 @@
 			isa = PBXGroup;
 			children = (
 				D873644C244F4E1600ACFC52 /* Login */,
+				D86F241F2451C0BD00B9B0FD /* OrderList */,
+				D86F24452451F64C00B9B0FD /* OrderDetail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -715,23 +938,47 @@
 				D8736448244F4D6400ACFC52 /* LoginLogoView.swift in Sources */,
 				D8173D692450745C00C12343 /* AuthRepository.swift in Sources */,
 				D86F2410245096D000B9B0FD /* CBLoading.swift in Sources */,
+				D86F24272451C0F200B9B0FD /* OrderListInteractorProtocol.swift in Sources */,
+				D86F242C2451C0F200B9B0FD /* OrderListPresenterProtocol.swift in Sources */,
+				D86F243B2451C30000B9B0FD /* OrderListEntity.swift in Sources */,
+				D86F24522451F66000B9B0FD /* OrderDetailPresenterProtocol.swift in Sources */,
+				D86F242D2451C0F200B9B0FD /* OrderListViewControllerProtocol.swift in Sources */,
+				D86F244D2451F66000B9B0FD /* OrderDetailInteractorProtocol.swift in Sources */,
+				D86F24372451C2DA00B9B0FD /* OrderHeaderViewModel.swift in Sources */,
+				D86F24352451C2CE00B9B0FD /* OrderCellViewModel.swift in Sources */,
+				D86F244E2451F66000B9B0FD /* OrderDetailRouter.swift in Sources */,
 				D873643C244F46DB00ACFC52 /* LoginPresenterProtocol.swift in Sources */,
 				D8173D652450735200C12343 /* UserEntity.swift in Sources */,
 				D8736439244F46DB00ACFC52 /* LoginViewController.swift in Sources */,
+				D86F24292451C0F200B9B0FD /* OrderListViewController.swift in Sources */,
 				D873643D244F46DB00ACFC52 /* LoginViewControllerProtocol.swift in Sources */,
+				D86F24502451F66000B9B0FD /* OrderDetailInteractor.swift in Sources */,
 				D873643B244F46DB00ACFC52 /* LoginPresenter.swift in Sources */,
 				D8D6CFE9244CF915002DE152 /* Fonts.swift in Sources */,
 				D8D6CFE7244CF90C002DE152 /* Colors.swift in Sources */,
 				D8E84ABC244B8BD1001D313D /* AppDelegate.swift in Sources */,
+				D87088F2245252C600C4438F /* OrderDetailTextInfoViewModel.swift in Sources */,
+				D86F24512451F66000B9B0FD /* OrderDetailPresenter.swift in Sources */,
+				D86F24392451C2EF00B9B0FD /* OrderEntity.swift in Sources */,
+				D86F24412451CC8B00B9B0FD /* OrderRepository.swift in Sources */,
+				D86F242A2451C0F200B9B0FD /* OrderListInteractor.swift in Sources */,
 				D873644A244F4D7200ACFC52 /* LoginAuthView.swift in Sources */,
 				D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */,
 				D8D6CFED244CF932002DE152 /* Margins.swift in Sources */,
 				D8DC12EC244D01ED009C695E /* CBActionButton.swift in Sources */,
 				D8DC12EA244CFFA5009C695E /* CodeView.swift in Sources */,
+				D86F24442451ED9600B9B0FD /* DateFriendly.swift in Sources */,
 				D8736430244E446A00ACFC52 /* LoginView.swift in Sources */,
 				D873643A244F46DB00ACFC52 /* LoginInteractor.swift in Sources */,
+				D87088F0245252A600C4438F /* OrderDetailSectionHeaderViewModel.swift in Sources */,
+				D86F244F2451F66000B9B0FD /* OrderDetailViewController.swift in Sources */,
+				D86F24532451F66000B9B0FD /* OrderDetailViewControllerProtocol.swift in Sources */,
+				D87088EE2452527400C4438F /* OrderDetailIconInfoViewModel.swift in Sources */,
+				D86F242B2451C0F200B9B0FD /* OrderListPresenter.swift in Sources */,
+				D86F24282451C0F200B9B0FD /* OrderListRouter.swift in Sources */,
 				D873643E244F46DB00ACFC52 /* LoginRouter.swift in Sources */,
 				D8736438244F46DB00ACFC52 /* LoginInteractorProtocol.swift in Sources */,
+				D87088F42452530F00C4438F /* OrderDetailSandboxViewModel.swift in Sources */,
 				D8736423244D04FA00ACFC52 /* CBTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,12 +991,17 @@
 				D86F24192450BCE500B9B0FD /* LoginPresenterTests.swift in Sources */,
 				D873644F244F4E8A00ACFC52 /* LoginLogoViewSpec.swift in Sources */,
 				D873642C244E21A300ACFC52 /* CBTextFieldSpec.swift in Sources */,
+				D87088F62452738300C4438F /* OrderRepositoryTests.swift in Sources */,
+				D86F24612452015B00B9B0FD /* OrderDetailInteractorTests.swift in Sources */,
 				D8736451244F4E9400ACFC52 /* LoginViewSpec.swift in Sources */,
+				D86F24652452019900B9B0FD /* OrderDetailPresenterTests.swift in Sources */,
 				D8736426244E0CAD00ACFC52 /* CBActionButtonSpec.swift in Sources */,
 				D86F24172450BAFC00B9B0FD /* LoginInteractorTests.swift in Sources */,
 				D8736453244F4EA000ACFC52 /* LoginAuthViewSpec.swift in Sources */,
+				D86F245F2452014900B9B0FD /* OrderListInteractorTests.swift in Sources */,
 				D86F24122450985D00B9B0FD /* CBLoadingSpec.swift in Sources */,
 				D86F241E2450EBD000B9B0FD /* AuthRepositoryTests.swift in Sources */,
+				D86F24632452016900B9B0FD /* OrderListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,3 +15,41 @@
 "login_error_invalid" = "Usuário ou sennha inválidos";
 "login_button_access" = "Acessar minha conta";
 "login_button_forgot_password" = "Esqueci minha senha";
+
+/*
+   FEATURE - ORDER LIST
+ */
+"order_header_hello" = "Olá, ";
+"order_header_title" = "Pedidos";
+"order_header_subtitle" = "ORDER_COUNT pedidos, totalizando ORDER_TOTAL_VALUE";
+"order_status_paid" = "Pago";
+"order_status_not_paid" = "Não Pago";
+"order_status_waiting" = "Aguardando";
+"order_type_credit" = "Cartão de crédito";
+"order_buyer" = "Comprador";
+"order_email" = "Email";
+"order_created_at" = "Criado em";
+"order_status" = "Status";
+"order_financial_summary" = "Resumo financeiro";
+"order_total_value" = "Valor total";
+"order_taxes" = "Taxas";
+"order_my_receipt" = "Meu recebimento";
+"order_sandbox" = "sandbox";
+
+/*
+   DATE - FRIENDLY DESCRIPTION
+ */
+"time_ago" = "atrás";
+"time_year" = "ano";
+"time_year_plural" = "anos";
+"time_month" = "mês";
+"time_month_plural" = "meses";
+"time_week" = "semana";
+"time_week_plural" = "semanas";
+"time_day" = "dia";
+"time_day_plural" = "dias";
+"time_hour" = "hora";
+"time_hour_plural" = "horas";
+"time_minute" = "minuto";
+"time_minute_plural" = "minutos";
+"time_just_now" = "agora";
