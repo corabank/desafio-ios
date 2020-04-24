@@ -24,6 +24,7 @@
 "order_status_paid" = "Paid";
 "order_status_not_paid" = "Not Paid";
 "order_status_waiting" = "Waiting";
+"order_header_back" = "Back";
 "order_type_credit" = "Credit card";
 "order_buyer" = "Buyer";
 "order_email" = "Email";

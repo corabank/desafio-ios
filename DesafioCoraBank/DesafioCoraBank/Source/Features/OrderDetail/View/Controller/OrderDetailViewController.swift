@@ -26,7 +26,7 @@ class OrderDetailViewController: DKViewController<OrderDetailRouter> {
 }
 
 extension OrderDetailViewController: OrderDetailViewControllerProtocol {
-    func addValueCell(viewModel: OrderCellViewModel) {
+    func addValueCell(viewModel: OrderValueViewModel) {
         
     }
     

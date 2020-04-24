@@ -25,6 +25,7 @@
 "order_status_paid" = "Pago";
 "order_status_not_paid" = "Não Pago";
 "order_status_waiting" = "Aguardando";
+"order_header_back" = "Voltar";
 "order_type_credit" = "Cartão de crédito";
 "order_buyer" = "Comprador";
 "order_email" = "Email";

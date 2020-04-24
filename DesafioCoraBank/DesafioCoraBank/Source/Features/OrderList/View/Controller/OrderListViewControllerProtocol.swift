@@ -10,7 +10,7 @@ import Foundation
 import DungeonKit
 
 protocol OrderListViewControllerProtocol: DKAbstractView {
-    func updateHeader(viewModel: OrderHeaderViewModel)
-    func updateOrderList(viewModel: [OrderCellViewModel])
+    func updateHeader(viewModel: OrderListHeaderViewModel)
+    func updateOrderList(viewModel: [OrderValueViewModel])
     func alertErrorLoadingData()
 }

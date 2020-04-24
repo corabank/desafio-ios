@@ -27,7 +27,7 @@ extension OrderDetailPresenter: OrderDetailPresenterProtocol {
             return
         }
         
-        let valueViewModel = OrderCellViewModel(orderEntity, showPaymentMethod: true)
+        let valueViewModel = OrderValueViewModel(orderEntity, showPaymentMethod: true)
         sync { self.view?.addValueCell(viewModel: valueViewModel) }
         
         let buyerViewModel = OrderDetailIconInfoViewModel(iconImageName: "icon-login", fieldText: "order_buyer".localized, valueText: orderEntity.buyerName ?? "", valueColor: .cbBlack)
@@ -45,14 +45,14 @@ extension OrderDetailPresenter: OrderDetailPresenterProtocol {
         let sectionHeaderViewModel = OrderDetailSectionHeaderViewModel(sectionTitle: "order_financial_summary".localized)
         sync { self.view?.addSectionHeaderCell(viewModel: sectionHeaderViewModel) }
         
-        let totalValueTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_total_value".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.value ?? 0)), fontSize: 14, fontColor: .cbBlack)
+        let totalValueTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_total_value".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.value ?? 0)), fontSize: 12, fontColor: .cbBlack)
         sync { self.view?.addTextInfoCell(viewModel: totalValueTextInfoViewModel) }
         
-        let taxesTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_taxes".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.taxes ?? 0)), fontSize: 14, fontColor: .cbRed)
+        let taxesTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_taxes".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.taxes ?? 0)), fontSize: 12, fontColor: .cbRed)
         sync { self.view?.addTextInfoCell(viewModel: taxesTextInfoViewModel) }
         
         let receipt = (orderEntity.value ?? 0) - (orderEntity.taxes ?? 0)
-        let receiptTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_my_receipt".localized, currency: "R$", valueText: String(format: "%.02f", receipt), fontSize: 18, fontColor: .cbLightBlue)
+        let receiptTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_my_receipt".localized, currency: "R$", valueText: String(format: "%.02f", receipt), fontSize: 16, fontColor: .cbLightBlue)
         sync { self.view?.addTextInfoCell(viewModel: receiptTextInfoViewModel) }
         
         let sandboxViewModel = OrderDetailSandboxViewModel(sandbox: "\("order_sandbox".localized): \(orderEntity.sandbox ?? "")")

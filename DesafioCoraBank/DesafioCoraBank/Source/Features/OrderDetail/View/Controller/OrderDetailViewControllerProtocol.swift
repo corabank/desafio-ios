@@ -10,7 +10,7 @@ import Foundation
 import DungeonKit
 
 protocol OrderDetailViewControllerProtocol: DKAbstractView {
-    func addValueCell(viewModel: OrderCellViewModel)
+    func addValueCell(viewModel: OrderValueViewModel)
     func addIconInfoCell(viewModel: OrderDetailIconInfoViewModel)
     func addSectionHeaderCell(viewModel: OrderDetailSectionHeaderViewModel)
     func addTextInfoCell(viewModel: OrderDetailTextInfoViewModel)

@@ -159,7 +159,7 @@
 </tr>
 <tr class="covered">
 <td class="num">30</td>
-<td class="src"><pre><code class="objc">        let valueViewModel = OrderCellViewModel(orderEntity, showPaymentMethod: true)</code></pre></td>
+<td class="src"><pre><code class="objc">        let valueViewModel = OrderValueViewModel(orderEntity, showPaymentMethod: true)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -249,7 +249,7 @@
 </tr>
 <tr class="covered">
 <td class="num">48</td>
-<td class="src"><pre><code class="objc">        let totalValueTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_total_value".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.value ?? 0)), fontSize: 14, fontColor: .cbBlack)</code></pre></td>
+<td class="src"><pre><code class="objc">        let totalValueTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_total_value".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.value ?? 0)), fontSize: 12, fontColor: .cbBlack)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -264,7 +264,7 @@
 </tr>
 <tr class="covered">
 <td class="num">51</td>
-<td class="src"><pre><code class="objc">        let taxesTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_taxes".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.taxes ?? 0)), fontSize: 14, fontColor: .cbRed)</code></pre></td>
+<td class="src"><pre><code class="objc">        let taxesTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_taxes".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.taxes ?? 0)), fontSize: 12, fontColor: .cbRed)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -284,7 +284,7 @@
 </tr>
 <tr class="covered">
 <td class="num">55</td>
-<td class="src"><pre><code class="objc">        let receiptTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_my_receipt".localized, currency: "R$", valueText: String(format: "%.02f", receipt), fontSize: 18, fontColor: .cbLightBlue)</code></pre></td>
+<td class="src"><pre><code class="objc">        let receiptTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_my_receipt".localized, currency: "R$", valueText: String(format: "%.02f", receipt), fontSize: 16, fontColor: .cbLightBlue)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">

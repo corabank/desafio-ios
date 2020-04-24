@@ -120,13 +120,13 @@ class OrderListPresenterTests: XCTestCase {
 }
 
 extension OrderListPresenterTests: OrderListViewControllerProtocol {
-    func updateHeader(viewModel: OrderHeaderViewModel) {
+    func updateHeader(viewModel: OrderListHeaderViewModel) {
         let subtitle = "320 orders, adding up to R$ 115345.45"
         XCTAssertEqual(viewModel.subtitle.string, subtitle, "Subtitle should be built correctly.")
         headerPromise?.fulfill()
     }
     
-    func updateOrderList(viewModel: [OrderCellViewModel]) {
+    func updateOrderList(viewModel: [OrderValueViewModel]) {
         
         XCTAssertNotNil(viewModel, "Should have a View Model list.")
         XCTAssertFalse(viewModel.isEmpty, "The list should not be empty.")

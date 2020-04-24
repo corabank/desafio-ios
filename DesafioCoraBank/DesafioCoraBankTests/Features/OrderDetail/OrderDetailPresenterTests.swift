@@ -75,7 +75,7 @@ class OrderDetailPresenterTests: XCTestCase {
  */
 
 extension OrderDetailPresenterTests: OrderDetailViewControllerProtocol {
-    func addValueCell(viewModel: OrderCellViewModel) {
+    func addValueCell(viewModel: OrderValueViewModel) {
         guard viewModel.value == "R$100.10" else { return }
         
         XCTAssertNotNil(viewModel, "Should have a View Model.")
@@ -111,7 +111,7 @@ extension OrderDetailPresenterTests: OrderDetailViewControllerProtocol {
         XCTAssertEqual(viewModel.fieldText, "Total value", "Should have a valid field.")
         XCTAssertEqual(viewModel.currency, "R$", "Should have a valid currency.")
         XCTAssertEqual(viewModel.valueText, "100.10", "Should have a valid value.")
-        XCTAssertEqual(viewModel.fontSize, 14 , "Should have the correct font size.")
+        XCTAssertEqual(viewModel.fontSize, 12 , "Should have the correct font size.")
         XCTAssertEqual(viewModel.fontColor, .cbBlack, "Should have the correct color.")
         
         textInfoCellPromise?.fulfill()

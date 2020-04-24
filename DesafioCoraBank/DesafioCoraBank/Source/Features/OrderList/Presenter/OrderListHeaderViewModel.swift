@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct OrderHeaderViewModel {
+public struct OrderListHeaderViewModel {
     let subtitle: NSAttributedString
     
     init(_ entity: OrderListEntity) {
@@ -19,10 +19,10 @@ public struct OrderHeaderViewModel {
             .replacingOccurrences(of: "ORDER_COUNT", with: "\(entity.orderCount ?? 0)")
             .replacingOccurrences(of: "ORDER_TOTAL_VALUE", with: totalValue)
         
-        let regularAttributes = [NSAttributedString.Key.font: UIFont.cbRegular(14), NSAttributedString.Key.foregroundColor: UIColor.darkGray]
-        let boldAttributes = [NSAttributedString.Key.font: UIFont.cbBold(14), NSAttributedString.Key.foregroundColor: UIColor.darkGray]
-        let attributedText = NSMutableAttributedString(string: regularText, attributes: regularAttributes)
-        attributedText.addAttributes(boldAttributes, range: NSRange(location: regularText.count - totalValue.count, length: totalValue.count))
+        let lightAttributes = [NSAttributedString.Key.font: UIFont.cbLight(14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        let regularAttributes = [NSAttributedString.Key.font: UIFont.cbRegular(14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        let attributedText = NSMutableAttributedString(string: regularText, attributes: lightAttributes)
+        attributedText.addAttributes(regularAttributes, range: NSRange(location: regularText.count - totalValue.count, length: totalValue.count))
         
         subtitle = attributedText
     }

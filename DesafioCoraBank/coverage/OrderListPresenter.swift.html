@@ -139,7 +139,7 @@
 </tr>
 <tr class="covered">
 <td class="num">26</td>
-<td class="src"><pre><code class="objc">        let headerViewModel = OrderHeaderViewModel(orderListEntity)</code></pre></td>
+<td class="src"><pre><code class="objc">        let headerViewModel = OrderListHeaderViewModel(orderListEntity)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -154,7 +154,7 @@
 </tr>
 <tr class="covered">
 <td class="num">29</td>
-<td class="src"><pre><code class="objc">        var cellViewModelList: [OrderCellViewModel] = []</code></pre></td>
+<td class="src"><pre><code class="objc">        var cellViewModelList: [OrderValueViewModel] = []</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -164,7 +164,7 @@
 </tr>
 <tr class="covered">
 <td class="num">31</td>
-<td class="src"><pre><code class="objc">            cellViewModelList.append(OrderCellViewModel(orderEntity))</code></pre></td>
+<td class="src"><pre><code class="objc">            cellViewModelList.append(OrderValueViewModel(orderEntity))</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
@@ -174,7 +174,7 @@
 </tr>
 <tr class="covered">
 <td class="num">33</td>
-<td class="src"><pre><code class="objc">        sync { self.view?.updateOrderList(viewModel: cellViewModelList) } </code></pre></td>
+<td class="src"><pre><code class="objc">        sync { self.view?.updateOrderList(viewModel: cellViewModelList) }</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">

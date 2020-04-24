@@ -26,11 +26,11 @@ class OrderListViewController: DKViewController<OrderListRouter> {
 }
 
 extension OrderListViewController: OrderListViewControllerProtocol {
-    func updateHeader(viewModel: OrderHeaderViewModel) {
+    func updateHeader(viewModel: OrderListHeaderViewModel) {
         
     }
     
-    func updateOrderList(viewModel: [OrderCellViewModel]) {
+    func updateOrderList(viewModel: [OrderValueViewModel]) {
         
     }
     

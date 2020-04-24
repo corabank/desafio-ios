@@ -23,13 +23,13 @@ extension OrderListPresenter: OrderListPresenterProtocol {
             return
         }
         
-        let headerViewModel = OrderHeaderViewModel(orderListEntity)
+        let headerViewModel = OrderListHeaderViewModel(orderListEntity)
         sync{ self.view?.updateHeader(viewModel: headerViewModel) }
         
-        var cellViewModelList: [OrderCellViewModel] = []
+        var cellViewModelList: [OrderValueViewModel] = []
         for orderEntity in orderList {
-            cellViewModelList.append(OrderCellViewModel(orderEntity))
+            cellViewModelList.append(OrderValueViewModel(orderEntity))
         }
-        sync { self.view?.updateOrderList(viewModel: cellViewModelList) } 
+        sync { self.view?.updateOrderList(viewModel: cellViewModelList) }
     }
 }

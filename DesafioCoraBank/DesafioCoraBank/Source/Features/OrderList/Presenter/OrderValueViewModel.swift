@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct OrderCellViewModel {
+public struct OrderValueViewModel {
     
     let iconImageName: String
     let value: String
@@ -19,19 +19,19 @@ public struct OrderCellViewModel {
     let friendlyDate: String
     
     init(_ entity: OrderEntity, showPaymentMethod: Bool = false) {
-        iconImageName = "icon-order-cell"
+        iconImageName = "icon-card"
         value = String(format: "R$%.02f", (entity.value ?? 0))
         
         if showPaymentMethod {
             subtitle = entity.paymentMethod?.rawValue.localized ?? ""
             status = ""
             statusColor = .white
+            friendlyDate = ""
         } else {
             subtitle = entity.email ?? ""
             status = entity.status?.rawValue.localized ?? ""
             statusColor = entity.status?.statusColor ?? .cbWhite
+            friendlyDate = entity.date?.friendlyDescription() ?? ""
         }
-        
-        friendlyDate = entity.date?.friendlyDescription() ?? ""
     }
 }
