@@ -11,8 +11,11 @@ import UIKit
 class OrderListTableViewDataSource: NSObject {
     var cells: [OrderValueViewModel] = []
     var onSelect: ((OrderValueViewModel)->Void)?
+    var shouldAnimate: Bool
     
     init(_ tableView: UITableView) {
+        
+        shouldAnimate = true
         super.init()
         
         //tableView.isAccessibilityElement = true
@@ -44,7 +47,10 @@ extension OrderListTableViewDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard let cell = cell as? OrderListTableViewCell else { return }
+        guard
+            let cell = cell as? OrderListTableViewCell,
+            shouldAnimate
+        else { return }
         
         cell.orderValueView.alpha = 0
         cell.orderValueView.transform = CGAffineTransform(translationX: 0, y: 10)
@@ -53,5 +59,9 @@ extension OrderListTableViewDataSource: UITableViewDelegate {
             cell.orderValueView.alpha = 1
             cell.orderValueView.transform = .identity
         })
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        shouldAnimate = false
     }
 }

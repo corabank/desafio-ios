@@ -45,6 +45,7 @@ class LoginViewController: DKViewController<LoginRouter> {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.codeView?.dismissKeyboard()
         view.deregisterFromKeyboardNotifications()
     }
     
@@ -54,22 +55,30 @@ class LoginViewController: DKViewController<LoginRouter> {
     }
     
     private func setupAuthAction() {
-        
         codeView?.actionButton.onTouch = { [weak self] in
-            self?.codeView?.dismissKeyboard()
-            
-            guard
-                let userName = self?.codeView?.authView.loginTextField.text,
-                let password = self?.codeView?.authView.passwordTextField.text,
-                !userName.isEmpty,
-                !password.isEmpty
-            else { return }
-            
-            self?.showLoading(true)
-            self?.async {
-                self?.interactor?.loginUser(userName: userName, password: password)
-            }
+            self?.authAction()
         }
+    }
+    
+    func authAction() {
+        self.codeView?.dismissKeyboard()
+        
+        guard
+            let userName = self.codeView?.authView.loginTextField.text,
+            let password = self.codeView?.authView.passwordTextField.text,
+            !userName.isEmpty,
+            !password.isEmpty
+        else { return }
+        
+        self.showLoading(true)
+        self.async {
+            self.interactor?.loginUser(userName: userName, password: password)
+        }
+    }
+    
+    public func showError() {
+        codeView?.authView.errorText = "login_error_invalid".localized
+        codeView?.shake()
     }
 }
 
@@ -80,8 +89,7 @@ extension LoginViewController: LoginViewControllerProtocol {
     }
     
     func loginFailed() {
-        codeView?.authView.errorText = "login_error_invalid".localized
-        codeView?.shake()
+        showError()
     }
     
     func showLoading(_ visible: Bool) {

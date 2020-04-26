@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "OrderListTableViewDataSource.swift" : </span><span class="cov_low">0.00%</span>
+<span>Coverage for "OrderListTableViewDataSource.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(0 of 35 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(43 of 43 relevant lines covered)</h4>
 <h4 class="cov_filepath">DesafioCoraBank/Source/Features/OrderList/View/Controller/OrderListTableViewDataSource.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -67,10 +67,10 @@
 <td class="src"><pre><code class="objc">class OrderListTableViewDataSource: NSObject {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">12</td>
 <td class="src"><pre><code class="objc">    var cells: [OrderValueViewModel] = []</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
 <td class="num">13</td>
@@ -79,221 +79,271 @@
 </tr>
 <tr class="never">
 <td class="num">14</td>
+<td class="src"><pre><code class="objc">    var shouldAnimate: Bool</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">15</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
-<td class="num">15</td>
-<td class="src"><pre><code class="objc">    init(_ tableView: UITableView) {</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">16</td>
-<td class="src"><pre><code class="objc">        super.init()</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">    init(_ tableView: UITableView) {</code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">17</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">18</td>
-<td class="src"><pre><code class="objc">        //tableView.isAccessibilityElement = true</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        shouldAnimate = true</code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">19</td>
-<td class="src"><pre><code class="objc">        tableView.separatorStyle = .none</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        super.init()</code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">20</td>
-<td class="src"><pre><code class="objc">        tableView.rowHeight = 64</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        </code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">21</td>
-<td class="src"><pre><code class="objc">        tableView.register(OrderListTableViewCell.self, forCellReuseIdentifier: "orderCell")</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        //tableView.isAccessibilityElement = true</code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">22</td>
-<td class="src"><pre><code class="objc">        tableView.showsVerticalScrollIndicator = false</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        tableView.separatorStyle = .none</code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">23</td>
-<td class="src"><pre><code class="objc">        tableView.dataSource = self</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        tableView.rowHeight = 64</code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">24</td>
-<td class="src"><pre><code class="objc">        tableView.delegate = self</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        tableView.register(OrderListTableViewCell.self, forCellReuseIdentifier: "orderCell")</code></pre></td>
+<td class="coverage">8x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">25</td>
+<td class="src"><pre><code class="objc">        tableView.showsVerticalScrollIndicator = false</code></pre></td>
+<td class="coverage">8x</td>
+</tr>
+<tr class="covered">
+<td class="num">26</td>
+<td class="src"><pre><code class="objc">        tableView.dataSource = self</code></pre></td>
+<td class="coverage">8x</td>
+</tr>
+<tr class="covered">
+<td class="num">27</td>
+<td class="src"><pre><code class="objc">        tableView.delegate = self</code></pre></td>
+<td class="coverage">8x</td>
+</tr>
+<tr class="covered">
+<td class="num">28</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
-<td class="num">26</td>
+<td class="num">29</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">27</td>
+<td class="num">30</td>
 <td class="src"><pre><code class="objc"></code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">28</td>
+<td class="num">31</td>
 <td class="src"><pre><code class="objc">extension OrderListTableViewDataSource: UITableViewDataSource {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
-<td class="num">29</td>
+<tr class="covered">
+<td class="num">32</td>
 <td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
-<td class="num">30</td>
+<tr class="covered">
+<td class="num">33</td>
 <td class="src"><pre><code class="objc">        return cells.count</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
-<td class="num">31</td>
+<tr class="covered">
+<td class="num">34</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
-<td class="num">32</td>
+<td class="num">35</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
-<td class="num">33</td>
-<td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">34</td>
-<td class="src"><pre><code class="objc">        let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as? OrderListTableViewCell</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">35</td>
-<td class="src"><pre><code class="objc">        cell?.setup(cells[indexPath.row], isFirst: indexPath.row == 0)</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">36</td>
-<td class="src"><pre><code class="objc">        return cell ?? UITableViewCell()</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">37</td>
+<td class="src"><pre><code class="objc">        let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as? OrderListTableViewCell</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">38</td>
+<td class="src"><pre><code class="objc">        cell?.setup(cells[indexPath.row], isFirst: indexPath.row == 0)</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">39</td>
+<td class="src"><pre><code class="objc">        return cell ?? UITableViewCell()</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">40</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
-<td class="num">38</td>
+<td class="num">41</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">39</td>
+<td class="num">42</td>
 <td class="src"><pre><code class="objc"></code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">40</td>
+<td class="num">43</td>
 <td class="src"><pre><code class="objc">extension OrderListTableViewDataSource: UITableViewDelegate {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
-<td class="num">41</td>
+<tr class="covered">
+<td class="num">44</td>
 <td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
-<td class="num">42</td>
+<tr class="covered">
+<td class="num">45</td>
 <td class="src"><pre><code class="objc">        onSelect?(cells[indexPath.row])</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
-<td class="num">43</td>
+<tr class="covered">
+<td class="num">46</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
-<td class="num">44</td>
+<td class="num">47</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
-<td class="num">45</td>
-<td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">46</td>
-<td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">47</td>
-<td class="src"><pre><code class="objc">        guard let cell = cell as? OrderListTableViewCell else { return }</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">48</td>
-<td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">49</td>
-<td class="src"><pre><code class="objc">        cell.orderValueView.alpha = 0</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        </code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">50</td>
-<td class="src"><pre><code class="objc">        cell.orderValueView.transform = CGAffineTransform(translationX: 0, y: 10)</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        guard</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">51</td>
-<td class="src"><pre><code class="objc"></code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">            let cell = cell as? OrderListTableViewCell,</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">52</td>
-<td class="src"><pre><code class="objc">        UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), animations: {</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">            shouldAnimate</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">53</td>
-<td class="src"><pre><code class="objc">            cell.orderValueView.alpha = 1</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        else { return }</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">54</td>
-<td class="src"><pre><code class="objc">            cell.orderValueView.transform = .identity</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        </code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">55</td>
-<td class="src"><pre><code class="objc">        })</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        cell.orderValueView.alpha = 0</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">56</td>
+<td class="src"><pre><code class="objc">        cell.orderValueView.transform = CGAffineTransform(translationX: 0, y: 10)</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">57</td>
+<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">58</td>
+<td class="src"><pre><code class="objc">        UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), animations: {</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">59</td>
+<td class="src"><pre><code class="objc">            cell.orderValueView.alpha = 1</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">60</td>
+<td class="src"><pre><code class="objc">            cell.orderValueView.transform = .identity</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">61</td>
+<td class="src"><pre><code class="objc">        })</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">62</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
-<td class="num">57</td>
+<td class="num">63</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">64</td>
+<td class="src"><pre><code class="objc">    func scrollViewDidScroll(_ scrollView: UIScrollView) {</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">65</td>
+<td class="src"><pre><code class="objc">        shouldAnimate = false</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">66</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="never">
+<td class="num">67</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

@@ -19,7 +19,7 @@ final class OrderValueView: UIView {
         return imageView
     }()
     
-    private lazy var valueLabel: UILabel = {
+    public lazy var valueLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .cbBlack

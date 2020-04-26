@@ -104,7 +104,7 @@
 </tr>
 <tr class="covered">
 <td class="num">19</td>
-<td class="src"><pre><code class="objc">        RogueKit.request(OrderRepository.fetchOrderList, enableMocks: self.enableMocks) { [unowned self] (result: Result&lt;OrderListEntity, Error&gt;) in</code></pre></td>
+<td class="src"><pre><code class="objc">        RogueKit.request(OrderRepository.fetchOrderList, enableMocks: self.enableMocks) { [weak self] (result: Result&lt;OrderListEntity, Error&gt;) in</code></pre></td>
 <td class="coverage">2x</td>
 </tr>
 <tr class="covered">
@@ -125,11 +125,11 @@
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">                sortedOrderList.orderList = sortedOrderList.orderList?.sorted(by: { ($0.date ?? Date()).compare($1.date ?? Date()) == .orderedDescending })</code></pre></td>
-<td class="coverage">230x</td>
+<td class="coverage">236x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
-<td class="src"><pre><code class="objc">                self.presenter?.processOrders(entity: sortedOrderList)</code></pre></td>
+<td class="src"><pre><code class="objc">                self?.presenter?.processOrders(entity: sortedOrderList)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -139,7 +139,7 @@
 </tr>
 <tr class="covered">
 <td class="num">26</td>
-<td class="src"><pre><code class="objc">                self.presenter?.processOrders(entity: nil)</code></pre></td>
+<td class="src"><pre><code class="objc">                self?.presenter?.processOrders(entity: nil)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">

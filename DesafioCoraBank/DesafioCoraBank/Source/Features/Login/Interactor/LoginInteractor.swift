@@ -18,12 +18,12 @@ extension LoginInteractor: LoginInteractorProtocol {
     
     func loginUser(userName: String, password: String) {
         let requestUser = UserEntity(userName: userName, password: password, accessToken: nil)
-        RogueKit.request(AuthRepository.loginUser(user: requestUser), enableMocks: self.enableMocks) { [unowned self] (result: Result<UserEntity, Error>) in
+        RogueKit.request(AuthRepository.loginUser(user: requestUser), enableMocks: self.enableMocks) { [weak self] (result: Result<UserEntity, Error>) in
             switch result {
             case let .success(user):
-                self.presenter?.processLogin(user)
+                self?.presenter?.processLogin(user)
             case .failure(_):
-                self.presenter?.processLoginError()
+                self?.presenter?.processLoginError()
             }
         }
     }

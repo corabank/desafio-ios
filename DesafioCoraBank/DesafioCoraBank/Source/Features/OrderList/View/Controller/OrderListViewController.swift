@@ -16,13 +16,13 @@ class OrderListViewController: DKViewController<OrderListRouter> {
     
     public var user: UserEntity?
     public var codeView: OrderListView?
-    private var dataSource: OrderListTableViewDataSource?
+    public var dataSource: OrderListTableViewDataSource?
     
     override func loadView() {
         super.loadView()
         self.codeView = OrderListView()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .cbDarkBlue
@@ -30,12 +30,12 @@ class OrderListViewController: DKViewController<OrderListRouter> {
         setupNavigation()
         setupTableView()
         setupSelectionAction()
-        refresh()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         codeView?.navigationView.logoImage.isHidden = false
+        self.refresh()
     }
     
     private func setupCodeView() {
@@ -45,7 +45,7 @@ class OrderListViewController: DKViewController<OrderListRouter> {
         codeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         codeView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         codeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        codeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        codeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
     
     private func setupNavigation() {
@@ -58,7 +58,7 @@ class OrderListViewController: DKViewController<OrderListRouter> {
         tableView.reloadData()
     }
     
-    private func setupSelectionAction() {
+    public func setupSelectionAction() {
         dataSource?.onSelect = { [weak self] viewModel in
             self?.router?.showDetail(orderID: viewModel.id)
         }
@@ -73,6 +73,16 @@ class OrderListViewController: DKViewController<OrderListRouter> {
             self.interactor?.fetchOrderList()
         }
     }
+    
+    public func updateDataSource(viewModel: [OrderValueViewModel]) {
+        self.showLoading(false)
+        dataSource?.cells = viewModel
+        codeView?.tableView.reloadData()
+    }
+    
+    public func showError() {
+        self.alert("error_message".localized, title: "error_title".localized)
+    }
 }
 
 extension OrderListViewController: OrderListViewControllerProtocol {
@@ -81,15 +91,11 @@ extension OrderListViewController: OrderListViewControllerProtocol {
     }
     
     func updateOrderList(viewModel: [OrderValueViewModel]) {
-        self.showLoading(false)
-        dataSource?.cells = viewModel
-        codeView?.tableView.reloadData()
+        self.updateDataSource(viewModel: viewModel)
     }
     
     func alertErrorLoadingData() {
-        self.alert("error_message".localized, title: "error_title".localized, okButtonTitle: "error_try_again".localized) {
-            self.refresh()
-        }
+        self.showError()
     }
     
     func showLoading(_ visible: Bool) {

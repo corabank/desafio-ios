@@ -57,10 +57,6 @@ final class OrderDetailTextInfoView: UIView {
         
         fontSize = viewModel.fontSize
     }
-    
-    public func desiredHeight() -> CGFloat {
-        return (fontSize ?? 0 > 15) ? 40 : 30
-    }
 }
 
 extension OrderDetailTextInfoView: CodeView {

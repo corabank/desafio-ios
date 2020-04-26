@@ -23,7 +23,7 @@ class OrderDetailPresenter: DKPresenter {
 extension OrderDetailPresenter: OrderDetailPresenterProtocol {
     func processOrder(entity: OrderEntity?) {
         guard let orderEntity = entity else {
-            self.view?.alertErrorLoadingData()
+            sync { self.view?.alertErrorLoadingData() }
             return
         }
         

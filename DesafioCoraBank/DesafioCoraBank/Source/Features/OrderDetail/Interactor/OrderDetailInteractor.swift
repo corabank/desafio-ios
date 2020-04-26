@@ -17,12 +17,12 @@ class OrderDetailInteractor: DKInteractor {
 extension OrderDetailInteractor: OrderDetailInteractorProtocol {
     func fetchOrderDetail(orderID: String) {
         
-        RogueKit.request(OrderRepository.fetchOrder(orderID: orderID), enableMocks: self.enableMocks) { [unowned self] (result: Result<OrderEntity, Error>) in
+        RogueKit.request(OrderRepository.fetchOrder(orderID: orderID), enableMocks: self.enableMocks) { [weak self] (result: Result<OrderEntity, Error>) in
             switch result {
             case let .success(order):
-                self.presenter?.processOrder(entity: order)
+                self?.presenter?.processOrder(entity: order)
             case .failure(_):
-                self.presenter?.processOrder(entity: nil)
+                self?.presenter?.processOrder(entity: nil)
             }
         }
     }

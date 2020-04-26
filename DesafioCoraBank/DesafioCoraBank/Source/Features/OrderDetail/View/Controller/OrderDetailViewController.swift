@@ -12,7 +12,7 @@ import DungeonKit
 class OrderDetailViewController: DKViewController<OrderDetailRouter> {
     
     fileprivate var interactor: OrderDetailInteractorProtocol? { return self.getAbstractInteractor() as? OrderDetailInteractorProtocol }
-    fileprivate var router: OrderDetailRouter? { return self.getAbstractRouter() as? OrderDetailRouter }
+    //fileprivate var router: OrderDetailRouter? { return self.getAbstractRouter() as? OrderDetailRouter }
     
     public var orderID: String?
     public var codeView: OrderDetailView?
@@ -27,7 +27,11 @@ class OrderDetailViewController: DKViewController<OrderDetailRouter> {
         self.view.backgroundColor = .cbWhite
         setupCodeView()
         setupNavigation()
-        refresh()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.refresh()
     }
     
     private func setupCodeView() {
@@ -54,13 +58,20 @@ class OrderDetailViewController: DKViewController<OrderDetailRouter> {
         async { self.interactor?.fetchOrderDetail(orderID: orderID) }
     }
     
-    private func clearStackView() {
+    public func clearStackView() {
         guard let stackView = codeView?.stackView else { return }
         for view in stackView.arrangedSubviews {
             stackView.removeArrangedSubview(view)
         }
     }
     
+    public func showError() {
+        self.alert("error_message".localized, title: "error_title".localized)
+    }
+    
+    public func updateLoading(_ visible: Bool) {
+        codeView?.loading.isHidden = !visible
+    }
 }
 
 extension OrderDetailViewController: OrderDetailViewControllerProtocol {
@@ -105,12 +116,10 @@ extension OrderDetailViewController: OrderDetailViewControllerProtocol {
     }
     
     func alertErrorLoadingData() {
-        self.alert("error_message".localized, title: "error_title".localized, okButtonTitle: "error_try_again".localized) {
-            self.refresh()
-        }
+        showError()
     }
     
     func showLoading(_ visible: Bool) {
-        codeView?.loading.isHidden = !visible
+        updateLoading(visible)
     }
 }

@@ -75,7 +75,7 @@
 <tr class="covered">
 <td class="num">13</td>
 <td class="src"><pre><code class="objc">    fileprivate var view: OrderDetailViewControllerProtocol? { return self.getAbstractView() as? OrderDetailViewControllerProtocol }</code></pre></td>
-<td class="coverage">12x</td>
+<td class="coverage">24x</td>
 </tr>
 <tr class="never">
 <td class="num">14</td>
@@ -85,32 +85,32 @@
 <tr class="covered">
 <td class="num">15</td>
 <td class="src"><pre><code class="objc">    private func formatDate(_ dateToFormat: Date?) -&gt; String {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">16</td>
 <td class="src"><pre><code class="objc">        guard let date = dateToFormat else { return "" }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">17</td>
 <td class="src"><pre><code class="objc">        let dateFormatter = DateFormatter()</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">18</td>
 <td class="src"><pre><code class="objc">        dateFormatter.dateFormat = "dd/MM/yyyy"</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">19</td>
 <td class="src"><pre><code class="objc">        return dateFormatter.string(from: date)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">21</td>
@@ -130,197 +130,197 @@
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">    func processOrder(entity: OrderEntity?) {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">        guard let orderEntity = entity else {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
-<td class="src"><pre><code class="objc">            self.view?.alertErrorLoadingData()</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">            sync { self.view?.alertErrorLoadingData() }</code></pre></td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">            return</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">30</td>
 <td class="src"><pre><code class="objc">        let valueViewModel = OrderValueViewModel(orderEntity, showPaymentMethod: true)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">31</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addValueCell(viewModel: valueViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">32</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">33</td>
 <td class="src"><pre><code class="objc">        let buyerViewModel = OrderDetailIconInfoViewModel(iconImageName: "icon-login", fieldText: "order_buyer".localized, valueText: orderEntity.buyerName ?? "", valueColor: .cbBlack)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">34</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addIconInfoCell(viewModel: buyerViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">35</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">36</td>
 <td class="src"><pre><code class="objc">        let emailViewModel = OrderDetailIconInfoViewModel(iconImageName: "icon-email", fieldText: "order_email".localized, valueText: orderEntity.email ?? "", valueColor: .cbBlack)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">37</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addIconInfoCell(viewModel: emailViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">38</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">39</td>
 <td class="src"><pre><code class="objc">        let dateViewModel = OrderDetailIconInfoViewModel(iconImageName: "icon-calendar", fieldText: "order_created_at".localized, valueText: formatDate(orderEntity.date), valueColor: .cbBlack)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">40</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addIconInfoCell(viewModel: dateViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">41</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">42</td>
 <td class="src"><pre><code class="objc">        let statusViewModel = OrderDetailIconInfoViewModel(iconImageName: "icon-watch", fieldText: "order_status".localized, valueText: orderEntity.status?.rawValue.localized ?? "", valueColor: orderEntity.status?.statusColor ?? .cbWhite)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">43</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addIconInfoCell(viewModel: statusViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">44</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">45</td>
 <td class="src"><pre><code class="objc">        let sectionHeaderViewModel = OrderDetailSectionHeaderViewModel(sectionTitle: "order_financial_summary".localized)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">46</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addSectionHeaderCell(viewModel: sectionHeaderViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">47</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">48</td>
 <td class="src"><pre><code class="objc">        let totalValueTextInfoViewModel = OrderDetailTextInfoViewModel(size: .regular, fieldText: "order_total_value".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.value ?? 0)), fontColor: .cbBlack)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">49</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addTextInfoCell(viewModel: totalValueTextInfoViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">50</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">51</td>
 <td class="src"><pre><code class="objc">        let taxesTextInfoViewModel = OrderDetailTextInfoViewModel(size: .regular, fieldText: "order_taxes".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.taxes ?? 0)), fontColor: .cbRed)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">52</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addTextInfoCell(viewModel: taxesTextInfoViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">53</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">54</td>
 <td class="src"><pre><code class="objc">        let receipt = (orderEntity.value ?? 0) - (orderEntity.taxes ?? 0)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">        let receiptTextInfoViewModel = OrderDetailTextInfoViewModel(size: .big, fieldText: "order_my_receipt".localized, currency: "R$", valueText: String(format: "%.02f", receipt), fontColor: .cbLightBlue)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">56</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addTextInfoCell(viewModel: receiptTextInfoViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">58</td>
 <td class="src"><pre><code class="objc">        let sandboxViewModel = OrderDetailSandboxViewModel(sandbox: "\("order_sandbox".localized): \(orderEntity.sandbox ?? "")")</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">59</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.addSandboxCell(viewModel: sandboxViewModel) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">        sync { self.view?.showLoading(false) }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">63</td>

@@ -16,14 +16,14 @@ class OrderListInteractor: DKInteractor {
 
 extension OrderListInteractor: OrderListInteractorProtocol {
     func fetchOrderList() {
-        RogueKit.request(OrderRepository.fetchOrderList, enableMocks: self.enableMocks) { [unowned self] (result: Result<OrderListEntity, Error>) in
+        RogueKit.request(OrderRepository.fetchOrderList, enableMocks: self.enableMocks) { [weak self] (result: Result<OrderListEntity, Error>) in
             switch result {
             case let .success(orderList):
                 var sortedOrderList = orderList
                 sortedOrderList.orderList = sortedOrderList.orderList?.sorted(by: { ($0.date ?? Date()).compare($1.date ?? Date()) == .orderedDescending })
-                self.presenter?.processOrders(entity: sortedOrderList)
+                self?.presenter?.processOrders(entity: sortedOrderList)
             case .failure(_):
-                self.presenter?.processOrders(entity: nil)
+                self?.presenter?.processOrders(entity: nil)
             }
         }
     }
