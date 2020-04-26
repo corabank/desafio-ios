@@ -11,6 +11,7 @@ import UIKit
 
 public struct OrderValueViewModel {
     
+    let id: String
     let iconImageName: String
     let value: String
     let subtitle: String
@@ -19,6 +20,7 @@ public struct OrderValueViewModel {
     let friendlyDate: String
     
     init(_ entity: OrderEntity, showPaymentMethod: Bool = false) {
+        id = entity.id ?? ""
         iconImageName = "icon-card"
         value = String(format: "R$%.02f", (entity.value ?? 0))
         

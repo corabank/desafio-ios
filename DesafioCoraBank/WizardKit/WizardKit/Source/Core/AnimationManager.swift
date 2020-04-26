@@ -29,7 +29,7 @@ public class AnimationManager: NSObject, UIViewControllerTransitioningDelegate, 
     var isPresenting: Bool
     var animation: UIViewControllerAnimationProtocol
     
-    init(animation: UIViewControllerAnimationProtocol) {
+    public init(animation: UIViewControllerAnimationProtocol) {
         self.isPresenting = false
         self.animation = animation
     }

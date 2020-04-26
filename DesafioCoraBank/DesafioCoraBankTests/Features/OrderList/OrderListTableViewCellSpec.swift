@@ -22,10 +22,11 @@ class OrderListTableViewCellSpec: QuickSpec {
                 cellView.widthAnchor.constraint(equalToConstant: 320).isActive = true
                 cellView.heightAnchor.constraint(equalToConstant: 64).isActive = true
                 cellView.frame = CGRect(x: 0, y: 0, width: 320, height: 64)
+                cellView.contentView.translatesAutoresizingMaskIntoConstraints = false
                 cellView.contentView.widthAnchor.constraint(equalToConstant: 320).isActive = true
                 cellView.contentView.heightAnchor.constraint(equalToConstant: 64).isActive = true
                 cellView.contentView.frame = CGRect(x: 0, y: 0, width: 320, height: 64)
-                cellView.setup(viewModel)
+                cellView.setup(viewModel, isFirst: false)
                 expect(cellView) == snapshot("OrderListTableViewCellDefault")
             }
             

@@ -34,6 +34,12 @@ final class OrderDetailNavigationView: UIView {
         return label
     }()
     
+    private lazy var touchContainer: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setupView()
@@ -48,6 +54,7 @@ extension OrderDetailNavigationView: CodeView {
     func buildViewHierarchy() {
         addSubview(titleLabel)
         addSubview(arrowImage)
+        addSubview(touchContainer)
     }
     
     func setupConstraints() {
@@ -62,20 +69,24 @@ extension OrderDetailNavigationView: CodeView {
         titleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         titleLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        touchContainer.leadingAnchor.constraint(equalTo: arrowImage.leadingAnchor, constant: 0).isActive = true
+        touchContainer.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 0).isActive = true
+        touchContainer.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 0).isActive = true
+        touchContainer.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0).isActive = true
     }
     
     func setupAdditionalConfiguration() {
-        backgroundColor = .lightGray
+        backgroundColor = .cbLightGray
+        touchContainer.backgroundColor = .clear
         setupGesture()
     }
     
     private func setupGesture() {
         let touchGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         touchGesture.numberOfTouchesRequired = 1
-        arrowImage.addGestureRecognizer(touchGesture)
-        arrowImage.isUserInteractionEnabled = true
-        titleLabel.addGestureRecognizer(touchGesture)
-        titleLabel.isUserInteractionEnabled = true
+        touchContainer.isUserInteractionEnabled = true
+        touchContainer.addGestureRecognizer(touchGesture)
     }
     
     @objc public func handleTap() {

@@ -17,7 +17,7 @@ final class OrderListNavigationView: UIView {
         }
     }
     
-    private lazy var logoImage: UIImageView = {
+    public lazy var logoImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "awesome-logo")
@@ -65,6 +65,7 @@ extension OrderListNavigationView: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        logoImage.isHidden = true
         backgroundColor = .cbDarkBlue
     }
 }

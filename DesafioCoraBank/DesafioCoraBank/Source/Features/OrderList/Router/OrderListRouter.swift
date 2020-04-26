@@ -10,6 +10,7 @@ import Foundation
 import DungeonKit
 
 class OrderListRouter: DKAbstractRouter {
+    weak var viewController: UIViewController?
     
     required init() {}
     
@@ -19,5 +20,11 @@ class OrderListRouter: DKAbstractRouter {
     
     func generatePresenter(_ args: Any?) -> DKAbstractPresenter {
         return OrderListPresenter()
+    }
+    
+    func showDetail(orderID: String) {
+        let destination = OrderDetailViewController()
+        destination.orderID = orderID
+        self.viewController?.present(destination, animated: true, completion: nil)
     }
 }

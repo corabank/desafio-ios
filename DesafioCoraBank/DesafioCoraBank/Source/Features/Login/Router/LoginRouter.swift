@@ -8,8 +8,10 @@
 
 import Foundation
 import DungeonKit
+import WizardKit
 
 class LoginRouter: DKAbstractRouter {
+    weak var viewController: UIViewController?
 
     required init() {}
     
@@ -19,5 +21,12 @@ class LoginRouter: DKAbstractRouter {
     
     func generatePresenter(_ args: Any?) -> DKAbstractPresenter {
         return LoginPresenter()
+    }
+    
+    func logIn(user: UserEntity, logoImage: UIView) {
+        let destination = OrderListViewController()
+        destination.user = user
+        destination.setAnimation(CoraCustomAnimation(logoImage: logoImage))
+        self.viewController?.present(destination, animated: true, completion: nil)
     }
 }

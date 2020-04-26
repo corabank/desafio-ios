@@ -12,4 +12,5 @@ import DungeonKit
 protocol LoginViewControllerProtocol: DKAbstractView {
     func completeLogin(_ user: UserEntity)
     func loginFailed()
+    func showLoading(_ visible: Bool)
 }

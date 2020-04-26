@@ -16,4 +16,5 @@ protocol OrderDetailViewControllerProtocol: DKAbstractView {
     func addTextInfoCell(viewModel: OrderDetailTextInfoViewModel)
     func addSandboxCell(viewModel: OrderDetailSandboxViewModel)
     func alertErrorLoadingData()
+    func showLoading(_ visible: Bool)
 }

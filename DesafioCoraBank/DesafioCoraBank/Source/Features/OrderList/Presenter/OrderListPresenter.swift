@@ -19,7 +19,8 @@ extension OrderListPresenter: OrderListPresenterProtocol {
             let orderListEntity = entity,
             let orderList = orderListEntity.orderList
         else {
-            self.view?.alertErrorLoadingData()
+            sync { self.view?.showLoading(false) }
+            sync {self.view?.alertErrorLoadingData() }
             return
         }
         
@@ -31,5 +32,6 @@ extension OrderListPresenter: OrderListPresenterProtocol {
             cellViewModelList.append(OrderValueViewModel(orderEntity))
         }
         sync { self.view?.updateOrderList(viewModel: cellViewModelList) }
+        sync { self.view?.showLoading(false) }
     }
 }

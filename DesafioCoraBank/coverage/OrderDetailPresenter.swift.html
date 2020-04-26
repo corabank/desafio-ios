@@ -9,7 +9,7 @@
 <h2 class="cov_title">
 <span>Coverage for "OrderDetailPresenter.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(44 of 44 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(46 of 46 relevant lines covered)</h4>
 <h4 class="cov_filepath">DesafioCoraBank/Source/Features/OrderDetail/Presenter/OrderDetailPresenter.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -75,7 +75,7 @@
 <tr class="covered">
 <td class="num">13</td>
 <td class="src"><pre><code class="objc">    fileprivate var view: OrderDetailViewControllerProtocol? { return self.getAbstractView() as? OrderDetailViewControllerProtocol }</code></pre></td>
-<td class="coverage">11x</td>
+<td class="coverage">12x</td>
 </tr>
 <tr class="never">
 <td class="num">14</td>
@@ -249,7 +249,7 @@
 </tr>
 <tr class="covered">
 <td class="num">48</td>
-<td class="src"><pre><code class="objc">        let totalValueTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_total_value".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.value ?? 0)), fontSize: 12, fontColor: .cbBlack)</code></pre></td>
+<td class="src"><pre><code class="objc">        let totalValueTextInfoViewModel = OrderDetailTextInfoViewModel(size: .regular, fieldText: "order_total_value".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.value ?? 0)), fontColor: .cbBlack)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -264,7 +264,7 @@
 </tr>
 <tr class="covered">
 <td class="num">51</td>
-<td class="src"><pre><code class="objc">        let taxesTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_taxes".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.taxes ?? 0)), fontSize: 12, fontColor: .cbRed)</code></pre></td>
+<td class="src"><pre><code class="objc">        let taxesTextInfoViewModel = OrderDetailTextInfoViewModel(size: .regular, fieldText: "order_taxes".localized, currency: "R$", valueText: String(format: "%.02f", (orderEntity.taxes ?? 0)), fontColor: .cbRed)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -284,7 +284,7 @@
 </tr>
 <tr class="covered">
 <td class="num">55</td>
-<td class="src"><pre><code class="objc">        let receiptTextInfoViewModel = OrderDetailTextInfoViewModel(fieldText: "order_my_receipt".localized, currency: "R$", valueText: String(format: "%.02f", receipt), fontSize: 16, fontColor: .cbLightBlue)</code></pre></td>
+<td class="src"><pre><code class="objc">        let receiptTextInfoViewModel = OrderDetailTextInfoViewModel(size: .big, fieldText: "order_my_receipt".localized, currency: "R$", valueText: String(format: "%.02f", receipt), fontColor: .cbLightBlue)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -309,11 +309,21 @@
 </tr>
 <tr class="covered">
 <td class="num">60</td>
+<td class="src"><pre><code class="objc">        </code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">61</td>
+<td class="src"><pre><code class="objc">        sync { self.view?.showLoading(false) }</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">62</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="never">
-<td class="num">61</td>
+<td class="num">63</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

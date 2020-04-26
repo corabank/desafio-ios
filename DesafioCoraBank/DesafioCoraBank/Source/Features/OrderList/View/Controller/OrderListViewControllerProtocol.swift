@@ -13,4 +13,5 @@ protocol OrderListViewControllerProtocol: DKAbstractView {
     func updateHeader(viewModel: OrderListHeaderViewModel)
     func updateOrderList(viewModel: [OrderValueViewModel])
     func alertErrorLoadingData()
+    func showLoading(_ visible: Bool)
 }

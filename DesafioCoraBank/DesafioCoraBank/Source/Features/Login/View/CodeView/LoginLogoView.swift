@@ -11,7 +11,7 @@ import UIKit
 
 final class LoginLogoView: UIView {
     
-    private lazy var logoImage: UIImageView = {
+    public lazy var logoImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "awesome-logo")
@@ -53,8 +53,12 @@ extension LoginLogoView: CodeView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        logoImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        logoImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        let heightConstraint = logoImage.heightAnchor.constraint(equalToConstant: 50)
+        heightConstraint.identifier = "height"
+        heightConstraint.isActive = true
+        let widthConstraint = logoImage.widthAnchor.constraint(equalToConstant: 50)
+        widthConstraint.identifier = "width"
+        widthConstraint.isActive = true
         logoImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         logoImage.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         

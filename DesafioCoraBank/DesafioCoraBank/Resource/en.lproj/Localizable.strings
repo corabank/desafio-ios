@@ -53,3 +53,10 @@
 "time_minute" = "minute";
 "time_minute_plural" = "minutes";
 "time_just_now" = "just now";
+
+/*
+  SHARED - ERROR HANDLING
+*/
+"error_title" = "Error";
+"error_message" = "Could not load the data.";
+"error_try_again" = "Try Again";

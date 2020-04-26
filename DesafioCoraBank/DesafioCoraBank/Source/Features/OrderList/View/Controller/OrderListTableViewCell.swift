@@ -11,7 +11,7 @@ import UIKit
 
 final class OrderListTableViewCell: UITableViewCell {
     
-    private lazy var orderValueView = OrderValueView()
+    public lazy var orderValueView = OrderValueView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,8 +22,10 @@ final class OrderListTableViewCell: UITableViewCell {
         return nil
     }
     
-    public func setup(_ viewModel: OrderValueViewModel) {
+    public func setup(_ viewModel: OrderValueViewModel, isFirst: Bool) {
         orderValueView.setup(viewModel)
+        layer.cornerRadius = isFirst ? .cbCornerRadius : 0
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 }
 
@@ -34,7 +36,6 @@ extension OrderListTableViewCell: CodeView {
     
     func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
 
         orderValueView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
         orderValueView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
@@ -43,6 +44,7 @@ extension OrderListTableViewCell: CodeView {
     }
     
     func setupAdditionalConfiguration() {
-        
+        self.selectionStyle = .none
+        self.clipsToBounds = true
     }
 }

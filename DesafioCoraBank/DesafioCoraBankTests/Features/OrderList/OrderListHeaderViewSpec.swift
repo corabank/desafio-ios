@@ -18,9 +18,10 @@ class OrderListHeaderViewSpec: QuickSpec {
             it("should have the expected appearance") {
                 let order = OrderListEntity(orderCount: 320, orderTotalValue: 115345.45, orderList: nil)
                 let viewModel = OrderListHeaderViewModel(order)
-                let navigationView = OrderListHeaderView(viewModel: viewModel)
+                let navigationView = OrderListHeaderView()
                 navigationView.widthAnchor.constraint(equalToConstant: 300).isActive = true
                 navigationView.heightAnchor.constraint(equalToConstant: 77).isActive = true
+                navigationView.setup(viewModel)
                 expect(navigationView) == snapshot("OrderListHeaderView")
             }
             

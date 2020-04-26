@@ -12,7 +12,7 @@ import PaladinKit
 
 final class LoginView: UIView {
     
-    private var logoView = LoginLogoView()
+    public var logoView = LoginLogoView()
     private var logoCenterConstraint: NSLayoutConstraint?
     
     public var authView = LoginAuthView()

@@ -93,7 +93,7 @@ extension OrderValueView: CodeView {
         iconImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
         iconImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
-        statusLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: .cbTopMargin).isActive = true
+        statusLabel.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: 3).isActive = true
         statusLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .cbRightMargin).isActive = true
         statusLabel.heightAnchor.constraint(equalToConstant: topLabelsHeight).isActive = true
         statusLabel.widthAnchor.constraint(equalToConstant: rightLabelsWidth).isActive = true
@@ -105,7 +105,7 @@ extension OrderValueView: CodeView {
         
         valueLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: .cbLeftMargin).isActive = true
         valueLabel.trailingAnchor.constraint(equalTo: statusLabel.leadingAnchor, constant: .cbWordSpaceMargin).isActive = true
-        valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: .cbTopMargin).isActive = true
+        valueLabel.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: 3).isActive = true
         valueLabel.heightAnchor.constraint(equalToConstant: topLabelsHeight).isActive = true
         
         subtitleLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: .cbLeftMargin).isActive = true

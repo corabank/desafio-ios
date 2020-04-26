@@ -165,4 +165,5 @@ extension OrderListPresenterTests: OrderListViewControllerProtocol {
     }
     
     func setInteractor(_ abstractInteractor: DKAbstractInteractor) {}
+    func showLoading(_ visible: Bool) {}
 }

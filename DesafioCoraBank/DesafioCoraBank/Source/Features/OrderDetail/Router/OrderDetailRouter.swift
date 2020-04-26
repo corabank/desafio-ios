@@ -10,6 +10,7 @@ import Foundation
 import DungeonKit
 
 class OrderDetailRouter: DKAbstractRouter {
+    weak var viewController: UIViewController?
     
     required init() {}
     

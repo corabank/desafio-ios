@@ -11,8 +11,6 @@ import UIKit
 
 final class OrderListHeaderView: UIView {
     
-    private let viewModel: OrderListHeaderViewModel
-    
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,14 +25,17 @@ final class OrderListHeaderView: UIView {
         return label
     }()
     
-    init(frame: CGRect = .zero, viewModel: OrderListHeaderViewModel) {
-        self.viewModel = viewModel
+    override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setupView()
     }
     
     required init?(coder: NSCoder) {
         return nil
+    }
+    
+    func setup(_ viewModel: OrderListHeaderViewModel) {
+        subtitleLabel.attributedText = viewModel.subtitle
     }
 }
 
@@ -55,12 +56,11 @@ extension OrderListHeaderView: CodeView {
         subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: .cbLineBreakMargin).isActive = true
         subtitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: .cbLeftMargin).isActive = true
         subtitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .cbRightMargin).isActive = true
-        subtitleLabel.heightAnchor.constraint(equalToConstant: 14).isActive = true
+        subtitleLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
     }
     
     func setupAdditionalConfiguration() {
         backgroundColor = .cbDarkBlue
         titleLabel.text = "order_header_title".localized
-        subtitleLabel.attributedText = self.viewModel.subtitle
     }
 }

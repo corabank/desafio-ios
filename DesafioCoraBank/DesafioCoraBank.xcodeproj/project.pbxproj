@@ -25,6 +25,9 @@
 		D852915A2453A17A0040C6A4 /* OrderDetailTextInfoViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85291592453A17A0040C6A4 /* OrderDetailTextInfoViewSpec.swift */; };
 		D852915C2453A6980040C6A4 /* OrderDetailSandboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852915B2453A6980040C6A4 /* OrderDetailSandboxView.swift */; };
 		D852915E2453A6A20040C6A4 /* OrderDetailSandboxViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852915D2453A6A20040C6A4 /* OrderDetailSandboxViewSpec.swift */; };
+		D85291602453AA740040C6A4 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852915F2453AA740040C6A4 /* OrderListView.swift */; };
+		D85291622453B07A0040C6A4 /* OrderListViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85291612453B07A0040C6A4 /* OrderListViewSpec.swift */; };
+		D85291662454BB330040C6A4 /* OrderListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85291652454BB330040C6A4 /* OrderListTableViewDataSource.swift */; };
 		D86F2410245096D000B9B0FD /* CBLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F240F245096D000B9B0FD /* CBLoading.swift */; };
 		D86F24122450985D00B9B0FD /* CBLoadingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24112450985D00B9B0FD /* CBLoadingSpec.swift */; };
 		D86F24172450BAFC00B9B0FD /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F24162450BAFC00B9B0FD /* LoginInteractorTests.swift */; };
@@ -80,6 +83,9 @@
 		D873644F244F4E8A00ACFC52 /* LoginLogoViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873644E244F4E8A00ACFC52 /* LoginLogoViewSpec.swift */; };
 		D8736451244F4E9400ACFC52 /* LoginViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8736450244F4E9400ACFC52 /* LoginViewSpec.swift */; };
 		D8736453244F4EA000ACFC52 /* LoginAuthViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8736452244F4EA000ACFC52 /* LoginAuthViewSpec.swift */; };
+		D882AF1D245517F800326237 /* OrderDetailViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882AF1C245517F800326237 /* OrderDetailViewSpec.swift */; };
+		D8C45CDB2454CE980022A51B /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C45CDA2454CE980022A51B /* OrderDetailView.swift */; };
+		D8C45CDE245500DB0022A51B /* CoraCustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C45CDD245500DB0022A51B /* CoraCustomAnimation.swift */; };
 		D8D6CFD5244CED7B002DE152 /* PaladinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */; };
 		D8D6CFD6244CED7B002DE152 /* PaladinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6CFD9244CEE0E002DE152 /* WizardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */; };
@@ -160,6 +166,9 @@
 		D85291592453A17A0040C6A4 /* OrderDetailTextInfoViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailTextInfoViewSpec.swift; sourceTree = "<group>"; };
 		D852915B2453A6980040C6A4 /* OrderDetailSandboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailSandboxView.swift; sourceTree = "<group>"; };
 		D852915D2453A6A20040C6A4 /* OrderDetailSandboxViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailSandboxViewSpec.swift; sourceTree = "<group>"; };
+		D852915F2453AA740040C6A4 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		D85291612453B07A0040C6A4 /* OrderListViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewSpec.swift; sourceTree = "<group>"; };
+		D85291652454BB330040C6A4 /* OrderListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewDataSource.swift; sourceTree = "<group>"; };
 		D86F240F245096D000B9B0FD /* CBLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBLoading.swift; sourceTree = "<group>"; };
 		D86F24112450985D00B9B0FD /* CBLoadingSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBLoadingSpec.swift; sourceTree = "<group>"; };
 		D86F24162450BAFC00B9B0FD /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
@@ -215,6 +224,9 @@
 		D873644E244F4E8A00ACFC52 /* LoginLogoViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLogoViewSpec.swift; sourceTree = "<group>"; };
 		D8736450244F4E9400ACFC52 /* LoginViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewSpec.swift; sourceTree = "<group>"; };
 		D8736452244F4EA000ACFC52 /* LoginAuthViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewSpec.swift; sourceTree = "<group>"; };
+		D882AF1C245517F800326237 /* OrderDetailViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewSpec.swift; sourceTree = "<group>"; };
+		D8C45CDA2454CE980022A51B /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		D8C45CDD245500DB0022A51B /* CoraCustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraCustomAnimation.swift; sourceTree = "<group>"; };
 		D8D6CFD4244CED7B002DE152 /* PaladinKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PaladinKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D6CFD8244CEE0E002DE152 /* WizardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WizardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D6CFDB244CEE93002DE152 /* RogueKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RogueKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,6 +342,7 @@
 				D86F24222451C0F200B9B0FD /* OrderListViewController.swift */,
 				D86F24262451C0F200B9B0FD /* OrderListViewControllerProtocol.swift */,
 				D83D5DB7245348180095F6BA /* OrderListTableViewCell.swift */,
+				D85291652454BB330040C6A4 /* OrderListTableViewDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,6 +350,7 @@
 		D86F24302451C10B00B9B0FD /* CodeView */ = {
 			isa = PBXGroup;
 			children = (
+				D852915F2453AA740040C6A4 /* OrderListView.swift */,
 				D87088F72453222F00C4438F /* OrderListNavigationView.swift */,
 				D87088FD2453353100C4438F /* OrderListHeaderView.swift */,
 				D852914B24538FD80040C6A4 /* OrderValueView.swift */,
@@ -412,6 +426,7 @@
 		D86F24562451F67300B9B0FD /* CodeView */ = {
 			isa = PBXGroup;
 			children = (
+				D8C45CDA2454CE980022A51B /* OrderDetailView.swift */,
 				D8F3E907245389AE00438B69 /* OrderDetailNavigationView.swift */,
 				D852914F245393A00040C6A4 /* OrderDetailIconInfoView.swift */,
 				D852915324539D7D0040C6A4 /* OrderDetailSectionHeaderView.swift */,
@@ -456,6 +471,7 @@
 			children = (
 				D86F245E2452014900B9B0FD /* OrderListInteractorTests.swift */,
 				D86F24622452016900B9B0FD /* OrderListPresenterTests.swift */,
+				D85291612453B07A0040C6A4 /* OrderListViewSpec.swift */,
 				D87088F92453266D00C4438F /* OrderListNavigationViewSpec.swift */,
 				D87088FB2453351E00C4438F /* OrderListHeaderViewSpec.swift */,
 				D852914D245390020040C6A4 /* OrderValueViewSpec.swift */,
@@ -469,6 +485,7 @@
 			children = (
 				D86F24602452015B00B9B0FD /* OrderDetailInteractorTests.swift */,
 				D86F24642452019900B9B0FD /* OrderDetailPresenterTests.swift */,
+				D882AF1C245517F800326237 /* OrderDetailViewSpec.swift */,
 				D8F3E90924538C6E00438B69 /* OrderDetailNavigationViewSpec.swift */,
 				D85291512453965E0040C6A4 /* OrderDetailIconInfoSpec.swift */,
 				D852915524539D850040C6A4 /* OrderDetailSectionHeaderViewSpec.swift */,
@@ -595,6 +612,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		D8C45CDC245500C20022A51B /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				D8C45CDD245500DB0022A51B /* CoraCustomAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		D8D6CFE2244CF6CC002DE152 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +723,7 @@
 		D8E84AEE244B8FD4001D313D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D8C45CDC245500C20022A51B /* Animations */,
 				D8D6CFE5244CF74C002DE152 /* Styles */,
 				D8E84AC4244B8BD5001D313D /* Assets.xcassets */,
 				D8E84AC6244B8BD5001D313D /* LaunchScreen.storyboard */,
@@ -996,6 +1022,7 @@
 				D86F24272451C0F200B9B0FD /* OrderListInteractorProtocol.swift in Sources */,
 				D86F242C2451C0F200B9B0FD /* OrderListPresenterProtocol.swift in Sources */,
 				D86F243B2451C30000B9B0FD /* OrderListEntity.swift in Sources */,
+				D85291662454BB330040C6A4 /* OrderListTableViewDataSource.swift in Sources */,
 				D86F24522451F66000B9B0FD /* OrderDetailPresenterProtocol.swift in Sources */,
 				D86F242D2451C0F200B9B0FD /* OrderListViewControllerProtocol.swift in Sources */,
 				D86F244D2451F66000B9B0FD /* OrderDetailInteractorProtocol.swift in Sources */,
@@ -1024,6 +1051,7 @@
 				D8529150245393A00040C6A4 /* OrderDetailIconInfoView.swift in Sources */,
 				D8F3E908245389AE00438B69 /* OrderDetailNavigationView.swift in Sources */,
 				D86F242A2451C0F200B9B0FD /* OrderListInteractor.swift in Sources */,
+				D85291602453AA740040C6A4 /* OrderListView.swift in Sources */,
 				D873644A244F4D7200ACFC52 /* LoginAuthView.swift in Sources */,
 				D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */,
 				D8D6CFED244CF932002DE152 /* Margins.swift in Sources */,
@@ -1040,9 +1068,11 @@
 				D86F24282451C0F200B9B0FD /* OrderListRouter.swift in Sources */,
 				D873643E244F46DB00ACFC52 /* LoginRouter.swift in Sources */,
 				D8736438244F46DB00ACFC52 /* LoginInteractorProtocol.swift in Sources */,
+				D8C45CDB2454CE980022A51B /* OrderDetailView.swift in Sources */,
 				D85291582453A16F0040C6A4 /* OrderDetailTextInfoView.swift in Sources */,
 				D87088F42452530F00C4438F /* OrderDetailSandboxViewModel.swift in Sources */,
 				D8736423244D04FA00ACFC52 /* CBTextField.swift in Sources */,
+				D8C45CDE245500DB0022A51B /* CoraCustomAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,6 +1087,7 @@
 				D85291522453965E0040C6A4 /* OrderDetailIconInfoSpec.swift in Sources */,
 				D87088FC2453351E00C4438F /* OrderListHeaderViewSpec.swift in Sources */,
 				D873642C244E21A300ACFC52 /* CBTextFieldSpec.swift in Sources */,
+				D882AF1D245517F800326237 /* OrderDetailViewSpec.swift in Sources */,
 				D87088F62452738300C4438F /* OrderRepositoryTests.swift in Sources */,
 				D852915624539D850040C6A4 /* OrderDetailSectionHeaderViewSpec.swift in Sources */,
 				D86F24612452015B00B9B0FD /* OrderDetailInteractorTests.swift in Sources */,
@@ -1071,6 +1102,7 @@
 				D86F245F2452014900B9B0FD /* OrderListInteractorTests.swift in Sources */,
 				D86F24122450985D00B9B0FD /* CBLoadingSpec.swift in Sources */,
 				D86F241E2450EBD000B9B0FD /* AuthRepositoryTests.swift in Sources */,
+				D85291622453B07A0040C6A4 /* OrderListViewSpec.swift in Sources */,
 				D87088FA2453266D00C4438F /* OrderListNavigationViewSpec.swift in Sources */,
 				D86F24632452016900B9B0FD /* OrderListPresenterTests.swift in Sources */,
 				D8F3E90A24538C6E00438B69 /* OrderDetailNavigationViewSpec.swift in Sources */,

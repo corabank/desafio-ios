@@ -20,6 +20,7 @@ class OrderListNavigationViewSpec: QuickSpec {
                 navigationView.widthAnchor.constraint(equalToConstant: 300).isActive = true
                 navigationView.heightAnchor.constraint(equalToConstant: 60).isActive = true
                 navigationView.userName = "Lucas"
+                navigationView.logoImage.isHidden = false
                 expect(navigationView) == snapshot("OrderListNavigationView")
             }
             

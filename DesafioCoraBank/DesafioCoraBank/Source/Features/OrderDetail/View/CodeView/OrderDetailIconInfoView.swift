@@ -65,11 +65,11 @@ extension OrderDetailIconInfoView: CodeView {
         iconImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: .cbLeftMargin).isActive = true
         iconImage.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         iconImage.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        iconImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        iconImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
         fieldLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: .cbLeftMargin).isActive = true
         fieldLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .cbRightMargin).isActive = true
-        fieldLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: .cbTopMargin).isActive = true
+        fieldLabel.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: -7).isActive = true
         fieldLabel.heightAnchor.constraint(equalToConstant: 14).isActive = true
         
         valueLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: .cbLeftMargin).isActive = true

@@ -24,6 +24,7 @@ import Foundation
 
 public protocol DKAbstractRouter {
     init()
+    var viewController: UIViewController? { get set }
     func generateInteractor(_ args: Any?) -> DKAbstractInteractor
     func generatePresenter(_ args: Any?) -> DKAbstractPresenter
 }

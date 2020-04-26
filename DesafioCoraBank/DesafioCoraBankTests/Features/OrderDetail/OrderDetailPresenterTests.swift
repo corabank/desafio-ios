@@ -75,6 +75,7 @@ class OrderDetailPresenterTests: XCTestCase {
  */
 
 extension OrderDetailPresenterTests: OrderDetailViewControllerProtocol {
+    
     func addValueCell(viewModel: OrderValueViewModel) {
         guard viewModel.value == "R$100.10" else { return }
         
@@ -130,4 +131,5 @@ extension OrderDetailPresenterTests: OrderDetailViewControllerProtocol {
     }
     
     func setInteractor(_ abstractInteractor: DKAbstractInteractor) {}
+    func showLoading(_ visible: Bool) {}
 }

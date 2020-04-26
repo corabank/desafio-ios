@@ -16,7 +16,7 @@ class OrderDetailTextInfoViewSpec: QuickSpec {
     override func spec() {
         describe("The Navigation View") {
             it("should have a black version") {
-                let viewModel = OrderDetailTextInfoViewModel(fieldText: "Total Value", currency: "R$", valueText: "110.10", fontSize: 12, fontColor: .cbBlack)
+                let viewModel = OrderDetailTextInfoViewModel(size: .regular, fieldText: "Total Value", currency: "R$", valueText: "110.10", fontColor: .cbBlack)
                 let textInfoView = OrderDetailTextInfoView(frame: .zero)
                 textInfoView.widthAnchor.constraint(equalToConstant: 320).isActive = true
                 textInfoView.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -24,7 +24,7 @@ class OrderDetailTextInfoViewSpec: QuickSpec {
                 expect(textInfoView) == snapshot("OrderDetailTextInfoViewBlack")
             }
             it("should have a red version") {
-                let viewModel = OrderDetailTextInfoViewModel(fieldText: "Taxes", currency: "R$", valueText: "4.99", fontSize: 12, fontColor: .cbRed)
+                let viewModel = OrderDetailTextInfoViewModel(size: .regular, fieldText: "Taxes", currency: "R$", valueText: "4.99", fontColor: .cbRed)
                 let textInfoView = OrderDetailTextInfoView(frame: .zero)
                 textInfoView.widthAnchor.constraint(equalToConstant: 320).isActive = true
                 textInfoView.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -32,7 +32,7 @@ class OrderDetailTextInfoViewSpec: QuickSpec {
                 expect(textInfoView) == snapshot("OrderDetailTextInfoViewRed")
             }
             it("should have a blue version") {
-                let viewModel = OrderDetailTextInfoViewModel(fieldText: "My receipt", currency: "R$", valueText: "105.01", fontSize: 16, fontColor: .cbLightBlue)
+                let viewModel = OrderDetailTextInfoViewModel(size: .big, fieldText: "My receipt", currency: "R$", valueText: "105.01", fontColor: .cbLightBlue)
                 let textInfoView = OrderDetailTextInfoView(frame: .zero)
                 textInfoView.widthAnchor.constraint(equalToConstant: 320).isActive = true
                 textInfoView.heightAnchor.constraint(equalToConstant: 40).isActive = true
