@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,9 +12,77 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09Y-aM-wd3" userLabel="safeAreaContainer">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5V-Bx-Pc1" userLabel="logoContainer">
+                                        <rect key="frame" x="137" y="369" width="140" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="awesome-logo" translatesAutoresizingMaskIntoConstraints="NO" id="8bK-PH-wRk">
+                                                <rect key="frame" x="45" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="1U7-hH-BLu"/>
+                                                    <constraint firstAttribute="height" constant="50" id="IAO-HJ-94r"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzB-Ew-igP">
+                                                <rect key="frame" x="0.0" y="60" width="140" height="20"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="AWESOME">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="Helvetica-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="&amp; Co.">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="Helvetica-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="8bK-PH-wRk" firstAttribute="centerX" secondItem="i5V-Bx-Pc1" secondAttribute="centerX" id="Fmf-ia-UMW"/>
+                                            <constraint firstItem="8bK-PH-wRk" firstAttribute="top" secondItem="i5V-Bx-Pc1" secondAttribute="top" id="YG9-fw-70k"/>
+                                            <constraint firstAttribute="trailing" secondItem="QzB-Ew-igP" secondAttribute="trailing" id="hyW-bo-YUz"/>
+                                            <constraint firstAttribute="height" constant="80" id="j98-Zc-PYt"/>
+                                            <constraint firstAttribute="bottom" secondItem="QzB-Ew-igP" secondAttribute="bottom" id="k7j-9V-cAd"/>
+                                            <constraint firstAttribute="width" constant="140" id="kR3-UN-zhD"/>
+                                            <constraint firstItem="QzB-Ew-igP" firstAttribute="top" secondItem="8bK-PH-wRk" secondAttribute="bottom" constant="10" id="wpJ-ul-c9V"/>
+                                            <constraint firstItem="QzB-Ew-igP" firstAttribute="leading" secondItem="i5V-Bx-Pc1" secondAttribute="leading" id="xYj-jb-CMV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="i5V-Bx-Pc1" firstAttribute="centerX" secondItem="09Y-aM-wd3" secondAttribute="centerX" id="S2V-8A-tKc"/>
+                                    <constraint firstItem="i5V-Bx-Pc1" firstAttribute="centerY" secondItem="09Y-aM-wd3" secondAttribute="centerY" id="aId-aO-BDg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.1764705882352941" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="09Y-aM-wd3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QAb-1L-0Ur"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="09Y-aM-wd3" secondAttribute="bottom" id="USu-LL-5c2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="09Y-aM-wd3" secondAttribute="trailing" id="ngy-G6-h0x"/>
+                            <constraint firstItem="09Y-aM-wd3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yvw-fO-K45"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +91,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="awesome-logo" width="64" height="64"/>
+    </resources>
 </document>

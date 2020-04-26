@@ -43,7 +43,13 @@ public final class RogueKit {
         headers[key] = value
     }
     
-    @discardableResult public static func request<T: Entity>(_ repository: RKRepository, completion: @escaping ResultCallback<T>) -> URLSessionDataTask? {
+    @discardableResult public static func request<T: Entity>(_ repository: RKRepository, enableMocks: Bool = false, completion: @escaping ResultCallback<T>) -> URLSessionDataTask? {
+        
+        guard !enableMocks else {
+            repository.createMockForRequest(completion: completion)
+            return nil
+        }
+        
         do {
             let request = try repository.createRequest()
             let urlPath = "\(repository.domain)\(request.path)"

@@ -25,7 +25,7 @@
 import Foundation
 import UIKit
 
-protocol UIViewControllerAnimationProtocol: class {
+public protocol UIViewControllerAnimationProtocol: class {
     func durationForPresenting() -> TimeInterval
     func durationForDismissing() -> TimeInterval
     func animatePresentationWithContext(context: UIViewControllerContextTransitioning)

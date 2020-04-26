@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>OrderListInteractor.swift - Slather</title>
+<link href="slather.css" media="all" rel="stylesheet">
+</head>
+<body>
+<header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
+<h2 class="cov_title">
+<span>Coverage for "OrderListInteractor.swift" : </span><span class="cov_high">100.00%</span>
+</h2>
+<h4 class="cov_subtitle">(13 of 13 relevant lines covered)</h4>
+<h4 class="cov_filepath">DesafioCoraBank/Source/Features/OrderList/Interactor/OrderListInteractor.swift</h4>
+<table class="source_code">
+<tr class="never">
+<td class="num">1</td>
+<td class="src"><pre><code class="objc">//</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">2</td>
+<td class="src"><pre><code class="objc">//  OrderListInteractor.swift</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">3</td>
+<td class="src"><pre><code class="objc">//  DesafioCoraBank</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">4</td>
+<td class="src"><pre><code class="objc">//</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">5</td>
+<td class="src"><pre><code class="objc">//  Created by Roger Sanoli on 23/04/20.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">6</td>
+<td class="src"><pre><code class="objc">//  Copyright &copy; 2020 RogerSanoli. All rights reserved.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">7</td>
+<td class="src"><pre><code class="objc">//</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">8</td>
+<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">9</td>
+<td class="src"><pre><code class="objc">import Foundation</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">10</td>
+<td class="src"><pre><code class="objc">import DungeonKit</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">11</td>
+<td class="src"><pre><code class="objc">import RogueKit</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">12</td>
+<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">13</td>
+<td class="src"><pre><code class="objc">class OrderListInteractor: DKInteractor {</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">14</td>
+<td class="src"><pre><code class="objc">    fileprivate var presenter: OrderListPresenterProtocol? { return self.getAbstractPresenter() as? OrderListPresenterProtocol }</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="never">
+<td class="num">15</td>
+<td class="src"><pre><code class="objc">}</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">16</td>
+<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">17</td>
+<td class="src"><pre><code class="objc">extension OrderListInteractor: OrderListInteractorProtocol {</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">18</td>
+<td class="src"><pre><code class="objc">    func fetchOrderList() {</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="covered">
+<td class="num">19</td>
+<td class="src"><pre><code class="objc">        RogueKit.request(OrderRepository.fetchOrderList, enableMocks: self.enableMocks) { [weak self] (result: Result&lt;OrderListEntity, Error&gt;) in</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="covered">
+<td class="num">20</td>
+<td class="src"><pre><code class="objc">            switch result {</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="covered">
+<td class="num">21</td>
+<td class="src"><pre><code class="objc">            case let .success(orderList):</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="covered">
+<td class="num">22</td>
+<td class="src"><pre><code class="objc">                var sortedOrderList = orderList</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">23</td>
+<td class="src"><pre><code class="objc">                sortedOrderList.orderList = sortedOrderList.orderList?.sorted(by: { ($0.date ?? Date()).compare($1.date ?? Date()) == .orderedDescending })</code></pre></td>
+<td class="coverage">236x</td>
+</tr>
+<tr class="covered">
+<td class="num">24</td>
+<td class="src"><pre><code class="objc">                self?.presenter?.processOrders(entity: sortedOrderList)</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">25</td>
+<td class="src"><pre><code class="objc">            case .failure(_):</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="covered">
+<td class="num">26</td>
+<td class="src"><pre><code class="objc">                self?.presenter?.processOrders(entity: nil)</code></pre></td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">27</td>
+<td class="src"><pre><code class="objc">            }</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="covered">
+<td class="num">28</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="covered">
+<td class="num">29</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">2x</td>
+</tr>
+<tr class="never">
+<td class="num">30</td>
+<td class="src"><pre><code class="objc">}</code></pre></td>
+<td class="coverage"></td>
+</tr>
+</table>
+</div></div>
+<footer><div class="row">
+<p><a href="https://github.com/SlatherOrg/slather">Fork me on Github</a></p>
+<p>&copy; 2020 Slather</p>
+</div></footer><script src="highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

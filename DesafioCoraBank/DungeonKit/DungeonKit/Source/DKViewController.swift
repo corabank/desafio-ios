@@ -22,9 +22,10 @@
 
 import Foundation
 
-open class DKViewController<T: DKAbstractSceneFactory>: UIViewController, DKAbstractView {
+open class DKViewController<T: DKAbstractRouter>: UIViewController, DKAbstractView {
 
     internal var interactor: DKAbstractInteractor?
+    internal var router: DKAbstractRouter?
     
     public var presenterArgs: Any? = nil
     public var interactorArgs: Any? = nil
@@ -32,9 +33,13 @@ open class DKViewController<T: DKAbstractSceneFactory>: UIViewController, DKAbst
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        let factory: DKAbstractSceneFactory = T.init()
-        let presenter = factory.generatePresenter(presenterArgs)
-        let interactor = factory.generateInteractor(interactorArgs)
+        self.router = T.init()
+        router?.viewController = self
+       
+        guard
+            let presenter = self.router?.generatePresenter(presenterArgs),
+            let interactor = self.router?.generateInteractor(interactorArgs)
+        else { return }
  
         interactor.setPresenter(presenter)
         presenter.setView(self)
@@ -48,6 +53,10 @@ open class DKViewController<T: DKAbstractSceneFactory>: UIViewController, DKAbst
     public func getAbstractInteractor() -> DKAbstractInteractor? {
         precondition(!Thread.isMainThread, "You cannot access the interactor from the main thread.")
         return interactor
+    }
+    
+    public func getAbstractRouter() -> DKAbstractRouter? {
+        return router
     }
     
     public func async(execute: @escaping () -> Void) {

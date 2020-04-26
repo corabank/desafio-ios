@@ -20,7 +20,7 @@ final class CBActionButton: UIView {
     private lazy var arrowImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "icon_arrow")
+        imageView.image = UIImage(named: "icon-arrow")
         imageView.tintColor = .cbWhite
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -40,7 +40,7 @@ final class CBActionButton: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
 }
 
@@ -80,7 +80,7 @@ extension CBActionButton: CodeView {
         isUserInteractionEnabled = true
     }
     
-    @objc private func handleTap() {
+    @objc public func handleTap() {
         onTouch?()
     }
 }

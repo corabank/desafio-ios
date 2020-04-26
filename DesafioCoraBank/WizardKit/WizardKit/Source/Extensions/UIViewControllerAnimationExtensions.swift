@@ -29,6 +29,11 @@ public extension UIViewController {
         self.transitioningDelegate = AnimationFactory.transitionForViewController(self, anim:animation)
     }
     
+    func setAnimation(_ animation: UIViewControllerAnimationProtocol) {
+        AnimationFactory.animationManager = AnimationManager(animation: animation)
+        self.transitioningDelegate = AnimationFactory.animationManager
+    }
+    
     func present(_ viewControllerToPresent: UIViewController, animation: AnimationFactory.TransitionAnimation, completion: (() -> Void)? = nil) {
         self.setAnimation(animation)
         self.present(viewControllerToPresent, animated: true, completion: completion)
