@@ -59,6 +59,17 @@ class LoginViewSpec: QuickSpec {
                 let loginView = LoginView(coder: NSCoder())
                 expect(loginView).to(beNil())
             }
+            
+            it("Should adapt to keyboard.") {
+                let loginView = LoginView()
+                loginView.widthAnchor.constraint(equalToConstant: 320).isActive = true
+                loginView.heightAnchor.constraint(equalToConstant: 568).isActive = true
+                loginView.animateViews(true)
+                loginView.keyboardWillShow(frame: .zero)
+                expect(loginView.actionButtonBottomConstraint?.constant ?? 0).to(equal(.cbBottomMargin))
+                loginView.keyboardWillHide()
+                expect(loginView.actionButtonBottomConstraint?.constant ?? 0).to(equal(loginView.actionButtonBottomConstant))
+            }
         }
     }
 }

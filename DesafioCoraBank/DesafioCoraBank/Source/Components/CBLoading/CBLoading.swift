@@ -43,6 +43,6 @@ extension CBLoading: CodeView {
     
     func setupAdditionalConfiguration() {
         isUserInteractionEnabled = true
-        backgroundColor = UIColor.cbBlack.withAlphaComponent(0.3)
+        backgroundColor = UIColor.cbBlack.withAlphaComponent(0.2)
     }
 }

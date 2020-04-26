@@ -12,7 +12,6 @@ target 'DesafioCoraBank' do
 
   target 'DesafioCoraBankUITests' do
     inherit! :search_paths
-    pod 'KIF', :configurations => ['Debug']
   end
 
 end

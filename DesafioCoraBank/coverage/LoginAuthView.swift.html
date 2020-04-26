@@ -90,12 +90,12 @@
 <tr class="covered">
 <td class="num">16</td>
 <td class="src"><pre><code class="objc">        get { return errorLabel.text }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="covered">
 <td class="num">17</td>
 <td class="src"><pre><code class="objc">        set { errorLabel.text = newValue }</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
 <td class="num">18</td>
@@ -110,37 +110,37 @@
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">    private lazy var errorLabel: UILabel = {</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">21</td>
 <td class="src"><pre><code class="objc">        let label = UILabel(frame: .zero)</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">22</td>
 <td class="src"><pre><code class="objc">        label.translatesAutoresizingMaskIntoConstraints = false</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">        label.textColor = .cbRed</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">        label.textAlignment = .center</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">        return label</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
 <td class="src"><pre><code class="objc">    }()</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="never">
 <td class="num">27</td>
@@ -150,12 +150,12 @@
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">    public var loginTextField = CBTextField(type: .login)</code></pre></td>
-<td class="coverage">11x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">    public var passwordTextField = CBTextField(type: .password)</code></pre></td>
-<td class="coverage">11x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="never">
 <td class="num">30</td>
@@ -165,22 +165,22 @@
 <tr class="covered">
 <td class="num">31</td>
 <td class="src"><pre><code class="objc">    override init(frame: CGRect = .zero) {</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">32</td>
 <td class="src"><pre><code class="objc">        super.init(frame: frame)</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">33</td>
 <td class="src"><pre><code class="objc">        setupView()</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">34</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="never">
 <td class="num">35</td>
@@ -220,27 +220,27 @@
 <tr class="covered">
 <td class="num">42</td>
 <td class="src"><pre><code class="objc">    func buildViewHierarchy() {</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">43</td>
 <td class="src"><pre><code class="objc">        addSubview(loginTextField)</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">44</td>
 <td class="src"><pre><code class="objc">        addSubview(passwordTextField)</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">45</td>
 <td class="src"><pre><code class="objc">        addSubview(errorLabel)</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">46</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="never">
 <td class="num">47</td>
@@ -250,92 +250,92 @@
 <tr class="covered">
 <td class="num">48</td>
 <td class="src"><pre><code class="objc">    func setupConstraints() {</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">49</td>
 <td class="src"><pre><code class="objc">        self.translatesAutoresizingMaskIntoConstraints = false</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">50</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">51</td>
 <td class="src"><pre><code class="objc">        loginTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">52</td>
 <td class="src"><pre><code class="objc">        loginTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">53</td>
 <td class="src"><pre><code class="objc">        loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">54</td>
 <td class="src"><pre><code class="objc">        loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">56</td>
 <td class="src"><pre><code class="objc">        passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: .cbLineBreakMargin).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">        passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">58</td>
 <td class="src"><pre><code class="objc">        passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">59</td>
 <td class="src"><pre><code class="objc">        passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">        errorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: .cbLineBreakMargin).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
 <td class="src"><pre><code class="objc">        errorLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">63</td>
 <td class="src"><pre><code class="objc">        errorLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">64</td>
 <td class="src"><pre><code class="objc">        errorLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="never">
 <td class="num">66</td>
@@ -345,32 +345,32 @@
 <tr class="covered">
 <td class="num">67</td>
 <td class="src"><pre><code class="objc">    func setupAdditionalConfiguration() {</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">68</td>
 <td class="src"><pre><code class="objc">        loginTextField.placeholderText = "login_username_placeholder".localized</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">69</td>
 <td class="src"><pre><code class="objc">        passwordTextField.placeholderText = "login_password_placeholder".localized</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">70</td>
 <td class="src"><pre><code class="objc">        loginTextField.delegate = self</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">71</td>
 <td class="src"><pre><code class="objc">        passwordTextField.delegate = self</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="covered">
 <td class="num">72</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">10x</td>
+<td class="coverage">14x</td>
 </tr>
 <tr class="never">
 <td class="num">73</td>
@@ -390,17 +390,17 @@
 <tr class="covered">
 <td class="num">76</td>
 <td class="src"><pre><code class="objc">    func textfieldValueChanged() {</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">77</td>
 <td class="src"><pre><code class="objc">        errorText = ""</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="never">
 <td class="num">79</td>

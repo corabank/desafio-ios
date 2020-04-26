@@ -55,4 +55,5 @@ extension LoginPresenterTests: LoginViewControllerProtocol {
     }
     
     func setInteractor(_ abstractInteractor: DKAbstractInteractor) {}
+    func showLoading(_ visible: Bool) {}
 }

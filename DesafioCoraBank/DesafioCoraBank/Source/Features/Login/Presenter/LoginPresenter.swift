@@ -16,14 +16,12 @@ class LoginPresenter: DKPresenter {
 
 extension LoginPresenter: LoginPresenterProtocol {
     func processLogin(_ user: UserEntity) {
-        sync {
-            self.view?.completeLogin(user)
-        }
+        sync { self.view?.completeLogin(user) }
+        sync { self.view?.showLoading(false) }
     }
     
     func processLoginError() {
-        sync {
-            self.view?.loginFailed()
-        }
+        sync { self.view?.loginFailed() }
+        sync { self.view?.showLoading(false) }
     }
 }

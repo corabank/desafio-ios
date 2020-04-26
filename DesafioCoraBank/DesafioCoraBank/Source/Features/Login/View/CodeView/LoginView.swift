@@ -12,7 +12,7 @@ import PaladinKit
 
 final class LoginView: UIView {
     
-    private var logoView = LoginLogoView()
+    public var logoView = LoginLogoView()
     private var logoCenterConstraint: NSLayoutConstraint?
     
     public var authView = LoginAuthView()
@@ -29,7 +29,6 @@ final class LoginView: UIView {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .clear
-        button.setTitle("login_button_forgot_password".localized, for: .normal)
         button.titleLabel?.font = .cbLight(14)
         button.setTitleColor(.cbWhite, for: .normal)
         return button
@@ -92,7 +91,7 @@ final class LoginView: UIView {
     }
     
     override func keyboardWillShow(frame: CGRect) {
-        self.actionButtonBottomConstraint?.constant = (frame.size.height + .cbLineBreakMargin*2) * -1
+        self.actionButtonBottomConstraint?.constant = (frame.size.height * -1) + .cbBottomMargin
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction, .beginFromCurrentState], animations: {
             self.layoutIfNeeded()
         }, completion: nil)
@@ -171,6 +170,7 @@ extension LoginView: CodeView {
         actionButton.alpha = 0
         actionButton.title = "login_button_access".localized
         forgotButton.alpha = 0
+        forgotButton.setTitle("login_button_forgot_password".localized, for: .normal)
         loading.isHidden = true
     }
 }
