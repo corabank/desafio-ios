@@ -24,6 +24,7 @@ class LoginViewController: DKViewController<LoginRouter> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .cbDarkBlue
+        
         setupCodeView()
         setupAuthAction()
     }

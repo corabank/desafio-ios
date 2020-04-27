@@ -119,6 +119,9 @@ extension OrderValueView: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        
+        self.accessibilityLabel = "Value Cell"
+        
         backgroundColor = .cbWhite
         valueLabel.isAccessibilityElement = true
         valueLabel.accessibilityLabel = "order_value".localized

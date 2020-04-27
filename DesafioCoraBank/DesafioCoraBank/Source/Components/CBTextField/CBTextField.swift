@@ -35,6 +35,7 @@ final class CBTextField: UIView {
         didSet {
             textField.setPlaceholderColor(placeholder: placeholderText ?? "", color: .cbDarkGray)
             textField.accessibilityLabel = placeholderText
+            textField.accessibilityIdentifier = placeholderText
             movingLabel.text = placeholderText
         }
     }
