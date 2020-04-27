@@ -14,7 +14,11 @@ final class CBActionButton: UIView {
     public var onTouch: (()->Void)?
     public var title: String? {
         get { return titleLabel.text }
-        set { titleLabel.text = newValue }
+        set {
+            titleLabel.text = newValue
+            self.accessibilityLabel = newValue
+            self.accessibilityValue = newValue
+        }
     }
     
     private lazy var arrowImage: UIImageView = {
@@ -31,6 +35,7 @@ final class CBActionButton: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .cbWhite
         label.font = .cbLight(14)
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -67,6 +72,9 @@ extension CBActionButton: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .link
+
         backgroundColor = .cbPink
         layer.cornerRadius = .cbCornerRadius
         

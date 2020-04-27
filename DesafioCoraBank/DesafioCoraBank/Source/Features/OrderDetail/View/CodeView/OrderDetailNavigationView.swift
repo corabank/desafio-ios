@@ -14,7 +14,11 @@ final class OrderDetailNavigationView: UIView {
     public var onTouch: (()->Void)?
     public var title: String? {
         get { return titleLabel.text }
-        set { titleLabel.text = newValue }
+        set {
+            titleLabel.text = newValue
+            titleLabel.accessibilityLabel = newValue
+            titleLabel.accessibilityValue = newValue
+        }
     }
     
     private lazy var arrowImage: UIImageView = {
@@ -77,6 +81,8 @@ extension OrderDetailNavigationView: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        
+        titleLabel.accessibilityTraits = .link
         backgroundColor = .cbLightGray
         touchContainer.backgroundColor = .clear
         setupGesture()

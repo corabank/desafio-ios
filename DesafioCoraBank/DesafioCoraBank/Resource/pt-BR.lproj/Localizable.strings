@@ -15,6 +15,7 @@
 "login_error_invalid" = "Usuário ou sennha inválidos";
 "login_button_access" = "Acessar minha conta";
 "login_button_forgot_password" = "Esqueci minha senha";
+"toggle_security" = "Tornar senha visível";
 
 /*
    FEATURE - ORDER LIST
@@ -36,6 +37,8 @@
 "order_taxes" = "Taxas";
 "order_my_receipt" = "Meu recebimento";
 "order_sandbox" = "sandbox";
+"order_value" = "Valor";
+"order_subtitle" = "Outras informações";
 
 /*
    DATE - FRIENDLY DESCRIPTION

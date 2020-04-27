@@ -14,6 +14,7 @@ final class OrderDetailTextInfoView: UIView {
     private lazy var fieldLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -21,6 +22,7 @@ final class OrderDetailTextInfoView: UIView {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -28,6 +30,7 @@ final class OrderDetailTextInfoView: UIView {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -56,6 +59,10 @@ final class OrderDetailTextInfoView: UIView {
         valueLabel.textColor = viewModel.fontColor
         
         fontSize = viewModel.fontSize
+        
+        self.accessibilityLabel = viewModel.fieldText
+        self.accessibilityValue = "\(viewModel.currency)\(viewModel.valueText)"
+        self.accessibilityTraits = .staticText
     }
 }
 
@@ -87,5 +94,6 @@ extension OrderDetailTextInfoView: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = .cbLightGray
+        self.isAccessibilityElement = true
     }
 }

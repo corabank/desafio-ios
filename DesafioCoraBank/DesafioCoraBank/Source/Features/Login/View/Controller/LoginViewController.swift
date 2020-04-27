@@ -40,13 +40,13 @@ class LoginViewController: DKViewController<LoginRouter> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        view.registerForKeyboardNotifications()
+        codeView?.registerForKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.codeView?.dismissKeyboard()
-        view.deregisterFromKeyboardNotifications()
+        codeView?.deregisterFromKeyboardNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {

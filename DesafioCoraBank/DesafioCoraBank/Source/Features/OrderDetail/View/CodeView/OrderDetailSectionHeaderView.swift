@@ -16,6 +16,7 @@ final class OrderDetailSectionHeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .cbDarkGray
         label.font = .cbRegular(12)
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -30,6 +31,9 @@ final class OrderDetailSectionHeaderView: UIView {
     
     public func setup(_ viewModel: OrderDetailSectionHeaderViewModel) {
         titleLabel.text = viewModel.sectionTitle
+        self.accessibilityLabel = viewModel.sectionTitle
+        self.accessibilityValue = viewModel.sectionTitle
+        self.accessibilityTraits = .staticText
     }
 }
 
@@ -49,5 +53,6 @@ extension OrderDetailSectionHeaderView: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = .cbLightGray
+        self.isAccessibilityElement = true
     }
 }
