@@ -64,10 +64,14 @@ final class OrderValueView: UIView {
     
     public func setup(_ viewModel: OrderValueViewModel) {
         valueLabel.text = viewModel.value
+        valueLabel.accessibilityValue = viewModel.value
         subtitleLabel.text = viewModel.subtitle
+        subtitleLabel.accessibilityValue = viewModel.subtitle
         statusLabel.text = viewModel.status
         statusLabel.textColor = viewModel.statusColor
+        statusLabel.accessibilityValue = viewModel.status
         dateLabel.text = viewModel.friendlyDate
+        dateLabel.accessibilityValue = viewModel.friendlyDate
     }
 }
 
@@ -115,6 +119,24 @@ extension OrderValueView: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        
+        self.accessibilityLabel = "Value Cell"
+        
         backgroundColor = .cbWhite
+        valueLabel.isAccessibilityElement = true
+        valueLabel.accessibilityLabel = "order_value".localized
+        valueLabel.accessibilityTraits = .staticText
+        
+        subtitleLabel.isAccessibilityElement = true
+        subtitleLabel.accessibilityLabel = "order_subtitle".localized
+        subtitleLabel.accessibilityTraits = .staticText
+        
+        dateLabel.isAccessibilityElement = true
+        dateLabel.accessibilityLabel = "order_created_at".localized
+        dateLabel.accessibilityTraits = .staticText
+        
+        statusLabel.isAccessibilityElement = true
+        statusLabel.accessibilityLabel = "order_status".localized
+        statusLabel.accessibilityTraits = .staticText
     }
 }

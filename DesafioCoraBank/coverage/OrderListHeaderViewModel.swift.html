@@ -85,72 +85,72 @@
 <tr class="covered">
 <td class="num">15</td>
 <td class="src"><pre><code class="objc">    init(_ entity: OrderListEntity) {</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">16</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">17</td>
 <td class="src"><pre><code class="objc">        let totalValue = String(format: "R$ %.02f", (entity.orderTotalValue ?? 0))</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">18</td>
 <td class="src"><pre><code class="objc">        let regularText = "order_header_subtitle".localized</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">19</td>
 <td class="src"><pre><code class="objc">            .replacingOccurrences(of: "ORDER_COUNT", with: "\(entity.orderCount ?? 0)")</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">            .replacingOccurrences(of: "ORDER_TOTAL_VALUE", with: totalValue)</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">21</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">22</td>
 <td class="src"><pre><code class="objc">        let lightAttributes = [NSAttributedString.Key.font: UIFont.cbLight(14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">        let regularAttributes = [NSAttributedString.Key.font: UIFont.cbRegular(14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">        let attributedText = NSMutableAttributedString(string: regularText, attributes: lightAttributes)</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">        attributedText.addAttributes(regularAttributes, range: NSRange(location: regularText.count - totalValue.count, length: totalValue.count))</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">        subtitle = attributedText</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">7x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
 <td class="num">29</td>

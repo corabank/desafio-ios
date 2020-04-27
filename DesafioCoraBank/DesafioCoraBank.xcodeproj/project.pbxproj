@@ -86,6 +86,8 @@
 		D87412352455FB0500944507 /* OrderListTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87412342455FB0500944507 /* OrderListTableViewDataSourceTests.swift */; };
 		D874123724561DB100944507 /* OrderDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874123624561DB100944507 /* OrderDetailViewControllerTests.swift */; };
 		D8741239245635A900944507 /* CoraCustomAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8741238245635A900944507 /* CoraCustomAnimationTests.swift */; };
+		D87412452457557F00944507 /* LoginFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87412442457557F00944507 /* LoginFlowTests.swift */; };
+		D874124C2457583F00944507 /* DesafioCoraBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874124B2457583F00944507 /* DesafioCoraBankUITests.swift */; };
 		D882AF1D245517F800326237 /* OrderDetailViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882AF1C245517F800326237 /* OrderDetailViewSpec.swift */; };
 		D882AF1F2455F8B100326237 /* OrderListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882AF1E2455F8B100326237 /* OrderListViewControllerTests.swift */; };
 		D8C45CDB2454CE980022A51B /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C45CDA2454CE980022A51B /* OrderDetailView.swift */; };
@@ -107,7 +109,6 @@
 		D8E84ABE244B8BD1001D313D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ABD244B8BD1001D313D /* SceneDelegate.swift */; };
 		D8E84AC5244B8BD5001D313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC4244B8BD5001D313D /* Assets.xcassets */; };
 		D8E84AC8244B8BD5001D313D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E84AC6244B8BD5001D313D /* LaunchScreen.storyboard */; };
-		D8E84ADE244B8BD5001D313D /* DesafioCoraBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E84ADD244B8BD5001D313D /* DesafioCoraBankUITests.swift */; };
 		D8F3E908245389AE00438B69 /* OrderDetailNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F3E907245389AE00438B69 /* OrderDetailNavigationView.swift */; };
 		D8F3E90A24538C6E00438B69 /* OrderDetailNavigationViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F3E90924538C6E00438B69 /* OrderDetailNavigationViewSpec.swift */; };
 /* End PBXBuildFile section */
@@ -231,6 +232,9 @@
 		D87412342455FB0500944507 /* OrderListTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		D874123624561DB100944507 /* OrderDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		D8741238245635A900944507 /* CoraCustomAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraCustomAnimationTests.swift; sourceTree = "<group>"; };
+		D87412442457557F00944507 /* LoginFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowTests.swift; sourceTree = "<group>"; };
+		D874124A245757F900944507 /* DesafioCoraBankUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesafioCoraBankUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D874124B2457583F00944507 /* DesafioCoraBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraBankUITests.swift; sourceTree = "<group>"; };
 		D882AF1C245517F800326237 /* OrderDetailViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewSpec.swift; sourceTree = "<group>"; };
 		D882AF1E2455F8B100326237 /* OrderListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewControllerTests.swift; sourceTree = "<group>"; };
 		D8C45CDA2454CE980022A51B /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
@@ -253,7 +257,6 @@
 		D8E84ACE244B8BD5001D313D /* DesafioCoraBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E84AD4244B8BD5001D313D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E84AD9244B8BD5001D313D /* DesafioCoraBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8E84ADD244B8BD5001D313D /* DesafioCoraBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraBankUITests.swift; sourceTree = "<group>"; };
 		D8E84ADF244B8BD5001D313D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F3E907245389AE00438B69 /* OrderDetailNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailNavigationView.swift; sourceTree = "<group>"; };
 		D8F3E90924538C6E00438B69 /* OrderDetailNavigationViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailNavigationViewSpec.swift; sourceTree = "<group>"; };
@@ -624,6 +627,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		D87412432457556D00944507 /* KIF */ = {
+			isa = PBXGroup;
+			children = (
+				D87412442457557F00944507 /* LoginFlowTests.swift */,
+			);
+			path = KIF;
+			sourceTree = "<group>";
+		};
 		D8C45CDC245500C20022A51B /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +717,7 @@
 				D86F241C2450EBB800B9B0FD /* Repository */,
 				D873644B244F4E0600ACFC52 /* Features */,
 				D8736424244E0C9700ACFC52 /* Components */,
+				D87412432457556D00944507 /* KIF */,
 				D8E84AD4244B8BD5001D313D /* Info.plist */,
 			);
 			path = DesafioCoraBankTests;
@@ -714,8 +726,9 @@
 		D8E84ADC244B8BD5001D313D /* DesafioCoraBankUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D8E84ADD244B8BD5001D313D /* DesafioCoraBankUITests.swift */,
 				D8E84ADF244B8BD5001D313D /* Info.plist */,
+				D874124A245757F900944507 /* DesafioCoraBankUITests-Bridging-Header.h */,
+				D874124B2457583F00944507 /* DesafioCoraBankUITests.swift */,
 			);
 			path = DesafioCoraBankUITests;
 			sourceTree = "<group>";
@@ -866,6 +879,7 @@
 					};
 					D8E84AD8244B8BD5001D313D = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = D8E84AB7244B8BD1001D313D;
 					};
 				};
@@ -1078,6 +1092,7 @@
 				D86F24192450BCE500B9B0FD /* LoginPresenterTests.swift in Sources */,
 				D852914E245390020040C6A4 /* OrderValueViewSpec.swift in Sources */,
 				D873644F244F4E8A00ACFC52 /* LoginLogoViewSpec.swift in Sources */,
+				D87412452457557F00944507 /* LoginFlowTests.swift in Sources */,
 				D85291522453965E0040C6A4 /* OrderDetailIconInfoSpec.swift in Sources */,
 				D87088FC2453351E00C4438F /* OrderListHeaderViewSpec.swift in Sources */,
 				D873642C244E21A300ACFC52 /* CBTextFieldSpec.swift in Sources */,
@@ -1111,7 +1126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8E84ADE244B8BD5001D313D /* DesafioCoraBankUITests.swift in Sources */,
+				D874124C2457583F00944507 /* DesafioCoraBankUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1356,6 +1371,7 @@
 			baseConfigurationReference = E5A5E73D5B67E1D7ABDFA75A /* Pods-DesafioCoraBankUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBankUITests/Info.plist;
@@ -1366,6 +1382,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBankUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DesafioCoraBankUITests/DesafioCoraBankUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = DesafioCoraBank;
@@ -1377,6 +1395,7 @@
 			baseConfigurationReference = 6069C4556E9536B073AB781B /* Pods-DesafioCoraBankUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHBW952FG3;
 				INFOPLIST_FILE = DesafioCoraBankUITests/Info.plist;
@@ -1387,6 +1406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RogerSanoli.DesafioCoraBankUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DesafioCoraBankUITests/DesafioCoraBankUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = DesafioCoraBank;
