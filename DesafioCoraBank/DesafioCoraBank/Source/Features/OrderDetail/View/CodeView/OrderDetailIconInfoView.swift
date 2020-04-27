@@ -24,6 +24,7 @@ final class OrderDetailIconInfoView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .cbDarkGray
         label.font = .cbRegular(12)
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -32,6 +33,7 @@ final class OrderDetailIconInfoView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .cbBlack
         label.font = .cbRegular(14)
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -49,6 +51,9 @@ final class OrderDetailIconInfoView: UIView {
         fieldLabel.text = viewModel.fieldText
         valueLabel.text = viewModel.valueText
         valueLabel.textColor = viewModel.valueColor
+        self.accessibilityLabel = viewModel.fieldText
+        self.accessibilityValue = viewModel.valueText
+        self.accessibilityTraits = .staticText
     }
 }
 
@@ -80,5 +85,6 @@ extension OrderDetailIconInfoView: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = .cbWhite
+        self.isAccessibilityElement = true
     }
 }

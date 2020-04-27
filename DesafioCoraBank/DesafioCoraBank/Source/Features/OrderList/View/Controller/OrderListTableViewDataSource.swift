@@ -18,7 +18,7 @@ class OrderListTableViewDataSource: NSObject {
         shouldAnimate = true
         super.init()
         
-        //tableView.isAccessibilityElement = true
+        tableView.isAccessibilityElement = true
         tableView.separatorStyle = .none
         tableView.rowHeight = 64
         tableView.register(OrderListTableViewCell.self, forCellReuseIdentifier: "orderCell")

@@ -14,7 +14,11 @@ final class LoginAuthView: UIView {
     
     public var errorText: String? {
         get { return errorLabel.text }
-        set { errorLabel.text = newValue }
+        set {
+            errorLabel.text = newValue
+            errorLabel.accessibilityLabel = newValue
+            errorLabel.accessibilityValue = newValue
+        }
     }
     
     private lazy var errorLabel: UILabel = {
@@ -22,6 +26,7 @@ final class LoginAuthView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .cbRed
         label.textAlignment = .center
+        label.isAccessibilityElement = true
         return label
     }()
     

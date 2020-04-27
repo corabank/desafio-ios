@@ -17,6 +17,7 @@ final class OrderDetailSandboxView: UIView {
         label.textColor = .cbDarkGray
         label.font = .cbRegular(12)
         label.numberOfLines = 2
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -31,6 +32,9 @@ final class OrderDetailSandboxView: UIView {
     
     public func setup(_ viewModel: OrderDetailSandboxViewModel) {
         titleLabel.text = viewModel.sandbox
+        self.accessibilityLabel = viewModel.sandbox
+        self.accessibilityValue = viewModel.sandbox
+        self.accessibilityTraits = .staticText
     }
 }
 
@@ -50,6 +54,7 @@ extension OrderDetailSandboxView: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = .cbWhite
+        self.isAccessibilityElement = true
     }
 }
 

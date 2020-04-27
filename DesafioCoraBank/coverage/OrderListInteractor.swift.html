@@ -80,7 +80,7 @@
 <tr class="covered">
 <td class="num">14</td>
 <td class="src"><pre><code class="objc">    fileprivate var presenter: OrderListPresenterProtocol? { return self.getAbstractPresenter() as? OrderListPresenterProtocol }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">15</td>
@@ -100,42 +100,42 @@
 <tr class="covered">
 <td class="num">18</td>
 <td class="src"><pre><code class="objc">    func fetchOrderList() {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">19</td>
 <td class="src"><pre><code class="objc">        RogueKit.request(OrderRepository.fetchOrderList, enableMocks: self.enableMocks) { [weak self] (result: Result&lt;OrderListEntity, Error&gt;) in</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">            switch result {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">21</td>
 <td class="src"><pre><code class="objc">            case let .success(orderList):</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">22</td>
 <td class="src"><pre><code class="objc">                var sortedOrderList = orderList</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">                sortedOrderList.orderList = sortedOrderList.orderList?.sorted(by: { ($0.date ?? Date()).compare($1.date ?? Date()) == .orderedDescending })</code></pre></td>
-<td class="coverage">236x</td>
+<td class="coverage">513x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">                self?.presenter?.processOrders(entity: sortedOrderList)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">            case .failure(_):</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
@@ -145,17 +145,17 @@
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">30</td>

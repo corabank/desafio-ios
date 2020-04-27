@@ -26,6 +26,7 @@ final class CBTextField: UIView {
         }
         set {
             textField.text = newValue
+            textField.accessibilityValue = newValue
             valueChanged()
         }
     }
@@ -33,6 +34,8 @@ final class CBTextField: UIView {
     public var placeholderText: String? {
         didSet {
             textField.setPlaceholderColor(placeholder: placeholderText ?? "", color: .cbDarkGray)
+            textField.accessibilityLabel = placeholderText
+            textField.accessibilityIdentifier = placeholderText
             movingLabel.text = placeholderText
         }
     }
@@ -52,6 +55,8 @@ final class CBTextField: UIView {
         textField.textColor = .cbWhite
         textField.font = .cbLight(16)
         textField.keyboardAppearance = .dark
+        textField.isAccessibilityElement = true
+        textField.accessibilityTraits = .keyboardKey
         return textField
     }()
     
@@ -60,6 +65,7 @@ final class CBTextField: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .cbDarkGray
         label.font = .cbRegular(12)
+        label.isAccessibilityElement = false
         return label
     }()
     
@@ -72,6 +78,10 @@ final class CBTextField: UIView {
         imageView.image = hiddenImage
         imageView.tintColor = .cbPink
         imageView.contentMode = .scaleAspectFit
+        imageView.isAccessibilityElement = true
+        imageView.accessibilityTraits = .image
+        imageView.accessibilityLabel = "toggle_security".localized
+        imageView.accessibilityValue = "false"
         return imageView
     }()
     
@@ -135,6 +145,7 @@ extension CBTextField: CodeView {
     @objc private func valueChanged() {
         
         let currentText = textField.text ?? ""
+        textField.accessibilityValue = currentText
         
         if(currentText.isEmpty) {
             self.textField.alpha = 0
@@ -174,6 +185,7 @@ extension CBTextField: CodeView {
         }
         
         eyeImage.image = textField.isSecureTextEntry ? hiddenImage : visibleImage
+        eyeImage.accessibilityValue = "\(!textField.isSecureTextEntry)"
     }
 }
 

@@ -8,10 +8,12 @@ target 'DesafioCoraBank' do
     pod 'Quick'
     pod 'Nimble'
     pod 'Nimble-Snapshots'
+    pod 'KIF', :configurations => ['Debug']
   end
 
   target 'DesafioCoraBankUITests' do
     inherit! :search_paths
+    
   end
 
 end

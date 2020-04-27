@@ -120,87 +120,87 @@
 <tr class="covered">
 <td class="num">22</td>
 <td class="src"><pre><code class="objc">    init(_ entity: OrderEntity, showPaymentMethod: Bool = false) {</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">        id = entity.id ?? ""</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">        iconImageName = "icon-card"</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">        value = String(format: "R$%.02f", (entity.value ?? 0))</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">        if showPaymentMethod {</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">            subtitle = entity.paymentMethod?.rawValue.localized ?? ""</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">            status = ""</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">30</td>
 <td class="src"><pre><code class="objc">            statusColor = .white</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">31</td>
 <td class="src"><pre><code class="objc">            friendlyDate = ""</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">32</td>
 <td class="src"><pre><code class="objc">        } else {</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">33</td>
 <td class="src"><pre><code class="objc">            subtitle = entity.email ?? ""</code></pre></td>
-<td class="coverage">31x</td>
+<td class="coverage">61x</td>
 </tr>
 <tr class="covered">
 <td class="num">34</td>
 <td class="src"><pre><code class="objc">            status = entity.status?.rawValue.localized ?? ""</code></pre></td>
-<td class="coverage">31x</td>
+<td class="coverage">61x</td>
 </tr>
 <tr class="covered">
 <td class="num">35</td>
 <td class="src"><pre><code class="objc">            statusColor = entity.status?.statusColor ?? .cbWhite</code></pre></td>
-<td class="coverage">31x</td>
+<td class="coverage">61x</td>
 </tr>
 <tr class="covered">
 <td class="num">36</td>
 <td class="src"><pre><code class="objc">            friendlyDate = entity.date?.friendlyDescription() ?? ""</code></pre></td>
-<td class="coverage">31x</td>
+<td class="coverage">61x</td>
 </tr>
 <tr class="covered">
 <td class="num">37</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="covered">
 <td class="num">38</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">34x</td>
+<td class="coverage">65x</td>
 </tr>
 <tr class="never">
 <td class="num">39</td>

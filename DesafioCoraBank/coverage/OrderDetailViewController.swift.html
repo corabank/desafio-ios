@@ -80,7 +80,7 @@
 <tr class="covered">
 <td class="num">14</td>
 <td class="src"><pre><code class="objc">    fileprivate var interactor: OrderDetailInteractorProtocol? { return self.getAbstractInteractor() as? OrderDetailInteractorProtocol }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">15</td>
@@ -110,22 +110,22 @@
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">    override func loadView() {</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">21</td>
 <td class="src"><pre><code class="objc">        super.loadView()</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">22</td>
 <td class="src"><pre><code class="objc">        self.codeView = OrderDetailView()</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="never">
 <td class="num">24</td>
@@ -135,32 +135,32 @@
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">    override func viewDidLoad() {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
 <td class="src"><pre><code class="objc">        super.viewDidLoad()</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">        self.view.backgroundColor = .cbWhite</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">        setupCodeView()</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">        setupNavigation()</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">30</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">31</td>
@@ -170,22 +170,22 @@
 <tr class="covered">
 <td class="num">32</td>
 <td class="src"><pre><code class="objc">    override func viewDidAppear(_ animated: Bool) {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">33</td>
 <td class="src"><pre><code class="objc">        super.viewDidAppear(animated)</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">34</td>
 <td class="src"><pre><code class="objc">        self.refresh()</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">35</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">36</td>
@@ -195,47 +195,47 @@
 <tr class="covered">
 <td class="num">37</td>
 <td class="src"><pre><code class="objc">    private func setupCodeView() {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">38</td>
 <td class="src"><pre><code class="objc">        guard let codeView = self.codeView else { return }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">39</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">40</td>
 <td class="src"><pre><code class="objc">        view.addSubview(codeView)</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">41</td>
 <td class="src"><pre><code class="objc">        codeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">42</td>
 <td class="src"><pre><code class="objc">        codeView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">43</td>
 <td class="src"><pre><code class="objc">        codeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">44</td>
 <td class="src"><pre><code class="objc">        codeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">45</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">46</td>
@@ -245,27 +245,27 @@
 <tr class="covered">
 <td class="num">47</td>
 <td class="src"><pre><code class="objc">    private func setupNavigation() {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">48</td>
 <td class="src"><pre><code class="objc">        codeView?.navigationView.onTouch = { [weak self] in</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">49</td>
 <td class="src"><pre><code class="objc">            self?.dismiss(animated: true, completion: nil)</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">50</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">51</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">52</td>
@@ -275,37 +275,37 @@
 <tr class="covered">
 <td class="num">53</td>
 <td class="src"><pre><code class="objc">    private func refresh() {</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">54</td>
 <td class="src"><pre><code class="objc">        guard let orderID = self.orderID else { return }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">56</td>
 <td class="src"><pre><code class="objc">        clearStackView()</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">        showLoading(true)</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">58</td>
 <td class="src"><pre><code class="objc">        async { self.interactor?.fetchOrderDetail(orderID: orderID) }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">59</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">60</td>
@@ -315,17 +315,17 @@
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">    public func clearStackView() {</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
 <td class="src"><pre><code class="objc">        guard let stackView = codeView?.stackView else { return }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">63</td>
 <td class="src"><pre><code class="objc">        for view in stackView.arrangedSubviews {</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">64</td>
@@ -335,12 +335,12 @@
 <tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">66</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="never">
 <td class="num">67</td>
@@ -370,17 +370,17 @@
 <tr class="covered">
 <td class="num">72</td>
 <td class="src"><pre><code class="objc">    public func updateLoading(_ visible: Bool) {</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="covered">
 <td class="num">73</td>
 <td class="src"><pre><code class="objc">        codeView?.loading.isHidden = !visible</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="covered">
 <td class="num">74</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="never">
 <td class="num">75</td>
@@ -400,32 +400,32 @@
 <tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">    func addValueCell(viewModel: OrderValueViewModel) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">        let cell = OrderValueView()</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">80</td>
 <td class="src"><pre><code class="objc">        cell.setup(viewModel)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">81</td>
 <td class="src"><pre><code class="objc">        cell.heightAnchor.constraint(equalToConstant: 80).isActive = true</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">82</td>
 <td class="src"><pre><code class="objc">        codeView?.stackView.addArrangedSubview(cell)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">83</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">84</td>
@@ -435,32 +435,32 @@
 <tr class="covered">
 <td class="num">85</td>
 <td class="src"><pre><code class="objc">    func addIconInfoCell(viewModel: OrderDetailIconInfoViewModel) {</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">86</td>
 <td class="src"><pre><code class="objc">        let cell = OrderDetailIconInfoView()</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">87</td>
 <td class="src"><pre><code class="objc">        cell.setup(viewModel)</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">88</td>
 <td class="src"><pre><code class="objc">        cell.heightAnchor.constraint(equalToConstant: 54).isActive = true</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">89</td>
 <td class="src"><pre><code class="objc">        codeView?.stackView.addArrangedSubview(cell)</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">90</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
 <td class="num">91</td>
@@ -470,57 +470,57 @@
 <tr class="covered">
 <td class="num">92</td>
 <td class="src"><pre><code class="objc">    func addSectionHeaderCell(viewModel: OrderDetailSectionHeaderViewModel) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">93</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">94</td>
 <td class="src"><pre><code class="objc">        let dummySeparatorView = UIView(frame: .zero)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">95</td>
 <td class="src"><pre><code class="objc">        dummySeparatorView.heightAnchor.constraint(equalToConstant: 20).isActive = true</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">96</td>
 <td class="src"><pre><code class="objc">        codeView?.stackView.addArrangedSubview(dummySeparatorView)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">97</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">98</td>
 <td class="src"><pre><code class="objc">        let cell = OrderDetailSectionHeaderView()</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">99</td>
 <td class="src"><pre><code class="objc">        cell.setup(viewModel)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">100</td>
 <td class="src"><pre><code class="objc">        cell.heightAnchor.constraint(equalToConstant: 50).isActive = true</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">101</td>
 <td class="src"><pre><code class="objc">        codeView?.stackView.addArrangedSubview(cell)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">102</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">103</td>
@@ -530,32 +530,32 @@
 <tr class="covered">
 <td class="num">104</td>
 <td class="src"><pre><code class="objc">    func addTextInfoCell(viewModel: OrderDetailTextInfoViewModel) {</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">105</td>
 <td class="src"><pre><code class="objc">        let cell = OrderDetailTextInfoView()</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">106</td>
 <td class="src"><pre><code class="objc">        cell.setup(viewModel)</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">107</td>
 <td class="src"><pre><code class="objc">        cell.heightAnchor.constraint(equalToConstant: viewModel.cellHeight).isActive = true</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">108</td>
 <td class="src"><pre><code class="objc">        codeView?.stackView.addArrangedSubview(cell)</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">109</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="never">
 <td class="num">110</td>
@@ -565,32 +565,32 @@
 <tr class="covered">
 <td class="num">111</td>
 <td class="src"><pre><code class="objc">    func addSandboxCell(viewModel: OrderDetailSandboxViewModel) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">112</td>
 <td class="src"><pre><code class="objc">        let cell = OrderDetailSandboxView()</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">113</td>
 <td class="src"><pre><code class="objc">        cell.setup(viewModel)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">114</td>
 <td class="src"><pre><code class="objc">        cell.heightAnchor.constraint(equalToConstant: 60).isActive = true</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">115</td>
 <td class="src"><pre><code class="objc">        codeView?.stackView.addArrangedSubview(cell)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">116</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">117</td>
@@ -620,17 +620,17 @@
 <tr class="covered">
 <td class="num">122</td>
 <td class="src"><pre><code class="objc">    func showLoading(_ visible: Bool) {</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="covered">
 <td class="num">123</td>
 <td class="src"><pre><code class="objc">        updateLoading(visible)</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="covered">
 <td class="num">124</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">3x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="never">
 <td class="num">125</td>
