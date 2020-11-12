@@ -11,12 +11,13 @@ Não se preocupe com layout, imagens, ou cores. Temos como premissa que o candid
 PS: Não precisa se preocupar em consumir nenhuma API. Crie mocks para as requests.
 
 ## O que é obrigatório
-
-- As estruturas de tela devem ser desenvolvidas em View Code
-- Preferencialmente, utilizae apenas APIs nativas, com excessão dos targets de teste.
-- Testes unitários e testes de snapshot
+- Boa organização de código
+- Ter pelo menos uma arquitetura definida
+- Ter pelo menos um tipo de teste (instrumentado, unitário ou de UI)
 
 ## Ganha pontos se tiver
+- View Code
+- Quanto mais APIs nativas, melhor 😊
 - Interações e animações bem estruturadas
 - Acessibilidade
 - Testes instrumentados
