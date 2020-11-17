@@ -25,4 +25,4 @@ PS: Não precisa se preocupar em consumir nenhuma API. Crie mocks para as reques
 - Documentação
 
 ## Importante
-Se surgir qualquer dúvida durante o desenvolvimento, não exite em perguntar. Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
+Se surgir qualquer dúvida durante o desenvolvimento, não hesite em perguntar. Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
