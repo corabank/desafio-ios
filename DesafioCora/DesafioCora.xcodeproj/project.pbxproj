@@ -3,17 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2F23365325F7C23D00316BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365225F7C23D00316BED /* AppDelegate.swift */; };
 		2F23365525F7C23D00316BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365425F7C23D00316BED /* SceneDelegate.swift */; };
-		2F23365725F7C23D00316BED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365625F7C23D00316BED /* ViewController.swift */; };
+		2F23365725F7C23D00316BED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365625F7C23D00316BED /* LoginViewController.swift */; };
 		2F23365C25F7C24000316BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F23365B25F7C24000316BED /* Assets.xcassets */; };
 		2F23365F25F7C24000316BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F23365D25F7C24000316BED /* LaunchScreen.storyboard */; };
 		2F23366A25F7C24000316BED /* DesafioCoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23366925F7C24000316BED /* DesafioCoraTests.swift */; };
 		2F23367525F7C24000316BED /* DesafioCoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23367425F7C24000316BED /* DesafioCoraUITests.swift */; };
+		2F24937625F7D05A0009F3DC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24937525F7D05A0009F3DC /* LoginView.swift */; };
+		2F24937E25F81B890009F3DC /* Extension+UITextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24937D25F81B890009F3DC /* Extension+UITextFields.swift */; };
+		3BCAF1C5037FC532609DA709 /* Pods_DesafioCoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1152EDDAC524AF79D084C78 /* Pods_DesafioCoraTests.framework */; };
+		4B3E4FE6DBA69E4AD3A35D2D /* Pods_DesafioCora_DesafioCoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97D226AFAB3CF62A62928B2 /* Pods_DesafioCora_DesafioCoraUITests.framework */; };
+		C88846C93E34B9FC679BB27D /* Pods_DesafioCora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF02CF3093BB45EB5C05CFD9 /* Pods_DesafioCora.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F25ED022D4F01BA4874AE83 /* Pods-DesafioCoraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraTests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCoraTests/Pods-DesafioCoraTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F23364F25F7C23D00316BED /* DesafioCora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F23365225F7C23D00316BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F23365425F7C23D00316BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F23365625F7C23D00316BED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F23365625F7C23D00316BED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2F23365B25F7C24000316BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F23365E25F7C24000316BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F23366025F7C24000316BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +53,16 @@
 		2F23367025F7C24000316BED /* DesafioCoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F23367425F7C24000316BED /* DesafioCoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraUITests.swift; sourceTree = "<group>"; };
 		2F23367625F7C24000316BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F24937525F7D05A0009F3DC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2F24937D25F81B890009F3DC /* Extension+UITextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextFields.swift"; sourceTree = "<group>"; };
+		696D8F9C76D03D97D71F8875 /* Pods-DesafioCoraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraTests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCoraTests/Pods-DesafioCoraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		725F221ADE13D8BF64ED1301 /* Pods-DesafioCora-DesafioCoraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B57FA3766ACCF79647DB045D /* Pods-DesafioCora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora.release.xcconfig"; path = "Target Support Files/Pods-DesafioCora/Pods-DesafioCora.release.xcconfig"; sourceTree = "<group>"; };
+		C97D226AFAB3CF62A62928B2 /* Pods_DesafioCora_DesafioCoraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCora_DesafioCoraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC15C85A69C7FBAC3EA76624 /* Pods-DesafioCora-DesafioCoraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora-DesafioCoraUITests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CCED11D72C70B7D1F524B70D /* Pods-DesafioCora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCora/Pods-DesafioCora.debug.xcconfig"; sourceTree = "<group>"; };
+		E1152EDDAC524AF79D084C78 /* Pods_DesafioCoraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCoraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF02CF3093BB45EB5C05CFD9 /* Pods_DesafioCora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioCora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88846C93E34B9FC679BB27D /* Pods_DesafioCora.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCAF1C5037FC532609DA709 /* Pods_DesafioCoraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +86,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3E4FE6DBA69E4AD3A35D2D /* Pods_DesafioCora_DesafioCoraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B22EC4DBCE6BA60C86C0AB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CCED11D72C70B7D1F524B70D /* Pods-DesafioCora.debug.xcconfig */,
+				B57FA3766ACCF79647DB045D /* Pods-DesafioCora.release.xcconfig */,
+				CC15C85A69C7FBAC3EA76624 /* Pods-DesafioCora-DesafioCoraUITests.debug.xcconfig */,
+				725F221ADE13D8BF64ED1301 /* Pods-DesafioCora-DesafioCoraUITests.release.xcconfig */,
+				696D8F9C76D03D97D71F8875 /* Pods-DesafioCoraTests.debug.xcconfig */,
+				0F25ED022D4F01BA4874AE83 /* Pods-DesafioCoraTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2F23364625F7C23D00316BED = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +113,8 @@
 				2F23366825F7C24000316BED /* DesafioCoraTests */,
 				2F23367325F7C24000316BED /* DesafioCoraUITests */,
 				2F23365025F7C23D00316BED /* Products */,
+				0B22EC4DBCE6BA60C86C0AB7 /* Pods */,
+				776C22EB1520A3CD27A88D5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,7 +133,9 @@
 			children = (
 				2F23365225F7C23D00316BED /* AppDelegate.swift */,
 				2F23365425F7C23D00316BED /* SceneDelegate.swift */,
-				2F23365625F7C23D00316BED /* ViewController.swift */,
+				2F23365625F7C23D00316BED /* LoginViewController.swift */,
+				2F24937525F7D05A0009F3DC /* LoginView.swift */,
+				2F24937D25F81B890009F3DC /* Extension+UITextFields.swift */,
 				2F23365B25F7C24000316BED /* Assets.xcassets */,
 				2F23365D25F7C24000316BED /* LaunchScreen.storyboard */,
 				2F23366025F7C24000316BED /* Info.plist */,
@@ -125,6 +161,16 @@
 			path = DesafioCoraUITests;
 			sourceTree = "<group>";
 		};
+		776C22EB1520A3CD27A88D5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF02CF3093BB45EB5C05CFD9 /* Pods_DesafioCora.framework */,
+				C97D226AFAB3CF62A62928B2 /* Pods_DesafioCora_DesafioCoraUITests.framework */,
+				E1152EDDAC524AF79D084C78 /* Pods_DesafioCoraTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F23367925F7C24000316BED /* Build configuration list for PBXNativeTarget "DesafioCora" */;
 			buildPhases = (
+				29DC433E70BF2D6B354EF71F /* [CP] Check Pods Manifest.lock */,
 				2F23364B25F7C23D00316BED /* Sources */,
 				2F23364C25F7C23D00316BED /* Frameworks */,
 				2F23364D25F7C23D00316BED /* Resources */,
+				55EDE43F3A8A69B6CC6DB1EB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F23367C25F7C24000316BED /* Build configuration list for PBXNativeTarget "DesafioCoraTests" */;
 			buildPhases = (
+				F50668458BBB9FFE32C07497 /* [CP] Check Pods Manifest.lock */,
 				2F23366125F7C24000316BED /* Sources */,
 				2F23366225F7C24000316BED /* Frameworks */,
 				2F23366325F7C24000316BED /* Resources */,
@@ -167,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F23367F25F7C24000316BED /* Build configuration list for PBXNativeTarget "DesafioCoraUITests" */;
 			buildPhases = (
+				FF21F8C3E569F95EEA90909C /* [CP] Check Pods Manifest.lock */,
 				2F23366C25F7C24000316BED /* Sources */,
 				2F23366D25F7C24000316BED /* Frameworks */,
 				2F23366E25F7C24000316BED /* Resources */,
+				03314CBA96AB348CBA2A7708 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,13 +300,118 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03314CBA96AB348CBA2A7708 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29DC433E70BF2D6B354EF71F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioCora-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55EDE43F3A8A69B6CC6DB1EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCora/Pods-DesafioCora-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioCora/Pods-DesafioCora-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioCora/Pods-DesafioCora-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F50668458BBB9FFE32C07497 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioCoraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF21F8C3E569F95EEA90909C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioCora-DesafioCoraUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2F23364B25F7C23D00316BED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F23365725F7C23D00316BED /* ViewController.swift in Sources */,
+				2F24937E25F81B890009F3DC /* Extension+UITextFields.swift in Sources */,
+				2F23365725F7C23D00316BED /* LoginViewController.swift in Sources */,
 				2F23365325F7C23D00316BED /* AppDelegate.swift in Sources */,
+				2F24937625F7D05A0009F3DC /* LoginView.swift in Sources */,
 				2F23365525F7C23D00316BED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +577,7 @@
 		};
 		2F23367A25F7C24000316BED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCED11D72C70B7D1F524B70D /* Pods-DesafioCora.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +597,7 @@
 		};
 		2F23367B25F7C24000316BED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B57FA3766ACCF79647DB045D /* Pods-DesafioCora.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +617,7 @@
 		};
 		2F23367D25F7C24000316BED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 696D8F9C76D03D97D71F8875 /* Pods-DesafioCoraTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -481,6 +640,7 @@
 		};
 		2F23367E25F7C24000316BED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F25ED022D4F01BA4874AE83 /* Pods-DesafioCoraTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -503,6 +663,7 @@
 		};
 		2F23368025F7C24000316BED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC15C85A69C7FBAC3EA76624 /* Pods-DesafioCora-DesafioCoraUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +684,7 @@
 		};
 		2F23368125F7C24000316BED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 725F221ADE13D8BF64ED1301 /* Pods-DesafioCora-DesafioCoraUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
