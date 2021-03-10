@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D6371331-6936-4A50-BC64-FF0C778146D6"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD663912-2499-43AB-B50A-A1BBD00F7B54"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioCora/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "signUpPressed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "568EC1D4-9568-4A92-AB40-31342CB2C3A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioCora/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loginPressed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C63CEDF-9C59-4DEB-A1C1-97AAFC8F2C7B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioCora/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C63CEDF-9C59-4DEB-A1C1-97AAFC8F2C7B - d6e6802395bc8bfb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DesafioCora.LoginViewController.setupView() -&gt; ()"
+                  moduleName = "DesafioCora"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/euclidesmedeiros/Desktop/Desafio_Cora/desafio-ios/DesafioCora/DesafioCora/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "959">
+               </Location>
+               <Location
+                  uuid = "4C63CEDF-9C59-4DEB-A1C1-97AAFC8F2C7B - 7655195f75b16569"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 () -&gt; () in implicit closure #1 (DesafioCora.LoginViewController) -&gt; () -&gt; () in DesafioCora.LoginViewController.setupView() -&gt; ()"
+                  moduleName = "DesafioCora"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/euclidesmedeiros/Desktop/Desafio_Cora/desafio-ios/DesafioCora/DesafioCora/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63A94EF6-6ED1-4C80-A418-89C65A83CC7E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioCora/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "63A94EF6-6ED1-4C80-A418-89C65A83CC7E - d6e6802395bc8b9a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DesafioCora.LoginViewController.setupView() -&gt; ()"
+                  moduleName = "DesafioCora"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/euclidesmedeiros/Desktop/Desafio_Cora/desafio-ios/DesafioCora/DesafioCora/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1204">
+               </Location>
+               <Location
+                  uuid = "63A94EF6-6ED1-4C80-A418-89C65A83CC7E - 475e3fed68cccf0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #4 () -&gt; () in implicit closure #3 (DesafioCora.LoginViewController) -&gt; () -&gt; () in DesafioCora.LoginViewController.setupView() -&gt; ()"
+                  moduleName = "DesafioCora"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/euclidesmedeiros/Desktop/Desafio_Cora/desafio-ios/DesafioCora/DesafioCora/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

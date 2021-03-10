@@ -11,6 +11,7 @@ import SnapKit
 class LoginView: UIView {
     
     var loginAction: (() -> Void)?
+    var signUpAction: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +36,7 @@ class LoginView: UIView {
         self.addSubview(emailTextField)
         self.addSubview(passwordTextFied)
         self.addSubview(loginButton)
+        self.addSubview(signUpButton)
     }
     
     let imageLogo: UIImageView = {
@@ -57,6 +59,12 @@ class LoginView: UIView {
     let loginButton: UIButton = {
         let button = UIButton(title: "Login", borderColor: UIColor.pinkColorborder)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        return button
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton(title: "Sign Up", borderColor: UIColor.pinkColorborder)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -91,9 +99,21 @@ class LoginView: UIView {
             make.height.equalTo(40)
             make.width.equalTo(0)
         }
+        
+        self.signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(12)
+            make.trailing.equalTo(self.snp.trailing).offset(-24)
+            make.leading.equalTo(self.snp.leading).offset(24)
+            make.height.equalTo(40)
+            make.width.equalTo(0)
+        }
     }
     
     @objc func handleLogin() {
         loginAction?()
+    }
+    
+    @objc func handleSignUp() {
+        signUpAction?()
     }
 }

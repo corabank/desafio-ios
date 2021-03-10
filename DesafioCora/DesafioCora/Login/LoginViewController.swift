@@ -23,10 +23,16 @@ class LoginViewController: UIViewController {
         self.loginView = mainView
         self.view.addSubview(loginView)
         self.loginView.loginAction = loginPressed
+        self.loginView.signUpAction = signUpPressed
     }
     
     func loginPressed() {
         print("Banana")
+    }
+    
+    func signUpPressed() {
+        let goToSignUpScreen = SignUpViewController()
+        present(goToSignUpScreen, animated: true, completion: nil)
     }
 }
 

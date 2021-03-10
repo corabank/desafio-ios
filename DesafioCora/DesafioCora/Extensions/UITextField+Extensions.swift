@@ -8,7 +8,7 @@
 import UIKit
 
 extension UITextField {
-    public convenience init(_ placeholder: String) {
+    public convenience init(_ placeholderText: String) {
         self.init()
         self.borderStyle = .none
         self.layer.cornerRadius = 5
@@ -18,7 +18,7 @@ extension UITextField {
         self.autocorrectionType = .no
         // placeholder
         var placeholder = NSMutableAttributedString()
-        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), .foregroundColor: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)]))
+        placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), .foregroundColor: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)]))
         self.attributedPlaceholder = placeholder
         self.setLeftPaddingPoints(10)
     }
