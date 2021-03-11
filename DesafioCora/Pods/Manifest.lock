@@ -1,16 +1,124 @@
 PODS:
+  - Firebase/Auth (7.8.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 7.8.0)
+  - Firebase/Core (7.8.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 7.8.0)
+  - Firebase/CoreOnly (7.8.0):
+    - FirebaseCore (= 7.8.0)
+  - Firebase/Database (7.8.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 7.8.0)
+  - FirebaseAnalytics (7.8.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleAppMeasurement (= 7.8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/MethodSwizzler (~> 7.0)
+    - GoogleUtilities/Network (~> 7.0)
+    - "GoogleUtilities/NSData+zlib (~> 7.0)"
+    - nanopb (~> 2.30907.0)
+  - FirebaseAuth (7.8.0):
+    - FirebaseCore (~> 7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GTMSessionFetcher/Core (~> 1.4)
+  - FirebaseCore (7.8.0):
+    - FirebaseCoreDiagnostics (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Logger (~> 7.0)
+  - FirebaseCoreDiagnostics (7.8.0):
+    - GoogleDataTransport (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Logger (~> 7.0)
+    - nanopb (~> 2.30907.0)
+  - FirebaseDatabase (7.8.0):
+    - FirebaseCore (~> 7.0)
+    - leveldb-library (~> 1.22)
+  - FirebaseInstallations (7.8.0):
+    - FirebaseCore (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
+    - PromisesObjC (~> 1.2)
+  - GoogleAppMeasurement (7.8.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/MethodSwizzler (~> 7.0)
+    - GoogleUtilities/Network (~> 7.0)
+    - "GoogleUtilities/NSData+zlib (~> 7.0)"
+    - nanopb (~> 2.30907.0)
+  - GoogleDataTransport (8.2.0):
+    - nanopb (~> 2.30907.0)
+  - GoogleUtilities/AppDelegateSwizzler (7.2.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.2.2):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (7.2.2):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (7.2.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (7.2.2):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.2.2)"
+  - GoogleUtilities/Reachability (7.2.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.2.2):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.5.0)
+  - leveldb-library (1.22.1)
+  - nanopb (2.30907.0):
+    - nanopb/decode (= 2.30907.0)
+    - nanopb/encode (= 2.30907.0)
+  - nanopb/decode (2.30907.0)
+  - nanopb/encode (2.30907.0)
+  - PromisesObjC (1.2.12)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Database
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseDatabase
+    - FirebaseInstallations
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - leveldb-library
+    - nanopb
+    - PromisesObjC
     - SnapKit
 
 SPEC CHECKSUMS:
+  Firebase: 1e0d6610f21bdd131231525d7ee78f7f9e64e606
+  FirebaseAnalytics: e70f7e0f1f178960a7d0b4ebec32e8c386245eda
+  FirebaseAuth: 667e576a716f6f9fe31687791406f61135002d47
+  FirebaseCore: 049029df3096e5c118917029be7da75ee16f3b1b
+  FirebaseCoreDiagnostics: 066f996579cf097bdad3d7dc9a918d6b9e129c50
+  FirebaseDatabase: f909d1448d4e7c4f5ef5acd1b8095f4bea9813ca
+  FirebaseInstallations: 7f7ed0e7e27fb51f57291e1876e2ddb1524126c1
+  GoogleAppMeasurement: dccff6095ea1cd8972a8b96d0ee38b9e6d67acbb
+  GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
+  GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 53af1ffd3b679a32e7cf7d384712433586b72c68
+PODFILE CHECKSUM: 2f7aa842ee6d2653c3d1a1916aec8f9d9e6c7f4f
 
 COCOAPODS: 1.10.1

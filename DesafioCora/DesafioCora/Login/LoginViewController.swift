@@ -32,7 +32,9 @@ class LoginViewController: UIViewController {
     
     func signUpPressed() {
         let goToSignUpScreen = SignUpViewController()
+        goToSignUpScreen.modalPresentationStyle = .fullScreen
         present(goToSignUpScreen, animated: true, completion: nil)
+        
     }
 }
 

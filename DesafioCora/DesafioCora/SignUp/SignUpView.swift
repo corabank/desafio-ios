@@ -9,6 +9,8 @@ import UIKit
 
 class SignUpView: UIView {
     
+    var signUpAction: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewHierarchy()
@@ -99,7 +101,7 @@ class SignUpView: UIView {
     }
     
     @objc func signUpBt() {
-        print("banana")
+        signUpAction?()
     }
     
 }
