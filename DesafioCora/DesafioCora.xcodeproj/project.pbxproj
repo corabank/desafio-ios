@@ -23,6 +23,7 @@
 		2F86E6C825F95021008A9821 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E6C725F95021008A9821 /* SignUpViewController.swift */; };
 		2F86E6EA25F96C46008A9821 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */; };
 		2F86E70525FAD58E008A9821 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E70425FAD58E008A9821 /* OrderListViewController.swift */; };
+		2F86E70E25FBBABA008A9821 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E70D25FBBABA008A9821 /* AppUser.swift */; };
 		3BCAF1C5037FC532609DA709 /* Pods_DesafioCoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1152EDDAC524AF79D084C78 /* Pods_DesafioCoraTests.framework */; };
 		4B3E4FE6DBA69E4AD3A35D2D /* Pods_DesafioCora_DesafioCoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97D226AFAB3CF62A62928B2 /* Pods_DesafioCora_DesafioCoraUITests.framework */; };
 		C88846C93E34B9FC679BB27D /* Pods_DesafioCora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF02CF3093BB45EB5C05CFD9 /* Pods_DesafioCora.framework */; };
@@ -69,6 +70,7 @@
 		2F86E6C725F95021008A9821 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F86E70425FAD58E008A9821 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		2F86E70D25FBBABA008A9821 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		696D8F9C76D03D97D71F8875 /* Pods-DesafioCoraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraTests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCoraTests/Pods-DesafioCoraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		725F221ADE13D8BF64ED1301 /* Pods-DesafioCora-DesafioCoraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B57FA3766ACCF79647DB045D /* Pods-DesafioCora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora.release.xcconfig"; path = "Target Support Files/Pods-DesafioCora/Pods-DesafioCora.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		2F23365125F7C23D00316BED /* DesafioCora */ = {
 			isa = PBXGroup;
 			children = (
+				2F86E70C25FBBA98008A9821 /* Models */,
 				2F86E70325FAD54B008A9821 /* Details */,
 				2F23366025F7C24000316BED /* Info.plist */,
 				2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */,
@@ -220,6 +223,14 @@
 				2F86E70425FAD58E008A9821 /* OrderListViewController.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		2F86E70C25FBBA98008A9821 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F86E70D25FBBABA008A9821 /* AppUser.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		776C22EB1520A3CD27A88D5F /* Frameworks */ = {
@@ -474,6 +485,7 @@
 				2F24937E25F81B890009F3DC /* Extension.swift in Sources */,
 				2F23365725F7C23D00316BED /* LoginViewController.swift in Sources */,
 				2F86E70525FAD58E008A9821 /* OrderListViewController.swift in Sources */,
+				2F86E70E25FBBABA008A9821 /* AppUser.swift in Sources */,
 				2F23365325F7C23D00316BED /* AppDelegate.swift in Sources */,
 				2F86E6C825F95021008A9821 /* SignUpViewController.swift in Sources */,
 				2F24938F25F9191D0009F3DC /* UITextField+Extensions.swift in Sources */,
