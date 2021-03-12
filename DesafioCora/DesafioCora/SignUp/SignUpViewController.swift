@@ -16,15 +16,30 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        setupNavigation()
         setupViews()
     }
     
     func setupViews() {
         view.backgroundColor = .white
+        self.title = "signup"
         let signUpView = SignUpView(frame: self.view.frame)
         self.signUpView = signUpView
         self.signUpView.signUpAction = submmitPressed
         view.addSubview(signUpView)
+    }
+    
+    private func setupNavigation() {
+        let backbutton = UIButton(type: .custom)
+        backbutton.setTitle("voltar", for: .normal)
+        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
+        backbutton.addTarget(self, action: #selector(self.backAction), for: .touchUpInside)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
+        }
+    
+    @objc func backAction() -> Void {
+        dismiss(animated: true, completion: nil)
     }
     
     func submmitPressed() {

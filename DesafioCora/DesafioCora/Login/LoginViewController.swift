@@ -43,8 +43,9 @@ class LoginViewController: UIViewController {
     
     func signUpPressed() {
         let goToSignUpScreen = SignUpViewController()
-        goToSignUpScreen.modalPresentationStyle = .fullScreen
-        present(goToSignUpScreen, animated: true, completion: nil)
+        let navVC = UINavigationController(rootViewController: goToSignUpScreen)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true, completion: nil)
         
     }
 }
