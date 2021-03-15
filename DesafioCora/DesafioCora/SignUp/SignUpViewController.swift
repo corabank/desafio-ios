@@ -32,7 +32,7 @@ class SignUpViewController: UIViewController {
     private func setupNavigation() {
         let backbutton = UIButton(type: .custom)
         backbutton.setTitle("voltar", for: .normal)
-        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
+        backbutton.setTitleColor(backbutton.tintColor, for: .normal)
         backbutton.addTarget(self, action: #selector(self.backAction), for: .touchUpInside)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
