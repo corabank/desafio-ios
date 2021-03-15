@@ -48,11 +48,13 @@ class LoginView: UIView {
     
     let emailTextField: UITextField = {
         let tf = UITextField("Email")
+        tf.text = "euclides.sena@hotmail.com"
         return tf
     }()
     
     let passwordTextFied: UITextField = {
-        let tf = UITextField("Password") 
+        let tf = UITextField("Password")
+        tf.text = "111111"
         return tf
     }()
     

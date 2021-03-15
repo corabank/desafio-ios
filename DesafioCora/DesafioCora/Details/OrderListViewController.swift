@@ -13,7 +13,7 @@ class OrderListViewController: UIViewController {
     var ref: DatabaseReference!
     var orderListView: OrderListCollectionView!
     
-    private let contentView: OrderListCollectionView = {
+     let contentView: OrderListCollectionView = {
         let view = OrderListCollectionView()
         view.backgroundColor = .white
         return view
@@ -31,6 +31,9 @@ class OrderListViewController: UIViewController {
         ref = Database.database().reference()
         fetchUserInfo()
         view.backgroundColor = .white
+        contentView.tableView.delegate = self
+        contentView.tableView.dataSource = self
+        contentView.tableView.register(OrderListCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func loadView() {
@@ -45,4 +48,21 @@ class OrderListViewController: UIViewController {
             self.appUser = AppUser(name: username, uid: userId)
         }
     }
+}
+
+extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! OrderListCell
+        cell.setup(purchaseValue: "R$ 110,00", currentEmail: "euclides.sena@hotmail.com", statusPayment: "Pago", payDay: "3 dias atrás")
+        return cell
+    }
+  
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+  
 }

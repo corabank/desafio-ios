@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BaseViewController {
     
     var signUpView: SignUpView!
     var ref: DatabaseReference!
@@ -53,12 +53,19 @@ class SignUpViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let err = error {
-                print(err.localizedDescription)
+                self.showAlert(alertText: "Erro", alertMessage: err.localizedDescription)
             } else {
                 guard let uid = result?.user.uid else { return }
                 self.ref.child("users/\(uid)").setValue(userData)
-                print("Isso mesmo, usuário criado!!!", uid)
+                self.showAlert(alertText: "Sucesso!!!", alertMessage: "Usuário criado. =-)")
+                self.clearFields()
             }
         }
+    }
+    
+    func clearFields() {
+        signUpView.nameSignUpTextField.text = ""
+        signUpView.emailSignUpTextField.text = ""
+        signUpView.passwordSignUpTextFied.text = ""
     }
 }

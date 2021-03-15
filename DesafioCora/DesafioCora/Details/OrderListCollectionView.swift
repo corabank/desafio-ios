@@ -43,12 +43,10 @@ class OrderListCollectionView: UIView {
         return label
     }()
     
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 20
-        layout.minimumLineSpacing = 20
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        return collectionView
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
     
     override init(frame: CGRect) {
@@ -69,7 +67,7 @@ class OrderListCollectionView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        collectionView.backgroundColor = .clear
+        tableView.backgroundColor = .clear
     }
     
     private func setupViewHierarchy() {
@@ -77,7 +75,7 @@ class OrderListCollectionView: UIView {
         self.addSubview(currentUser)
         self.addSubview(titleLabel)
         self.addSubview(allOrders)
-        self.addSubview(collectionView)
+        self.addSubview(tableView)
     }
     
     private func setupConstraints() {
@@ -106,7 +104,7 @@ class OrderListCollectionView: UIView {
             make.leading.equalTo(self.snp.leading).offset(24)
         }
         
-        self.collectionView.snp.makeConstraints { make in
+        self.tableView.snp.makeConstraints { make in
             make.top.equalTo(self.allOrders.snp.bottom).offset(16)
             make.trailing.equalTo(self.snp.trailing)
             make.leading.equalTo(self.snp.leading)

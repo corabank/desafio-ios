@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     var loginView: LoginView!
     
@@ -61,11 +61,4 @@ extension LoginViewController {
     @objc func dismissMyKeyboard(){
         view.endEditing(true)
     }
-    
-    func showAlert(alertText : String, alertMessage : String) {
-        let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Got it", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }
