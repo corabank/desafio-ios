@@ -153,6 +153,7 @@
 		2F23365125F7C23D00316BED /* DesafioCora */ = {
 			isa = PBXGroup;
 			children = (
+				2F5A84AB26000601005383B9 /* ViewModel */,
 				2F86E70C25FBBA98008A9821 /* Models */,
 				2F86E70325FAD54B008A9821 /* Details */,
 				2F23366025F7C24000316BED /* Info.plist */,
@@ -213,6 +214,13 @@
 				2F24937525F7D05A0009F3DC /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		2F5A84AB26000601005383B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2F86E6BE25F94FFE008A9821 /* SignUp */ = {

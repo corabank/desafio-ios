@@ -50,7 +50,7 @@ class OrderListCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        configureViews()
+        configureViews()
         setupViewHierarchy()
         setupConstraints()
     }
@@ -61,9 +61,6 @@ class OrderListCell: UITableViewCell {
     
     func configureViews() {
         self.backgroundColor = .clear
-        self.layer.cornerRadius = 10
-        self.layer.borderWidth = 2
-        
         self.layer.borderColor = UIColor.white.cgColor
     }
     

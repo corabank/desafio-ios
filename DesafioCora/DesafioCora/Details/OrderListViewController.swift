@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class OrderListViewController: UIViewController {
+class OrderListViewController: BaseViewController {
     
     var ref: DatabaseReference!
     var orderListView: OrderListCollectionView!
