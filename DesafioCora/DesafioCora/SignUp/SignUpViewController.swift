@@ -46,7 +46,6 @@ class SignUpViewController: BaseViewController {
         guard let email = signUpView.emailSignUpTextField.text,
               let password = signUpView.passwordSignUpTextFied.text,
               let userName = signUpView.nameSignUpTextField.text else { return }
-        
         let userData: [String: Any] = [
             "name": userName
         ]

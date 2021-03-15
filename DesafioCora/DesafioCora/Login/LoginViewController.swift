@@ -28,16 +28,19 @@ class LoginViewController: BaseViewController {
     }
     
     func loginPressed() {
+        self.showLoadingAnimation()
         guard let email = loginView.emailTextField.text,
               let password = loginView.passwordTextFied.text else { return }
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let err = error {
+                self.hiddenLoadingAnimation()
                 self.showAlert(alertText: "Error", alertMessage: "\(err.localizedDescription)")
             } else {
                 let goToOrderListVc = OrderListViewController()
                 goToOrderListVc.modalPresentationStyle = .fullScreen
                 self.present(goToOrderListVc, animated: true, completion: nil)
+                self.hiddenLoadingAnimation()
             }
         }
     }

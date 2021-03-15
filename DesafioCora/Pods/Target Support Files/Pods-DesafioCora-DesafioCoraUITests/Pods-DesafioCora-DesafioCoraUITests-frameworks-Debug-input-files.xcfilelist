@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FSnapChatLoading/FSnapChatLoading.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework

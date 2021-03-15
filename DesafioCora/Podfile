@@ -10,6 +10,7 @@ target 'DesafioCora' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'FSnapChatLoading'
 
   target 'DesafioCoraTests' do
     inherit! :search_paths
