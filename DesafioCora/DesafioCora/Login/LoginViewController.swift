@@ -35,7 +35,8 @@ class LoginViewController: UIViewController {
             if let err = error {
                 self.showAlert(alertText: "Error", alertMessage: "\(err.localizedDescription)")
             } else {
-                let goToOrderListVc = UINavigationController(rootViewController: OrderListViewController())
+                let goToOrderListVc = OrderListViewController()
+                goToOrderListVc.modalPresentationStyle = .fullScreen
                 self.present(goToOrderListVc, animated: true, completion: nil)
             }
         }

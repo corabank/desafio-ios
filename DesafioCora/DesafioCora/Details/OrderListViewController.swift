@@ -11,20 +11,30 @@ import Firebase
 class OrderListViewController: UIViewController {
     
     var ref: DatabaseReference!
+    var orderListView: OrderListCollectionView!
+    
+    private let contentView: OrderListCollectionView = {
+        let view = OrderListCollectionView()
+        view.backgroundColor = .white
+        return view
+    }()
     
     var appUser: AppUser? {
         didSet {
             guard let username = appUser?.name else { return }
-            navigationItem.title = username
+            contentView.currentUser.text = "Olá, \(username)"
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        view.backgroundColor = .systemGray
-        navigationController?.navigationBar.prefersLargeTitles = true
         fetchUserInfo()
+        view.backgroundColor = .white
+    }
+    
+    override func loadView() {
+        self.view = contentView
     }
     
     func fetchUserInfo() {
