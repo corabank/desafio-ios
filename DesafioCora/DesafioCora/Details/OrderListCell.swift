@@ -104,10 +104,10 @@ class OrderListCell: UITableViewCell {
         }
     }
     
-    func setup(purchaseValue: String, currentEmail: String, statusPayment: String, payDay: String ) {
-        self.valueText.text = purchaseValue
+    func setup(purchaseValue: Int, currentEmail: String, statusPayment: Bool, payDay: String ) {
+        self.valueText.text = String(purchaseValue)
         self.emailText.text = currentEmail
-        self.situationText.text = statusPayment
+        self.situationText.text = String(statusPayment)
         self.payDayText.text = payDay
     }
 }

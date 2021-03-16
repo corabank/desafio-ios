@@ -11,6 +11,7 @@ import Firebase
 class LoginViewController: BaseViewController {
 
     var loginView: LoginView!
+    let viewModel = OrderListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class LoginViewController: BaseViewController {
                 self.hiddenLoadingAnimation()
                 self.showAlert(alertText: "Error", alertMessage: "\(err.localizedDescription)")
             } else {
-                let goToOrderListVc = OrderListViewController()
+                let goToOrderListVc = OrderListViewController(viewModel: self.viewModel)
                 goToOrderListVc.modalPresentationStyle = .fullScreen
                 self.present(goToOrderListVc, animated: true, completion: nil)
                 self.hiddenLoadingAnimation()

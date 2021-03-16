@@ -8,7 +8,30 @@
 import UIKit
 import Firebase
 
-class OrderListViewController: BaseViewController {
+protocol DetailsGithubDataProtocol {
+    func getValue(_ indexPath: IndexPath) -> Int
+    func getMail(_ indexPath: IndexPath) -> String
+    func getStatus(_ indexPath: IndexPath) -> Bool
+    func getPayDay(_ indexPath: IndexPath) -> String
+}
+
+class OrderListViewController: BaseViewController, DetailsGithubDataProtocol {
+    func getValue(_ indexPath: IndexPath) -> Int {
+        return viewModel?.model[indexPath.row].value ?? 0
+    }
+    
+    func getMail(_ indexPath: IndexPath) -> String {
+        return viewModel?.model[indexPath.row].mail ?? ""
+    }
+    
+    func getStatus(_ indexPath: IndexPath) -> Bool {
+        return viewModel?.model[indexPath.row].status ?? false
+    }
+    
+    func getPayDay(_ indexPath: IndexPath) -> String {
+        return viewModel?.model[indexPath.row].date ?? ""
+    }
+    
     
     var ref: DatabaseReference!
     var orderListView: OrderListCollectionView!
@@ -26,6 +49,21 @@ class OrderListViewController: BaseViewController {
         }
     }
     
+    var viewModel: OrderListViewModel? {
+        didSet {
+            contentView.tableView.reloadData()
+        }
+    }
+    
+    init(viewModel: OrderListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -34,10 +72,21 @@ class OrderListViewController: BaseViewController {
         contentView.tableView.delegate = self
         contentView.tableView.dataSource = self
         contentView.tableView.register(OrderListCell.self, forCellReuseIdentifier: "cell")
+        self.loadData()
     }
     
     override func loadView() {
         self.view = contentView
+    }
+    
+    func loadData() {
+        viewModel?.getJsonSerializer { (error) in
+            if let error = error {
+                self.showError(error: error, buttonLabel: "Ok")
+            } else {
+                self.contentView.tableView.reloadData()
+            }
+        }
     }
     
     func fetchUserInfo() {
@@ -56,13 +105,19 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! OrderListCell
-        cell.setup(purchaseValue: "R$ 110,00", currentEmail: "euclides.sena@hotmail.com", statusPayment: "Pago", payDay: "3 dias atrás")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! OrderListCell
+        cell.setup(purchaseValue: getValue(indexPath), currentEmail: getMail(indexPath), statusPayment: getStatus(indexPath), payDay: getPayDay(indexPath))
+        cell.selectionStyle = .none
         return cell
     }
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let banana = indexPath.row
+        print("Você clicou no index -> \(banana)")
     }
   
 }

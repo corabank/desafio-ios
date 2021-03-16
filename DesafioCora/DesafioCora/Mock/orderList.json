@@ -1,0 +1,85 @@
+{
+    "orderList": [{
+            "value": 110.0,
+            "mail": "euclides.sena@hotmail.com",
+            "status": false,
+            "date": "3 dias atrás",
+            "details": {
+                "value": 110.0,
+                "ownerPurchase": "Euclides Medeiros",
+                "ownerMail": "euclides.sena@hotmail.com",
+                "creationDate": "03/08/2020",
+                "ownerStatus": false,
+                "taxes": 4.99
+            }
+        },
+        {
+            "value": 400.0,
+            "mail": "joao.medeiros@gmail.com",
+            "status": true,
+            "date": "2 dias atrás"
+        },
+        {
+            "value": 212.0,
+            "mail": "manoela.medeiros@hotmail.com",
+            "status": false,
+            "date": "10 dias atrás"
+        },
+        {
+            "value": 45.0,
+            "mail": "jailson.caetano@hotmail.com",
+            "status": true,
+            "date": "1 dias atrás"
+        },
+        {
+            "value": 10.0,
+            "mail": "marcoslima@gmail.com",
+            "status": false,
+            "date": "5 dias atrás"
+        },
+        {
+            "value": 11.0,
+            "mail": "felipe.pereira@hotmail.com",
+            "status": false,
+            "date": "3 dias atrás"
+        },
+        {
+            "value": 999.0,
+            "mail": "ronaldo9@hotmail.com",
+            "status": true,
+            "date": "8 dias atrás"
+        },
+        {
+            "value": 543.0,
+            "mail": "cassio_1@uol.com",
+            "status": true,
+            "date": "3 dias atrás"
+        },
+        {
+            "value": 653.0,
+            "mail": "marcia.silva@hotmail.com",
+            "status": false,
+            "date": "9 dias atrás"
+        },
+        {
+            "value": 764.0,
+            "mail": "maria.bento@hotmail.com",
+            "status": true,
+            "date": "1 dias atrás"
+        },
+        {
+            "value": 265.0,
+            "mail": "antonio.lisboa@hotmail.com",
+            "status": true,
+            "date": "5 dias atrás"
+        },
+        {
+            "value": 879.0,
+            "mail": "erik.fernandes@hotmail.com",
+            "status": true,
+            "date": "7 dias atrás"
+        }
+    ],
+    "statusCode": 200
+}
+
