@@ -54,6 +54,8 @@ class LoginView: UIView {
     
     let passwordTextFied: UITextField = {
         let tf = UITextField("Password")
+        tf.isSecureTextEntry = true
+        tf.keyboardType = .numberPad
         tf.text = "111111"
         return tf
     }()

@@ -40,6 +40,8 @@ class SignUpView: UIView {
     
     let passwordSignUpTextFied: UITextField = {
         let tf = UITextField("Password")
+        tf.isSecureTextEntry = true
+        tf.keyboardType = .numberPad
         return tf
     }()
     
