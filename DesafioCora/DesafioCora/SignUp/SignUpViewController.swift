@@ -29,19 +29,6 @@ class SignUpViewController: BaseViewController {
         view.addSubview(signUpView)
     }
     
-    private func setupNavigation() {
-        UINavigationBar.appearance().barTintColor = .pinkColorborder
-        let backbutton = UIButton(type: .custom)
-        backbutton.setTitle("voltar", for: .normal)
-        backbutton.setTitleColor(backbutton.tintColor, for: .highlighted)
-        backbutton.addTarget(self, action: #selector(self.backAction), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
-        }
-    
-    @objc func backAction() -> Void {
-        dismiss(animated: true, completion: nil)
-    }
-    
     func submmitPressed() {
         guard let email = signUpView.emailSignUpTextField.text,
               let password = signUpView.passwordSignUpTextFied.text,

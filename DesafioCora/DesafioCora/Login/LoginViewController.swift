@@ -29,6 +29,7 @@ class LoginViewController: BaseViewController {
     }
     
     func loginPressed() {
+        dismissMyKeyboard()
         self.showLoadingAnimation()
         guard let email = loginView.emailTextField.text,
               let password = loginView.passwordTextFied.text else { return }

@@ -9,29 +9,13 @@ import UIKit
 import Firebase
 
 protocol DetailsGithubDataProtocol {
-    func getValue(_ indexPath: IndexPath) -> Int
+    func getValue(_ indexPath: IndexPath) -> Double
     func getMail(_ indexPath: IndexPath) -> String
     func getStatus(_ indexPath: IndexPath) -> Bool
     func getPayDay(_ indexPath: IndexPath) -> String
 }
 
-class OrderListViewController: BaseViewController, DetailsGithubDataProtocol {
-    func getValue(_ indexPath: IndexPath) -> Int {
-        return viewModel?.model[indexPath.row].value ?? 0
-    }
-    
-    func getMail(_ indexPath: IndexPath) -> String {
-        return viewModel?.model[indexPath.row].mail ?? ""
-    }
-    
-    func getStatus(_ indexPath: IndexPath) -> Bool {
-        return viewModel?.model[indexPath.row].status ?? false
-    }
-    
-    func getPayDay(_ indexPath: IndexPath) -> String {
-        return viewModel?.model[indexPath.row].date ?? ""
-    }
-    
+class OrderListViewController: BaseViewController {
     
     var ref: DatabaseReference!
     var orderListView: OrderListCollectionView!
@@ -99,9 +83,9 @@ class OrderListViewController: BaseViewController, DetailsGithubDataProtocol {
     }
 }
 
-extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
+extension OrderListViewController: UITableViewDelegate, UITableViewDataSource, DetailsGithubDataProtocol {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.model.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,6 +102,26 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let banana = indexPath.row
         print("Você clicou no index -> \(banana)")
+        let infoVC = InfoClientViewController()
+        let navVC = UINavigationController(rootViewController: infoVC)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true, completion: nil)
+        
     }
-  
+    
+    func getValue(_ indexPath: IndexPath) -> Double {
+        return viewModel?.model[indexPath.row].value ?? 0.0
+    }
+    
+    func getMail(_ indexPath: IndexPath) -> String {
+        return viewModel?.model[indexPath.row].mail ?? ""
+    }
+    
+    func getStatus(_ indexPath: IndexPath) -> Bool {
+        return viewModel?.model[indexPath.row].status ?? false
+    }
+    
+    func getPayDay(_ indexPath: IndexPath) -> String {
+        return viewModel?.model[indexPath.row].date ?? ""
+    }
 }

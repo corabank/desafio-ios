@@ -34,7 +34,7 @@ class OrderListCell: UITableViewCell {
     
     let situationText: UILabel  = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .black
         label.numberOfLines = 0
         return label
@@ -104,10 +104,19 @@ class OrderListCell: UITableViewCell {
         }
     }
     
-    func setup(purchaseValue: Int, currentEmail: String, statusPayment: Bool, payDay: String ) {
-        self.valueText.text = String(purchaseValue)
+    func setup(purchaseValue: Double, currentEmail: String, statusPayment: Bool, payDay: String ) {
+        let formaterValue = String(format: "%.2f", purchaseValue)
+        self.valueText.text = "R$ \(formaterValue)"
         self.emailText.text = currentEmail
-        self.situationText.text = String(statusPayment)
         self.payDayText.text = payDay
+        
+        switch statusPayment {
+        case true:
+            self.situationText.text = "Pago"
+            self.situationText.textColor = .green
+        default:
+            self.situationText.text = "Não Pago"
+            self.situationText.textColor = .red
+        }
     }
 }

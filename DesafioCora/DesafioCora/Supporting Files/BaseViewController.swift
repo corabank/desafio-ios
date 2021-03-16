@@ -21,6 +21,19 @@ class BaseViewController: UIViewController {
         return .darkContent
     }
     
+    func setupNavigation() {
+        UINavigationBar.appearance().barTintColor = .pinkColorborder
+        let backbutton = UIButton(type: .custom)
+        backbutton.setTitle("voltar", for: .normal)
+        backbutton.setTitleColor(backbutton.tintColor, for: .highlighted)
+        backbutton.addTarget(self, action: #selector(self.backAction), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
+        }
+    
+    @objc func backAction() -> Void {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func showAlert(alertText : String, alertMessage : String) {
         let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Got it", style: .default, handler: nil))

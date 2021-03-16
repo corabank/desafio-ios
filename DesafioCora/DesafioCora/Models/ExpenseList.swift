@@ -15,17 +15,17 @@ struct OrderList: Codable {
 
 // MARK: - OrderListElement
 struct OrderListElement: Codable {
-    let value: Int
-    let mail: String
-    let status: Bool
-    let date: String
+    let value: Double?
+    let mail: String?
+    let status: Bool?
+    let date: String?
     let details: Details?
 }
 
 // MARK: - Details
 struct Details: Codable {
-    let value: Int
-    let ownerPurchase, ownerMail, creationDate: String
-    let ownerStatus: Bool
-    let taxes: Double
+    let value: Double?
+    let ownerPurchase, ownerMail, creationDate: String?
+    let ownerStatus: Bool?
+    let taxes: Double?
 }
