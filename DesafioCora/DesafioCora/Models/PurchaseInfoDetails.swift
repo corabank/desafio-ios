@@ -11,5 +11,10 @@ struct PurchaseInfoDetails {
     var valueAccount: String?
     var typeAccount: String?
     var imageName: String?
-    var taxes: Int? = nil
+}
+
+struct PurchaseInfoDetailsBottom {
+    var valueAccount: String?
+    var taxes: String?
+    var code: String?
 }

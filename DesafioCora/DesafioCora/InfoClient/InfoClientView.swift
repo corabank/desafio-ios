@@ -17,14 +17,9 @@ class InfoClientView: UIView {
         PurchaseInfoDetails(valueAccount: "Status", typeAccount: "Pago", imageName: "clock")
     ]
     
-    let stackViewBase: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = NSLayoutConstraint.Axis.vertical
-        stack.distribution = UIStackView.Distribution.fill
-        stack.spacing = 8.0
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
+    var purchaseModelBottom: [PurchaseInfoDetailsBottom] = [
+        PurchaseInfoDetailsBottom(valueAccount: "110", taxes: "4.99", code: "sandbox: ASDFGHHGG-QWERTYUI-654323456-876545678-HGFSDFG")
+    ]
     
     let stackView: UIStackView = {
         let stack = UIStackView()
@@ -39,7 +34,7 @@ class InfoClientView: UIView {
         let stack = UIStackView()
         stack.axis = NSLayoutConstraint.Axis.vertical
         stack.distribution = UIStackView.Distribution.fill
-        stack.spacing = 28.0
+        stack.spacing = 0.0
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -64,10 +59,10 @@ class InfoClientView: UIView {
     }
     
     func setupConstraints() {
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8).isActive = true
-        stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 24).isActive = true
     }
     
     func setupStack() {
@@ -88,6 +83,7 @@ class InfoClientView: UIView {
             descriptionText.text = contents.typeAccount
             descriptionText.font = UIFont.boldSystemFont(ofSize: 16)
             descriptionText.translatesAutoresizingMaskIntoConstraints = false
+            descriptionText.textColor = .gray
             
             
             let detailsView = UIView()
@@ -124,14 +120,125 @@ class InfoClientView: UIView {
             
         }
         
-        //continua
+        let labelDescription = UILabel()
+        labelDescription.font = UIFont.systemFont(ofSize: 16)
+        labelDescription.numberOfLines = 0
+        labelDescription.text = "Resumo finaceiro"
+        labelDescription.textColor = .gray
+        labelDescription.translatesAutoresizingMaskIntoConstraints = false
         
+        let descriptionView = UIView()
+        descriptionView.translatesAutoresizingMaskIntoConstraints = false
+        descriptionView.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        descriptionView.backgroundColor = UIColor(displayP3Red: 240/255, green: 240/255, blue: 248/255, alpha: 1.0)
+        
+        descriptionView.addSubview(labelDescription)
+    
+        labelDescription.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 16).isActive = true
+        labelDescription.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 16).isActive = true
+        labelDescription.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -16).isActive = true
+        
+        stackView.addArrangedSubview(descriptionView)
+        
+        let totValueText = UILabel()
+        totValueText.font = UIFont.boldSystemFont(ofSize: 16)
+        totValueText.numberOfLines = 0
+        totValueText.text = "Valor Total"
+        totValueText.textColor = .gray
+        totValueText.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        let taxesText = UILabel()
+        taxesText.font = UIFont.boldSystemFont(ofSize: 16)
+        taxesText.numberOfLines = 0
+        taxesText.text = "Taxas"
+        taxesText.textColor = .red
+        taxesText.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        let receiveText = UILabel()
+        receiveText.font = UIFont.boldSystemFont(ofSize: 16)
+        receiveText.numberOfLines = 0
+        receiveText.text = "Meu recebimento"
+        receiveText.textColor = .blue
+        receiveText.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        let currentValue = UILabel()
+        currentValue.font = UIFont.boldSystemFont(ofSize: 16)
+        currentValue.numberOfLines = 0
+        currentValue.text = "R$ 110.00"
+        currentValue.textColor = .gray
+        currentValue.translatesAutoresizingMaskIntoConstraints = false
+        
+        let currentTaxes = UILabel()
+        currentTaxes.font = UIFont.boldSystemFont(ofSize: 16)
+        currentTaxes.numberOfLines = 0
+        currentTaxes.text = "4.99"
+        currentTaxes.textColor = .red
+        currentTaxes.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        let finalReceive = UILabel()
+        finalReceive.font = UIFont.boldSystemFont(ofSize: 16)
+        finalReceive.numberOfLines = 0
+        finalReceive.text = "R$ 105.00"
+        finalReceive.textColor = .blue
+        finalReceive.translatesAutoresizingMaskIntoConstraints = false
+
+        let viewTaxesAndTot = UIView()
+        viewTaxesAndTot.translatesAutoresizingMaskIntoConstraints = false
+//        viewTaxesAndTot.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        viewTaxesAndTot.backgroundColor = UIColor(displayP3Red: 240/255, green: 240/255, blue: 248/255, alpha: 1.0)
+        
+        viewTaxesAndTot.addSubview(totValueText)
+        viewTaxesAndTot.addSubview(taxesText)
+        viewTaxesAndTot.addSubview(receiveText)
+        viewTaxesAndTot.addSubview(currentValue)
+        viewTaxesAndTot.addSubview(currentTaxes)
+        viewTaxesAndTot.addSubview(finalReceive)
+
+        
+        totValueText.topAnchor.constraint(equalTo: viewTaxesAndTot.topAnchor, constant: 16).isActive = true
+        totValueText.leadingAnchor.constraint(equalTo: viewTaxesAndTot.leadingAnchor, constant: 16).isActive = true
+        
+        taxesText.topAnchor.constraint(equalTo: totValueText.bottomAnchor, constant: 8).isActive = true
+        taxesText.leadingAnchor.constraint(equalTo: viewTaxesAndTot.leadingAnchor, constant: 16).isActive = true
+        
+        receiveText.topAnchor.constraint(equalTo: taxesText.bottomAnchor, constant: 24).isActive = true
+        receiveText.leadingAnchor.constraint(equalTo: viewTaxesAndTot.leadingAnchor, constant: 16).isActive = true
+        
+        currentValue.topAnchor.constraint(equalTo: viewTaxesAndTot.topAnchor, constant: 16).isActive = true
+        currentValue.trailingAnchor.constraint(equalTo: viewTaxesAndTot.trailingAnchor, constant: -16).isActive = true
+        
+        currentTaxes.topAnchor.constraint(equalTo: currentValue.bottomAnchor, constant: 8).isActive = true
+        currentTaxes.trailingAnchor.constraint(equalTo: viewTaxesAndTot.trailingAnchor, constant: -16).isActive = true
+        
+        finalReceive.topAnchor.constraint(equalTo: currentTaxes.bottomAnchor, constant: 24).isActive = true
+        finalReceive.trailingAnchor.constraint(equalTo: viewTaxesAndTot.trailingAnchor, constant: -16).isActive = true
+        
+        stackView.addArrangedSubview(viewTaxesAndTot)
         
         let labelBottom = UILabel()
+        labelBottom.font = UIFont.boldSystemFont(ofSize: 16)
         labelBottom.numberOfLines = 0
-        labelBottom.text = "sandbox: SDFGHRDCVBHGF-2345676543-345676543-987654543-SDFGHNBVRTYU"
-        stackView.addArrangedSubview(labelBottom)
+        labelBottom.text = "sandbox: ERTYUITY-65432-765432-765433456-ERTYJMNBVCDFGHJK"
+        labelBottom.textColor = .gray
+        labelBottom.translatesAutoresizingMaskIntoConstraints = false
+
+        let viewBottom = UIView()
+        viewBottom.translatesAutoresizingMaskIntoConstraints = false
+        viewBottom.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        viewBottom.addSubview(labelBottom)
+
+        labelBottom.topAnchor.constraint(equalTo: viewBottom.topAnchor, constant: 8).isActive = true
+        labelBottom.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor, constant: 16).isActive = true
+        labelBottom.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor, constant: -16).isActive = true
+        labelBottom.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor, constant: 0).isActive = true
+       
+
+        stackView.addArrangedSubview(viewBottom)
         
-    }
+        }
 }
 
