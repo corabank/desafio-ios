@@ -11,11 +11,10 @@ class InfoClientViewController: BaseViewController {
     
     var infoView: InfoClientView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
         setupNavigation()
+        setupViews()
     }
     
     func setupViews() {
@@ -25,4 +24,6 @@ class InfoClientViewController: BaseViewController {
         self.infoView = infoClientView
         view.addSubview(infoClientView)
     }
+    
+    
 }

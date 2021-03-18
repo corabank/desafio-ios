@@ -23,3 +23,12 @@ extension UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
 }
+
+extension UIStackView {
+    func changeBackgroundColor(cgColor: UIColor) {
+        let backgroundLayer = CAShapeLayer()
+        self.layer.insertSublayer(backgroundLayer, at: 0)
+        backgroundLayer.path = UIBezierPath(rect: self.bounds).cgPath
+        backgroundLayer.fillColor = cgColor.cgColor
+    }
+}

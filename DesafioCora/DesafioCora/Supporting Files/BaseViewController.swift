@@ -47,4 +47,13 @@ class BaseViewController: UIViewController {
     func showLoadingAnimation() {
         loadingView.show(view: self.view, color: UIColor(red: 192.0/255.0, green: 51.0/255.0, blue: 98.0/255.0, alpha: 1.0))
     }
+    
+    func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard() {
+        view.endEditing(true)
+    }
 }

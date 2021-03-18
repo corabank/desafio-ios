@@ -16,6 +16,7 @@ class SignUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        initializeHideKeyboard()
         setupNavigation()
         setupViews()
     }

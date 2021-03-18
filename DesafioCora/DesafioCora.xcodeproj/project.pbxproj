@@ -27,6 +27,7 @@
 		2F5A84E22600C1D1005383B9 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A84E12600C1D1005383B9 /* OrderListViewModel.swift */; };
 		2F5A8504260101B1005383B9 /* InfoClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A8503260101B0005383B9 /* InfoClientView.swift */; };
 		2F5A850C260101E0005383B9 /* InfoClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A850B260101E0005383B9 /* InfoClientViewController.swift */; };
+		2F5A853226028F9F005383B9 /* PurchaseInfoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A853126028F9F005383B9 /* PurchaseInfoDetails.swift */; };
 		2F86E6C025F95012008A9821 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E6BF25F95012008A9821 /* SignUpView.swift */; };
 		2F86E6C825F95021008A9821 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E6C725F95021008A9821 /* SignUpViewController.swift */; };
 		2F86E6EA25F96C46008A9821 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */; };
@@ -84,6 +85,7 @@
 		2F5A84E12600C1D1005383B9 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewModel.swift; sourceTree = "<group>"; };
 		2F5A8503260101B0005383B9 /* InfoClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoClientView.swift; sourceTree = "<group>"; };
 		2F5A850B260101E0005383B9 /* InfoClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoClientViewController.swift; sourceTree = "<group>"; };
+		2F5A853126028F9F005383B9 /* PurchaseInfoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInfoDetails.swift; sourceTree = "<group>"; };
 		2F86E6BF25F95012008A9821 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2F86E6C725F95021008A9821 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				2F86E70D25FBBABA008A9821 /* AppUser.swift */,
 				2F5A84D32600B867005383B9 /* ExpenseList.swift */,
+				2F5A853126028F9F005383B9 /* PurchaseInfoDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				2F86E6C025F95012008A9821 /* SignUpView.swift in Sources */,
 				2F5A84CF2600ADD8005383B9 /* JsonSerializer.swift in Sources */,
 				2F23365525F7C23D00316BED /* SceneDelegate.swift in Sources */,
+				2F5A853226028F9F005383B9 /* PurchaseInfoDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

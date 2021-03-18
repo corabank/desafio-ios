@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3DB5E043-A584-4E12-8F22-216578E79BEF"
+            uuid = "A784BDBD-7B94-4CF1-B1E1-4F57DD1BAEBC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DesafioCora/Details/OrderListViewController.swift"
+            filePath = "DesafioCora/InfoClient/InfoClientView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "setupViewHierarchy()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
