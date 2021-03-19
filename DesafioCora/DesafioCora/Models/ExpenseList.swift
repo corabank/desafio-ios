@@ -10,7 +10,6 @@ import Foundation
 // MARK: - OrderList
 struct OrderList: Codable {
     let orderList: [OrderListElement]
-    let statusCode: Int
 }
 
 // MARK: - OrderListElement
@@ -19,13 +18,7 @@ struct OrderListElement: Codable {
     let mail: String?
     let status: Bool?
     let date: String?
-    let details: Details?
-}
-
-// MARK: - Details
-struct Details: Codable {
-    let value: Double?
-    let ownerPurchase, ownerMail, creationDate: String?
-    let ownerStatus: Bool?
+    let ownerPurchase: String?
+    let creationDate: String?
     let taxes: Double?
 }

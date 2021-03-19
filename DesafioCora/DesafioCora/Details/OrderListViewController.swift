@@ -100,9 +100,7 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource, D
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let banana = indexPath.row
-        print("Você clicou no index -> \(banana)")
-        let infoVC = InfoClientViewController()
+        let infoVC = InfoClientViewController(data: viewModel?.model[indexPath.row])
         let navVC = UINavigationController(rootViewController: infoVC)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)

@@ -1,17 +1,12 @@
 {
     "orderList": [{
-            "value": 110.0,
+            "value": 199.0,
             "mail": "euclides.sena@hotmail.com",
             "status": false,
             "date": "3 dias atrás",
-            "details": {
-                "value": 110.0,
-                "ownerPurchase": "Euclides Medeiros",
-                "ownerMail": "euclides.sena@hotmail.com",
-                "creationDate": "03/08/2020",
-                "ownerStatus": false,
-                "taxes": 4.99
-            }
+            "ownerPurchase": "Euclides Medeiros",
+            "creationDate": "03/08/2020",
+            "taxes": 4.99
         },
         {
             "value": 400.0,

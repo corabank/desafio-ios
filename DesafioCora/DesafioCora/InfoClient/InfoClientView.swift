@@ -9,13 +9,7 @@ import UIKit
 
 class InfoClientView: UIView {
     
-    var purchaseModel: [PurchaseInfoDetails] = [
-        PurchaseInfoDetails(valueAccount: "R$110,00", typeAccount: "Cartão de crédito", imageName: "Wallet"),
-        PurchaseInfoDetails(valueAccount: "Comprador", typeAccount: "Caju Cacau", imageName: "person"),
-        PurchaseInfoDetails(valueAccount: "Email", typeAccount: "euclides.sena@hotmail.com", imageName: "letter"),
-        PurchaseInfoDetails(valueAccount: "Criado em", typeAccount: "03/03/2020", imageName: "calendar"),
-        PurchaseInfoDetails(valueAccount: "Status", typeAccount: "Pago", imageName: "clock")
-    ]
+    var data: OrderListElement?
     
     var purchaseModelBottom: [PurchaseInfoDetailsBottom] = [
         PurchaseInfoDetailsBottom(valueAccount: "110", taxes: "4.99", code: "sandbox: ASDFGHHGG-QWERTYUI-654323456-876545678-HGFSDFG")
@@ -39,19 +33,24 @@ class InfoClientView: UIView {
         return stack
     }()
     
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    convenience init(_ data: OrderListElement?) {
+        self.init()
+        self.data = data
         setupStack()
         setupViewHierarchy()
         setupConstraints()
-        
-        //nova
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setupStack()
+//        setupViewHierarchy()
+//        setupConstraints()
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     func setupViewHierarchy() {
         self.addSubview(stackView)
@@ -67,6 +66,16 @@ class InfoClientView: UIView {
     
     func setupStack() {
         
+        guard let valueFormatted = data?.value else { return }
+        
+        let purchaseModel: [PurchaseInfoDetails] = [
+            PurchaseInfoDetails(valueAccount: String(valueFormatted), typeAccount: "Cartão de crédito", imageName: "Wallet"),
+            PurchaseInfoDetails(valueAccount: "Comprador", typeAccount: "Caju Cacau", imageName: "person"),
+            PurchaseInfoDetails(valueAccount: "Email", typeAccount: "euclides.sena@hotmail.com", imageName: "letter"),
+            PurchaseInfoDetails(valueAccount: "Criado em", typeAccount: "03/03/2020", imageName: "calendar"),
+            PurchaseInfoDetails(valueAccount: "Status", typeAccount: "Pago", imageName: "clock")
+        ]
+        
         purchaseModel.forEach { (contents) in
             
             let logoScreen = UIImageView()
@@ -77,6 +86,7 @@ class InfoClientView: UIView {
             let nameText = UILabel()
             nameText.text = contents.valueAccount
             nameText.font = UIFont.boldSystemFont(ofSize: 16)
+            nameText.textColor = .black
             nameText.translatesAutoresizingMaskIntoConstraints = false
             
             let descriptionText = UILabel()
@@ -133,7 +143,7 @@ class InfoClientView: UIView {
         descriptionView.backgroundColor = UIColor(displayP3Red: 240/255, green: 240/255, blue: 248/255, alpha: 1.0)
         
         descriptionView.addSubview(labelDescription)
-    
+        
         labelDescription.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 16).isActive = true
         labelDescription.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 16).isActive = true
         labelDescription.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -16).isActive = true
@@ -185,10 +195,9 @@ class InfoClientView: UIView {
         finalReceive.text = "R$ 105.00"
         finalReceive.textColor = .blue
         finalReceive.translatesAutoresizingMaskIntoConstraints = false
-
+        
         let viewTaxesAndTot = UIView()
         viewTaxesAndTot.translatesAutoresizingMaskIntoConstraints = false
-//        viewTaxesAndTot.heightAnchor.constraint(equalToConstant: 70).isActive = true
         viewTaxesAndTot.backgroundColor = UIColor(displayP3Red: 240/255, green: 240/255, blue: 248/255, alpha: 1.0)
         
         viewTaxesAndTot.addSubview(totValueText)
@@ -197,7 +206,7 @@ class InfoClientView: UIView {
         viewTaxesAndTot.addSubview(currentValue)
         viewTaxesAndTot.addSubview(currentTaxes)
         viewTaxesAndTot.addSubview(finalReceive)
-
+        
         
         totValueText.topAnchor.constraint(equalTo: viewTaxesAndTot.topAnchor, constant: 16).isActive = true
         totValueText.leadingAnchor.constraint(equalTo: viewTaxesAndTot.leadingAnchor, constant: 16).isActive = true
@@ -225,20 +234,19 @@ class InfoClientView: UIView {
         labelBottom.text = "sandbox: ERTYUITY-65432-765432-765433456-ERTYJMNBVCDFGHJK"
         labelBottom.textColor = .gray
         labelBottom.translatesAutoresizingMaskIntoConstraints = false
-
+        
         let viewBottom = UIView()
         viewBottom.translatesAutoresizingMaskIntoConstraints = false
         viewBottom.heightAnchor.constraint(equalToConstant: 100).isActive = true
         viewBottom.addSubview(labelBottom)
-
+        
         labelBottom.topAnchor.constraint(equalTo: viewBottom.topAnchor, constant: 8).isActive = true
         labelBottom.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor, constant: 16).isActive = true
         labelBottom.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor, constant: -16).isActive = true
         labelBottom.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor, constant: 0).isActive = true
-       
-
-        stackView.addArrangedSubview(viewBottom)
         
-        }
+        
+        stackView.addArrangedSubview(viewBottom)
+    }
 }
 

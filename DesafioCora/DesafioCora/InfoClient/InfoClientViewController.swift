@@ -9,21 +9,43 @@ import UIKit
 
 class InfoClientViewController: BaseViewController {
     
-    var infoView: InfoClientView!
+    lazy var infoView = InfoClientView(data)
+    
+    var indexDetails: IndexPath?
+    
+    let value: String? = ""
+    let name: String = ""
+    let mail: String? = ""
+   //let data: String? = ""
+    let status: String? = ""
+    let taxes: String? = ""
+    
+    var data: OrderListElement?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
-        setupViews()
+       // setupNavigation()
+       // setupViews()
     }
     
-    func setupViews() {
+    convenience init(data: OrderListElement?) {
+        self.init()
+        self.data = data
+        setupNavigation()
         view.backgroundColor = .white
         self.title = "details"
-        let infoClientView = InfoClientView(frame: self.view.frame)
-        self.infoView = infoClientView
-        view.addSubview(infoClientView)
     }
     
+    override func loadView() {
+        super.loadView()
+        view = infoView
+    }
     
+//    func setupViews() {
+//        view.backgroundColor = .white
+//        self.title = "details"
+//        let infoClientView = InfoClientView(frame: self.view.frame)
+//        self.infoView = infoClientView
+//        view.addSubview(infoView)
+//    }
 }
