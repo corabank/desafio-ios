@@ -10,7 +10,8 @@ import Firebase
 
 class SignUpController: BaseViewController {
     
-    var signUpView: SignUpView!
+    var signUpView = SignUpView()
+    let authViewModel = authenticationViewModel()
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class SignUpController: BaseViewController {
             "name": userName
         ]
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        authViewModel.signUpUser(email, password) { (result, error) in
             if let err = error {
                 self.showAlert(alertText: "Erro", alertMessage: err.localizedDescription)
             } else {

@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import Firebase
 
 class LoginController: BaseViewController {
 
     var loginView: LoginView!
     let viewModel = OrderListViewModel()
+    let authViewModel = authenticationViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,11 @@ class LoginController: BaseViewController {
     func loginPressed() {
         dismissMyKeyboard()
         self.showLoadingAnimation()
+        
         guard let email = loginView.emailTextField.text,
               let password = loginView.passwordTextFied.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+        authViewModel.requestUser(mail: email, password: password) { (error) in
             if let err = error {
                 self.hiddenLoadingAnimation()
                 self.showAlert(alertText: "Error", alertMessage: "\(err.localizedDescription)")

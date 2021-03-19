@@ -35,6 +35,7 @@
 		2F86E70E25FBBABA008A9821 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E70D25FBBABA008A9821 /* AppUser.swift */; };
 		2F86E76C25FFBAEF008A9821 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E76B25FFBAEF008A9821 /* OrderListView.swift */; };
 		2F86E77125FFD887008A9821 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E77025FFD887008A9821 /* OrderListCell.swift */; };
+		2FFF2A302604D328002E9537 /* authenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFF2A2F2604D328002E9537 /* authenticationViewModel.swift */; };
 		3BCAF1C5037FC532609DA709 /* Pods_DesafioCoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1152EDDAC524AF79D084C78 /* Pods_DesafioCoraTests.framework */; };
 		4B3E4FE6DBA69E4AD3A35D2D /* Pods_DesafioCora_DesafioCoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97D226AFAB3CF62A62928B2 /* Pods_DesafioCora_DesafioCoraUITests.framework */; };
 		C88846C93E34B9FC679BB27D /* Pods_DesafioCora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF02CF3093BB45EB5C05CFD9 /* Pods_DesafioCora.framework */; };
@@ -93,6 +94,7 @@
 		2F86E70D25FBBABA008A9821 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		2F86E76B25FFBAEF008A9821 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		2F86E77025FFD887008A9821 /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
+		2FFF2A2F2604D328002E9537 /* authenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authenticationViewModel.swift; sourceTree = "<group>"; };
 		696D8F9C76D03D97D71F8875 /* Pods-DesafioCoraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraTests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCoraTests/Pods-DesafioCoraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		725F221ADE13D8BF64ED1301 /* Pods-DesafioCora-DesafioCoraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B57FA3766ACCF79647DB045D /* Pods-DesafioCora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora.release.xcconfig"; path = "Target Support Files/Pods-DesafioCora/Pods-DesafioCora.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				2F5A84E12600C1D1005383B9 /* OrderListViewModel.swift */,
+				2FFF2A2F2604D328002E9537 /* authenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFF2A302604D328002E9537 /* authenticationViewModel.swift in Sources */,
 				2F86E77125FFD887008A9821 /* OrderListCell.swift in Sources */,
 				2F2493A725F9202E0009F3DC /* UIColor+Extension.swift in Sources */,
 				2F5A84C72600ADB8005383B9 /* ValidateError.swift in Sources */,
