@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  DesafioCora
 //
 //  Created by Euclides Medeiros on 09/03/21.
@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: BaseViewController {
+class LoginController: BaseViewController {
 
     var loginView: LoginView!
     let viewModel = OrderListViewModel()
@@ -39,7 +39,7 @@ class LoginViewController: BaseViewController {
                 self.hiddenLoadingAnimation()
                 self.showAlert(alertText: "Error", alertMessage: "\(err.localizedDescription)")
             } else {
-                let goToOrderListVc = OrderListViewController(viewModel: self.viewModel)
+                let goToOrderListVc = OrderListController(viewModel: self.viewModel)
                 goToOrderListVc.modalPresentationStyle = .fullScreen
                 self.present(goToOrderListVc, animated: true, completion: nil)
                 self.hiddenLoadingAnimation()
@@ -48,7 +48,7 @@ class LoginViewController: BaseViewController {
     }
     
     func signUpPressed() {
-        let goToSignUpScreen = SignUpViewController()
+        let goToSignUpScreen = SignUpController()
         let navVC = UINavigationController(rootViewController: goToSignUpScreen)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)

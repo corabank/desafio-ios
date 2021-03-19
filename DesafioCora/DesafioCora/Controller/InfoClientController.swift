@@ -1,5 +1,5 @@
 //
-//  InfoClientViewController.swift
+//  InfoClientController.swift
 //  DesafioCora
 //
 //  Created by Euclides Medeiros on 16/03/21.
@@ -7,18 +7,11 @@
 
 import UIKit
 
-class InfoClientViewController: BaseViewController {
+class InfoClientController: BaseViewController {
     
     lazy var infoView = InfoClientView(data)
     
     var indexDetails: IndexPath?
-    
-    let value: String? = ""
-    let name: String = ""
-    let mail: String? = ""
-   //let data: String? = ""
-    let status: String? = ""
-    let taxes: String? = ""
     
     var data: OrderListElement?
     

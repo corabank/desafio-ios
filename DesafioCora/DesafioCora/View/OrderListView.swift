@@ -1,5 +1,5 @@
 //
-//  OrderListCollectionView.swift
+//  OrderListView.swift
 //  DesafioCora
 //
 //  Created by Euclides Medeiros on 15/03/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrderListCollectionView: UIView {
+class OrderListView: UIView {
     
     var logoCollectionView: UIImageView = {
         let iv = UIImageView()

@@ -60,7 +60,7 @@ class InfoClientView: UIView {
         let formaterValue = String(format: "%.2f", valueFormatted)
         
         let purchaseModel: [PurchaseInfoDetails] = [
-            PurchaseInfoDetails(valueAccount: String(formaterValue), typeAccount: "Cartão de crédito", imageName: "Wallet"),
+            PurchaseInfoDetails(valueAccount: String("R$ \(formaterValue)"), typeAccount: "Cartão de crédito", imageName: "Wallet"),
             PurchaseInfoDetails(valueAccount: "Comprador", typeAccount: type, imageName: "person"),
             PurchaseInfoDetails(valueAccount: "Email", typeAccount: mail, imageName: "letter"),
             PurchaseInfoDetails(valueAccount: "Criado em", typeAccount: dataPurchase, imageName: "calendar"),
@@ -165,7 +165,7 @@ class InfoClientView: UIView {
         receiveText.translatesAutoresizingMaskIntoConstraints = false
         
         
-        let c = UILabel()
+        let currentValue = UILabel()
         currentValue.font = UIFont.boldSystemFont(ofSize: 16)
         currentValue.numberOfLines = 0
         currentValue.text = formaterValue

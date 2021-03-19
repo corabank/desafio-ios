@@ -1,5 +1,5 @@
 //
-//  OrderListViewController.swift
+//  OrderListController.swift
 //  DesafioCora
 //
 //  Created by Euclides Medeiros on 11/03/21.
@@ -15,13 +15,13 @@ protocol DetailsGithubDataProtocol {
     func getPayDay(_ indexPath: IndexPath) -> String
 }
 
-class OrderListViewController: BaseViewController {
+class OrderListController: BaseViewController {
     
     var ref: DatabaseReference!
-    var orderListView: OrderListCollectionView!
+    var orderListView = OrderListView()
     
-     let contentView: OrderListCollectionView = {
-        let view = OrderListCollectionView()
+     let contentView: OrderListView = {
+        let view = OrderListView()
         view.backgroundColor = .white
         return view
     }()
@@ -83,7 +83,7 @@ class OrderListViewController: BaseViewController {
     }
 }
 
-extension OrderListViewController: UITableViewDelegate, UITableViewDataSource, DetailsGithubDataProtocol {
+extension OrderListController: UITableViewDelegate, UITableViewDataSource, DetailsGithubDataProtocol {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.model.count ?? 0
     }
@@ -100,7 +100,7 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource, D
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let infoVC = InfoClientViewController(data: viewModel?.model[indexPath.row])
+        let infoVC = InfoClientController(data: viewModel?.model[indexPath.row])
         let navVC = UINavigationController(rootViewController: infoVC)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)

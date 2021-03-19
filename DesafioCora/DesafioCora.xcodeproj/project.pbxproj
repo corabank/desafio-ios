@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F23365325F7C23D00316BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365225F7C23D00316BED /* AppDelegate.swift */; };
 		2F23365525F7C23D00316BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365425F7C23D00316BED /* SceneDelegate.swift */; };
-		2F23365725F7C23D00316BED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365625F7C23D00316BED /* LoginViewController.swift */; };
+		2F23365725F7C23D00316BED /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23365625F7C23D00316BED /* LoginController.swift */; };
 		2F23365C25F7C24000316BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F23365B25F7C24000316BED /* Assets.xcassets */; };
 		2F23365F25F7C24000316BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F23365D25F7C24000316BED /* LaunchScreen.storyboard */; };
 		2F23366A25F7C24000316BED /* DesafioCoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23366925F7C24000316BED /* DesafioCoraTests.swift */; };
@@ -26,14 +26,14 @@
 		2F5A84DA2600B9AC005383B9 /* orderList.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F5A84D92600B9AC005383B9 /* orderList.json */; };
 		2F5A84E22600C1D1005383B9 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A84E12600C1D1005383B9 /* OrderListViewModel.swift */; };
 		2F5A8504260101B1005383B9 /* InfoClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A8503260101B0005383B9 /* InfoClientView.swift */; };
-		2F5A850C260101E0005383B9 /* InfoClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A850B260101E0005383B9 /* InfoClientViewController.swift */; };
+		2F5A850C260101E0005383B9 /* InfoClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A850B260101E0005383B9 /* InfoClientController.swift */; };
 		2F5A853226028F9F005383B9 /* PurchaseInfoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A853126028F9F005383B9 /* PurchaseInfoDetails.swift */; };
 		2F86E6C025F95012008A9821 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E6BF25F95012008A9821 /* SignUpView.swift */; };
 		2F86E6C825F95021008A9821 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E6C725F95021008A9821 /* SignUpViewController.swift */; };
 		2F86E6EA25F96C46008A9821 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */; };
-		2F86E70525FAD58E008A9821 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E70425FAD58E008A9821 /* OrderListViewController.swift */; };
+		2F86E70525FAD58E008A9821 /* OrderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E70425FAD58E008A9821 /* OrderListController.swift */; };
 		2F86E70E25FBBABA008A9821 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E70D25FBBABA008A9821 /* AppUser.swift */; };
-		2F86E76C25FFBAEF008A9821 /* OrderListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E76B25FFBAEF008A9821 /* OrderListCollectionView.swift */; };
+		2F86E76C25FFBAEF008A9821 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E76B25FFBAEF008A9821 /* OrderListView.swift */; };
 		2F86E77125FFD887008A9821 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86E77025FFD887008A9821 /* OrderListCell.swift */; };
 		3BCAF1C5037FC532609DA709 /* Pods_DesafioCoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1152EDDAC524AF79D084C78 /* Pods_DesafioCoraTests.framework */; };
 		4B3E4FE6DBA69E4AD3A35D2D /* Pods_DesafioCora_DesafioCoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97D226AFAB3CF62A62928B2 /* Pods_DesafioCora_DesafioCoraUITests.framework */; };
@@ -62,7 +62,7 @@
 		2F23364F25F7C23D00316BED /* DesafioCora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F23365225F7C23D00316BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F23365425F7C23D00316BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F23365625F7C23D00316BED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2F23365625F7C23D00316BED /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		2F23365B25F7C24000316BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F23365E25F7C24000316BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F23366025F7C24000316BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,14 +84,14 @@
 		2F5A84D92600B9AC005383B9 /* orderList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = orderList.json; sourceTree = "<group>"; };
 		2F5A84E12600C1D1005383B9 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewModel.swift; sourceTree = "<group>"; };
 		2F5A8503260101B0005383B9 /* InfoClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoClientView.swift; sourceTree = "<group>"; };
-		2F5A850B260101E0005383B9 /* InfoClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoClientViewController.swift; sourceTree = "<group>"; };
+		2F5A850B260101E0005383B9 /* InfoClientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoClientController.swift; sourceTree = "<group>"; };
 		2F5A853126028F9F005383B9 /* PurchaseInfoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInfoDetails.swift; sourceTree = "<group>"; };
 		2F86E6BF25F95012008A9821 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2F86E6C725F95021008A9821 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2F86E70425FAD58E008A9821 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		2F86E70425FAD58E008A9821 /* OrderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListController.swift; sourceTree = "<group>"; };
 		2F86E70D25FBBABA008A9821 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
-		2F86E76B25FFBAEF008A9821 /* OrderListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCollectionView.swift; sourceTree = "<group>"; };
+		2F86E76B25FFBAEF008A9821 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		2F86E77025FFD887008A9821 /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
 		696D8F9C76D03D97D71F8875 /* Pods-DesafioCoraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCoraTests.debug.xcconfig"; path = "Target Support Files/Pods-DesafioCoraTests/Pods-DesafioCoraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		725F221ADE13D8BF64ED1301 /* Pods-DesafioCora-DesafioCoraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; path = "Target Support Files/Pods-DesafioCora-DesafioCoraUITests/Pods-DesafioCora-DesafioCoraUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,14 +169,12 @@
 		2F23365125F7C23D00316BED /* DesafioCora */ = {
 			isa = PBXGroup;
 			children = (
-				2F5A850226010191005383B9 /* InfoClient */,
+				2F86E70C25FBBA98008A9821 /* Models */,
+				2F5A84AB26000601005383B9 /* ViewModel */,
+				2FFF29FF2604C399002E9537 /* View */,
+				2FFF2A002604C39F002E9537 /* Controller */,
 				2F5A84D82600B986005383B9 /* Mock */,
 				2F5A84C52600AD14005383B9 /* Network */,
-				2F5A84AB26000601005383B9 /* ViewModel */,
-				2F86E70C25FBBA98008A9821 /* Models */,
-				2F86E70325FAD54B008A9821 /* Details */,
-				2F86E6BE25F94FFE008A9821 /* SignUp */,
-				2F24938D25F918EC0009F3DC /* Login */,
 				2F24938925F918D80009F3DC /* Extensions */,
 				2F23366025F7C24000316BED /* Info.plist */,
 				2F86E6E925F96C46008A9821 /* GoogleService-Info.plist */,
@@ -226,15 +224,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2F24938D25F918EC0009F3DC /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				2F23365625F7C23D00316BED /* LoginViewController.swift */,
-				2F24937525F7D05A0009F3DC /* LoginView.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		2F5A84AB26000601005383B9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,34 +249,6 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		2F5A850226010191005383B9 /* InfoClient */ = {
-			isa = PBXGroup;
-			children = (
-				2F5A8503260101B0005383B9 /* InfoClientView.swift */,
-				2F5A850B260101E0005383B9 /* InfoClientViewController.swift */,
-			);
-			path = InfoClient;
-			sourceTree = "<group>";
-		};
-		2F86E6BE25F94FFE008A9821 /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				2F86E6BF25F95012008A9821 /* SignUpView.swift */,
-				2F86E6C725F95021008A9821 /* SignUpViewController.swift */,
-			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		2F86E70325FAD54B008A9821 /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				2F86E70425FAD58E008A9821 /* OrderListViewController.swift */,
-				2F86E76B25FFBAEF008A9821 /* OrderListCollectionView.swift */,
-				2F86E77025FFD887008A9821 /* OrderListCell.swift */,
-			);
-			path = Details;
-			sourceTree = "<group>";
-		};
 		2F86E70C25FBBA98008A9821 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +257,29 @@
 				2F5A853126028F9F005383B9 /* PurchaseInfoDetails.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2FFF29FF2604C399002E9537 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F86E77025FFD887008A9821 /* OrderListCell.swift */,
+				2F5A8503260101B0005383B9 /* InfoClientView.swift */,
+				2F86E76B25FFBAEF008A9821 /* OrderListView.swift */,
+				2F24937525F7D05A0009F3DC /* LoginView.swift */,
+				2F86E6BF25F95012008A9821 /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FFF2A002604C39F002E9537 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F23365625F7C23D00316BED /* LoginController.swift */,
+				2F86E6C725F95021008A9821 /* SignUpViewController.swift */,
+				2F86E70425FAD58E008A9821 /* OrderListController.swift */,
+				2F5A850B260101E0005383B9 /* InfoClientController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		776C22EB1520A3CD27A88D5F /* Frameworks */ = {
@@ -553,16 +537,16 @@
 				2F24937E25F81B890009F3DC /* Extension.swift in Sources */,
 				2F5A84D42600B867005383B9 /* ExpenseList.swift in Sources */,
 				2F5A8504260101B1005383B9 /* InfoClientView.swift in Sources */,
-				2F23365725F7C23D00316BED /* LoginViewController.swift in Sources */,
-				2F86E70525FAD58E008A9821 /* OrderListViewController.swift in Sources */,
+				2F23365725F7C23D00316BED /* LoginController.swift in Sources */,
+				2F86E70525FAD58E008A9821 /* OrderListController.swift in Sources */,
 				2F5A847C26000014005383B9 /* BaseViewController.swift in Sources */,
 				2F86E70E25FBBABA008A9821 /* AppUser.swift in Sources */,
 				2F23365325F7C23D00316BED /* AppDelegate.swift in Sources */,
 				2F86E6C825F95021008A9821 /* SignUpViewController.swift in Sources */,
 				2F24938F25F9191D0009F3DC /* UITextField+Extensions.swift in Sources */,
 				2F2493AC25F923590009F3DC /* UIButton+Extension.swift in Sources */,
-				2F86E76C25FFBAEF008A9821 /* OrderListCollectionView.swift in Sources */,
-				2F5A850C260101E0005383B9 /* InfoClientViewController.swift in Sources */,
+				2F86E76C25FFBAEF008A9821 /* OrderListView.swift in Sources */,
+				2F5A850C260101E0005383B9 /* InfoClientController.swift in Sources */,
 				2F24937625F7D05A0009F3DC /* LoginView.swift in Sources */,
 				2F5A84E22600C1D1005383B9 /* OrderListViewModel.swift in Sources */,
 				2F86E6C025F95012008A9821 /* SignUpView.swift in Sources */,

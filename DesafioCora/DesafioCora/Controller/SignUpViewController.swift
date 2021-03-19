@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  SignUpController.swift
 //  DesafioCora
 //
 //  Created by Euclides Medeiros on 10/03/21.
@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: BaseViewController {
+class SignUpController: BaseViewController {
     
     var signUpView: SignUpView!
     var ref: DatabaseReference!

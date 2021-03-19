@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         
-        let newViewController = LoginViewController()
+        let newViewController = LoginController()
         self.window?.rootViewController = newViewController
         self.window?.makeKeyAndVisible()
         
