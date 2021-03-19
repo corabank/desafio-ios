@@ -10,12 +10,15 @@ import SnapKit
 
 class LoginView: UIView {
     
+    private let viewModel: LoginViewModel
+    
     var loginAction: (() -> Void)?
     var signUpAction: (() -> Void)?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureViews()
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        setupUI()
         setupViewHierarchy()
         setupConstraints()
     }
@@ -37,6 +40,13 @@ class LoginView: UIView {
         self.addSubview(passwordTextFied)
         self.addSubview(loginButton)
         self.addSubview(signUpButton)
+    }
+    
+    func setupUI() {
+        guard let currentEmail = emailTextField.text,
+              let currentPassword = passwordTextFied.text else { return }
+        viewModel.mail = currentEmail
+        viewModel.password = currentPassword
     }
     
     let imageLogo: UIImageView = {

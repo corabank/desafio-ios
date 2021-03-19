@@ -12,15 +12,12 @@ final class OrderListViewModel {
     let jasonserializer = JsonSerializer()
     var model: [OrderListElement] = []
     
-    func getJsonSerializer(completion: (ValidationError?) -> Void){
+    func getJsonSerializer(completion: (ValidationError?) -> Void) {
         jasonserializer.serealizationJson { (error, arrayOrderListJson) in
             if let error = error {
                 completion(error)
-                return
-            }else{
+            } else {
                 model = arrayOrderListJson
-                completion(nil)
-                return
             }
         }
     }

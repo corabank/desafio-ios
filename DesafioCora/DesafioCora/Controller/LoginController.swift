@@ -8,34 +8,37 @@
 import UIKit
 
 class LoginController: BaseViewController {
-
-    var loginView: LoginView!
+    
     let viewModel = OrderListViewModel()
-    let authViewModel = authenticationViewModel()
+    let viewModelLogin = LoginViewModel()
+    let authViewModel = AuthenticationViewModel()
+    
+    private lazy var contentView: LoginView = {
+        var view = LoginView(viewModel: viewModelLogin)
+        view.loginAction = loginPressed
+        view.signUpAction = signUpPressed
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupView()
         initializeHideKeyboard()
     }
-
-    func setupView() {
-        let mainView = LoginView(frame: self.view.frame)
-        self.loginView = mainView
-        self.view.addSubview(loginView)
-        self.loginView.loginAction = loginPressed
-        self.loginView.signUpAction = signUpPressed
+    
+    override func loadView() {
+        super.loadView()
+        view = contentView
     }
     
     func loginPressed() {
         dismissMyKeyboard()
         self.showLoadingAnimation()
-        
-        guard let email = loginView.emailTextField.text,
-              let password = loginView.passwordTextFied.text else { return }
-        
-        authViewModel.requestUser(mail: email, password: password) { (error) in
+        requestUser()
+    }
+    
+    private func requestUser() {
+        authViewModel.requestUser(mail: viewModelLogin.mail ?? "", password: viewModelLogin.password ?? "") { (error) in
             if let err = error {
                 self.hiddenLoadingAnimation()
                 self.showAlert(alertText: "Error", alertMessage: "\(err.localizedDescription)")
@@ -48,11 +51,10 @@ class LoginController: BaseViewController {
         }
     }
     
-    func signUpPressed() {
+    private func signUpPressed() {
         let goToSignUpScreen = SignUpController()
         let navVC = UINavigationController(rootViewController: goToSignUpScreen)
-        navVC.modalPresentationStyle = .fullScreen
+//        navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)
-        
     }
 }

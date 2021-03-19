@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+final class LoginViewModel {
+    
+    var mail: String?
+    var password: String?
+}

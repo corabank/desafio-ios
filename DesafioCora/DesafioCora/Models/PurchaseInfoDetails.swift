@@ -12,9 +12,3 @@ struct PurchaseInfoDetails {
     var typeAccount: String?
     var imageName: String?
 }
-
-struct PurchaseInfoDetailsBottom {
-    var valueAccount: String?
-    var taxes: String?
-    var code: String?
-}

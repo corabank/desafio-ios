@@ -11,7 +11,7 @@ import Firebase
 class SignUpController: BaseViewController {
     
     var signUpView = SignUpView()
-    let authViewModel = authenticationViewModel()
+    let authViewModel = AuthenticationViewModel()
     var ref: DatabaseReference!
     
     override func viewDidLoad() {

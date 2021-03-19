@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-final class authenticationViewModel {
+final class AuthenticationViewModel {
     
     var ref: DatabaseReference!
     

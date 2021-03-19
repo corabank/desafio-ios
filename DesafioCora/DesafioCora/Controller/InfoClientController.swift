@@ -15,12 +15,16 @@ class InfoClientController: BaseViewController {
     
     var data: OrderListElement?
     
-    convenience init(data: OrderListElement?) {
-        self.init()
-        self.data = data
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setupNavigation()
         view.backgroundColor = .white
         self.title = "details"
+    }
+    
+    convenience init(data: OrderListElement?) {
+        self.init()
+        self.data = data
     }
     
     override func loadView() {

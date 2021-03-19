@@ -20,9 +20,11 @@ class OrderListController: BaseViewController {
     var ref: DatabaseReference!
     var orderListView = OrderListView()
     
-     let contentView: OrderListView = {
+    private lazy var contentView: OrderListView = {
         let view = OrderListView()
-        view.backgroundColor = .white
+        view.tableView.delegate = self
+        view.tableView.dataSource = self
+        view.tableView.register(OrderListCell.self, forCellReuseIdentifier: "cell")
         return view
     }()
     
@@ -53,9 +55,6 @@ class OrderListController: BaseViewController {
         ref = Database.database().reference()
         fetchUserInfo()
         view.backgroundColor = .white
-        contentView.tableView.delegate = self
-        contentView.tableView.dataSource = self
-        contentView.tableView.register(OrderListCell.self, forCellReuseIdentifier: "cell")
         self.loadData()
     }
     
