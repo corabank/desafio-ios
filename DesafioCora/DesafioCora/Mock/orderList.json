@@ -6,73 +6,106 @@
             "date": "3 dias atrás",
             "ownerPurchase": "Euclides Medeiros",
             "creationDate": "03/08/2020",
-            "taxes": 4.99
+            "taxes": 9.99
         },
         {
             "value": 400.0,
             "mail": "joao.medeiros@gmail.com",
             "status": true,
-            "date": "2 dias atrás"
+            "date": "2 dias atrás",
+            "ownerPurchase": "João Medeiros",
+            "creationDate": "01/01/2020",
+            "taxes": 2.99
         },
         {
             "value": 212.0,
             "mail": "manoela.medeiros@hotmail.com",
             "status": false,
-            "date": "10 dias atrás"
+            "date": "10 dias atrás",
+            "ownerPurchase": "Manoela Medeiros",
+            "creationDate": "11/11/2020",
+            "taxes": 4.55
         },
         {
             "value": 45.0,
             "mail": "jailson.caetano@hotmail.com",
             "status": true,
-            "date": "1 dias atrás"
+            "date": "1 dias atrás",
+            "ownerPurchase": "Jailson Caetano",
+            "creationDate": "12/09/2020",
+            "taxes": 4.23
         },
         {
             "value": 10.0,
             "mail": "marcoslima@gmail.com",
             "status": false,
-            "date": "5 dias atrás"
+            "date": "5 dias atrás",
+            "ownerPurchase": "Marcos Lima",
+            "creationDate": "06/09/2020",
+            "taxes": 4.49
         },
         {
             "value": 11.0,
             "mail": "felipe.pereira@hotmail.com",
             "status": false,
-            "date": "3 dias atrás"
+            "date": "3 dias atrás",
+            "ownerPurchase": "Felipe Pereira",
+            "creationDate": "01/12/2020",
+            "taxes": 3.99
         },
         {
             "value": 999.0,
             "mail": "ronaldo9@hotmail.com",
             "status": true,
-            "date": "8 dias atrás"
+            "date": "8 dias atrás",
+            "ownerPurchase": "Ronaldo",
+            "creationDate": "02/02/2020",
+            "taxes": 1.99
         },
         {
             "value": 543.0,
             "mail": "cassio_1@uol.com",
             "status": true,
-            "date": "3 dias atrás"
+            "date": "3 dias atrás",
+            "ownerPurchase": "Cassio",
+            "creationDate": "03/08/2020",
+            "taxes": 4.99
         },
         {
             "value": 653.0,
             "mail": "marcia.silva@hotmail.com",
             "status": false,
-            "date": "9 dias atrás"
+            "date": "9 dias atrás",
+            "ownerPurchase": "Marcia Silva",
+            "creationDate": "03/08/2020",
+            "taxes": 8.99
         },
         {
             "value": 764.0,
             "mail": "maria.bento@hotmail.com",
             "status": true,
-            "date": "1 dias atrás"
+            "date": "1 dias atrás",
+            "ownerPurchase": "Maria Bento",
+            "creationDate": "03/08/2020",
+            "taxes": 9.99
         },
         {
             "value": 265.0,
             "mail": "antonio.lisboa@hotmail.com",
             "status": true,
-            "date": "5 dias atrás"
+            "date": "5 dias atrás",
+            "ownerPurchase": "Antonio Lisboa",
+            "creationDate": "03/08/2020",
+            "taxes": 1.99
         },
         {
             "value": 879.0,
             "mail": "erik.fernandes@hotmail.com",
             "status": true,
-            "date": "7 dias atrás"
+            "date": "7 dias atrás",
+            "ownerPurchase": "Erik Fernandes",
+            "creationDate": "03/08/2020",
+            "taxes": 3.99
         }
     ],
     "statusCode": 200

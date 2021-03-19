@@ -22,12 +22,6 @@ class InfoClientViewController: BaseViewController {
     
     var data: OrderListElement?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       // setupNavigation()
-       // setupViews()
-    }
-    
     convenience init(data: OrderListElement?) {
         self.init()
         self.data = data
@@ -40,12 +34,5 @@ class InfoClientViewController: BaseViewController {
         super.loadView()
         view = infoView
     }
-    
-//    func setupViews() {
-//        view.backgroundColor = .white
-//        self.title = "details"
-//        let infoClientView = InfoClientView(frame: self.view.frame)
-//        self.infoView = infoClientView
-//        view.addSubview(infoView)
-//    }
+
 }

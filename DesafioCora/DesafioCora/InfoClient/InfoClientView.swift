@@ -11,10 +11,6 @@ class InfoClientView: UIView {
     
     var data: OrderListElement?
     
-    var purchaseModelBottom: [PurchaseInfoDetailsBottom] = [
-        PurchaseInfoDetailsBottom(valueAccount: "110", taxes: "4.99", code: "sandbox: ASDFGHHGG-QWERTYUI-654323456-876545678-HGFSDFG")
-    ]
-    
     let stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = NSLayoutConstraint.Axis.vertical
@@ -41,17 +37,6 @@ class InfoClientView: UIView {
         setupConstraints()
     }
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setupStack()
-//        setupViewHierarchy()
-//        setupConstraints()
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     func setupViewHierarchy() {
         self.addSubview(stackView)
         
@@ -66,13 +51,19 @@ class InfoClientView: UIView {
     
     func setupStack() {
         
-        guard let valueFormatted = data?.value else { return }
+        
+        guard let valueFormatted = data?.value,
+              let type = data?.ownerPurchase,
+              let mail = data?.mail,
+              let dataPurchase = data?.date else { return }
+        
+        let formaterValue = String(format: "%.2f", valueFormatted)
         
         let purchaseModel: [PurchaseInfoDetails] = [
-            PurchaseInfoDetails(valueAccount: String(valueFormatted), typeAccount: "Cartão de crédito", imageName: "Wallet"),
-            PurchaseInfoDetails(valueAccount: "Comprador", typeAccount: "Caju Cacau", imageName: "person"),
-            PurchaseInfoDetails(valueAccount: "Email", typeAccount: "euclides.sena@hotmail.com", imageName: "letter"),
-            PurchaseInfoDetails(valueAccount: "Criado em", typeAccount: "03/03/2020", imageName: "calendar"),
+            PurchaseInfoDetails(valueAccount: String(formaterValue), typeAccount: "Cartão de crédito", imageName: "Wallet"),
+            PurchaseInfoDetails(valueAccount: "Comprador", typeAccount: type, imageName: "person"),
+            PurchaseInfoDetails(valueAccount: "Email", typeAccount: mail, imageName: "letter"),
+            PurchaseInfoDetails(valueAccount: "Criado em", typeAccount: dataPurchase, imageName: "calendar"),
             PurchaseInfoDetails(valueAccount: "Status", typeAccount: "Pago", imageName: "clock")
         ]
         
@@ -174,17 +165,17 @@ class InfoClientView: UIView {
         receiveText.translatesAutoresizingMaskIntoConstraints = false
         
         
-        let currentValue = UILabel()
+        let c = UILabel()
         currentValue.font = UIFont.boldSystemFont(ofSize: 16)
         currentValue.numberOfLines = 0
-        currentValue.text = "R$ 110.00"
+        currentValue.text = formaterValue
         currentValue.textColor = .gray
         currentValue.translatesAutoresizingMaskIntoConstraints = false
         
         let currentTaxes = UILabel()
         currentTaxes.font = UIFont.boldSystemFont(ofSize: 16)
         currentTaxes.numberOfLines = 0
-        currentTaxes.text = "4.99"
+        currentTaxes.text = String(data?.taxes ?? 0.0)
         currentTaxes.textColor = .red
         currentTaxes.translatesAutoresizingMaskIntoConstraints = false
         
