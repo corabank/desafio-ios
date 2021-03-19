@@ -16,6 +16,7 @@ final class SignUpViewModel {
 //    var nameUser: [String: Any] = {
 //        return ["name" : name ?? ""]
 //    }
+    
 //
 //    func setNameUser(name: String) -> [String: String] {
 //        return ["name": name]

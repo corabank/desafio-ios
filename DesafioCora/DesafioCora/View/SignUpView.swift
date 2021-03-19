@@ -9,10 +9,12 @@ import UIKit
 
 class SignUpView: UIView {
     
+    private let viewModel: SignUpViewModel
     var signUpAction: (() -> Void)?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViewHierarchy()
         setupConstraints()
     }
@@ -50,6 +52,17 @@ class SignUpView: UIView {
         button.addTarget(self, action: #selector(signUpBt), for: .touchUpInside)
         return button
     }()
+    
+    func setupUI() {
+        
+        guard let currentName = nameSignUpTextField.text,
+              let currentEmail = emailSignUpTextField.text,
+              let currentPassword = passwordSignUpTextFied.text else { return }
+        
+        viewModel.name = currentName
+        viewModel.mail = currentEmail
+        viewModel.password = currentPassword
+    }
     
     func setupViewHierarchy() {
         self.addSubview(logoSignUp)
@@ -103,6 +116,7 @@ class SignUpView: UIView {
     }
     
     @objc func signUpBt() {
+        setupUI()
         signUpAction?()
     }
     

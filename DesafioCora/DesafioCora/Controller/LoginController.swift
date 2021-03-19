@@ -38,7 +38,7 @@ class LoginController: BaseViewController {
     }
     
     private func requestUser() {
-        authViewModel.requestUser(mail: viewModelLogin.mail ?? "", password: viewModelLogin.password ?? "") { (error) in
+        authViewModel.requestUser(mail: viewModelLogin.mail ?? "", password: viewModelLogin.password ?? "") { (result, error) in
             if let err = error {
                 self.hiddenLoadingAnimation()
                 self.showAlert(alertText: "Error", alertMessage: "\(err.localizedDescription)")
@@ -54,7 +54,7 @@ class LoginController: BaseViewController {
     private func signUpPressed() {
         let goToSignUpScreen = SignUpController()
         let navVC = UINavigationController(rootViewController: goToSignUpScreen)
-//        navVC.modalPresentationStyle = .fullScreen
+        navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)
     }
 }

@@ -18,7 +18,6 @@ class LoginView: UIView {
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
-        setupUI()
         setupViewHierarchy()
         setupConstraints()
     }
@@ -58,7 +57,6 @@ class LoginView: UIView {
     
     let emailTextField: UITextField = {
         let tf = UITextField("Email")
-        tf.text = "euclides.sena@hotmail.com"
         return tf
     }()
     
@@ -66,7 +64,6 @@ class LoginView: UIView {
         let tf = UITextField("Password")
         tf.isSecureTextEntry = true
         tf.keyboardType = .numberPad
-        tf.text = "111111"
         return tf
     }()
     
@@ -124,6 +121,7 @@ class LoginView: UIView {
     }
     
     @objc func handleLogin() {
+        setupUI()
         loginAction?()
     }
     

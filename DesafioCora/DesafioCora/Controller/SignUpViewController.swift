@@ -10,50 +10,43 @@ import Firebase
 
 class SignUpController: BaseViewController {
     
-    var signUpView = SignUpView()
+    let viewModelSignUp = SignUpViewModel()
     let authViewModel = AuthenticationViewModel()
     var ref: DatabaseReference!
     
+    private lazy var viewSignUp: SignUpView = {
+        var view = SignUpView(viewModel: viewModelSignUp)
+        view.signUpAction = submmitPressed
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "signup"
+        view.backgroundColor = .white
         ref = Database.database().reference()
         initializeHideKeyboard()
         setupNavigation()
-        setupViews()
     }
     
-    func setupViews() {
-        view.backgroundColor = .white
-        self.title = "signup"
-        let signUpView = SignUpView(frame: self.view.frame)
-        self.signUpView = signUpView
-        self.signUpView.signUpAction = submmitPressed
-        view.addSubview(signUpView)
+    override func loadView() {
+        super.loadView()
+        view = viewSignUp
     }
     
     func submmitPressed() {
-        guard let email = signUpView.emailSignUpTextField.text,
-              let password = signUpView.passwordSignUpTextFied.text,
-              let userName = signUpView.nameSignUpTextField.text else { return }
         let userData: [String: Any] = [
-            "name": userName
+            "name": viewModelSignUp.name ?? ""
         ]
         
-        authViewModel.signUpUser(email, password) { (result, error) in
+        authViewModel.signUpUser(viewModelSignUp.mail ?? "", viewModelSignUp.password ?? "") { (result, error) in
             if let err = error {
                 self.showAlert(alertText: "Erro", alertMessage: err.localizedDescription)
             } else {
                 guard let uid = result?.user.uid else { return }
                 self.ref.child("users/\(uid)").setValue(userData)
                 self.showAlert(alertText: "Sucesso!!!", alertMessage: "Usuário criado. =-)")
-                self.clearFields()
             }
         }
-    }
-    
-    func clearFields() {
-        signUpView.nameSignUpTextField.text = ""
-        signUpView.emailSignUpTextField.text = ""
-        signUpView.passwordSignUpTextFied.text = ""
     }
 }

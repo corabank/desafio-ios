@@ -12,9 +12,9 @@ final class AuthenticationViewModel {
     
     var ref: DatabaseReference!
     
-    func requestUser(mail: String, password: String, completionHandler: @escaping (Error?) -> ()) {
+    func requestUser(mail: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
         Auth.auth().signIn(withEmail: mail, password: password) { (user, error) in
-            completionHandler(error)
+            completionHandler(user, error)
         }
     }
     
