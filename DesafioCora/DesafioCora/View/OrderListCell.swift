@@ -9,6 +9,13 @@ import UIKit
 
 class OrderListCell: UITableViewCell {
     
+    // MARK: - Constants
+    
+    private let kPaidOut = "pago"
+    private let kIdoNotPay = "não pago"
+    
+    // MARK: - Properties
+    
     var logoWallet: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Wallet")
@@ -112,10 +119,10 @@ class OrderListCell: UITableViewCell {
         
         switch statusPayment {
         case true:
-            self.situationText.text = "Pago"
+            self.situationText.text = kPaidOut
             self.situationText.textColor = .green
         default:
-            self.situationText.text = "Não Pago"
+            self.situationText.text = kIdoNotPay
             self.situationText.textColor = .red
         }
     }

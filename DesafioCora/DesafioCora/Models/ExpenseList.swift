@@ -8,11 +8,13 @@
 import Foundation
 
 // MARK: - OrderList
+
 struct OrderList: Codable {
     let orderList: [OrderListElement]
 }
 
 // MARK: - OrderListElement
+
 struct OrderListElement: Codable {
     let value: Double?
     let mail: String?

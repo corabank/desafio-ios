@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - PurchaseInfoDetails
+
 struct PurchaseInfoDetails {
     var valueAccount: String?
     var typeAccount: String?

@@ -9,8 +9,15 @@ import Foundation
 
 final class OrderListViewModel {
     
+    // MARK: - Constants
+    
     let jasonserializer = JsonSerializer()
+    
+    // MARK: - Properties
+    
     var model: [OrderListElement] = []
+    
+    // MARK: - Public functions
     
     func getJsonSerializer(completion: (ValidationError?) -> Void) {
         jasonserializer.serealizationJson { (error, arrayOrderListJson) in

@@ -9,7 +9,30 @@ import UIKit
 
 class InfoClientView: UIView {
     
+    // MARK: - Properties
+    
     var data: OrderListElement?
+    
+    // MARK: - Constants
+    
+    private let kCreditCard = "Cartão de crédito"
+    private let kWallet = "Wallet"
+    private let kBuyer = "Comprador"
+    private let kPerson = "person"
+    private let kMail = "Email"
+    private let kletter = "letter"
+    private let kDateCreation = "Criado em"
+    private let kCalendar = "calendar"
+    private let kStatus = "Status"
+    private let kPaidOut = "Pago"
+    private let kClock = "clock"
+    private let kResume = "Resumo finaceiro"
+    private let kTotValue = "Valor Total"
+    private let kTaxes = "Taxas"
+    private let kReceive = "Meu recebimento"
+    private let kValue = "R$ 105.00"
+    private let kSandbox = "sandbox: ERTYUITY-65432-765432-765433456-ERTYJMNBVCDFGHJK"
+    
     
     let stackView: UIStackView = {
         let stack = UIStackView()
@@ -29,6 +52,8 @@ class InfoClientView: UIView {
         return stack
     }()
     
+    // MARK: - Initializers
+    
     convenience init(_ data: OrderListElement?) {
         self.init()
         self.data = data
@@ -36,6 +61,8 @@ class InfoClientView: UIView {
         setupViewHierarchy()
         setupConstraints()
     }
+    
+    // MARK: - Public functions
     
     func setupViewHierarchy() {
         self.addSubview(stackView)
@@ -60,11 +87,11 @@ class InfoClientView: UIView {
         let formaterValue = String(format: "%.2f", valueFormatted)
         
         let purchaseModel: [PurchaseInfoDetails] = [
-            PurchaseInfoDetails(valueAccount: String("R$ \(formaterValue)"), typeAccount: "Cartão de crédito", imageName: "Wallet"),
-            PurchaseInfoDetails(valueAccount: "Comprador", typeAccount: type, imageName: "person"),
-            PurchaseInfoDetails(valueAccount: "Email", typeAccount: mail, imageName: "letter"),
-            PurchaseInfoDetails(valueAccount: "Criado em", typeAccount: dataPurchase, imageName: "calendar"),
-            PurchaseInfoDetails(valueAccount: "Status", typeAccount: "Pago", imageName: "clock")
+            PurchaseInfoDetails(valueAccount: String("R$ \(formaterValue)"), typeAccount: kCreditCard, imageName: kWallet),
+            PurchaseInfoDetails(valueAccount: kBuyer, typeAccount: type, imageName: kPerson),
+            PurchaseInfoDetails(valueAccount: kMail, typeAccount: mail, imageName: kletter),
+            PurchaseInfoDetails(valueAccount: kDateCreation, typeAccount: dataPurchase, imageName: kCalendar),
+            PurchaseInfoDetails(valueAccount: kStatus, typeAccount: kPaidOut, imageName: kClock)
         ]
         
         purchaseModel.forEach { (contents) in
@@ -124,7 +151,7 @@ class InfoClientView: UIView {
         let labelDescription = UILabel()
         labelDescription.font = UIFont.systemFont(ofSize: 16)
         labelDescription.numberOfLines = 0
-        labelDescription.text = "Resumo finaceiro"
+        labelDescription.text = kResume
         labelDescription.textColor = .gray
         labelDescription.translatesAutoresizingMaskIntoConstraints = false
         
@@ -144,7 +171,7 @@ class InfoClientView: UIView {
         let totValueText = UILabel()
         totValueText.font = UIFont.boldSystemFont(ofSize: 16)
         totValueText.numberOfLines = 0
-        totValueText.text = "Valor Total"
+        totValueText.text = kTotValue
         totValueText.textColor = .gray
         totValueText.translatesAutoresizingMaskIntoConstraints = false
         
@@ -152,7 +179,7 @@ class InfoClientView: UIView {
         let taxesText = UILabel()
         taxesText.font = UIFont.boldSystemFont(ofSize: 16)
         taxesText.numberOfLines = 0
-        taxesText.text = "Taxas"
+        taxesText.text = kTaxes
         taxesText.textColor = .red
         taxesText.translatesAutoresizingMaskIntoConstraints = false
         
@@ -160,7 +187,7 @@ class InfoClientView: UIView {
         let receiveText = UILabel()
         receiveText.font = UIFont.boldSystemFont(ofSize: 16)
         receiveText.numberOfLines = 0
-        receiveText.text = "Meu recebimento"
+        receiveText.text = kReceive
         receiveText.textColor = .blue
         receiveText.translatesAutoresizingMaskIntoConstraints = false
         
@@ -183,7 +210,7 @@ class InfoClientView: UIView {
         let finalReceive = UILabel()
         finalReceive.font = UIFont.boldSystemFont(ofSize: 16)
         finalReceive.numberOfLines = 0
-        finalReceive.text = "R$ 105.00"
+        finalReceive.text = kValue
         finalReceive.textColor = .blue
         finalReceive.translatesAutoresizingMaskIntoConstraints = false
         
@@ -222,7 +249,7 @@ class InfoClientView: UIView {
         let labelBottom = UILabel()
         labelBottom.font = UIFont.boldSystemFont(ofSize: 16)
         labelBottom.numberOfLines = 0
-        labelBottom.text = "sandbox: ERTYUITY-65432-765432-765433456-ERTYJMNBVCDFGHJK"
+        labelBottom.text = kSandbox
         labelBottom.textColor = .gray
         labelBottom.translatesAutoresizingMaskIntoConstraints = false
         

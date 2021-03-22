@@ -9,16 +9,9 @@ import Foundation
 
 final class SignUpViewModel {
     
+    // MARK: - Properties
+    
     var name: String?
     var mail: String?
     var password: String?
-    
-//    var nameUser: [String: Any] = {
-//        return ["name" : name ?? ""]
-//    }
-    
-//
-//    func setNameUser(name: String) -> [String: String] {
-//        return ["name": name]
-//    }
 }

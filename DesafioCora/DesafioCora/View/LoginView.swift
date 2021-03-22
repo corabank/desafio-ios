@@ -10,43 +10,14 @@ import SnapKit
 
 class LoginView: UIView {
     
-    private let viewModel: LoginViewModel
+    // MARK: - Properties
     
     var loginAction: (() -> Void)?
     var signUpAction: (() -> Void)?
     
-    init(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
-        super.init(frame: .zero)
-        setupViewHierarchy()
-        setupConstraints()
-    }
+    // MARK: - Constants
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configureViews() {
-        self.backgroundColor = .clear
-        self.layer.cornerRadius = 10
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.white.cgColor
-    }
-    
-    private func setupViewHierarchy() {
-        self.addSubview(imageLogo)
-        self.addSubview(emailTextField)
-        self.addSubview(passwordTextFied)
-        self.addSubview(loginButton)
-        self.addSubview(signUpButton)
-    }
-    
-    func setupUI() {
-        guard let currentEmail = emailTextField.text,
-              let currentPassword = passwordTextFied.text else { return }
-        viewModel.mail = currentEmail
-        viewModel.password = currentPassword
-    }
+    private let viewModel: LoginViewModel
     
     let imageLogo: UIImageView = {
         let iv = UIImageView()
@@ -78,6 +49,36 @@ class LoginView: UIView {
         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
+    
+    // MARK: - Override & Initializers
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        setupViewHierarchy()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private functions
+    
+    private func configureViews() {
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    private func setupViewHierarchy() {
+        self.addSubview(imageLogo)
+        self.addSubview(emailTextField)
+        self.addSubview(passwordTextFied)
+        self.addSubview(loginButton)
+        self.addSubview(signUpButton)
+    }
     
     private func setupConstraints() {
         self.imageLogo.snp.makeConstraints { make in
@@ -118,6 +119,15 @@ class LoginView: UIView {
             make.height.equalTo(40)
             make.width.equalTo(0)
         }
+    }
+    
+    // MARK: - Public Functions
+    
+    func setupUI() {
+        guard let currentEmail = emailTextField.text,
+              let currentPassword = passwordTextFied.text else { return }
+        viewModel.mail = currentEmail
+        viewModel.password = currentPassword
     }
     
     @objc func handleLogin() {

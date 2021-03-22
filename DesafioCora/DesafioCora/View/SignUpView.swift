@@ -9,21 +9,15 @@ import UIKit
 
 class SignUpView: UIView {
     
-    private let viewModel: SignUpViewModel
+    // MARK: - Properties
+    
     var signUpAction: (() -> Void)?
     
-    init(viewModel: SignUpViewModel) {
-        self.viewModel = viewModel
-        super.init(frame: .zero)
-        setupViewHierarchy()
-        setupConstraints()
-    }
+    // MARK: - Constants
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private let viewModel: SignUpViewModel
     
-    var logoSignUp: UIImageView = {
+    let logoSignUp: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Cora")
         iv.contentMode = .scaleAspectFill
@@ -53,8 +47,22 @@ class SignUpView: UIView {
         return button
     }()
     
+    // MARK: - Override & Initializers
+    
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        setupViewHierarchy()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Public functions
+    
     func setupUI() {
-        
         guard let currentName = nameSignUpTextField.text,
               let currentEmail = emailSignUpTextField.text,
               let currentPassword = passwordSignUpTextFied.text else { return }
@@ -112,12 +120,11 @@ class SignUpView: UIView {
             make.height.equalTo(40)
             make.width.equalTo(0)
         }
-
+        
     }
     
     @objc func signUpBt() {
         setupUI()
         signUpAction?()
     }
-    
 }

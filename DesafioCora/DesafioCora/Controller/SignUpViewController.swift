@@ -10,15 +10,21 @@ import Firebase
 
 class SignUpController: BaseViewController {
     
+    // MARK: - Constants
+    
     let viewModelSignUp = SignUpViewModel()
     let authViewModel = AuthenticationViewModel()
     var ref: DatabaseReference!
+    
+    // MARK: - Private properties
     
     private lazy var viewSignUp: SignUpView = {
         var view = SignUpView(viewModel: viewModelSignUp)
         view.signUpAction = submmitPressed
         return view
     }()
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +39,8 @@ class SignUpController: BaseViewController {
         super.loadView()
         view = viewSignUp
     }
+    
+    // MARK: - Public functions
     
     func submmitPressed() {
         let userData: [String: Any] = [

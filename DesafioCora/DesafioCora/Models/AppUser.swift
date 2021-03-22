@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - AppUser
+
 struct AppUser {
     var name: String?
     var uid: String?

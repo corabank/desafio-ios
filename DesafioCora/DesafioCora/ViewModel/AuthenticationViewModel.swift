@@ -10,7 +10,11 @@ import Firebase
 
 final class AuthenticationViewModel {
     
+    // MARK: - Properties
+    
     var ref: DatabaseReference!
+    
+    // MARK: - Public functions
     
     func requestUser(mail: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
         Auth.auth().signIn(withEmail: mail, password: password) { (user, error) in
@@ -20,7 +24,7 @@ final class AuthenticationViewModel {
     
     func signUpUser(_ mail: String,_ password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
         Auth.auth().createUser(withEmail: mail, password: password) { (result, error) in
-                completionHandler(result, error)
+            completionHandler(result, error)
         }
     }
 }

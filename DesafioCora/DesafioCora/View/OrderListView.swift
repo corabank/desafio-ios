@@ -9,6 +9,8 @@ import UIKit
 
 class OrderListView: UIView {
     
+    // MARK: - Properties
+    
     var logoCollectionView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Cora")
@@ -49,6 +51,8 @@ class OrderListView: UIView {
         return tableView
     }()
     
+    // MARK: - Override & Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         configureViews()
@@ -61,13 +65,15 @@ class OrderListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureViews() {
-     
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         tableView.backgroundColor = .clear
+    }
+    
+    // MARK: - Private functions
+    
+    private func configureViews() {
+        
     }
     
     private func setupViewHierarchy() {
@@ -95,7 +101,6 @@ class OrderListView: UIView {
             make.top.equalTo(logoCollectionView.snp.bottom).offset(12)
             make.trailing.equalTo(self.snp.trailing).offset(-24)
             make.leading.equalTo(self.snp.leading).offset(24)
-
         }
         
         self.allOrders.snp.makeConstraints { make in
@@ -111,5 +116,4 @@ class OrderListView: UIView {
             make.bottom.equalTo(self.snp.bottom)
         }
     }
-    
 }

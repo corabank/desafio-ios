@@ -9,9 +9,13 @@ import UIKit
 
 class LoginController: BaseViewController {
     
+    // MARK: - Constants
+    
     let viewModel = OrderListViewModel()
     let viewModelLogin = LoginViewModel()
     let authViewModel = AuthenticationViewModel()
+    
+    // MARk: - Properties
     
     private lazy var contentView: LoginView = {
         var view = LoginView(viewModel: viewModelLogin)
@@ -19,6 +23,8 @@ class LoginController: BaseViewController {
         view.signUpAction = signUpPressed
         return view
     }()
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +37,15 @@ class LoginController: BaseViewController {
         view = contentView
     }
     
+    // MARK: - Public functions
+    
     func loginPressed() {
         dismissMyKeyboard()
         self.showLoadingAnimation()
         requestUser()
     }
+    
+    // MARK: - Private functions
     
     private func requestUser() {
         authViewModel.requestUser(mail: viewModelLogin.mail ?? "", password: viewModelLogin.password ?? "") { (result, error) in

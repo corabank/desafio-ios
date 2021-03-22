@@ -7,15 +7,19 @@
 
 import UIKit
 import Firebase
+    
+// MARK: - Protocols
 
-protocol DetailsGithubDataProtocol {
-    func getValue(_ indexPath: IndexPath) -> Double
-    func getMail(_ indexPath: IndexPath) -> String
-    func getStatus(_ indexPath: IndexPath) -> Bool
-    func getPayDay(_ indexPath: IndexPath) -> String
-}
+    protocol DetailsGithubDataProtocol {
+        func getValue(_ indexPath: IndexPath) -> Double
+        func getMail(_ indexPath: IndexPath) -> String
+        func getStatus(_ indexPath: IndexPath) -> Bool
+        func getPayDay(_ indexPath: IndexPath) -> String
+    }
 
 class OrderListController: BaseViewController {
+    
+    // MARK: - Properties
     
     var ref: DatabaseReference!
     var orderListView = OrderListView()
@@ -41,6 +45,8 @@ class OrderListController: BaseViewController {
         }
     }
     
+    // MARK: - Override & Initializers
+    
     init(viewModel: OrderListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -49,6 +55,8 @@ class OrderListController: BaseViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +69,8 @@ class OrderListController: BaseViewController {
     override func loadView() {
         self.view = contentView
     }
+    
+    // MARK: - Puclic functions
     
     func loadData() {
         viewModel?.getJsonSerializer { (error) in
@@ -76,11 +86,13 @@ class OrderListController: BaseViewController {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         ref.child("users").child(userId).observeSingleEvent(of: .value) { (snapshot) in
             guard let data = snapshot.value as? NSDictionary else { return }
-              guard let username = data["name"] as? String else { return }
+            guard let username = data["name"] as? String else { return }
             self.appUser = AppUser(name: username, uid: userId)
         }
     }
 }
+
+// MARK: - Extensions
 
 extension OrderListController: UITableViewDelegate, UITableViewDataSource, DetailsGithubDataProtocol {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +105,7 @@ extension OrderListController: UITableViewDelegate, UITableViewDataSource, Detai
         cell.selectionStyle = .none
         return cell
     }
-  
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }

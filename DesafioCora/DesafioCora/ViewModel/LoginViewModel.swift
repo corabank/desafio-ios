@@ -9,6 +9,8 @@ import Foundation
 
 final class LoginViewModel {
     
+    // MARK: - Properties
+    
     var mail: String?
     var password: String?
 }

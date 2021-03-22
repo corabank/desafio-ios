@@ -9,6 +9,8 @@ import UIKit
 
 class InfoClientController: BaseViewController {
     
+    // MARK: - Properties
+    
     lazy var infoView = InfoClientView(data)
     
     var indexDetails: IndexPath?
@@ -22,14 +24,17 @@ class InfoClientController: BaseViewController {
         self.title = "details"
     }
     
+    // MARK: -  Initializers
     convenience init(data: OrderListElement?) {
         self.init()
         self.data = data
     }
     
+    // MARK: - Lifecycle
+    
     override func loadView() {
         super.loadView()
         view = infoView
     }
-
+    
 }
