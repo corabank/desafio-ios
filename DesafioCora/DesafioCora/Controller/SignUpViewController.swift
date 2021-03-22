@@ -42,6 +42,7 @@ class SignUpController: BaseViewController {
     
     // MARK: - Public functions
     
+    /// function responsible for registering the user in firebase if it does not have incorrect data, for example: badly formatted email or password with at least 6 characters
     func submmitPressed() {
         let userData: [String: Any] = [
             "name": viewModelSignUp.name ?? ""

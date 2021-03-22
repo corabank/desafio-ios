@@ -9,6 +9,7 @@ import Foundation
 
 class JsonSerializer{
     
+    /// function responsible for parsing the json
     func serealizationJson(completion: (ValidationError?, [OrderListElement]) -> Void) {
         if let path = Bundle.main.path(forResource: "orderList", ofType: "json"){
             do{

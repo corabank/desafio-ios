@@ -55,6 +55,8 @@ class OrderListCell: UITableViewCell {
         return label
     }()
     
+    
+    /// initializing views
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureViews()
@@ -66,11 +68,14 @@ class OrderListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    /// setting background color of the view
     func configureViews() {
         self.backgroundColor = .clear
         self.layer.borderColor = UIColor.white.cgColor
     }
     
+    /// setting hierarchy of the view
     func setupViewHierarchy() {
         self.contentView.addSubview(logoWallet)
         self.contentView.addSubview(valueText)
@@ -80,8 +85,8 @@ class OrderListCell: UITableViewCell {
         
     }
     
+    /// setting constrains of the view
     func setupConstraints() {
-        
         self.logoWallet.snp.makeConstraints { make in
             make.centerY.equalTo(contentView.snp.centerY)
             make.leading.equalTo(snp.leading).offset(12)
@@ -111,6 +116,13 @@ class OrderListCell: UITableViewCell {
         }
     }
     
+    
+    /// function responsible for popular a cell
+    /// - Parameters:
+    ///   - purchaseValue: value in reais
+    ///   - currentEmail: buyer email
+    ///   - statusPayment: payment status
+    ///   - payDay: pay day
     func setup(purchaseValue: Double, currentEmail: String, statusPayment: Bool, payDay: String ) {
         let formaterValue = String(format: "%.2f", purchaseValue)
         self.valueText.text = "R$ \(formaterValue)"

@@ -34,16 +34,8 @@ class InfoClientView: UIView {
     private let kSandbox = "sandbox: ERTYUITY-65432-765432-765433456-ERTYJMNBVCDFGHJK"
     
     
+    /// creating stack view main
     let stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = NSLayoutConstraint.Axis.vertical
-        stack.distribution = UIStackView.Distribution.fill
-        stack.spacing = 0.0
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-    
-    let stackViewBottom: UIStackView = {
         let stack = UIStackView()
         stack.axis = NSLayoutConstraint.Axis.vertical
         stack.distribution = UIStackView.Distribution.fill
@@ -66,7 +58,6 @@ class InfoClientView: UIView {
     
     func setupViewHierarchy() {
         self.addSubview(stackView)
-        
     }
     
     func setupConstraints() {
@@ -77,15 +68,16 @@ class InfoClientView: UIView {
     }
     
     func setupStack() {
-        
-        
         guard let valueFormatted = data?.value,
               let type = data?.ownerPurchase,
               let mail = data?.mail,
               let dataPurchase = data?.date else { return }
         
+        /// formatting currency for real
         let formaterValue = String(format: "%.2f", valueFormatted)
         
+        
+        /// model to dynamically add elements to the stackView
         let purchaseModel: [PurchaseInfoDetails] = [
             PurchaseInfoDetails(valueAccount: String("R$ \(formaterValue)"), typeAccount: kCreditCard, imageName: kWallet),
             PurchaseInfoDetails(valueAccount: kBuyer, typeAccount: type, imageName: kPerson),
@@ -148,6 +140,7 @@ class InfoClientView: UIView {
             
         }
         
+        /// populating the center of the stackView
         let labelDescription = UILabel()
         labelDescription.font = UIFont.systemFont(ofSize: 16)
         labelDescription.numberOfLines = 0
@@ -175,7 +168,6 @@ class InfoClientView: UIView {
         totValueText.textColor = .gray
         totValueText.translatesAutoresizingMaskIntoConstraints = false
         
-        
         let taxesText = UILabel()
         taxesText.font = UIFont.boldSystemFont(ofSize: 16)
         taxesText.numberOfLines = 0
@@ -183,14 +175,12 @@ class InfoClientView: UIView {
         taxesText.textColor = .red
         taxesText.translatesAutoresizingMaskIntoConstraints = false
         
-        
         let receiveText = UILabel()
         receiveText.font = UIFont.boldSystemFont(ofSize: 16)
         receiveText.numberOfLines = 0
         receiveText.text = kReceive
         receiveText.textColor = .blue
         receiveText.translatesAutoresizingMaskIntoConstraints = false
-        
         
         let currentValue = UILabel()
         currentValue.font = UIFont.boldSystemFont(ofSize: 16)
@@ -205,7 +195,6 @@ class InfoClientView: UIView {
         currentTaxes.text = String(data?.taxes ?? 0.0)
         currentTaxes.textColor = .red
         currentTaxes.translatesAutoresizingMaskIntoConstraints = false
-        
         
         let finalReceive = UILabel()
         finalReceive.font = UIFont.boldSystemFont(ofSize: 16)
@@ -225,7 +214,6 @@ class InfoClientView: UIView {
         viewTaxesAndTot.addSubview(currentTaxes)
         viewTaxesAndTot.addSubview(finalReceive)
         
-        
         totValueText.topAnchor.constraint(equalTo: viewTaxesAndTot.topAnchor, constant: 16).isActive = true
         totValueText.leadingAnchor.constraint(equalTo: viewTaxesAndTot.leadingAnchor, constant: 16).isActive = true
         
@@ -240,12 +228,13 @@ class InfoClientView: UIView {
         
         currentTaxes.topAnchor.constraint(equalTo: currentValue.bottomAnchor, constant: 8).isActive = true
         currentTaxes.trailingAnchor.constraint(equalTo: viewTaxesAndTot.trailingAnchor, constant: -16).isActive = true
-        
+
         finalReceive.topAnchor.constraint(equalTo: currentTaxes.bottomAnchor, constant: 24).isActive = true
         finalReceive.trailingAnchor.constraint(equalTo: viewTaxesAndTot.trailingAnchor, constant: -16).isActive = true
-        
         stackView.addArrangedSubview(viewTaxesAndTot)
         
+        
+        /// adding bottom
         let labelBottom = UILabel()
         labelBottom.font = UIFont.boldSystemFont(ofSize: 16)
         labelBottom.numberOfLines = 0
@@ -262,8 +251,6 @@ class InfoClientView: UIView {
         labelBottom.leadingAnchor.constraint(equalTo: viewBottom.leadingAnchor, constant: 16).isActive = true
         labelBottom.trailingAnchor.constraint(equalTo: viewBottom.trailingAnchor, constant: -16).isActive = true
         labelBottom.bottomAnchor.constraint(equalTo: viewBottom.bottomAnchor, constant: 0).isActive = true
-        
-        
         stackView.addArrangedSubview(viewBottom)
     }
 }

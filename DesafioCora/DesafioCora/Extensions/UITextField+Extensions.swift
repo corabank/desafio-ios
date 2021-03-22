@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Extensions
+
 extension UITextField {
     public convenience init(_ placeholderText: String) {
         self.init()

@@ -11,7 +11,7 @@ class OrderListView: UIView {
     
     // MARK: - Properties
     
-    var logoCollectionView: UIImageView = {
+    var logoView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Cora")
         iv.contentMode = .scaleAspectFill
@@ -55,7 +55,6 @@ class OrderListView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        configureViews()
         setupViewHierarchy()
         setupConstraints()
     }
@@ -72,12 +71,8 @@ class OrderListView: UIView {
     
     // MARK: - Private functions
     
-    private func configureViews() {
-        
-    }
-    
     private func setupViewHierarchy() {
-        self.addSubview(logoCollectionView)
+        self.addSubview(logoView)
         self.addSubview(currentUser)
         self.addSubview(titleLabel)
         self.addSubview(allOrders)
@@ -85,7 +80,7 @@ class OrderListView: UIView {
     }
     
     private func setupConstraints() {
-        self.logoCollectionView.snp.makeConstraints { make in
+        self.logoView.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide).offset(24)
             make.leading.equalTo(self.snp.leading).offset(24)
             make.height.equalTo(48)
@@ -93,12 +88,12 @@ class OrderListView: UIView {
         }
         
         self.currentUser.snp.makeConstraints { make in
-            make.centerY.equalTo(logoCollectionView.snp.centerY)
+            make.centerY.equalTo(logoView.snp.centerY)
             make.trailing.equalTo(self.snp.trailing).offset(-24)
         }
         
         self.titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoCollectionView.snp.bottom).offset(12)
+            make.top.equalTo(logoView.snp.bottom).offset(12)
             make.trailing.equalTo(self.snp.trailing).offset(-24)
             make.leading.equalTo(self.snp.leading).offset(24)
         }

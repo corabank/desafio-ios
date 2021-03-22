@@ -16,6 +16,7 @@ final class AuthenticationViewModel {
     
     // MARK: - Public functions
     
+    /// functions responsible for registering and authenticating the user
     func requestUser(mail: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
         Auth.auth().signIn(withEmail: mail, password: password) { (user, error) in
             completionHandler(user, error)

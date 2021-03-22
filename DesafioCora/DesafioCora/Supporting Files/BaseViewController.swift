@@ -10,7 +10,16 @@ import FSnapChatLoading
 
 class BaseViewController: UIViewController {
     
+    // MARK: - Properties
+    private var kBack = "voltar"
+    private var kOk = "ok"
+    
+    
+    // MARK: - Constants
+    
     let loadingView = FSnapChatLoadingView()
+    
+    // MARK: - Override
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +30,12 @@ class BaseViewController: UIViewController {
         return .darkContent
     }
     
+    // MARK: - Public functions
+    
     func setupNavigation() {
         UINavigationBar.appearance().barTintColor = .pinkColorborder
         let backbutton = UIButton(type: .custom)
-        backbutton.setTitle("voltar", for: .normal)
+        backbutton.setTitle(kBack, for: .normal)
         backbutton.setTitleColor(backbutton.tintColor, for: .highlighted)
         backbutton.addTarget(self, action: #selector(self.backAction), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
@@ -36,7 +47,7 @@ class BaseViewController: UIViewController {
     
     func showAlert(alertText : String, alertMessage : String) {
         let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Got it", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: kOk, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

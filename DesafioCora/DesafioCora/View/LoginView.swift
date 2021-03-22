@@ -12,6 +12,8 @@ class LoginView: UIView {
     
     // MARK: - Properties
     
+    
+    /// clousure to trigger function in viewController
     var loginAction: (() -> Void)?
     var signUpAction: (() -> Void)?
     
@@ -123,6 +125,7 @@ class LoginView: UIView {
     
     // MARK: - Public Functions
     
+    /// passing login data to the viewModel
     func setupUI() {
         guard let currentEmail = emailTextField.text,
               let currentPassword = passwordTextFied.text else { return }
@@ -130,6 +133,7 @@ class LoginView: UIView {
         viewModel.password = currentPassword
     }
     
+    /// functions to trigger login and signIn
     @objc func handleLogin() {
         setupUI()
         loginAction?()

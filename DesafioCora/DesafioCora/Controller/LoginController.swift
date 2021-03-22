@@ -47,6 +47,7 @@ class LoginController: BaseViewController {
     
     // MARK: - Private functions
     
+    /// function responsible for authenticating the user in firebase
     private func requestUser() {
         authViewModel.requestUser(mail: viewModelLogin.mail ?? "", password: viewModelLogin.password ?? "") { (result, error) in
             if let err = error {
@@ -61,6 +62,7 @@ class LoginController: BaseViewController {
         }
     }
     
+    /// go to user registration
     private func signUpPressed() {
         let goToSignUpScreen = SignUpController()
         let navVC = UINavigationController(rootViewController: goToSignUpScreen)

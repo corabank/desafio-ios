@@ -21,6 +21,7 @@ class OrderListController: BaseViewController {
     
     // MARK: - Properties
     
+    /// database reference
     var ref: DatabaseReference!
     var orderListView = OrderListView()
     
@@ -82,6 +83,7 @@ class OrderListController: BaseViewController {
         }
     }
     
+    /// function retrieves the user name of the firebase and pops it into the home screen taking the userId as a reference
     func fetchUserInfo() {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         ref.child("users").child(userId).observeSingleEvent(of: .value) { (snapshot) in
@@ -95,6 +97,8 @@ class OrderListController: BaseViewController {
 // MARK: - Extensions
 
 extension OrderListController: UITableViewDelegate, UITableViewDataSource, DetailsGithubDataProtocol {
+    
+    /// extension to create the tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.model.count ?? 0
     }
@@ -118,6 +122,9 @@ extension OrderListController: UITableViewDelegate, UITableViewDataSource, Detai
         
     }
     
+    /// function that returns the IndexPath of the model and populates the tableview
+    /// - Parameter indexPath: pick up the element in the correct order
+    /// - Returns: returns the type of the function
     func getValue(_ indexPath: IndexPath) -> Double {
         return viewModel?.model[indexPath.row].value ?? 0.0
     }

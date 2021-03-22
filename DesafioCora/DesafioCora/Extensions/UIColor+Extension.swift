@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Extensions
+
 extension UIColor {
     
     public convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {

@@ -19,6 +19,8 @@ final class OrderListViewModel {
     
     // MARK: - Public functions
     
+    /// function responsible for making the json decode
+    /// - Parameter completion: returns an error and the object
     func getJsonSerializer(completion: (ValidationError?) -> Void) {
         jasonserializer.serealizationJson { (error, arrayOrderListJson) in
             if let error = error {

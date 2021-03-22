@@ -62,6 +62,7 @@ class SignUpView: UIView {
     
     // MARK: - Public functions
     
+    /// passing registration data to the viewmodel
     func setupUI() {
         guard let currentName = nameSignUpTextField.text,
               let currentEmail = emailSignUpTextField.text,
@@ -123,6 +124,7 @@ class SignUpView: UIView {
         
     }
     
+    /// function to hit the firebase and register the user
     @objc func signUpBt() {
         setupUI()
         signUpAction?()

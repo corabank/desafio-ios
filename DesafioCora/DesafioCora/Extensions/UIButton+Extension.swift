@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Extensions
+
 extension UIButton {
     public convenience init(title: String, borderColor: UIColor) {
         self.init()
