@@ -1,0 +1,13 @@
+sourceryCommand: null
+sourceryTemplate: null
+coraTests:
+  sources:
+    include:
+    - ./cora
+  output: ./coraTests/Mock.generated.swift
+  targets:
+  - coraTests
+  testable:
+  - cora
+  import:
+  - Foundation

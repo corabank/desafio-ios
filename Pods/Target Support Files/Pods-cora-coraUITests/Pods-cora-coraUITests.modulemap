@@ -1,0 +1,6 @@
+framework module Pods_cora_coraUITests {
+  umbrella header "Pods-cora-coraUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

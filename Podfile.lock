@@ -1,0 +1,28 @@
+PODS:
+  - Sourcery (1.3.1)
+  - SwiftLint (0.42.0)
+  - SwiftyMocky (4.0.1):
+    - Sourcery (>= 1.0)
+  - ViewAnimator (2.7.1)
+
+DEPENDENCIES:
+  - SwiftLint
+  - SwiftyMocky
+  - ViewAnimator (= 2.7.1)
+
+SPEC REPOS:
+  trunk:
+    - Sourcery
+    - SwiftLint
+    - SwiftyMocky
+    - ViewAnimator
+
+SPEC CHECKSUMS:
+  Sourcery: c36ef4f4acce0889653296901cb56011590e8e78
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  SwiftyMocky: 707d9cdd5decef8083f6dc76892977ee1cf8bbce
+  ViewAnimator: 7512352ec4dec2901b980d16b1256d601c30a44c
+
+PODFILE CHECKSUM: f9d42f1824cd42b1018183f68494706237f3194e
+
+COCOAPODS: 1.10.0
