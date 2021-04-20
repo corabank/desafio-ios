@@ -13,7 +13,9 @@ protocol OrdersViewControllerDelegate: class {
 
 class OrdersViewController: UIViewController {
     var viewModel: OrdersViewModelProtocol?
-    weak var delegate: OrdersViewControllerDelegate?
+    
+    // needs strong reference to be used in tableview
+    var delegate: OrdersViewControllerDelegate?
     
     var tableView = UITableView()
     var orders = [Order]()
@@ -99,5 +101,6 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // call delegate to show detail page
         print(orders[indexPath.row].value.toCurrency)
+        self.delegate?.showDetail(order: self.orders[indexPath.row])
     }
 }

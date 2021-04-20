@@ -10,7 +10,12 @@ import Foundation
 struct OrderDTO: Codable {
     var id: String
     var value: Double
+    var taxes: Double
     var description: String
+    var createdAt: Date
     var dueDate: Date
     var status: String
+    var paymentType: String
+    var buyerName: String
+    var buyerEmail: String
 }

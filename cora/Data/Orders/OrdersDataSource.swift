@@ -20,12 +20,24 @@ class OrdersDataSource: OrdersDataSourceProtocol {
                 OrderDTO(
                     id: UUID().uuidString,
                     value: Double.random(in: 40.00...200.99),
+                    taxes: Double.random(in: 1.99...5.99),
                     description: "someemail@email.com",
+                    createdAt: Date() - TimeInterval(Int.random(in: 300000...800000)),
                     dueDate: Date() - TimeInterval(Int.random(in: 100000...300000)),
-                    status: OrderStatus.allCases.randomElement()?.rawValue ?? OrderStatus.paid.rawValue)
+                    status: OrderStatus.allCases.randomElement()?.rawValue ?? OrderStatus.paid.rawValue,
+                    paymentType: ["credit", "debit", "pix", "billet"].randomElement()?.description ?? "",
+                    buyerName: ["George Cloney",
+                                "Batman",
+                                "Skeletor",
+                                "MunRa"].randomElement()?.description ?? "",
+                    buyerEmail: ["george@cloney.com",
+                                 "darkbegins@batman.com",
+                                 "greyskull@skeletor.com",
+                                 "munra@gmail.com"].randomElement()?.description ?? ""
+                )
             )
         }
-
+        
         completionHandler(.success(orders))
     }
 }

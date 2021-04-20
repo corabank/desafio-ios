@@ -18,13 +18,7 @@ class OrdersRepositoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        ordersDTO = Array(repeating: OrderDTO(
-                            id: UUID().uuidString,
-                            value: Double.random(in: 40.00...200.99),
-                            description: "someemail@email.com",
-                            dueDate: Date() - TimeInterval(Int.random(in: 1000...10000)),
-                            status: OrderStatus.allCases.randomElement()?.rawValue ?? "pending"), count: 50)
-
+        ordersDTO = OrdersFactory.createDTO()
         ordersDataSource = OrdersDataSourceProtocolMock()
         ordersRepository = OrdersRepository(ordersDataSource: ordersDataSource)
     }
@@ -45,7 +39,7 @@ class OrdersRepositoryTests: XCTestCase {
         
         let orders = try fetchOrders()
         
-        XCTAssertEqual(orders?.count, 50)
+        XCTAssertEqual(orders?.count, 100)
         ordersDataSource.verify(.fetchOrders(completionHandler: .any))
     }
     

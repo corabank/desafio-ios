@@ -21,9 +21,13 @@ class LoginCoordinator: Coordinator {
         let loginUseCase = LoginUseCase(repository: loginRepository)
         let loginViewModel = LoginViewModel(loginUseCase: loginUseCase)
         let loginViewController = LoginViewController()
-        loginViewController.loginViewModel = loginViewModel
+        
+        loginViewController.viewModel = loginViewModel
         loginViewController.delegate = self
         self.navigationController.viewControllers = [loginViewController]
+        
+//        let controller = OrderDetailViewcontroller()
+//        self.navigationController.viewControllers = [controller]
     }
 }
 

@@ -13,7 +13,7 @@ protocol LoginViewControllerDelegate: class {
 }
 
 class LoginViewController: UIViewController {
-    var loginViewModel: LoginViewModelProtocol?
+    var viewModel: LoginViewModelProtocol?
     weak var delegate: LoginViewControllerDelegate?
     
     private var logo: UIImageView!
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
         
         emailTextInput.text = ""
         passwordTextInput.text = ""
-        loginViewModel?.onUpdated = handleState
+        viewModel?.onUpdated = handleState
         
         logo.layer.opacity = 0
     }
@@ -164,10 +164,19 @@ extension LoginViewController {
     }
     
     // Header View
-    func makeHeaderView(user: User) {
+
+    func makeHeaderView() {
+        var ordersSum: Int {
+            State.shared.user?.orders.count ?? 0
+        }
+        
+        var ordersValueSum: Double {
+            State.shared.user?.orders.reduce(0) { $0 + $1.value } ?? 0
+        }
+        
         userNameLabel = UILabel()
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        userNameLabel.text = "Olá, \(user.name)"
+        userNameLabel.text = "Olá, \(State.shared.user?.name ?? "")"
         userNameLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         userNameLabel.font = UIFont.systemFont(ofSize: 16)
         userNameLabel.textAlignment = .left
@@ -181,7 +190,7 @@ extension LoginViewController {
         
         ordersAmountLabel = UILabel()
         ordersAmountLabel.translatesAutoresizingMaskIntoConstraints = false
-        ordersAmountLabel.text = "320 pedidos, totalizando R$ 115.345,45"
+        ordersAmountLabel.text = "\(ordersSum.description) pedidos, totalizando \(ordersValueSum.toCurrency)"
         ordersAmountLabel.textColor = #colorLiteral(red: 0.4828443527, green: 0.5140886903, blue: 0.551874876, alpha: 1)
         ordersAmountLabel.font = UIFont.systemFont(ofSize: 16)
         ordersAmountLabel.textAlignment = .left
@@ -220,7 +229,7 @@ extension LoginViewController {
     func handleLogin(state: LoginViewModelState) {
         switch state {
         case .authenticating: authenticating()
-        case .authenticated(let user): authenticated(user: user)
+        case .authenticated: authenticated()
         default: break
         }
     }
@@ -234,9 +243,9 @@ extension LoginViewController {
         loading.startAnimating()
     }
     
-    private func authenticated(user: User) {
+    private func authenticated() {
         disableLoading()
-        endAnimation(user: user)
+        endAnimation()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.delegate?.authenticated()
@@ -254,7 +263,7 @@ extension LoginViewController {
     }
     
     private func emailEmpty() {
-        errorLabel.text = "O usuárioi é obrigatório"
+        errorLabel.text = "O usuário é obrigatório"
     }
     
     private func passwordEmpty() {
@@ -284,7 +293,7 @@ extension LoginViewController {
         }
     }
     
-    private func endAnimation(user: User) {
+    private func endAnimation() {
         UIView.transition(with: mainStack,
                           duration: 0.1,
                           options: .transitionCrossDissolve,
@@ -303,7 +312,7 @@ extension LoginViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.makeHeaderView(user: user)
+            self.makeHeaderView()
             self.addConstraintsForHeader()
             
             let zoomAnimation = AnimationType.from(direction: .top, offset: -100)
@@ -405,9 +414,9 @@ extension LoginViewController {
         //
         
         loading.startAnimating()
-        loginViewModel?.email = emailTextInput.text
-        loginViewModel?.password = passwordTextInput.text
-        loginViewModel?.login()
+        viewModel?.email = emailTextInput.text
+        viewModel?.password = passwordTextInput.text
+        viewModel?.login()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

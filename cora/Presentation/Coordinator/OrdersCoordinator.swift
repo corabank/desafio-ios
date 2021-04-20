@@ -8,6 +8,8 @@
 import UIKit
 
 class OrdersCoordinator: Coordinator {
+    var user: User?
+    var shouldAnimate: Bool = true
     var childrens: [Coordinator] = []
     private let navigationController: UINavigationController
 
@@ -21,12 +23,12 @@ class OrdersCoordinator: Coordinator {
         let useCase = OrdersUseCase(repository: repository)
         let viewModel = OrdersViewModel(useCase: useCase)
         let ordersViewController = OrdersViewController()
-        ordersViewController.delegate = self
         ordersViewController.viewModel = viewModel
+        ordersViewController.delegate = self
         ordersViewController.view.layer.opacity = 0
         ordersViewController.transitioningDelegate = navigationController
         ordersViewController.modalPresentationStyle = .custom
-        navigationController.present(ordersViewController, animated: true, completion: nil)
+        navigationController.present(ordersViewController, animated: shouldAnimate, completion: nil)
         UIView.transition(with: ordersViewController.view,
                           duration: 1,
                           options: .curveEaseInOut,
@@ -38,6 +40,22 @@ class OrdersCoordinator: Coordinator {
 
 extension OrdersCoordinator: OrdersViewControllerDelegate {
     func showDetail(order: Order) {
-        // show detail view
+        let orderDetailViewController = OrderDetailViewcontroller()
+        orderDetailViewController.viewModel = OrderDetailViewModel(order: order)
+        orderDetailViewController.delegate = self
+        orderDetailViewController.transitioningDelegate = navigationController
+        orderDetailViewController.modalPresentationStyle = .custom
+        navigationController.dismiss(animated: false) {
+            self.navigationController.present(orderDetailViewController, animated: false)
+        }
+    }
+}
+
+extension OrdersCoordinator: OrderDetailViewcontrollerDelegate {
+    func back() {
+        navigationController.dismiss(animated: false) {
+            self.shouldAnimate = false
+            self.start()
+        }
     }
 }

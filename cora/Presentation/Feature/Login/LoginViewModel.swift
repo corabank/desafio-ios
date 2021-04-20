@@ -10,7 +10,7 @@ import Foundation
 enum LoginViewModelState {
     case none
     case authenticating
-    case authenticated(user: User)
+    case authenticated
     case emailEmpty
     case passwordEmpty
     case emailAndPasswordEmpty
@@ -77,7 +77,8 @@ extension LoginViewModel: LoginPresenter {
     }
 
     func loginSuccess(user: User) {
-        state = .authenticated(user: user)
+        State.shared.user = user
+        state = .authenticated
     }
 
     func loginError(error: LoginUseCaseError) {

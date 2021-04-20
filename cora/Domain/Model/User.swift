@@ -11,4 +11,5 @@ struct User: Identifiable {
     var id = UUID()
     var name: String
     var email: String
+    var orders: [Order] = []
 }
