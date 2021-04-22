@@ -20,38 +20,39 @@ class OrdersRepositoryTests: XCTestCase {
         
         ordersDTO = OrdersFactory.createDTO()
         ordersDataSource = OrdersDataSourceProtocolMock()
-        ordersRepository = OrdersRepository(ordersDataSource: ordersDataSource)
+        ordersRepository = OrdersRepository(dataSource: ordersDataSource)
     }
     
     func fetchOrders() throws -> [Order]? {
         var result: Result<[Order], Error>?
-        ordersRepository.fetchOrders() { result = $0 }
+        ordersRepository.fetchOrders(userID: UUID()) { result = $0 }
         return try result?.get()
     }
     
     func test_orders_repository_with_dto_should_return_orders() throws {
         ordersDataSource.perform(
             .fetchOrders(
-                completionHandler: .any,
-                perform: { completionHandler in
+                userID: .any, completionHandler: .any,
+                perform: { (userID, completionHandler) in
                     completionHandler(.success(self.ordersDTO))
         }))
         
         let orders = try fetchOrders()
         
         XCTAssertEqual(orders?.count, 100)
-        ordersDataSource.verify(.fetchOrders(completionHandler: .any))
+        ordersDataSource.verify(.fetchOrders(userID: .any, completionHandler: .any))
     }
     
     func test_orders_repository_should_return_error() throws {
         ordersDataSource.perform(
             .fetchOrders(
+                userID: .any,
                 completionHandler: .any,
-                perform: { completionHandler in
+                perform: { (userID, completionHandler) in
                     completionHandler(.failure(URLError(.unknown)))
         }))
 
         XCTAssertThrowsError(try fetchOrders())
-        ordersDataSource.verify(.fetchOrders(completionHandler: .any))
+        ordersDataSource.verify(.fetchOrders(userID: .any, completionHandler: .any))
     }
 }

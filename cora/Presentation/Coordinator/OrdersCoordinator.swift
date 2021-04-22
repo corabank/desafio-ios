@@ -18,9 +18,7 @@ class OrdersCoordinator: Coordinator {
     }
 
     func start() {
-        let dataSource = OrdersDataSource()
-        let repository = OrdersRepository(ordersDataSource: dataSource)
-        let useCase = OrdersUseCase(repository: repository)
+        let useCase = container.resolve(OrdersUseCaseProtocol.self)!
         let viewModel = OrdersViewModel(useCase: useCase)
         let ordersViewController = OrdersViewController()
         ordersViewController.viewModel = viewModel

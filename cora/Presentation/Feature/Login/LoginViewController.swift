@@ -8,6 +8,7 @@
 import UIKit
 import ViewAnimator
 
+//sourcery: AutoMockable
 protocol LoginViewControllerDelegate: class {
     func authenticated()
 }
@@ -20,26 +21,27 @@ class LoginViewController: UIViewController {
     private var scrollView: UIScrollView!
     
     // Login
-    private var mainStack: UIStackView!
-    private var emailTextInput: UITextField!
-    private var passwordTextInput: UITextField!
-    private var errorLabel: UILabel!
-    private var button: UIButton!
-    private var loading: UIActivityIndicatorView!
+    var mainStack: UIStackView!
+    var spacer: UIView!
+    var emailTextInput: UITextField!
+    var passwordTextInput: UITextField!
+    var errorLabel: UILabel!
+    var button: UIButton!
+    var loading: UIActivityIndicatorView!
     
     // Logged
-    private var userNameLabel: UILabel!
-    private var ordersLabel: UILabel!
-    private var ordersAmountLabel: UILabel!
+    var userNameLabel: UILabel!
+    var ordersLabel: UILabel!
+    var ordersAmountLabel: UILabel!
     
     // Logo Constraints
-    var logoWidthConstraint: NSLayoutConstraint!
-    var logoHeightConstraint: NSLayoutConstraint!
-    var logoCenterXConstraint: NSLayoutConstraint!
-    var logoTopConstraint: NSLayoutConstraint!
-    var logoBottomConstraint: NSLayoutConstraint!
-    var logoLeftConstraint: NSLayoutConstraint!
-    var logoRightConstraint: NSLayoutConstraint!
+    private var logoWidthConstraint: NSLayoutConstraint!
+    private var logoHeightConstraint: NSLayoutConstraint!
+    private var logoCenterXConstraint: NSLayoutConstraint!
+    private var logoTopConstraint: NSLayoutConstraint!
+    private var logoBottomConstraint: NSLayoutConstraint!
+    private var logoLeftConstraint: NSLayoutConstraint!
+    private var logoRightConstraint: NSLayoutConstraint!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,8 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerKeyboardNotifications()
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
         
         emailTextInput.text = ""
         passwordTextInput.text = ""
@@ -66,7 +70,15 @@ class LoginViewController: UIViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil)
+        
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
     }
 }
 
@@ -84,6 +96,7 @@ extension LoginViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.contentSize = CGSize(width: scrollView.frame.width,
                                         height: UIScreen.main.bounds.height)
+        scrollView.keyboardDismissMode = .onDrag
         
         // main stack
         mainStack = UIStackView()
@@ -99,6 +112,10 @@ extension LoginViewController {
         logo.translatesAutoresizingMaskIntoConstraints = false
         logo.layer.cornerRadius = 30
         scrollView.addSubview(logo)
+        
+        // spacer
+        spacer = UIView()
+        mainStack.addArrangedSubview(spacer)
         
         // email text field
         emailTextInput = UITextField()
@@ -116,6 +133,7 @@ extension LoginViewController {
         emailTextInput.keyboardType = .emailAddress
         emailTextInput.autocapitalizationType = .none
         emailTextInput.autocorrectionType = .no
+        emailTextInput.accessibilityIdentifier = "emailTextInput"
         mainStack.addArrangedSubview(emailTextInput)
         
         // password text field
@@ -134,6 +152,7 @@ extension LoginViewController {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         passwordTextInput.attributedPlaceholder = passwordPlaceholderText
+        passwordTextInput.accessibilityIdentifier = "passwordTextInput"
         mainStack.addArrangedSubview(passwordTextInput)
         
         // error label
@@ -143,6 +162,7 @@ extension LoginViewController {
         errorLabel.textColor = #colorLiteral(red: 0.9348247647, green: 0.1218132153, blue: 0.3848077953, alpha: 1)
         errorLabel.font = errorLabel.font.withSize(11)
         errorLabel.textAlignment = .center
+        errorLabel.accessibilityIdentifier = "errorLabel"
         mainStack.addArrangedSubview(errorLabel)
         
         // button
@@ -152,6 +172,7 @@ extension LoginViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.9348247647, green: 0.1218132153, blue: 0.3848077953, alpha: 1)
         button.layer.cornerRadius = 10
+        button.accessibilityIdentifier = "button"
         mainStack.addArrangedSubview(button)
         
         scrollView.addSubview(mainStack)
@@ -160,6 +181,7 @@ extension LoginViewController {
         // loading
         loading = UIActivityIndicatorView(style: .white)
         loading.translatesAutoresizingMaskIntoConstraints = false
+        loading.accessibilityIdentifier = "loading"
         view.addSubview(loading)
     }
     
@@ -178,21 +200,22 @@ extension LoginViewController {
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.text = "Olá, \(State.shared.user?.name ?? "")"
         userNameLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        userNameLabel.font = UIFont.systemFont(ofSize: 16)
+        userNameLabel.font = UIFont.systemFont(ofSize: 14.dp)
         userNameLabel.textAlignment = .left
+        userNameLabel.accessibilityIdentifier = "userNameLabel"
         
         ordersLabel = UILabel()
         ordersLabel.translatesAutoresizingMaskIntoConstraints = false
         ordersLabel.text = "Pedidos"
         ordersLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        ordersLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        ordersLabel.font = UIFont.boldSystemFont(ofSize: 22.dp)
         ordersLabel.textAlignment = .left
         
         ordersAmountLabel = UILabel()
         ordersAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         ordersAmountLabel.text = "\(ordersSum.description) pedidos, totalizando \(ordersValueSum.toCurrency)"
         ordersAmountLabel.textColor = #colorLiteral(red: 0.4828443527, green: 0.5140886903, blue: 0.551874876, alpha: 1)
-        ordersAmountLabel.font = UIFont.systemFont(ofSize: 16)
+        ordersAmountLabel.font = UIFont.systemFont(ofSize: 14.dp)
         ordersAmountLabel.textAlignment = .left
         
         scrollView.addSubview(userNameLabel)
@@ -202,6 +225,19 @@ extension LoginViewController {
     
     func addTargets() {
         self.button.addTarget(self, action: #selector(onButtonTap), for: .touchUpInside)
+    }
+    
+    @objc func onButtonTap() {
+        // REMOVE
+        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
+        passwordTextInput.text = "caveira2021"
+        //
+
+        self.view.endEditing(true)
+        loading.startAnimating()
+        viewModel?.email = emailTextInput.text
+        viewModel?.password = passwordTextInput.text
+        viewModel?.login()
     }
         
     func handleFailures(state: LoginViewModelState) {
@@ -221,7 +257,7 @@ extension LoginViewController {
         case .emailAndPasswordEmpty:
             disableLoading()
             passwordEmpty()
-            emailEmpty()
+            emailAndPasswordEmpty()
         default: break
         }
     }
@@ -253,21 +289,25 @@ extension LoginViewController {
     }
     
     private func invalidEmail() {
-        self.errorLabel.text = "Usuário ou senha inválidos"
+        self.errorLabel.text = "Email ou senha inválidos"
     }
     
     private func wrongEmailAndPassword() {
-        self.errorLabel.text = "Usuário ou senha inválidos"
+        self.errorLabel.text = "Email ou senha inválidos"
         self.passwordTextInput.text = ""
         self.passwordTextInput.becomeFirstResponder()
     }
     
     private func emailEmpty() {
-        errorLabel.text = "O usuário é obrigatório"
+        errorLabel.text = "O email é obrigatório"
     }
     
     private func passwordEmpty() {
         errorLabel.text = "A senha é obrigatória"
+    }
+    
+    private func emailAndPasswordEmpty() {
+        errorLabel.text = "Email e senha são obrigatórios"
     }
     
     private func disableLoading() {
@@ -322,24 +362,13 @@ extension LoginViewController {
         }
     }
     
-    func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(notification:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-    }
-    
     // MARK: Constraints
     func setLogoConstraintsForAnimation() {
-        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 140)
-        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 140)
+        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 100.0.dp)
+        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 100.dp)
         logoCenterXConstraint = logo.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
-        logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 80)
-        logoBottomConstraint = logo.bottomAnchor.constraint(equalTo: mainStack.topAnchor, constant: -30)
+        logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 80.dp)
+        logoBottomConstraint = logo.bottomAnchor.constraint(equalTo: mainStack.topAnchor, constant: -30.dp)
         
         NSLayoutConstraint.activate([
             logoWidthConstraint,
@@ -359,10 +388,10 @@ extension LoginViewController {
             logoBottomConstraint
         ])
         
-        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 70)
-        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 70)
-        logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20)
-        logoLeftConstraint = logo.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10)
+        logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10.dp)
+        logoLeftConstraint = logo.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp)
+        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 50.dp)
+        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 50.dp)
         
         NSLayoutConstraint.activate([
             logoWidthConstraint,
@@ -376,18 +405,21 @@ extension LoginViewController {
         setLogoConstraintsForAnimation()
         
         NSLayoutConstraint.activate([
-            emailTextInput.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40),
-            emailTextInput.heightAnchor.constraint(equalToConstant: 54),
+            spacer.widthAnchor.constraint(equalTo: mainStack.widthAnchor),
+            spacer.heightAnchor.constraint(greaterThanOrEqualTo: logo.heightAnchor, multiplier: 0.5),
             
-            passwordTextInput.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40),
+            emailTextInput.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40.dp),
+            emailTextInput.heightAnchor.constraint(equalToConstant: 54.dp),
+            
+            passwordTextInput.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40.dp),
             passwordTextInput.heightAnchor.constraint(equalToConstant: 54),
             
             button.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            button.heightAnchor.constraint(equalToConstant: 50),
+            button.heightAnchor.constraint(equalToConstant: 50.dp),
             
-            errorLabel.heightAnchor.constraint(equalToConstant: 20),
+            errorLabel.heightAnchor.constraint(equalToConstant: 20.dp),
             
-            loading.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20),
+            loading.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20.dp),
             loading.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
@@ -395,41 +427,49 @@ extension LoginViewController {
     func addConstraintsForHeader() {
         NSLayoutConstraint.activate([
             // left side
-            ordersLabel.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 20),
-            ordersLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10),
+            ordersLabel.topAnchor.constraint(greaterThanOrEqualTo: logo.bottomAnchor, constant: 15.dp),
+            ordersLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp),
 
-            ordersAmountLabel.topAnchor.constraint(equalTo: ordersLabel.bottomAnchor, constant: 10),
-            ordersAmountLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10),
+            ordersAmountLabel.topAnchor.constraint(equalTo: ordersLabel.bottomAnchor, constant: 5.dp),
+            ordersAmountLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp),
             
             // right side
-            userNameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
-            userNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+            userNameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20.dp),
+            userNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.dp)
         ])
     }
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillChange(notification:)),
+            name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
-    @objc func onButtonTap() {
-        // REMOVE
-        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
-        passwordTextInput.text = "caveira2021"
-        //
-        
-        loading.startAnimating()
-        viewModel?.email = emailTextInput.text
-        viewModel?.password = passwordTextInput.text
-        viewModel?.login()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue
-        let keyboardSize = keyboardInfo?.cgRectValue.size
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize?.height ?? 0, right: 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
+
+    @objc func keyboardWillHide() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.frame.origin.y = 0
+        })
     }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentInset = .zero
-        scrollView.scrollIndicatorInsets = .zero
+
+    @objc func keyboardWillChange(notification: NSNotification) {
+        if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]) != nil) {
+            if emailTextInput.isFirstResponder {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.view.frame.origin.y = -self.emailTextInput.frame.origin.y
+                })
+            }
+            
+            if passwordTextInput.isFirstResponder {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.view.frame.origin.y = -self.passwordTextInput.frame.origin.y
+                })
+            }
+        }
     }
 }

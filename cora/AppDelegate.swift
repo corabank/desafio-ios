@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        Facade.injectDataSources()
+        Facade.injectRepositories()
+        Facade.injectUseCases()
+        
         let navigationController = UINavigationController()
         navigationController.viewControllers = []
 

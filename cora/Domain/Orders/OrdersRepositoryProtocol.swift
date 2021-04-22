@@ -9,5 +9,5 @@ import Foundation
 
 //sourcery: AutoMockable
 protocol OrdersRepositoryProtocol {
-    func fetchOrders(completionHandler: @escaping (Result<[Order], Error>) -> Void)
+    func fetchOrders(userID: UUID, completionHandler: @escaping (Result<[Order], Error>) -> Void)
 }

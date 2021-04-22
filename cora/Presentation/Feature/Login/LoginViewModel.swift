@@ -18,6 +18,7 @@ enum LoginViewModelState {
     case wrongEmailAndPassword
 }
 
+//sourcery: AutoMockable
 protocol LoginViewModelProtocol {
     var email: String? { get set }
     var password: String? { get set }
@@ -43,10 +44,10 @@ class LoginViewModel: LoginViewModelProtocol {
         }
     }
 
-    private var loginUseCase: LoginUseCaseProtocol
-    init(loginUseCase: LoginUseCaseProtocol) {
-        self.loginUseCase = loginUseCase
-        self.loginUseCase.presenter = self
+    private var useCase: LoginUseCaseProtocol
+    init(useCase: LoginUseCaseProtocol) {
+        self.useCase = useCase
+        self.useCase.presenter = self
     }
 
     func login() {
@@ -66,7 +67,7 @@ class LoginViewModel: LoginViewModelProtocol {
         }
 
         if let email = email, let password = password {
-            self.loginUseCase.execute(email: email, password: password)
+            self.useCase.execute(email: email, password: password)
         }
     }
 }

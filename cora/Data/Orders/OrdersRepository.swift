@@ -8,14 +8,14 @@
 import Foundation
 
 class OrdersRepository: OrdersRepositoryProtocol {
-    private let ordersDataSource: OrdersDataSourceProtocol
+    private let dataSource: OrdersDataSourceProtocol
 
-    init(ordersDataSource: OrdersDataSourceProtocol) {
-        self.ordersDataSource = ordersDataSource
+    init(dataSource: OrdersDataSourceProtocol) {
+        self.dataSource = dataSource
     }
 
-    func fetchOrders(completionHandler: @escaping (Result<[Order], Error>) -> Void) {
-        self.ordersDataSource.fetchOrders { result in
+    func fetchOrders(userID: UUID, completionHandler: @escaping (Result<[Order], Error>) -> Void) {
+        self.dataSource.fetchOrders(userID: userID) { result in
             do {
                 let ordersDTO = try result.get()
                 let orders = ordersDTO.map { Order.init(orderDTO: $0) }

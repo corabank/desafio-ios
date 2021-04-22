@@ -17,13 +17,14 @@ class OrdersRepositoryIntegrationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         ordersDataSource = OrdersDataSource()
-        ordersRepository = OrdersRepository(ordersDataSource: ordersDataSource)
+        ordersRepository = OrdersRepository(dataSource: ordersDataSource)
     }
     
     func test_integration_orders_repository_with_data_sources() {
         let ordersExpectation = XCTestExpectation(description: "waiting orders reponse")
         
-        self.ordersRepository.fetchOrders() { result in
+        let user = User(id: UUID(), name: "John Due", email: "john@due.com")
+        self.ordersRepository.fetchOrders(userID: user.id) { result in
             let orders = try? result.get()
             XCTAssertNotNil(orders)
             XCTAssertTrue(orders!.count > 0)

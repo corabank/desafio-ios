@@ -8,14 +8,14 @@
 import Foundation
 
 class LoginRepository: LoginRepositoryProtocol {
-    private let loginDataSource: LoginDataSourceProtocol
+    private let dataSource: LoginDataSourceProtocol
 
-    init(loginDataSource: LoginDataSourceProtocol) {
-        self.loginDataSource = loginDataSource
+    init(dataSource: LoginDataSourceProtocol) {
+        self.dataSource = dataSource
     }
 
     func login(email: String, password: String, completionHandler: @escaping (Result<User, Error>) -> Void) {
-        self.loginDataSource.login(email: email, password: password) { result in
+        self.dataSource.login(email: email, password: password) { result in
             do {
                 let user = User(userDTO: try result.get())
                 completionHandler(.success(user))

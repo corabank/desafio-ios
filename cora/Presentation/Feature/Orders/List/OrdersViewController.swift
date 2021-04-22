@@ -7,6 +7,7 @@
 
 import UIKit
 
+//sourcery: AutoMockable
 protocol OrdersViewControllerDelegate: class {
     func showDetail(order: Order)
 }
@@ -51,13 +52,13 @@ class OrdersViewController: UIViewController {
         }
     }
 
-    func makeView() {
+    fileprivate func makeView() {
         title = "Orders"
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
-    func makeTableView() {
+    fileprivate func makeTableView() {
         view.addSubview(tableView)
         tableView.separatorColor = .clear
         tableView.showsVerticalScrollIndicator = false
@@ -66,9 +67,10 @@ class OrdersViewController: UIViewController {
         tableView.register(OrderCell.self, forCellReuseIdentifier: Cells.orderCell)
         tableView.pin(to: view)
         tableView.isScrollEnabled = false
+        tableView.accessibilityIdentifier = "ordersTableView"
     }
 
-    func setTableViewDelegates() {
+    fileprivate func setTableViewDelegates() {
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -99,8 +101,6 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // call delegate to show detail page
-        print(orders[indexPath.row].value.toCurrency)
         self.delegate?.showDetail(order: self.orders[indexPath.row])
     }
 }

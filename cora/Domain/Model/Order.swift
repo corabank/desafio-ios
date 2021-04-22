@@ -20,7 +20,7 @@ enum PaymentType: String, CaseIterable {
     case billet
 }
 
-struct Order: Identifiable {
+struct Order: Identifiable, Equatable {
     var id = UUID()
     var value: Double
     var taxes: Double

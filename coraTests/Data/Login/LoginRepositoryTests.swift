@@ -28,7 +28,7 @@ class LoginRepositoryTests: XCTestCase {
         )
 
         loginDataSource = LoginDataSourceProtocolMock()
-        loginRepository = LoginRepository(loginDataSource: loginDataSource)
+        loginRepository = LoginRepository(dataSource: loginDataSource)
     }
     
     func login() throws -> User? {

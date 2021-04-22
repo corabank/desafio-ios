@@ -8,35 +8,107 @@
 import XCTest
 
 class coraUITests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    var app: XCUIApplication!
+    
+    // MARK: - XCTestCase
+    
+    override func setUp() {
+        super.setUp()
+        
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launchArguments.append("--uitesting")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    // MARK: - Tests
+    
+    func makeLogin() {
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let emailTextInput = app.textFields["emailTextInput"]
+        let passwordTextInput = app.secureTextFields["passwordTextInput"]
+        
+        emailTextInput.tap()
+        emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
+        passwordTextInput.tap()
+        passwordTextInput.typeText("caveira2021")
+        
+        app.buttons["button"].tap()
     }
+    
+    func testGoingThrougASuccessfullLogin() {
+        makeLogin()
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        let doesNotExistPredicate = NSPredicate(format: "exists == FALSE")
+        self.expectation(for: doesNotExistPredicate, evaluatedWith: app.buttons["button"], handler: nil)
+        self.waitForExpectations(timeout: 20, handler: nil)
+        
+        
+        let existsPredicate = NSPredicate(format: "exists == TRUE")
+        self.expectation(for: existsPredicate, evaluatedWith: app.staticTexts["userNameLabel"], handler: nil)
+        self.waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testGoingThroughLoginWithEmptyEmailAndPasword() {
+        app.launch()
+        
+        app.buttons["button"].tap()
+        XCTAssertEqual(app.staticTexts["errorLabel"].label, "Email e senha são obrigatórios")
+    }
+    
+    func testGoingThroughLoginWithEmptyEmail() {
+        app.launch()
+        let passwordTextInput = app.secureTextFields["passwordTextInput"]
+        passwordTextInput.tap()
+        passwordTextInput.typeText("caveira2021")
+        
+        app.buttons["button"].tap()
+        XCTAssertEqual(app.staticTexts["errorLabel"].label, "O email é obrigatório")
+    }
+    
+    func testGoingThroughLoginWithEmptyPassword() {
+        app.launch()
+        let emailTextInput = app.textFields["emailTextInput"]
+        emailTextInput.tap()
+        emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
+        
+        app.buttons["button"].tap()
+        XCTAssertEqual(app.staticTexts["errorLabel"].label, "A senha é obrigatória")
+    }
+    
+    func testGoingThroughLoginWithInvalidEmail() {
+        app.launch()
+        let emailTextInput = app.textFields["emailTextInput"]
+        emailTextInput.tap()
+        emailTextInput.typeText("wrong@mail.com")
+        
+        let passwordTextInput = app.secureTextFields["passwordTextInput"]
+        passwordTextInput.tap()
+        passwordTextInput.typeText("caveira2021")
+        
+        app.buttons["button"].tap()
+        
+        
+        let existsPredicate = NSPredicate(format: "label BEGINSWITH 'Email ou senha inválidos'")
+        self.expectation(for: existsPredicate, evaluatedWith: app.staticTexts["errorLabel"], handler: nil)
+        self.waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGoingThroughLoginWithInvalidPassword() {
+        app.launch()
+        let emailTextInput = app.textFields["emailTextInput"]
+        emailTextInput.tap()
+        emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
+        
+        let passwordTextInput = app.secureTextFields["passwordTextInput"]
+        passwordTextInput.tap()
+        passwordTextInput.typeText("wrongpassword")
+        
+        app.buttons["button"].tap()
+        
+        
+        let existsPredicate = NSPredicate(format: "label BEGINSWITH 'Email ou senha inválidos'")
+        self.expectation(for: existsPredicate, evaluatedWith: app.staticTexts["errorLabel"], handler: nil)
+        self.waitForExpectations(timeout: 10, handler: nil)
     }
 }

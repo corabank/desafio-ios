@@ -8,22 +8,25 @@
 import UIKit
 
 class OrderCell: UITableViewCell {
-    var order: Order! {
+    private var order: Order! {
         didSet {
             configureElements()
             setConstraints()
         }
     }
     
-    var orderImage = UIImageView()
-    var orderTitle = UILabel()
-    var orderDescription = UILabel()
-    var orderStatus = UILabel()
-    var orderDate = UILabel()
+    private var orderImage = UIImageView()
+    private var orderTitle = UILabel()
+    private var orderDescription = UILabel()
+    private var orderStatus = UILabel()
+    private var orderDate = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        if order != nil {
+            self.accessibilityIdentifier = order.id.uuidString
+        }
         makeView()
     }
 
@@ -51,7 +54,7 @@ class OrderCell: UITableViewCell {
         }
     }
     
-    func makeView() {
+    fileprivate func makeView() {
         addSubview(orderImage)
         addSubview(orderTitle)
         addSubview(orderDescription)
@@ -59,7 +62,7 @@ class OrderCell: UITableViewCell {
         addSubview(orderDate)
     }
 
-    func configureImageView() {
+    fileprivate func configureImageView() {
         orderImage.translatesAutoresizingMaskIntoConstraints = false
         orderImage.image = UIImage(named: "creditcard.circle.fill")?
             .withRenderingMode(.automatic)
@@ -67,7 +70,7 @@ class OrderCell: UITableViewCell {
         orderImage.contentMode = .scaleAspectFit
     }
 
-    func configureTitleLabel() {
+    fileprivate func configureTitleLabel() {
         orderTitle.translatesAutoresizingMaskIntoConstraints = false
         orderTitle.numberOfLines = 0
         orderTitle.adjustsFontSizeToFitWidth = true
@@ -75,7 +78,7 @@ class OrderCell: UITableViewCell {
         orderTitle.font = UIFont.boldSystemFont(ofSize: 16)
     }
 
-    func configureDescriptionLabel() {
+    fileprivate func configureDescriptionLabel() {
         orderDescription.translatesAutoresizingMaskIntoConstraints = false
         orderDescription.numberOfLines = 0
         orderDescription.adjustsFontSizeToFitWidth = true
@@ -83,7 +86,7 @@ class OrderCell: UITableViewCell {
         orderDescription.font = UIFont.systemFont(ofSize: 11)
     }
 
-    func configureStatusLabel() {
+    fileprivate func configureStatusLabel() {
         orderStatus.translatesAutoresizingMaskIntoConstraints = false
         orderStatus.numberOfLines = 0
         orderStatus.adjustsFontSizeToFitWidth = true
@@ -99,7 +102,7 @@ class OrderCell: UITableViewCell {
         }
     }
 
-    func configureDateLabel() {
+    fileprivate func configureDateLabel() {
         orderDate.translatesAutoresizingMaskIntoConstraints = false
         orderDate.numberOfLines = 0
         orderDate.adjustsFontSizeToFitWidth = true
@@ -107,7 +110,7 @@ class OrderCell: UITableViewCell {
         orderDate.font = UIFont.systemFont(ofSize: 10)
     }
 
-    func configureElements() {
+    fileprivate func configureElements() {
         configureImageView()
         configureTitleLabel()
         configureDescriptionLabel()
@@ -115,7 +118,7 @@ class OrderCell: UITableViewCell {
         configureDateLabel()
     }
 
-    func setConstraints() {
+    fileprivate func setConstraints() {
         NSLayoutConstraint.activate([
             // image
             orderImage.centerYAnchor.constraint(equalTo: centerYAnchor),

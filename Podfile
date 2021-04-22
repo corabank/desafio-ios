@@ -8,6 +8,7 @@ target 'cora' do
   # Pods for cora
   pod 'ViewAnimator', '2.7.1'
   pod 'SwiftLint'
+  pod 'Swinject', '2.7.1'
 
   target 'coraTests' do
     inherit! :search_paths

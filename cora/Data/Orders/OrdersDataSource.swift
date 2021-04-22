@@ -8,7 +8,7 @@
 import Foundation
 
 class OrdersDataSource: OrdersDataSourceProtocol {
-    func fetchOrders(completionHandler: @escaping (Result<[OrderDTO], Error>) -> Void) {
+    func fetchOrders(userID: UUID, completionHandler: @escaping (Result<[OrderDTO], Error>) -> Void) {
         // call api
         // ...
         

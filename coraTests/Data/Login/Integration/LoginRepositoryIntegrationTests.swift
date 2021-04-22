@@ -17,7 +17,7 @@ class LoginRepositoryIntegrationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         loginDataSource = LoginDataSource()
-        loginRepository = LoginRepository(loginDataSource: loginDataSource)
+        loginRepository = LoginRepository(dataSource: loginDataSource)
     }
     
     func test_integration_login_repository_with_data_sources() {

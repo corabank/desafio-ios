@@ -14,7 +14,7 @@ public enum OrdersUseCaseError: Error {
 //sourcery: AutoMockable
 protocol OrdersUseCaseProtocol {
     var presenter: OrdersPresenter? { get set }
-    func execute()
+    func run(userID: UUID)
 }
 
 class OrdersUseCase: OrdersUseCaseProtocol {
@@ -25,13 +25,13 @@ class OrdersUseCase: OrdersUseCaseProtocol {
         self.repository = repository
     }
 
-    func execute() {
+    func run(userID: UUID) {
 
         // starts loading
         self.presenter?.loading()
 
         // request to repository fetch orders
-        self.repository.fetchOrders { result in
+        self.repository.fetchOrders(userID: userID) { result in
             do {
                 let orders = try result.get()
                 self.presenter?.success(orders: orders)

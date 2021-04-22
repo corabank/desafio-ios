@@ -7,13 +7,14 @@
 
 import Foundation
 
-enum OrdersViewModelState {
+enum OrdersViewModelState: Equatable {
     case none
     case loading
     case failure
     case success(orders: [Order])
 }
 
+//sourcery: AutoMockable
 protocol OrdersViewModelProtocol {
     var onUpdated: ((OrdersViewModelState) -> Void)? { get set }
     func fetchOrders()
@@ -41,7 +42,8 @@ class OrdersViewModel: OrdersViewModelProtocol {
     }
 
     func fetchOrders() {
-        useCase.execute()
+        let userID = State.shared.user!.id
+        useCase.run(userID: userID)
     }
 }
 
