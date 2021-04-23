@@ -27,6 +27,7 @@
 		E31DB344262C5F7800CD6A0E /* HalfSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DB343262C5F7800CD6A0E /* HalfSizePresentationController.swift */; };
 		E31DB34D262C600300CD6A0E /* UINavigationController+withTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DB34C262C600300CD6A0E /* UINavigationController+withTransitioningDelegate.swift */; };
 		E31DB37E262CB0BE00CD6A0E /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DB37D262CB0BE00CD6A0E /* OrderDetailViewController.swift */; };
+		E370BEC12632412500E8214B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370BEC02632412500E8214B /* MainCoordinator.swift */; };
 		E3786C0E262A2EC100AE0CBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */; };
 		E3786C17262A2EC400AE0CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3786C16262A2EC400AE0CBE /* Assets.xcassets */; };
 		E3786C30262A2EC400AE0CBE /* coraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C2F262A2EC400AE0CBE /* coraUITests.swift */; };
@@ -53,8 +54,6 @@
 		E3786CCB262A329600AE0CBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCA262A329600AE0CBE /* LoginViewController.swift */; };
 		E3786CD0262A32AA00AE0CBE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */; };
 		E3786CD5262A32D800AE0CBE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CD4262A32D800AE0CBE /* Coordinator.swift */; };
-		E3786CDA262A32ED00AE0CBE /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CD9262A32ED00AE0CBE /* LoginCoordinator.swift */; };
-		E3786CDF262A330400AE0CBE /* OrdersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CDE262A330400AE0CBE /* OrdersCoordinator.swift */; };
 		E3B592A9262DB751006F189C /* OrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592A8262DB750006F189C /* OrderDetailViewModel.swift */; };
 		E3B592DB262EF947006F189C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592DA262EF947006F189C /* State.swift */; };
 		E3B592EE262F0132006F189C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592ED262F0132006F189C /* Facade.swift */; };
@@ -111,6 +110,7 @@
 		E31DB343262C5F7800CD6A0E /* HalfSizePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSizePresentationController.swift; sourceTree = "<group>"; };
 		E31DB34C262C600300CD6A0E /* UINavigationController+withTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+withTransitioningDelegate.swift"; sourceTree = "<group>"; };
 		E31DB37D262CB0BE00CD6A0E /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		E370BEC02632412500E8214B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E3786C0A262A2EC100AE0CBE /* cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3786C16262A2EC400AE0CBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,8 +143,6 @@
 		E3786CCA262A329600AE0CBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3786CD4262A32D800AE0CBE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		E3786CD9262A32ED00AE0CBE /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
-		E3786CDE262A330400AE0CBE /* OrdersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCoordinator.swift; sourceTree = "<group>"; };
 		E3B592A8262DB750006F189C /* OrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewModel.swift; sourceTree = "<group>"; };
 		E3B592DA262EF947006F189C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		E3B592ED262F0132006F189C /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
@@ -319,6 +317,18 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		E3310AAB2631AEA200B96719 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */,
+				E3786C16262A2EC400AE0CBE /* Assets.xcassets */,
+				E3786C1B262A2EC400AE0CBE /* Info.plist */,
+				E3B592ED262F0132006F189C /* Facade.swift */,
+				E3B5931F263111D2006F189C /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
 		E3786C01262A2EC100AE0CBE = {
 			isa = PBXGroup;
 			children = (
@@ -344,14 +354,10 @@
 		E3786C0C262A2EC100AE0CBE /* cora */ = {
 			isa = PBXGroup;
 			children = (
+				E3310AAB2631AEA200B96719 /* Supporting */,
 				E3786C4B262A2F3600AE0CBE /* Data */,
 				E3786C4A262A2F3100AE0CBE /* Domain */,
 				E3786C49262A2F2900AE0CBE /* Presentation */,
-				E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */,
-				E3786C16262A2EC400AE0CBE /* Assets.xcassets */,
-				E3786C1B262A2EC400AE0CBE /* Info.plist */,
-				E3B592ED262F0132006F189C /* Facade.swift */,
-				E3B5931F263111D2006F189C /* LaunchScreen.storyboard */,
 			);
 			path = cora;
 			sourceTree = "<group>";
@@ -514,8 +520,7 @@
 				E31DB34B262C5FB800CD6A0E /* Extension */,
 				E31DB342262C5F6500CD6A0E /* Component */,
 				E3786CD4262A32D800AE0CBE /* Coordinator.swift */,
-				E3786CD9262A32ED00AE0CBE /* LoginCoordinator.swift */,
-				E3786CDE262A330400AE0CBE /* OrdersCoordinator.swift */,
+				E370BEC02632412500E8214B /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -874,7 +879,6 @@
 				E3786C0E262A2EC100AE0CBE /* AppDelegate.swift in Sources */,
 				E3786C56262A2F8500AE0CBE /* LoginDataSourceProtocol.swift in Sources */,
 				E3786CAB262A31AA00AE0CBE /* LoginRepositoryProtocol.swift in Sources */,
-				E3786CDA262A32ED00AE0CBE /* LoginCoordinator.swift in Sources */,
 				E3786CA1262A317400AE0CBE /* LoginPresenter.swift in Sources */,
 				E3786C8D262A30F900AE0CBE /* User.swift in Sources */,
 				E3786C61262A2FCE00AE0CBE /* UserDTO.swift in Sources */,
@@ -882,9 +886,9 @@
 				E3786C95262A310400AE0CBE /* Order.swift in Sources */,
 				E3786C4E262A2F6700AE0CBE /* LoginRepository.swift in Sources */,
 				E3B593152630A121006F189C /* CGFloat+dp.swift in Sources */,
+				E370BEC12632412500E8214B /* MainCoordinator.swift in Sources */,
 				E3786C7A262A307500AE0CBE /* OrdersRepository.swift in Sources */,
 				E3786CA6262A318E00AE0CBE /* LoginUseCase.swift in Sources */,
-				E3786CDF262A330400AE0CBE /* OrdersCoordinator.swift in Sources */,
 				E31DB331262B6C3000CD6A0E /* OrdersViewModel.swift in Sources */,
 				E3B592EE262F0132006F189C /* Facade.swift in Sources */,
 			);
@@ -1057,7 +1061,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6B36S74UH9;
-				INFOPLIST_FILE = cora/Info.plist;
+				INFOPLIST_FILE = cora/Supporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1078,7 +1082,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6B36S74UH9;
-				INFOPLIST_FILE = cora/Info.plist;
+				INFOPLIST_FILE = cora/Supporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

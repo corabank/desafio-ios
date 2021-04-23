@@ -17,6 +17,7 @@ class OrdersViewController: UIViewController {
     
     // needs strong reference to be used in tableview
     var delegate: OrdersViewControllerDelegate?
+    var orderID: UUID?
     
     var tableView = UITableView()
     var orders = [Order]()
@@ -31,6 +32,7 @@ class OrdersViewController: UIViewController {
         viewModel?.fetchOrders()
         makeView()
         makeTableView()
+        scrollIfNeeds()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,10 +43,6 @@ class OrdersViewController: UIViewController {
     
     func handleState(state: OrdersViewModelState) {
         switch state {
-        case .failure:
-            print("error loading orders")
-        case .loading:
-            print("show loading")
         case .success(let orders):
             self.orders = orders
         default:
@@ -65,14 +63,23 @@ class OrdersViewController: UIViewController {
         setTableViewDelegates()
         tableView.rowHeight = 66
         tableView.register(OrderCell.self, forCellReuseIdentifier: Cells.orderCell)
-        tableView.pin(to: view)
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.accessibilityIdentifier = "ordersTableView"
+        tableView.pin(to: view)
     }
 
     fileprivate func setTableViewDelegates() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    fileprivate func scrollIfNeeds() {
+        if let orderID = orderID {
+            if let index = orders.firstIndex(where: { $0.id == orderID }) {
+                let indexPath = NSIndexPath(row: index, section: 0)
+                tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
+            }
+        }
     }
 }
 
@@ -85,6 +92,7 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orderCell) as? OrderCell
         let order = orders[indexPath.row]
         cell?.set(order: order)
+        self.tableView.sizeToFit()
 
         return cell ?? UITableViewCell()
     }

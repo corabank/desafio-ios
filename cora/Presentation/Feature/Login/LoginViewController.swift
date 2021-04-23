@@ -229,8 +229,8 @@ extension LoginViewController {
     
     @objc func onButtonTap() {
         // REMOVE
-        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
-        passwordTextInput.text = "caveira2021"
+//        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
+//        passwordTextInput.text = "caveira2021"
         //
 
         self.view.endEditing(true)

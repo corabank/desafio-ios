@@ -9,7 +9,7 @@ import UIKit
 
 //sourcery: AutoMockable
 protocol OrderDetailViewcontrollerDelegate: class {
-    func back()
+    func back(orderID: UUID)
 }
 
 class OrderDetailViewcontroller: UIViewController {
@@ -70,8 +70,6 @@ class OrderDetailViewcontroller: UIViewController {
         backButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.setTitle("", for: .normal)
-//        backButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-//        backButton.setTitleColor(.systemPink, for: .normal)
         backButton.setImage(UIImage(named: "chevron.down"), for: .normal)
         backButton.tintColor = .systemPink
         view.addSubview(backButton)
@@ -101,9 +99,9 @@ class OrderDetailViewcontroller: UIViewController {
         return imageView
     }
     
+    // MARK: Make Top View
+    
     func makeTopView() {
-        // MARK: PAYMENT ITENS
-        
         // paymentView
         paymentView = UIView()
         paymentView.translatesAutoresizingMaskIntoConstraints = false
@@ -265,7 +263,7 @@ class OrderDetailViewcontroller: UIViewController {
                                                 constant: -20.dp),
             
             // payment
-            paymentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            paymentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.dp),
             paymentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             paymentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 
@@ -389,6 +387,6 @@ class OrderDetailViewcontroller: UIViewController {
     }
     
     @objc func back() {
-        delegate?.back()
+        delegate?.back(orderID: viewModel?.order.id ?? UUID())
     }
 }

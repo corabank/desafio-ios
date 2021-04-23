@@ -12,6 +12,7 @@ extension UINavigationController : UIViewControllerTransitioningDelegate {
         forPresented presented: UIViewController,
         presenting: UIViewController?,
         source: UIViewController) -> UIPresentationController? {
-            return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
+            return HalfSizePresentationController(presentedViewController: presented,
+                                                  presenting: presenting)
     }
 }

@@ -11,13 +11,13 @@ import Swinject
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private var coordinator: Coordinator!
+    var coordinator: MainCoordinator?
 
     lazy var window: UIWindow? = {
-        let wind = UIWindow(frame: UIScreen.main.bounds)
-        wind.backgroundColor = UIColor.white
+        let instance = UIWindow(frame: UIScreen.main.bounds)
+        instance.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.1725490196, blue: 0.2274509804, alpha: 1)
 
-        return wind
+        return instance
     }()
 
     func application(
@@ -32,11 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.viewControllers = []
 
         window?.rootViewController = navigationController
-        window?.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.1725490196, blue: 0.2274509804, alpha: 1)
 
-        coordinator = LoginCoordinator(withNavigation: navigationController)
+        coordinator = MainCoordinator(withNavigation: navigationController)
         window?.makeKeyAndVisible()
-        coordinator.start()
+        coordinator?.start()
 
         return true
     }
