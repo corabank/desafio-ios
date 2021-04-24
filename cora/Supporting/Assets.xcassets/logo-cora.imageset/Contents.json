@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo-cora.png",
+      "filename" : "logo-cora-negativo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "logo-cora-negativo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "logo-cora-negativo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

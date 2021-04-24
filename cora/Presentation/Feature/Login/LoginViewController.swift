@@ -86,7 +86,11 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     func makeView() {
-        self.view.backgroundColor = #colorLiteral(red: 0.09706496447, green: 0.1710169911, blue: 0.2268731296, alpha: 1)
+//        self.view.backgroundColor = #colorLiteral(red: 0.168922931, green: 0.2577900887, blue: 0.3287529945, alpha: 1)
+        let backgroundImage = UIImage(named: "background")!.resized(to: UIScreen.main.bounds.size)!
+        self.view.backgroundColor = UIColor(patternImage: backgroundImage)
+        
+//        self.view.backgroundColor =
         
         // scrolliew
         scrollView = UIScrollView(frame: CGRect(x: 10,
@@ -107,10 +111,10 @@ extension LoginViewController {
         mainStack.spacing = 18
         
         // logo
-        let image = UIImage(named: "logo-cora2")?.withRoundedCorners(radius: 70)
+        let image = UIImage(named: "logo-cora")
         logo = UIImageView(image: image)
         logo.translatesAutoresizingMaskIntoConstraints = false
-        logo.layer.cornerRadius = 30
+//        logo.layer.cornerRadius = 30
         scrollView.addSubview(logo)
         
         // spacer
@@ -120,8 +124,9 @@ extension LoginViewController {
         // email text field
         emailTextInput = UITextField()
         emailTextInput.translatesAutoresizingMaskIntoConstraints = false
-        emailTextInput.backgroundColor = #colorLiteral(red: 0.1517894864, green: 0.2267394066, blue: 0.2804006934, alpha: 1)
+        emailTextInput.backgroundColor = .clear
         emailTextInput.borderStyle = .roundedRect
+        emailTextInput.layer.borderColor = #colorLiteral(red: 0.09308306845, green: 0.1587566097, blue: 0.2415137913, alpha: 1)
         emailTextInput.textColor = .white
         let emailPlaceholderText = NSAttributedString(
             string: "Fill your email",
@@ -139,8 +144,9 @@ extension LoginViewController {
         // password text field
         passwordTextInput = UITextField()
         passwordTextInput.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextInput.backgroundColor = #colorLiteral(red: 0.1517894864, green: 0.2267394066, blue: 0.2804006934, alpha: 1)
+        passwordTextInput.backgroundColor = .clear
         passwordTextInput.borderStyle = .roundedRect
+        passwordTextInput.layer.borderColor = #colorLiteral(red: 0.09308306845, green: 0.1587566097, blue: 0.2415137913, alpha: 1)
         passwordTextInput.textColor = .white
         passwordTextInput.font = passwordTextInput.font?.withSize(12)
         passwordTextInput.layer.cornerRadius = 20
@@ -159,7 +165,7 @@ extension LoginViewController {
         errorLabel = UILabel()
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.text = ""
-        errorLabel.textColor = #colorLiteral(red: 0.9348247647, green: 0.1218132153, blue: 0.3848077953, alpha: 1)
+        errorLabel.textColor = #colorLiteral(red: 0.9820479751, green: 0.2470019758, blue: 0.432462424, alpha: 1)
         errorLabel.font = errorLabel.font.withSize(11)
         errorLabel.textAlignment = .center
         errorLabel.accessibilityIdentifier = "errorLabel"
@@ -170,7 +176,7 @@ extension LoginViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Acessar minha conta", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9348247647, green: 0.1218132153, blue: 0.3848077953, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9820479751, green: 0.2470019758, blue: 0.432462424, alpha: 1)
         button.layer.cornerRadius = 10
         button.accessibilityIdentifier = "button"
         mainStack.addArrangedSubview(button)
@@ -214,7 +220,7 @@ extension LoginViewController {
         ordersAmountLabel = UILabel()
         ordersAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         ordersAmountLabel.text = "\(ordersSum.description) pedidos, totalizando \(ordersValueSum.toCurrency)"
-        ordersAmountLabel.textColor = #colorLiteral(red: 0.4828443527, green: 0.5140886903, blue: 0.551874876, alpha: 1)
+        ordersAmountLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         ordersAmountLabel.font = UIFont.systemFont(ofSize: 14.dp)
         ordersAmountLabel.textAlignment = .left
         
@@ -229,8 +235,8 @@ extension LoginViewController {
     
     @objc func onButtonTap() {
         // REMOVE
-//        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
-//        passwordTextInput.text = "caveira2021"
+        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
+        passwordTextInput.text = "caveira2021"
         //
 
         self.view.endEditing(true)
@@ -240,6 +246,9 @@ extension LoginViewController {
         viewModel?.login()
     }
         
+    
+    /// handleFailures
+    /// - Parameter state: LoginViewModelState failures handled from LoginViewModel
     func handleFailures(state: LoginViewModelState) {
         switch state {
         case .invalidEmail:
@@ -333,6 +342,7 @@ extension LoginViewController {
         }
     }
     
+    /// endAnimation() is fired when transition to show orders begins
     private func endAnimation() {
         UIView.transition(with: mainStack,
                           duration: 0.1,
@@ -341,7 +351,7 @@ extension LoginViewController {
                                 self.mainStack.layer.opacity = 0
                           })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.updateLogoConstraintsToAnimate()
             UIView.transition(with: self.logo,
                               duration: 0.3,
@@ -364,8 +374,8 @@ extension LoginViewController {
     
     // MARK: Constraints
     func setLogoConstraintsForAnimation() {
-        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 100.0.dp)
-        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 100.dp)
+        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 80.dp)
+        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 80.dp)
         logoCenterXConstraint = logo.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 80.dp)
         logoBottomConstraint = logo.bottomAnchor.constraint(equalTo: mainStack.topAnchor, constant: -30.dp)
@@ -390,8 +400,8 @@ extension LoginViewController {
         
         logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10.dp)
         logoLeftConstraint = logo.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp)
-        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 50.dp)
-        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 50.dp)
+        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 40.dp)
+        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 40.dp)
         
         NSLayoutConstraint.activate([
             logoWidthConstraint,
@@ -412,7 +422,7 @@ extension LoginViewController {
             emailTextInput.heightAnchor.constraint(equalToConstant: 54.dp),
             
             passwordTextInput.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40.dp),
-            passwordTextInput.heightAnchor.constraint(equalToConstant: 54),
+            passwordTextInput.heightAnchor.constraint(equalToConstant: 54.dp),
             
             button.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             button.heightAnchor.constraint(equalToConstant: 50.dp),

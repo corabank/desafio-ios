@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
         let instance = UIWindow(frame: UIScreen.main.bounds)
-        instance.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.1725490196, blue: 0.2274509804, alpha: 1)
+        instance.backgroundColor = .clear
 
         return instance
     }()

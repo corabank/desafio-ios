@@ -39,17 +39,22 @@ extension MainCoordinator {
         let ordersViewController = OrdersViewController()
         ordersViewController.viewModel = viewModel
         ordersViewController.delegate = self
-        ordersViewController.view.layer.opacity = 0
-        ordersViewController.transitioningDelegate = navigationController
+//        ordersViewController.view.layer.opacity = 0
+//        ordersViewController.transitioningDelegate = navigationController
+//        navigationController.show(ordersViewController, sender: self)
+        navigationController.addChild(ordersViewController)
+        ordersViewController.beginAppearanceTransition(true, animated: true)
+        navigationController.view.addSubview(ordersViewController.view)
         
-        ordersViewController.modalPresentationStyle = .custom
-        navigationController.present(ordersViewController, animated: shouldAnimate, completion: nil)
-        UIView.transition(with: ordersViewController.view,
-                          duration: 1,
-                          options: .curveEaseInOut,
-                          animations: {
-                            ordersViewController.view.layer.opacity = 1
-        }, completion: nil)
+        
+//        ordersViewController.modalPresentationStyle = .custom
+//        navigationController.present(ordersViewController, animated: shouldAnimate, completion: nil)
+//        UIView.transition(with: ordersViewController.view,
+//                          duration: 1,
+//                          options: .curveEaseInOut,
+//                          animations: {
+//                            ordersViewController.view.layer.opacity = 1
+//        }, completion: nil)
     }
     
     func orderDetail(order: Order) {
@@ -59,9 +64,9 @@ extension MainCoordinator {
         orderDetailViewController.delegate = self
         orderDetailViewController.modalPresentationStyle = .overCurrentContext
         
-        navigationController.dismiss(animated: true) {
+//        navigationController.dismiss(animated: true) {
             self.navigationController.present(orderDetailViewController, animated: true, completion: nil)
-        }
+//        }
     }
 }
 
@@ -79,9 +84,10 @@ extension MainCoordinator: OrdersViewControllerDelegate {
 
 extension MainCoordinator: OrderDetailViewcontrollerDelegate {
     func back(orderID: UUID) {
-        navigationController.dismiss(animated: false) {
-            self.shouldAnimate = true
-            self.listOrders(orderID: orderID)
-        }
+        navigationController.dismiss(animated: true, completion: nil)
+//        navigationController.dismiss(animated: false) {
+//            self.shouldAnimate = true
+//            self.listOrders(orderID: orderID)
+//        }
     }
 }

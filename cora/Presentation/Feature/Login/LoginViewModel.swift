@@ -30,12 +30,16 @@ class LoginViewModel: LoginViewModelProtocol {
     var email: String?
     var password: String?
 
+    
+    /// Spreads state to controller
     var onUpdated: ((LoginViewModelState) -> Void)? {
         didSet {
             onUpdated?(state)
         }
     }
 
+    
+    /// Initialize current state and fires onUpdated propagation
     var state = LoginViewModelState.none {
         didSet {
             DispatchQueue.main.async {
@@ -50,7 +54,11 @@ class LoginViewModel: LoginViewModelProtocol {
         self.useCase.presenter = self
     }
 
+    
+    /// Fires use case login
     func login() {
+        
+        // MARK: Validation
         if email?.isEmpty == true && password?.isEmpty == true {
             state = .emailAndPasswordEmpty
             return
@@ -65,13 +73,15 @@ class LoginViewModel: LoginViewModelProtocol {
             state = .passwordEmpty
             return
         }
-
+        
+        // MARK: Runs use case
         if let email = email, let password = password {
             self.useCase.execute(email: email, password: password)
         }
     }
 }
 
+// MARK: Implements LoginPresenter protocol
 extension LoginViewModel: LoginPresenter {
     func authenticating() {
         state = .authenticating

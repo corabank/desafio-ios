@@ -20,7 +20,10 @@ class OrdersViewController: UIViewController {
     var orderID: UUID?
     
     var tableView = UITableView()
+    var tableViewHeightConstraint: NSLayoutConstraint!
     var orders = [Order]()
+    var lastLocation: CGPoint = CGPoint(x: 0, y: 0)
+    var gesture: UIPanGestureRecognizer!
     
     struct Cells {
         static let orderCell = "OrderCell"
@@ -28,7 +31,6 @@ class OrdersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         viewModel?.fetchOrders()
         makeView()
         makeTableView()
@@ -39,6 +41,13 @@ class OrdersViewController: UIViewController {
         super.viewWillAppear(animated)
         
         viewModel?.onUpdated = handleState
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.frame = CGRect(x: 0, y: 175.dp,
+                            width: UIScreen.main.bounds.width,
+                            height: tableView.contentSize.height)
     }
     
     func handleState(state: OrdersViewModelState) {
@@ -53,7 +62,13 @@ class OrdersViewController: UIViewController {
     fileprivate func makeView() {
         title = "Orders"
         view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
         navigationController?.setNavigationBarHidden(true, animated: false)
+        gesture = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(recognizer:)))
+        self.view?.addGestureRecognizer(gesture)
+        self.view?.isUserInteractionEnabled = true
+        gesture.delegate = self
     }
 
     fileprivate func makeTableView() {
@@ -63,7 +78,7 @@ class OrdersViewController: UIViewController {
         setTableViewDelegates()
         tableView.rowHeight = 66
         tableView.register(OrderCell.self, forCellReuseIdentifier: Cells.orderCell)
-        tableView.isScrollEnabled = true
+        tableView.isScrollEnabled = false
         tableView.accessibilityIdentifier = "ordersTableView"
         tableView.pin(to: view)
     }
@@ -110,5 +125,20 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.showDetail(order: self.orders[indexPath.row])
+    }
+}
+
+extension OrdersViewController: UIGestureRecognizerDelegate {
+    @objc func wasDragged(recognizer: UIPanGestureRecognizer) {
+        let translation = recognizer.translation(in: self.view)
+        gesture.cancelsTouchesInView = false
+        
+        switch recognizer.state {
+        case .began, .changed:
+            self.view.transform = CGAffineTransform(translationX: 0, y: lastLocation.y + translation.y)
+        case .ended:
+            lastLocation.y += translation.y
+        default: break
+        }
     }
 }
