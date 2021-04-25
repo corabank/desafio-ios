@@ -50,17 +50,17 @@ class LoginViewControllerTests: XCTestCase {
 
     func testWhenLoginEmailEmpty() throws {
         viewModel.onUpdated?(.emailEmpty)
-        XCTAssertEqual(loginViewController.errorLabel.text, "O email é obrigatório")
+        XCTAssertEqual(loginViewController.errorLabel.text, "Email is required")
     }
 
     func testWhenLoginPasswordEmpty() throws {
         viewModel.onUpdated?(.passwordEmpty)
-        XCTAssertEqual(loginViewController.errorLabel.text, "A senha é obrigatória")
+        XCTAssertEqual(loginViewController.errorLabel.text, "Password is required")
     }
 
     func testWhenLoginPasswordAndEmailEmpty() throws {
         viewModel.onUpdated?(.emailAndPasswordEmpty)
-        XCTAssertEqual(loginViewController.errorLabel.text, "Email e senha são obrigatórios")
+        XCTAssertEqual(loginViewController.errorLabel.text, "Email and password are required")
     }
 
     func testWhenLoginAuthenticating() throws {
@@ -91,13 +91,13 @@ class LoginViewControllerTests: XCTestCase {
 
     func testWhenLoginHasInvalidEmail() throws {
         viewModel.onUpdated?(.invalidEmail)
-        XCTAssertEqual(loginViewController.errorLabel.text, "Email ou senha inválidos")
+        XCTAssertEqual(loginViewController.errorLabel.text, "Invalid email or password")
         XCTAssertEqual(loginViewController.loading.isAnimating, false)
     }
     
     func testWhenWrongEmailAndPassword() throws {
         viewModel.onUpdated?(.wrongEmailAndPassword)
-        XCTAssertEqual(loginViewController.errorLabel.text, "Email ou senha inválidos")
+        XCTAssertEqual(loginViewController.errorLabel.text, "Invalid email or password")
         XCTAssertEqual(loginViewController.loading.isAnimating, false)
     }
 }

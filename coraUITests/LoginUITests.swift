@@ -24,12 +24,12 @@ class LoginUITests: XCTestCase {
     
     func testGoingThrougASuccessfullLogin() {
         MakeLogin.run(app: app)
-
+        
         let existsPredicate = NSPredicate(format: "exists == TRUE")
         let userLabel = app.staticTexts["userNameLabel"]
         self.expectation(for: existsPredicate, evaluatedWith: userLabel) {
             if userLabel.isEnabled {
-                let label = "Olá, Lucas Silveira"
+                let label = "Hello, Lucas Silveira"
                 XCTAssertEqual(userLabel.label, label)
                 return true
             }
@@ -42,7 +42,7 @@ class LoginUITests: XCTestCase {
         app.launch()
         
         app.buttons["button"].tap()
-        XCTAssertEqual(app.staticTexts["errorLabel"].label, "Email e senha são obrigatórios")
+        XCTAssertEqual(app.staticTexts["errorLabel"].label, "Email and password are required")
     }
     
     func testGoingThroughLoginWithEmptyEmail() {
@@ -52,7 +52,7 @@ class LoginUITests: XCTestCase {
         passwordTextInput.typeText("caveira2021")
         
         app.buttons["button"].tap()
-        XCTAssertEqual(app.staticTexts["errorLabel"].label, "O email é obrigatório")
+        XCTAssertEqual(app.staticTexts["errorLabel"].label, "Email is required")
     }
     
     func testGoingThroughLoginWithEmptyPassword() {
@@ -62,11 +62,12 @@ class LoginUITests: XCTestCase {
         emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
         
         app.buttons["button"].tap()
-        XCTAssertEqual(app.staticTexts["errorLabel"].label, "A senha é obrigatória")
+        XCTAssertEqual(app.staticTexts["errorLabel"].label, "Password is required")
     }
     
     func testGoingThroughLoginWithInvalidEmail() {
         app.launch()
+
         let emailTextInput = app.textFields["emailTextInput"]
         emailTextInput.tap()
         emailTextInput.typeText("wrong@mail.com")
@@ -77,9 +78,16 @@ class LoginUITests: XCTestCase {
         
         app.buttons["button"].tap()
         
-        
-        let existsPredicate = NSPredicate(format: "label BEGINSWITH 'Email ou senha inválidos'")
-        self.expectation(for: existsPredicate, evaluatedWith: app.staticTexts["errorLabel"], handler: nil)
+        let existsPredicate = NSPredicate(format: "label BEGINSWITH 'Invalid email or password'")
+        let errorLabel = app.staticTexts["errorLabel"]
+        self.expectation(for: existsPredicate, evaluatedWith: errorLabel) {
+            if errorLabel.label != "" {
+                XCTAssertEqual(errorLabel.label, "Invalid email or password")
+                return true
+            }
+            
+            return false
+        }
         self.waitForExpectations(timeout: 10, handler: nil)
     }
     
@@ -95,9 +103,16 @@ class LoginUITests: XCTestCase {
         
         app.buttons["button"].tap()
         
-        
-        let existsPredicate = NSPredicate(format: "label BEGINSWITH 'Email ou senha inválidos'")
-        self.expectation(for: existsPredicate, evaluatedWith: app.staticTexts["errorLabel"], handler: nil)
+        let existsPredicate = NSPredicate(format: "label BEGINSWITH 'Invalid email or password'")
+        let errorLabel = app.staticTexts["errorLabel"]
+        self.expectation(for: existsPredicate, evaluatedWith: errorLabel) {
+            if errorLabel.label != "" {
+                XCTAssertEqual(errorLabel.label, "Invalid email or password")
+                return true
+            }
+            
+            return false
+        }
         self.waitForExpectations(timeout: 10, handler: nil)
     }
 }
