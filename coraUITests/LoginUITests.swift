@@ -25,13 +25,16 @@ class LoginUITests: XCTestCase {
     func testGoingThrougASuccessfullLogin() {
         MakeLogin.run(app: app)
 
-        let doesNotExistPredicate = NSPredicate(format: "exists == FALSE")
-        self.expectation(for: doesNotExistPredicate, evaluatedWith: app.buttons["button"], handler: nil)
-        self.waitForExpectations(timeout: 20, handler: nil)
-        
-        
         let existsPredicate = NSPredicate(format: "exists == TRUE")
-        self.expectation(for: existsPredicate, evaluatedWith: app.staticTexts["userNameLabel"], handler: nil)
+        let userLabel = app.staticTexts["userNameLabel"]
+        self.expectation(for: existsPredicate, evaluatedWith: userLabel) {
+            if userLabel.isEnabled {
+                let label = "Olá, Lucas Silveira"
+                XCTAssertEqual(userLabel.label, label)
+                return true
+            }
+            return false
+        }
         self.waitForExpectations(timeout: 40, handler: nil)
     }
     
