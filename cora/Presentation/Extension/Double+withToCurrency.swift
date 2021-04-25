@@ -8,6 +8,8 @@
 import Foundation
 
 extension Double {
+    /// toCurrency
+    /// - Returns Localizable String Currency based on devices region
     var toCurrency: String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
