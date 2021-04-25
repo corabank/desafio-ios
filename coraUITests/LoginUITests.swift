@@ -7,7 +7,7 @@
 
 import XCTest
 
-class coraUITests: XCTestCase {
+class LoginUITests: XCTestCase {
     var app: XCUIApplication!
     
     // MARK: - XCTestCase
@@ -22,22 +22,8 @@ class coraUITests: XCTestCase {
     
     // MARK: - Tests
     
-    func makeLogin() {
-        app.launch()
-        
-        let emailTextInput = app.textFields["emailTextInput"]
-        let passwordTextInput = app.secureTextFields["passwordTextInput"]
-        
-        emailTextInput.tap()
-        emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
-        passwordTextInput.tap()
-        passwordTextInput.typeText("caveira2021")
-        
-        app.buttons["button"].tap()
-    }
-    
     func testGoingThrougASuccessfullLogin() {
-        makeLogin()
+        MakeLogin.run(app: app)
 
         let doesNotExistPredicate = NSPredicate(format: "exists == FALSE")
         self.expectation(for: doesNotExistPredicate, evaluatedWith: app.buttons["button"], handler: nil)

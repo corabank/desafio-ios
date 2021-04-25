@@ -9,7 +9,7 @@ import UIKit
 
 //sourcery: AutoMockable
 protocol OrderDetailViewcontrollerDelegate: class {
-    func back(orderID: UUID)
+    func back()
 }
 
 class OrderDetailViewcontroller: UIViewController {
@@ -387,6 +387,6 @@ class OrderDetailViewcontroller: UIViewController {
     }
     
     @objc func back() {
-        delegate?.back(orderID: viewModel?.order.id ?? UUID())
+        delegate?.back()
     }
 }

@@ -30,7 +30,7 @@
 		E370BEC12632412500E8214B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370BEC02632412500E8214B /* MainCoordinator.swift */; };
 		E3786C0E262A2EC100AE0CBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */; };
 		E3786C17262A2EC400AE0CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3786C16262A2EC400AE0CBE /* Assets.xcassets */; };
-		E3786C30262A2EC400AE0CBE /* coraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C2F262A2EC400AE0CBE /* coraUITests.swift */; };
+		E3786C30262A2EC400AE0CBE /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C2F262A2EC400AE0CBE /* LoginUITests.swift */; };
 		E3786C4E262A2F6700AE0CBE /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C4D262A2F6700AE0CBE /* LoginRepository.swift */; };
 		E3786C56262A2F8500AE0CBE /* LoginDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C55262A2F8500AE0CBE /* LoginDataSourceProtocol.swift */; };
 		E3786C5B262A2FA500AE0CBE /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C5A262A2FA500AE0CBE /* LoginDataSource.swift */; };
@@ -54,6 +54,8 @@
 		E3786CCB262A329600AE0CBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCA262A329600AE0CBE /* LoginViewController.swift */; };
 		E3786CD0262A32AA00AE0CBE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */; };
 		E3786CD5262A32D800AE0CBE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CD4262A32D800AE0CBE /* Coordinator.swift */; };
+		E39477A32634A33200DCBF26 /* MakeLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477A22634A33200DCBF26 /* MakeLogin.swift */; };
+		E39477AB2634FE6F00DCBF26 /* OrdersListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477AA2634FE6F00DCBF26 /* OrdersListUITests.swift */; };
 		E3B592A9262DB751006F189C /* OrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592A8262DB750006F189C /* OrderDetailViewModel.swift */; };
 		E3B592DB262EF947006F189C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592DA262EF947006F189C /* State.swift */; };
 		E3B592EE262F0132006F189C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592ED262F0132006F189C /* Facade.swift */; };
@@ -118,7 +120,7 @@
 		E3786C20262A2EC400AE0CBE /* coraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3786C26262A2EC400AE0CBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3786C2B262A2EC400AE0CBE /* coraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3786C2F262A2EC400AE0CBE /* coraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coraUITests.swift; sourceTree = "<group>"; };
+		E3786C2F262A2EC400AE0CBE /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		E3786C31262A2EC400AE0CBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3786C4D262A2F6700AE0CBE /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		E3786C55262A2F8500AE0CBE /* LoginDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSourceProtocol.swift; sourceTree = "<group>"; };
@@ -143,6 +145,8 @@
 		E3786CCA262A329600AE0CBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3786CD4262A32D800AE0CBE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E39477A22634A33200DCBF26 /* MakeLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLogin.swift; sourceTree = "<group>"; };
+		E39477AA2634FE6F00DCBF26 /* OrdersListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrdersListUITests.swift; path = coraUITests/OrdersListUITests.swift; sourceTree = SOURCE_ROOT; };
 		E3B592A8262DB750006F189C /* OrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewModel.swift; sourceTree = "<group>"; };
 		E3B592DA262EF947006F189C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		E3B592ED262F0132006F189C /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
@@ -378,7 +382,9 @@
 		E3786C2E262A2EC400AE0CBE /* coraUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E3786C2F262A2EC400AE0CBE /* coraUITests.swift */,
+				E39477A12634A31600DCBF26 /* Common */,
+				E3786C2F262A2EC400AE0CBE /* LoginUITests.swift */,
+				E39477AA2634FE6F00DCBF26 /* OrdersListUITests.swift */,
 				E3786C31262A2EC400AE0CBE /* Info.plist */,
 			);
 			path = coraUITests;
@@ -541,6 +547,14 @@
 				E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E39477A12634A31600DCBF26 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E39477A22634A33200DCBF26 /* MakeLogin.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E3B592D9262EF92F006F189C /* Shared */ = {
@@ -917,7 +931,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3786C30262A2EC400AE0CBE /* coraUITests.swift in Sources */,
+				E3786C30262A2EC400AE0CBE /* LoginUITests.swift in Sources */,
+				E39477AB2634FE6F00DCBF26 /* OrdersListUITests.swift in Sources */,
+				E39477A32634A33200DCBF26 /* MakeLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

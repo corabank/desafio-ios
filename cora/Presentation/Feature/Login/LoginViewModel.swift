@@ -30,7 +30,6 @@ class LoginViewModel: LoginViewModelProtocol {
     var email: String?
     var password: String?
 
-    
     /// Spreads state to controller
     var onUpdated: ((LoginViewModelState) -> Void)? {
         didSet {
@@ -38,7 +37,6 @@ class LoginViewModel: LoginViewModelProtocol {
         }
     }
 
-    
     /// Initialize current state and fires onUpdated propagation
     var state = LoginViewModelState.none {
         didSet {
@@ -54,7 +52,6 @@ class LoginViewModel: LoginViewModelProtocol {
         self.useCase.presenter = self
     }
 
-    
     /// Fires use case login
     func login() {
         

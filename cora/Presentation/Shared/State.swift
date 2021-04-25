@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 /// State.shared.user
 /// - Singleton:
 /// State.shared.user

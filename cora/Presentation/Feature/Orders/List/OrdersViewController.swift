@@ -23,7 +23,6 @@ class OrdersViewController: UIViewController {
     var tableViewHeightConstraint: NSLayoutConstraint!
     var orders = [Order]()
     var lastLocation: CGPoint = CGPoint(x: 0, y: 0)
-    var gesture: UIPanGestureRecognizer!
     
     struct Cells {
         static let orderCell = "OrderCell"
@@ -61,22 +60,35 @@ class OrdersViewController: UIViewController {
 
     fileprivate func makeView() {
         title = "Orders"
-        view.backgroundColor = .white
+        view.backgroundColor = .red
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
         navigationController?.setNavigationBarHidden(true, animated: false)
-        gesture = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(recognizer:)))
+        
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(recognizer:)))
+        gesture.maximumNumberOfTouches = 1
+        gesture.delaysTouchesBegan = true
+        gesture.cancelsTouchesInView = true
+        gesture.delegate = self
+        
         self.view?.addGestureRecognizer(gesture)
         self.view?.isUserInteractionEnabled = true
-        gesture.delegate = self
     }
 
     fileprivate func makeTableView() {
         view.addSubview(tableView)
+        setTableViewDelegates()
+
+        switch UIScreen.main.bounds.width {
+        case 375.0, 390.0:
+            tableView.contentInset = UIEdgeInsets(top: -30.dp, left: 0, bottom: 35, right: 0)
+        default: break
+        }
+        
+        tableView.panGestureRecognizer.isEnabled = false
         tableView.separatorColor = .clear
         tableView.showsVerticalScrollIndicator = false
-        setTableViewDelegates()
-        tableView.rowHeight = 66
+        tableView.rowHeight = 66.dp
         tableView.register(OrderCell.self, forCellReuseIdentifier: Cells.orderCell)
         tableView.isScrollEnabled = false
         tableView.accessibilityIdentifier = "ordersTableView"
@@ -104,8 +116,12 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orderCell) as? OrderCell
         let order = orders[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orderCell) as? OrderCell
+        let cellBackgroundView = UIView()
+        
+        cellBackgroundView.backgroundColor = #colorLiteral(red: 0.9731822688, green: 0.9731822688, blue: 0.9731822688, alpha: 1)
+        cell?.selectedBackgroundView = cellBackgroundView
         cell?.set(order: order)
         self.tableView.sizeToFit()
 
@@ -131,11 +147,17 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
 extension OrdersViewController: UIGestureRecognizerDelegate {
     @objc func wasDragged(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.view)
-        gesture.cancelsTouchesInView = false
         
         switch recognizer.state {
         case .began, .changed:
-            self.view.transform = CGAffineTransform(translationX: 0, y: lastLocation.y + translation.y)
+            UIView.transition(
+                with: view,
+                duration: 0.05,
+                options: .curveEaseInOut,
+                animations: {
+                    self.view.transform = CGAffineTransform(translationX: 0,
+                                                            y: self.lastLocation.y + translation.y)
+            })
         case .ended:
             lastLocation.y += translation.y
         default: break

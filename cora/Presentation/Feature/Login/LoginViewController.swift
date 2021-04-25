@@ -175,11 +175,28 @@ extension LoginViewController {
         button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Acessar minha conta", for: .normal)
+        button.setImage(UIImage(named: "arrow.right"), for: .normal)
+        button.tintColor = .white
+        button.semanticContentAttribute = .forceRightToLeft
+        
+        var spacing: CGFloat = 0
+        switch UIScreen.main.bounds.width {
+        case 320.0:
+            spacing = -80.dp
+        case 375.0, 390.0:
+            spacing = -120.dp
+        default:
+            spacing = -140.dp
+        }
+        
+        button.centerTextAndImage(spacing: spacing)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.9820479751, green: 0.2470019758, blue: 0.432462424, alpha: 1)
         button.layer.cornerRadius = 10
         button.accessibilityIdentifier = "button"
         mainStack.addArrangedSubview(button)
+        
+        print(UIScreen.main.bounds.width)
         
         scrollView.addSubview(mainStack)
         view.addSubview(scrollView)
@@ -235,8 +252,8 @@ extension LoginViewController {
     
     @objc func onButtonTap() {
         // REMOVE
-        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
-        passwordTextInput.text = "caveira2021"
+//        emailTextInput.text = "lucas.fernandes.silveira@gmail.com"
+//        passwordTextInput.text = "caveira2021"
         //
 
         self.view.endEditing(true)
@@ -245,8 +262,7 @@ extension LoginViewController {
         viewModel?.password = passwordTextInput.text
         viewModel?.login()
     }
-        
-    
+
     /// handleFailures
     /// - Parameter state: LoginViewModelState failures handled from LoginViewModel
     func handleFailures(state: LoginViewModelState) {
@@ -483,3 +499,17 @@ extension LoginViewController {
         }
     }
 }
+
+
+extension UIButton {
+    func centerTextAndImage(spacing: CGFloat) {
+        let insetAmount = spacing / 2
+        imageEdgeInsets = UIEdgeInsets(top: 0, left: -insetAmount, bottom: 0, right: insetAmount)
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: -insetAmount)
+        contentEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: insetAmount)
+    }
+}
+
+//extension UIView {
+//    var small: Boo
+//}

@@ -1196,33 +1196,30 @@ open class OrderDetailViewcontrollerDelegateMock: OrderDetailViewcontrollerDeleg
 
 
 
-    open func back(orderID: UUID) {
-        addInvocation(.m_back__orderID_orderID(Parameter<UUID>.value(`orderID`)))
-		let perform = methodPerformValue(.m_back__orderID_orderID(Parameter<UUID>.value(`orderID`))) as? (UUID) -> Void
-		perform?(`orderID`)
+    open func back() {
+        addInvocation(.m_back)
+		let perform = methodPerformValue(.m_back) as? () -> Void
+		perform?()
     }
 
 
     fileprivate enum MethodType {
-        case m_back__orderID_orderID(Parameter<UUID>)
+        case m_back
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_back__orderID_orderID(let lhsOrderid), .m_back__orderID_orderID(let rhsOrderid)):
-				var results: [Matcher.ParameterComparisonResult] = []
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsOrderid, rhs: rhsOrderid, with: matcher), lhsOrderid, rhsOrderid, "orderID"))
-				return Matcher.ComparisonResult(results)
+            case (.m_back, .m_back): return .match
             }
         }
 
         func intValue() -> Int {
             switch self {
-            case let .m_back__orderID_orderID(p0): return p0.intValue
+            case .m_back: return 0
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_back__orderID_orderID: return ".back(orderID:)"
+            case .m_back: return ".back()"
             }
         }
     }
@@ -1241,15 +1238,15 @@ open class OrderDetailViewcontrollerDelegateMock: OrderDetailViewcontrollerDeleg
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func back(orderID: Parameter<UUID>) -> Verify { return Verify(method: .m_back__orderID_orderID(`orderID`))}
+        public static func back() -> Verify { return Verify(method: .m_back)}
     }
 
     public struct Perform {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func back(orderID: Parameter<UUID>, perform: @escaping (UUID) -> Void) -> Perform {
-            return Perform(method: .m_back__orderID_orderID(`orderID`), performs: perform)
+        public static func back(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_back, performs: perform)
         }
     }
 
