@@ -119,39 +119,30 @@ class OrderCell: UITableViewCell {
         configureDateLabel()
     }
 
+    /// Set Constraints
     fileprivate func setConstraints() {
         NSLayoutConstraint.activate([
-            // image
+            /// orderImage constraints
             orderImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             orderImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 10.dp),
             orderImage.heightAnchor.constraint(equalToConstant: 40.dp),
             orderImage.widthAnchor.constraint(equalTo: orderImage.heightAnchor),
 
-            // title
+            /// orderTitle constraints
             orderTitle.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 20.dp),
             orderTitle.topAnchor.constraint(equalTo: topAnchor, constant: 13.5.dp),
             
-            // description
+            /// orderDescription ocnstraints
             orderDescription.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 20.dp),
             orderDescription.topAnchor.constraint(equalTo: orderTitle.bottomAnchor, constant: 4.dp),
             
-            // status
+            /// orderStatus constraints
             orderStatus.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),
             orderStatus.topAnchor.constraint(equalTo: topAnchor, constant: 12.dp),
             
-            // date
+            /// orderDate constraints
             orderDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),
             orderDate.topAnchor.constraint(equalTo: orderTitle.bottomAnchor, constant: 4.dp)
         ])
     }
-}
-
-extension UIImage {
-  func resized(to newSize: CGSize) -> UIImage? {
-    UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
-    defer { UIGraphicsEndImageContext() }
-
-    draw(in: CGRect(origin: .zero, size: newSize))
-    return UIGraphicsGetImageFromCurrentImageContext()
-  }
 }

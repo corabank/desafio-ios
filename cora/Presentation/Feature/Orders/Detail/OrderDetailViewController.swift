@@ -60,7 +60,7 @@ class OrderDetailViewcontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.accessibilityIdentifier = "OrderDetail"
         makeView()
         setConstraints()
         addTargets()
@@ -72,6 +72,7 @@ class OrderDetailViewcontroller: UIViewController {
         backButton.setTitle("", for: .normal)
         backButton.setImage(UIImage(named: "chevron.down"), for: .normal)
         backButton.tintColor = .systemPink
+        backButton.accessibilityIdentifier = "backButton"
         view.addSubview(backButton)
     }
     
@@ -116,6 +117,7 @@ class OrderDetailViewcontroller: UIViewController {
             text: viewModel?.order.value.toCurrency ?? "",
             fontSize: 12.dp,
             isBold: true)
+        paymentValueLabel.accessibilityIdentifier = "paymentValueLabel"
         paymentView.addSubview(paymentValueLabel)
         
         // paymentTypeLabel
@@ -241,6 +243,7 @@ class OrderDetailViewcontroller: UIViewController {
         
         myReceiveLabel = label(textColor: #colorLiteral(red: 0.1344254017, green: 0.594214201, blue: 0.6358585954, alpha: 1), text: "Meu recebimento", fontSize: 13.dp, isBold: true)
         myReceiveValueLabel = label(textColor: #colorLiteral(red: 0.1344254017, green: 0.594214201, blue: 0.6358585954, alpha: 1), text: receive.toCurrency, fontSize: 13.dp, isBold: true)
+        myReceiveValueLabel.accessibilityIdentifier = "myReceiveValueLabel"
         resumeView.addSubview(myReceiveLabel)
         resumeView.addSubview(myReceiveValueLabel)
         

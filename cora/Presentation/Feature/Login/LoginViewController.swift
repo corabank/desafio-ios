@@ -86,11 +86,8 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     func makeView() {
-//        self.view.backgroundColor = #colorLiteral(red: 0.168922931, green: 0.2577900887, blue: 0.3287529945, alpha: 1)
-        let backgroundImage = UIImage(named: "background")!.resized(to: UIScreen.main.bounds.size)!
+        let backgroundImage = UIImage(named: "background-2")!.resized(to: UIScreen.main.bounds.size)!
         self.view.backgroundColor = UIColor(patternImage: backgroundImage)
-        
-//        self.view.backgroundColor =
         
         // scrolliew
         scrollView = UIScrollView(frame: CGRect(x: 10,
@@ -114,7 +111,6 @@ extension LoginViewController {
         let image = UIImage(named: "logo-cora")
         logo = UIImageView(image: image)
         logo.translatesAutoresizingMaskIntoConstraints = false
-//        logo.layer.cornerRadius = 30
         scrollView.addSubview(logo)
         
         // spacer
@@ -208,8 +204,7 @@ extension LoginViewController {
         view.addSubview(loading)
     }
     
-    // Header View
-
+    /// Header View
     func makeHeaderView() {
         var ordersSum: Int {
             State.shared.user?.orders.count ?? 0
@@ -450,16 +445,17 @@ extension LoginViewController {
         ])
     }
     
+    /// Header Constraints
     func addConstraintsForHeader() {
         NSLayoutConstraint.activate([
-            // left side
+            /// left side
             ordersLabel.topAnchor.constraint(greaterThanOrEqualTo: logo.bottomAnchor, constant: 15.dp),
             ordersLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp),
 
             ordersAmountLabel.topAnchor.constraint(equalTo: ordersLabel.bottomAnchor, constant: 5.dp),
             ordersAmountLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp),
             
-            // right side
+            /// right side
             userNameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20.dp),
             userNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.dp)
         ])
@@ -500,7 +496,6 @@ extension LoginViewController {
     }
 }
 
-
 extension UIButton {
     func centerTextAndImage(spacing: CGFloat) {
         let insetAmount = spacing / 2
@@ -509,7 +504,3 @@ extension UIButton {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: insetAmount)
     }
 }
-
-//extension UIView {
-//    var small: Boo
-//}
