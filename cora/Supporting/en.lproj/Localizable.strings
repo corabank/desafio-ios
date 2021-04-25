@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  cora
+
+  Created by Lucas Silveira on 25/04/21.
+  
+*/
+
+// MARK: Login
+
+"Fill your email" = "Fill your email";
+"Fill your password" = "Fill your password";
+"Access my account" = "Access my account";
+"Invalid email or password" = "Invalid email or password";
+"Email is required" = "Email is required";
+"Password is required" = "Password is required";
+"Email and password are required" = "Email and password are required";
+"Hello" = "Hello";
+"Orders" = "Orders";
+"orders" = "orders";
+"totaling" = "totaling";
+
+// MARK: Order Cell
+
+"Not Paid" = "Not Paid";
+"Paid" = "Paid";
+"Waiting" = "Waiting";
+"today" = "today";
+"day" = "day";
+"ago" = "ago";

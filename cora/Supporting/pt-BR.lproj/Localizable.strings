@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  cora
+
+  Created by Lucas Silveira on 25/04/21.
+  
+*/
+
+// MARK: Login
+
+"Fill your email" = "Digite seu email";
+"Fill your password" = "Digite sua senha";
+"Access my account" = "Acessar minha conta";
+"Invalid email or password" = "Email ou senha inválidos";
+"Email is required" = "O email é obrigatório";
+"Password is required" = "A senha é obrigatória";
+"Email and password are required" = "Email e senha são obrigatórios";
+"Hello" = "Olá";
+"Orders" = "Pedidos";
+"orders" = "pedidos";
+"totaling" = "totalizando";
+
+// MARK: Order Cell
+
+"Not Paid" = "Não Pago";
+"Paid" = "Pago";
+"Waiting" = "Aguardando";
+"today" = "hoje";
+"day" = "dia";
+"ago" = "atrás";

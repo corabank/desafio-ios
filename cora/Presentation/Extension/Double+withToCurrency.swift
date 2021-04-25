@@ -12,7 +12,7 @@ extension Double {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale(identifier: "pt_BR")
+        currencyFormatter.locale = Locale.current
         
         return currencyFormatter.string(from: NSNumber(value: self)) ?? ""
     }

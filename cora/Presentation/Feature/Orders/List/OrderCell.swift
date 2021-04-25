@@ -41,16 +41,16 @@ class OrderCell: UITableViewCell {
         orderDescription.text = order.description
         let days = order.dueDate.daysBetween(date: Date())
         orderDate.text = days == 0
-            ? "hoje"
-            : "\(days) dia\(days != 1 ? "s" : "") atrás"
+            ? "today".localized
+            : "\(days) " + "day".localized + "\(days != 1 ? "s" : "") " + "ago".localized
         
         switch order.status {
         case .late:
-            orderStatus.text = "Não Pago"
+            orderStatus.text = "Not Paid".localized
         case .paid:
-            orderStatus.text = "Pago"
+            orderStatus.text = "Paid".localized
         case .pending:
-            orderStatus.text = "Aguardando"
+            orderStatus.text = "Waiting".localized
         }
     }
     

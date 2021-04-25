@@ -125,7 +125,7 @@ extension LoginViewController {
         emailTextInput.layer.borderColor = #colorLiteral(red: 0.09308306845, green: 0.1587566097, blue: 0.2415137913, alpha: 1)
         emailTextInput.textColor = .white
         let emailPlaceholderText = NSAttributedString(
-            string: "Fill your email",
+            string: "Fill your email".localized,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         emailTextInput.attributedPlaceholder = emailPlaceholderText
@@ -150,7 +150,7 @@ extension LoginViewController {
         passwordTextInput.autocorrectionType = .no
         passwordTextInput.autocapitalizationType = .none
         let passwordPlaceholderText = NSAttributedString(
-            string: "Fill your password",
+            string: "Fill your password".localized,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         passwordTextInput.attributedPlaceholder = passwordPlaceholderText
@@ -170,7 +170,7 @@ extension LoginViewController {
         // button
         button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Acessar minha conta", for: .normal)
+        button.setTitle("Access my account".localized, for: .normal)
         button.setImage(UIImage(named: "arrow.right"), for: .normal)
         button.tintColor = .white
         button.semanticContentAttribute = .forceRightToLeft
@@ -216,7 +216,7 @@ extension LoginViewController {
         
         userNameLabel = UILabel()
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        userNameLabel.text = "Olá, \(State.shared.user?.name ?? "")"
+        userNameLabel.text = "Hello".localized + ", \(State.shared.user?.name ?? "")"
         userNameLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         userNameLabel.font = UIFont.systemFont(ofSize: 14.dp)
         userNameLabel.textAlignment = .left
@@ -224,14 +224,14 @@ extension LoginViewController {
         
         ordersLabel = UILabel()
         ordersLabel.translatesAutoresizingMaskIntoConstraints = false
-        ordersLabel.text = "Pedidos"
+        ordersLabel.text = "Orders".localized
         ordersLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         ordersLabel.font = UIFont.boldSystemFont(ofSize: 22.dp)
         ordersLabel.textAlignment = .left
         
         ordersAmountLabel = UILabel()
         ordersAmountLabel.translatesAutoresizingMaskIntoConstraints = false
-        ordersAmountLabel.text = "\(ordersSum.description) pedidos, totalizando \(ordersValueSum.toCurrency)"
+        ordersAmountLabel.text = "\(ordersSum.description) " + "orders".localized + ", " + "totaling".localized + " \(ordersValueSum.toCurrency)"
         ordersAmountLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         ordersAmountLabel.font = UIFont.systemFont(ofSize: 14.dp)
         ordersAmountLabel.textAlignment = .left
@@ -309,25 +309,25 @@ extension LoginViewController {
     }
     
     private func invalidEmail() {
-        self.errorLabel.text = "Email ou senha inválidos"
+        self.errorLabel.text = "Invalid email or password".localized
     }
     
     private func wrongEmailAndPassword() {
-        self.errorLabel.text = "Email ou senha inválidos"
+        self.errorLabel.text = "Invalid email or password".localized
         self.passwordTextInput.text = ""
         self.passwordTextInput.becomeFirstResponder()
     }
     
     private func emailEmpty() {
-        errorLabel.text = "O email é obrigatório"
+        errorLabel.text = "Email is required".localized
     }
     
     private func passwordEmpty() {
-        errorLabel.text = "A senha é obrigatória"
+        errorLabel.text = "Password is required".localized
     }
     
     private func emailAndPasswordEmpty() {
-        errorLabel.text = "Email e senha são obrigatórios"
+        errorLabel.text = "Email and password are required".localized
     }
     
     private func disableLoading() {
