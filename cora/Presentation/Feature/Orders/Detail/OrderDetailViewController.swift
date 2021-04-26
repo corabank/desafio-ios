@@ -199,7 +199,7 @@ class OrderDetailViewcontroller: UIViewController {
         switch viewModel?.order.status {
         case .late:
             status = "Não Pago"
-            color = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            color = #colorLiteral(red: 1, green: 0.2321209311, blue: 0.4182785749, alpha: 1)
         case .paid:
             status = "Pago"
             color = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
@@ -224,25 +224,25 @@ class OrderDetailViewcontroller: UIViewController {
     func makeResumeView() {
         resumeView = UIView()
         resumeView.translatesAutoresizingMaskIntoConstraints = false
-        resumeView.backgroundColor = #colorLiteral(red: 0.8349554539, green: 0.8430009484, blue: 0.8553692698, alpha: 1)
+        resumeView.backgroundColor = #colorLiteral(red: 0.2578545809, green: 0.7568270564, blue: 0.9680623412, alpha: 1)
         
-        resumeLabel = label(textColor: #colorLiteral(red: 0.6373602748, green: 0.6508322358, blue: 0.6629142165, alpha: 1), text: "Resumo Financeiro", fontSize: 10.dp, isBold: true)
+        resumeLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "Resumo Financeiro", fontSize: 13.dp, isBold: true)
         resumeView.addSubview(resumeLabel)
         
-        totalAmountLabel = label(textColor: #colorLiteral(red: 0.300034821, green: 0.3073332906, blue: 0.3257730603, alpha: 1), text: "Valor total", fontSize: 12.dp)
-        totalAmountValueLabel = label(textColor: #colorLiteral(red: 0.300034821, green: 0.3073332906, blue: 0.3257730603, alpha: 1),
+        totalAmountLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- Valor total", fontSize: 12.dp)
+        totalAmountValueLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                                       text: viewModel?.order.value.toCurrency ?? "",
                                       fontSize: 12.dp)
         resumeView.addSubview(totalAmountLabel)
         resumeView.addSubview(totalAmountValueLabel)
         
-        taxesLabel = label(textColor: #colorLiteral(red: 0.748716414, green: 0.1300586462, blue: 0.2132774293, alpha: 1), text: "Taxas", fontSize: 12.dp)
-        taxesValueLabel = label(textColor: #colorLiteral(red: 0.748716414, green: 0.1300586462, blue: 0.2132774293, alpha: 1), text: viewModel?.order.taxes.toCurrency ?? "", fontSize: 12.dp)
+        taxesLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- Taxas", fontSize: 12.dp)
+        taxesValueLabel = label(textColor: #colorLiteral(red: 1, green: 0.2321209311, blue: 0.4182785749, alpha: 1), text: viewModel?.order.taxes.toCurrency ?? "", fontSize: 12.dp)
         resumeView.addSubview(taxesLabel)
         resumeView.addSubview(taxesValueLabel)
         
-        myReceiveLabel = label(textColor: #colorLiteral(red: 0.1344254017, green: 0.594214201, blue: 0.6358585954, alpha: 1), text: "Meu recebimento", fontSize: 13.dp, isBold: true)
-        myReceiveValueLabel = label(textColor: #colorLiteral(red: 0.1344254017, green: 0.594214201, blue: 0.6358585954, alpha: 1), text: receive.toCurrency, fontSize: 13.dp, isBold: true)
+        myReceiveLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "Meu recebimento", fontSize: 14.dp, isBold: true)
+        myReceiveValueLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: receive.toCurrency, fontSize: 14.dp, isBold: true)
         myReceiveValueLabel.accessibilityIdentifier = "myReceiveValueLabel"
         resumeView.addSubview(myReceiveLabel)
         resumeView.addSubview(myReceiveValueLabel)
@@ -272,10 +272,10 @@ class OrderDetailViewcontroller: UIViewController {
 
             paymentImageView.topAnchor.constraint(equalTo: paymentView.topAnchor, constant: 2.dp),
             paymentImageView.leadingAnchor.constraint(equalTo: paymentView.leadingAnchor, constant: 17.dp),
-            paymentImageView.widthAnchor.constraint(equalToConstant: 26.dp),
-            paymentImageView.heightAnchor.constraint(equalToConstant: 26.dp),
+            paymentImageView.widthAnchor.constraint(equalToConstant: 36.dp),
+            paymentImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            paymentValueLabel.topAnchor.constraint(equalTo: paymentView.topAnchor),
+            paymentValueLabel.topAnchor.constraint(equalTo: paymentView.topAnchor, constant: 3),
             paymentValueLabel.leadingAnchor.constraint(equalTo: paymentImageView.trailingAnchor,
                                                        constant: 17.dp),
 
@@ -288,12 +288,12 @@ class OrderDetailViewcontroller: UIViewController {
             buyerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             buyerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 
-            buyerImageView.topAnchor.constraint(equalTo: buyerView.topAnchor, constant: 20.5.dp),
+            buyerImageView.topAnchor.constraint(equalTo: buyerView.topAnchor, constant: 30.5.dp),
             buyerImageView.centerXAnchor.constraint(equalTo: paymentImageView.centerXAnchor),
-            buyerImageView.widthAnchor.constraint(equalToConstant: 26.dp),
-            buyerImageView.heightAnchor.constraint(equalToConstant: 26.dp),
+            buyerImageView.widthAnchor.constraint(equalToConstant: 36.dp),
+            buyerImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            buyerLabel.topAnchor.constraint(equalTo: buyerView.topAnchor, constant: 20.dp),
+            buyerLabel.topAnchor.constraint(equalTo: buyerView.topAnchor, constant: 34.dp),
             buyerLabel.leadingAnchor.constraint(equalTo: buyerImageView.trailingAnchor, constant: 17.dp),
 
             buyerNameLabel.topAnchor.constraint(equalTo: buyerLabel.bottomAnchor, constant: 4.dp),
@@ -304,12 +304,12 @@ class OrderDetailViewcontroller: UIViewController {
             emailView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             emailView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 
-            emailImageView.topAnchor.constraint(equalTo: emailView.topAnchor, constant: 21.dp),
+            emailImageView.topAnchor.constraint(equalTo: emailView.topAnchor, constant: 41.dp),
             emailImageView.centerXAnchor.constraint(equalTo: paymentImageView.centerXAnchor),
-            emailImageView.widthAnchor.constraint(equalToConstant: 26.dp),
-            emailImageView.heightAnchor.constraint(equalToConstant: 26.dp),
+            emailImageView.widthAnchor.constraint(equalToConstant: 36.dp),
+            emailImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            emailLabel.topAnchor.constraint(equalTo: emailView.topAnchor, constant: 20.dp),
+            emailLabel.topAnchor.constraint(equalTo: emailView.topAnchor, constant: 44.dp),
             emailLabel.leadingAnchor.constraint(equalTo: emailImageView.trailingAnchor, constant: 17.dp),
 
             emailValueLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 4.dp),
@@ -321,12 +321,12 @@ class OrderDetailViewcontroller: UIViewController {
             createdView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             createdView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 
-            createdImageView.topAnchor.constraint(equalTo: createdView.topAnchor, constant: 21.dp),
+            createdImageView.topAnchor.constraint(equalTo: createdView.topAnchor, constant: 51.dp),
             createdImageView.centerXAnchor.constraint(equalTo: paymentImageView.centerXAnchor),
-            createdImageView.widthAnchor.constraint(equalToConstant: 26.dp),
-            createdImageView.heightAnchor.constraint(equalToConstant: 26.dp),
+            createdImageView.widthAnchor.constraint(equalToConstant: 36.dp),
+            createdImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            createdAtLabel.topAnchor.constraint(equalTo: createdView.topAnchor, constant: 20.dp),
+            createdAtLabel.topAnchor.constraint(equalTo: createdView.topAnchor, constant: 54.dp),
             createdAtLabel.leadingAnchor.constraint(equalTo: createdImageView.trailingAnchor,
                                                     constant: 17.dp),
 
@@ -339,12 +339,12 @@ class OrderDetailViewcontroller: UIViewController {
             statusView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             statusView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 
-            statusImageView.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 21.dp),
+            statusImageView.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 61.dp),
             statusImageView.centerXAnchor.constraint(equalTo: paymentImageView.centerXAnchor),
-            statusImageView.widthAnchor.constraint(equalToConstant: 26.dp),
-            statusImageView.heightAnchor.constraint(equalToConstant: 26.dp),
+            statusImageView.widthAnchor.constraint(equalToConstant: 36.dp),
+            statusImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            statusLabel.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 20.dp),
+            statusLabel.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 65.dp),
             statusLabel.leadingAnchor.constraint(equalTo: statusImageView.trailingAnchor, constant: 17.dp),
 
             statusLabelValue.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 4.dp),
@@ -352,7 +352,7 @@ class OrderDetailViewcontroller: UIViewController {
                                                       constant: 17.dp),
 
             // resume
-            resumeView.topAnchor.constraint(equalTo: statusView.bottomAnchor, constant: 80.dp),
+            resumeView.topAnchor.constraint(equalTo: statusView.bottomAnchor, constant: 180.dp),
             resumeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             resumeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             resumeView.heightAnchor.constraint(equalToConstant: 130.dp),

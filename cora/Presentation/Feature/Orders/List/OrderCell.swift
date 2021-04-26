@@ -95,7 +95,7 @@ class OrderCell: UITableViewCell {
         
         switch order.status {
         case .late:
-            orderStatus.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            orderStatus.textColor = #colorLiteral(red: 1, green: 0.2321209311, blue: 0.4182785749, alpha: 1)
         case .paid:
             orderStatus.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         case .pending:
