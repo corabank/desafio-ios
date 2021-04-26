@@ -25,10 +25,9 @@ jobs:
 
       - name: iOS build setup
         run: |
-          xcodebuild build-for-testing -scheme coraTests -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
-      
-      - name: testing ... iPhone 12
-        run: xcodebuild test-without-building -scheme coraTests -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12'
-        
-      - name: testing ... iPhone 12 Pro Max
-        run: xcodebuild test-without-building -scheme coraTests -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max'
+          xcodebuild build-for-testing -scheme cora -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
+          
+      - name: Tests
+        run: |
+          xcodebuild clean
+          xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
