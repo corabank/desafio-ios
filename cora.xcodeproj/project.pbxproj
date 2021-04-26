@@ -27,6 +27,7 @@
 		E31DE1C22635B069002FAE8B /* UIImage+withResized.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DE1C12635B069002FAE8B /* UIImage+withResized.swift */; };
 		E31DE1CB2635BD0C002FAE8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E31DE1CD2635BD0C002FAE8B /* Localizable.strings */; };
 		E31DE1D32635BD78002FAE8B /* String+withLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31DE1D22635BD78002FAE8B /* String+withLocalized.swift */; };
+		E367F7762636F6FD002124EE /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E367F7752636F6FD002124EE /* OrderDetailView.swift */; };
 		E370BEC12632412500E8214B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370BEC02632412500E8214B /* MainCoordinator.swift */; };
 		E3786C0E262A2EC100AE0CBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */; };
 		E3786C17262A2EC400AE0CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3786C16262A2EC400AE0CBE /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		E31DE1CC2635BD0C002FAE8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E31DE1D12635BD14002FAE8B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E31DE1D22635BD78002FAE8B /* String+withLocalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+withLocalized.swift"; sourceTree = "<group>"; };
+		E367F7752636F6FD002124EE /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		E370BEC02632412500E8214B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E3786C0A262A2EC100AE0CBE /* cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				E31DB37D262CB0BE00CD6A0E /* OrderDetailViewController.swift */,
 				E3B592A8262DB750006F189C /* OrderDetailViewModel.swift */,
+				E367F7752636F6FD002124EE /* OrderDetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				E31DE1D32635BD78002FAE8B /* String+withLocalized.swift in Sources */,
 				E370BEC12632412500E8214B /* MainCoordinator.swift in Sources */,
 				E3786C7A262A307500AE0CBE /* OrdersRepository.swift in Sources */,
+				E367F7762636F6FD002124EE /* OrderDetailView.swift in Sources */,
 				E3786CA6262A318E00AE0CBE /* LoginUseCase.swift in Sources */,
 				E31DB331262B6C3000CD6A0E /* OrdersViewModel.swift in Sources */,
 				E3B592EE262F0132006F189C /* Facade.swift in Sources */,
