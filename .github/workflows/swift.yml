@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ challenge ]
+  pull_request:
+    branches: [ challenge ]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: CocoaPod Install
+        run: pod install
+      #- name: Use this line to see how many versions of Xcode are installed on the CI
+      #  run: ls /Applications | grep Xcode
+
+      # Use this if your app requires a specific Xcode (or breaks on the latest one haha)
+      #- name: Force xcode 11 
+      #  run: sudo xcode-select -switch /Applications/Xcode_11.4.app
+
+      - name: iOS build setup
+        run: |
+          xcodebuild build-for-testing -scheme affirm-me-test -workspace affirm-me.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
+      
+      - name: testing ... iPhone 12
+        run: xcodebuild test-without-building -scheme affirm-me-test -workspace affirm-me.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12'
+        
+      - name: testing ... iPhone 12 Pro Max
+        run: xcodebuild test-without-building -scheme affirm-me-test -workspace affirm-me.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max'
