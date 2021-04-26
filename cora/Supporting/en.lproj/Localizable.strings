@@ -20,6 +20,15 @@
 "orders" = "orders";
 "totaling" = "totaling";
 
+// MARK: Order Detail
+
+"Buyer" = "Buyer";
+"Created at" = "Created at";
+"Billing Resume" = "Billing Resume";
+"Total value" = "Total value";
+"Taxes" = "Taxes";
+"My receipt" = "My receipt";
+
 // MARK: Order Cell
 
 "Not Paid" = "Not Paid";

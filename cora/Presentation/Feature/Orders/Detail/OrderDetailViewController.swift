@@ -134,7 +134,7 @@ class OrderDetailViewcontroller: UIViewController {
         buyerView.addSubview(buyerImageView)
 
         // buyerLabel
-        buyerLabel = label(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Comprador", fontSize: 8.dp)
+        buyerLabel = label(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Buyer".localized, fontSize: 8.dp)
         buyerView.addSubview(buyerLabel)
 
         // buyerNameLabel
@@ -168,7 +168,7 @@ class OrderDetailViewcontroller: UIViewController {
         createdView.addSubview(createdImageView)
 
         // createdAtLabel
-        createdAtLabel = label(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Criado em", fontSize: 8.dp)
+        createdAtLabel = label(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Created at".localized, fontSize: 8.dp)
         createdView.addSubview(createdAtLabel)
 
         // emailValueLabel
@@ -198,13 +198,13 @@ class OrderDetailViewcontroller: UIViewController {
         var color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         switch viewModel?.order.status {
         case .late:
-            status = "Não Pago"
+            status = "Not Paid".localized
             color = #colorLiteral(red: 1, green: 0.2321209311, blue: 0.4182785749, alpha: 1)
         case .paid:
-            status = "Pago"
+            status = "Paid".localized
             color = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         case .pending:
-            status = "Aguardando"
+            status = "Waiting".localized
             color = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         default: break
         }
@@ -226,22 +226,22 @@ class OrderDetailViewcontroller: UIViewController {
         resumeView.translatesAutoresizingMaskIntoConstraints = false
         resumeView.backgroundColor = #colorLiteral(red: 0.2578545809, green: 0.7568270564, blue: 0.9680623412, alpha: 1)
         
-        resumeLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "Resumo Financeiro", fontSize: 13.dp, isBold: true)
+        resumeLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "Billing Resume".localized, fontSize: 13.dp, isBold: true)
         resumeView.addSubview(resumeLabel)
         
-        totalAmountLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- Valor total", fontSize: 12.dp)
+        totalAmountLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- " + "Total value".localized, fontSize: 12.dp)
         totalAmountValueLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                                       text: viewModel?.order.value.toCurrency ?? "",
                                       fontSize: 12.dp)
         resumeView.addSubview(totalAmountLabel)
         resumeView.addSubview(totalAmountValueLabel)
         
-        taxesLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- Taxas", fontSize: 12.dp)
+        taxesLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- " + "Taxes".localized, fontSize: 12.dp)
         taxesValueLabel = label(textColor: #colorLiteral(red: 1, green: 0.2321209311, blue: 0.4182785749, alpha: 1), text: viewModel?.order.taxes.toCurrency ?? "", fontSize: 12.dp)
         resumeView.addSubview(taxesLabel)
         resumeView.addSubview(taxesValueLabel)
         
-        myReceiveLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "Meu recebimento", fontSize: 14.dp, isBold: true)
+        myReceiveLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "My receipt".localized, fontSize: 14.dp, isBold: true)
         myReceiveValueLabel = label(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: receive.toCurrency, fontSize: 14.dp, isBold: true)
         myReceiveValueLabel.accessibilityIdentifier = "myReceiveValueLabel"
         resumeView.addSubview(myReceiveLabel)

@@ -20,6 +20,16 @@
 "orders" = "pedidos";
 "totaling" = "totalizando";
 
+// MARK: Order Detail
+
+"Buyer" = "Comprador";
+"Created at" = "Criado em";
+"Billing Resume" = "Resumo Financeiro";
+"Total value" = "Valor total";
+"Taxes" = "Taxas";
+"My receipt" = "Meu recebimento";
+
+
 // MARK: Order Cell
 
 "Not Paid" = "Não Pago";
