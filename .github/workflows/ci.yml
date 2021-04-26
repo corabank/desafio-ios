@@ -25,10 +25,10 @@ jobs:
 
       - name: iOS build setup
         run: |
-          xcodebuild build-for-testing -scheme affirm-me-test -workspace affirm-me.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
+          xcodebuild build-for-testing -scheme coraTests -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
       
       - name: testing ... iPhone 12
-        run: xcodebuild test-without-building -scheme affirm-me-test -workspace affirm-me.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12'
+        run: xcodebuild test-without-building -scheme coraTests -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12'
         
       - name: testing ... iPhone 12 Pro Max
-        run: xcodebuild test-without-building -scheme affirm-me-test -workspace affirm-me.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max'
+        run: xcodebuild test-without-building -scheme coraTests -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max'
