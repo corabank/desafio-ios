@@ -158,8 +158,8 @@
             filePath = "coraUITests/LoginUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "testGoingThroughLoginWithInvalidEmail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,9 +174,25 @@
             filePath = "coraUITests/LoginUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "testGoingThroughLoginWithInvalidPassword()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "586E6432-8A87-46F4-B51F-3C8AC62AF844"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "coraUITests/LoginUITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "testGoingThroughLoginWithEmptyEmail()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

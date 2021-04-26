@@ -98,6 +98,7 @@ extension LoginViewController {
         scrollView.contentSize = CGSize(width: scrollView.frame.width,
                                         height: UIScreen.main.bounds.height)
         scrollView.keyboardDismissMode = .onDrag
+        scrollView.accessibilityIdentifier = "scrollview"
         
         // main stack
         mainStack = UIStackView()
