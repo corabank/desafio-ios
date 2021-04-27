@@ -15,10 +15,7 @@ protocol OrderDetailViewcontrollerDelegate: class {
 class OrderDetailViewcontroller: UIViewController {
     weak var delegate: OrderDetailViewcontrollerDelegate?
     var viewModel: OrderDetailViewModel?
-    
     var detailView: OrderDetailview!
-    
-    // back button
     private var backButton: UIButton!
     
     override func viewDidLoad() {

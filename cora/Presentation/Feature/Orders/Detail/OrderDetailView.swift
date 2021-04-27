@@ -310,7 +310,7 @@ class OrderDetailview: UIView {
                                                       constant: 17.dp),
             
             // resume
-            resumeView.topAnchor.constraint(equalTo: statusLabelValue.bottomAnchor, constant: 100.dp),
+            resumeView.topAnchor.constraint(equalTo: statusLabelValue.bottomAnchor, constant: 80.dp),
             resumeView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             resumeView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             resumeView.heightAnchor.constraint(equalToConstant: 130.dp),

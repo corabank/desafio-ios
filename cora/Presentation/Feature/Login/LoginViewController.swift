@@ -16,13 +16,12 @@ protocol LoginViewControllerDelegate: class {
 class LoginViewController: UIViewController {
     var viewModel: LoginViewModelProtocol?
     weak var delegate: LoginViewControllerDelegate?
-    
-    private var logo: UIImageView!
+
+    private var animatedLogo: AnimatedLogoView!
     private var scrollView: UIScrollView!
     
     // Login
     var mainStack: UIStackView!
-    var spacer: UIView!
     var emailTextInput: UITextField!
     var passwordTextInput: UITextField!
     var errorLabel: UILabel!
@@ -30,18 +29,7 @@ class LoginViewController: UIViewController {
     var loading: UIActivityIndicatorView!
     
     // Logged
-    var userNameLabel: UILabel!
-    var ordersLabel: UILabel!
-    var ordersAmountLabel: UILabel!
-    
-    // Logo Constraints
-    private var logoWidthConstraint: NSLayoutConstraint!
-    private var logoHeightConstraint: NSLayoutConstraint!
-    private var logoCenterXConstraint: NSLayoutConstraint!
-    private var logoTopConstraint: NSLayoutConstraint!
-    private var logoBottomConstraint: NSLayoutConstraint!
-    private var logoLeftConstraint: NSLayoutConstraint!
-    private var logoRightConstraint: NSLayoutConstraint!
+    var loginHeaderView: LoginHeaderview!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +49,7 @@ class LoginViewController: UIViewController {
         passwordTextInput.text = ""
         viewModel?.onUpdated = handleState
         
-        logo.layer.opacity = 0
+        animatedLogo.layer.opacity = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -109,91 +97,28 @@ extension LoginViewController {
         mainStack.spacing = 18
         
         // logo
-        let image = UIImage(named: "logo-cora")
-        logo = UIImageView(image: image)
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(logo)
-        
-        // spacer
-        spacer = UIView()
-        mainStack.addArrangedSubview(spacer)
+        animatedLogo = AnimatedLogoView()
+        animatedLogo.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(animatedLogo)
         
         // email text field
-        emailTextInput = UITextField()
-        emailTextInput.translatesAutoresizingMaskIntoConstraints = false
-        emailTextInput.backgroundColor = .clear
-        emailTextInput.borderStyle = .roundedRect
-        emailTextInput.layer.borderColor = #colorLiteral(red: 0.09308306845, green: 0.1587566097, blue: 0.2415137913, alpha: 1)
-        emailTextInput.textColor = .white
-        let emailPlaceholderText = NSAttributedString(
-            string: "Fill your email".localized,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        emailTextInput.attributedPlaceholder = emailPlaceholderText
-        emailTextInput.font = emailTextInput.font?.withSize(12)
-        emailTextInput.layer.cornerRadius = 20
-        emailTextInput.keyboardType = .emailAddress
-        emailTextInput.autocapitalizationType = .none
-        emailTextInput.autocorrectionType = .no
-        emailTextInput.accessibilityIdentifier = "emailTextInput"
+        emailTextInput = .custom(withIdentifier: "emailTextInput",
+                                              withPlaceholder: "Fill your email".localized)
         mainStack.addArrangedSubview(emailTextInput)
         
         // password text field
-        passwordTextInput = UITextField()
-        passwordTextInput.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextInput.backgroundColor = .clear
-        passwordTextInput.borderStyle = .roundedRect
-        passwordTextInput.layer.borderColor = #colorLiteral(red: 0.09308306845, green: 0.1587566097, blue: 0.2415137913, alpha: 1)
-        passwordTextInput.textColor = .white
-        passwordTextInput.font = passwordTextInput.font?.withSize(12)
-        passwordTextInput.layer.cornerRadius = 20
+        passwordTextInput = .custom(withIdentifier: "passwordTextInput",
+                                                 withPlaceholder: "Fill your password".localized)
         passwordTextInput.isSecureTextEntry = true
-        passwordTextInput.autocorrectionType = .no
-        passwordTextInput.autocapitalizationType = .none
-        let passwordPlaceholderText = NSAttributedString(
-            string: "Fill your password".localized,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        passwordTextInput.attributedPlaceholder = passwordPlaceholderText
-        passwordTextInput.accessibilityIdentifier = "passwordTextInput"
         mainStack.addArrangedSubview(passwordTextInput)
         
         // error label
-        errorLabel = UILabel()
-        errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorLabel.text = ""
-        errorLabel.textColor = #colorLiteral(red: 0.9820479751, green: 0.2470019758, blue: 0.432462424, alpha: 1)
-        errorLabel.font = errorLabel.font.withSize(11)
-        errorLabel.textAlignment = .center
-        errorLabel.accessibilityIdentifier = "errorLabel"
+        errorLabel = .errorLabel
         mainStack.addArrangedSubview(errorLabel)
         
         // button
-        button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Access my account".localized, for: .normal)
-        button.setImage(UIImage(named: "arrow.right"), for: .normal)
-        button.tintColor = .white
-        button.semanticContentAttribute = .forceRightToLeft
-        
-        var spacing: CGFloat = 0
-        switch UIScreen.main.bounds.width {
-        case 320.0:
-            spacing = -80.dp
-        case 375.0, 390.0:
-            spacing = -120.dp
-        default:
-            spacing = -140.dp
-        }
-        
-        button.centerTextAndImage(spacing: spacing)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9820479751, green: 0.2470019758, blue: 0.432462424, alpha: 1)
-        button.layer.cornerRadius = 10
-        button.accessibilityIdentifier = "button"
+        button = .loginButton
         mainStack.addArrangedSubview(button)
-        
-        print(UIScreen.main.bounds.width)
         
         scrollView.addSubview(mainStack)
         view.addSubview(scrollView)
@@ -215,31 +140,10 @@ extension LoginViewController {
             State.shared.user?.orders.reduce(0) { $0 + $1.value } ?? 0
         }
         
-        userNameLabel = UILabel()
-        userNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        userNameLabel.text = "Hello".localized + ", \(State.shared.user?.name ?? "")"
-        userNameLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        userNameLabel.font = UIFont.systemFont(ofSize: 14.dp)
-        userNameLabel.textAlignment = .left
-        userNameLabel.accessibilityIdentifier = "userNameLabel"
-        
-        ordersLabel = UILabel()
-        ordersLabel.translatesAutoresizingMaskIntoConstraints = false
-        ordersLabel.text = "Orders".localized
-        ordersLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        ordersLabel.font = UIFont.boldSystemFont(ofSize: 22.dp)
-        ordersLabel.textAlignment = .left
-        
-        ordersAmountLabel = UILabel()
-        ordersAmountLabel.translatesAutoresizingMaskIntoConstraints = false
-        ordersAmountLabel.text = "\(ordersSum.description) " + "orders".localized + ", " + "totaling".localized + " \(ordersValueSum.toCurrency)"
-        ordersAmountLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        ordersAmountLabel.font = UIFont.systemFont(ofSize: 14.dp)
-        ordersAmountLabel.textAlignment = .left
-        
-        scrollView.addSubview(userNameLabel)
-        scrollView.addSubview(ordersLabel)
-        scrollView.addSubview(ordersAmountLabel)
+        loginHeaderView = LoginHeaderview(userName: State.shared.user?.name ?? "",
+                                          ordersSum: ordersSum.description,
+                                          ordersDescription: ordersValueSum.toCurrency)
+        scrollView.addSubview(loginHeaderView)
     }
     
     func addTargets() {
@@ -348,87 +252,35 @@ extension LoginViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.logo.layer.opacity = 1
-            let logoanimation = AnimationType.zoom(scale: 0.2)
-            self.logo.animate(animations: [logoanimation])
+            self.animatedLogo.layer.opacity = 1
+            let logoanimation = AnimationType.from(direction: .bottom, offset: 230)
+            self.animatedLogo.animate(animations: [logoanimation])
         }
     }
     
     /// endAnimation() is fired when transition to show orders begins
     private func endAnimation() {
-        UIView.transition(with: mainStack,
-                          duration: 0.1,
-                          options: .transitionCrossDissolve,
+        UIView.transition(with: mainStack, duration: 0.1, options: .transitionCrossDissolve,
                           animations: {
                                 self.mainStack.layer.opacity = 0
                           })
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.updateLogoConstraintsToAnimate()
-            UIView.transition(with: self.logo,
-                              duration: 0.3,
-                              options: .curveEaseInOut,
-                              animations: {
-                                self.view.layoutIfNeeded()
-                              })
+            self.animatedLogo.animate()
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.makeHeaderView()
-            self.addConstraintsForHeader()
-            
-            let zoomAnimation = AnimationType.from(direction: .top, offset: -100)
-            self.userNameLabel.animate(animations: [zoomAnimation])
-            self.ordersLabel.animate(animations: [zoomAnimation])
-            self.ordersAmountLabel.animate(animations: [zoomAnimation])
+            let animation = AnimationType.from(direction: .top, offset: -100)
+            self.loginHeaderView.animate(animations: [animation])
         }
     }
     
     // MARK: Constraints
-    func setLogoConstraintsForAnimation() {
-        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 80.dp)
-        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 80.dp)
-        logoCenterXConstraint = logo.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
-        logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 80.dp)
-        logoBottomConstraint = logo.bottomAnchor.constraint(equalTo: mainStack.topAnchor, constant: -30.dp)
-        
-        NSLayoutConstraint.activate([
-            logoWidthConstraint,
-            logoHeightConstraint,
-            logoCenterXConstraint,
-            logoTopConstraint,
-            logoBottomConstraint
-        ])
-    }
-    
-    func updateLogoConstraintsToAnimate() {
-        NSLayoutConstraint.deactivate([
-            logoWidthConstraint,
-            logoHeightConstraint,
-            logoCenterXConstraint,
-            logoTopConstraint,
-            logoBottomConstraint
-        ])
-        
-        logoTopConstraint = logo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10.dp)
-        logoLeftConstraint = logo.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp)
-        logoWidthConstraint = logo.widthAnchor.constraint(equalToConstant: 40.dp)
-        logoHeightConstraint = logo.heightAnchor.constraint(equalToConstant: 40.dp)
-        
-        NSLayoutConstraint.activate([
-            logoWidthConstraint,
-            logoHeightConstraint,
-            logoTopConstraint,
-            logoLeftConstraint
-        ])
-    }
 
     func addConstraints() {
-        setLogoConstraintsForAnimation()
-        
         NSLayoutConstraint.activate([
-            spacer.widthAnchor.constraint(equalTo: mainStack.widthAnchor),
-            spacer.heightAnchor.constraint(greaterThanOrEqualTo: logo.heightAnchor, multiplier: 0.5),
+            mainStack.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 260.dp),
             
             emailTextInput.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40.dp),
             emailTextInput.heightAnchor.constraint(equalToConstant: 54.dp),
@@ -443,22 +295,6 @@ extension LoginViewController {
             
             loading.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20.dp),
             loading.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-    }
-    
-    /// Header Constraints
-    func addConstraintsForHeader() {
-        NSLayoutConstraint.activate([
-            /// left side
-            ordersLabel.topAnchor.constraint(greaterThanOrEqualTo: logo.bottomAnchor, constant: 15.dp),
-            ordersLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp),
-
-            ordersAmountLabel.topAnchor.constraint(equalTo: ordersLabel.bottomAnchor, constant: 5.dp),
-            ordersAmountLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 10.dp),
-            
-            /// right side
-            userNameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20.dp),
-            userNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.dp)
         ])
     }
     
@@ -494,14 +330,5 @@ extension LoginViewController {
                 })
             }
         }
-    }
-}
-
-extension UIButton {
-    func centerTextAndImage(spacing: CGFloat) {
-        let insetAmount = spacing / 2
-        imageEdgeInsets = UIEdgeInsets(top: 0, left: -insetAmount, bottom: 0, right: insetAmount)
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: -insetAmount)
-        contentEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: insetAmount)
     }
 }
