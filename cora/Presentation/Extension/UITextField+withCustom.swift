@@ -30,6 +30,8 @@ extension UITextField {
             string: placeholder ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         textField.attributedPlaceholder = customPlaceholderText
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.enablesReturnKeyAutomatically = true
         
         return textField
     }

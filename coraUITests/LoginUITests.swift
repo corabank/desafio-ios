@@ -47,26 +47,26 @@ class LoginUITests: XCTestCase {
     
     func testGoingThroughLoginWithEmptyEmail() {
         app.launch()
-        let scrollView = app.scrollViews["scrollview"]
         let passwordTextInput = app.secureTextFields["passwordTextInput"]
         let button = app.buttons["button"]
         
         passwordTextInput.tap()
         passwordTextInput.typeText("caveira2021")
-        scrollView.tap()
+        passwordTextInput.typeText("\n")
+        
         button.tap()
         XCTAssertEqual(app.staticTexts["errorLabel"].label, "Email is required")
     }
     
     func testGoingThroughLoginWithEmptyPassword() {
         app.launch()
-        let scrollView = app.scrollViews["scrollview"]
         let emailTextInput = app.textFields["emailTextInput"]
         let button = app.buttons["button"]
         
         emailTextInput.tap()
         emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
-        scrollView.tap()
+        emailTextInput.typeText("\n")
+        
         button.tap()
         XCTAssertEqual(app.staticTexts["errorLabel"].label, "Password is required")
     }

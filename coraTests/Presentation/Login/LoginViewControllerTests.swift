@@ -26,9 +26,7 @@ class LoginViewControllerTests: XCTestCase {
         loginViewController.button = .init()
         loginViewController.loading = .init()
         
-        loginViewController.userNameLabel = .init()
-        loginViewController.ordersLabel = .init()
-        loginViewController.ordersAmountLabel = .init()
+        loginViewController.loginHeaderView = .init(userName: "user", ordersSum: "10", ordersDescription: "some description")
 
         loginViewController.delegate = coordinator
         loginViewController.viewModel = viewModel
@@ -83,9 +81,7 @@ class LoginViewControllerTests: XCTestCase {
         viewModel.onUpdated?(.authenticated)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            XCTAssert(self.loginViewController.userNameLabel.text != nil)
-            XCTAssert(self.loginViewController.ordersLabel.text != nil)
-            XCTAssert(self.loginViewController.ordersAmountLabel.text != nil)
+            XCTAssert(self.loginViewController.loginHeaderView != nil)
         }
     }
 

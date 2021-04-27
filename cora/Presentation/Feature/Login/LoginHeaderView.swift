@@ -19,20 +19,23 @@ class LoginHeaderview: UIView {
         self.userName = userName
         self.ordersSum = ordersSum
         self.ordersDescription = ordersDescription
-        super.init(frame: .zero)
+        super.init(frame: .zeroForAccessibility)
     }
     
-    required init?(coder: NSCoder) {
+    required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func makeView() {
-        userNameLabel = UILabel()
+        self.isAccessibilityElement = false
+        
+        userNameLabel = UILabel(frame: .zeroForAccessibility)
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.text = "Hello".localized + ", \(userName)"
         userNameLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         userNameLabel.font = UIFont.systemFont(ofSize: 14.dp)
         userNameLabel.textAlignment = .right
+        userNameLabel.isAccessibilityElement = true
         userNameLabel.accessibilityIdentifier = "userNameLabel"
         self.addSubview(userNameLabel)
         

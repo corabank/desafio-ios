@@ -86,7 +86,6 @@ extension LoginViewController {
         scrollView.contentSize = CGSize(width: scrollView.frame.width,
                                         height: UIScreen.main.bounds.height)
         scrollView.keyboardDismissMode = .onDrag
-        scrollView.accessibilityIdentifier = "scrollview"
         
         // main stack
         mainStack = UIStackView()
@@ -104,12 +103,14 @@ extension LoginViewController {
         // email text field
         emailTextInput = .custom(withIdentifier: "emailTextInput",
                                               withPlaceholder: "Fill your email".localized)
+        emailTextInput.delegate = self
         mainStack.addArrangedSubview(emailTextInput)
         
         // password text field
         passwordTextInput = .custom(withIdentifier: "passwordTextInput",
                                                  withPlaceholder: "Fill your password".localized)
         passwordTextInput.isSecureTextEntry = true
+        passwordTextInput.delegate = self
         mainStack.addArrangedSubview(passwordTextInput)
         
         // error label
