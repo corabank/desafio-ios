@@ -10,12 +10,10 @@ import SwiftyMocky
 @testable import cora
 
 class OrdersUseCaseTests: XCTestCase {
-
     var user: User!
     var orders: [Order]!
     var ordersRepository: OrdersRepositoryProtocolMock!
     var ordersPresenter: OrdersPresenterMock!
-
     var useCase: OrdersUseCase!
 
     override func setUp() {
@@ -55,9 +53,7 @@ class OrdersUseCaseTests: XCTestCase {
             )
         )
 
-        
         useCase.run(userID: user.id)
-
         ordersPresenter.verify(.loading())
         ordersPresenter.verify(.failure())
         ordersPresenter.verify(.failure(), count: 1)

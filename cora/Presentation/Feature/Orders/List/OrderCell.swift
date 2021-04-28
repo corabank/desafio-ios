@@ -39,7 +39,7 @@ class OrderCell: UITableViewCell {
 
         orderTitle.text = order.value.toCurrency
         orderDescription.text = order.description
-        let days = order.dueDate.daysBetween(date: Date())
+        let days = order.dueDate.numberOfDaysTilToday
         orderDate.text = days == 0
             ? "today".localized
             : "\(days) " + "day".localized + "\(days != 1 ? "s" : "") " + "ago".localized

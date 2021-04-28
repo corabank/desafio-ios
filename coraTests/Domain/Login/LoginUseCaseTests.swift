@@ -10,11 +10,9 @@ import SwiftyMocky
 @testable import cora
 
 class LoginUseCaseTests: XCTestCase {
-
     var user: User!
     var loginRepository: LoginRepositoryProtocolMock!
     var loginPresenter: LoginPresenterMock!
-
     var useCase: LoginUseCase!
 
     override func setUp() {
@@ -35,15 +33,13 @@ class LoginUseCaseTests: XCTestCase {
                 completionHandler: .any,
                 perform: { (email, password, completionHandler) in
                     completionHandler(.success(self.user))
-            }
+                }
             )
         )
     }
 
     func test_login_should_return_a_valid_user() throws {
-
         loginRepositoryPerfomLogin()
-
         useCase.execute(email: "test@email.com", password: "123test")
 
         loginPresenter.verify(.authenticating())
@@ -64,7 +60,6 @@ class LoginUseCaseTests: XCTestCase {
         )
 
         useCase.execute(email: "wrong_test@email.com", password: "123test_wrong")
-
         loginPresenter.verify(.authenticating())
         loginPresenter.verify(.loginError(error: .value(.wrongEmailOrPassword)))
         loginPresenter.verify(.loginError(error: .any), count: 1)
@@ -84,7 +79,6 @@ class LoginUseCaseTests: XCTestCase {
         )
 
         useCase.execute(email: "wrong_test@", password: "123test_wrong")
-
         loginPresenter.verify(.loginError(error: .value(.invalidEmail)))
         loginPresenter.verify(.loginError(error: .any), count: 1)
         loginPresenter.verify(.authenticating(), count: 0)

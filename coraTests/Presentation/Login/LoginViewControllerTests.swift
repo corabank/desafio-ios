@@ -9,28 +9,22 @@ import XCTest
 @testable import cora
 
 class LoginViewControllerTests: XCTestCase {
-
     var loginViewController: LoginViewController!
     let viewModel = LoginViewModelProtocolMock()
     let coordinator = LoginViewControllerDelegateMock()
 
     override func setUp() {
         super.setUp()
-
         loginViewController = LoginViewController()
-                
         loginViewController.mainStack = .init()
         loginViewController.emailTextInput = .init()
         loginViewController.passwordTextInput = .init()
         loginViewController.errorLabel = .init()
         loginViewController.button = .init()
         loginViewController.loading = .init()
-        
         loginViewController.loginHeaderView = .init(userName: "user", ordersSum: "10", ordersDescription: "some description")
-
         loginViewController.delegate = coordinator
         loginViewController.viewModel = viewModel
-
         loginViewController.viewDidLoad()
         loginViewController.viewWillAppear(false)
     }
@@ -41,7 +35,6 @@ class LoginViewControllerTests: XCTestCase {
         loginViewController.emailTextInput.text = email
         loginViewController.passwordTextInput.text = password
         loginViewController.button.sendActions(for: .touchUpInside)
-        
         XCTAssertEqual(viewModel.email, email)
         XCTAssertEqual(viewModel.password, password)
     }

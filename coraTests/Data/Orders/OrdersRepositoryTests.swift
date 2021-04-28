@@ -11,7 +11,6 @@ import SwiftyMocky
 
 class OrdersRepositoryTests: XCTestCase {
     var ordersDTO: [OrderDTO] = []
-
     var ordersDataSource: OrdersDataSourceProtocolMock!
     var ordersRepository: OrdersRepository!
     
@@ -38,7 +37,6 @@ class OrdersRepositoryTests: XCTestCase {
         }))
         
         let orders = try fetchOrders()
-        
         XCTAssertEqual(orders?.count, 100)
         ordersDataSource.verify(.fetchOrders(userID: .any, completionHandler: .any))
     }

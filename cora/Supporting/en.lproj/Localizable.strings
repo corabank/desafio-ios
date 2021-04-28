@@ -22,6 +22,7 @@
 
 // MARK: Order Detail
 
+"Detail" = "Detail";
 "Buyer" = "Buyer";
 "Created at" = "Created at";
 "Billing Resume" = "Billing Resume";

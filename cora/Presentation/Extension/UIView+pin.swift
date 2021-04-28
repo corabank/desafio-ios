@@ -8,6 +8,8 @@
 import UIKit
 
 extension UIView {
+    /// Applies to the element the same size of the view passed as parameter
+    /// - Parameter superview: UIView
     func pin(to superview: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
 

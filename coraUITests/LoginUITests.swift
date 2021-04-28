@@ -77,10 +77,12 @@ class LoginUITests: XCTestCase {
         let emailTextInput = app.textFields["emailTextInput"]
         emailTextInput.tap()
         emailTextInput.typeText("wrong@mail.com")
+        emailTextInput.typeText("\n")
         
         let passwordTextInput = app.secureTextFields["passwordTextInput"]
         passwordTextInput.tap()
         passwordTextInput.typeText("caveira2021")
+        passwordTextInput.typeText("\n")
         
         app.buttons["button"].tap()
         
@@ -102,11 +104,12 @@ class LoginUITests: XCTestCase {
         let emailTextInput = app.textFields["emailTextInput"]
         emailTextInput.tap()
         emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
+        emailTextInput.typeText("\n")
         
         let passwordTextInput = app.secureTextFields["passwordTextInput"]
         passwordTextInput.tap()
         passwordTextInput.typeText("wrongpassword")
-        
+        passwordTextInput.typeText("\n")
         app.buttons["button"].tap()
         
         let existsPredicate = NSPredicate(format: "label BEGINSWITH 'Invalid email or password'")

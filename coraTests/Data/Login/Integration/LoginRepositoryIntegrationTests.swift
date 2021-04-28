@@ -11,7 +11,6 @@ import XCTest
 class LoginRepositoryIntegrationTests: XCTestCase {
     var loginDataSource: LoginDataSource!
     var loginRepository: LoginRepository!
-    
     let timeout = 120.0
 
     override func setUp() {

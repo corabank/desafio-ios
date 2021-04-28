@@ -9,8 +9,6 @@ import UIKit
 
 class AnimatedLogoView: UIView {
     private var logo: UIImageView!
-    
-    // Logo Constraints
     private var logoWidthConstraint: NSLayoutConstraint!
     private var logoHeightConstraint: NSLayoutConstraint!
     private var logoCenterXConstraint: NSLayoutConstraint!
@@ -39,6 +37,7 @@ class AnimatedLogoView: UIView {
         ])
     }
     
+    /// Changes logo constraints when is fired
     func updateConstraintsToAnimate() {
         NSLayoutConstraint.deactivate([
             logoWidthConstraint,
@@ -60,6 +59,7 @@ class AnimatedLogoView: UIView {
         ])
     }
     
+    /// Animates the constraint changing
     func animate() {
         self.updateConstraintsToAnimate()
         UIView.transition(

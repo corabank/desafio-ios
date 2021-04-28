@@ -13,12 +13,9 @@ protocol OrdersViewControllerDelegate: class {
 }
 
 class OrdersViewController: UIViewController {
+    weak var delegate: OrdersViewControllerDelegate?
     var viewModel: OrdersViewModelProtocol?
-    
-    // needs strong reference to be used in tableview
-    var delegate: OrdersViewControllerDelegate?
     var orderID: UUID?
-    
     var tableView = UITableView()
     var tableViewHeightConstraint: NSLayoutConstraint!
     var orders = [Order]()
@@ -38,7 +35,6 @@ class OrdersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         viewModel?.onUpdated = handleState
     }
     
@@ -47,6 +43,10 @@ class OrdersViewController: UIViewController {
         view.frame = CGRect(x: 0, y: 175.dp,
                             width: UIScreen.main.bounds.width,
                             height: tableView.contentSize.height)
+    }
+    
+    func showDetail(order: Order) {
+        delegate?.showDetail(order: order)
     }
     
     func handleState(state: OrdersViewModelState) {
@@ -140,7 +140,7 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.showDetail(order: self.orders[indexPath.row])
+        self.showDetail(order: self.orders[indexPath.row])
     }
 }
 

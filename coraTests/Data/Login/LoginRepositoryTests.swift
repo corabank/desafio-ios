@@ -11,10 +11,8 @@ import SwiftyMocky
 
 class LoginRepositoryTests: XCTestCase {
     var userDTO: UserDTO!
-
     let email = "john.due@mail.com"
     let password = "lorem"
-
     var loginDataSource: LoginDataSourceProtocolMock!
     var loginRepository: LoginRepository!
     
@@ -48,9 +46,7 @@ class LoginRepositoryTests: XCTestCase {
         }))
         
         let user = try login()
-        
         XCTAssertEqual(user?.email, "john.due@mail.com")
-
         loginDataSource.verify(.login(email: .any, password: .any, completionHandler: .any))
     }
     

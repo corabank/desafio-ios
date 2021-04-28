@@ -73,6 +73,7 @@
 		E3B59320263111D2006F189C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B5931F263111D2006F189C /* LaunchScreen.storyboard */; };
 		E3CE819B263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE819A263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift */; };
 		E3CE81AB263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE81AA263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift */; };
+		E3CE81B02638DCD100B95CA6 /* UIImageView+withCustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE81AF2638DCD100B95CA6 /* UIImageView+withCustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		E3B5931F263111D2006F189C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3CE819A263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+withUITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		E3CE81AA263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+withZeroForAccessibility.swift"; sourceTree = "<group>"; };
+		E3CE81AF2638DCD100B95CA6 /* UIImageView+withCustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+withCustomImageView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -521,6 +523,7 @@
 				E367F7A626374F57002124EE /* UILabel+withCustoms.swift */,
 				E367F7AE26374FB9002124EE /* UIButton+withLoginButton.swift */,
 				E3CE81AA263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift */,
+				E3CE81AF2638DCD100B95CA6 /* UIImageView+withCustomImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 				E3786CC5262A326E00AE0CBE /* OrdersViewController.swift in Sources */,
 				E3786C0E262A2EC100AE0CBE /* AppDelegate.swift in Sources */,
 				E3786C56262A2F8500AE0CBE /* LoginDataSourceProtocol.swift in Sources */,
+				E3CE81B02638DCD100B95CA6 /* UIImageView+withCustomImageView.swift in Sources */,
 				E367F7B7263751D8002124EE /* LoginHeaderView.swift in Sources */,
 				E3786CAB262A31AA00AE0CBE /* LoginRepositoryProtocol.swift in Sources */,
 				E3786CA1262A317400AE0CBE /* LoginPresenter.swift in Sources */,

@@ -8,9 +8,8 @@
 import UIKit
 
 extension String {
-    /// localized
-    /// - Returns localized string based on devices language supported by the app
-    /// - Important: Only supporting localization for English and Portugues (Brazil)
+    /// Localize strings based on devices language supported by the app
+    /// - Important: Only supporting localization for English and Portuguese (Brazil)
     var localized: String {
         NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
     }

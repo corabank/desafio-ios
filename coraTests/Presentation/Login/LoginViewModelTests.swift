@@ -50,44 +50,37 @@ class LoginViewModelTests: XCTestCase {
         }))
 
         loginViewModel.login()
-
         XCTAssertEqual(loginViewModel.state, LoginViewModelState.invalidEmail)
     }
 
 
     func testLoginWhenUseCaseReturnAuthenticating() throws {
-
         useCase.perform(.execute(email: .any, password: .any, perform: { (email, password) in
             self.useCase.presenter?.authenticating()
         }))
 
         loginViewModel.login()
-
         XCTAssertEqual(loginViewModel.state, LoginViewModelState.authenticating)
     }
 
     func testLoginWhenUseCaseReturnAuthenticated() throws {
-
         let user = User(name: "John", email: "john@due.com")
         useCase.perform(.execute(email: .any, password: .any, perform: { (email, password) in
             self.useCase.presenter?.loginSuccess(user: user)
         }))
 
         loginViewModel.login()
-
         XCTAssertEqual(loginViewModel.state, LoginViewModelState.authenticated)
         XCTAssertEqual(State.shared.user?.id, user.id)
         XCTAssertEqual(State.shared.user?.orders.count, 0)
     }
 
     func testLoginWhenUseCaseReturnAPIFailure() throws {
-
         useCase.perform(.execute(email: .any, password: .any, perform: { (email, password) in
             self.useCase.presenter?.loginError(error: .wrongEmailOrPassword)
         }))
 
         loginViewModel.login()
-
         XCTAssertEqual(loginViewModel.state, LoginViewModelState.wrongEmailAndPassword)
     }
 }

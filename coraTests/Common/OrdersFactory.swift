@@ -48,7 +48,6 @@ class OrdersFactory {
                 )
             )
         }
-        
         return factory
     }
 }
