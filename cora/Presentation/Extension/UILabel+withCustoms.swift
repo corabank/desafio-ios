@@ -26,7 +26,7 @@ extension UILabel {
     /// - Parameter text: String
     /// - Parameter fontSize: CGFloat
     /// - Parameter isBold: Bool
-    static func customLabel(textColor: UIColor = #colorLiteral(red: 0.4198806882, green: 0.4239129424, blue: 0.4195774794, alpha: 1),
+    static func customLabel(textColor: UIColor? = .detailLabelDescriptionColor,
                             text: String = "",
                             fontSize: CGFloat = 12.dp,
                             isBold: Bool = false) -> UILabel {

@@ -59,6 +59,8 @@
 		E3786CCB262A329600AE0CBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCA262A329600AE0CBE /* LoginViewController.swift */; };
 		E3786CD0262A32AA00AE0CBE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */; };
 		E3786CD5262A32D800AE0CBE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CD4262A32D800AE0CBE /* Coordinator.swift */; };
+		E389F107263AF707006A378E /* UIColor+withColorsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389F106263AF707006A378E /* UIColor+withColorsMap.swift */; };
+		E389F113263B5373006A378E /* Controller+withKeyboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389F112263B5373006A378E /* Controller+withKeyboardActions.swift */; };
 		E39477A32634A33200DCBF26 /* MakeLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477A22634A33200DCBF26 /* MakeLogin.swift */; };
 		E39477AB2634FE6F00DCBF26 /* OrdersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477AA2634FE6F00DCBF26 /* OrdersUITests.swift */; };
 		E3AFE5DF2637837F00B5A828 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFE5DE2637837F00B5A828 /* LogoView.swift */; };
@@ -162,6 +164,8 @@
 		E3786CCA262A329600AE0CBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3786CD4262A32D800AE0CBE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E389F106263AF707006A378E /* UIColor+withColorsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+withColorsMap.swift"; sourceTree = "<group>"; };
+		E389F112263B5373006A378E /* Controller+withKeyboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withKeyboardActions.swift"; sourceTree = "<group>"; };
 		E39477A22634A33200DCBF26 /* MakeLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLogin.swift; sourceTree = "<group>"; };
 		E39477AA2634FE6F00DCBF26 /* OrdersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrdersUITests.swift; path = coraUITests/OrdersUITests.swift; sourceTree = SOURCE_ROOT; };
 		E3AFE5DE2637837F00B5A828 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -530,6 +534,7 @@
 				E367F7AE26374FB9002124EE /* UIButton+withLoginButton.swift */,
 				E3CE81AA263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift */,
 				E3CE81AF2638DCD100B95CA6 /* UIImageView+withCustomImageView.swift */,
+				E389F106263AF707006A378E /* UIColor+withColorsMap.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 				E3CE819A263895A900B95CA6 /* Controller+withUITextFieldDelegate.swift */,
 				E3CE81C72639D71D00B95CA6 /* Controller+withHandleViewModelUpdates.swift */,
 				E3CE81CC2639D88100B95CA6 /* Controller+withMakeViews.swift */,
+				E389F112263B5373006A378E /* Controller+withKeyboardActions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -908,6 +914,7 @@
 				E3B592A9262DB751006F189C /* OrderDetailViewModel.swift in Sources */,
 				E3786C7F262A309300AE0CBE /* OrdersDataSourceProtocol.swift in Sources */,
 				E367F7AF26374FB9002124EE /* UIButton+withLoginButton.swift in Sources */,
+				E389F113263B5373006A378E /* Controller+withKeyboardActions.swift in Sources */,
 				E3B592DB262EF947006F189C /* State.swift in Sources */,
 				E31DB329262B63BA00CD6A0E /* Date+withDaysBetween.swift in Sources */,
 				E3786CBC262A320700AE0CBE /* OrdersRepositoryProtocol.swift in Sources */,
@@ -934,6 +941,7 @@
 				E367F7B7263751D8002124EE /* LoginHeaderView.swift in Sources */,
 				E3786CAB262A31AA00AE0CBE /* LoginRepositoryProtocol.swift in Sources */,
 				E3CE81C82639D71D00B95CA6 /* Controller+withHandleViewModelUpdates.swift in Sources */,
+				E389F107263AF707006A378E /* UIColor+withColorsMap.swift in Sources */,
 				E3CE81CD2639D88100B95CA6 /* Controller+withMakeViews.swift in Sources */,
 				E3786CA1262A317400AE0CBE /* LoginPresenter.swift in Sources */,
 				E3786C8D262A30F900AE0CBE /* User.swift in Sources */,

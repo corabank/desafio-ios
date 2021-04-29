@@ -27,6 +27,7 @@ class OrderCell: UITableViewCell {
         if order != nil {
             self.accessibilityIdentifier = order.id.uuidString
         }
+
         makeView()
     }
 
@@ -66,16 +67,20 @@ class OrderCell: UITableViewCell {
         orderImage.translatesAutoresizingMaskIntoConstraints = false
         orderImage.image = UIImage(named: "creditcard.circle.fill")?
             .withRenderingMode(.automatic)
-        orderImage.tintColor = #colorLiteral(red: 0.2040163577, green: 0.3045359552, blue: 0.3877969384, alpha: 1)
+        orderImage.tintColor = .cellImageColor
         orderImage.contentMode = .scaleAspectFit
-        orderImage.layer.opacity = 0.45
+        if #available(iOS 12.0, *) {
+            orderImage.layer.opacity = traitCollection.userInterfaceStyle == .dark ? 0.85 : 0.45
+        } else {
+            orderImage.layer.opacity = 0.45
+        }
     }
 
     fileprivate func configureTitleLabel() {
         orderTitle.translatesAutoresizingMaskIntoConstraints = false
         orderTitle.numberOfLines = 0
         orderTitle.adjustsFontSizeToFitWidth = true
-        orderTitle.textColor = #colorLiteral(red: 0.1580600441, green: 0.1580889821, blue: 0.1580537558, alpha: 1)
+        orderTitle.textColor = .cellTitleColor
         orderTitle.font = UIFont.boldSystemFont(ofSize: 14.dp)
     }
 
@@ -83,7 +88,7 @@ class OrderCell: UITableViewCell {
         orderDescription.translatesAutoresizingMaskIntoConstraints = false
         orderDescription.numberOfLines = 0
         orderDescription.adjustsFontSizeToFitWidth = true
-        orderDescription.textColor = #colorLiteral(red: 0.4198806882, green: 0.4239129424, blue: 0.4195774794, alpha: 1)
+        orderDescription.textColor = .cellDescriptionColor
         orderDescription.font = UIFont.systemFont(ofSize: 11.dp)
     }
 
@@ -107,7 +112,7 @@ class OrderCell: UITableViewCell {
         orderDate.translatesAutoresizingMaskIntoConstraints = false
         orderDate.numberOfLines = 0
         orderDate.adjustsFontSizeToFitWidth = true
-        orderDate.textColor = #colorLiteral(red: 0.4481066465, green: 0.4479940534, blue: 0.4521933794, alpha: 1)
+        orderDate.textColor = .cellDateColor
         orderDate.font = UIFont.systemFont(ofSize: 10.dp)
     }
 

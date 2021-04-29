@@ -32,7 +32,7 @@ class LoginHeaderview: UIView {
         userNameLabel = UILabel(frame: .zeroForAccessibility)
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.text = "Hello".localized + ", \(userName)"
-        userNameLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        userNameLabel.textColor = .userNameColor
         userNameLabel.font = UIFont.systemFont(ofSize: 14.dp)
         userNameLabel.textAlignment = .right
         userNameLabel.isAccessibilityElement = true
@@ -42,7 +42,7 @@ class LoginHeaderview: UIView {
         ordersLabel = UILabel()
         ordersLabel.translatesAutoresizingMaskIntoConstraints = false
         ordersLabel.text = "Orders".localized
-        ordersLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        ordersLabel.textColor = .ordersTitleColor
         ordersLabel.font = UIFont.boldSystemFont(ofSize: 22.dp)
         ordersLabel.textAlignment = .left
         self.addSubview(ordersLabel)
@@ -53,7 +53,7 @@ class LoginHeaderview: UIView {
             + "orders".localized
             + ", " + "totaling".localized
             + " \(ordersDescription)"
-        ordersAmountLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        ordersAmountLabel.textColor = .ordersDescriptionColor
         ordersAmountLabel.font = UIFont.systemFont(ofSize: 14.dp)
         ordersAmountLabel.textAlignment = .left
         self.addSubview(ordersAmountLabel)

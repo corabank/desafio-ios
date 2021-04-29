@@ -26,7 +26,8 @@ post_install do |installer_representation|
   installer_representation.pods_project.targets.each do |target|
       target.build_configurations.each do |config|
           config.build_settings['CLANG_ENABLE_CODE_COVERAGE'] = 'NO'
-          config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'No'
+          config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
       end
   end
 end

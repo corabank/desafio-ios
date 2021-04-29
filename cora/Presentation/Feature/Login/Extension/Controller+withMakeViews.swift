@@ -9,9 +9,19 @@ import UIKit
 
 extension LoginViewController {
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if #available(iOS 12.0, *) {
+            let image = UIImage(named: "background")?
+                .resized(to: UIScreen.main.bounds.size)
+            self.view.backgroundColor = UIColor(patternImage: image!)
+        }
+    }
+    
     func makeView() {
-        let backgroundImage = UIImage(named: "background-2")!.resized(to: UIScreen.main.bounds.size)!
-        self.view.backgroundColor = UIColor(patternImage: backgroundImage)
+        let image = UIImage(named: "background")?
+            .resized(to: UIScreen.main.bounds.size)
+        self.view.backgroundColor = UIColor(patternImage: image!)
         
         // scrolliew
         scrollView = UIScrollView(frame: CGRect(x: 10,
@@ -39,13 +49,13 @@ extension LoginViewController {
         
         // email text field
         emailTextInput = .custom(withIdentifier: "emailTextInput",
-                                              withPlaceholder: "Fill your email".localized)
+                                 withPlaceholder: "Fill your email".localized)
         emailTextInput.delegate = self
         mainStack.addArrangedSubview(emailTextInput)
         
         // password text field
         passwordTextInput = .custom(withIdentifier: "passwordTextInput",
-                                                 withPlaceholder: "Fill your password".localized)
+                                    withPlaceholder: "Fill your password".localized)
         passwordTextInput.isSecureTextEntry = true
         passwordTextInput.delegate = self
         mainStack.addArrangedSubview(passwordTextInput)
@@ -81,8 +91,8 @@ extension LoginViewController {
             }
             
             self.loginHeaderView = LoginHeaderview(userName: State.shared.user?.name ?? "",
-                                              ordersSum: ordersSum.description,
-                                              ordersDescription: ordersValueSum.toCurrency)
+                                                   ordersSum: ordersSum.description,
+                                                   ordersDescription: ordersValueSum.toCurrency)
             self.loginHeaderView.layer.opacity = 0.1
             self.scrollView.addSubview(self.loginHeaderView)
             self.loginHeaderView.moveHeaderTitles()

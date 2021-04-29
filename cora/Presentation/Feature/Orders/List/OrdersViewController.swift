@@ -120,7 +120,7 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orderCell) as? OrderCell
         let cellBackgroundView = UIView()
         
-        cellBackgroundView.backgroundColor = #colorLiteral(red: 0.9731822688, green: 0.9731822688, blue: 0.9731822688, alpha: 1)
+        cellBackgroundView.backgroundColor = .selectedCellBackgroundColor
         cell?.selectedBackgroundView = cellBackgroundView
         cell?.set(order: order)
         self.tableView.sizeToFit()

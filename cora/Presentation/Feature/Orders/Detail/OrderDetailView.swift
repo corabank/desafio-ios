@@ -51,7 +51,10 @@ class OrderDetailview: UIView {
     private var myReceiveValueLabel: UILabel!
     
     func makeTopView() {
-        title = .customLabel(textColor: .black, text: "Detail".localized, fontSize: 22, isBold: true)
+        self.backgroundColor = .detailBackgroundColor
+        title = .customLabel(textColor: .detailTitleColor,
+                             text: "Detail".localized,
+                             fontSize: 22, isBold: true)
         self.addSubview(title)
 
         // paymentView
@@ -64,7 +67,7 @@ class OrderDetailview: UIView {
         
         // paymentValueLabel
         paymentValueLabel = .customLabel(
-            textColor: #colorLiteral(red: 0.1580600441, green: 0.1580889821, blue: 0.1580537558, alpha: 1),
+            textColor: .detailValueColor,
             text: viewModel?.order.value.toCurrency ?? "",
             fontSize: 12.dp,
             isBold: true)
@@ -85,7 +88,7 @@ class OrderDetailview: UIView {
         buyerView.addSubview(buyerImageView)
         
         // buyerLabel
-        buyerLabel = .customLabel(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Buyer".localized, fontSize: 8.dp)
+        buyerLabel = .customLabel(textColor: .detailLabelTitleColor, text: "Buyer".localized, fontSize: 8.dp)
         buyerView.addSubview(buyerLabel)
         
         // buyerNameLabel
@@ -102,7 +105,7 @@ class OrderDetailview: UIView {
         emailView.addSubview(emailImageView)
         
         // emailLabel
-        emailLabel = .customLabel(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Email", fontSize: 8.dp)
+        emailLabel = .customLabel(textColor: .detailLabelTitleColor, text: "Email", fontSize: 8.dp)
         emailView.addSubview(emailLabel)
         
         // emailValueLabel
@@ -119,7 +122,9 @@ class OrderDetailview: UIView {
         createdView.addSubview(createdImageView)
         
         // createdAtLabel
-        createdAtLabel = .customLabel(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Created at".localized, fontSize: 8.dp)
+        createdAtLabel = .customLabel(textColor: .detailLabelTitleColor,
+                                      text: "Created at".localized,
+                                      fontSize: 8.dp)
         createdView.addSubview(createdAtLabel)
         
         // emailValueLabel
@@ -140,7 +145,7 @@ class OrderDetailview: UIView {
         statusView.addSubview(statusImageView)
         
         // statusLabel
-        statusLabel = .customLabel(textColor: #colorLiteral(red: 0.5879337788, green: 0.5960012078, blue: 0.604257524, alpha: 1), text: "Status", fontSize: 8.dp)
+        statusLabel = .customLabel(textColor: .detailLabelTitleColor, text: "Status", fontSize: 8.dp)
         statusView.addSubview(statusLabel)
         
         // emailValueLabel
@@ -172,13 +177,13 @@ class OrderDetailview: UIView {
     }
     
     func makeResumeView() {
-        resumeLabel = .customLabel(textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), text: "Billing Resume".localized,
+        resumeLabel = .customLabel(textColor: .detailBillingTitleColor, text: "Billing Resume".localized,
                                    fontSize: 13.dp, isBold: true)
         self.addSubview(resumeLabel)
         
         resumeView = UIView()
         resumeView.translatesAutoresizingMaskIntoConstraints = false
-        resumeView.backgroundColor = #colorLiteral(red: 0.637691319, green: 0.6857426763, blue: 0.7274500728, alpha: 1)
+        resumeView.backgroundColor = .detailBillingBackgroundColor
         
         totalAmountLabel = .customLabel(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "Total value".localized, fontSize: 12.dp)
         totalAmountValueLabel = .customLabel(textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),

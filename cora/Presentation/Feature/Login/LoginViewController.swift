@@ -18,16 +18,12 @@ class LoginViewController: UIViewController {
 
     var logoView: LogoView!
     var scrollView: UIScrollView!
-    
-    // Login
     var mainStack: UIStackView!
     var emailTextInput: UITextField!
     var passwordTextInput: UITextField!
     var errorLabel: UILabel!
     var button: UIButton!
     var loading: UIActivityIndicatorView!
-    
-    // Logged
     var loginHeaderView: LoginHeaderview!
         
     override func viewDidLoad() {
@@ -112,41 +108,5 @@ extension LoginViewController {
             loading.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20.dp),
             loading.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-    }
-    
-    // MARK: Keyboard
-    
-    func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillChange(notification:)),
-            name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide),
-            name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    @objc func keyboardWillHide() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.frame.origin.y = 0
-        })
-    }
-
-    @objc func keyboardWillChange(notification: NSNotification) {
-        if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]) != nil) {
-            if emailTextInput.isFirstResponder {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.view.frame.origin.y = -self.emailTextInput.frame.origin.y
-                })
-            }
-            
-            if passwordTextInput.isFirstResponder {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.view.frame.origin.y = -self.passwordTextInput.frame.origin.y
-                })
-            }
-        }
     }
 }
