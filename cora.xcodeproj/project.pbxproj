@@ -61,7 +61,7 @@
 		E3786CD5262A32D800AE0CBE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CD4262A32D800AE0CBE /* Coordinator.swift */; };
 		E39477A32634A33200DCBF26 /* MakeLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477A22634A33200DCBF26 /* MakeLogin.swift */; };
 		E39477AB2634FE6F00DCBF26 /* OrdersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477AA2634FE6F00DCBF26 /* OrdersUITests.swift */; };
-		E3AFE5DF2637837F00B5A828 /* AnimatedLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFE5DE2637837F00B5A828 /* AnimatedLogoView.swift */; };
+		E3AFE5DF2637837F00B5A828 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFE5DE2637837F00B5A828 /* LogoView.swift */; };
 		E3B592A9262DB751006F189C /* OrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592A8262DB750006F189C /* OrderDetailViewModel.swift */; };
 		E3B592DB262EF947006F189C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592DA262EF947006F189C /* State.swift */; };
 		E3B592EE262F0132006F189C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B592ED262F0132006F189C /* Facade.swift */; };
@@ -71,9 +71,12 @@
 		E3B5930B262FA2E6006F189C /* OrdersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B5930A262FA2E6006F189C /* OrdersViewControllerTests.swift */; };
 		E3B593102630A0F6006F189C /* Double+dp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B5930F2630A0F6006F189C /* Double+dp.swift */; };
 		E3B59320263111D2006F189C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B5931F263111D2006F189C /* LaunchScreen.storyboard */; };
-		E3CE819B263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE819A263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift */; };
+		E3CE819B263895A900B95CA6 /* Controller+withUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE819A263895A900B95CA6 /* Controller+withUITextFieldDelegate.swift */; };
 		E3CE81AB263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE81AA263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift */; };
 		E3CE81B02638DCD100B95CA6 /* UIImageView+withCustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE81AF2638DCD100B95CA6 /* UIImageView+withCustomImageView.swift */; };
+		E3CE81B52639A18600B95CA6 /* UIView+withLoginAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE81B42639A18500B95CA6 /* UIView+withLoginAnimations.swift */; };
+		E3CE81C82639D71D00B95CA6 /* Controller+withHandleViewModelUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE81C72639D71D00B95CA6 /* Controller+withHandleViewModelUpdates.swift */; };
+		E3CE81CD2639D88100B95CA6 /* Controller+withMakeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE81CC2639D88100B95CA6 /* Controller+withMakeViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,7 +164,7 @@
 		E3786CD4262A32D800AE0CBE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E39477A22634A33200DCBF26 /* MakeLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLogin.swift; sourceTree = "<group>"; };
 		E39477AA2634FE6F00DCBF26 /* OrdersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrdersUITests.swift; path = coraUITests/OrdersUITests.swift; sourceTree = SOURCE_ROOT; };
-		E3AFE5DE2637837F00B5A828 /* AnimatedLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLogoView.swift; sourceTree = "<group>"; };
+		E3AFE5DE2637837F00B5A828 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		E3B592A8262DB750006F189C /* OrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewModel.swift; sourceTree = "<group>"; };
 		E3B592DA262EF947006F189C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		E3B592ED262F0132006F189C /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
@@ -171,9 +174,12 @@
 		E3B5930A262FA2E6006F189C /* OrdersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewControllerTests.swift; sourceTree = "<group>"; };
 		E3B5930F2630A0F6006F189C /* Double+dp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+dp.swift"; sourceTree = "<group>"; };
 		E3B5931F263111D2006F189C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E3CE819A263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+withUITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		E3CE819A263895A900B95CA6 /* Controller+withUITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withUITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		E3CE81AA263898CF00B95CA6 /* CGRect+withZeroForAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+withZeroForAccessibility.swift"; sourceTree = "<group>"; };
 		E3CE81AF2638DCD100B95CA6 /* UIImageView+withCustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+withCustomImageView.swift"; sourceTree = "<group>"; };
+		E3CE81B42639A18500B95CA6 /* UIView+withLoginAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+withLoginAnimations.swift"; sourceTree = "<group>"; };
+		E3CE81C72639D71D00B95CA6 /* Controller+withHandleViewModelUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withHandleViewModelUpdates.swift"; sourceTree = "<group>"; };
+		E3CE81CC2639D88100B95CA6 /* Controller+withMakeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withMakeViews.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -553,7 +559,6 @@
 				E3AFE5E32637974200B5A828 /* Component */,
 				E3786CCA262A329600AE0CBE /* LoginViewController.swift */,
 				E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */,
-				E367F7B6263751D8002124EE /* LoginHeaderView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -569,7 +574,8 @@
 		E3AFE5E32637974200B5A828 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				E3AFE5DE2637837F00B5A828 /* AnimatedLogoView.swift */,
+				E3AFE5DE2637837F00B5A828 /* LogoView.swift */,
+				E367F7B6263751D8002124EE /* LoginHeaderView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -612,7 +618,10 @@
 		E3CE81992638957F00B95CA6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E3CE819A263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift */,
+				E3CE81B42639A18500B95CA6 /* UIView+withLoginAnimations.swift */,
+				E3CE819A263895A900B95CA6 /* Controller+withUITextFieldDelegate.swift */,
+				E3CE81C72639D71D00B95CA6 /* Controller+withHandleViewModelUpdates.swift */,
+				E3CE81CC2639D88100B95CA6 /* Controller+withMakeViews.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -902,11 +911,11 @@
 				E3B592DB262EF947006F189C /* State.swift in Sources */,
 				E31DB329262B63BA00CD6A0E /* Date+withDaysBetween.swift in Sources */,
 				E3786CBC262A320700AE0CBE /* OrdersRepositoryProtocol.swift in Sources */,
-				E3CE819B263895A900B95CA6 /* LoginViewController+withUITextFieldDelegate.swift in Sources */,
+				E3CE819B263895A900B95CA6 /* Controller+withUITextFieldDelegate.swift in Sources */,
 				E31DB324262B1A2500CD6A0E /* Double+withToCurrency.swift in Sources */,
 				E3786C84262A30B400AE0CBE /* OrdersDataSource.swift in Sources */,
 				E3786C75262A305C00AE0CBE /* Order+initWithOrderDTO.swift in Sources */,
-				E3AFE5DF2637837F00B5A828 /* AnimatedLogoView.swift in Sources */,
+				E3AFE5DF2637837F00B5A828 /* LogoView.swift in Sources */,
 				E31DB31A262B07A900CD6A0E /* UIView+pin.swift in Sources */,
 				E3786C9B262A313E00AE0CBE /* String+isValidEmail.swift in Sources */,
 				E3786CB2262A31DB00AE0CBE /* OrdersPresenter.swift in Sources */,
@@ -924,6 +933,8 @@
 				E3CE81B02638DCD100B95CA6 /* UIImageView+withCustomImageView.swift in Sources */,
 				E367F7B7263751D8002124EE /* LoginHeaderView.swift in Sources */,
 				E3786CAB262A31AA00AE0CBE /* LoginRepositoryProtocol.swift in Sources */,
+				E3CE81C82639D71D00B95CA6 /* Controller+withHandleViewModelUpdates.swift in Sources */,
+				E3CE81CD2639D88100B95CA6 /* Controller+withMakeViews.swift in Sources */,
 				E3786CA1262A317400AE0CBE /* LoginPresenter.swift in Sources */,
 				E3786C8D262A30F900AE0CBE /* User.swift in Sources */,
 				E367F79F26374E59002124EE /* UITextField+withCustom.swift in Sources */,
@@ -939,6 +950,7 @@
 				E3786CA6262A318E00AE0CBE /* LoginUseCase.swift in Sources */,
 				E31DB331262B6C3000CD6A0E /* OrdersViewModel.swift in Sources */,
 				E3B592EE262F0132006F189C /* Facade.swift in Sources */,
+				E3CE81B52639A18600B95CA6 /* UIView+withLoginAnimations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

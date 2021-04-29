@@ -207,19 +207,19 @@ class OrderDetailview: UIView {
     func setConstraints() {
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20.dp),
-            title.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 17.dp),
+            title.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 12.dp),
             
             // payment
-            paymentView.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 20.dp),
+            paymentView.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 30.dp),
             paymentView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             paymentView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
 
             paymentImageView.topAnchor.constraint(equalTo: paymentView.topAnchor, constant: 2.dp),
-            paymentImageView.leadingAnchor.constraint(equalTo: paymentView.leadingAnchor, constant: 17.dp),
+            paymentImageView.leadingAnchor.constraint(equalTo: paymentView.leadingAnchor, constant: 10.dp),
             paymentImageView.widthAnchor.constraint(equalToConstant: 36.dp),
             paymentImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            paymentValueLabel.topAnchor.constraint(equalTo: paymentView.topAnchor, constant: 3),
+            paymentValueLabel.topAnchor.constraint(equalTo: paymentView.topAnchor, constant: 6.dp),
             paymentValueLabel.leadingAnchor.constraint(equalTo: paymentImageView.trailingAnchor,
                                                        constant: 17.dp),
 
@@ -237,7 +237,7 @@ class OrderDetailview: UIView {
             buyerImageView.widthAnchor.constraint(equalToConstant: 36.dp),
             buyerImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            buyerLabel.topAnchor.constraint(equalTo: buyerView.topAnchor, constant: 34.dp),
+            buyerLabel.topAnchor.constraint(equalTo: buyerView.topAnchor, constant: 36.dp),
             buyerLabel.leadingAnchor.constraint(equalTo: buyerImageView.trailingAnchor, constant: 17.dp),
 
             buyerNameLabel.topAnchor.constraint(equalTo: buyerLabel.bottomAnchor, constant: 4.dp),
@@ -253,7 +253,7 @@ class OrderDetailview: UIView {
             emailImageView.widthAnchor.constraint(equalToConstant: 36.dp),
             emailImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            emailLabel.topAnchor.constraint(equalTo: emailView.topAnchor, constant: 44.dp),
+            emailLabel.topAnchor.constraint(equalTo: emailView.topAnchor, constant: 46.dp),
             emailLabel.leadingAnchor.constraint(equalTo: emailImageView.trailingAnchor, constant: 17.dp),
 
             emailValueLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 4.dp),
@@ -270,7 +270,7 @@ class OrderDetailview: UIView {
             createdImageView.widthAnchor.constraint(equalToConstant: 36.dp),
             createdImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            createdAtLabel.topAnchor.constraint(equalTo: createdView.topAnchor, constant: 54.dp),
+            createdAtLabel.topAnchor.constraint(equalTo: createdView.topAnchor, constant: 56.dp),
             createdAtLabel.leadingAnchor.constraint(equalTo: createdImageView.trailingAnchor,
                                                     constant: 17.dp),
 
@@ -288,7 +288,7 @@ class OrderDetailview: UIView {
             statusImageView.widthAnchor.constraint(equalToConstant: 36.dp),
             statusImageView.heightAnchor.constraint(equalToConstant: 36.dp),
 
-            statusLabel.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 65.dp),
+            statusLabel.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 67.dp),
             statusLabel.leadingAnchor.constraint(equalTo: statusImageView.trailingAnchor, constant: 17.dp),
 
             statusLabelValue.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 4.dp),
@@ -297,7 +297,7 @@ class OrderDetailview: UIView {
             
             // resume
             resumeLabel.topAnchor.constraint(equalTo: statusLabelValue.bottomAnchor, constant: 40.dp),
-            resumeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.dp),
+            resumeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12.dp),
             
             resumeView.topAnchor.constraint(equalTo: resumeLabel.bottomAnchor, constant: 15.dp),
             resumeView.leadingAnchor.constraint(equalTo: self.leadingAnchor),

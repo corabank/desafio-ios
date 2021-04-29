@@ -8,6 +8,9 @@
 import UIKit
 
 extension UITextField {
+    /// Customized UITextfield
+    /// - Parameter identifier: String
+    /// - Parameter placeholder: String
     static func custom(
         withIdentifier identifier: String? = "",
         withPlaceholder placeholder: String? = ""

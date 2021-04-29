@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIButton {
+    /// - Custom UIButton for login
     static var loginButton: UIButton {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +36,8 @@ extension UIButton {
         return button
     }
     
+    /// Adjusts space between text and image inside a UIButton
+    /// - Parameter spacing: CGFloat
     func centerTextAndImage(spacing: CGFloat) {
         let insetAmount = spacing / 2
         imageEdgeInsets = UIEdgeInsets(top: 0, left: -insetAmount, bottom: 0, right: insetAmount)

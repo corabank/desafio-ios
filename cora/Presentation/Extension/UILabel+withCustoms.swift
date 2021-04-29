@@ -8,6 +8,7 @@
 import UIKit
 
 extension UILabel {
+    /// Custom UILabel for errors
     static var errorLabel: UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +21,11 @@ extension UILabel {
         return label
     }
     
+    /// Customized UILabel
+    /// - Parameter textColor: UIColor
+    /// - Parameter text: String
+    /// - Parameter fontSize: CGFloat
+    /// - Parameter isBold: Bool
     static func customLabel(textColor: UIColor = #colorLiteral(red: 0.4198806882, green: 0.4239129424, blue: 0.4195774794, alpha: 1),
                             text: String = "",
                             fontSize: CGFloat = 12.dp,

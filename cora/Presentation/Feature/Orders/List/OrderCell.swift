@@ -76,7 +76,7 @@ class OrderCell: UITableViewCell {
         orderTitle.numberOfLines = 0
         orderTitle.adjustsFontSizeToFitWidth = true
         orderTitle.textColor = #colorLiteral(red: 0.1580600441, green: 0.1580889821, blue: 0.1580537558, alpha: 1)
-        orderTitle.font = UIFont.boldSystemFont(ofSize: 16.dp)
+        orderTitle.font = UIFont.boldSystemFont(ofSize: 14.dp)
     }
 
     fileprivate func configureDescriptionLabel() {
@@ -125,20 +125,20 @@ class OrderCell: UITableViewCell {
             /// orderImage constraints
             orderImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             orderImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 10.dp),
-            orderImage.heightAnchor.constraint(equalToConstant: 40.dp),
+            orderImage.heightAnchor.constraint(equalToConstant: 35.dp),
             orderImage.widthAnchor.constraint(equalTo: orderImage.heightAnchor),
 
             /// orderTitle constraints
-            orderTitle.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 20.dp),
-            orderTitle.topAnchor.constraint(equalTo: topAnchor, constant: 13.5.dp),
+            orderTitle.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 14.dp),
+            orderTitle.topAnchor.constraint(equalTo: topAnchor, constant: 15.7.dp),
             
             /// orderDescription ocnstraints
-            orderDescription.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 20.dp),
+            orderDescription.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 14.dp),
             orderDescription.topAnchor.constraint(equalTo: orderTitle.bottomAnchor, constant: 4.dp),
             
             /// orderStatus constraints
             orderStatus.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),
-            orderStatus.topAnchor.constraint(equalTo: topAnchor, constant: 12.dp),
+            orderStatus.topAnchor.constraint(equalTo: topAnchor, constant: 16.dp),
             
             /// orderDate constraints
             orderDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),

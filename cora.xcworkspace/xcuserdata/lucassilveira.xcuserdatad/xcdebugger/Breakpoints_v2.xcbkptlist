@@ -183,22 +183,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9F712ABE-D8A2-40F3-9198-59EBBC7EB2D0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "cora/Presentation/Feature/Login/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
-            landmarkName = "endAnimation()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E61A7F9A-8255-4992-B597-21B6693F11F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -247,32 +231,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38A403EF-A27D-4DBC-918B-D3B67241D08B"
+            uuid = "1389E2A5-141C-46D6-A042-FE5348471E89"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "cora/Presentation/Feature/Login/LoginViewController.swift"
+            filePath = "cora/Presentation/Extension/Double+withToCurrency.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "makeHeaderView()"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "toCurrency"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA593AED-1C11-46DB-8411-ACE276B22A0B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "coraUITests/LoginUITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testGoingThrougASuccessfullLogin()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "974EA1F3-2598-4F94-8A38-697B95C4CD7D"
+            uuid = "72011BC3-B03D-49C6-81B1-AD7D43E3AC94"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "cora/Presentation/Feature/Login/LoginViewController.swift"
+            filePath = "coraUITests/LoginUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "makeHeaderView()"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "testGoingThrougASuccessfullLogin()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

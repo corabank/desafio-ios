@@ -7,9 +7,7 @@
 
 import Foundation
 
-/// State.shared.user
-/// - Singleton:
-/// State.shared.user
+/// Shared user state
 class State {
     var user: User?
     static var shared = State()

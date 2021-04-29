@@ -49,7 +49,6 @@ class OrderDetailViewcontroller: UIViewController {
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            // back button
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.dp),
             backButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
                                                 constant: -20.dp)

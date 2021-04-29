@@ -6,7 +6,6 @@ target 'cora' do
   use_frameworks!
 
   # Pods for cora
-  pod 'ViewAnimator', '2.7.1'
   pod 'SwiftLint'
   pod 'Swinject', '2.7.1'
 

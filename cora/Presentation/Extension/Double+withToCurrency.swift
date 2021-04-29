@@ -8,14 +8,15 @@
 import Foundation
 
 extension Double {
-    /// Returns currency string based on device region
-    /// - Locale is based on devices region, not prefered language.
+    /// Returns currency string based on device's language and region configuration
     var toCurrency: String {
         let currencyFormatter = NumberFormatter()
+        let locale: Locale = Locale.current.identifier == "en" ? .init(identifier: "en_US") : .current
+        
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.current
+        currencyFormatter.locale = locale
         
-        return currencyFormatter.string(from: NSNumber(value: self)) ?? ""
+        return currencyFormatter.string(from: NSNumber(value: self))!
     }
 }
