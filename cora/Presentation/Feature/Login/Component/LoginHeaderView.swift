@@ -46,6 +46,7 @@ class LoginHeaderview: UIView {
         ordersLabel.font = UIFont.boldSystemFont(ofSize: 22.dp)
         ordersLabel.textAlignment = .left
         self.addSubview(ordersLabel)
+        ordersLabel.isHidden = ordersDescription == 0.toCurrency
         
         ordersAmountLabel = UILabel()
         ordersAmountLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +58,7 @@ class LoginHeaderview: UIView {
         ordersAmountLabel.font = UIFont.systemFont(ofSize: 14.dp)
         ordersAmountLabel.textAlignment = .left
         self.addSubview(ordersAmountLabel)
+        ordersAmountLabel.isHidden = ordersDescription == 0.toCurrency
     }
     
     func setConstraints() {

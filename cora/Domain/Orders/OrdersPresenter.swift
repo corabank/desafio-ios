@@ -8,7 +8,7 @@
 import Foundation
 
 //sourcery: AutoMockable
-protocol OrdersPresenter: class {
+protocol OrdersPresenter: AnyObject {
     func loading()
     func success(orders: [Order])
     func failure()

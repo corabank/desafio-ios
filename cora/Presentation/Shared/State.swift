@@ -10,6 +10,7 @@ import Foundation
 /// Shared user state
 class State {
     var user: User?
+//    var loading: Bool = false
     static var shared = State()
     
     private init() {}

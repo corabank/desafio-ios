@@ -8,7 +8,7 @@
 import Foundation
 
 //sourcery: AutoMockable
-protocol LoginPresenter: class {
+protocol LoginPresenter: AnyObject {
     func authenticating()
     func loginSuccess(user: User)
     func loginError(error: LoginUseCaseError)

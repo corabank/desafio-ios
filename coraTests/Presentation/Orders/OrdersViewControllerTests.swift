@@ -29,15 +29,9 @@ class OrdersViewControllerTests: XCTestCase {
         ordersViewController.viewWillAppear(false)
     }
     
-
-    func testWhenOrdersLoading() throws {
-        viewModel.onUpdated?(.loading)
-//        XCTAssertEqual(loginViewController.load.text, "O email é obrigatório")
-    }
-    
-    func testWhenOrdersHasFailure() throws {
-        viewModel.onUpdated?(.failure)
-//        XCTAssertEqual(loginViewController.load.text, "O email é obrigatório")
+    func testWhenOrdersEmpty() throws {
+        viewModel.onUpdated?(.empty)
+        XCTAssertEqual(ordersViewController.orders.count, 0)
     }
     
     func testWhenOrdersAreLoaded() throws {

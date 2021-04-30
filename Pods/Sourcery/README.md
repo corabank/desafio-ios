@@ -7,49 +7,31 @@
 
 <img src="Resources/icon-128.png">
 
-**Sourcery** is a code generator for Swift language, built on top of Apple's own SwiftSyntax. It extends the language abstractions to allow you to generate boilerplate code automatically.
+**Sourcery** is a code generator for Swift language, built on top of Apple's own SourceKit. It extends the language abstractions to allow you to generate boilerplate code automatically.
 
-It's used in over 40,000 projects on both iOS and macOS and it powers some of the most popular and critically-acclaimed apps you have used (including Airbnb, Bumble, New York Times). Its massive community adoption was one of the factors that pushed Apple to implement derived Equality and automatic Codable conformance. Sourcery is maintained by a growing community of [contributors](https://github.com/krzysztofzablocki/Sourcery/graphs/contributors).
+It's used in over 30,000 projects on both iOS and macOS and it powers some of the most popular and critically-acclaimed apps you have used. Its massive community adoption was one of the factors that pushed Apple to implement derived Equality and automatic Codable conformance. Sourcery is maintained by a growing community of [contributors](https://github.com/krzysztofzablocki/Sourcery/graphs/contributors).
 
 Try **Sourcery** for your next project or add it to an existing one -- you'll save a lot of time and be happy you did!
 
 ## TL;DR
-Sourcery allows you to get rid of repetitive code and create better architecture and developer workflows. 
-An example might be implementing `Mocks` for all your protocols, without Sourcery you will need to write **hundreds lines of code per each protocol** like this:
+Sourcery allows you to get rid of repetitive tasks. An example might be implementing `Equatable`, without Sourcery you need to implement stuff like this:
 
 ```swift
-class MyProtocolMock: MyProtocol {
-
-    //MARK: - sayHelloWith
-    var sayHelloWithNameCallsCount = 0
-    var sayHelloWithNameCalled: Bool {
-        return sayHelloWithNameCallsCount > 0
+extension Person: Equatable {
+    static func ==(lhs: Person, rhs: Person) -> Bool {
+        guard lhs.firstName == rhs.firstName else { return false }
+        guard lhs.lastName == rhs.lastName else { return false }
+        guard lhs.birthDate == rhs.birthDate else { return false }
+        return true
     }
-    var sayHelloWithNameReceivedName: String?
-    var sayHelloWithNameReceivedInvocations: [String] = []
-    var sayHelloWithNameClosure: ((String) -> Void)?
-
-    func sayHelloWith(name: String) {
-        sayHelloWithNameCallsCount += 1
-        sayHelloWithNameReceivedName = name
-        sayHelloWithNameReceivedInvocations.append(name)
-        sayHelloWithNameClosure?(name)
-    }
-
 }
-```
+``` 
 
-and with Sourcery ?
+This is trivial code but imagine doing this across ten types. Across fifty. How many structs and classes are in your project? 
 
-```swift
-extension MyProtocol: AutoMockable {}
-```
+Sourcery removes the need to write this code. And if you refactor or add properties, the equality code will be automatically updated for you, eliminating possible human errors. 
 
-Sourcery removes the need to write any of the mocks code, how many protocol do you have in your project? Imagine how much time you'll save, using Sourcery will also make every single mock consistent and if you refactor or add properties, the mock code will be automatically updated for you, eliminating possible human errors. 
-
-Sourcery can be applied to arbitrary problems across your codebase, if you can describe an algorithm to another human, you can automate it using Sourcery.
-
-Most common uses are:
+Sourcery automation can be applied to many more domains, e.g.
 
 - Equality & Hashing
 - Enum cases & Counts
@@ -60,9 +42,7 @@ Most common uses are:
 - JSON coding
 - NSCoding and Codable
 
-But how about more specific use-cases, like automatically generating all the UI for your app `BetaSetting`? [you can use Sourcery for that too](https://github.com/krzysztofzablocki/AutomaticSettings)
-
-Once you start writing your own template and learn the power of Sourcery you won't be able to live without it.
+It's trivial to write new templates to remove boilerplate that is specific to your projects.
 
 ## How To Get Started
 There are plenty of tutorials for different uses of Sourcery, and you can always ask for help in our [Swift Forum Category](https://forums.swift.org/c/related-projects/sourcery).
@@ -71,7 +51,9 @@ There are plenty of tutorials for different uses of Sourcery, and you can always
 - [Generating Swift Code for iOS](https://www.raywenderlich.com/158803/sourcery-tutorial-generating-swift-code-ios) deals with JSON handling code
 - [How To Automate Swift Boilerplate with Sourcery](https://atomicrobot.io/blog/sourcery/) generates conversions to dictionaries
 - [Codable Enums](https://littlebitesofcocoa.com/318-codable-enums) implements Codable support for Enumerations
-- [Sourcery Workshops](https://github.com/krzysztofzablocki/SourceryWorkshops)
+- [Building an API client with Sourcery](https://littlebitesofcocoa.com/295-building-an-api-client-with-sourcery-key-value-annotations) builds API client leveraging Sourcery annotations
+- [Metaprogramming in Swift](https://www.youtube.com/watch?v=Ukm70Ibk_bY) is a video from CocoaHeads where Krzysztof introduces Sourcery
+
 
 ## Installation
 
@@ -159,10 +141,6 @@ args:
 
 Read more about this configuration file [here](https://cdn.rawgit.com/krzysztofzablocki/Sourcery/master/docs/usage.html#configuration-file).
 
-## Issues
-If you get unverified developer warning when using binary zip distribution try:
-`xattr -dr com.apple.quarantine Sourcery-1.1.1`
-
 ## Contributing
 
 Contributions to Sourcery are welcomed and encouraged!
@@ -173,10 +151,6 @@ It is easy to get involved. Please see the [Contributing guide](CONTRIBUTING.md)
 
 To clarify what is expected of our community, Sourcery has adopted the code of conduct defined by the Contributor Covenant. This document is used across many open source communities, and articulates my values well. For more, see the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Sponsoring
-
-If you'd like to support Sourcery development you can do so through [GitHub Sponsors](https://github.com/sponsors/krzysztofzablocki) or [Open Collective](https://opencollective.com/sourcery), it's highly appreciated 🙇‍
-
 ## License
 
 Sourcery is available under the MIT license. See [LICENSE](LICENSE) for more information.
@@ -185,6 +159,7 @@ Sourcery is available under the MIT license. See [LICENSE](LICENSE) for more inf
 
 This tool is powered by
 
+- [SourceKitten](https://github.com/jpsim/SourceKitten) by [JP Simard](https://github.com/jpsim)
 - [Stencil](https://github.com/kylef/Stencil) and few other libs by [Kyle Fuller](https://github.com/kylef)
 
 Thank you! to:
@@ -192,7 +167,6 @@ Thank you! to:
 - [Mariusz Ostrowski](http://twitter.com/faktory) for creating the logo.
 - [Artsy Eidolon](https://github.com/artsy/eidolon) team, because we use their codebase as a stub data for performance testing the parser.
 - [Olivier Halligon](https://github.com/AliSoftware) for showing me his setup scripts for CLI tools which are powering our rakefile.
-- [JP Simard](https://github.com/jpsim) for creating [SourceKitten](https://github.com/jpsim/SourceKitten) that originally powered Sourcery and was instrumental in making this project happen. 
 
 ## Other Libraries / Tools
 

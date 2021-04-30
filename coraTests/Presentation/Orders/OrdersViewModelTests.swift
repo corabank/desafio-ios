@@ -48,6 +48,16 @@ class OrdersViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.state, OrdersViewModelState.success(orders: orders))
     }
     
+    func testOrdersWhenuseCaseReturnsEmpty() throws {
+        useCase.perform(.run(userID: .any, perform: { uuid in
+            self.useCase.presenter?.success(orders: [])
+        }))
+
+        viewModel.fetchOrders()
+
+        XCTAssertEqual(viewModel.state, OrdersViewModelState.empty)
+    }
+    
     func testOrdersWhenuseCaseReturnsFailure() throws {
 
         useCase.perform(.run(userID: .any, perform: { uuid in

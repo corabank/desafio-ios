@@ -8,7 +8,7 @@
 import UIKit
 
 //sourcery: AutoMockable
-protocol OrderDetailViewcontrollerDelegate: class {
+protocol OrderDetailViewcontrollerDelegate: AnyObject {
     func back()
 }
 

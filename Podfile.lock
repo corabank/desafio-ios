@@ -1,8 +1,8 @@
 PODS:
-  - Sourcery (1.3.1)
+  - Sourcery (1.0.3)
   - SwiftLint (0.42.0)
-  - SwiftyMocky (4.0.1):
-    - Sourcery (>= 1.0)
+  - SwiftyMocky (4.0.4):
+    - Sourcery (~> 1.0.2)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
@@ -18,9 +18,9 @@ SPEC REPOS:
     - Swinject
 
 SPEC CHECKSUMS:
-  Sourcery: c36ef4f4acce0889653296901cb56011590e8e78
+  Sourcery: 70a6048014bd4f37ea80e6bd4354d47bf3b760e1
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
-  SwiftyMocky: 707d9cdd5decef8083f6dc76892977ee1cf8bbce
+  SwiftyMocky: 1fb3ceca9ded134dad4da58a0f20023d7f685ccf
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
 PODFILE CHECKSUM: cbe1feadc4b2b6bd2371605ae9a090302a3a0aa1

@@ -4,6 +4,33 @@ All changes to SwiftyMocky project will be documented in this file.
 
 -----
 
+## __4.0.4__ / 2020
+
+#### Fixed:
+* Fixed concurrency issue, synchronized mock invocations in/out via private queue.
+* Fixed missing annotations for stubbing with producer (Jean-Charles Dessaint)
+* Fixed compilation of pod library for Xcode 12.5 (beta) (Emanuel Munteanu)
+* Conditionally import XCTest related stuff in SwiftTestObserver (Mark DiFranco)
+
+-----
+
+## __4.0.3__ / 2020
+
+#### Fixed:
+* Fixed issues for Sourcery 1.0.2+, resulting in broken mocks
+* Fixed issues with @available for methods returning values
+* Fixed issues with unnamed parameters handling
+* Updated matcher for sequences,
+* Fixed issue with mutating annotation breaking generated mock
+
+-----
+
+## __4.0.2__ / 2020
+
+skipped
+
+-----
+
 ## __4.0.1__ / 2020
 
 #### Fixed:

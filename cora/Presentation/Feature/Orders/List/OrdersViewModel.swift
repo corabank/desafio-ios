@@ -10,6 +10,7 @@ import Foundation
 enum OrdersViewModelState: Equatable {
     case none
     case loading
+    case empty
     case failure
     case success(orders: [Order])
 }
@@ -54,7 +55,8 @@ extension OrdersViewModel: OrdersPresenter {
     
     func success(orders: [Order]) {
         State.shared.user?.orders = orders
-        state = .success(orders: orders)
+        state = orders.isEmpty ? .empty : .success(orders: orders)
+        
     }
     
     func failure() {

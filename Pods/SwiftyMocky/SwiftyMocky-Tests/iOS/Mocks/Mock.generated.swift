@@ -1,9 +1,8 @@
-// Generated using Sourcery 0.18.0 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 1.0.3 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 
-
-// Generated with SwiftyMocky 4.0.1
+// Generated with SwiftyMocky 4.0.4
 
 import SwiftyMocky
 import XCTest
@@ -26,6 +25,8 @@ open class AMassiveTestProtocolMock: AMassiveTestProtocol, Mock, StaticMock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -52,6 +53,7 @@ open class AMassiveTestProtocolMock: AMassiveTestProtocol, Mock, StaticMock {
     static var matcher: Matcher = Matcher.default
     static var stubbingPolicy: StubbingPolicy = .wrap
     static var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+    static private var queue = DispatchQueue(label: "com.swiftymocky.invocations.static", qos: .userInteractive)
     static private var invocations: [StaticMethodType] = []
     static private var methodReturnValues: [StaticGiven] = []
     static private var methodPerformValues: [StaticPerform] = []
@@ -480,7 +482,7 @@ open class AMassiveTestProtocolMock: AMassiveTestProtocol, Mock, StaticMock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -552,7 +554,7 @@ open class AMassiveTestProtocolMock: AMassiveTestProtocol, Mock, StaticMock {
     }
 
     static private func addInvocation(_ call: StaticMethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     static private func methodReturnValue(_ method: StaticMethodType) throws -> StubProduct {
         let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
@@ -602,6 +604,8 @@ open class AVeryAssociatedProtocolMock<T1,T2>: AVeryAssociatedProtocol, Mock whe
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -733,7 +737,7 @@ open class AVeryAssociatedProtocolMock<T1,T2>: AVeryAssociatedProtocol, Mock whe
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -792,6 +796,8 @@ open class AVeryGenericProtocolMock: AVeryGenericProtocol, Mock, StaticMock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -818,6 +824,7 @@ open class AVeryGenericProtocolMock: AVeryGenericProtocol, Mock, StaticMock {
     static var matcher: Matcher = Matcher.default
     static var stubbingPolicy: StubbingPolicy = .wrap
     static var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+    static private var queue = DispatchQueue(label: "com.swiftymocky.invocations.static", qos: .userInteractive)
     static private var invocations: [StaticMethodType] = []
     static private var methodReturnValues: [StaticGiven] = []
     static private var methodPerformValues: [StaticPerform] = []
@@ -1053,7 +1060,7 @@ open class AVeryGenericProtocolMock: AVeryGenericProtocol, Mock, StaticMock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -1125,7 +1132,7 @@ open class AVeryGenericProtocolMock: AVeryGenericProtocol, Mock, StaticMock {
     }
 
     static private func addInvocation(_ call: StaticMethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     static private func methodReturnValue(_ method: StaticMethodType) throws -> StubProduct {
         let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
@@ -1175,6 +1182,8 @@ open class AllLiteralsContainerMock: AllLiteralsContainer, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -1775,7 +1784,7 @@ open class AllLiteralsContainerMock: AllLiteralsContainer, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -1834,6 +1843,8 @@ open class AnotherProtocolMock: AnotherProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -1984,7 +1995,7 @@ open class AnotherProtocolMock: AnotherProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -2043,6 +2054,8 @@ open class ComplicatedServiceTypeMock: ComplicatedServiceType, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -2173,12 +2186,12 @@ open class ComplicatedServiceTypeMock: ComplicatedServiceType, Mock {
     }
 
     open func methodWithClosures(success function: ((Scalar,Scalar) -> Scalar)?) -> ((Int) -> Void) {
-        addInvocation(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.value(`function`)))
-		let perform = methodPerformValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.value(`function`))) as? (((Scalar,Scalar) -> Scalar)?) -> Void
+        addInvocation(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.any))
+		let perform = methodPerformValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.any)) as? (((Scalar,Scalar) -> Scalar)?) -> Void
 		perform?(`function`)
 		var __value: (Int) -> Void
 		do {
-		    __value = try methodReturnValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.value(`function`))).casted()
+		    __value = try methodReturnValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.any)).casted()
 		} catch {
 			onFatalFailure("Stub return value not specified for methodWithClosures(success function: ((Scalar,Scalar) -> Scalar)?). Use given")
 			Failure("Stub return value not specified for methodWithClosures(success function: ((Scalar,Scalar) -> Scalar)?). Use given")
@@ -2434,7 +2447,7 @@ open class ComplicatedServiceTypeMock: ComplicatedServiceType, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -2493,6 +2506,8 @@ open class DateSortableMock: DateSortable, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -2601,7 +2616,7 @@ open class DateSortableMock: DateSortable, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -2660,6 +2675,8 @@ open class EdgeCasesGenericsProtocolMock: EdgeCasesGenericsProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -2810,7 +2827,7 @@ open class EdgeCasesGenericsProtocolMock: EdgeCasesGenericsProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -2869,6 +2886,8 @@ open class EmptyProtocolMock: EmptyProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -2954,7 +2973,7 @@ open class EmptyProtocolMock: EmptyProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -3013,6 +3032,8 @@ open class FailsWithAutoClosureOnSwift5Mock: FailsWithAutoClosureOnSwift5, Mock 
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -3144,7 +3165,7 @@ open class FailsWithAutoClosureOnSwift5Mock: FailsWithAutoClosureOnSwift5, Mock 
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -3203,6 +3224,8 @@ open class FailsWithKeywordArgumentsMock: FailsWithKeywordArguments, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -3442,7 +3465,7 @@ open class FailsWithKeywordArgumentsMock: FailsWithKeywordArguments, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -3501,6 +3524,8 @@ public final class FailsWithReturnedTypeBeingGenericOfSelfMock: FailsWithReturne
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -3777,7 +3802,7 @@ public final class FailsWithReturnedTypeBeingGenericOfSelfMock: FailsWithReturne
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -3836,6 +3861,8 @@ open class FailsWithUntaggedMock: FailsWithUntagged, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -3867,18 +3894,18 @@ open class FailsWithUntaggedMock: FailsWithUntagged, Mock {
     public required init<T>(with t: T) { }
 
     open func foo<T>(_: T, bar : String) where T: Sequence {
-        addInvocation(.m_foo__barbar(Parameter<String>.value(`bar`)))
-		let perform = methodPerformValue(.m_foo__barbar(Parameter<String>.value(`bar`))) as? (String) -> Void
+        addInvocation(.m_foo__bar_bar(Parameter<String>.value(`bar`)))
+		let perform = methodPerformValue(.m_foo__bar_bar(Parameter<String>.value(`bar`))) as? (String) -> Void
 		perform?(`bar`)
     }
 
 
     fileprivate enum MethodType {
-        case m_foo__barbar(Parameter<String>)
+        case m_foo__bar_bar(Parameter<String>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_foo__barbar(let lhsBar), .m_foo__barbar(let rhsBar)):
+            case (.m_foo__bar_bar(let lhsBar), .m_foo__bar_bar(let rhsBar)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsBar, rhs: rhsBar, with: matcher), lhsBar, rhsBar, "bar"))
 				return Matcher.ComparisonResult(results)
@@ -3887,12 +3914,12 @@ open class FailsWithUntaggedMock: FailsWithUntagged, Mock {
 
         func intValue() -> Int {
             switch self {
-            case let .m_foo__barbar(p0): return p0.intValue
+            case let .m_foo__bar_bar(p0): return p0.intValue
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_foo__barbar: return ".foo(_:bar:)"
+            case .m_foo__bar_bar: return ".foo(_:bar:)"
             }
         }
     }
@@ -3911,7 +3938,7 @@ open class FailsWithUntaggedMock: FailsWithUntagged, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func foo(bar: Parameter<String>) -> Verify { return Verify(method: .m_foo__barbar(`bar`))}
+        public static func foo(bar: Parameter<String>) -> Verify { return Verify(method: .m_foo__bar_bar(`bar`))}
     }
 
     public struct Perform {
@@ -3919,7 +3946,7 @@ open class FailsWithUntaggedMock: FailsWithUntagged, Mock {
         var performs: Any
 
         public static func foo(bar: Parameter<String>, perform: @escaping (String) -> Void) -> Perform {
-            return Perform(method: .m_foo__barbar(`bar`), performs: perform)
+            return Perform(method: .m_foo__bar_bar(`bar`), performs: perform)
         }
     }
 
@@ -3951,7 +3978,199 @@ open class FailsWithUntaggedMock: FailsWithUntagged, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
+    }
+    private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
+        matcher.set(file: self.file, line: self.line)
+        defer { matcher.clearFileAndLine() }
+        let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
+        let matched = candidates.first(where: { $0.isValid && MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch })
+        guard let product = matched?.getProduct(policy: self.stubbingPolicy) else { throw MockError.notStubed }
+        return product
+    }
+    private func methodPerformValue(_ method: MethodType) -> Any? {
+        matcher.set(file: self.file, line: self.line)
+        defer { matcher.clearFileAndLine() }
+        let matched = methodPerformValues.reversed().first { MethodType.compareParameters(lhs: $0.method, rhs: method, matcher: matcher).isFullMatch }
+        return matched?.performs
+    }
+    private func matchingCalls(_ method: MethodType, file: StaticString?, line: UInt?) -> [MethodType] {
+        matcher.set(file: file ?? self.file, line: line ?? self.line)
+        defer { matcher.clearFileAndLine() }
+        return invocations.filter { MethodType.compareParameters(lhs: $0, rhs: method, matcher: matcher).isFullMatch }
+    }
+    private func matchingCalls(_ method: Verify, file: StaticString?, line: UInt?) -> Int {
+        return matchingCalls(method.method, file: file, line: line).count
+    }
+    private func givenGetterValue<T>(_ method: MethodType, _ message: String) -> T {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            onFatalFailure(message)
+            Failure(message)
+        }
+    }
+    private func optionalGivenGetterValue<T>(_ method: MethodType, _ message: String) -> T? {
+        do {
+            return try methodReturnValue(method).casted()
+        } catch {
+            return nil
+        }
+    }
+    private func onFatalFailure(_ message: String) {
+        guard let file = self.file, let line = self.line else { return } // Let if fail if cannot handle gratefully
+        SwiftyMockyTestObserver.handleFatalError(message: message, file: file, line: line)
+    }
+}
+
+// MARK: - Fetcher
+
+open class FetcherMock: Fetcher, Mock {
+    public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
+        SwiftyMockyTestObserver.setup()
+        self.sequencingPolicy = sequencingPolicy
+        self.stubbingPolicy = stubbingPolicy
+        self.file = file
+        self.line = line
+    }
+
+    var matcher: Matcher = Matcher.default
+    var stubbingPolicy: StubbingPolicy = .wrap
+    var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
+    private var invocations: [MethodType] = []
+    private var methodReturnValues: [Given] = []
+    private var methodPerformValues: [Perform] = []
+    private var file: StaticString?
+    private var line: UInt?
+
+    public typealias PropertyStub = Given
+    public typealias MethodStub = Given
+    public typealias SubscriptStub = Given
+
+    /// Convenience method - call setupMock() to extend debug information when failure occurs
+    public func setupMock(file: StaticString = #file, line: UInt = #line) {
+        self.file = file
+        self.line = line
+    }
+
+    /// Clear mock internals. You can specify what to reset (invocations aka verify, givens or performs) or leave it empty to clear all mock internals
+    public func resetMock(_ scopes: MockScope...) {
+        let scopes: [MockScope] = scopes.isEmpty ? [.invocation, .given, .perform] : scopes
+        if scopes.contains(.invocation) { invocations = [] }
+        if scopes.contains(.given) { methodReturnValues = [] }
+        if scopes.contains(.perform) { methodPerformValues = [] }
+    }
+
+
+
+
+
+    open func fetchProperty(with id: String) -> String {
+        addInvocation(.m_fetchProperty__with_id(Parameter<String>.value(`id`)))
+		let perform = methodPerformValue(.m_fetchProperty__with_id(Parameter<String>.value(`id`))) as? (String) -> Void
+		perform?(`id`)
+		var __value: String
+		do {
+		    __value = try methodReturnValue(.m_fetchProperty__with_id(Parameter<String>.value(`id`))).casted()
+		} catch {
+			onFatalFailure("Stub return value not specified for fetchProperty(with id: String). Use given")
+			Failure("Stub return value not specified for fetchProperty(with id: String). Use given")
+		}
+		return __value
+    }
+
+
+    fileprivate enum MethodType {
+        case m_fetchProperty__with_id(Parameter<String>)
+
+        static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
+            switch (lhs, rhs) {
+            case (.m_fetchProperty__with_id(let lhsId), .m_fetchProperty__with_id(let rhsId)):
+				var results: [Matcher.ParameterComparisonResult] = []
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsId, rhs: rhsId, with: matcher), lhsId, rhsId, "with id"))
+				return Matcher.ComparisonResult(results)
+            }
+        }
+
+        func intValue() -> Int {
+            switch self {
+            case let .m_fetchProperty__with_id(p0): return p0.intValue
+            }
+        }
+        func assertionName() -> String {
+            switch self {
+            case .m_fetchProperty__with_id: return ".fetchProperty(with:)"
+            }
+        }
+    }
+
+    open class Given: StubbedMethod {
+        fileprivate var method: MethodType
+
+        private init(method: MethodType, products: [StubProduct]) {
+            self.method = method
+            super.init(products)
+        }
+
+
+        public static func fetchProperty(with id: Parameter<String>, willReturn: String...) -> MethodStub {
+            return Given(method: .m_fetchProperty__with_id(`id`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        }
+        public static func fetchProperty(with id: Parameter<String>, willProduce: (Stubber<String>) -> Void) -> MethodStub {
+            let willReturn: [String] = []
+			let given: Given = { return Given(method: .m_fetchProperty__with_id(`id`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let stubber = given.stub(for: (String).self)
+			willProduce(stubber)
+			return given
+        }
+    }
+
+    public struct Verify {
+        fileprivate var method: MethodType
+
+        public static func fetchProperty(with id: Parameter<String>) -> Verify { return Verify(method: .m_fetchProperty__with_id(`id`))}
+    }
+
+    public struct Perform {
+        fileprivate var method: MethodType
+        var performs: Any
+
+        public static func fetchProperty(with id: Parameter<String>, perform: @escaping (String) -> Void) -> Perform {
+            return Perform(method: .m_fetchProperty__with_id(`id`), performs: perform)
+        }
+    }
+
+    public func given(_ method: Given) {
+        methodReturnValues.append(method)
+    }
+
+    public func perform(_ method: Perform) {
+        methodPerformValues.append(method)
+        methodPerformValues.sort { $0.method.intValue() < $1.method.intValue() }
+    }
+
+    public func verify(_ method: Verify, count: Count = Count.moreOrEqual(to: 1), file: StaticString = #file, line: UInt = #line) {
+        let fullMatches = matchingCalls(method, file: file, line: line)
+        let success = count.matches(fullMatches)
+        let assertionName = method.method.assertionName()
+        let feedback: String = {
+            guard !success else { return "" }
+            return Utils.closestCallsMessage(
+                for: self.invocations.map { invocation in
+                    matcher.set(file: file, line: line)
+                    defer { matcher.clearFileAndLine() }
+                    return MethodType.compareParameters(lhs: invocation, rhs: method.method, matcher: matcher)
+                },
+                name: assertionName
+            )
+        }()
+        MockyAssert(success, "Expected: \(count) invocations of `\(assertionName)`, but was: \(fullMatches).\(feedback)", file: file, line: line)
+    }
+
+    private func addInvocation(_ call: MethodType) {
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -4010,6 +4229,8 @@ open class GenericProtocolReturningIntMock: GenericProtocolReturningInt, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -4141,7 +4362,7 @@ open class GenericProtocolReturningIntMock: GenericProtocolReturningInt, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -4200,6 +4421,8 @@ open class GenericProtocolWithTypeConstraintMock: GenericProtocolWithTypeConstra
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -4369,7 +4592,7 @@ open class GenericProtocolWithTypeConstraintMock: GenericProtocolWithTypeConstra
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -4428,6 +4651,8 @@ open class HistorySectionMapperTypeMock: HistorySectionMapperType, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -4559,7 +4784,7 @@ open class HistorySectionMapperTypeMock: HistorySectionMapperType, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -4618,6 +4843,8 @@ open class InoutProtocolMock: InoutProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -4768,7 +4995,7 @@ open class InoutProtocolMock: InoutProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -4827,6 +5054,8 @@ open class NonSwiftProtocolMock: NSObject, NonSwiftProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -4954,7 +5183,7 @@ open class NonSwiftProtocolMock: NSObject, NonSwiftProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -5013,6 +5242,8 @@ open class ProtocolMethodsGenericThatDifferOnlyInReturnTypeMock: ProtocolMethods
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -5389,7 +5620,7 @@ open class ProtocolMethodsGenericThatDifferOnlyInReturnTypeMock: ProtocolMethods
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -5448,6 +5679,8 @@ open class ProtocolMethodsThatDifferOnlyInReturnTypeMock: ProtocolMethodsThatDif
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -5616,7 +5849,7 @@ open class ProtocolMethodsThatDifferOnlyInReturnTypeMock: ProtocolMethodsThatDif
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -5675,6 +5908,8 @@ open class ProtocolWithAssociatedTypeMock<T>: ProtocolWithAssociatedType, Mock w
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -5820,7 +6055,7 @@ open class ProtocolWithAssociatedTypeMock<T>: ProtocolWithAssociatedType, Mock w
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -5879,6 +6114,8 @@ open class ProtocolWithAssociatedType2Mock<ValueType>: ProtocolWithAssociatedTyp
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -5987,7 +6224,7 @@ open class ProtocolWithAssociatedType2Mock<ValueType>: ProtocolWithAssociatedTyp
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -6046,6 +6283,8 @@ open class ProtocolWithAttributesMock: NSObject, ProtocolWithAttributes, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -6156,7 +6395,7 @@ open class ProtocolWithAttributesMock: NSObject, ProtocolWithAttributes, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -6215,6 +6454,8 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -6248,6 +6489,35 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
         addInvocation(.m_funcB__dependency(Parameter<ProtocolWithAttributes>.value(`dependency`)))
 		let perform = methodPerformValue(.m_funcB__dependency(Parameter<ProtocolWithAttributes>.value(`dependency`))) as? (ProtocolWithAttributes) -> Void
 		perform?(`dependency`)
+    }
+
+    @available(iOS 14, *)
+	open func funcC(_ dependency: ProtocolWithAttributes) -> Bool {
+        addInvocation(.m_funcC__dependency(Parameter<ProtocolWithAttributes>.value(`dependency`)))
+		let perform = methodPerformValue(.m_funcC__dependency(Parameter<ProtocolWithAttributes>.value(`dependency`))) as? (ProtocolWithAttributes) -> Void
+		perform?(`dependency`)
+		var __value: Bool
+		do {
+		    __value = try methodReturnValue(.m_funcC__dependency(Parameter<ProtocolWithAttributes>.value(`dependency`))).casted()
+		} catch {
+			onFatalFailure("Stub return value not specified for funcC(_ dependency: ProtocolWithAttributes). Use given")
+			Failure("Stub return value not specified for funcC(_ dependency: ProtocolWithAttributes). Use given")
+		}
+		return __value
+    }
+
+    open func mutatingFunc(param: Int) -> String {
+        addInvocation(.m_mutatingFunc__param_param(Parameter<Int>.value(`param`)))
+		let perform = methodPerformValue(.m_mutatingFunc__param_param(Parameter<Int>.value(`param`))) as? (Int) -> Void
+		perform?(`param`)
+		var __value: String
+		do {
+		    __value = try methodReturnValue(.m_mutatingFunc__param_param(Parameter<Int>.value(`param`))).casted()
+		} catch {
+			onFatalFailure("Stub return value not specified for mutatingFunc(param: Int). Use given")
+			Failure("Stub return value not specified for mutatingFunc(param: Int). Use given")
+		}
+		return __value
     }
 
     @discardableResult
@@ -6284,6 +6554,9 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
     fileprivate enum MethodType {
         @available(iOS 14, *)
 		case m_funcB__dependency(Parameter<ProtocolWithAttributes>)
+        @available(iOS 14, *)
+		case m_funcC__dependency(Parameter<ProtocolWithAttributes>)
+        case m_mutatingFunc__param_param(Parameter<Int>)
         case m_inlinableFunc__val(Parameter<Int>)
         @available(iOS 12, macOS 10.14, *)
 		case subscript_get_x_y(Parameter<Int>, Parameter<Int>)
@@ -6295,6 +6568,16 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
             case (.m_funcB__dependency(let lhsDependency), .m_funcB__dependency(let rhsDependency)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsDependency, rhs: rhsDependency, with: matcher), lhsDependency, rhsDependency, "_ dependency"))
+				return Matcher.ComparisonResult(results)
+
+            case (.m_funcC__dependency(let lhsDependency), .m_funcC__dependency(let rhsDependency)):
+				var results: [Matcher.ParameterComparisonResult] = []
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsDependency, rhs: rhsDependency, with: matcher), lhsDependency, rhsDependency, "_ dependency"))
+				return Matcher.ComparisonResult(results)
+
+            case (.m_mutatingFunc__param_param(let lhsParam), .m_mutatingFunc__param_param(let rhsParam)):
+				var results: [Matcher.ParameterComparisonResult] = []
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsParam, rhs: rhsParam, with: matcher), lhsParam, rhsParam, "param"))
 				return Matcher.ComparisonResult(results)
 
             case (.m_inlinableFunc__val(let lhsVal), .m_inlinableFunc__val(let rhsVal)):
@@ -6319,6 +6602,8 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
         func intValue() -> Int {
             switch self {
             case let .m_funcB__dependency(p0): return p0.intValue
+            case let .m_funcC__dependency(p0): return p0.intValue
+            case let .m_mutatingFunc__param_param(p0): return p0.intValue
             case let .m_inlinableFunc__val(p0): return p0.intValue
             case let .subscript_get_x_y(p0, p1): return p0.intValue + p1.intValue
 			case let .subscript_set_x_y(p0, p1, _): return p0.intValue + p1.intValue
@@ -6327,6 +6612,8 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
         func assertionName() -> String {
             switch self {
             case .m_funcB__dependency: return ".funcB(_:)"
+            case .m_funcC__dependency: return ".funcC(_:)"
+            case .m_mutatingFunc__param_param: return ".mutatingFunc(param:)"
             case .m_inlinableFunc__val: return ".inlinableFunc(_:)"
             case .subscript_get_x_y: return "[get] `subscript`[_ x, _ y]"
 			case .subscript_set_x_y: return "[set] `subscript`[_ x, _ y]"
@@ -6343,11 +6630,34 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
         }
 
 
+        @available(iOS 14, *)
+		public static func funcC(_ dependency: Parameter<ProtocolWithAttributes>, willReturn: Bool...) -> MethodStub {
+            return Given(method: .m_funcC__dependency(`dependency`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        }
+        public static func mutatingFunc(param: Parameter<Int>, willReturn: String...) -> MethodStub {
+            return Given(method: .m_mutatingFunc__param_param(`param`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        }
         @discardableResult
 		public static func inlinableFunc(_ val: Parameter<Int>, willReturn: Int...) -> MethodStub {
             return Given(method: .m_inlinableFunc__val(`val`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func inlinableFunc(_ val: Parameter<Int>, willProduce: (Stubber<Int>) -> Void) -> MethodStub {
+        @available(iOS 14, *)
+		public static func funcC(_ dependency: Parameter<ProtocolWithAttributes>, willProduce: (Stubber<Bool>) -> Void) -> MethodStub {
+            let willReturn: [Bool] = []
+			let given: Given = { return Given(method: .m_funcC__dependency(`dependency`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let stubber = given.stub(for: (Bool).self)
+			willProduce(stubber)
+			return given
+        }
+        public static func mutatingFunc(param: Parameter<Int>, willProduce: (Stubber<String>) -> Void) -> MethodStub {
+            let willReturn: [String] = []
+			let given: Given = { return Given(method: .m_mutatingFunc__param_param(`param`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let stubber = given.stub(for: (String).self)
+			willProduce(stubber)
+			return given
+        }
+        @discardableResult
+		public static func inlinableFunc(_ val: Parameter<Int>, willProduce: (Stubber<Int>) -> Void) -> MethodStub {
             let willReturn: [Int] = []
 			let given: Given = { return Given(method: .m_inlinableFunc__val(`val`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (Int).self)
@@ -6365,6 +6675,9 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
 
         @available(iOS 14, *)
 		public static func funcB(_ dependency: Parameter<ProtocolWithAttributes>) -> Verify { return Verify(method: .m_funcB__dependency(`dependency`))}
+        @available(iOS 14, *)
+		public static func funcC(_ dependency: Parameter<ProtocolWithAttributes>) -> Verify { return Verify(method: .m_funcC__dependency(`dependency`))}
+        public static func mutatingFunc(param: Parameter<Int>) -> Verify { return Verify(method: .m_mutatingFunc__param_param(`param`))}
         @discardableResult
 		public static func inlinableFunc(_ val: Parameter<Int>) -> Verify { return Verify(method: .m_inlinableFunc__val(`val`))}
         @available(iOS 12, macOS 10.14, *)
@@ -6380,6 +6693,13 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
         @available(iOS 14, *)
 		public static func funcB(_ dependency: Parameter<ProtocolWithAttributes>, perform: @escaping (ProtocolWithAttributes) -> Void) -> Perform {
             return Perform(method: .m_funcB__dependency(`dependency`), performs: perform)
+        }
+        @available(iOS 14, *)
+		public static func funcC(_ dependency: Parameter<ProtocolWithAttributes>, perform: @escaping (ProtocolWithAttributes) -> Void) -> Perform {
+            return Perform(method: .m_funcC__dependency(`dependency`), performs: perform)
+        }
+        public static func mutatingFunc(param: Parameter<Int>, perform: @escaping (Int) -> Void) -> Perform {
+            return Perform(method: .m_mutatingFunc__param_param(`param`), performs: perform)
         }
         @discardableResult
 		public static func inlinableFunc(_ val: Parameter<Int>, perform: @escaping (Int) -> Void) -> Perform {
@@ -6415,7 +6735,7 @@ open class ProtocolWithAttributesBMock: ProtocolWithAttributesB, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -6474,6 +6794,8 @@ open class ProtocolWithClosuresMock: ProtocolWithClosures, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -6624,7 +6946,7 @@ open class ProtocolWithClosuresMock: ProtocolWithClosures, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -6683,6 +7005,8 @@ open class ProtocolWithConflictingMembersMock: ProtocolWithConflictingMembers, M
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -6887,7 +7211,7 @@ open class ProtocolWithConflictingMembersMock: ProtocolWithConflictingMembers, M
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -6946,6 +7270,8 @@ open class ProtocolWithCustomAttributesMock: ProtocolWithCustomAttributes, Mock 
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -7113,7 +7439,7 @@ open class ProtocolWithCustomAttributesMock: ProtocolWithCustomAttributes, Mock 
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -7172,6 +7498,8 @@ open class ProtocolWithDeprecatedMembersMock: ProtocolWithDeprecatedMembers, Moc
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -7303,7 +7631,7 @@ open class ProtocolWithDeprecatedMembersMock: ProtocolWithDeprecatedMembers, Moc
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -7362,6 +7690,8 @@ open class ProtocolWithGenericConstraintsMock<ContainedType>: ProtocolWithGeneri
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -7503,7 +7833,7 @@ open class ProtocolWithGenericConstraintsMock<ContainedType>: ProtocolWithGeneri
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -7562,6 +7892,8 @@ open class ProtocolWithGenericMethodsMock: ProtocolWithGenericMethods, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -7731,7 +8063,7 @@ open class ProtocolWithGenericMethodsMock: ProtocolWithGenericMethods, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -7790,6 +8122,8 @@ open class ProtocolWithGenericMethodsNestedMock: ProtocolWithGenericMethodsNeste
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -7921,7 +8255,7 @@ open class ProtocolWithGenericMethodsNestedMock: ProtocolWithGenericMethodsNeste
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -7980,6 +8314,8 @@ open class ProtocolWithInitializersMock: ProtocolWithInitializers, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -8106,7 +8442,7 @@ open class ProtocolWithInitializersMock: ProtocolWithInitializers, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -8165,6 +8501,8 @@ open class ProtocolWithMethodWithManyParametersMock: ProtocolWithMethodWithManyP
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -8282,7 +8620,7 @@ open class ProtocolWithMethodWithManyParametersMock: ProtocolWithMethodWithManyP
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -8341,6 +8679,8 @@ open class ProtocolWithMethodsWithGenericReturnTypeThatThrowsMock: ProtocolWithM
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -8369,7 +8709,11 @@ open class ProtocolWithMethodsWithGenericReturnTypeThatThrowsMock: ProtocolWithM
 
 
 
-    open func max<Type: Comparable>(        for attribute: Int,        over samples: [Int],        per aggregationUnit: String?    ) throws -> [(date: String?, value: Type)] {
+    open func max<Type: Comparable>(
+        for attribute: Int,
+        over samples: [Int],
+        per aggregationUnit: String?
+    ) throws -> [(date: String?, value: Type)] {
         addInvocation(.m_max__for_attributeover_samplesper_aggregationUnit(Parameter<Int>.value(`attribute`), Parameter<[Int]>.value(`samples`), Parameter<String?>.value(`aggregationUnit`)))
 		let perform = methodPerformValue(.m_max__for_attributeover_samplesper_aggregationUnit(Parameter<Int>.value(`attribute`), Parameter<[Int]>.value(`samples`), Parameter<String?>.value(`aggregationUnit`))) as? (Int, [Int], String?) -> Void
 		perform?(`attribute`, `samples`, `aggregationUnit`)
@@ -8377,8 +8721,8 @@ open class ProtocolWithMethodsWithGenericReturnTypeThatThrowsMock: ProtocolWithM
 		do {
 		    __value = try methodReturnValue(.m_max__for_attributeover_samplesper_aggregationUnit(Parameter<Int>.value(`attribute`), Parameter<[Int]>.value(`samples`), Parameter<String?>.value(`aggregationUnit`))).casted()
 		} catch MockError.notStubed {
-			onFatalFailure("Stub return value not specified for max<Type: Comparable>(        for attribute: Int,        over samples: [Int],        per aggregationUnit: String?    ). Use given")
-			Failure("Stub return value not specified for max<Type: Comparable>(        for attribute: Int,        over samples: [Int],        per aggregationUnit: String?    ). Use given")
+			onFatalFailure("Stub return value not specified for max<Type: Comparable>(for attribute: Int, over samples: [Int], per aggregationUnit: String?). Use given")
+			Failure("Stub return value not specified for max<Type: Comparable>(for attribute: Int, over samples: [Int], per aggregationUnit: String?). Use given")
 		} catch {
 		    throw error
 		}
@@ -8479,7 +8823,7 @@ open class ProtocolWithMethodsWithGenericReturnTypeThatThrowsMock: ProtocolWithM
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -8538,6 +8882,8 @@ open class ProtocolWithPropertiesMock: ProtocolWithProperties, Mock, StaticMock 
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -8564,6 +8910,7 @@ open class ProtocolWithPropertiesMock: ProtocolWithProperties, Mock, StaticMock 
     static var matcher: Matcher = Matcher.default
     static var stubbingPolicy: StubbingPolicy = .wrap
     static var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+    static private var queue = DispatchQueue(label: "com.swiftymocky.invocations.static", qos: .userInteractive)
     static private var invocations: [StaticMethodType] = []
     static private var methodReturnValues: [StaticGiven] = []
     static private var methodPerformValues: [StaticPerform] = []
@@ -8839,7 +9186,7 @@ open class ProtocolWithPropertiesMock: ProtocolWithProperties, Mock, StaticMock 
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -8911,7 +9258,7 @@ open class ProtocolWithPropertiesMock: ProtocolWithProperties, Mock, StaticMock 
     }
 
     static private func addInvocation(_ call: StaticMethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     static private func methodReturnValue(_ method: StaticMethodType) throws -> StubProduct {
         let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
@@ -8961,6 +9308,8 @@ open class ProtocolWithStaticMembersMock: ProtocolWithStaticMembers, Mock, Stati
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -8987,6 +9336,7 @@ open class ProtocolWithStaticMembersMock: ProtocolWithStaticMembers, Mock, Stati
     static var matcher: Matcher = Matcher.default
     static var stubbingPolicy: StubbingPolicy = .wrap
     static var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+    static private var queue = DispatchQueue(label: "com.swiftymocky.invocations.static", qos: .userInteractive)
     static private var invocations: [StaticMethodType] = []
     static private var methodReturnValues: [StaticGiven] = []
     static private var methodPerformValues: [StaticPerform] = []
@@ -9155,7 +9505,7 @@ open class ProtocolWithStaticMembersMock: ProtocolWithStaticMembers, Mock, Stati
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -9227,7 +9577,7 @@ open class ProtocolWithStaticMembersMock: ProtocolWithStaticMembers, Mock, Stati
     }
 
     static private func addInvocation(_ call: StaticMethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     static private func methodReturnValue(_ method: StaticMethodType) throws -> StubProduct {
         let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
@@ -9277,6 +9627,8 @@ open class ProtocolWithSubscriptsMock: ProtocolWithSubscripts, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -9828,7 +10180,7 @@ open class ProtocolWithSubscriptsMock: ProtocolWithSubscripts, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -9887,6 +10239,8 @@ open class ProtocolWithThrowingMethodsMock: ProtocolWithThrowingMethods, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -10056,7 +10410,7 @@ open class ProtocolWithThrowingMethodsMock: ProtocolWithThrowingMethods, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -10115,6 +10469,8 @@ open class ProtocolWithTuplesMock: ProtocolWithTuples, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -10246,7 +10602,7 @@ open class ProtocolWithTuplesMock: ProtocolWithTuples, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -10305,6 +10661,8 @@ open class ProtocolWithWhereAfterDefinitionMock<T>: ProtocolWithWhereAfterDefini
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -10450,7 +10808,7 @@ open class ProtocolWithWhereAfterDefinitionMock<T>: ProtocolWithWhereAfterDefini
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -10509,6 +10867,8 @@ open class SampleServiceTypeMock: SampleServiceType, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -10628,12 +10988,12 @@ open class SampleServiceTypeMock: SampleServiceType, Mock {
     }
 
     open func methodWithClosures(success function: ((Scalar,Scalar) -> Scalar)?) -> ((Int) -> Void) {
-        addInvocation(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.value(`function`)))
-		let perform = methodPerformValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.value(`function`))) as? (((Scalar,Scalar) -> Scalar)?) -> Void
+        addInvocation(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.any))
+		let perform = methodPerformValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.any)) as? (((Scalar,Scalar) -> Scalar)?) -> Void
 		perform?(`function`)
 		var __value: (Int) -> Void
 		do {
-		    __value = try methodReturnValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.value(`function`))).casted()
+		    __value = try methodReturnValue(.m_methodWithClosures__success_function_2(Parameter<((Scalar,Scalar) -> Scalar)?>.any)).casted()
 		} catch {
 			onFatalFailure("Stub return value not specified for methodWithClosures(success function: ((Scalar,Scalar) -> Scalar)?). Use given")
 			Failure("Stub return value not specified for methodWithClosures(success function: ((Scalar,Scalar) -> Scalar)?). Use given")
@@ -10872,7 +11232,7 @@ open class SampleServiceTypeMock: SampleServiceType, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -10931,6 +11291,8 @@ open class SelfConstrainedProtocolMock: SelfConstrainedProtocol, Mock, StaticMoc
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -10957,6 +11319,7 @@ open class SelfConstrainedProtocolMock: SelfConstrainedProtocol, Mock, StaticMoc
     static var matcher: Matcher = Matcher.default
     static var stubbingPolicy: StubbingPolicy = .wrap
     static var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+    static private var queue = DispatchQueue(label: "com.swiftymocky.invocations.static", qos: .userInteractive)
     static private var invocations: [StaticMethodType] = []
     static private var methodReturnValues: [StaticGiven] = []
     static private var methodPerformValues: [StaticPerform] = []
@@ -11277,7 +11640,7 @@ open class SelfConstrainedProtocolMock: SelfConstrainedProtocol, Mock, StaticMoc
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -11349,7 +11712,7 @@ open class SelfConstrainedProtocolMock: SelfConstrainedProtocol, Mock, StaticMoc
     }
 
     static private func addInvocation(_ call: StaticMethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     static private func methodReturnValue(_ method: StaticMethodType) throws -> StubProduct {
         let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
@@ -11399,6 +11762,8 @@ open class ShouldAllowNoStubDefinedMock: ShouldAllowNoStubDefined, Mock, StaticM
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -11425,6 +11790,7 @@ open class ShouldAllowNoStubDefinedMock: ShouldAllowNoStubDefined, Mock, StaticM
     static var matcher: Matcher = Matcher.default
     static var stubbingPolicy: StubbingPolicy = .wrap
     static var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+    static private var queue = DispatchQueue(label: "com.swiftymocky.invocations.static", qos: .userInteractive)
     static private var invocations: [StaticMethodType] = []
     static private var methodReturnValues: [StaticGiven] = []
     static private var methodPerformValues: [StaticPerform] = []
@@ -11845,7 +12211,7 @@ open class ShouldAllowNoStubDefinedMock: ShouldAllowNoStubDefined, Mock, StaticM
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -11917,7 +12283,7 @@ open class ShouldAllowNoStubDefinedMock: ShouldAllowNoStubDefined, Mock, StaticM
     }
 
     static private func addInvocation(_ call: StaticMethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     static private func methodReturnValue(_ method: StaticMethodType) throws -> StubProduct {
         let candidates = sequencingPolicy.sorted(methodReturnValues, by: { $0.method.intValue() > $1.method.intValue() })
@@ -11967,6 +12333,8 @@ open class SimpleProtocolThatInheritsOtherProtocolsMock: SimpleProtocolThatInher
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -12271,7 +12639,7 @@ open class SimpleProtocolThatInheritsOtherProtocolsMock: SimpleProtocolThatInher
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -12330,6 +12698,8 @@ open class SimpleProtocolUsingCollectionsMock: SimpleProtocolUsingCollections, M
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -12568,7 +12938,7 @@ open class SimpleProtocolUsingCollectionsMock: SimpleProtocolUsingCollections, M
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -12627,6 +12997,8 @@ open class SimpleProtocolWithBothMethodsAndPropertiesMock: SimpleProtocolWithBot
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -12769,7 +13141,7 @@ open class SimpleProtocolWithBothMethodsAndPropertiesMock: SimpleProtocolWithBot
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -12828,6 +13200,8 @@ open class SimpleProtocolWithMethodsMock: SimpleProtocolWithMethods, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -13043,7 +13417,7 @@ open class SimpleProtocolWithMethodsMock: SimpleProtocolWithMethods, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -13102,6 +13476,8 @@ open class SimpleProtocolWithPropertiesMock: SimpleProtocolWithProperties, Mock 
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -13287,7 +13663,7 @@ open class SimpleProtocolWithPropertiesMock: SimpleProtocolWithProperties, Mock 
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -13346,6 +13722,8 @@ open class SuggestionProtocolMock: SuggestionProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -13431,7 +13809,7 @@ open class SuggestionProtocolMock: SuggestionProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -13490,6 +13868,8 @@ open class SuggestionRepositoryMock: SuggestionRepository, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -13547,7 +13927,10 @@ open class SuggestionRepositoryMock: SuggestionRepository, Mock {
 		return __value
     }
 
-    open func find(    where predicate: NSPredicate,    sortedBy sortDescriptors: [NSSortDescriptor]) -> [Entity] {
+    open func find(
+        where predicate: NSPredicate,
+        sortedBy sortDescriptors: [NSSortDescriptor]
+    ) -> [Entity] {
         addInvocation(.m_find__where_predicatesortedBy_sortDescriptors(Parameter<NSPredicate>.value(`predicate`), Parameter<[NSSortDescriptor]>.value(`sortDescriptors`)))
 		let perform = methodPerformValue(.m_find__where_predicatesortedBy_sortDescriptors(Parameter<NSPredicate>.value(`predicate`), Parameter<[NSSortDescriptor]>.value(`sortDescriptors`))) as? (NSPredicate, [NSSortDescriptor]) -> Void
 		perform?(`predicate`, `sortDescriptors`)
@@ -13555,8 +13938,8 @@ open class SuggestionRepositoryMock: SuggestionRepository, Mock {
 		do {
 		    __value = try methodReturnValue(.m_find__where_predicatesortedBy_sortDescriptors(Parameter<NSPredicate>.value(`predicate`), Parameter<[NSSortDescriptor]>.value(`sortDescriptors`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for find(    where predicate: NSPredicate,    sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
-			Failure("Stub return value not specified for find(    where predicate: NSPredicate,    sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
+			onFatalFailure("Stub return value not specified for find(where predicate: NSPredicate, sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
+			Failure("Stub return value not specified for find(where predicate: NSPredicate, sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
 		}
 		return __value
     }
@@ -13804,7 +14187,7 @@ open class SuggestionRepositoryMock: SuggestionRepository, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -13863,6 +14246,8 @@ open class SuggestionRepositoryConstrainedToProtocolMock<Entity>: SuggestionRepo
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -13919,7 +14304,10 @@ open class SuggestionRepositoryConstrainedToProtocolMock<Entity>: SuggestionRepo
 		return __value
     }
 
-    open func find(    where predicate: NSPredicate,    sortedBy sortDescriptors: [NSSortDescriptor]) -> [Entity] {
+    open func find(
+        where predicate: NSPredicate,
+        sortedBy sortDescriptors: [NSSortDescriptor]
+    ) -> [Entity] {
         addInvocation(.m_find__where_predicatesortedBy_sortDescriptors(Parameter<NSPredicate>.value(`predicate`), Parameter<[NSSortDescriptor]>.value(`sortDescriptors`)))
 		let perform = methodPerformValue(.m_find__where_predicatesortedBy_sortDescriptors(Parameter<NSPredicate>.value(`predicate`), Parameter<[NSSortDescriptor]>.value(`sortDescriptors`))) as? (NSPredicate, [NSSortDescriptor]) -> Void
 		perform?(`predicate`, `sortDescriptors`)
@@ -13927,8 +14315,8 @@ open class SuggestionRepositoryConstrainedToProtocolMock<Entity>: SuggestionRepo
 		do {
 		    __value = try methodReturnValue(.m_find__where_predicatesortedBy_sortDescriptors(Parameter<NSPredicate>.value(`predicate`), Parameter<[NSSortDescriptor]>.value(`sortDescriptors`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for find(    where predicate: NSPredicate,    sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
-			Failure("Stub return value not specified for find(    where predicate: NSPredicate,    sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
+			onFatalFailure("Stub return value not specified for find(where predicate: NSPredicate, sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
+			Failure("Stub return value not specified for find(where predicate: NSPredicate, sortedBy sortDescriptors: [NSSortDescriptor]). Use given")
 		}
 		return __value
     }
@@ -14176,7 +14564,7 @@ open class SuggestionRepositoryConstrainedToProtocolMock<Entity>: SuggestionRepo
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -14235,6 +14623,8 @@ open class TestAutoImportMock: TestAutoImport, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -14320,7 +14710,7 @@ open class TestAutoImportMock: TestAutoImport, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -14379,6 +14769,8 @@ open class UnnamedAttributesProtocolMock: UnnamedAttributesProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -14460,7 +14852,7 @@ open class UnnamedAttributesProtocolMock: UnnamedAttributesProtocol, Mock {
         }
         func assertionName() -> String {
             switch self {
-            case .m_methodWithUnnamedAttributes: return ".methodWithUnnamedAttributes(_:)()"
+            case .m_methodWithUnnamedAttributes: return ".methodWithUnnamedAttributes(_:)"
             case .m_methodWithUnnamedAndNamedAttributes__at_int: return ".methodWithUnnamedAndNamedAttributes(at:_:)"
             }
         }
@@ -14544,7 +14936,7 @@ open class UnnamedAttributesProtocolMock: UnnamedAttributesProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -14603,6 +14995,8 @@ open class UserNetworkTypeMock: UserNetworkType, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -14777,7 +15171,7 @@ open class UserNetworkTypeMock: UserNetworkType, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -14836,6 +15230,8 @@ open class UserStorageTypeMock: UserStorageType, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -14987,7 +15383,7 @@ open class UserStorageTypeMock: UserStorageType, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -15046,6 +15442,8 @@ open class VariadicParametersProtocolMock: VariadicParametersProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -15214,7 +15612,7 @@ open class VariadicParametersProtocolMock: VariadicParametersProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -15273,6 +15671,8 @@ open class WithConflictingNameMock: WithConflictingName, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -15405,7 +15805,7 @@ open class WithConflictingNameMock: WithConflictingName, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)

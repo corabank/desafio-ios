@@ -3,7 +3,7 @@
 
 
 
-// Generated with SwiftyMocky 4.0.1
+// Generated with SwiftyMocky 4.0.4
 
 import SwiftyMocky
 import XCTest
@@ -25,6 +25,8 @@ open class LoginDataSourceProtocolMock: LoginDataSourceProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -140,7 +142,7 @@ open class LoginDataSourceProtocolMock: LoginDataSourceProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -199,6 +201,8 @@ open class LoginPresenterMock: LoginPresenter, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -346,7 +350,7 @@ open class LoginPresenterMock: LoginPresenter, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -405,6 +409,8 @@ open class LoginRepositoryProtocolMock: LoginRepositoryProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -520,7 +526,7 @@ open class LoginRepositoryProtocolMock: LoginRepositoryProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -579,6 +585,8 @@ open class LoginUseCaseProtocolMock: LoginUseCaseProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -713,7 +721,7 @@ open class LoginUseCaseProtocolMock: LoginUseCaseProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -772,6 +780,8 @@ open class LoginViewControllerDelegateMock: LoginViewControllerDelegate, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -882,7 +892,7 @@ open class LoginViewControllerDelegateMock: LoginViewControllerDelegate, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -941,6 +951,8 @@ open class LoginViewModelProtocolMock: LoginViewModelProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -1109,7 +1121,7 @@ open class LoginViewModelProtocolMock: LoginViewModelProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -1168,6 +1180,8 @@ open class OrderDetailViewcontrollerDelegateMock: OrderDetailViewcontrollerDeleg
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -1278,7 +1292,7 @@ open class OrderDetailViewcontrollerDelegateMock: OrderDetailViewcontrollerDeleg
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -1337,6 +1351,8 @@ open class OrdersDataSourceProtocolMock: OrdersDataSourceProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -1451,7 +1467,7 @@ open class OrdersDataSourceProtocolMock: OrdersDataSourceProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -1510,6 +1526,8 @@ open class OrdersPresenterMock: OrdersPresenter, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -1654,7 +1672,7 @@ open class OrdersPresenterMock: OrdersPresenter, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -1713,6 +1731,8 @@ open class OrdersRepositoryProtocolMock: OrdersRepositoryProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -1827,7 +1847,7 @@ open class OrdersRepositoryProtocolMock: OrdersRepositoryProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -1886,6 +1906,8 @@ open class OrdersUseCaseProtocolMock: OrdersUseCaseProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -2019,7 +2041,7 @@ open class OrdersUseCaseProtocolMock: OrdersUseCaseProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -2078,6 +2100,8 @@ open class OrdersViewControllerDelegateMock: OrdersViewControllerDelegate, Mock 
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -2191,7 +2215,7 @@ open class OrdersViewControllerDelegateMock: OrdersViewControllerDelegate, Mock 
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)
@@ -2250,6 +2274,8 @@ open class OrdersViewModelProtocolMock: OrdersViewModelProtocol, Mock {
     var matcher: Matcher = Matcher.default
     var stubbingPolicy: StubbingPolicy = .wrap
     var sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst
+
+    private var queue = DispatchQueue(label: "com.swiftymocky.invocations", qos: .userInteractive)
     private var invocations: [MethodType] = []
     private var methodReturnValues: [Given] = []
     private var methodPerformValues: [Perform] = []
@@ -2380,7 +2406,7 @@ open class OrdersViewModelProtocolMock: OrdersViewModelProtocol, Mock {
     }
 
     private func addInvocation(_ call: MethodType) {
-        invocations.append(call)
+        self.queue.sync { invocations.append(call) }
     }
     private func methodReturnValue(_ method: MethodType) throws -> StubProduct {
         matcher.set(file: self.file, line: self.line)

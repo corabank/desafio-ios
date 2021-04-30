@@ -8,7 +8,7 @@
 import UIKit
 
 //sourcery: AutoMockable
-protocol OrdersViewControllerDelegate: class {
+protocol OrdersViewControllerDelegate: AnyObject {
     func showDetail(order: Order)
 }
 
@@ -16,10 +16,13 @@ class OrdersViewController: UIViewController {
     weak var delegate: OrdersViewControllerDelegate?
     var viewModel: OrdersViewModelProtocol?
     var orderID: UUID?
-    var tableView = UITableView()
-    var tableViewHeightConstraint: NSLayoutConstraint!
+    var tableView: UITableView!
     var orders = [Order]()
     var lastLocation: CGPoint = CGPoint(x: 0, y: 0)
+    var topLimit: CGFloat!
+    let INIT_Y = 175.dp
+    let BOTTOM_LIMIT = 50.dp
+    var emptyView: UIView!
     
     struct Cells {
         static let orderCell = "OrderCell"
@@ -30,6 +33,7 @@ class OrdersViewController: UIViewController {
         viewModel?.fetchOrders()
         makeView()
         makeTableView()
+        makeEmpty()
         scrollIfNeeds()
     }
     
@@ -40,9 +44,16 @@ class OrdersViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        view.frame = CGRect(x: 0, y: 175.dp,
-                            width: UIScreen.main.bounds.width,
-                            height: tableView.contentSize.height)
+        
+        if !orders.isEmpty && view.frame.size.height < tableView.contentSize.height {
+            view.frame = CGRect(x: 0, y: INIT_Y,
+                                width: UIScreen.main.bounds.width,
+                                height: tableView.contentSize.height + 50.dp)
+            return
+        }
+        
+        view.frame = CGRect(x: 0, y: 175.dp, width: view.frame.width, height: view.frame.height)
+        topLimit = UIScreen.main.bounds.height - view.frame.height - 175.dp
     }
     
     func showDetail(order: Order) {
@@ -53,18 +64,49 @@ class OrdersViewController: UIViewController {
         switch state {
         case .success(let orders):
             self.orders = orders
+            addGesture()
+            tableView.isHidden = false
+        case .empty:
+            emptyView.isHidden = false
         default:
             break
         }
     }
+    
+    fileprivate func makeEmpty() {
+        
+        let label = UILabel.customLabel(textColor: .ordersTitleColor, text: "Nenhum pedido encontrado",
+                                        fontSize: 16)
+        label.textAlignment = .center
+        
+        let button = UIButton(type: .custom)
+        let image = UIImage(named: "plus.circle")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = UIColor.systemPink
+        button.imageView?.layer.transform = CATransform3DMakeScale(2, 2, 2)
+        
+        emptyView = UIView()
+        emptyView.addSubview(label)
+        emptyView.addSubview(button)
+        view.addSubview(emptyView)
+        emptyView.pin(to: view)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: emptyView.topAnchor, constant: 150.dp).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
+        button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20.dp).isActive = true
+        emptyView.isHidden = true
+    }
 
     fileprivate func makeView() {
-        title = "Orders"
-        view.backgroundColor = .red
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
+    }
+    
+    fileprivate func addGesture() {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(recognizer:)))
         gesture.maximumNumberOfTouches = 1
         gesture.delaysTouchesBegan = true
@@ -76,12 +118,13 @@ class OrdersViewController: UIViewController {
     }
 
     fileprivate func makeTableView() {
+        tableView = UITableView()
         view.addSubview(tableView)
         setTableViewDelegates()
 
         switch UIScreen.main.bounds.width {
         case 375.0, 390.0:
-            tableView.contentInset = UIEdgeInsets(top: -30.dp, left: 0, bottom: 35, right: 0)
+            tableView.contentInset = UIEdgeInsets(top: -30.dp, left: 0, bottom: 0, right: 0)
         default: break
         }
         
@@ -93,6 +136,7 @@ class OrdersViewController: UIViewController {
         tableView.isScrollEnabled = false
         tableView.accessibilityIdentifier = "ordersTableView"
         tableView.pin(to: view)
+        tableView.isHidden = true
     }
 
     fileprivate func setTableViewDelegates() {
@@ -119,7 +163,7 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
         let order = orders[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orderCell) as? OrderCell
         let cellBackgroundView = UIView()
-        
+
         cellBackgroundView.backgroundColor = .selectedCellBackgroundColor
         cell?.selectedBackgroundView = cellBackgroundView
         cell?.set(order: order)
@@ -138,7 +182,7 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
             cell.alpha = 1
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.showDetail(order: self.orders[indexPath.row])
     }
@@ -150,16 +194,44 @@ extension OrdersViewController: UIGestureRecognizerDelegate {
         
         switch recognizer.state {
         case .began, .changed:
+            
+            let currentPosition = self.lastLocation.y + translation.y
+            
             UIView.transition(
                 with: view,
                 duration: 0.05,
                 options: .curveEaseInOut,
                 animations: {
-                    self.view.transform = CGAffineTransform(translationX: 0,
-                                                            y: self.lastLocation.y + translation.y)
+                    self.view.transform = CGAffineTransform(
+                        translationX: 0,
+                        y: currentPosition)
             })
         case .ended:
             lastLocation.y += translation.y
+            
+            if lastLocation.y <= topLimit {
+                UIView.transition(
+                    with: view,
+                    duration: 0.5,
+                    options: .curveEaseInOut,
+                    animations: {
+                        self.view.transform = CGAffineTransform(translationX: 0,
+                                                                y: self.topLimit)
+                })
+                lastLocation.y = self.topLimit
+            }
+
+            if lastLocation.y >= BOTTOM_LIMIT {
+                UIView.transition(
+                    with: view,
+                    duration: 0.5,
+                    options: .curveEaseInOut,
+                    animations: {
+                        self.view.transform = CGAffineTransform(translationX: 0,
+                                                                y: 0)
+                })
+                lastLocation.y = 0
+            }
         default: break
         }
     }

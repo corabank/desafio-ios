@@ -8,7 +8,7 @@
 import UIKit
 
 //sourcery: AutoMockable
-protocol LoginViewControllerDelegate: class {
+protocol LoginViewControllerDelegate: AnyObject {
     func authenticated()
 }
 
