@@ -43,21 +43,21 @@ extension UIView {
     func moveLogo() {
         let positionX = CAKeyframeAnimation(keyPath: "transform.translation.x")
         positionX.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        positionX.duration = 0.5
+        positionX.duration = 0.7
         positionX.values = [-47.0.dp]
         positionX.isRemovedOnCompletion = false
         positionX.fillMode = .forwards
         
         let positionY = CAKeyframeAnimation(keyPath: "transform.translation.y")
         positionY.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        positionY.duration = 0.5
+        positionY.duration = 0.7
         positionY.values = [-30.0.dp]
         positionY.isRemovedOnCompletion = false
         positionY.fillMode = .forwards
         
         let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         scaleAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        scaleAnimation.duration = 0.5
+        scaleAnimation.duration = 0.7
         scaleAnimation.values = [0.5]
         scaleAnimation.isRemovedOnCompletion = false
         scaleAnimation.fillMode = .forwards
@@ -65,14 +65,14 @@ extension UIView {
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
         fadeOutAnimation.fromValue = 0
         fadeOutAnimation.toValue = 1
-        fadeOutAnimation.duration = 0.5
+        fadeOutAnimation.duration = 0.7
         fadeOutAnimation.isRemovedOnCompletion = false
         fadeOutAnimation.fillMode = .forwards
         
         let group = CAAnimationGroup()
-        group.duration = 0.5
+        group.duration = 0.7
         group.repeatCount = 1
-        group.beginTime = CACurrentMediaTime() + 0.4
+        group.beginTime = CACurrentMediaTime() + 0.5
         group.timingFunction = CAMediaTimingFunction(name: .easeOut)
         group.isRemovedOnCompletion = false
         group.fillMode = .forwards

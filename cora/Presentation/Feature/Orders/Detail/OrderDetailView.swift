@@ -75,7 +75,9 @@ class OrderDetailview: UIView {
         paymentView.addSubview(paymentValueLabel)
         
         // paymentTypeLabel
-        paymentTypeLabel = .customLabel(text: "Cartão de Crédito", fontSize: 9.dp)
+        paymentTypeLabel = .customLabel(
+            text: (viewModel?.order.paymentType.rawValue.localized.capitalized)!,
+            fontSize: 9.dp)
         paymentView.addSubview(paymentTypeLabel)
         self.addSubview(paymentView)
         

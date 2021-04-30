@@ -6,6 +6,13 @@
   
 */
 
+// MARK: PaymentType
+
+"credit" = "crédito";
+"debit" = "débito";
+"pix" = "pix";
+"billet" = "boleto";
+
 // MARK: Login
 
 "Fill your email" = "Digite seu email";

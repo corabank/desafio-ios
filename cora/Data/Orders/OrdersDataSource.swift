@@ -15,7 +15,7 @@ class OrdersDataSource: OrdersDataSourceProtocol {
         // fake data
         var orders = [OrderDTO]()
         
-        for _ in 0...100 {
+        for _ in 1...100 {
             orders.append(
                 OrderDTO(
                     id: UUID().uuidString,

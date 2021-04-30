@@ -29,6 +29,7 @@ class OrderCell: UITableViewCell {
         }
 
         makeView()
+        tintCardImage()
     }
 
     required init?(coder: NSCoder) {
@@ -69,11 +70,6 @@ class OrderCell: UITableViewCell {
             .withRenderingMode(.automatic)
         orderImage.tintColor = .cellImageColor
         orderImage.contentMode = .scaleAspectFit
-        if #available(iOS 12.0, *) {
-            orderImage.layer.opacity = traitCollection.userInterfaceStyle == .dark ? 0.85 : 0.45
-        } else {
-            orderImage.layer.opacity = 0.45
-        }
     }
 
     fileprivate func configureTitleLabel() {
@@ -124,30 +120,33 @@ class OrderCell: UITableViewCell {
         configureDateLabel()
     }
 
-    /// Set Constraints
     fileprivate func setConstraints() {
         NSLayoutConstraint.activate([
-            /// orderImage constraints
             orderImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             orderImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 10.dp),
             orderImage.heightAnchor.constraint(equalToConstant: 35.dp),
             orderImage.widthAnchor.constraint(equalTo: orderImage.heightAnchor),
-
-            /// orderTitle constraints
             orderTitle.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 14.dp),
             orderTitle.topAnchor.constraint(equalTo: topAnchor, constant: 15.7.dp),
-            
-            /// orderDescription ocnstraints
             orderDescription.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 14.dp),
             orderDescription.topAnchor.constraint(equalTo: orderTitle.bottomAnchor, constant: 4.dp),
-            
-            /// orderStatus constraints
             orderStatus.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),
             orderStatus.topAnchor.constraint(equalTo: topAnchor, constant: 16.dp),
-            
-            /// orderDate constraints
             orderDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),
             orderDate.topAnchor.constraint(equalTo: orderTitle.bottomAnchor, constant: 4.dp)
         ])
+    }
+    
+    fileprivate func tintCardImage() {
+        orderImage.layer.opacity = 0.45
+        if #available(iOS 12.0, *), traitCollection.userInterfaceStyle == .dark {
+            orderImage.layer.opacity =  0.85
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        tintCardImage()
     }
 }
