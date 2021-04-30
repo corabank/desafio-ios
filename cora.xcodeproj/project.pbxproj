@@ -60,6 +60,7 @@
 		E3786CD5262A32D800AE0CBE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CD4262A32D800AE0CBE /* Coordinator.swift */; };
 		E37BCE7A263CB56500190AA2 /* Controller+withPanGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BCE79263CB56500190AA2 /* Controller+withPanGestures.swift */; };
 		E37BCE7C263CB57F00190AA2 /* Controller+withTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BCE7B263CB57F00190AA2 /* Controller+withTableViewDelegate.swift */; };
+		E37BCE7F263CC9E800190AA2 /* XCUIApplication+withWaitForExistenceOfAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BCE7E263CC9E800190AA2 /* XCUIApplication+withWaitForExistenceOfAll.swift */; };
 		E389F107263AF707006A378E /* UIColor+withColorsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389F106263AF707006A378E /* UIColor+withColorsMap.swift */; };
 		E389F113263B5373006A378E /* Controller+withKeyboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389F112263B5373006A378E /* Controller+withKeyboardActions.swift */; };
 		E39477A32634A33200DCBF26 /* MakeLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477A22634A33200DCBF26 /* MakeLogin.swift */; };
@@ -167,6 +168,7 @@
 		E3786CD4262A32D800AE0CBE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E37BCE79263CB56500190AA2 /* Controller+withPanGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withPanGestures.swift"; sourceTree = "<group>"; };
 		E37BCE7B263CB57F00190AA2 /* Controller+withTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withTableViewDelegate.swift"; sourceTree = "<group>"; };
+		E37BCE7E263CC9E800190AA2 /* XCUIApplication+withWaitForExistenceOfAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+withWaitForExistenceOfAll.swift"; sourceTree = "<group>"; };
 		E389F106263AF707006A378E /* UIColor+withColorsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+withColorsMap.swift"; sourceTree = "<group>"; };
 		E389F112263B5373006A378E /* Controller+withKeyboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withKeyboardActions.swift"; sourceTree = "<group>"; };
 		E39477A22634A33200DCBF26 /* MakeLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLogin.swift; sourceTree = "<group>"; };
@@ -338,7 +340,7 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		E3310AAB2631AEA200B96719 /* Supporting */ = {
+		E3310AAB2631AEA200B96719 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				E3786C0D262A2EC100AE0CBE /* AppDelegate.swift */,
@@ -348,7 +350,7 @@
 				E3B5931F263111D2006F189C /* LaunchScreen.storyboard */,
 				E31DE1CD2635BD0C002FAE8B /* Localizable.strings */,
 			);
-			path = Supporting;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E3786C01262A2EC100AE0CBE = {
@@ -376,10 +378,10 @@
 		E3786C0C262A2EC100AE0CBE /* cora */ = {
 			isa = PBXGroup;
 			children = (
-				E3310AAB2631AEA200B96719 /* Supporting */,
-				E3786C4B262A2F3600AE0CBE /* Data */,
-				E3786C4A262A2F3100AE0CBE /* Domain */,
-				E3786C49262A2F2900AE0CBE /* Presentation */,
+				E3310AAB2631AEA200B96719 /* Supporting Files */,
+				E3786C4B262A2F3600AE0CBE /* DataLayer */,
+				E3786C4A262A2F3100AE0CBE /* DomainLayer */,
+				E3786C49262A2F2900AE0CBE /* PresentationLayer */,
 			);
 			path = cora;
 			sourceTree = "<group>";
@@ -400,6 +402,7 @@
 		E3786C2E262A2EC400AE0CBE /* coraUITests */ = {
 			isa = PBXGroup;
 			children = (
+				E37BCE7D263CC9B500190AA2 /* Extension */,
 				E39477A12634A31600DCBF26 /* Common */,
 				E3786C2F262A2EC400AE0CBE /* LoginUITests.swift */,
 				E39477AA2634FE6F00DCBF26 /* OrdersUITests.swift */,
@@ -408,7 +411,7 @@
 			path = coraUITests;
 			sourceTree = "<group>";
 		};
-		E3786C49262A2F2900AE0CBE /* Presentation */ = {
+		E3786C49262A2F2900AE0CBE /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
 				E3B592D9262EF92F006F189C /* Shared */,
@@ -416,10 +419,10 @@
 				E3786CC1262A324100AE0CBE /* Extension */,
 				E3786CC0262A323100AE0CBE /* Feature */,
 			);
-			path = Presentation;
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
-		E3786C4A262A2F3100AE0CBE /* Domain */ = {
+		E3786C4A262A2F3100AE0CBE /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
 				E3786CAF262A31C000AE0CBE /* Orders */,
@@ -427,16 +430,16 @@
 				E3786C99262A311E00AE0CBE /* Extension */,
 				E3786C8B262A30DA00AE0CBE /* Model */,
 			);
-			path = Domain;
+			path = DomainLayer;
 			sourceTree = "<group>";
 		};
-		E3786C4B262A2F3600AE0CBE /* Data */ = {
+		E3786C4B262A2F3600AE0CBE /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
 				E3786C6A262A301A00AE0CBE /* Orders */,
 				E3786C4C262A2F5000AE0CBE /* Login */,
 			);
-			path = Data;
+			path = DataLayer;
 			sourceTree = "<group>";
 		};
 		E3786C4C262A2F5000AE0CBE /* Login */ = {
@@ -580,6 +583,14 @@
 				E37BCE7B263CB57F00190AA2 /* Controller+withTableViewDelegate.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E37BCE7D263CC9B500190AA2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E37BCE7E263CC9E800190AA2 /* XCUIApplication+withWaitForExistenceOfAll.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E39477A12634A31600DCBF26 /* Common */ = {
@@ -1001,6 +1012,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37BCE7F263CC9E800190AA2 /* XCUIApplication+withWaitForExistenceOfAll.swift in Sources */,
 				E3786C30262A2EC400AE0CBE /* LoginUITests.swift in Sources */,
 				E39477AB2634FE6F00DCBF26 /* OrdersUITests.swift in Sources */,
 				E39477A32634A33200DCBF26 /* MakeLogin.swift in Sources */,
@@ -1159,7 +1171,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6B36S74UH9;
-				INFOPLIST_FILE = cora/Supporting/Info.plist;
+				INFOPLIST_FILE = "cora/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1180,7 +1192,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6B36S74UH9;
-				INFOPLIST_FILE = cora/Supporting/Info.plist;
+				INFOPLIST_FILE = "cora/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

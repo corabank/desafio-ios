@@ -56,10 +56,10 @@ class OrdersUITests: XCTestCase {
                 while lastCell.isHittable == false {
                     self.app.swipeUp(velocity: .fast)
                 }
-
+                
                 XCTAssertFalse(firstCell.isHittable)
                 XCTAssertTrue(lastCell.isHittable)
-
+                
                 while firstCell.isHittable == false {
                     self.app.swipeDown(velocity: .fast)
                 }
