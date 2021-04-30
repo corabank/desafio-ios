@@ -10,7 +10,7 @@ import UIKit
 class LogoView: UIView {
     private var logo: UIImageView!
     
-    func makeView() {
+    fileprivate func makeView() {
         let image = UIImage(named: "logo-cora")
         logo = UIImageView(image: image)
         logo.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +22,7 @@ class LogoView: UIView {
         self.addSubview(logo)
     }
     
-    func setConstraints() {
+    fileprivate func setConstraints() {
         NSLayoutConstraint.activate([
             logo.widthAnchor.constraint(equalToConstant: 80.dp),
             logo.heightAnchor.constraint(equalToConstant: 80.dp),

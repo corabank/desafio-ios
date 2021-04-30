@@ -64,8 +64,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    
-    func addTargets() {
+    fileprivate func addTargets() {
         self.button.addTarget(self, action: #selector(onButtonTap), for: .touchUpInside)
     }
     
@@ -82,7 +81,7 @@ extension LoginViewController {
         viewModel?.login()
     }
     
-    private func startAnimation() {
+    fileprivate func startAnimation() {
         scrollView.animateScroll()
         button.animateOpacity(from: 0.09, to: 1, withDuration: 0.3, andDelay: 0.4)
         logoView.animateOpacity(from: 0, to: 1, withDuration: 0.3, andDelay: 0.7)
@@ -90,7 +89,7 @@ extension LoginViewController {
 
     // MARK: Constraints
 
-    func addConstraints() {
+    fileprivate func addConstraints() {
         NSLayoutConstraint.activate([
             mainStack.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 260.dp),
             

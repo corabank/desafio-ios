@@ -8,7 +8,7 @@
 import UIKit
 
 class OrderDetailview: UIView {
-    var viewModel: OrderDetailViewModel?
+    weak var viewModel: OrderDetailViewModel?
     
     // top
     private var title: UILabel!
@@ -50,7 +50,7 @@ class OrderDetailview: UIView {
     private var myReceiveLabel: UILabel!
     private var myReceiveValueLabel: UILabel!
     
-    func makeTopView() {
+    fileprivate func makeTopView() {
         self.backgroundColor = .detailBackgroundColor
         title = .customLabel(textColor: .detailTitleColor,
                              text: "Detail".localized,
@@ -171,14 +171,14 @@ class OrderDetailview: UIView {
         self.addSubview(statusView)
     }
     
-    var receive: Double {
+    private var receive: Double {
         let value = viewModel?.order.value ?? 0
         let taxes = viewModel?.order.taxes ?? 0
         
         return value - taxes
     }
     
-    func makeResumeView() {
+    fileprivate func makeResumeView() {
         resumeLabel = .customLabel(textColor: .detailBillingTitleColor, text: "Billing Resume".localized,
                                    fontSize: 13.dp, isBold: true)
         self.addSubview(resumeLabel)
@@ -211,7 +211,7 @@ class OrderDetailview: UIView {
         self.addSubview(resumeView)
     }
     
-    func setConstraints() {
+    fileprivate func setConstraints() {
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20.dp),
             title.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 12.dp),

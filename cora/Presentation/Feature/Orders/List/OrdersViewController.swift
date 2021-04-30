@@ -15,14 +15,17 @@ protocol OrdersViewControllerDelegate: AnyObject {
 class OrdersViewController: UIViewController {
     weak var delegate: OrdersViewControllerDelegate?
     var viewModel: OrdersViewModelProtocol?
+    var emptyView: UIView!
     var orderID: UUID?
     var tableView: UITableView!
     var orders = [Order]()
     var lastLocation: CGPoint = CGPoint(x: 0, y: 0)
-    var topLimit: CGFloat!
+    
+    var TOP_LIMIT: CGFloat!
+    let ROW_HEIGHT = 66.dp
     let INIT_Y = 175.dp
     let BOTTOM_LIMIT = 50.dp
-    var emptyView: UIView!
+    
     
     struct Cells {
         static let orderCell = "OrderCell"
@@ -53,14 +56,10 @@ class OrdersViewController: UIViewController {
         }
         
         view.frame = CGRect(x: 0, y: 175.dp, width: view.frame.width, height: view.frame.height)
-        topLimit = UIScreen.main.bounds.height - view.frame.height - 175.dp
+        TOP_LIMIT = UIScreen.main.bounds.height - view.frame.height - 175.dp
     }
     
-    func showDetail(order: Order) {
-        delegate?.showDetail(order: order)
-    }
-    
-    func handleState(state: OrdersViewModelState) {
+    fileprivate func handleState(state: OrdersViewModelState) {
         switch state {
         case .success(let orders):
             self.orders = orders
@@ -74,7 +73,6 @@ class OrdersViewController: UIViewController {
     }
     
     fileprivate func makeEmpty() {
-        
         let label = UILabel.customLabel(textColor: .ordersTitleColor, text: "Nenhum pedido encontrado",
                                         fontSize: 16)
         label.textAlignment = .center
@@ -131,7 +129,7 @@ class OrdersViewController: UIViewController {
         tableView.panGestureRecognizer.isEnabled = false
         tableView.separatorColor = .clear
         tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = 66.dp
+        tableView.rowHeight = ROW_HEIGHT
         tableView.register(OrderCell.self, forCellReuseIdentifier: Cells.orderCell)
         tableView.isScrollEnabled = false
         tableView.accessibilityIdentifier = "ordersTableView"
@@ -151,5 +149,9 @@ class OrdersViewController: UIViewController {
                 tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
             }
         }
+    }
+    
+    func showDetail(order: Order) {
+        delegate?.showDetail(order: order)
     }
 }

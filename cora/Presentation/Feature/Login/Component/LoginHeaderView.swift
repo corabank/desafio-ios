@@ -8,12 +8,12 @@
 import UIKit
 
 class LoginHeaderview: UIView {
-    var userNameLabel: UILabel!
-    var ordersLabel: UILabel!
-    var ordersAmountLabel: UILabel!
-    var userName: String
-    var ordersSum: String
-    var ordersDescription: String
+    private var userNameLabel: UILabel!
+    private var ordersLabel: UILabel!
+    private var ordersAmountLabel: UILabel!
+    private var userName: String
+    private var ordersSum: String
+    private var ordersDescription: String
     
     init(userName: String, ordersSum: String, ordersDescription: String) {
         self.userName = userName
@@ -26,7 +26,7 @@ class LoginHeaderview: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func makeView() {
+    fileprivate func makeView() {
         self.isAccessibilityElement = false
         
         userNameLabel = UILabel(frame: .zeroForAccessibility)
@@ -61,7 +61,7 @@ class LoginHeaderview: UIView {
         ordersAmountLabel.isHidden = ordersDescription == 0.toCurrency
     }
     
-    func setConstraints() {
+    fileprivate func setConstraints() {
         NSLayoutConstraint.activate([
             userNameLabel.topAnchor.constraint(equalTo: self.superview!.topAnchor, constant: 20.dp),
             userNameLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20.dp),

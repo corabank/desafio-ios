@@ -26,7 +26,7 @@ class OrderDetailViewcontroller: UIViewController {
         addTargets()
     }
     
-    func makeBackButton() {
+    fileprivate func makeBackButton() {
         backButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.setTitle("", for: .normal)
@@ -36,7 +36,7 @@ class OrderDetailViewcontroller: UIViewController {
         view.addSubview(backButton)
     }
     
-    func makeView() {
+    fileprivate func makeView() {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         navigationController?.setNavigationBarHidden(true, animated: false)
         detailView = OrderDetailview()
@@ -47,7 +47,7 @@ class OrderDetailViewcontroller: UIViewController {
         makeBackButton()
     }
     
-    func setConstraints() {
+    fileprivate func setConstraints() {
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.dp),
             backButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
@@ -55,7 +55,7 @@ class OrderDetailViewcontroller: UIViewController {
         ])
     }
     
-    func addTargets() {
+    fileprivate func addTargets() {
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
     

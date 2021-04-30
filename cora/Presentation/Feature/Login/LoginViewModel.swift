@@ -54,7 +54,6 @@ class LoginViewModel: LoginViewModelProtocol {
 
     /// Fires use case login
     func login() {
-        
         // MARK: Validation
         if email?.isEmpty == true && password?.isEmpty == true {
             state = .emailAndPasswordEmpty

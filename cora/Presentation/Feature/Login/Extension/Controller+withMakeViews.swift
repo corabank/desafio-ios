@@ -14,7 +14,6 @@ extension LoginViewController {
         if #available(iOS 12.0, *) {
             let image = UIImage(named: "background")?
                 .resized(to: UIScreen.main.bounds.size)
-//            image?.conten
             self.view.backgroundColor = UIColor(patternImage: image!)
         }
     }
