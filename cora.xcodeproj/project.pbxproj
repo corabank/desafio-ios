@@ -58,6 +58,8 @@
 		E3786CCB262A329600AE0CBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCA262A329600AE0CBE /* LoginViewController.swift */; };
 		E3786CD0262A32AA00AE0CBE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */; };
 		E3786CD5262A32D800AE0CBE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3786CD4262A32D800AE0CBE /* Coordinator.swift */; };
+		E37BCE7A263CB56500190AA2 /* Controller+withPanGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BCE79263CB56500190AA2 /* Controller+withPanGestures.swift */; };
+		E37BCE7C263CB57F00190AA2 /* Controller+withTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37BCE7B263CB57F00190AA2 /* Controller+withTableViewDelegate.swift */; };
 		E389F107263AF707006A378E /* UIColor+withColorsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389F106263AF707006A378E /* UIColor+withColorsMap.swift */; };
 		E389F113263B5373006A378E /* Controller+withKeyboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389F112263B5373006A378E /* Controller+withKeyboardActions.swift */; };
 		E39477A32634A33200DCBF26 /* MakeLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39477A22634A33200DCBF26 /* MakeLogin.swift */; };
@@ -163,6 +165,8 @@
 		E3786CCA262A329600AE0CBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3786CD4262A32D800AE0CBE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E37BCE79263CB56500190AA2 /* Controller+withPanGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withPanGestures.swift"; sourceTree = "<group>"; };
+		E37BCE7B263CB57F00190AA2 /* Controller+withTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withTableViewDelegate.swift"; sourceTree = "<group>"; };
 		E389F106263AF707006A378E /* UIColor+withColorsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+withColorsMap.swift"; sourceTree = "<group>"; };
 		E389F112263B5373006A378E /* Controller+withKeyboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+withKeyboardActions.swift"; sourceTree = "<group>"; };
 		E39477A22634A33200DCBF26 /* MakeLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeLogin.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 		E31DB37B262CB09700CD6A0E /* List */ = {
 			isa = PBXGroup;
 			children = (
+				E37BCE78263CB52F00190AA2 /* Extensions */,
 				E3786CC4262A326E00AE0CBE /* OrdersViewController.swift */,
 				E31DB31E262B092B00CD6A0E /* OrderCell.swift */,
 				E31DB330262B6C3000CD6A0E /* OrdersViewModel.swift */,
@@ -566,6 +571,15 @@
 				E3786CCF262A32AA00AE0CBE /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E37BCE78263CB52F00190AA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E37BCE79263CB56500190AA2 /* Controller+withPanGestures.swift */,
+				E37BCE7B263CB57F00190AA2 /* Controller+withTableViewDelegate.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E39477A12634A31600DCBF26 /* Common */ = {
@@ -922,6 +936,7 @@
 				E31DB324262B1A2500CD6A0E /* Double+withToCurrency.swift in Sources */,
 				E3786C84262A30B400AE0CBE /* OrdersDataSource.swift in Sources */,
 				E3786C75262A305C00AE0CBE /* Order+initWithOrderDTO.swift in Sources */,
+				E37BCE7C263CB57F00190AA2 /* Controller+withTableViewDelegate.swift in Sources */,
 				E3AFE5DF2637837F00B5A828 /* LogoView.swift in Sources */,
 				E31DB31A262B07A900CD6A0E /* UIView+pin.swift in Sources */,
 				E3786C9B262A313E00AE0CBE /* String+isValidEmail.swift in Sources */,
@@ -958,6 +973,7 @@
 				E3786CA6262A318E00AE0CBE /* LoginUseCase.swift in Sources */,
 				E31DB331262B6C3000CD6A0E /* OrdersViewModel.swift in Sources */,
 				E3B592EE262F0132006F189C /* Facade.swift in Sources */,
+				E37BCE7A263CB56500190AA2 /* Controller+withPanGestures.swift in Sources */,
 				E3CE81B52639A18600B95CA6 /* UIView+withLoginAnimations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
