@@ -14,10 +14,8 @@ class LogoView: UIView {
         let image = UIImage(named: "logo-cora")
         logo = UIImageView(image: image)
         logo.translatesAutoresizingMaskIntoConstraints = false
-        if #available(iOS 12.0, *) {
-            if traitCollection.userInterfaceStyle == .dark {
-                logo.tintColor = .white
-            }
+        if #available(iOS 12.0, *), traitCollection.userInterfaceStyle == .dark {
+            logo.tintColor = .white
         }
         self.addSubview(logo)
     }

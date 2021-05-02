@@ -33,7 +33,7 @@ extension MainCoordinator {
         self.navigationController.viewControllers = [loginViewController]
     }
     
-    func listOrders(orderID: UUID? = nil) {
+    func listOrders() {
         let useCase = container.resolve(OrdersUseCaseProtocol.self)!
         let viewModel = OrdersViewModel(useCase: useCase)
         let ordersViewController = OrdersViewController()

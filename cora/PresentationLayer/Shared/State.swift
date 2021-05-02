@@ -12,5 +12,5 @@ class State {
     var user: User?
     static var shared = State()
     
-    private init() {}
+    private init() {} // not implemented
 }

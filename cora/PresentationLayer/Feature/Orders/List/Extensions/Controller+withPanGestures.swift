@@ -28,19 +28,19 @@ extension OrdersViewController: UIGestureRecognizerDelegate {
         case .ended:
             lastLocation.y += translation.y
             
-            if lastLocation.y <= TOP_LIMIT {
+            if lastLocation.y <= topLimit {
                 UIView.transition(
                     with: view,
                     duration: 0.5,
                     options: .curveEaseInOut,
                     animations: {
                         self.view.transform = CGAffineTransform(translationX: 0,
-                                                                y: self.TOP_LIMIT)
+                                                                y: self.topLimit)
                 })
-                lastLocation.y = self.TOP_LIMIT
+                lastLocation.y = self.topLimit
             }
 
-            if lastLocation.y >= BOTTOM_LIMIT {
+            if lastLocation.y >= bottomLimit {
                 UIView.transition(
                     with: view,
                     duration: 0.5,

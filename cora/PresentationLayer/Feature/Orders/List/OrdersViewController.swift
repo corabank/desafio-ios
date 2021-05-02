@@ -21,10 +21,10 @@ class OrdersViewController: UIViewController {
     var orders = [Order]()
     var lastLocation: CGPoint = CGPoint(x: 0, y: 0)
     
-    var TOP_LIMIT: CGFloat!
-    let ROW_HEIGHT = 66.dp
-    let INIT_Y = 175.dp
-    let BOTTOM_LIMIT = 50.dp
+    var topLimit: CGFloat!
+    let rowHeight = 66.dp
+    let initY = 175.dp
+    let bottomLimit = 50.dp
     
     struct Cells {
         static let orderCell = "OrderCell"
@@ -36,7 +36,6 @@ class OrdersViewController: UIViewController {
         makeView()
         makeTableView()
         makeEmpty()
-        scrollIfNeeds()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,14 +47,14 @@ class OrdersViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         if !orders.isEmpty && view.frame.size.height < tableView.contentSize.height {
-            view.frame = CGRect(x: 0, y: INIT_Y,
+            view.frame = CGRect(x: 0, y: initY,
                                 width: UIScreen.main.bounds.width,
                                 height: tableView.contentSize.height + 50.dp)
             return
         }
         
         view.frame = CGRect(x: 0, y: 175.dp, width: view.frame.width, height: view.frame.height)
-        TOP_LIMIT = UIScreen.main.bounds.height - view.frame.height - 175.dp
+        topLimit = UIScreen.main.bounds.height - view.frame.height - 175.dp
     }
     
     fileprivate func handleState(state: OrdersViewModelState) {
@@ -119,16 +118,15 @@ class OrdersViewController: UIViewController {
         view.addSubview(tableView)
         setTableViewDelegates()
 
-        switch UIScreen.main.bounds.width {
-        case 375.0, 390.0:
+        let screenWidth = UIScreen.main.bounds.width
+        if screenWidth == 375.0 || UIScreen.main.bounds.width == 390.0 {
             tableView.contentInset = UIEdgeInsets(top: -30.dp, left: 0, bottom: 0, right: 0)
-        default: break
         }
         
         tableView.panGestureRecognizer.isEnabled = false
         tableView.separatorColor = .clear
         tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = ROW_HEIGHT
+        tableView.rowHeight = rowHeight
         tableView.register(OrderCell.self, forCellReuseIdentifier: Cells.orderCell)
         tableView.isScrollEnabled = false
         tableView.accessibilityIdentifier = "ordersTableView"
@@ -139,15 +137,6 @@ class OrdersViewController: UIViewController {
     fileprivate func setTableViewDelegates() {
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    fileprivate func scrollIfNeeds() {
-        if let orderID = orderID {
-            if let index = orders.firstIndex(where: { $0.id == orderID }) {
-                let indexPath = NSIndexPath(row: index, section: 0)
-                tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
-            }
-        }
     }
     
     func showDetail(order: Order) {
