@@ -43,6 +43,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: SonarCloud Coverage
-        run: |
-          xcodebuild clean build test -workspace cora.xcworkspace -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+        run: xcodebuild -workspace cora.xcworkspace -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
 
