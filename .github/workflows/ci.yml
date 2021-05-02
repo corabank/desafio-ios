@@ -41,7 +41,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: SonarCloud Coverage
         run: |
-          xcodebuild -workspace cora.xcworkspace -scheme cora -derivedDataPath DerivedData/Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-          bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
-          sonar-scanner -Dsonar.projectKey=cora -Dsonar.sources=. -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml -Dsonar.cfamily.build-wrapper-output.bypass=true
+          xcodebuild -project cora.xcodeproj/ -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
