@@ -41,18 +41,16 @@ jobs:
       name: Sonarqube Analisys
     needs: build
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: CocoaPod Install
-        run: pod install          
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+      - run: bundle exec slather
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GIT_BRANCH: ${{ steps.get_branch.outputs.branch }}
+          CI_PULL_REQUEST: ${{ github.event.number }}
+          COVERAGE_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: SonarCloud Scan
+#         uses: SonarSource/sonarcloud-github-action@master
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+#           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: SonarCloud Coverage
         run: xcodebuild -workspace cora.xcworkspace -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
