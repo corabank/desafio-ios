@@ -1,4 +1,4 @@
-name: CI
+name: ci
 
 on:
   workflow_dispatch:
@@ -22,10 +22,13 @@ jobs:
         run: |
           xcodebuild clean
           xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
-
+      
   sonarcloud:
-    name: SonarCloud
     runs-on: ubuntu-latest
+    environment: 
+      name: challenge
+      url: skeletorapps.com
+    needs: build
     steps:
       - uses: actions/checkout@v2
         with:
