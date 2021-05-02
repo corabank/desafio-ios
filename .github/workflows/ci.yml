@@ -41,5 +41,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: SonarCloud Coverage
         run: |
-          xcodebuild build-for-testing -workspace cora.xcworkspace -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean build test -workspace cora.xcworkspace -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
