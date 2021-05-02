@@ -19,16 +19,24 @@ jobs:
       - name: iOS build setup
         run: |
           xcodebuild build-for-testing -scheme cora -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
+
+  tests:
+    runs-on: macOS-latest
+    environment:
+      name: challenge
+      url: https://skeletorapps.com
+    needs: build
+    steps:
       - name: Tests
         run: |
           xcodebuild clean
-          xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
+          xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO    
 
   sonarcloud:
     runs-on: ubuntu-latest
     environment: 
       name: challenge
-      url: skeletorapps.com
+      url: https://skeletorapps.com
     needs: build
     steps:
       - uses: actions/checkout@v2
