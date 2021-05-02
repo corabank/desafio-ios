@@ -36,7 +36,7 @@ jobs:
 #           xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO    
 
   sonarcloud:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     environment: 
       name: Sonarqube Analisys
     needs: build
