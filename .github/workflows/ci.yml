@@ -9,27 +9,27 @@ on:
   workflow_dispatch:    
 
 jobs:
-  build:
-    runs-on: macOS-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: CocoaPod Install
-        run: pod install
-      - name: iOS build setup
-        run: |
-          xcodebuild build-for-testing -scheme cora -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
-      - name: Tests
-        run: |
-          xcodebuild clean
-          xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
+#   build:
+#     runs-on: macOS-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: CocoaPod Install
+#         run: pod install
+#       - name: iOS build setup
+#         run: |
+#           xcodebuild build-for-testing -scheme cora -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
+#       - name: Tests
+#         run: |
+#           xcodebuild clean
+#           xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO
 
   sonarcloud:
     runs-on: ubuntu-latest
     environment: 
       name: challenge
       url: skeletorapps.com
-    needs: build
+#     needs: build
     steps:
       - uses: actions/checkout@v2
         with:
@@ -41,7 +41,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: SonarCloud Coverage
         run: |
-          xcodebuild -project cora.xcodeproj/ -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          xcodebuild -workspace cora.xcworkspace -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
           bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
           sonar-scanner -Dsonar.projectKey=cora -Dsonar.sources=. -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml -Dsonar.cfamily.build-wrapper-output.bypass=true
 
