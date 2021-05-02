@@ -20,38 +20,29 @@ jobs:
         run: |
           xcodebuild build-for-testing -scheme cora -workspace cora.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 12' #-allowProvisioningUpdates
 
-#   tests:
-#     runs-on: macOS-latest
-#     environment:
-#       name: Unit and UI Tests
-#     needs: build
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
-#       - name: CocoaPod Install
-#         run: pod install
-#       - name: Tests
-#         run: |
-#           xcodebuild clean
-#           xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO    
+  tests:
+    runs-on: macOS-latest
+    environment:
+      name: Unit and UI Tests
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: CocoaPod Install
+        run: pod install
+      - name: Tests
+        run: |
+          xcodebuild clean
+          xcodebuild test -workspace cora.xcworkspace -scheme cora -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest' CODE_SIGN_ENTITLEMENT= DEVELOPMENT_TEAM= CODE_SIGNING_ALLOWED=NO    
 
   sonarcloud:
     runs-on: ubuntu-latest
     environment: 
       name: Sonarqube Analisys
-    needs: build
+    needs: tests
     steps:
-      - run: bundle exec slather
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
-          GIT_BRANCH: ${{ steps.get_branch.outputs.branch }}
-          CI_PULL_REQUEST: ${{ github.event.number }}
-          COVERAGE_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       - name: SonarCloud Scan
-#         uses: SonarSource/sonarcloud-github-action@master
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-#           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - name: SonarCloud Coverage
-        run: xcodebuild -workspace cora.xcworkspace -scheme cora -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
