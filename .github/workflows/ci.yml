@@ -23,8 +23,7 @@ jobs:
   tests:
     runs-on: macOS-latest
     environment:
-      name: challenge
-      url: https://skeletorapps.com
+      name: Unit and UI Tests
     needs: build
     steps:
       - name: Tests
@@ -35,8 +34,7 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     environment: 
-      name: challenge
-      url: https://skeletorapps.com
+      name: Sonarqube Analisys
     needs: build
     steps:
       - uses: actions/checkout@v2
