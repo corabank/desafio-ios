@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>22F9AF55-FAA3-4D4E-8AD5-45592345DBCF</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>22F9AF55-FAA3-4D4E-8AD5-45592345DBCF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>cora project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>cora</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Testing workspace cora with scheme cora</string>
+			<key>timeStartedRecording</key>
+			<real>641658133.71202397</real>
+			<key>timeStoppedRecording</key>
+			<real>641658135.50905097</real>
+			<key>title</key>
+			<string>Testing workspace cora with scheme cora</string>
+			<key>uniqueIdentifier</key>
+			<string>22F9AF55-FAA3-4D4E-8AD5-45592345DBCF</string>
+		</dict>
+		<key>442B72E5-BD00-4B6A-B82F-84C3B35E60E9</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>442B72E5-BD00-4B6A-B82F-84C3B35E60E9.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>cora project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>cora</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace cora with scheme cora</string>
+			<key>timeStartedRecording</key>
+			<real>641658131.22115898</real>
+			<key>timeStoppedRecording</key>
+			<real>641658133.71055198</real>
+			<key>title</key>
+			<string>Building workspace cora with scheme cora</string>
+			<key>uniqueIdentifier</key>
+			<string>442B72E5-BD00-4B6A-B82F-84C3B35E60E9</string>
+		</dict>
+		<key>D67D4CE9-0A90-48EC-97A5-8FAD20F75C3E</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D67D4CE9-0A90-48EC-97A5-8FAD20F75C3E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>cora project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>cora</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Testing workspace cora with scheme cora</string>
+			<key>timeStartedRecording</key>
+			<real>641657410.47857797</real>
+			<key>timeStoppedRecording</key>
+			<real>641657427.26753902</real>
+			<key>title</key>
+			<string>Testing workspace cora with scheme cora</string>
+			<key>uniqueIdentifier</key>
+			<string>D67D4CE9-0A90-48EC-97A5-8FAD20F75C3E</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

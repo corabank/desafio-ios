@@ -1,0 +1,28 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :metrics do
+
+    scan(scheme: "cora", 
+      code_coverage: true, 
+      derived_data_path: "./DerivedData", 
+      output_directory: "./sonar-reports",
+      devices: "iPhone 12")
+     
+    slather(cobertura_xml: true, 
+      jenkins: true, 
+      scheme: "cora", 
+      build_directory: "./DerivedData", 
+      output_directory: "./sonar-reports", 
+      proj: "./cora.xcodeproj")
+
+     swiftlint(output_file: "./sonar-reports/swiftlint.txt", 
+      ignore_exit_status: true)
+
+     sonar
+end
+end

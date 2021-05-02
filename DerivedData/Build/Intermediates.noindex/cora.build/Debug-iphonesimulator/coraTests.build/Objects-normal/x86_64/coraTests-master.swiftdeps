@@ -1,0 +1,16 @@
+version: "Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
+options: "de1ca0953618c9624c827edac6c7f1a8"
+build_time: [1619964615, 539008000]
+inputs:
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Login/LoginViewControllerTests.swift": [1619659823, 974487506]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Login/LoginViewModelTests.swift": [1619659823, 975081521]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Login/Integration/LoginRepositoryIntegrationTests.swift": [1619659823, 970781107]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Mock.generated.swift": [1619813788, 364503315]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Orders/OrdersViewModelTests.swift": [1619813244, 22530837]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Login/LoginRepositoryTests.swift": [1619659823, 971380321]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Domain/Login/LoginUseCaseTests.swift": [1619659823, 973203041]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Common/OrdersFactory.swift": [1619659823, 969989836]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Orders/OrdersViewControllerTests.swift": [1619814057, 578369837]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Orders/Integration/OrdersRepositoryIntegrationTests.swift": [1619659823, 971951268]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Domain/Orders/OrdersUseCaseTests.swift": [1619659823, 973865889]
+  "/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Orders/OrdersRepositoryTests.swift": [1619659823, 972546493]

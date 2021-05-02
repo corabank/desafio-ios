@@ -1,0 +1,11 @@
+framework module SwiftyMocky {
+  umbrella header "SwiftyMocky-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftyMocky.Swift {
+    header "SwiftyMocky-Swift.h"
+    requires objc
+}

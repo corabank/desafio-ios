@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
+options: "b58f617a2b77c80c3a1a93216842ef73"
+build_time: [1619964625, 632510000]
+inputs:
+  "/Users/lucassilveira/Developer/desafio-ios/coraUITests/Extension/XCUIApplication+withWaitForExistenceOfAll.swift": [1619831412, 784768315]
+  "/Users/lucassilveira/Developer/desafio-ios/coraUITests/LoginUITests.swift": [1619659823, 976374583]
+  "/Users/lucassilveira/Developer/desafio-ios/coraUITests/OrdersUITests.swift": [1619831412, 875919511]
+  "/Users/lucassilveira/Developer/desafio-ios/coraUITests/Common/MakeLogin.swift": [1619831412, 858746103]

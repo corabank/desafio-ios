@@ -1,0 +1,28 @@
+Target dependency graph (10 targets)
+SwiftLint in Pods
+Swinject in Pods
+Pods-cora in Pods, depends on:
+SwiftLint in Pods (explicit)
+Swinject in Pods (explicit)
+cora in cora, depends on:
+Pods-cora in Pods (implicit dependency via file 'Pods_cora.framework' in build phase 'Link Binary'
+Swinject in Pods (implicit dependency via options '-framework Swinject' in build setting 'OTHER_LDFLAGS'
+Sourcery in Pods
+SwiftyMocky in Pods, depends on:
+Sourcery in Pods (explicit)
+Pods-coraTests in Pods, depends on:
+Pods-cora in Pods (explicit)
+Sourcery in Pods (explicit)
+SwiftyMocky in Pods (explicit)
+coraTests in cora, depends on:
+cora in cora (explicit)
+Pods-coraTests in Pods (implicit dependency via file 'Pods_coraTests.framework' in build phase 'Link Binary'
+SwiftyMocky in Pods (implicit dependency via options '-framework SwiftyMocky' in build setting 'OTHER_LDFLAGS'
+Swinject in Pods (implicit dependency via options '-framework Swinject' in build setting 'OTHER_LDFLAGS'
+Pods-cora-coraUITests in Pods, depends on:
+SwiftLint in Pods (explicit)
+Swinject in Pods (explicit)
+coraUITests in cora, depends on:
+cora in cora (explicit)
+Pods-cora-coraUITests in Pods (implicit dependency via file 'Pods_cora_coraUITests.framework' in build phase 'Link Binary'
+Swinject in Pods (implicit dependency via options '-framework Swinject' in build setting 'OTHER_LDFLAGS'
