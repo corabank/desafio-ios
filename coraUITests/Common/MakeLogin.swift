@@ -1,0 +1,27 @@
+//
+//  MakeLogin.swift
+//  coraUITests
+//
+//  Created by Lucas Silveira on 24/04/21.
+//
+
+import XCTest
+
+class MakeLogin: XCTestCase {
+    static func run(app: XCUIApplication) {
+        app.launch()
+        let emailTextInput = app.textFields["emailTextInput"]
+        let passwordTextInput = app.secureTextFields["passwordTextInput"]
+        let button = app.buttons["button"]
+        
+        if app.waitForExistenceOfAll(elements: [emailTextInput, passwordTextInput, button], for: 20) {
+            emailTextInput.tap()
+            emailTextInput.typeText("lucas.fernandes.silveira@gmail.com")
+            emailTextInput.typeText("\n")
+            passwordTextInput.tap()
+            passwordTextInput.typeText("caveira2021")
+            passwordTextInput.typeText("\n")
+            app.buttons["button"].tap()
+        }
+    }
+}

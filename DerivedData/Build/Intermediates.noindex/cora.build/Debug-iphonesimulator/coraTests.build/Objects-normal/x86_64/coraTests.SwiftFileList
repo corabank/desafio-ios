@@ -1,0 +1,12 @@
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Login/LoginViewControllerTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Login/LoginViewModelTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Login/Integration/LoginRepositoryIntegrationTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Mock.generated.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Orders/OrdersViewModelTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Login/LoginRepositoryTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Domain/Login/LoginUseCaseTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Common/OrdersFactory.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Presentation/Orders/OrdersViewControllerTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Orders/Integration/OrdersRepositoryIntegrationTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Domain/Orders/OrdersUseCaseTests.swift
+/Users/lucassilveira/Developer/desafio-ios/coraTests/Data/Orders/OrdersRepositoryTests.swift

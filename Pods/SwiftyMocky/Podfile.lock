@@ -1,0 +1,23 @@
+PODS:
+  - Sourcery (1.0.3)
+  - SwiftyMocky (4.0.3):
+    - Sourcery (~> 1.0.2)
+
+DEPENDENCIES:
+  - SwiftyMocky (from `./`)
+
+SPEC REPOS:
+  trunk:
+    - Sourcery
+
+EXTERNAL SOURCES:
+  SwiftyMocky:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  Sourcery: 70a6048014bd4f37ea80e6bd4354d47bf3b760e1
+  SwiftyMocky: 55251d3e06a33aa2c5ceea2d14c2d7ed0f0ee2f9
+
+PODFILE CHECKSUM: c5b363f6fe9e513e1d6cf9bbd52b93f5e914d9aa
+
+COCOAPODS: 1.9.3

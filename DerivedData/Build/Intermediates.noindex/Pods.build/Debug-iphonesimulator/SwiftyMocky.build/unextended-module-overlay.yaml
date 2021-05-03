@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/lucassilveira/Developer/desafio-ios/DerivedData/Build/Products/Debug-iphonesimulator/SwiftyMocky/SwiftyMocky.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/lucassilveira/Developer/desafio-ios/DerivedData/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SwiftyMocky.build/unextended-module.modulemap",
+    }]
+  }]
+}

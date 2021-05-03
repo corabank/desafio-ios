@@ -1,0 +1,9 @@
+Target dependency graph (4 targets)
+SwiftLint in Pods
+Swinject in Pods
+Pods-cora in Pods, depends on:
+SwiftLint in Pods (explicit)
+Swinject in Pods (explicit)
+cora in cora, depends on:
+Pods-cora in Pods (implicit dependency via file 'Pods_cora.framework' in build phase 'Link Binary'
+Swinject in Pods (implicit dependency via options '-framework Swinject' in build setting 'OTHER_LDFLAGS'

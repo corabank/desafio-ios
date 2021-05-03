@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>6D043E2E-5DBF-4EF7-91D1-E4702D3538E7</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>442B72E5-BD00-4B6A-B82F-84C3B35E60E9</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.unit.cocoaUnitTest</string>
+			<key>fileName</key>
+			<string>Run-cora-2021.05.02_11-22-11--0300.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasCoverageData</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>cora project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>cora</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run cora</string>
+			<key>timeStartedRecording</key>
+			<real>641658131.22448504</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run cora</string>
+			<key>uniqueIdentifier</key>
+			<string>6D043E2E-5DBF-4EF7-91D1-E4702D3538E7</string>
+		</dict>
+		<key>70583813-E167-4E29-909E-418D9893F96C</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>E26EB259-05D9-47D2-A628-63C1155042BB</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.unit.cocoaUnitTest</string>
+			<key>fileName</key>
+			<string>Run-cora-2021.05.02_11-09-00--0300.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasCoverageData</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>cora project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>cora</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run cora</string>
+			<key>timeStartedRecording</key>
+			<real>641657340.89883304</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run cora</string>
+			<key>uniqueIdentifier</key>
+			<string>70583813-E167-4E29-909E-418D9893F96C</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

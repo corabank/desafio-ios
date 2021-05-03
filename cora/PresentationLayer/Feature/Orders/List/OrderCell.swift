@@ -1,0 +1,152 @@
+//
+//  OrderCell.swift
+//  cora
+//
+//  Created by Lucas Silveira on 17/04/21.
+//
+
+import UIKit
+
+class OrderCell: UITableViewCell {
+    private var order: Order! {
+        didSet {
+            configureElements()
+            setConstraints()
+        }
+    }
+    
+    private var orderImage = UIImageView()
+    private var orderTitle = UILabel()
+    private var orderDescription = UILabel()
+    private var orderStatus = UILabel()
+    private var orderDate = UILabel()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        if order != nil {
+            self.accessibilityIdentifier = order.id.uuidString
+        }
+
+        makeView()
+        tintCardImage()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func set(order: Order) {
+        self.order = order
+
+        orderTitle.text = order.value.toCurrency
+        orderDescription.text = order.description
+        let days = order.dueDate.numberOfDaysTilToday
+        orderDate.text = days == 0
+            ? "today".localized
+            : "\(days) " + "day".localized + "\(days != 1 ? "s" : "") " + "ago".localized
+        
+        switch order.status {
+        case .late:
+            orderStatus.text = "Not Paid".localized
+        case .paid:
+            orderStatus.text = "Paid".localized
+        case .pending:
+            orderStatus.text = "Waiting".localized
+        }
+    }
+    
+    fileprivate func makeView() {
+        addSubview(orderImage)
+        addSubview(orderTitle)
+        addSubview(orderDescription)
+        addSubview(orderStatus)
+        addSubview(orderDate)
+    }
+
+    fileprivate func configureImageView() {
+        orderImage.translatesAutoresizingMaskIntoConstraints = false
+        orderImage.image = UIImage(named: "creditcard.circle.fill")?
+            .withRenderingMode(.automatic)
+        orderImage.tintColor = .cellImageColor
+        orderImage.contentMode = .scaleAspectFit
+    }
+
+    fileprivate func configureTitleLabel() {
+        orderTitle.translatesAutoresizingMaskIntoConstraints = false
+        orderTitle.numberOfLines = 0
+        orderTitle.adjustsFontSizeToFitWidth = true
+        orderTitle.textColor = .cellTitleColor
+        orderTitle.font = UIFont.boldSystemFont(ofSize: 14.dp)
+    }
+
+    fileprivate func configureDescriptionLabel() {
+        orderDescription.translatesAutoresizingMaskIntoConstraints = false
+        orderDescription.numberOfLines = 0
+        orderDescription.adjustsFontSizeToFitWidth = true
+        orderDescription.textColor = .cellDescriptionColor
+        orderDescription.font = UIFont.systemFont(ofSize: 11.dp)
+    }
+
+    fileprivate func configureStatusLabel() {
+        orderStatus.translatesAutoresizingMaskIntoConstraints = false
+        orderStatus.numberOfLines = 0
+        orderStatus.adjustsFontSizeToFitWidth = true
+        orderStatus.font = UIFont.systemFont(ofSize: 12.dp)
+        
+        switch order.status {
+        case .late:
+            orderStatus.textColor = #colorLiteral(red: 1, green: 0.2321209311, blue: 0.4182785749, alpha: 1)
+        case .paid:
+            orderStatus.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        case .pending:
+            orderStatus.textColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        }
+    }
+
+    fileprivate func configureDateLabel() {
+        orderDate.translatesAutoresizingMaskIntoConstraints = false
+        orderDate.numberOfLines = 0
+        orderDate.adjustsFontSizeToFitWidth = true
+        orderDate.textColor = .cellDateColor
+        orderDate.font = UIFont.systemFont(ofSize: 10.dp)
+    }
+
+    fileprivate func configureElements() {
+        configureImageView()
+        configureTitleLabel()
+        configureDescriptionLabel()
+        configureStatusLabel()
+        configureDateLabel()
+    }
+
+    fileprivate func setConstraints() {
+        NSLayoutConstraint.activate([
+            orderImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            orderImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 10.dp),
+            orderImage.heightAnchor.constraint(equalToConstant: 35.dp),
+            orderImage.widthAnchor.constraint(equalTo: orderImage.heightAnchor),
+            orderTitle.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 14.dp),
+            orderTitle.topAnchor.constraint(equalTo: topAnchor, constant: 15.7.dp),
+            orderDescription.leftAnchor.constraint(equalTo: orderImage.rightAnchor, constant: 14.dp),
+            orderDescription.topAnchor.constraint(equalTo: orderTitle.bottomAnchor, constant: 4.dp),
+            orderStatus.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),
+            orderStatus.topAnchor.constraint(equalTo: topAnchor, constant: 16.dp),
+            orderDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.dp),
+            orderDate.topAnchor.constraint(equalTo: orderTitle.bottomAnchor, constant: 4.dp)
+        ])
+    }
+    
+    fileprivate func tintCardImage() {
+        orderImage.layer.opacity = 0.45
+        if #available(iOS 12.0, *), traitCollection.userInterfaceStyle == .dark {
+            orderImage.layer.opacity =  0.85
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        tintCardImage()
+    }
+}

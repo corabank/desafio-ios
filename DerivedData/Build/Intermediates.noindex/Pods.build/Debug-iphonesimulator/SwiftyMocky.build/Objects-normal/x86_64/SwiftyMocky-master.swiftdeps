@@ -1,0 +1,19 @@
+version: "Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
+options: "93420704fd5802186761c8b8b6a2424f"
+build_time: [1619964611, 363704000]
+inputs:
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/ArgumentCaptor.swift": [1619813519, 919339202]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Count.swift": [1619813519, 920094058]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Countable.swift": [1619813519, 915850123]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/CustomAssertions.swift": [1619813519, 922529971]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/GenericAttribute.swift": [1619813519, 924258121]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Matcher.swift": [1619813519, 918421220]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Mock+Assertions.swift": [1619813519, 921348199]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Mock.swift": [1619813519, 916726386]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/MockyAssert.swift": [1619813519, 916289088]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Parameter+Literals.swift": [1619813519, 921935129]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Parameter.swift": [1619813519, 915361406]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Policies.swift": [1619813519, 918968058]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Stubbing.swift": [1619813519, 922913047]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/SwiftyMockyTestObserver.swift": [1619813519, 919735105]
+  "/Users/lucassilveira/Developer/desafio-ios/Pods/SwiftyMocky/Sources/SwiftyMocky/Utils.swift": [1619813519, 920999174]

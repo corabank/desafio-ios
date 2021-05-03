@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='coraUITests.xctest' tests='42' failures='0'>
+  <testsuite name='coraTests.LoginRepositoryIntegrationTests' tests='2' failures='0'>
+    <testcase classname='coraTests.LoginRepositoryIntegrationTests' name='test_integration_login_repository_should_hanle_error' time='3.029'/>
+    <testcase classname='coraTests.LoginRepositoryIntegrationTests' name='test_integration_login_repository_with_data_sources' time='3.023'/>
+  </testsuite>
+  <testsuite name='coraTests.LoginRepositoryTests' tests='2' failures='0'>
+    <testcase classname='coraTests.LoginRepositoryTests' name='test_login_repository_should_return_error' time='0.011'/>
+    <testcase classname='coraTests.LoginRepositoryTests' name='test_login_repository_with_dto_should_return_user' time='0.001'/>
+  </testsuite>
+  <testsuite name='coraTests.LoginUseCaseTests' tests='3' failures='0'>
+    <testcase classname='coraTests.LoginUseCaseTests' name='test_login_should_return_a_valid_user' time='0.005'/>
+    <testcase classname='coraTests.LoginUseCaseTests' name='test_login_should_return_failure' time='0.002'/>
+    <testcase classname='coraTests.LoginUseCaseTests' name='test_login_should_return_invalid_email_failure' time='0.001'/>
+  </testsuite>
+  <testsuite name='coraTests.LoginViewControllerTests' tests='9' failures='0'>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenLoginAuthenticated' time='0.851'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenLoginAuthenticating' time='0.549'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenLoginButtonIsTappedShouldLoadViewModel' time='0.572'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenLoginEmailEmpty' time='0.887'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenLoginHasInvalidEmail' time='0.579'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenLoginPasswordAndEmailEmpty' time='0.536'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenLoginPasswordEmpty' time='0.532'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenUserIsLoggedShouldHaveHeaderVisible' time='0.556'/>
+    <testcase classname='coraTests.LoginViewControllerTests' name='testWhenWrongEmailAndPassword' time='0.633'/>
+  </testsuite>
+  <testsuite name='coraTests.LoginViewModelTests' tests='7' failures='0'>
+    <testcase classname='coraTests.LoginViewModelTests' name='testEmailAndPasswordEmpty' time='0.002'/>
+    <testcase classname='coraTests.LoginViewModelTests' name='testEmailAndPasswordFilled' time='0.001'/>
+    <testcase classname='coraTests.LoginViewModelTests' name='testEmailWasFilledAndPasswordNot' time='0.001'/>
+    <testcase classname='coraTests.LoginViewModelTests' name='testLoginWhenUseCaseReturnAPIFailure' time='0.001'/>
+    <testcase classname='coraTests.LoginViewModelTests' name='testLoginWhenUseCaseReturnAuthenticated' time='0.002'/>
+    <testcase classname='coraTests.LoginViewModelTests' name='testLoginWhenUseCaseReturnAuthenticating' time='0.001'/>
+    <testcase classname='coraTests.LoginViewModelTests' name='testLoginWhenUseCaseReturnInvalidEmail' time='0.001'/>
+  </testsuite>
+  <testsuite name='coraTests.OrdersRepositoryIntegrationTests' tests='1' failures='0'>
+    <testcase classname='coraTests.OrdersRepositoryIntegrationTests' name='test_integration_orders_repository_with_data_sources' time='0.022'/>
+  </testsuite>
+  <testsuite name='coraTests.OrdersRepositoryTests' tests='2' failures='0'>
+    <testcase classname='coraTests.OrdersRepositoryTests' name='test_orders_repository_should_return_error' time='0.004'/>
+    <testcase classname='coraTests.OrdersRepositoryTests' name='test_orders_repository_with_dto_should_return_orders' time='0.002'/>
+  </testsuite>
+  <testsuite name='coraTests.OrdersUseCaseTests' tests='2' failures='0'>
+    <testcase classname='coraTests.OrdersUseCaseTests' name='test_orders_should_return_failure' time='0.004'/>
+    <testcase classname='coraTests.OrdersUseCaseTests' name='test_orders_use_case_should_return_a_list_of_orders' time='0.016'/>
+  </testsuite>
+  <testsuite name='coraTests.OrdersViewControllerTests' tests='2' failures='0'>
+    <testcase classname='coraTests.OrdersViewControllerTests' name='testWhenOrdersAreLoaded' time='0.019'/>
+    <testcase classname='coraTests.OrdersViewControllerTests' name='testWhenOrdersEmpty' time='0.007'/>
+  </testsuite>
+  <testsuite name='coraTests.OrdersViewModelTests' tests='4' failures='0'>
+    <testcase classname='coraTests.OrdersViewModelTests' name='testOrdersWhenuseCaseReturnsEmpty' time='0.002'/>
+    <testcase classname='coraTests.OrdersViewModelTests' name='testOrdersWhenuseCaseReturnsFailure' time='0.001'/>
+    <testcase classname='coraTests.OrdersViewModelTests' name='testOrdersWhenuseCaseReturnsLoading' time='0.001'/>
+    <testcase classname='coraTests.OrdersViewModelTests' name='testOrdersWhenuseCaseReturnsSuccessWithOrders' time='0.002'/>
+  </testsuite>
+  <testsuite name='coraUITests.LoginUITests' tests='6' failures='0'>
+    <testcase classname='coraUITests.LoginUITests' name='testGoingThrougASuccessfullLogin' time='14.735'/>
+    <testcase classname='coraUITests.LoginUITests' name='testGoingThroughLoginWithEmptyEmail' time='7.634'/>
+    <testcase classname='coraUITests.LoginUITests' name='testGoingThroughLoginWithEmptyEmailAndPasword' time='4.902'/>
+    <testcase classname='coraUITests.LoginUITests' name='testGoingThroughLoginWithEmptyPassword' time='8.166'/>
+    <testcase classname='coraUITests.LoginUITests' name='testGoingThroughLoginWithInvalidEmail' time='13.313'/>
+    <testcase classname='coraUITests.LoginUITests' name='testGoingThroughLoginWithInvalidPassword' time='15.287'/>
+  </testsuite>
+  <testsuite name='coraUITests.OrdersUITests' tests='2' failures='0'>
+    <testcase classname='coraUITests.OrdersUITests' name='testGoingThroughOrdersAndListShouldBeLoaded' time='18.782'/>
+    <testcase classname='coraUITests.OrdersUITests' name='testScrollingOrdersList' time='120.419'/>
+  </testsuite>
+</testsuites>
