@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		321A5F6426B2061000E3CA4A /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F6326B2061000E3CA4A /* LoginFactory.swift */; };
+		321A5F6926B206E100E3CA4A /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F6826B206E000E3CA4A /* LoginCoordinator.swift */; };
+		321A5F7226B2093B00E3CA4A /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F7126B2093B00E3CA4A /* HomeFactory.swift */; };
+		321A5F7A26B2095400E3CA4A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F7926B2095400E3CA4A /* HomeViewController.swift */; };
+		321A5F7F26B2096200E3CA4A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F7E26B2096200E3CA4A /* HomeViewModel.swift */; };
+		321A5F8426B2097400E3CA4A /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F8326B2097400E3CA4A /* HomeService.swift */; };
+		321A5F8926B2098200E3CA4A /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F8826B2098200E3CA4A /* HomeCoordinator.swift */; };
+		321A5F8E26B20F9D00E3CA4A /* LoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F8D26B20F9D00E3CA4A /* LoginServiceMock.swift */; };
+		321A5F9326B20FA800E3CA4A /* LoginCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A5F9226B20FA800E3CA4A /* LoginCoordinatorMock.swift */; };
+		32784C0026AE1CD4005B0386 /* UIElementsCora in Frameworks */ = {isa = PBXBuildFile; productRef = 32784BFF26AE1CD4005B0386 /* UIElementsCora */; };
+		328DADCF26AC4EA7002408E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DADCE26AC4EA7002408E1 /* AppDelegate.swift */; };
+		328DADD126AC4EA7002408E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DADD026AC4EA7002408E1 /* SceneDelegate.swift */; };
+		328DADD326AC4EA7002408E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DADD226AC4EA7002408E1 /* LoginViewController.swift */; };
+		328DADD826AC4EA9002408E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328DADD726AC4EA9002408E1 /* Assets.xcassets */; };
+		328DADE626AC4EA9002408E1 /* CoraTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DADE526AC4EA9002408E1 /* CoraTestTests.swift */; };
+		328DADF126AC4EAA002408E1 /* CoraTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DADF026AC4EAA002408E1 /* CoraTestUITests.swift */; };
+		32E03EFA26B2032F000319E3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E03EF926B2032F000319E3 /* LoginViewModel.swift */; };
+		32E03F0226B203A9000319E3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E03F0126B203A9000319E3 /* LoginService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		328DADE226AC4EA9002408E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 328DADC326AC4EA7002408E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 328DADCA26AC4EA7002408E1;
+			remoteInfo = CoraTest;
+		};
+		328DADED26AC4EAA002408E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 328DADC326AC4EA7002408E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 328DADCA26AC4EA7002408E1;
+			remoteInfo = CoraTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		321A5F6326B2061000E3CA4A /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
+		321A5F6826B206E000E3CA4A /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		321A5F7126B2093B00E3CA4A /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		321A5F7926B2095400E3CA4A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		321A5F7E26B2096200E3CA4A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		321A5F8326B2097400E3CA4A /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		321A5F8826B2098200E3CA4A /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		321A5F8D26B20F9D00E3CA4A /* LoginServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceMock.swift; sourceTree = "<group>"; };
+		321A5F9226B20FA800E3CA4A /* LoginCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorMock.swift; sourceTree = "<group>"; };
+		328DADCB26AC4EA7002408E1 /* CoraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		328DADCE26AC4EA7002408E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		328DADD026AC4EA7002408E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		328DADD226AC4EA7002408E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		328DADD726AC4EA9002408E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		328DADDC26AC4EA9002408E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		328DADE126AC4EA9002408E1 /* CoraTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		328DADE526AC4EA9002408E1 /* CoraTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraTestTests.swift; sourceTree = "<group>"; };
+		328DADE726AC4EA9002408E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		328DADEC26AC4EAA002408E1 /* CoraTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		328DADF026AC4EAA002408E1 /* CoraTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraTestUITests.swift; sourceTree = "<group>"; };
+		328DADF226AC4EAA002408E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E03EF926B2032F000319E3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		32E03F0126B203A9000319E3 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		328DADC826AC4EA7002408E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32784C0026AE1CD4005B0386 /* UIElementsCora in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		328DADDE26AC4EA9002408E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		328DADE926AC4EA9002408E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		321A5F7026B2092E00E3CA4A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				321A5F7126B2093B00E3CA4A /* HomeFactory.swift */,
+				321A5F7926B2095400E3CA4A /* HomeViewController.swift */,
+				321A5F7E26B2096200E3CA4A /* HomeViewModel.swift */,
+				321A5F8326B2097400E3CA4A /* HomeService.swift */,
+				321A5F8826B2098200E3CA4A /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		328DADC226AC4EA7002408E1 = {
+			isa = PBXGroup;
+			children = (
+				328DADCD26AC4EA7002408E1 /* CoraTest */,
+				328DADE426AC4EA9002408E1 /* CoraTestTests */,
+				328DADEF26AC4EAA002408E1 /* CoraTestUITests */,
+				328DADCC26AC4EA7002408E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		328DADCC26AC4EA7002408E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				328DADCB26AC4EA7002408E1 /* CoraTest.app */,
+				328DADE126AC4EA9002408E1 /* CoraTestTests.xctest */,
+				328DADEC26AC4EAA002408E1 /* CoraTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		328DADCD26AC4EA7002408E1 /* CoraTest */ = {
+			isa = PBXGroup;
+			children = (
+				328DADCE26AC4EA7002408E1 /* AppDelegate.swift */,
+				328DADD026AC4EA7002408E1 /* SceneDelegate.swift */,
+				321A5F7026B2092E00E3CA4A /* Home */,
+				32E03EF526B201C5000319E3 /* Login */,
+				328DADD726AC4EA9002408E1 /* Assets.xcassets */,
+				328DADDC26AC4EA9002408E1 /* Info.plist */,
+			);
+			path = CoraTest;
+			sourceTree = "<group>";
+		};
+		328DADE426AC4EA9002408E1 /* CoraTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				328DADE526AC4EA9002408E1 /* CoraTestTests.swift */,
+				321A5F8D26B20F9D00E3CA4A /* LoginServiceMock.swift */,
+				321A5F9226B20FA800E3CA4A /* LoginCoordinatorMock.swift */,
+				328DADE726AC4EA9002408E1 /* Info.plist */,
+			);
+			path = CoraTestTests;
+			sourceTree = "<group>";
+		};
+		328DADEF26AC4EAA002408E1 /* CoraTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				328DADF026AC4EAA002408E1 /* CoraTestUITests.swift */,
+				328DADF226AC4EAA002408E1 /* Info.plist */,
+			);
+			path = CoraTestUITests;
+			sourceTree = "<group>";
+		};
+		32E03EF526B201C5000319E3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				321A5F6326B2061000E3CA4A /* LoginFactory.swift */,
+				328DADD226AC4EA7002408E1 /* LoginViewController.swift */,
+				32E03EF926B2032F000319E3 /* LoginViewModel.swift */,
+				32E03F0126B203A9000319E3 /* LoginService.swift */,
+				321A5F6826B206E000E3CA4A /* LoginCoordinator.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		328DADCA26AC4EA7002408E1 /* CoraTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 328DADF526AC4EAA002408E1 /* Build configuration list for PBXNativeTarget "CoraTest" */;
+			buildPhases = (
+				328DADC726AC4EA7002408E1 /* Sources */,
+				328DADC826AC4EA7002408E1 /* Frameworks */,
+				328DADC926AC4EA7002408E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoraTest;
+			packageProductDependencies = (
+				32784BFF26AE1CD4005B0386 /* UIElementsCora */,
+			);
+			productName = CoraTest;
+			productReference = 328DADCB26AC4EA7002408E1 /* CoraTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		328DADE026AC4EA9002408E1 /* CoraTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 328DADF826AC4EAA002408E1 /* Build configuration list for PBXNativeTarget "CoraTestTests" */;
+			buildPhases = (
+				328DADDD26AC4EA9002408E1 /* Sources */,
+				328DADDE26AC4EA9002408E1 /* Frameworks */,
+				328DADDF26AC4EA9002408E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				328DADE326AC4EA9002408E1 /* PBXTargetDependency */,
+			);
+			name = CoraTestTests;
+			productName = CoraTestTests;
+			productReference = 328DADE126AC4EA9002408E1 /* CoraTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		328DADEB26AC4EA9002408E1 /* CoraTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 328DADFB26AC4EAA002408E1 /* Build configuration list for PBXNativeTarget "CoraTestUITests" */;
+			buildPhases = (
+				328DADE826AC4EA9002408E1 /* Sources */,
+				328DADE926AC4EA9002408E1 /* Frameworks */,
+				328DADEA26AC4EA9002408E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				328DADEE26AC4EAA002408E1 /* PBXTargetDependency */,
+			);
+			name = CoraTestUITests;
+			productName = CoraTestUITests;
+			productReference = 328DADEC26AC4EAA002408E1 /* CoraTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		328DADC326AC4EA7002408E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					328DADCA26AC4EA7002408E1 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					328DADE026AC4EA9002408E1 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 328DADCA26AC4EA7002408E1;
+					};
+					328DADEB26AC4EA9002408E1 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 328DADCA26AC4EA7002408E1;
+					};
+				};
+			};
+			buildConfigurationList = 328DADC626AC4EA7002408E1 /* Build configuration list for PBXProject "CoraTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 328DADC226AC4EA7002408E1;
+			packageReferences = (
+				32784BFE26AE1CD4005B0386 /* XCRemoteSwiftPackageReference "cora-test-ui-elements" */,
+			);
+			productRefGroup = 328DADCC26AC4EA7002408E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				328DADCA26AC4EA7002408E1 /* CoraTest */,
+				328DADE026AC4EA9002408E1 /* CoraTestTests */,
+				328DADEB26AC4EA9002408E1 /* CoraTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		328DADC926AC4EA7002408E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				328DADD826AC4EA9002408E1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		328DADDF26AC4EA9002408E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		328DADEA26AC4EA9002408E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		328DADC726AC4EA7002408E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E03EFA26B2032F000319E3 /* LoginViewModel.swift in Sources */,
+				328DADD326AC4EA7002408E1 /* LoginViewController.swift in Sources */,
+				321A5F6926B206E100E3CA4A /* LoginCoordinator.swift in Sources */,
+				321A5F7F26B2096200E3CA4A /* HomeViewModel.swift in Sources */,
+				321A5F6426B2061000E3CA4A /* LoginFactory.swift in Sources */,
+				321A5F8926B2098200E3CA4A /* HomeCoordinator.swift in Sources */,
+				32E03F0226B203A9000319E3 /* LoginService.swift in Sources */,
+				321A5F7A26B2095400E3CA4A /* HomeViewController.swift in Sources */,
+				321A5F7226B2093B00E3CA4A /* HomeFactory.swift in Sources */,
+				321A5F8426B2097400E3CA4A /* HomeService.swift in Sources */,
+				328DADCF26AC4EA7002408E1 /* AppDelegate.swift in Sources */,
+				328DADD126AC4EA7002408E1 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		328DADDD26AC4EA9002408E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				328DADE626AC4EA9002408E1 /* CoraTestTests.swift in Sources */,
+				321A5F8E26B20F9D00E3CA4A /* LoginServiceMock.swift in Sources */,
+				321A5F9326B20FA800E3CA4A /* LoginCoordinatorMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		328DADE826AC4EA9002408E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				328DADF126AC4EAA002408E1 /* CoraTestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		328DADE326AC4EA9002408E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 328DADCA26AC4EA7002408E1 /* CoraTest */;
+			targetProxy = 328DADE226AC4EA9002408E1 /* PBXContainerItemProxy */;
+		};
+		328DADEE26AC4EAA002408E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 328DADCA26AC4EA7002408E1 /* CoraTest */;
+			targetProxy = 328DADED26AC4EAA002408E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		328DADF326AC4EAA002408E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		328DADF426AC4EAA002408E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		328DADF626AC4EAA002408E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW5498NH3B;
+				INFOPLIST_FILE = CoraTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandorferreira.CoraTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		328DADF726AC4EAA002408E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW5498NH3B;
+				INFOPLIST_FILE = CoraTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandorferreira.CoraTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		328DADF926AC4EAA002408E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW5498NH3B;
+				INFOPLIST_FILE = CoraTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandorferreira.CoraTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoraTest.app/CoraTest";
+			};
+			name = Debug;
+		};
+		328DADFA26AC4EAA002408E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW5498NH3B;
+				INFOPLIST_FILE = CoraTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandorferreira.CoraTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoraTest.app/CoraTest";
+			};
+			name = Release;
+		};
+		328DADFC26AC4EAA002408E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW5498NH3B;
+				INFOPLIST_FILE = CoraTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandorferreira.CoraTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoraTest;
+			};
+			name = Debug;
+		};
+		328DADFD26AC4EAA002408E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW5498NH3B;
+				INFOPLIST_FILE = CoraTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandorferreira.CoraTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoraTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		328DADC626AC4EA7002408E1 /* Build configuration list for PBXProject "CoraTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				328DADF326AC4EAA002408E1 /* Debug */,
+				328DADF426AC4EAA002408E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		328DADF526AC4EAA002408E1 /* Build configuration list for PBXNativeTarget "CoraTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				328DADF626AC4EAA002408E1 /* Debug */,
+				328DADF726AC4EAA002408E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		328DADF826AC4EAA002408E1 /* Build configuration list for PBXNativeTarget "CoraTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				328DADF926AC4EAA002408E1 /* Debug */,
+				328DADFA26AC4EAA002408E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		328DADFB26AC4EAA002408E1 /* Build configuration list for PBXNativeTarget "CoraTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				328DADFC26AC4EAA002408E1 /* Debug */,
+				328DADFD26AC4EAA002408E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32784BFE26AE1CD4005B0386 /* XCRemoteSwiftPackageReference "cora-test-ui-elements" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:sandorferreira1/cora-test-ui-elements.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32784BFF26AE1CD4005B0386 /* UIElementsCora */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32784BFE26AE1CD4005B0386 /* XCRemoteSwiftPackageReference "cora-test-ui-elements" */;
+			productName = UIElementsCora;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 328DADC326AC4EA7002408E1 /* Project object */;
+}

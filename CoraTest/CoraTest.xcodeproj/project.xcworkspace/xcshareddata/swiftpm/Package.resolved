@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "UIElementsCora",
+        "repositoryURL": "git@github.com:sandorferreira1/cora-test-ui-elements.git",
+        "state": {
+          "branch": "main",
+          "revision": "3184ad378a0bad7a6babf3fd1ac7c3b3ba5c427b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
