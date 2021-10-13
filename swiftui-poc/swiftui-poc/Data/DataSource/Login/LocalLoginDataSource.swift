@@ -3,7 +3,7 @@ import RxSwift
 
 struct LocalLoginDataSource: LoginDataSource {
     
-    let generator: DataGenerator
+    private let generator: DataGenerator
     
     init(generator: DataGenerator) {
         self.generator = generator
@@ -11,10 +11,9 @@ struct LocalLoginDataSource: LoginDataSource {
     
     func performLogin(request: LoginRequest) -> Single<LoginResponse> {
         let single = Single<LoginResponse>.create { trait in
-            // remover daqui, se isso estiver aqui não da pra testar!
             let bool = self.generator.getBool()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                 guard bool else {
                     let exception = CouldNotLoginException()
                     trait(.failure(exception))

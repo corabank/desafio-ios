@@ -36,6 +36,27 @@
 		A14C937B27156740006D11DB /* CouldNotLoginException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C937A27156740006D11DB /* CouldNotLoginException.swift */; };
 		A14C93802715681D006D11DB /* CouldNotLoginExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C937F2715681D006D11DB /* CouldNotLoginExceptionTests.swift */; };
 		A14C9384271568B4006D11DB /* DataGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C9383271568B4006D11DB /* DataGeneratorTests.swift */; };
+		A167C785271690F40023A953 /* transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = A167C784271690F40023A953 /* transactions.json */; };
+		A167C787271691B70023A953 /* LocalFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C786271691B70023A953 /* LocalFileReader.swift */; };
+		A167C789271692DD0023A953 /* LocalFileReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C788271692DD0023A953 /* LocalFileReaderTests.swift */; };
+		A167C78B271694520023A953 /* CouldNotParseLocalFileException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C78A271694520023A953 /* CouldNotParseLocalFileException.swift */; };
+		A167C78D271694C30023A953 /* CouldNotParseLocalFileExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C78C271694C30023A953 /* CouldNotParseLocalFileExceptionTests.swift */; };
+		A167C79027169BFE0023A953 /* TransactionSpecsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C78F27169BFE0023A953 /* TransactionSpecsTests.swift */; };
+		A167C79227169D3F0023A953 /* LocalTransactionDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C79127169D3F0023A953 /* LocalTransactionDataSourceTests.swift */; };
+		A167C79427169D6E0023A953 /* MockLocalFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C79327169D6E0023A953 /* MockLocalFileReader.swift */; };
+		A167C79627169E920023A953 /* Transaction+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C79527169E920023A953 /* Transaction+Equatable.swift */; };
+		A167C79C2716A27D0023A953 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C79B2716A27D0023A953 /* TransactionRepository.swift */; };
+		A167C79E2716A2A60023A953 /* TransactionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C79D2716A2A60023A953 /* TransactionRepositoryImpl.swift */; };
+		A167C7A02716A2FA0023A953 /* TransactionRepositoryImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C79F2716A2FA0023A953 /* TransactionRepositoryImplTests.swift */; };
+		A167C7A32716A3260023A953 /* MockTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7A22716A3260023A953 /* MockTransactionDataSource.swift */; };
+		A167C7AA2716A4270023A953 /* FetchTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7A92716A4270023A953 /* FetchTransactionsUseCase.swift */; };
+		A167C7AD2716A45C0023A953 /* BuyerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7AC2716A45C0023A953 /* BuyerModel.swift */; };
+		A167C7AF2716A4660023A953 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7AE2716A4660023A953 /* TransactionModel.swift */; };
+		A167C7B12716A6370023A953 /* MockTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7B02716A6370023A953 /* MockTransactionRepository.swift */; };
+		A167C7B32716A6850023A953 /* FetchTransactionsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7B22716A6850023A953 /* FetchTransactionsUseCaseTests.swift */; };
+		A167C7B92716AA7A0023A953 /* TransactionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7B82716AA7A0023A953 /* TransactionModelTests.swift */; };
+		A167C7BB2716ABD00023A953 /* BuyerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7BA2716ABD00023A953 /* BuyerModelTests.swift */; };
+		A167C7BD2716ADEF0023A953 /* CachedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167C7BC2716ADEF0023A953 /* CachedDateFormatter.swift */; };
 		A174E98627156B3600B7D568 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A174E98527156B3600B7D568 /* MockDataGenerator.swift */; };
 		A174E98927156E8F00B7D568 /* LoginResponse+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A174E98827156E8F00B7D568 /* LoginResponse+Equatable.swift */; };
 		A17EC1142715D4BB006B1256 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = A17EC1132715D4BB006B1256 /* RxBlocking */; };
@@ -60,6 +81,15 @@
 		A17EC14227167FBF006B1256 /* TransactionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC14127167FBF006B1256 /* TransactionsCoordinator.swift */; };
 		A17EC1452716833A006B1256 /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC1442716833A006B1256 /* MockCoordinator.swift */; };
 		A17EC147271683A2006B1256 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC146271683A2006B1256 /* CoordinatorTests.swift */; };
+		A17EC14B27168A41006B1256 /* TransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC14A27168A41006B1256 /* TransactionDataSource.swift */; };
+		A17EC14D27168A6D006B1256 /* TransactionSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC14C27168A6D006B1256 /* TransactionSpecs.swift */; };
+		A17EC15027168AA3006B1256 /* TransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC14F27168AA3006B1256 /* TransactionEntity.swift */; };
+		A17EC15227168B77006B1256 /* BuyerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC15127168B77006B1256 /* BuyerEntity.swift */; };
+		A17EC15427168C10006B1256 /* LocalTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC15327168C10006B1256 /* LocalTransactionDataSource.swift */; };
+		A1845BEC271722BA00951D35 /* TransactionSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BEB271722B900951D35 /* TransactionSceneModel.swift */; };
+		A1845BEE271723AC00951D35 /* CachedNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BED271723AC00951D35 /* CachedNumberFormatter.swift */; };
+		A1845BF227174BCD00951D35 /* TransactionRowSceneModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BF127174BCD00951D35 /* TransactionRowSceneModelTests.swift */; };
+		A1845BF4271759CB00951D35 /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BF3271759CB00951D35 /* TransactionRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +143,27 @@
 		A14C937A27156740006D11DB /* CouldNotLoginException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouldNotLoginException.swift; sourceTree = "<group>"; };
 		A14C937F2715681D006D11DB /* CouldNotLoginExceptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouldNotLoginExceptionTests.swift; sourceTree = "<group>"; };
 		A14C9383271568B4006D11DB /* DataGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGeneratorTests.swift; sourceTree = "<group>"; };
+		A167C784271690F40023A953 /* transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions.json; sourceTree = "<group>"; };
+		A167C786271691B70023A953 /* LocalFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileReader.swift; sourceTree = "<group>"; };
+		A167C788271692DD0023A953 /* LocalFileReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileReaderTests.swift; sourceTree = "<group>"; };
+		A167C78A271694520023A953 /* CouldNotParseLocalFileException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouldNotParseLocalFileException.swift; sourceTree = "<group>"; };
+		A167C78C271694C30023A953 /* CouldNotParseLocalFileExceptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouldNotParseLocalFileExceptionTests.swift; sourceTree = "<group>"; };
+		A167C78F27169BFE0023A953 /* TransactionSpecsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSpecsTests.swift; sourceTree = "<group>"; };
+		A167C79127169D3F0023A953 /* LocalTransactionDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTransactionDataSourceTests.swift; sourceTree = "<group>"; };
+		A167C79327169D6E0023A953 /* MockLocalFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalFileReader.swift; sourceTree = "<group>"; };
+		A167C79527169E920023A953 /* Transaction+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Equatable.swift"; sourceTree = "<group>"; };
+		A167C79B2716A27D0023A953 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		A167C79D2716A2A60023A953 /* TransactionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryImpl.swift; sourceTree = "<group>"; };
+		A167C79F2716A2FA0023A953 /* TransactionRepositoryImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryImplTests.swift; sourceTree = "<group>"; };
+		A167C7A22716A3260023A953 /* MockTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransactionDataSource.swift; sourceTree = "<group>"; };
+		A167C7A92716A4270023A953 /* FetchTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransactionsUseCase.swift; sourceTree = "<group>"; };
+		A167C7AC2716A45C0023A953 /* BuyerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerModel.swift; sourceTree = "<group>"; };
+		A167C7AE2716A4660023A953 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		A167C7B02716A6370023A953 /* MockTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransactionRepository.swift; sourceTree = "<group>"; };
+		A167C7B22716A6850023A953 /* FetchTransactionsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransactionsUseCaseTests.swift; sourceTree = "<group>"; };
+		A167C7B82716AA7A0023A953 /* TransactionModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModelTests.swift; sourceTree = "<group>"; };
+		A167C7BA2716ABD00023A953 /* BuyerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerModelTests.swift; sourceTree = "<group>"; };
+		A167C7BC2716ADEF0023A953 /* CachedDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedDateFormatter.swift; sourceTree = "<group>"; };
 		A174E98527156B3600B7D568 /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataGenerator.swift; sourceTree = "<group>"; };
 		A174E98827156E8F00B7D568 /* LoginResponse+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginResponse+Equatable.swift"; sourceTree = "<group>"; };
 		A17EC11A2715D749006B1256 /* LoginSpecsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSpecsTests.swift; sourceTree = "<group>"; };
@@ -134,6 +185,15 @@
 		A17EC14127167FBF006B1256 /* TransactionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCoordinator.swift; sourceTree = "<group>"; };
 		A17EC1442716833A006B1256 /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		A17EC146271683A2006B1256 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		A17EC14A27168A41006B1256 /* TransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataSource.swift; sourceTree = "<group>"; };
+		A17EC14C27168A6D006B1256 /* TransactionSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSpecs.swift; sourceTree = "<group>"; };
+		A17EC14F27168AA3006B1256 /* TransactionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEntity.swift; sourceTree = "<group>"; };
+		A17EC15127168B77006B1256 /* BuyerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerEntity.swift; sourceTree = "<group>"; };
+		A17EC15327168C10006B1256 /* LocalTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTransactionDataSource.swift; sourceTree = "<group>"; };
+		A1845BEB271722B900951D35 /* TransactionSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSceneModel.swift; sourceTree = "<group>"; };
+		A1845BED271723AC00951D35 /* CachedNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedNumberFormatter.swift; sourceTree = "<group>"; };
+		A1845BF127174BCD00951D35 /* TransactionRowSceneModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowSceneModelTests.swift; sourceTree = "<group>"; };
+		A1845BF3271759CB00951D35 /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +256,7 @@
 				A14C930827154A1C006D11DB /* AppDelegate.swift */,
 				A14C930A27154A1C006D11DB /* SceneDelegate.swift */,
 				A14C931127154A21006D11DB /* Assets.xcassets */,
+				A167C784271690F40023A953 /* transactions.json */,
 				A14C931327154A21006D11DB /* LaunchScreen.storyboard */,
 				A14C931627154A21006D11DB /* Info.plist */,
 			);
@@ -205,7 +266,6 @@
 		A14C931E27154A22006D11DB /* swiftui-pocTests */ = {
 			isa = PBXGroup;
 			children = (
-				A174E98727156E7F00B7D568 /* Extension */,
 				A174E98427156B2200B7D568 /* Mock */,
 				A14C93822715689A006D11DB /* Source */,
 				A14C935527155E23006D11DB /* Extensions */,
@@ -240,6 +300,7 @@
 		A14C933927154AD9006D11DB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A17EC14E27168A97006B1256 /* Entity */,
 				A14C9379271566FB006D11DB /* Exception */,
 				A14C936F27156393006D11DB /* Specs */,
 				A14C93602715625A006D11DB /* DataSource */,
@@ -251,6 +312,7 @@
 		A14C933A27154ADF006D11DB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				A167C7AB2716A44D0023A953 /* Model */,
 				A17EC126271623B6006B1256 /* UseCase */,
 			);
 			path = Domain;
@@ -307,6 +369,8 @@
 		A14C935A27155F0A006D11DB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A1845BF027174BB700951D35 /* SceneModel */,
+				A1845BEF27174BB000951D35 /* ViewModel */,
 				A14C935E2715602F006D11DB /* LoginViewModelTests.swift */,
 			);
 			path = Presentation;
@@ -315,8 +379,8 @@
 		A14C93602715625A006D11DB /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				A14C936127156273006D11DB /* LoginDataSource.swift */,
-				A14C937227156424006D11DB /* LocalLoginDataSource.swift */,
+				A17EC14927168A29006B1256 /* Transaction */,
+				A17EC14827168A1F006B1256 /* Login */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -327,6 +391,9 @@
 				A14C936B2715635C006D11DB /* Request.swift */,
 				A14C936D27156363006D11DB /* Response.swift */,
 				A14C9377271565E8006D11DB /* DataGenerator.swift */,
+				A167C786271691B70023A953 /* LocalFileReader.swift */,
+				A167C7BC2716ADEF0023A953 /* CachedDateFormatter.swift */,
+				A1845BED271723AC00951D35 /* CachedNumberFormatter.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -335,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				A14C93702715639E006D11DB /* LoginSpecs.swift */,
+				A17EC14C27168A6D006B1256 /* TransactionSpecs.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -354,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				A14C937A27156740006D11DB /* CouldNotLoginException.swift */,
+				A167C78A271694520023A953 /* CouldNotParseLocalFileException.swift */,
 			);
 			path = Exception;
 			sourceTree = "<group>";
@@ -362,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				A14C937F2715681D006D11DB /* CouldNotLoginExceptionTests.swift */,
+				A167C78C271694C30023A953 /* CouldNotParseLocalFileExceptionTests.swift */,
 			);
 			path = Exception;
 			sourceTree = "<group>";
@@ -370,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				A14C937527156505006D11DB /* LocalLoginDataSourceTests.swift */,
+				A167C79127169D3F0023A953 /* LocalTransactionDataSourceTests.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -378,20 +449,111 @@
 			isa = PBXGroup;
 			children = (
 				A14C9383271568B4006D11DB /* DataGeneratorTests.swift */,
+				A167C788271692DD0023A953 /* LocalFileReaderTests.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		A167C7992716A2610023A953 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC11D2715D8E6006B1256 /* LoginRepository.swift */,
+				A17EC11F2715D934006B1256 /* LoginRepositoryImpl.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A167C79A2716A26C0023A953 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				A167C79B2716A27D0023A953 /* TransactionRepository.swift */,
+				A167C79D2716A2A60023A953 /* TransactionRepositoryImpl.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		A167C7A12716A30A0023A953 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC1242715D9B2006B1256 /* MockLoginDataSource.swift */,
+				A167C7A22716A3260023A953 /* MockTransactionDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A167C7A42716A3600023A953 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A167C79327169D6E0023A953 /* MockLocalFileReader.swift */,
+				A174E98527156B3600B7D568 /* MockDataGenerator.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A167C7A52716A36C0023A953 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC13227162B2D006B1256 /* MockLoginRepository.swift */,
+				A167C7B02716A6370023A953 /* MockTransactionRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A167C7A62716A3730023A953 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC12E271628F4006B1256 /* MockParamsUseCase.swift */,
+				A17EC13627162F1C006B1256 /* MockLoginUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A167C7A72716A37C0023A953 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC13827162F7B006B1256 /* MockLoginCoordinator.swift */,
+				A17EC1442716833A006B1256 /* MockCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A167C7AB2716A44D0023A953 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A167C7AC2716A45C0023A953 /* BuyerModel.swift */,
+				A167C7AE2716A4660023A953 /* TransactionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A167C7B62716AA560023A953 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC12C271628A5006B1256 /* UseCaseTests.swift */,
+				A17EC13027162AFD006B1256 /* LoginUseCaseTests.swift */,
+				A167C7B22716A6850023A953 /* FetchTransactionsUseCaseTests.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A167C7B72716AA610023A953 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A167C7B82716AA7A0023A953 /* TransactionModelTests.swift */,
+				A167C7BA2716ABD00023A953 /* BuyerModelTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A174E98427156B2200B7D568 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				A174E98527156B3600B7D568 /* MockDataGenerator.swift */,
-				A17EC1242715D9B2006B1256 /* MockLoginDataSource.swift */,
-				A17EC13227162B2D006B1256 /* MockLoginRepository.swift */,
-				A17EC12E271628F4006B1256 /* MockParamsUseCase.swift */,
-				A17EC13627162F1C006B1256 /* MockLoginUseCase.swift */,
-				A17EC13827162F7B006B1256 /* MockLoginCoordinator.swift */,
-				A17EC1442716833A006B1256 /* MockCoordinator.swift */,
+				A174E98727156E7F00B7D568 /* Extension */,
+				A167C7A72716A37C0023A953 /* Coordinator */,
+				A167C7A42716A3600023A953 /* Source */,
+				A167C7A12716A30A0023A953 /* DataSource */,
+				A167C7A52716A36C0023A953 /* Repository */,
+				A167C7A62716A3730023A953 /* UseCase */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -400,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				A174E98827156E8F00B7D568 /* LoginResponse+Equatable.swift */,
+				A167C79527169E920023A953 /* Transaction+Equatable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -408,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				A17EC11A2715D749006B1256 /* LoginSpecsTests.swift */,
+				A167C78F27169BFE0023A953 /* TransactionSpecsTests.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -415,8 +579,8 @@
 		A17EC11C2715D8C2006B1256 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				A17EC11D2715D8E6006B1256 /* LoginRepository.swift */,
-				A17EC11F2715D934006B1256 /* LoginRepositoryImpl.swift */,
+				A167C79A2716A26C0023A953 /* Transaction */,
+				A167C7992716A2610023A953 /* Login */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -425,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				A17EC1222715D98A006B1256 /* LoginRepositoryImplTests.swift */,
+				A167C79F2716A2FA0023A953 /* TransactionRepositoryImplTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -434,6 +599,7 @@
 			children = (
 				A17EC127271623C8006B1256 /* UseCase.swift */,
 				A17EC129271623D7006B1256 /* LoginUseCase.swift */,
+				A167C7A92716A4270023A953 /* FetchTransactionsUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -441,8 +607,8 @@
 		A17EC12B27162551006B1256 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				A17EC12C271628A5006B1256 /* UseCaseTests.swift */,
-				A17EC13027162AFD006B1256 /* LoginUseCaseTests.swift */,
+				A167C7B72716AA610023A953 /* Model */,
+				A167C7B62716AA560023A953 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -451,7 +617,9 @@
 			isa = PBXGroup;
 			children = (
 				A17EC13B27167DE6006B1256 /* TransactionListView.swift */,
+				A1845BF3271759CB00951D35 /* TransactionRowView.swift */,
 				A17EC13D27167DF5006B1256 /* TransactionListViewModel.swift */,
+				A1845BEB271722B900951D35 /* TransactionSceneModel.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -462,6 +630,48 @@
 				A17EC146271683A2006B1256 /* CoordinatorTests.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A17EC14827168A1F006B1256 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A14C936127156273006D11DB /* LoginDataSource.swift */,
+				A14C937227156424006D11DB /* LocalLoginDataSource.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A17EC14927168A29006B1256 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC14A27168A41006B1256 /* TransactionDataSource.swift */,
+				A17EC15327168C10006B1256 /* LocalTransactionDataSource.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		A17EC14E27168A97006B1256 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC14F27168AA3006B1256 /* TransactionEntity.swift */,
+				A17EC15127168B77006B1256 /* BuyerEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A1845BEF27174BB000951D35 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A1845BF027174BB700951D35 /* SceneModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1845BF127174BCD00951D35 /* TransactionRowSceneModelTests.swift */,
+			);
+			path = SceneModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,6 +786,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A167C785271690F40023A953 /* transactions.json in Resources */,
 				A14C931527154A21006D11DB /* LaunchScreen.storyboard in Resources */,
 				A14C931227154A21006D11DB /* Assets.xcassets in Resources */,
 			);
@@ -603,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14C933D27154AF7006D11DB /* AppCoordinator.swift in Sources */,
+				A167C7AA2716A4270023A953 /* FetchTransactionsUseCase.swift in Sources */,
 				A14C933F27154B06006D11DB /* Coordinator.swift in Sources */,
 				A17EC1202715D934006B1256 /* LoginRepositoryImpl.swift in Sources */,
 				A14C934827155131006D11DB /* LoginAttributes.swift in Sources */,
@@ -616,17 +828,32 @@
 				A14C935427155E12006D11DB /* String+Extensions.swift in Sources */,
 				A14C934A271551DC006D11DB /* LoadableState.swift in Sources */,
 				A17EC13E27167DF5006B1256 /* TransactionListViewModel.swift in Sources */,
+				A17EC15427168C10006B1256 /* LocalTransactionDataSource.swift in Sources */,
+				A167C78B271694520023A953 /* CouldNotParseLocalFileException.swift in Sources */,
+				A1845BEE271723AC00951D35 /* CachedNumberFormatter.swift in Sources */,
+				A167C7AD2716A45C0023A953 /* BuyerModel.swift in Sources */,
 				A14C930927154A1C006D11DB /* AppDelegate.swift in Sources */,
 				A14C934F271554F7006D11DB /* PrimaryButtonStyle.swift in Sources */,
+				A167C79E2716A2A60023A953 /* TransactionRepositoryImpl.swift in Sources */,
+				A167C7AF2716A4660023A953 /* TransactionModel.swift in Sources */,
 				A14C934D271552E1006D11DB /* LoadableView.swift in Sources */,
+				A167C787271691B70023A953 /* LocalFileReader.swift in Sources */,
+				A17EC15227168B77006B1256 /* BuyerEntity.swift in Sources */,
 				A14C937B27156740006D11DB /* CouldNotLoginException.swift in Sources */,
 				A14C934427154FF8006D11DB /* LoginView.swift in Sources */,
+				A17EC14D27168A6D006B1256 /* TransactionSpecs.swift in Sources */,
+				A167C79C2716A27D0023A953 /* TransactionRepository.swift in Sources */,
 				A14C936C2715635C006D11DB /* Request.swift in Sources */,
+				A167C7BD2716ADEF0023A953 /* CachedDateFormatter.swift in Sources */,
 				A14C935227155E06006D11DB /* Bool+Extensions.swift in Sources */,
+				A1845BF4271759CB00951D35 /* TransactionRowView.swift in Sources */,
+				A1845BEC271722BA00951D35 /* TransactionSceneModel.swift in Sources */,
 				A17EC12A271623D7006B1256 /* LoginUseCase.swift in Sources */,
 				A14C930B27154A1C006D11DB /* SceneDelegate.swift in Sources */,
+				A17EC14B27168A41006B1256 /* TransactionDataSource.swift in Sources */,
 				A17EC14227167FBF006B1256 /* TransactionsCoordinator.swift in Sources */,
 				A14C9378271565E8006D11DB /* DataGenerator.swift in Sources */,
+				A17EC15027168AA3006B1256 /* TransactionEntity.swift in Sources */,
 				A14C937327156424006D11DB /* LocalLoginDataSource.swift in Sources */,
 				A14C93712715639E006D11DB /* LoginSpecs.swift in Sources */,
 			);
@@ -636,25 +863,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A167C7B92716AA7A0023A953 /* TransactionModelTests.swift in Sources */,
 				A17EC1252715D9B2006B1256 /* MockLoginDataSource.swift in Sources */,
+				A167C7BB2716ABD00023A953 /* BuyerModelTests.swift in Sources */,
+				A167C79027169BFE0023A953 /* TransactionSpecsTests.swift in Sources */,
 				A17EC11B2715D749006B1256 /* LoginSpecsTests.swift in Sources */,
 				A17EC1452716833A006B1256 /* MockCoordinator.swift in Sources */,
+				A167C79427169D6E0023A953 /* MockLocalFileReader.swift in Sources */,
 				A17EC147271683A2006B1256 /* CoordinatorTests.swift in Sources */,
 				A14C937627156505006D11DB /* LocalLoginDataSourceTests.swift in Sources */,
 				A14C93802715681D006D11DB /* CouldNotLoginExceptionTests.swift in Sources */,
 				A14C935F2715602F006D11DB /* LoginViewModelTests.swift in Sources */,
 				A17EC13327162B2D006B1256 /* MockLoginRepository.swift in Sources */,
 				A14C935727155E37006D11DB /* StringExtensionsTests.swift in Sources */,
+				A167C79227169D3F0023A953 /* LocalTransactionDataSourceTests.swift in Sources */,
 				A14C935927155E45006D11DB /* BoolExtensionsTests.swift in Sources */,
 				A14C9384271568B4006D11DB /* DataGeneratorTests.swift in Sources */,
+				A167C7B12716A6370023A953 /* MockTransactionRepository.swift in Sources */,
 				A17EC1232715D98A006B1256 /* LoginRepositoryImplTests.swift in Sources */,
 				A17EC12D271628A5006B1256 /* UseCaseTests.swift in Sources */,
+				A167C7B32716A6850023A953 /* FetchTransactionsUseCaseTests.swift in Sources */,
 				A174E98627156B3600B7D568 /* MockDataGenerator.swift in Sources */,
+				A167C78D271694C30023A953 /* CouldNotParseLocalFileExceptionTests.swift in Sources */,
+				A1845BF227174BCD00951D35 /* TransactionRowSceneModelTests.swift in Sources */,
 				A17EC13127162AFD006B1256 /* LoginUseCaseTests.swift in Sources */,
 				A17EC13727162F1C006B1256 /* MockLoginUseCase.swift in Sources */,
 				A17EC13927162F7B006B1256 /* MockLoginCoordinator.swift in Sources */,
 				A17EC12F271628F4006B1256 /* MockParamsUseCase.swift in Sources */,
+				A167C7A02716A2FA0023A953 /* TransactionRepositoryImplTests.swift in Sources */,
+				A167C789271692DD0023A953 /* LocalFileReaderTests.swift in Sources */,
+				A167C7A32716A3260023A953 /* MockTransactionDataSource.swift in Sources */,
 				A174E98927156E8F00B7D568 /* LoginResponse+Equatable.swift in Sources */,
+				A167C79627169E920023A953 /* Transaction+Equatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

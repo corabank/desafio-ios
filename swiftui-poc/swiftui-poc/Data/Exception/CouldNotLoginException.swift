@@ -2,7 +2,7 @@ import Foundation
 
 class CouldNotLoginException: NSError {
     init() {
-        super.init(domain: "unknown",
+        super.init(domain: "data layer",
                    code: 0,
                    userInfo: [NSLocalizedDescriptionKey: "unexpected error"])
     }

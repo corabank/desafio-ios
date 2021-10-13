@@ -8,10 +8,8 @@ class DataGenerator {
     init() { }
     
     func getBool() -> Bool {
-//        let value = Bool.random()
-//        debugPrint("Will log in ? \(value)")
-//        return value
-        
-        return true
+        let value = Bool.random()
+        debugPrint("Will log in ? \(value)")
+        return value
     }
 }

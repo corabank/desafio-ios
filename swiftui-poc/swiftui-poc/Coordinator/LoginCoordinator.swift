@@ -34,7 +34,7 @@ class LoginCoordinator: Coordinator {
     }
     
     func didFailLoggingIn() {
-        let alert = UIAlertController(title: "", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Ooops! Não conseguimos te logar mas é só tentar de novo 😛", message: nil, preferredStyle: .alert)
         self.navigationController.present(alert, animated: true)
         
         Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in alert.dismiss(animated: true) }

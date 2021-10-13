@@ -1,0 +1,106 @@
+{
+	"transactions": [{
+			"id": "f97f1882-01bb-4ec4-9ad6-fe4c29a0820d",
+			"value": 110.00,
+			"date": "2021-10-13T13:54:20Z",
+			"status": "PAID",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 2.33,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		},
+
+		{
+			"id": "c9c327f9-5c56-4488-8dbb-8d7bc0749ecd",
+			"value": 330.56,
+			"date": "2021-10-12T11:21:59Z",
+			"status": "WAITING_PAYMENT",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 5.38,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		},
+
+		{
+			"id": "d15ec4bb-6a25-42be-a083-056b8ec6637f",
+			"value": 30.88,
+			"date": "2021-10-12T03:35:18Z",
+			"status": "PAID",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 1.09,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		},
+
+		{
+			"id": "aa05d043-4934-41b9-8636-672833385fd5",
+			"value": 27.80,
+			"date": "2021-10-10T09:42:36Z",
+			"status": "PAID",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 0.68,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		},
+
+		{
+			"id": "16c62e9d-8eeb-4c75-a2ad-c3aafc634e3d",
+			"value": 199.90,
+			"date": "2021-10-10T01:02:12Z",
+			"status": "WAITING_PAYMENT",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 9.63,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		},
+
+		{
+			"id": "ebbf5302-cec9-4572-af73-515c0adbcef0",
+			"value": 245.00,
+			"date": "2021-10-09T22:16:55Z",
+			"status": "PAID",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 4.29,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		},
+
+		{
+			"id": "e7d30e0c-7281-4c05-87ff-e48ef21fd222",
+			"value": 45.89,
+			"date": "2021-10-09T17:00:25Z",
+			"status": "NOT_PAID",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 7.59,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		},
+
+		{
+			"id": "7908c407-3bea-4bda-9e9c-9e7058c8cf7e",
+			"value": 27.89,
+			"date": "2021-10-09T15:22:52Z",
+			"status": "PAID",
+			"paymentMethod": "CREDIT_CARD",
+			"taxes": 1.07,
+			"buyer": {
+				"name": "Caju Cacau",
+				"email": "cajucacau@labs.moip.com.br"
+			}
+		}
+	]
+}

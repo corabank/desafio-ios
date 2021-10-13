@@ -15,7 +15,11 @@ class TransactionCoordinator: Coordinator {
     func start() {
         // TODO: REFACTOR TO INJECT WITH DI
         // BEGIN INJECTION
-        let viewModel = TransactionListViewModel()
+        let dataSource = LocalTransactionDataSource(manager: LocalFileReader.shared)
+        let repository = TransactionRepositoryImpl(dataSource: dataSource)
+        let useCase = FetchTransactionsUseCase(repository: repository)
+        let viewModel = TransactionListViewModel(fetchTransactionsUseCase: useCase,
+                                                 coordinator: self)
         // END INJECTION
         
         let view = TransactionListView(viewModel: viewModel)
