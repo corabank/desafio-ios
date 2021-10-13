@@ -46,6 +46,20 @@
 		A17EC1202715D934006B1256 /* LoginRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC11F2715D934006B1256 /* LoginRepositoryImpl.swift */; };
 		A17EC1232715D98A006B1256 /* LoginRepositoryImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC1222715D98A006B1256 /* LoginRepositoryImplTests.swift */; };
 		A17EC1252715D9B2006B1256 /* MockLoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC1242715D9B2006B1256 /* MockLoginDataSource.swift */; };
+		A17EC128271623C8006B1256 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC127271623C8006B1256 /* UseCase.swift */; };
+		A17EC12A271623D7006B1256 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC129271623D7006B1256 /* LoginUseCase.swift */; };
+		A17EC12D271628A5006B1256 /* UseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC12C271628A5006B1256 /* UseCaseTests.swift */; };
+		A17EC12F271628F4006B1256 /* MockParamsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC12E271628F4006B1256 /* MockParamsUseCase.swift */; };
+		A17EC13127162AFD006B1256 /* LoginUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC13027162AFD006B1256 /* LoginUseCaseTests.swift */; };
+		A17EC13327162B2D006B1256 /* MockLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC13227162B2D006B1256 /* MockLoginRepository.swift */; };
+		A17EC13527162DAE006B1256 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC13427162DAE006B1256 /* LoginCoordinator.swift */; };
+		A17EC13727162F1C006B1256 /* MockLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC13627162F1C006B1256 /* MockLoginUseCase.swift */; };
+		A17EC13927162F7B006B1256 /* MockLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC13827162F7B006B1256 /* MockLoginCoordinator.swift */; };
+		A17EC13C27167DE6006B1256 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC13B27167DE6006B1256 /* TransactionListView.swift */; };
+		A17EC13E27167DF5006B1256 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC13D27167DF5006B1256 /* TransactionListViewModel.swift */; };
+		A17EC14227167FBF006B1256 /* TransactionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC14127167FBF006B1256 /* TransactionsCoordinator.swift */; };
+		A17EC1452716833A006B1256 /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC1442716833A006B1256 /* MockCoordinator.swift */; };
+		A17EC147271683A2006B1256 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC146271683A2006B1256 /* CoordinatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +120,20 @@
 		A17EC11F2715D934006B1256 /* LoginRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImpl.swift; sourceTree = "<group>"; };
 		A17EC1222715D98A006B1256 /* LoginRepositoryImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImplTests.swift; sourceTree = "<group>"; };
 		A17EC1242715D9B2006B1256 /* MockLoginDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginDataSource.swift; sourceTree = "<group>"; };
+		A17EC127271623C8006B1256 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		A17EC129271623D7006B1256 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		A17EC12C271628A5006B1256 /* UseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseTests.swift; sourceTree = "<group>"; };
+		A17EC12E271628F4006B1256 /* MockParamsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockParamsUseCase.swift; sourceTree = "<group>"; };
+		A17EC13027162AFD006B1256 /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
+		A17EC13227162B2D006B1256 /* MockLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginRepository.swift; sourceTree = "<group>"; };
+		A17EC13427162DAE006B1256 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		A17EC13627162F1C006B1256 /* MockLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginUseCase.swift; sourceTree = "<group>"; };
+		A17EC13827162F7B006B1256 /* MockLoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginCoordinator.swift; sourceTree = "<group>"; };
+		A17EC13B27167DE6006B1256 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		A17EC13D27167DF5006B1256 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		A17EC14127167FBF006B1256 /* TransactionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCoordinator.swift; sourceTree = "<group>"; };
+		A17EC1442716833A006B1256 /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
+		A17EC146271683A2006B1256 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +209,9 @@
 				A174E98427156B2200B7D568 /* Mock */,
 				A14C93822715689A006D11DB /* Source */,
 				A14C935527155E23006D11DB /* Extensions */,
+				A17EC143271681E3006B1256 /* Coordinator */,
 				A14C935A27155F0A006D11DB /* Presentation */,
+				A17EC12B27162551006B1256 /* Domain */,
 				A14C9374271564D5006D11DB /* Data */,
 			);
 			path = "swiftui-pocTests";
@@ -199,8 +229,10 @@
 		A14C933827154AD3006D11DB /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				A14C933C27154AF7006D11DB /* AppCoordinator.swift */,
 				A14C933E27154B06006D11DB /* Coordinator.swift */,
+				A14C933C27154AF7006D11DB /* AppCoordinator.swift */,
+				A17EC13427162DAE006B1256 /* LoginCoordinator.swift */,
+				A17EC14127167FBF006B1256 /* TransactionsCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -219,6 +251,7 @@
 		A14C933A27154ADF006D11DB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				A17EC126271623B6006B1256 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -228,6 +261,7 @@
 			children = (
 				A14C934B271552CE006D11DB /* Components */,
 				A14C934027154C87006D11DB /* Login */,
+				A17EC13A27167DCF006B1256 /* TransactionList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -353,6 +387,11 @@
 			children = (
 				A174E98527156B3600B7D568 /* MockDataGenerator.swift */,
 				A17EC1242715D9B2006B1256 /* MockLoginDataSource.swift */,
+				A17EC13227162B2D006B1256 /* MockLoginRepository.swift */,
+				A17EC12E271628F4006B1256 /* MockParamsUseCase.swift */,
+				A17EC13627162F1C006B1256 /* MockLoginUseCase.swift */,
+				A17EC13827162F7B006B1256 /* MockLoginCoordinator.swift */,
+				A17EC1442716833A006B1256 /* MockCoordinator.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -388,6 +427,41 @@
 				A17EC1222715D98A006B1256 /* LoginRepositoryImplTests.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		A17EC126271623B6006B1256 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC127271623C8006B1256 /* UseCase.swift */,
+				A17EC129271623D7006B1256 /* LoginUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A17EC12B27162551006B1256 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC12C271628A5006B1256 /* UseCaseTests.swift */,
+				A17EC13027162AFD006B1256 /* LoginUseCaseTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A17EC13A27167DCF006B1256 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC13B27167DE6006B1256 /* TransactionListView.swift */,
+				A17EC13D27167DF5006B1256 /* TransactionListViewModel.swift */,
+			);
+			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		A17EC143271681E3006B1256 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A17EC146271683A2006B1256 /* CoordinatorTests.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,11 +607,15 @@
 				A17EC1202715D934006B1256 /* LoginRepositoryImpl.swift in Sources */,
 				A14C934827155131006D11DB /* LoginAttributes.swift in Sources */,
 				A14C936227156273006D11DB /* LoginDataSource.swift in Sources */,
+				A17EC128271623C8006B1256 /* UseCase.swift in Sources */,
+				A17EC13527162DAE006B1256 /* LoginCoordinator.swift in Sources */,
+				A17EC13C27167DE6006B1256 /* TransactionListView.swift in Sources */,
 				A14C936E27156363006D11DB /* Response.swift in Sources */,
 				A17EC11E2715D8E6006B1256 /* LoginRepository.swift in Sources */,
 				A14C9346271550F4006D11DB /* LoginViewModel.swift in Sources */,
 				A14C935427155E12006D11DB /* String+Extensions.swift in Sources */,
 				A14C934A271551DC006D11DB /* LoadableState.swift in Sources */,
+				A17EC13E27167DF5006B1256 /* TransactionListViewModel.swift in Sources */,
 				A14C930927154A1C006D11DB /* AppDelegate.swift in Sources */,
 				A14C934F271554F7006D11DB /* PrimaryButtonStyle.swift in Sources */,
 				A14C934D271552E1006D11DB /* LoadableView.swift in Sources */,
@@ -545,7 +623,9 @@
 				A14C934427154FF8006D11DB /* LoginView.swift in Sources */,
 				A14C936C2715635C006D11DB /* Request.swift in Sources */,
 				A14C935227155E06006D11DB /* Bool+Extensions.swift in Sources */,
+				A17EC12A271623D7006B1256 /* LoginUseCase.swift in Sources */,
 				A14C930B27154A1C006D11DB /* SceneDelegate.swift in Sources */,
+				A17EC14227167FBF006B1256 /* TransactionsCoordinator.swift in Sources */,
 				A14C9378271565E8006D11DB /* DataGenerator.swift in Sources */,
 				A14C937327156424006D11DB /* LocalLoginDataSource.swift in Sources */,
 				A14C93712715639E006D11DB /* LoginSpecs.swift in Sources */,
@@ -558,14 +638,22 @@
 			files = (
 				A17EC1252715D9B2006B1256 /* MockLoginDataSource.swift in Sources */,
 				A17EC11B2715D749006B1256 /* LoginSpecsTests.swift in Sources */,
+				A17EC1452716833A006B1256 /* MockCoordinator.swift in Sources */,
+				A17EC147271683A2006B1256 /* CoordinatorTests.swift in Sources */,
 				A14C937627156505006D11DB /* LocalLoginDataSourceTests.swift in Sources */,
 				A14C93802715681D006D11DB /* CouldNotLoginExceptionTests.swift in Sources */,
 				A14C935F2715602F006D11DB /* LoginViewModelTests.swift in Sources */,
+				A17EC13327162B2D006B1256 /* MockLoginRepository.swift in Sources */,
 				A14C935727155E37006D11DB /* StringExtensionsTests.swift in Sources */,
 				A14C935927155E45006D11DB /* BoolExtensionsTests.swift in Sources */,
 				A14C9384271568B4006D11DB /* DataGeneratorTests.swift in Sources */,
 				A17EC1232715D98A006B1256 /* LoginRepositoryImplTests.swift in Sources */,
+				A17EC12D271628A5006B1256 /* UseCaseTests.swift in Sources */,
 				A174E98627156B3600B7D568 /* MockDataGenerator.swift in Sources */,
+				A17EC13127162AFD006B1256 /* LoginUseCaseTests.swift in Sources */,
+				A17EC13727162F1C006B1256 /* MockLoginUseCase.swift in Sources */,
+				A17EC13927162F7B006B1256 /* MockLoginCoordinator.swift in Sources */,
+				A17EC12F271628F4006B1256 /* MockParamsUseCase.swift in Sources */,
 				A174E98927156E8F00B7D568 /* LoginResponse+Equatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

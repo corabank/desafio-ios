@@ -4,7 +4,7 @@ struct LoginView: View {
     
     @ObservedObject private var viewModel: LoginViewModel
     
-    init(viewModel: LoginViewModel = .init()) {
+    init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
     
@@ -34,13 +34,20 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            LoginView()
-                .previewDisplayName("Initial State")
-            LoginView(viewModel: .init(state: .loading))
-                .previewDisplayName("Loading State")
-        }
-    }
-}
+/**
+ TODO: What about a way of instanciating the view without
+ its dependecies for the sake of testing UI using previews?
+ 
+ Possible workaround: Creating mocks?
+ Pitfall: This is definitely not production code
+ */
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            LoginView()
+//                .previewDisplayName("Initial State")
+//            LoginView(viewModel: .init(state: .loading))
+//                .previewDisplayName("Loading State")
+//        }
+//    }
+//}

@@ -8,12 +8,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         let navigationController = UINavigationController()
-        self.coordinator = AppCoordinator(navigationController: navigationController)
-        self.coordinator?.start()
+        let window = UIWindow()
         
-        self.window = UIWindow()
+        self.window = window
         self.window?.windowScene = scene as? UIWindowScene
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        
+        self.coordinator = AppCoordinator(window: window, navigationController: navigationController)
+        self.coordinator?.start()
     }
 }
