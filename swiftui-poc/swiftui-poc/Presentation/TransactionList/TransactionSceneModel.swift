@@ -1,12 +1,14 @@
 import Foundation
 import UIKit
 
-struct TransactionRowSceneModel: Identifiable {
+struct TransactionSceneModel: Identifiable {
     var id: String
     private(set) var value: String
-    private(set) var buyerEmail: String
-    private(set) var status: Status
+    private(set) var buyer: BuyerSceneModel
+    private(set) var paymentMethod: PaymentMethod
     private(set) var date: String
+    private(set) var status: Status
+    private(set) var taxes: String
     
     enum Status {
         case paid
@@ -37,25 +39,48 @@ struct TransactionRowSceneModel: Identifiable {
             }
         }
     }
+    
+    enum PaymentMethod {
+        case creditCard
+        case cash
+        
+        init(mapping model: TransactionModel.PaymentMethod) {
+            switch model {
+            case .creditCard:       self = .creditCard
+            case .cash, .unkown:    self = .cash
+            }
+        }
+        
+        var localizedDescription: String {
+            switch self {
+            case .creditCard:   return "Cartão de Crédito"
+            case .cash:         return "Dinheiro"
+            }
+        }
+    }
 }
 
-extension TransactionRowSceneModel {
+extension TransactionSceneModel {
     init?(mapping model: TransactionModel) {
         self.id = model.id
-        let number = NSNumber(value: model.value)
-        guard let value = CachedNumberFormatter.shared.currencyFormat().string(from: number) else {
+        guard let value = CachedNumberFormatter.shared.currencyFormat().string(from: NSNumber(value: model.value)) else {
             return nil
         }
         self.value = value
-        self.buyerEmail = model.buyer.email
-        self.status = TransactionRowSceneModel.Status(mapping: model.status)
+        self.buyer = BuyerSceneModel(mapping: model.buyer)
+        self.paymentMethod = PaymentMethod(mapping: model.paymentMethod)
         guard let unwrapped = model.date else {
             return nil
         }
         self.date = CachedDateFormatter.shared.presentationFormat().string(from: unwrapped)
+        self.status = Status(mapping: model.status)
+        guard let taxes = CachedNumberFormatter.shared.currencyFormat().string(from: NSNumber(value: model.taxes)) else {
+            return nil
+        }
+        self.taxes = taxes
     }
     
-    static func asArray(mapping models: [TransactionModel]) -> [TransactionRowSceneModel] {
-        return models.compactMap { TransactionRowSceneModel(mapping: $0) }
+    static func asArray(mapping models: [TransactionModel]) -> [TransactionSceneModel] {
+        return models.compactMap { TransactionSceneModel(mapping: $0) }
     }
 }

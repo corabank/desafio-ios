@@ -4,7 +4,8 @@ import RxSwift
 final class TransactionListViewModel: ObservableObject {
     
     @Published var state: LoadableState
-    @Published var transactions: [TransactionRowSceneModel]
+    @Published var summary: TransactionSummarySceneModel
+    @Published var transactions: [TransactionSceneModel]
     
     private let fetchTransactionsUseCase: FetchTransactionsUseCase
 
@@ -18,6 +19,7 @@ final class TransactionListViewModel: ObservableObject {
         self.state = state
         self.fetchTransactionsUseCase = fetchTransactionsUseCase
         self.coordinator = coordinator
+        self.summary = TransactionSummarySceneModel(total: "", sum: "")
         self.transactions = []
     }
     
@@ -27,14 +29,21 @@ final class TransactionListViewModel: ObservableObject {
         self.fetchTransactionsUseCase.execute()
             .subscribe(
                 onSuccess: { models in
-                    self.state = .loaded
-                    
-                    let transactions = TransactionRowSceneModel.asArray(mapping: models)
-                    self.transactions = transactions
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        self.state = .loaded
+
+                        let transactions = TransactionSceneModel.asArray(mapping: models)
+                        self.transactions = transactions
+                        
+                        let summary = TransactionSummarySceneModel(mapping: models)
+                        self.summary = summary
+                    }
                 }, onFailure: { error in
-                    self.state = .error
-                    
-                    //TODO: Show Empty State
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        self.state = .error
+                        
+                        //TODO: Show Empty State
+                    }
                 }
             ).disposed(by: self.disposeBag)
     }

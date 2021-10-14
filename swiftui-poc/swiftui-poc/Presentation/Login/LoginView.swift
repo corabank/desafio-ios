@@ -31,6 +31,7 @@ struct LoginView: View {
             .disabled(viewModel.canSubmit.negated)
         }
         .background(Color(UIColor.systemGroupedBackground))
+        .navigationBarTitle("Login")
     }
 }
 

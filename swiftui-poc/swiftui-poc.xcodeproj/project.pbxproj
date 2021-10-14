@@ -88,8 +88,14 @@
 		A17EC15427168C10006B1256 /* LocalTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EC15327168C10006B1256 /* LocalTransactionDataSource.swift */; };
 		A1845BEC271722BA00951D35 /* TransactionSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BEB271722B900951D35 /* TransactionSceneModel.swift */; };
 		A1845BEE271723AC00951D35 /* CachedNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BED271723AC00951D35 /* CachedNumberFormatter.swift */; };
-		A1845BF227174BCD00951D35 /* TransactionRowSceneModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BF127174BCD00951D35 /* TransactionRowSceneModelTests.swift */; };
+		A1845BF227174BCD00951D35 /* TransactionSceneModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BF127174BCD00951D35 /* TransactionSceneModelTests.swift */; };
 		A1845BF4271759CB00951D35 /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BF3271759CB00951D35 /* TransactionRowView.swift */; };
+		A1845BF62717743900951D35 /* TransactionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BF52717743900951D35 /* TransactionListViewModelTests.swift */; };
+		A1845BF927177C7900951D35 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BF827177C7800951D35 /* TransactionDetailView.swift */; };
+		A1845BFD27177F4C00951D35 /* BuyerSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BFC27177F4C00951D35 /* BuyerSceneModel.swift */; };
+		A1845BFF2717C82E00951D35 /* BuyerSceneModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845BFE2717C82E00951D35 /* BuyerSceneModelTests.swift */; };
+		A1845C012717CBBB00951D35 /* TransactionSummarySceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845C002717CBBB00951D35 /* TransactionSummarySceneModel.swift */; };
+		A1845C032717CC3A00951D35 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1845C022717CC3A00951D35 /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,8 +198,14 @@
 		A17EC15327168C10006B1256 /* LocalTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTransactionDataSource.swift; sourceTree = "<group>"; };
 		A1845BEB271722B900951D35 /* TransactionSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSceneModel.swift; sourceTree = "<group>"; };
 		A1845BED271723AC00951D35 /* CachedNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedNumberFormatter.swift; sourceTree = "<group>"; };
-		A1845BF127174BCD00951D35 /* TransactionRowSceneModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowSceneModelTests.swift; sourceTree = "<group>"; };
+		A1845BF127174BCD00951D35 /* TransactionSceneModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSceneModelTests.swift; sourceTree = "<group>"; };
 		A1845BF3271759CB00951D35 /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
+		A1845BF52717743900951D35 /* TransactionListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionListViewModelTests.swift; path = "swiftui-poc/Presentation/TransactionList/TransactionListViewModelTests.swift"; sourceTree = SOURCE_ROOT; };
+		A1845BF827177C7800951D35 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		A1845BFC27177F4C00951D35 /* BuyerSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerSceneModel.swift; sourceTree = "<group>"; };
+		A1845BFE2717C82E00951D35 /* BuyerSceneModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerSceneModelTests.swift; sourceTree = "<group>"; };
+		A1845C002717CBBB00951D35 /* TransactionSummarySceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSummarySceneModel.swift; sourceTree = "<group>"; };
+		A1845C022717CC3A00951D35 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +336,7 @@
 				A14C934B271552CE006D11DB /* Components */,
 				A14C934027154C87006D11DB /* Login */,
 				A17EC13A27167DCF006B1256 /* TransactionList */,
+				A1845BF727177C5100951D35 /* TransactionDetail */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -353,6 +366,7 @@
 			children = (
 				A14C935127155E06006D11DB /* Bool+Extensions.swift */,
 				A14C935327155E12006D11DB /* String+Extensions.swift */,
+				A1845C022717CC3A00951D35 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,7 +385,6 @@
 			children = (
 				A1845BF027174BB700951D35 /* SceneModel */,
 				A1845BEF27174BB000951D35 /* ViewModel */,
-				A14C935E2715602F006D11DB /* LoginViewModelTests.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -619,7 +632,9 @@
 				A17EC13B27167DE6006B1256 /* TransactionListView.swift */,
 				A1845BF3271759CB00951D35 /* TransactionRowView.swift */,
 				A17EC13D27167DF5006B1256 /* TransactionListViewModel.swift */,
+				A1845C002717CBBB00951D35 /* TransactionSummarySceneModel.swift */,
 				A1845BEB271722B900951D35 /* TransactionSceneModel.swift */,
+				A1845BFC27177F4C00951D35 /* BuyerSceneModel.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -662,6 +677,8 @@
 		A1845BEF27174BB000951D35 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A14C935E2715602F006D11DB /* LoginViewModelTests.swift */,
+				A1845BF52717743900951D35 /* TransactionListViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -669,9 +686,18 @@
 		A1845BF027174BB700951D35 /* SceneModel */ = {
 			isa = PBXGroup;
 			children = (
-				A1845BF127174BCD00951D35 /* TransactionRowSceneModelTests.swift */,
+				A1845BF127174BCD00951D35 /* TransactionSceneModelTests.swift */,
+				A1845BFE2717C82E00951D35 /* BuyerSceneModelTests.swift */,
 			);
 			path = SceneModel;
+			sourceTree = "<group>";
+		};
+		A1845BF727177C5100951D35 /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A1845BF827177C7800951D35 /* TransactionDetailView.swift */,
+			);
+			path = TransactionDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -819,11 +845,13 @@
 				A17EC1202715D934006B1256 /* LoginRepositoryImpl.swift in Sources */,
 				A14C934827155131006D11DB /* LoginAttributes.swift in Sources */,
 				A14C936227156273006D11DB /* LoginDataSource.swift in Sources */,
+				A1845BFD27177F4C00951D35 /* BuyerSceneModel.swift in Sources */,
 				A17EC128271623C8006B1256 /* UseCase.swift in Sources */,
 				A17EC13527162DAE006B1256 /* LoginCoordinator.swift in Sources */,
 				A17EC13C27167DE6006B1256 /* TransactionListView.swift in Sources */,
 				A14C936E27156363006D11DB /* Response.swift in Sources */,
 				A17EC11E2715D8E6006B1256 /* LoginRepository.swift in Sources */,
+				A1845C012717CBBB00951D35 /* TransactionSummarySceneModel.swift in Sources */,
 				A14C9346271550F4006D11DB /* LoginViewModel.swift in Sources */,
 				A14C935427155E12006D11DB /* String+Extensions.swift in Sources */,
 				A14C934A271551DC006D11DB /* LoadableState.swift in Sources */,
@@ -837,6 +865,7 @@
 				A167C79E2716A2A60023A953 /* TransactionRepositoryImpl.swift in Sources */,
 				A167C7AF2716A4660023A953 /* TransactionModel.swift in Sources */,
 				A14C934D271552E1006D11DB /* LoadableView.swift in Sources */,
+				A1845C032717CC3A00951D35 /* Array+Extensions.swift in Sources */,
 				A167C787271691B70023A953 /* LocalFileReader.swift in Sources */,
 				A17EC15227168B77006B1256 /* BuyerEntity.swift in Sources */,
 				A14C937B27156740006D11DB /* CouldNotLoginException.swift in Sources */,
@@ -847,6 +876,7 @@
 				A167C7BD2716ADEF0023A953 /* CachedDateFormatter.swift in Sources */,
 				A14C935227155E06006D11DB /* Bool+Extensions.swift in Sources */,
 				A1845BF4271759CB00951D35 /* TransactionRowView.swift in Sources */,
+				A1845BF927177C7900951D35 /* TransactionDetailView.swift in Sources */,
 				A1845BEC271722BA00951D35 /* TransactionSceneModel.swift in Sources */,
 				A17EC12A271623D7006B1256 /* LoginUseCase.swift in Sources */,
 				A14C930B27154A1C006D11DB /* SceneDelegate.swift in Sources */,
@@ -871,6 +901,7 @@
 				A17EC1452716833A006B1256 /* MockCoordinator.swift in Sources */,
 				A167C79427169D6E0023A953 /* MockLocalFileReader.swift in Sources */,
 				A17EC147271683A2006B1256 /* CoordinatorTests.swift in Sources */,
+				A1845BFF2717C82E00951D35 /* BuyerSceneModelTests.swift in Sources */,
 				A14C937627156505006D11DB /* LocalLoginDataSourceTests.swift in Sources */,
 				A14C93802715681D006D11DB /* CouldNotLoginExceptionTests.swift in Sources */,
 				A14C935F2715602F006D11DB /* LoginViewModelTests.swift in Sources */,
@@ -879,13 +910,14 @@
 				A167C79227169D3F0023A953 /* LocalTransactionDataSourceTests.swift in Sources */,
 				A14C935927155E45006D11DB /* BoolExtensionsTests.swift in Sources */,
 				A14C9384271568B4006D11DB /* DataGeneratorTests.swift in Sources */,
+				A1845BF62717743900951D35 /* TransactionListViewModelTests.swift in Sources */,
 				A167C7B12716A6370023A953 /* MockTransactionRepository.swift in Sources */,
 				A17EC1232715D98A006B1256 /* LoginRepositoryImplTests.swift in Sources */,
 				A17EC12D271628A5006B1256 /* UseCaseTests.swift in Sources */,
 				A167C7B32716A6850023A953 /* FetchTransactionsUseCaseTests.swift in Sources */,
 				A174E98627156B3600B7D568 /* MockDataGenerator.swift in Sources */,
 				A167C78D271694C30023A953 /* CouldNotParseLocalFileExceptionTests.swift in Sources */,
-				A1845BF227174BCD00951D35 /* TransactionRowSceneModelTests.swift in Sources */,
+				A1845BF227174BCD00951D35 /* TransactionSceneModelTests.swift in Sources */,
 				A17EC13127162AFD006B1256 /* LoginUseCaseTests.swift in Sources */,
 				A17EC13727162F1C006B1256 /* MockLoginUseCase.swift in Sources */,
 				A17EC13927162F7B006B1256 /* MockLoginCoordinator.swift in Sources */,

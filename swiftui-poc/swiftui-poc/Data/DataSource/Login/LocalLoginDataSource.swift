@@ -11,20 +11,20 @@ struct LocalLoginDataSource: LoginDataSource {
     
     func performLogin(request: LoginRequest) -> Single<LoginResponse> {
         let single = Single<LoginResponse>.create { trait in
+            let disposables = Disposables.create()
+            
             let bool = self.generator.getBool()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                guard bool else {
-                    let exception = CouldNotLoginException()
-                    trait(.failure(exception))
-                    return
-                }
-                
-                let response = LoginResponse(token: "local token")
-                trait(.success(response))
+            guard bool else {
+                let exception = CouldNotLoginException()
+                trait(.failure(exception))
+                return disposables
             }
             
-            return Disposables.create()
+            let response = LoginResponse(token: "local token")
+            trait(.success(response))
+            
+            return disposables
         }
         
         return single

@@ -29,11 +29,15 @@ final class LoginViewModel: ObservableObject {
         self.loginUseCase.execute(with: params)
             .subscribe(
                 onCompleted: {
-                    self.state = .loaded
-                    self.coordinator.didLogInSuccessfully()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        self.state = .loaded
+                        self.coordinator.didLogInSuccessfully()
+                    }
                 }, onError: { error in
-                    self.state = .error
-                    self.coordinator.didFailLoggingIn()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        self.state = .error
+                        self.coordinator.didFailLoggingIn()
+                    }
                 }
             ).disposed(by: self.disposeBag)
     }

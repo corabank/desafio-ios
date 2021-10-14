@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct TransactionRowView: View {
-    private let transaction: TransactionRowSceneModel
+    private let transaction: TransactionSceneModel
     
-    init(transaction: TransactionRowSceneModel) {
+    init(transaction: TransactionSceneModel) {
         self.transaction = transaction
     }
 
@@ -20,7 +20,7 @@ struct TransactionRowView: View {
             }
             .frame(maxWidth: .infinity)
             HStack {
-                Text(transaction.buyerEmail)
+                Text(transaction.buyer.email)
                     .font(.system(size: 12))
                     .foregroundColor(.gray)
                 Spacer()
@@ -36,10 +36,13 @@ struct TransactionRowView: View {
 
 struct TransactionRowView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionRowView(transaction: TransactionRowSceneModel(id: "f97f1882-01bb-4ec4-9ad6-fe4c29a0820d",
-                                                                 value: "R$ 110,00",
-                                                                 buyerEmail: "cajucacau@labs.moip.com.br",
-                                                                 status: .paid,
-                                                                 date: "13/10/21"))
+        TransactionRowView(transaction:
+                            TransactionSceneModel(id: "f97f1882-01bb-4ec4-9ad6-fe4c29a0820d",
+                                                  value: "R$ 110,00",
+                                                  buyer: BuyerSceneModel(name: "Caju Cacau", email: "cajucacau@labs.moip.com.br"),
+                                                  paymentMethod: .creditCard,
+                                                  date: "13/10/21",
+                                                  status: .paid,
+                                                  taxes: "R$ 2,33"))
     }
 }

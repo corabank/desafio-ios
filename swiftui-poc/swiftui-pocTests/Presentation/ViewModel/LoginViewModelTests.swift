@@ -26,10 +26,12 @@ class LoginViewModelTests: XCTestCase {
         // when
         useCase.completableValue = .empty()
         sut.login()
-        _ = useCase.execute(with: nil)
+        _ = useCase.execute(with: nil).toBlocking()
         
         // then
-        XCTAssertEqual(sut.state, .loaded)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            XCTAssertEqual(self.sut.state, .loaded)
+        }
     }
     
     func testUnsuccessfulLogin() {
@@ -43,9 +45,11 @@ class LoginViewModelTests: XCTestCase {
         let exception = NSError(domain: "", code: 0, userInfo: nil)
         useCase.completableValue = .error(exception)
         sut.login()
-        _ = useCase.execute(with: nil)
+        _ = useCase.execute(with: nil).toBlocking()
         
         // then
-        XCTAssertEqual(sut.state, .error)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            XCTAssertEqual(self.sut.state, .error)
+        }
     }
 }
