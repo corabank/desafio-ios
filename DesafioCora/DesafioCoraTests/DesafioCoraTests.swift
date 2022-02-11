@@ -1,36 +1,72 @@
-//
-//  DesafioCoraTests.swift
-//  DesafioCoraTests
-//
-//  Created by leonardo on 11/02/22.
-//
-
 import XCTest
 @testable import DesafioCora
 
+class LoginPresenterSpy: LoginPresenting {
+    
+    var viewController: LoginDisplay? = nil
+    
+    var didLoginWithCallsCount: Int = 0
+    var didLoginWithInvocations: [String] = []
+    
+    func didLoginWith(_ message: String) {
+        didLoginWithCallsCount += 1
+        didLoginWithInvocations.append(message)
+    }
+    
+    var somenthingWrongDidHappenCallsCount: Int = 0
+    var somenthingWrongDidHappenInvocations: [String] = []
+    
+    func somenthingWrongDidHappen(_ message: String) {
+        somenthingWrongDidHappenCallsCount += 1
+        somenthingWrongDidHappenInvocations.append(message)
+    }
+}
+
+class LoginServiceMock: LoginServicing {
+    var expectedResult: (Result<String, Error>)?
+    
+    func requestLogin(_ loginModel: LoginModel, completion: @escaping (Result<String, Error>) -> Void) {
+        guard let result = expectedResult else { return }
+        completion(result)
+    }
+}
+
+class AnalyticsSpy: AnalyticsProtocol {
+    var logEventCallsCount: Int = 0
+    var logEventInvocations: [String] = []
+    
+    func logEvent(_ eventName: String) {
+        logEventCallsCount += 1
+        logEventInvocations.append(eventName)
+    }
+}
+
+class DependencyContainerMock: Dependencies {
+    var mainThread: DispatchQueue = DispatchQueue.global()
+    var analytics: AnalyticsProtocol = AnalyticsSpy()
+}
+
 class DesafioCoraTests: XCTestCase {
+    
+    let presenterSpy = LoginPresenterSpy()
+    let serviceMock = LoginServiceMock()
+    let analyticsSpy = AnalyticsSpy()
+    lazy var dependencies: Dependencies = {
+        let deps = DependencyContainerMock()
+        deps.analytics = analyticsSpy
+        return deps
+    }()
+    
+    lazy var sut: LoginInteracting = LoginInteractor(presenterSpy, service: serviceMock, container: dependencies)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testLoginInteractorWhenSuccessShouldInvokeDidLoginFunction() throws {
+        let welcomeMessage = "Welcome message"
+        serviceMock.expectedResult = .success(welcomeMessage)
+        sut.login("leonardo.saragiotto", password: "123456")
+        
+        XCTAssertEqual(presenterSpy.didLoginWithCallsCount, 1)
+        XCTAssertEqual(presenterSpy.didLoginWithInvocations.first, welcomeMessage)
+        XCTAssertEqual(analyticsSpy.logEventCallsCount, 1)
+        XCTAssertEqual(analyticsSpy.logEventInvocations.first, "user did login")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

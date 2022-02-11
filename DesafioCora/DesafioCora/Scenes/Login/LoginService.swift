@@ -54,7 +54,7 @@ protocol HasMainThread: AnyObject {
     var mainThread: DispatchQueue { get }
 }
 
-protocol AnalyticsProtocol {
+protocol AnalyticsProtocol: AnyObject {
     func logEvent(_ eventName: String)
 }
 
@@ -62,7 +62,7 @@ protocol HasAnalytics: AnyObject {
     var analytics: AnalyticsProtocol { get }
 }
 
-struct Analytics: AnalyticsProtocol {
+class Analytics: AnalyticsProtocol {
     func logEvent(_ eventName: String) {
         print("did log event with name \(eventName)")
     }
