@@ -2,6 +2,9 @@ import UIKit
 
 protocol LoginPresenting {
     var viewController: LoginDisplay? { get set }
+    
+    func didLoginWith(_ message: String)
+    func somenthingWrongDidHappen(_ message: String)
 }
 
 class LoginPresenter: LoginPresenting {
@@ -12,4 +15,7 @@ class LoginPresenter: LoginPresenting {
     init(_ coordinator: LoginCoordinating) {
         self.coordinator = coordinator
     }
+    
+    func didLoginWith(_ message: String) { }
+    func somenthingWrongDidHappen(_ message: String) { }
 }
