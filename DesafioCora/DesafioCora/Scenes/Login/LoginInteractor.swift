@@ -19,14 +19,21 @@ class LoginInteractor: LoginInteracting {
     func login(_ username: String, password: String) {
         let loginModel = LoginModel(username: username, password: password)
         
-        service.requestLogin(loginModel) { [presenter, dependencies] result in
+        service.requestLogin(loginModel) { [weak self] result in
             switch result {
             case .success(let welcomeMessage):
-                presenter.didLoginWith(welcomeMessage)
-                dependencies.analytics.logEvent("user did login")
+                self?.presenter.didLoginWith(welcomeMessage)
+                self?.logEvent(.success)
             case .failure(let error):
-                presenter.somenthingWrongDidHappen(error.localizedDescription)
+                self?.presenter.somenthingWrongDidHappen(error.localizedDescription)
+                self?.logEvent(.failure)
             }
         }
+    }
+}
+
+private extension LoginInteractor {
+    func logEvent(_ event: LoginAnalytics) {
+        dependencies.analytics.logEvent(event)
     }
 }

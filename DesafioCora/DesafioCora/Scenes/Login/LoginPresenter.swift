@@ -16,6 +16,13 @@ class LoginPresenter: LoginPresenting {
         self.coordinator = coordinator
     }
     
-    func didLoginWith(_ message: String) { }
-    func somenthingWrongDidHappen(_ message: String) { }
+    func didLoginWith(_ message: String) {
+        coordinator.execute(.home(message))
+    }
+    
+    func somenthingWrongDidHappen(_ message: String) {
+        viewController?.enableTextFields()
+        viewController?.stopButtonLoading()
+        viewController?.errorMessage(message)
+    }
 }
