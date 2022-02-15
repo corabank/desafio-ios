@@ -15,6 +15,11 @@
 		A7E9F88927BB3484002BA566 /* LoginAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F88827BB3484002BA566 /* LoginAnalytics.swift */; };
 		A7E9F88B27BB34DC002BA566 /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F88A27BB34DC002BA566 /* LoginEndpoint.swift */; };
 		A7E9F88D27BB3511002BA566 /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F88C27BB3511002BA566 /* EndpointProtocol.swift */; };
+		A7E9F89027BB35E8002BA566 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F88F27BB35E8002BA566 /* HomeFactory.swift */; };
+		A7E9F89227BB35EF002BA566 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F89127BB35EF002BA566 /* HomeViewController.swift */; };
+		A7E9F89427BB3745002BA566 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F89327BB3745002BA566 /* HomeCoordinator.swift */; };
+		A7E9F89627BB374A002BA566 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F89527BB374A002BA566 /* HomePresenter.swift */; };
+		A7E9F89827BB3750002BA566 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F89727BB3750002BA566 /* HomeInteractor.swift */; };
 		A7F795C027B6DDC400906305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795BF27B6DDC400906305 /* AppDelegate.swift */; };
 		A7F795C227B6DDC400906305 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795C127B6DDC400906305 /* SceneDelegate.swift */; };
 		A7F795C427B6DDC400906305 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795C327B6DDC400906305 /* ViewController.swift */; };
@@ -58,6 +63,11 @@
 		A7E9F88827BB3484002BA566 /* LoginAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAnalytics.swift; sourceTree = "<group>"; };
 		A7E9F88A27BB34DC002BA566 /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
 		A7E9F88C27BB3511002BA566 /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		A7E9F88F27BB35E8002BA566 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		A7E9F89127BB35EF002BA566 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A7E9F89327BB3745002BA566 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		A7E9F89527BB374A002BA566 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		A7E9F89727BB3750002BA566 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		A7F795BC27B6DDC400906305 /* DesafioCora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioCora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F795BF27B6DDC400906305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F795C127B6DDC400906305 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +144,11 @@
 		A7E9F88E27BB3563002BA566 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A7E9F88F27BB35E8002BA566 /* HomeFactory.swift */,
+				A7E9F89127BB35EF002BA566 /* HomeViewController.swift */,
+				A7E9F89327BB3745002BA566 /* HomeCoordinator.swift */,
+				A7E9F89527BB374A002BA566 /* HomePresenter.swift */,
+				A7E9F89727BB3750002BA566 /* HomeInteractor.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -348,8 +363,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7E9F89627BB374A002BA566 /* HomePresenter.swift in Sources */,
+				A7E9F89827BB3750002BA566 /* HomeInteractor.swift in Sources */,
 				A7F795F727B6DE2200906305 /* LoginPresenter.swift in Sources */,
 				A7F795F327B6DE0400906305 /* LoginViewController.swift in Sources */,
+				A7E9F89227BB35EF002BA566 /* HomeViewController.swift in Sources */,
 				A7E9F88927BB3484002BA566 /* LoginAnalytics.swift in Sources */,
 				A7F795C427B6DDC400906305 /* ViewController.swift in Sources */,
 				A7F795C027B6DDC400906305 /* AppDelegate.swift in Sources */,
@@ -364,7 +382,9 @@
 				A7E9F87D27BB3364002BA566 /* Analytics.swift in Sources */,
 				A7E9F88327BB33C0002BA566 /* DependencyContainer.swift in Sources */,
 				A7F795F927B6DE2B00906305 /* LoginService.swift in Sources */,
+				A7E9F89427BB3745002BA566 /* HomeCoordinator.swift in Sources */,
 				A7E9F88D27BB3511002BA566 /* EndpointProtocol.swift in Sources */,
+				A7E9F89027BB35E8002BA566 /* HomeFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

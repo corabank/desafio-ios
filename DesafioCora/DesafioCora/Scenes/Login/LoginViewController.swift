@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("Not implemented yet!")
     }
+    
+    override func viewDidLoad() {
+        interactor.setup()
+    }
 }
 
 extension LoginViewController: LoginDisplay {

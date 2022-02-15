@@ -1,6 +1,7 @@
 import Foundation
 
 protocol LoginInteracting: AnyObject {
+    func setup()
     func login(_ username: String, password: String)
 }
 
@@ -14,6 +15,10 @@ class LoginInteractor: LoginInteracting {
         self.presenter = presenter
         self.service = service
         self.dependencies = container
+    }
+    
+    func setup() {
+        logEvent(.viewed)
     }
     
     func login(_ username: String, password: String) {

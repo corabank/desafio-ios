@@ -9,11 +9,14 @@ import Foundation
 import Metal
 
 enum LoginAnalytics: AnalyticsEventing {
+    case viewed
     case success
     case failure
     
     var name: String {
         switch self {
+        case .viewed:
+            return Name.viewed
         case .success:
             return Name.success
         case .failure:
@@ -35,6 +38,7 @@ enum LoginAnalytics: AnalyticsEventing {
  
 private extension LoginAnalytics {
     enum Name {
+        static var viewed: String = "Login - Tela Apresentada"
         static var success: String = "Login - Sucesso"
         static var failure: String = "Login - Erro"
     }

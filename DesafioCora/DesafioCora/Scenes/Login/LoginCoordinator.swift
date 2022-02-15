@@ -9,12 +9,6 @@ enum LoginCoordinatorFlow {
     case home(_: String)
 }
 
-enum HomeFactory {
-    static func make(_ message: String) -> UIViewController {
-        UIViewController()
-    }
-}
-
 class LoginCoordinator: LoginCoordinating {
     weak var viewController: UIViewController?
     
