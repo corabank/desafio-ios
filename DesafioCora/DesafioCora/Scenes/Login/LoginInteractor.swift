@@ -22,12 +22,12 @@ class LoginInteractor: LoginInteracting {
     }
     
     func login(_ username: String, password: String) {
-        let loginModel = LoginModel(username: username, password: password)
-        
+        let loginModel = LoginModelRequest(username: username, password: password)
+        presenter.prepareForLoading()
         service.requestLogin(loginModel) { [weak self] result in
             switch result {
-            case .success(let welcomeMessage):
-                self?.presenter.didLoginWith(welcomeMessage)
+            case .success(let response):
+                self?.presenter.didLoginWith(response.welcome)
                 self?.logEvent(.success)
             case .failure(let error):
                 self?.presenter.somenthingWrongDidHappen(error.localizedDescription)

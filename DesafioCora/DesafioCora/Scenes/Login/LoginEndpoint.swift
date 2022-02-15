@@ -1,26 +1,16 @@
-//
-//  LoginEndpoint.swift
-//  DesafioCora
-//
-//  Created by leonardo on 14/02/22.
-//
-
 import Foundation
 
 enum LoginEndpoint: EndpointProtocol {
-    case login(_ viewModel: LoginModel)
+    case login(_ viewModel: LoginModelRequest)
     
     var path: String {
         "/login"
     }
     
-    var params: [String : String] {
+    var body: Data? {
         switch self {
         case .login(let viewModel):
-            return [
-                Keys.username: viewModel.username,
-                Keys.password: viewModel.password
-            ]
+            return try? JSONEncoder().encode(viewModel)
         }
     }
 }

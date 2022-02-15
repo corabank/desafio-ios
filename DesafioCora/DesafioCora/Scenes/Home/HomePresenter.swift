@@ -1,14 +1,9 @@
-//
-//  HomePresenter.swift
-//  DesafioCora
-//
-//  Created by leonardo on 14/02/22.
-//
-
 import UIKit
 
 protocol HomePresenting: AnyObject {
     var viewController: HomeDisplay? { get set }
+    
+    func message(_ message: String)
 }
 
 class HomePresenter: HomePresenting {
@@ -17,5 +12,9 @@ class HomePresenter: HomePresenting {
     
     init(_ coordinator: HomeCoordinating) {
         self.coordinator = coordinator
+    }
+    
+    func message(_ message: String) {
+        viewController?.welcome(message)
     }
 }

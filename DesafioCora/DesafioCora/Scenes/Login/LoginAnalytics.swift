@@ -1,10 +1,3 @@
-//
-//  LoginAnalytics.swift
-//  DesafioCora
-//
-//  Created by leonardo on 14/02/22.
-//
-
 import Foundation
 import Metal
 

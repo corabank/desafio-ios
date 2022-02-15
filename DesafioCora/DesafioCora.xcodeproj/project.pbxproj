@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70F925A27BB9FA200D5BEDC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F925927BB9FA200D5BEDC /* LoginModel.swift */; };
+		A70F925D27BBA8D800D5BEDC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F925C27BBA8D800D5BEDC /* Color.swift */; };
+		A70F925F27BBDD0900D5BEDC /* LoginLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F925E27BBDD0900D5BEDC /* LoginLocalizable.swift */; };
+		A70F926127BBDD4B00D5BEDC /* HomeLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F926027BBDD4B00D5BEDC /* HomeLocalizable.swift */; };
+		A70F926327BBDDD200D5BEDC /* HomeAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F926227BBDDD200D5BEDC /* HomeAnalytics.swift */; };
 		A7E9F87D27BB3364002BA566 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F87C27BB3364002BA566 /* Analytics.swift */; };
 		A7E9F88127BB33B2002BA566 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F88027BB33B2002BA566 /* Api.swift */; };
 		A7E9F88327BB33C0002BA566 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9F88227BB33C0002BA566 /* DependencyContainer.swift */; };
@@ -55,6 +60,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70F925927BB9FA200D5BEDC /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		A70F925C27BBA8D800D5BEDC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A70F925E27BBDD0900D5BEDC /* LoginLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalizable.swift; sourceTree = "<group>"; };
+		A70F926027BBDD4B00D5BEDC /* HomeLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalizable.swift; sourceTree = "<group>"; };
+		A70F926227BBDDD200D5BEDC /* HomeAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnalytics.swift; sourceTree = "<group>"; };
 		A7E9F87C27BB3364002BA566 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		A7E9F88027BB33B2002BA566 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		A7E9F88227BB33C0002BA566 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
@@ -114,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A70F925B27BBA8CC00D5BEDC /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A70F925C27BBA8D800D5BEDC /* Color.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		A7E9F87B27BB3354002BA566 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,11 +162,13 @@
 		A7E9F88E27BB3563002BA566 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A7E9F88F27BB35E8002BA566 /* HomeFactory.swift */,
-				A7E9F89127BB35EF002BA566 /* HomeViewController.swift */,
+				A70F926227BBDDD200D5BEDC /* HomeAnalytics.swift */,
 				A7E9F89327BB3745002BA566 /* HomeCoordinator.swift */,
-				A7E9F89527BB374A002BA566 /* HomePresenter.swift */,
+				A7E9F88F27BB35E8002BA566 /* HomeFactory.swift */,
 				A7E9F89727BB3750002BA566 /* HomeInteractor.swift */,
+				A70F926027BBDD4B00D5BEDC /* HomeLocalizable.swift */,
+				A7E9F89527BB374A002BA566 /* HomePresenter.swift */,
+				A7E9F89127BB35EF002BA566 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -176,6 +196,7 @@
 		A7F795BE27B6DDC400906305 /* DesafioCora */ = {
 			isa = PBXGroup;
 			children = (
+				A70F925B27BBA8CC00D5BEDC /* DesignSystem */,
 				A7E9F87F27BB33A2002BA566 /* Dependency */,
 				A7E9F87E27BB339B002BA566 /* Core */,
 				A7E9F87B27BB3354002BA566 /* Analytics */,
@@ -220,14 +241,16 @@
 		A7F795F027B6DDEB00906305 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A7F795F227B6DE0400906305 /* LoginViewController.swift */,
+				A7E9F88827BB3484002BA566 /* LoginAnalytics.swift */,
+				A7F795FA27B6DE3200906305 /* LoginCoordinator.swift */,
+				A7E9F88A27BB34DC002BA566 /* LoginEndpoint.swift */,
+				A7F795FC27B6DE3E00906305 /* LoginFactory.swift */,
 				A7F795F427B6DE1500906305 /* LoginInteractor.swift */,
+				A70F925E27BBDD0900D5BEDC /* LoginLocalizable.swift */,
+				A70F925927BB9FA200D5BEDC /* LoginModel.swift */,
 				A7F795F627B6DE2200906305 /* LoginPresenter.swift */,
 				A7F795F827B6DE2B00906305 /* LoginService.swift */,
-				A7F795FA27B6DE3200906305 /* LoginCoordinator.swift */,
-				A7F795FC27B6DE3E00906305 /* LoginFactory.swift */,
-				A7E9F88827BB3484002BA566 /* LoginAnalytics.swift */,
-				A7E9F88A27BB34DC002BA566 /* LoginEndpoint.swift */,
+				A7F795F227B6DE0400906305 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -363,11 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70F926327BBDDD200D5BEDC /* HomeAnalytics.swift in Sources */,
 				A7E9F89627BB374A002BA566 /* HomePresenter.swift in Sources */,
 				A7E9F89827BB3750002BA566 /* HomeInteractor.swift in Sources */,
 				A7F795F727B6DE2200906305 /* LoginPresenter.swift in Sources */,
+				A70F926127BBDD4B00D5BEDC /* HomeLocalizable.swift in Sources */,
 				A7F795F327B6DE0400906305 /* LoginViewController.swift in Sources */,
 				A7E9F89227BB35EF002BA566 /* HomeViewController.swift in Sources */,
+				A70F925D27BBA8D800D5BEDC /* Color.swift in Sources */,
 				A7E9F88927BB3484002BA566 /* LoginAnalytics.swift in Sources */,
 				A7F795C427B6DDC400906305 /* ViewController.swift in Sources */,
 				A7F795C027B6DDC400906305 /* AppDelegate.swift in Sources */,
@@ -375,7 +401,9 @@
 				A7F795F527B6DE1500906305 /* LoginInteractor.swift in Sources */,
 				A7E9F88727BB3445002BA566 /* AnalyticsEventing.swift in Sources */,
 				A7E9F88B27BB34DC002BA566 /* LoginEndpoint.swift in Sources */,
+				A70F925F27BBDD0900D5BEDC /* LoginLocalizable.swift in Sources */,
 				A7E9F88127BB33B2002BA566 /* Api.swift in Sources */,
+				A70F925A27BB9FA200D5BEDC /* LoginModel.swift in Sources */,
 				A7F795FD27B6DE3E00906305 /* LoginFactory.swift in Sources */,
 				A7F795C227B6DDC400906305 /* SceneDelegate.swift in Sources */,
 				A7F795FB27B6DE3200906305 /* LoginCoordinator.swift in Sources */,

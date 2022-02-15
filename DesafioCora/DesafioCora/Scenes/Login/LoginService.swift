@@ -1,12 +1,7 @@
 import Foundation
 
-struct LoginModel {
-    let username: String
-    let password: String
-}
-
 protocol LoginServicing: AnyObject {
-    func requestLogin(_ loginModel: LoginModel, completion: @escaping (Result<String, Error>) -> Void)
+    func requestLogin(_ loginModel: LoginModelRequest, completion: @escaping (Result<LoginModelResponse, Error>) -> Void)
 }
 
 class LoginService: LoginServicing {
@@ -18,12 +13,12 @@ class LoginService: LoginServicing {
         self.dependencies = container
     }
     
-    func requestLogin(_ loginModel: LoginModel, completion: @escaping (Result<String, Error>) -> Void) {
+    func requestLogin(_ loginModel: LoginModelRequest, completion: @escaping (Result<LoginModelResponse, Error>) -> Void) {
         let endpoint = LoginEndpoint.login(loginModel)
         
-        Api.execute(endpoint) { [dependencies] in
+        Api<LoginModelResponse>.execute(endpoint) { [dependencies] result in
             dependencies.mainThread.async {
-                completion(.success("Seja bem vindo ao app!"))
+                completion(result)
             }
         }
     }

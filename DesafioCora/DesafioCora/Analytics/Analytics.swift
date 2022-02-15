@@ -1,10 +1,3 @@
-//
-//  Analytics.swift
-//  DesafioCora
-//
-//  Created by leonardo on 14/02/22.
-//
-
 import Foundation
 
 protocol AnalyticsProtocol: AnyObject {
@@ -15,7 +8,7 @@ class Analytics: AnalyticsProtocol {
     func logEvent(_ event: AnalyticsEventing) {
         print("### Event log ###")
         print("Name: \(event.name)")
-        print("Name: \(event.context)")
-        print("Name: \(event.properties)")
+        print("Context: \(event.context)")
+        print("Props: \(event.properties)")
     }
 }
