@@ -1,0 +1,43 @@
+{
+    "products": [{
+            "value": 630.00,
+            "description": "Spider Armor MK I",
+            "date": "20/02/2022"
+        },
+        {
+            "value": 500.00,
+            "description": "Amazing Fantasy",
+            "date": "05/01/2021"
+        },
+        {
+            "value": 900.00,
+            "description": "Black Costume",
+            "date": "15/03/2015"
+        },
+        {
+            "value": 1000.00,
+            "description": "Symbiote Suit",
+            "date": "05/06/2019"
+        },
+        {
+            "value": 800.99,
+            "description": "Bombastic Bag-Man's",
+            "date": "07/10/1999"
+        },
+        {
+            "value": 999.99,
+            "description": "Black Cloth Suit",
+            "date": "03/04/2020"
+        },
+        {
+            "value": 5555.00,
+            "description": "Captain Universe's Suit",
+            "date": "05/07/2007"
+        },
+        {
+            "value": 444.00,
+            "description": "Electro-Proof Suit",
+            "date": "25/11/2001"
+        }
+    ]
+}
