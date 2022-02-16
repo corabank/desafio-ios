@@ -5,7 +5,7 @@ protocol LoginCoordinating: AnyObject {
     func execute(_ flow: LoginCoordinatorFlow)
 }
 
-enum LoginCoordinatorFlow {
+enum LoginCoordinatorFlow: Equatable {
     case home(_: String)
 }
 

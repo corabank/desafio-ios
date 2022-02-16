@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A709C2E327BC711100598ACE /* ViewBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709C2E227BC711100598ACE /* ViewBuilderProtocol.swift */; };
+		A709C2E627BC715D00598ACE /* AnalyticsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709C2E527BC715D00598ACE /* AnalyticsSpy.swift */; };
+		A709C2E927BC725000598ACE /* DependencyContainerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709C2E827BC725000598ACE /* DependencyContainerMock.swift */; };
+		A709C2EB27BC755700598ACE /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709C2EA27BC755700598ACE /* LoginPresenterTests.swift */; };
 		A70F925A27BB9FA200D5BEDC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F925927BB9FA200D5BEDC /* LoginModel.swift */; };
 		A70F925D27BBA8D800D5BEDC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F925C27BBA8D800D5BEDC /* Color.swift */; };
 		A70F925F27BBDD0900D5BEDC /* LoginLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F925E27BBDD0900D5BEDC /* LoginLocalizable.swift */; };
@@ -31,7 +35,7 @@
 		A7F795C727B6DDC400906305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F795C527B6DDC400906305 /* Main.storyboard */; };
 		A7F795C927B6DDC700906305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F795C827B6DDC700906305 /* Assets.xcassets */; };
 		A7F795CC27B6DDC700906305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F795CA27B6DDC700906305 /* LaunchScreen.storyboard */; };
-		A7F795D727B6DDC700906305 /* DesafioCoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795D627B6DDC700906305 /* DesafioCoraTests.swift */; };
+		A7F795D727B6DDC700906305 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795D627B6DDC700906305 /* LoginInteractorTests.swift */; };
 		A7F795E127B6DDC700906305 /* DesafioCoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795E027B6DDC700906305 /* DesafioCoraUITests.swift */; };
 		A7F795E327B6DDC700906305 /* DesafioCoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795E227B6DDC700906305 /* DesafioCoraUITestsLaunchTests.swift */; };
 		A7F795F327B6DE0400906305 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F795F227B6DE0400906305 /* LoginViewController.swift */; };
@@ -60,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A709C2E227BC711100598ACE /* ViewBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderProtocol.swift; sourceTree = "<group>"; };
+		A709C2E527BC715D00598ACE /* AnalyticsSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSpy.swift; sourceTree = "<group>"; };
+		A709C2E827BC725000598ACE /* DependencyContainerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerMock.swift; sourceTree = "<group>"; };
+		A709C2EA27BC755700598ACE /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		A70F925927BB9FA200D5BEDC /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		A70F925C27BBA8D800D5BEDC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A70F925E27BBDD0900D5BEDC /* LoginLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalizable.swift; sourceTree = "<group>"; };
@@ -87,7 +95,7 @@
 		A7F795CB27B6DDC700906305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7F795CD27B6DDC700906305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7F795D227B6DDC700906305 /* DesafioCoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7F795D627B6DDC700906305 /* DesafioCoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraTests.swift; sourceTree = "<group>"; };
+		A7F795D627B6DDC700906305 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
 		A7F795DC27B6DDC700906305 /* DesafioCoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F795E027B6DDC700906305 /* DesafioCoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraUITests.swift; sourceTree = "<group>"; };
 		A7F795E227B6DDC700906305 /* DesafioCoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -124,10 +132,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A709C2E427BC714E00598ACE /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				A709C2E527BC715D00598ACE /* AnalyticsSpy.swift */,
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
+		A709C2E727BC724300598ACE /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A709C2E827BC725000598ACE /* DependencyContainerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		A70F925B27BBA8CC00D5BEDC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
 				A70F925C27BBA8D800D5BEDC /* Color.swift */,
+				A709C2E227BC711100598ACE /* ViewBuilderProtocol.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -215,7 +240,10 @@
 		A7F795D527B6DDC700906305 /* DesafioCoraTests */ = {
 			isa = PBXGroup;
 			children = (
-				A7F795D627B6DDC700906305 /* DesafioCoraTests.swift */,
+				A709C2E727BC724300598ACE /* Mock */,
+				A709C2E427BC714E00598ACE /* Spy */,
+				A7F795D627B6DDC700906305 /* LoginInteractorTests.swift */,
+				A709C2EA27BC755700598ACE /* LoginPresenterTests.swift */,
 			);
 			path = DesafioCoraTests;
 			sourceTree = "<group>";
@@ -402,6 +430,7 @@
 				A7E9F88727BB3445002BA566 /* AnalyticsEventing.swift in Sources */,
 				A7E9F88B27BB34DC002BA566 /* LoginEndpoint.swift in Sources */,
 				A70F925F27BBDD0900D5BEDC /* LoginLocalizable.swift in Sources */,
+				A709C2E327BC711100598ACE /* ViewBuilderProtocol.swift in Sources */,
 				A7E9F88127BB33B2002BA566 /* Api.swift in Sources */,
 				A70F925A27BB9FA200D5BEDC /* LoginModel.swift in Sources */,
 				A7F795FD27B6DE3E00906305 /* LoginFactory.swift in Sources */,
@@ -420,7 +449,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7F795D727B6DDC700906305 /* DesafioCoraTests.swift in Sources */,
+				A709C2EB27BC755700598ACE /* LoginPresenterTests.swift in Sources */,
+				A7F795D727B6DDC700906305 /* LoginInteractorTests.swift in Sources */,
+				A709C2E927BC725000598ACE /* DependencyContainerMock.swift in Sources */,
+				A709C2E627BC715D00598ACE /* AnalyticsSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
