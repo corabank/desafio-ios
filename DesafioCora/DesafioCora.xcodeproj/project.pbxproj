@@ -11,11 +11,13 @@
 		D0FD625427CAC770003FE353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FD625227CAC770003FE353 /* Main.storyboard */; };
 		D0FD625627CAC773003FE353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FD625527CAC773003FE353 /* Assets.xcassets */; };
 		D0FD625927CAC773003FE353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FD625727CAC773003FE353 /* LaunchScreen.storyboard */; };
-		D0FD626427CAC773003FE353 /* DesafioCoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD626327CAC773003FE353 /* DesafioCoraTests.swift */; };
 		D0FD626E27CAC773003FE353 /* DesafioCoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD626D27CAC773003FE353 /* DesafioCoraUITests.swift */; };
-		D0FD627027CAC773003FE353 /* DesafioCoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD626F27CAC773003FE353 /* DesafioCoraUITestsLaunchTests.swift */; };
 		D0FD627F27CACAE4003FE353 /* LoginViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD627E27CACAE4003FE353 /* LoginViewConroller.swift */; };
 		D0FD628327CAD2FE003FE353 /* TransactionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD628227CAD2FE003FE353 /* TransactionsListViewController.swift */; };
+		D0FD628527CAD79E003FE353 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD628427CAD79E003FE353 /* LoginCoordinator.swift */; };
+		D0FD628827CAD7C2003FE353 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD628727CAD7C2003FE353 /* Coordinator.swift */; };
+		D0FD628B27CADB53003FE353 /* LoginCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD628A27CADB53003FE353 /* LoginCoordinatorTests.swift */; };
+		D0FD628E27CADC1D003FE353 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD628D27CADC1D003FE353 /* ViewControllerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +45,14 @@
 		D0FD625827CAC773003FE353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0FD625A27CAC773003FE353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0FD625F27CAC773003FE353 /* DesafioCoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0FD626327CAC773003FE353 /* DesafioCoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraTests.swift; sourceTree = "<group>"; };
 		D0FD626927CAC773003FE353 /* DesafioCoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioCoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FD626D27CAC773003FE353 /* DesafioCoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraUITests.swift; sourceTree = "<group>"; };
-		D0FD626F27CAC773003FE353 /* DesafioCoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D0FD627E27CACAE4003FE353 /* LoginViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewConroller.swift; sourceTree = "<group>"; };
 		D0FD628227CAD2FE003FE353 /* TransactionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewController.swift; sourceTree = "<group>"; };
+		D0FD628427CAD79E003FE353 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		D0FD628727CAD7C2003FE353 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D0FD628A27CADB53003FE353 /* LoginCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorTests.swift; sourceTree = "<group>"; };
+		D0FD628D27CADC1D003FE353 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		D0FD624B27CAC770003FE353 /* DesafioCora */ = {
 			isa = PBXGroup;
 			children = (
+				D0FD628627CAD7A9003FE353 /* Components */,
 				D0FD628027CACB5C003FE353 /* SupportingFiles */,
 				D0FD627C27CACAC6003FE353 /* Features */,
 			);
@@ -108,7 +113,8 @@
 		D0FD626227CAC773003FE353 /* DesafioCoraTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0FD626327CAC773003FE353 /* DesafioCoraTests.swift */,
+				D0FD628C27CADC0E003FE353 /* Mocks */,
+				D0FD628927CADA3F003FE353 /* LoginTests */,
 			);
 			path = DesafioCoraTests;
 			sourceTree = "<group>";
@@ -117,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				D0FD626D27CAC773003FE353 /* DesafioCoraUITests.swift */,
-				D0FD626F27CAC773003FE353 /* DesafioCoraUITestsLaunchTests.swift */,
 			);
 			path = DesafioCoraUITests;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				D0FD627E27CACAE4003FE353 /* LoginViewConroller.swift */,
+				D0FD628427CAD79E003FE353 /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -157,6 +163,30 @@
 				D0FD628227CAD2FE003FE353 /* TransactionsListViewController.swift */,
 			);
 			path = TransactionsList;
+			sourceTree = "<group>";
+		};
+		D0FD628627CAD7A9003FE353 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D0FD628727CAD7C2003FE353 /* Coordinator.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D0FD628927CADA3F003FE353 /* LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0FD628A27CADB53003FE353 /* LoginCoordinatorTests.swift */,
+			);
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
+		D0FD628C27CADC0E003FE353 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D0FD628D27CADC1D003FE353 /* ViewControllerMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +322,8 @@
 			files = (
 				D0FD627F27CACAE4003FE353 /* LoginViewConroller.swift in Sources */,
 				D0FD628327CAD2FE003FE353 /* TransactionsListViewController.swift in Sources */,
+				D0FD628827CAD7C2003FE353 /* Coordinator.swift in Sources */,
+				D0FD628527CAD79E003FE353 /* LoginCoordinator.swift in Sources */,
 				D0FD624D27CAC770003FE353 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +332,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0FD626427CAC773003FE353 /* DesafioCoraTests.swift in Sources */,
+				D0FD628B27CADB53003FE353 /* LoginCoordinatorTests.swift in Sources */,
+				D0FD628E27CADC1D003FE353 /* ViewControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +342,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0FD626E27CAC773003FE353 /* DesafioCoraUITests.swift in Sources */,
-				D0FD627027CAC773003FE353 /* DesafioCoraUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

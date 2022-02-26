@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol LoginDisplaying {
+    func showError(_ error: Error)
+}
+
 class LoginViewController: UIViewController {
     private lazy var logoImage: UIImageView = {
         let imageView = UIImageView()
@@ -112,5 +116,11 @@ class LoginViewController: UIViewController {
     @objc
     private func forgotPasswordButtonTapped() {
         
+    }
+}
+
+extension LoginViewController: LoginDisplaying {
+    func showError(_ error: Error) {
+        print(error.localizedDescription)
     }
 }
