@@ -31,16 +31,26 @@ class LoginViewController: UIViewController {
     
     private lazy var usernameField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Nome ou email"
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.textColor = .white
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Nome ou email",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
+        textField.backgroundColor = UIColor(red: 39/255, green: 63/255, blue: 84/255, alpha: 1.0)
         return textField
     }()
     
     private lazy var passwordField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Senha"
         textField.isSecureTextEntry = true
+        textField.textColor = .white
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Senha",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
+        textField.backgroundColor = UIColor(red: 39/255, green: 63/255, blue: 84/255, alpha: 1.0)
         return textField
     }()
     
@@ -84,12 +94,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
         setupViews()
         setupConstraints()
     }
     
     private func setupViews() {
+        view.backgroundColor = UIColor(red: 21/255, green: 47/255, blue: 68/255, alpha: 1.0)
         view.addSubview(logoImage)
         view.addSubview(topLabel)
         view.addSubview(usernameField)

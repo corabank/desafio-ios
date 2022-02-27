@@ -23,7 +23,8 @@ class LoginCoordinator: LoginCoordinating {
     
     func perform(action: LoginCoordinatorAction) {
         if case .login = action {
-            viewController?.present(TransactionsListViewController(), animated: true)
+            let vc = TransactionsListFactory.make()
+            viewController?.present(vc, animated: true)
         }
     }
 }

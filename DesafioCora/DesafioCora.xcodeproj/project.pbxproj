@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D061233A27CC072C0092B66A /* TransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061233927CC072C0092B66A /* TransactionsRequest.swift */; };
+		D061233D27CC196D0092B66A /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061233C27CC196D0092B66A /* Date+Extensions.swift */; };
+		D061233F27CC19790092B66A /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061233E27CC19790092B66A /* Double+Extensions.swift */; };
+		D061234327CC1A970092B66A /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234227CC1A970092B66A /* TransactionDetailsViewController.swift */; };
+		D061234527CC1B100092B66A /* TransactionsDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234427CC1B100092B66A /* TransactionsDetailsInteractor.swift */; };
+		D061234727CC1BFA0092B66A /* TransactionDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234627CC1BFA0092B66A /* TransactionDetailsPresenter.swift */; };
+		D061234927CC1D180092B66A /* TransactionDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234827CC1D180092B66A /* TransactionDetailsFactory.swift */; };
+		D061234B27CC1DD70092B66A /* TransactionDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234A27CC1DD70092B66A /* TransactionDetailInfoView.swift */; };
+		D061234D27CC21FF0092B66A /* TransactionDetailValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234C27CC21FF0092B66A /* TransactionDetailValueView.swift */; };
 		D06861A327CB15C5003C6128 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A227CB15C5003C6128 /* LoginPresenter.swift */; };
 		D06861A527CB18D1003C6128 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A427CB18D1003C6128 /* LoginFactory.swift */; };
 		D06861A727CB2090003C6128 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A627CB2090003C6128 /* LoginInteractorTests.swift */; };
@@ -58,6 +67,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D061233927CC072C0092B66A /* TransactionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRequest.swift; sourceTree = "<group>"; };
+		D061233C27CC196D0092B66A /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		D061233E27CC19790092B66A /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		D061234227CC1A970092B66A /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
+		D061234427CC1B100092B66A /* TransactionsDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDetailsInteractor.swift; sourceTree = "<group>"; };
+		D061234627CC1BFA0092B66A /* TransactionDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsPresenter.swift; sourceTree = "<group>"; };
+		D061234827CC1D180092B66A /* TransactionDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsFactory.swift; sourceTree = "<group>"; };
+		D061234A27CC1DD70092B66A /* TransactionDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailInfoView.swift; sourceTree = "<group>"; };
+		D061234C27CC21FF0092B66A /* TransactionDetailValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailValueView.swift; sourceTree = "<group>"; };
 		D06861A227CB15C5003C6128 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		D06861A427CB18D1003C6128 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		D06861A627CB2090003C6128 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
@@ -120,6 +138,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D061233B27CC195C0092B66A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D061233C27CC196D0092B66A /* Date+Extensions.swift */,
+				D061233E27CC19790092B66A /* Double+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D061234027CC1A270092B66A /* TransactionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D061234127CC1A7B0092B66A /* Views */,
+				D061234227CC1A970092B66A /* TransactionDetailsViewController.swift */,
+				D061234427CC1B100092B66A /* TransactionsDetailsInteractor.swift */,
+				D061234627CC1BFA0092B66A /* TransactionDetailsPresenter.swift */,
+				D061234827CC1D180092B66A /* TransactionDetailsFactory.swift */,
+			);
+			path = TransactionDetails;
+			sourceTree = "<group>";
+		};
+		D061234127CC1A7B0092B66A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D061234A27CC1DD70092B66A /* TransactionDetailInfoView.swift */,
+				D061234C27CC21FF0092B66A /* TransactionDetailValueView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D06861AE27CB2A23003C6128 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				D09C95C927CBCCC8004DC149 /* TransactionModel.swift */,
+				D061233927CC072C0092B66A /* TransactionsRequest.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -180,6 +229,7 @@
 		D0FD624B27CAC770003FE353 /* DesafioCora */ = {
 			isa = PBXGroup;
 			children = (
+				D061233B27CC195C0092B66A /* Extensions */,
 				D07A973027CAFC1000B14C33 /* Network */,
 				D0FD628627CAD7A9003FE353 /* Components */,
 				D0FD628027CACB5C003FE353 /* SupportingFiles */,
@@ -208,6 +258,7 @@
 		D0FD627C27CACAC6003FE353 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D061234027CC1A270092B66A /* TransactionDetails */,
 				D0FD628127CAD2E1003FE353 /* TransactionsList */,
 				D0FD627D27CACAD1003FE353 /* Login */,
 			);
@@ -415,6 +466,8 @@
 				D09C95CA27CBCCC8004DC149 /* TransactionModel.swift in Sources */,
 				D0FD627F27CACAE4003FE353 /* LoginViewController.swift in Sources */,
 				D06861B027CB2A37003C6128 /* LoginRequest.swift in Sources */,
+				D061233F27CC19790092B66A /* Double+Extensions.swift in Sources */,
+				D061233D27CC196D0092B66A /* Date+Extensions.swift in Sources */,
 				D09C95C227CBCA53004DC149 /* TransactionsListService.swift in Sources */,
 				D0FD628327CAD2FE003FE353 /* TransactionsListViewController.swift in Sources */,
 				D07A972D27CAF9ED00B14C33 /* LoginInteractor.swift in Sources */,
@@ -430,12 +483,19 @@
 				D06861B427CB2AB7003C6128 /* DispatchQueueType.swift in Sources */,
 				D06861A927CB299C003C6128 /* ServiceError.swift in Sources */,
 				D0FD624D27CAC770003FE353 /* AppDelegate.swift in Sources */,
+				D061234727CC1BFA0092B66A /* TransactionDetailsPresenter.swift in Sources */,
+				D061234327CC1A970092B66A /* TransactionDetailsViewController.swift in Sources */,
+				D061234927CC1D180092B66A /* TransactionDetailsFactory.swift in Sources */,
 				D06861AD27CB2A08003C6128 /* HTTPMethod.swift in Sources */,
 				D07A972F27CAFB9200B14C33 /* LoginService.swift in Sources */,
 				D09C95C027CBCA44004DC149 /* TransactionsListCoordinator.swift in Sources */,
+				D061234B27CC1DD70092B66A /* TransactionDetailInfoView.swift in Sources */,
 				D07A973227CAFC2400B14C33 /* NetworkClient.swift in Sources */,
 				D09C95C427CBCA60004DC149 /* TransactionsListFactory.swift in Sources */,
+				D061234527CC1B100092B66A /* TransactionsDetailsInteractor.swift in Sources */,
+				D061234D27CC21FF0092B66A /* TransactionDetailValueView.swift in Sources */,
 				D06861B227CB2A83003C6128 /* LoginResponse.swift in Sources */,
+				D061233A27CC072C0092B66A /* TransactionsRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
