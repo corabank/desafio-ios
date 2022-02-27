@@ -9,6 +9,7 @@ import Foundation
 
 protocol TransactionsListPresenting {
     func presentTransactionsList()
+    func presentDetailsFor(transaction: TransactionModel)
 }
 
 final class TransactionsListPresenter {
@@ -23,5 +24,9 @@ final class TransactionsListPresenter {
 extension TransactionsListPresenter: TransactionsListPresenting {
     func presentTransactionsList() {
         viewController?.displayTransactions()
+    }
+    
+    func presentDetailsFor(transaction: TransactionModel) {
+        coordinator.perform(action: .detail(transaction))
     }
 }

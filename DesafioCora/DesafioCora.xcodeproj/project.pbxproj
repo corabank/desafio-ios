@@ -16,6 +16,10 @@
 		D061234927CC1D180092B66A /* TransactionDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234827CC1D180092B66A /* TransactionDetailsFactory.swift */; };
 		D061234B27CC1DD70092B66A /* TransactionDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234A27CC1DD70092B66A /* TransactionDetailInfoView.swift */; };
 		D061234D27CC21FF0092B66A /* TransactionDetailValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234C27CC21FF0092B66A /* TransactionDetailValueView.swift */; };
+		D061234F27CC2FCC0092B66A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061234E27CC2FCC0092B66A /* UIColor+Extensions.swift */; };
+		D061235127CC312D0092B66A /* TransactionDetailSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235027CC312D0092B66A /* TransactionDetailSummaryView.swift */; };
+		D061235427CC35FA0092B66A /* SummaryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235327CC35FA0092B66A /* SummaryDetailsViewModel.swift */; };
+		D061235627CC39960092B66A /* TransactionIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235527CC39960092B66A /* TransactionIdView.swift */; };
 		D06861A327CB15C5003C6128 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A227CB15C5003C6128 /* LoginPresenter.swift */; };
 		D06861A527CB18D1003C6128 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A427CB18D1003C6128 /* LoginFactory.swift */; };
 		D06861A727CB2090003C6128 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A627CB2090003C6128 /* LoginInteractorTests.swift */; };
@@ -76,6 +80,10 @@
 		D061234827CC1D180092B66A /* TransactionDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsFactory.swift; sourceTree = "<group>"; };
 		D061234A27CC1DD70092B66A /* TransactionDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailInfoView.swift; sourceTree = "<group>"; };
 		D061234C27CC21FF0092B66A /* TransactionDetailValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailValueView.swift; sourceTree = "<group>"; };
+		D061234E27CC2FCC0092B66A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		D061235027CC312D0092B66A /* TransactionDetailSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailSummaryView.swift; sourceTree = "<group>"; };
+		D061235327CC35FA0092B66A /* SummaryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDetailsViewModel.swift; sourceTree = "<group>"; };
+		D061235527CC39960092B66A /* TransactionIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionIdView.swift; sourceTree = "<group>"; };
 		D06861A227CB15C5003C6128 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		D06861A427CB18D1003C6128 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		D06861A627CB2090003C6128 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 			children = (
 				D061233C27CC196D0092B66A /* Date+Extensions.swift */,
 				D061233E27CC19790092B66A /* Double+Extensions.swift */,
+				D061234E27CC2FCC0092B66A /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 		D061234027CC1A270092B66A /* TransactionDetails */ = {
 			isa = PBXGroup;
 			children = (
+				D061235227CC35E50092B66A /* Entities */,
 				D061234127CC1A7B0092B66A /* Views */,
 				D061234227CC1A970092B66A /* TransactionDetailsViewController.swift */,
 				D061234427CC1B100092B66A /* TransactionsDetailsInteractor.swift */,
@@ -164,8 +174,18 @@
 			children = (
 				D061234A27CC1DD70092B66A /* TransactionDetailInfoView.swift */,
 				D061234C27CC21FF0092B66A /* TransactionDetailValueView.swift */,
+				D061235027CC312D0092B66A /* TransactionDetailSummaryView.swift */,
+				D061235527CC39960092B66A /* TransactionIdView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D061235227CC35E50092B66A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D061235327CC35FA0092B66A /* SummaryDetailsViewModel.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D06861AE27CB2A23003C6128 /* Entities */ = {
@@ -470,6 +490,7 @@
 				D061233D27CC196D0092B66A /* Date+Extensions.swift in Sources */,
 				D09C95C227CBCA53004DC149 /* TransactionsListService.swift in Sources */,
 				D0FD628327CAD2FE003FE353 /* TransactionsListViewController.swift in Sources */,
+				D061235127CC312D0092B66A /* TransactionDetailSummaryView.swift in Sources */,
 				D07A972D27CAF9ED00B14C33 /* LoginInteractor.swift in Sources */,
 				D06861A327CB15C5003C6128 /* LoginPresenter.swift in Sources */,
 				D09C95BE27CBCA31004DC149 /* TransactionsListPresenter.swift in Sources */,
@@ -478,10 +499,13 @@
 				D06861A527CB18D1003C6128 /* LoginFactory.swift in Sources */,
 				D06861AB27CB29AF003C6128 /* ServiceRequest.swift in Sources */,
 				D09C95C827CBCCAA004DC149 /* TransactionCell.swift in Sources */,
+				D061234F27CC2FCC0092B66A /* UIColor+Extensions.swift in Sources */,
 				D0FD628827CAD7C2003FE353 /* Coordinator.swift in Sources */,
 				D0FD628527CAD79E003FE353 /* LoginCoordinator.swift in Sources */,
 				D06861B427CB2AB7003C6128 /* DispatchQueueType.swift in Sources */,
+				D061235427CC35FA0092B66A /* SummaryDetailsViewModel.swift in Sources */,
 				D06861A927CB299C003C6128 /* ServiceError.swift in Sources */,
+				D061235627CC39960092B66A /* TransactionIdView.swift in Sources */,
 				D0FD624D27CAC770003FE353 /* AppDelegate.swift in Sources */,
 				D061234727CC1BFA0092B66A /* TransactionDetailsPresenter.swift in Sources */,
 				D061234327CC1A970092B66A /* TransactionDetailsViewController.swift in Sources */,

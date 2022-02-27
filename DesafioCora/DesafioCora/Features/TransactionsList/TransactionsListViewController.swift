@@ -47,7 +47,7 @@ final class TransactionsListViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = UIColor(red: 21/255, green: 47/255, blue: 68/255, alpha: 1.0)
+        view.backgroundColor = .defaultBackground
         tableView.backgroundColor = .clear
         
         view.addSubview(headerView)
@@ -81,6 +81,10 @@ extension TransactionsListViewController: UITableViewDelegate, UITableViewDataSo
         cell.configureCell(data: interactor.transactions[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor.select(transaction: indexPath.row)
     }
 }
 

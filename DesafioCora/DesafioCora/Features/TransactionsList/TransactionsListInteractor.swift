@@ -10,6 +10,7 @@ import Foundation
 protocol TransactionsListInteracting {
     var transactions: [TransactionModel] { get }
     func loadTransactions()
+    func select(transaction: Int)
 }
 
 final class TransactionsListInteractor {
@@ -38,5 +39,9 @@ extension TransactionsListInteractor: TransactionsListInteracting {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func select(transaction: Int) {
+        presenter.presentDetailsFor(transaction: transactions[transaction])
     }
 }

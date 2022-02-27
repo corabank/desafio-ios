@@ -12,7 +12,7 @@ class TransactionCell: UITableViewCell {
     private lazy var transactionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "credit-card")
+        imageView.image = UIImage(named: "credit-card")?.withTintColor(.defaultIconColor)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -71,6 +71,8 @@ class TransactionCell: UITableViewCell {
             transactionImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             transactionImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             transactionImageView.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -16),
+            transactionImageView.widthAnchor.constraint(equalToConstant: 48),
+            transactionImageView.heightAnchor.constraint(equalToConstant: 48),
             
             valueLabel.topAnchor.constraint(equalTo: transactionImageView.topAnchor),
             

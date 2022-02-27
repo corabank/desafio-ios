@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
             string: "Nome ou email",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
-        textField.backgroundColor = UIColor(red: 39/255, green: 63/255, blue: 84/255, alpha: 1.0)
+        textField.backgroundColor = .textFieldBackground
         return textField
     }()
     
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
             string: "Senha",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
-        textField.backgroundColor = UIColor(red: 39/255, green: 63/255, blue: 84/255, alpha: 1.0)
+        textField.backgroundColor = .textFieldBackground
         return textField
     }()
     
@@ -99,7 +99,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = UIColor(red: 21/255, green: 47/255, blue: 68/255, alpha: 1.0)
+        view.backgroundColor = .defaultBackground
         view.addSubview(logoImage)
         view.addSubview(topLabel)
         view.addSubview(usernameField)

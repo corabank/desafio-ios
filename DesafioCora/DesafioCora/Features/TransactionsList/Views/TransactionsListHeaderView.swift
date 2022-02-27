@@ -52,7 +52,7 @@ class TransactionsListHeaderView: UIView {
     }
     
     private func setupView() {
-        backgroundColor = UIColor(red: 21/255, green: 47/255, blue: 68/255, alpha: 1.0)
+        backgroundColor = .defaultBackground
         addSubview(headerImageView)
         addSubview(requestsLabel)
         addSubview(requestsDescriptionLabel)

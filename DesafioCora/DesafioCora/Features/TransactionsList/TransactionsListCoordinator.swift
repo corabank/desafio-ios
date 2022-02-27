@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum TransactionsListCoordinatorAction {
-    case detail
+    case detail(TransactionModel)
 }
 
 protocol TransactionsListCoordinating {
@@ -23,8 +23,11 @@ final class TransactionsListCoordinator {
 
 extension TransactionsListCoordinator: TransactionsListCoordinating {
     func perform(action: TransactionsListCoordinatorAction) {
-        if case .detail = action {
-            print("Detalhes")
+        if case let .detail(transaction) = action {
+            print("Detalhes: \(transaction.value.currency)")
+            let vc = TransactionDetailsFactory.make(transaction: transaction)
+            let navigation = UINavigationController(rootViewController: vc)
+            viewController?.present(navigation, animated: true)
         }
     }
 }

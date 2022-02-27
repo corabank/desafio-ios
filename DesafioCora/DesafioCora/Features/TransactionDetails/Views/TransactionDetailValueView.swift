@@ -23,6 +23,7 @@ class TransactionDetailValueView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 12)
+        label.text = paymentType.description
         return label
     }()
     
@@ -44,6 +45,8 @@ class TransactionDetailValueView: UIView {
         set { infoValueLabel.text = newValue }
     }
     
+    var paymentType: PaymentType = .creditCard
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,13 +63,13 @@ class TransactionDetailValueView: UIView {
             infoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             infoImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             infoImage.trailingAnchor.constraint(equalTo: infoValueLabel.leadingAnchor, constant: -16),
+            infoImage.widthAnchor.constraint(equalToConstant: 36),
+            infoImage.heightAnchor.constraint(equalToConstant: 36),
             
             infoValueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            infoValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             infoValueLabel.bottomAnchor.constraint(equalTo: infoDescriptionLabel.topAnchor, constant: -8),
             
             infoDescriptionLabel.leadingAnchor.constraint(equalTo: infoValueLabel.leadingAnchor),
-            infoDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             infoDescriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
