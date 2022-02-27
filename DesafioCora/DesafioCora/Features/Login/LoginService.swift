@@ -43,7 +43,11 @@ final class MockedLoginService: LoginServicing {
     
     func login(username: String, password: String, completion: @escaping (Result<LoginResponse, ServiceError>) -> Void) {
         dispatchQueue.asyncAfter(DispatchTime.now() + 1, work: {
-            completion(.success(LoginResponse(token: "abcdefGHIJKMN12345678", id: "1")))
+            if username.lowercased() == "lucas" && password == "123456" {
+                completion(.success(LoginResponse(token: "abcdefGHIJKMN12345678", id: "1", name: "Lucas")))
+            } else {
+                completion(.failure(.requestError(ServiceErrorData(code: 401, title: "Dados inválidos", message: "Usuário ou senha inválidos"))))
+            }
         })
     }
 }

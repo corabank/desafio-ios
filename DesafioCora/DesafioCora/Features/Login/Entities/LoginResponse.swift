@@ -10,4 +10,5 @@ import Foundation
 struct LoginResponse: Decodable {
     let token: String
     let id: String
+    let name: String
 }

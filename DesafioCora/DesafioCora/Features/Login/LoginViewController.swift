@@ -10,7 +10,7 @@ import UIKit
 
 protocol LoginDisplaying: AnyObject {
     func displayLoading(_ display: Bool)
-    func displayError(title: String, message: String)
+    func displayError(title: String?, message: String?)
 }
 
 class LoginViewController: UIViewController {
@@ -42,6 +42,14 @@ class LoginViewController: UIViewController {
         textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
+    }()
+    
+    private lazy var errorLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.isHidden = true
+        return label
     }()
     
     private lazy var loginButton: UIButton = {
@@ -86,6 +94,7 @@ class LoginViewController: UIViewController {
         view.addSubview(topLabel)
         view.addSubview(usernameField)
         view.addSubview(passwordField)
+        view.addSubview(errorLabel)
         view.addSubview(loginButton)
         view.addSubview(forgotPasswordButton)
     }
@@ -108,6 +117,11 @@ class LoginViewController: UIViewController {
             passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            errorLabel.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 8),
+            
+            
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             loginButton.bottomAnchor.constraint(equalTo: forgotPasswordButton.topAnchor, constant: -24),
@@ -122,6 +136,7 @@ class LoginViewController: UIViewController {
     
     @objc
     private func loginButtonTapped() {
+        errorLabel.isHidden = true
         interactor.login(username: usernameField.text, password: passwordField.text)
     }
     
@@ -136,7 +151,8 @@ extension LoginViewController: LoginDisplaying {
         
     }
     
-    func displayError(title: String, message: String) {
-        
+    func displayError(title: String?, message: String?) {
+        errorLabel.isHidden = false
+        errorLabel.text = message
     }
 }

@@ -9,8 +9,7 @@ import Foundation
 
 protocol LoginPresenting {
     func presentLoading(_ loading: Bool)
-    func presentError(_ error: ServiceError)
-    func presentError(title: String, message: String)
+    func presentError(title: String?, message: String?)
     func presentSuccess(loginResponse: LoginResponse)
 }
 
@@ -28,11 +27,7 @@ extension LoginPresenter: LoginPresenting {
         viewController?.displayLoading(loading)
     }
     
-    func presentError(_ error: ServiceError) {
-        viewController?.displayError(title: "Ops!", message: error.localizedDescription)
-    }
-    
-    func presentError(title: String, message: String) {
+    func presentError(title: String?, message: String?) {
         viewController?.displayError(title: title, message: message)
     }
     

@@ -27,21 +27,41 @@ class DefaultNetwoktClient: NetworkClient {
         }
         
         session.dataTask(with: URLRequest(url: url)) { data, response, error in
-            if let error = error {
-                completion(.failure(ServiceError.requestError(error)))
+            guard let httpUrlResponse = response as? HTTPURLResponse else {
+                completion(.failure(ServiceError.networkError(error)))
                 return
             }
             
-            guard let data = data else {
-                return completion(.failure(ServiceError.noResponseData))
+        
+            let successRange = 200...299
+            if successRange.contains(httpUrlResponse.statusCode) {
+                guard let data = data else {
+                    return completion(.failure(ServiceError.noResponseData))
+                }
+                
+                do {
+                    let decoded = try JSONDecoder().decode(Response.self, from: data)
+                    completion(.success(decoded))
+                } catch {
+                    completion(.failure(ServiceError.decodingError))
+                }
+            } else {
+                self.parseError(data: data, completion: completion)
             }
-
+        }.resume()
+    }
+    
+    private func parseError<Response: Decodable>(data: Data?, completion: @escaping (Result<Response, Error>) -> Void) {
+        let defaultError = ServiceErrorData(code: -1, title: "Algo deu errado", message: "Tente novamente mais tarde.")
+        if let data = data {
             do {
-                let decoded = try JSONDecoder().decode(Response.self, from: data)
-                completion(.success(decoded))
+                let decodedError = try JSONDecoder().decode(ServiceErrorData.self, from: data)
+                completion(.failure(ServiceError.requestError(decodedError)))
             } catch {
-                completion(.failure(ServiceError.decodingError))
+                completion(.failure(ServiceError.requestError(defaultError)))
             }
         }
+        
+        completion(.failure(ServiceError.requestError(defaultError)))
     }
 }

@@ -40,8 +40,18 @@ extension LoginInteractor: LoginInteracting {
             case .success(let response):
                 self?.presenter.presentSuccess(loginResponse: response)
             case .failure(let error):
-                self?.presenter.presentError(error)
+                self?.parseError(serviceError: error)
             }
+        }
+    }
+    
+    private func parseError(serviceError: ServiceError) {
+        // Check the error - Very simplified
+        switch serviceError {
+        case .requestError(let serviceErrorData):
+            presenter.presentError(title: serviceErrorData.title, message: serviceErrorData.message)
+        default:
+            presenter.presentError(title: "Ops!", message: serviceError.localizedDescription)
         }
     }
 }
