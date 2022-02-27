@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
-protocol LoginDisplaying {
-    func showError(_ error: Error)
+protocol LoginDisplaying: AnyObject {
+    func displayLoading(_ display: Bool)
+    func displayError(title: String, message: String)
 }
 
 class LoginViewController: UIViewController {
@@ -62,6 +63,17 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    let interactor: LoginInteracting
+    
+    init(interactor: LoginInteracting) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
@@ -110,7 +122,7 @@ class LoginViewController: UIViewController {
     
     @objc
     private func loginButtonTapped() {
-        present(TransactionsListViewController(), animated: true)
+        interactor.login(username: usernameField.text, password: passwordField.text)
     }
     
     @objc
@@ -120,7 +132,11 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginDisplaying {
-    func showError(_ error: Error) {
-        print(error.localizedDescription)
+    func displayLoading(_ display: Bool) {
+        
+    }
+    
+    func displayError(title: String, message: String) {
+        
     }
 }
