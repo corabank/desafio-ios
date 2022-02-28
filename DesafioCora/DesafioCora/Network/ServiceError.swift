@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ServiceError: Error, Equatable {
+enum ServiceError: Error, Equatable, LocalizedError {
     static func == (lhs: ServiceError, rhs: ServiceError) -> Bool {
         switch (lhs, rhs) {
         case (.requestError(let lhsError), .requestError(let rhsError)):
@@ -23,6 +23,18 @@ enum ServiceError: Error, Equatable {
     case requestError(ServiceErrorData)
     case unknowError
     case networkError(Error?)
+    
+    // some descriptions 
+    var errorDescription: String? {
+        switch self {
+        case .unknowError: return "Algo deu errado"
+        case .networkError: return "Verifique a conexao"
+        case .requestError: return "Nao conseguimos processar a requisicao, tente novamente"
+        case .invalidURL: return "Url invalida"
+        case .noResponseData: return "Nenhum dado foi recebido"
+        case .decodingError: return "O dados recebidos nao foram processados corretamente"
+        }
+    }
 }
 
 struct ServiceErrorData: Decodable {

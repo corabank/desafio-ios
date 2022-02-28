@@ -22,6 +22,11 @@
 		D061235627CC39960092B66A /* TransactionIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235527CC39960092B66A /* TransactionIdView.swift */; };
 		D061235827CC41980092B66A /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235727CC41980092B66A /* FormTextField.swift */; };
 		D061235A27CC4AEC0092B66A /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235927CC4AEC0092B66A /* LoginPresenterTests.swift */; };
+		D061235D27CC4E670092B66A /* TransactionsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235C27CC4E670092B66A /* TransactionsListInteractorTests.swift */; };
+		D061235F27CC4EA10092B66A /* TransactionsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235E27CC4EA10092B66A /* TransactionsListPresenterTests.swift */; };
+		D061236127CC4ECE0092B66A /* TransactionsListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061236027CC4ECE0092B66A /* TransactionsListCoordinatorTests.swift */; };
+		D061236427CC4F1D0092B66A /* TransactionDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061236327CC4F1D0092B66A /* TransactionDetailsInteractorTests.swift */; };
+		D061236627CC4F490092B66A /* TransactionDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061236527CC4F490092B66A /* TransactionDetailsPresenterTests.swift */; };
 		D06861A327CB15C5003C6128 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A227CB15C5003C6128 /* LoginPresenter.swift */; };
 		D06861A527CB18D1003C6128 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A427CB18D1003C6128 /* LoginFactory.swift */; };
 		D06861A727CB2090003C6128 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A627CB2090003C6128 /* LoginInteractorTests.swift */; };
@@ -88,6 +93,11 @@
 		D061235527CC39960092B66A /* TransactionIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionIdView.swift; sourceTree = "<group>"; };
 		D061235727CC41980092B66A /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		D061235927CC4AEC0092B66A /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		D061235C27CC4E670092B66A /* TransactionsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListInteractorTests.swift; sourceTree = "<group>"; };
+		D061235E27CC4EA10092B66A /* TransactionsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListPresenterTests.swift; sourceTree = "<group>"; };
+		D061236027CC4ECE0092B66A /* TransactionsListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListCoordinatorTests.swift; sourceTree = "<group>"; };
+		D061236327CC4F1D0092B66A /* TransactionDetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsInteractorTests.swift; sourceTree = "<group>"; };
+		D061236527CC4F490092B66A /* TransactionDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		D06861A227CB15C5003C6128 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		D06861A427CB18D1003C6128 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		D06861A627CB2090003C6128 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
@@ -192,6 +202,25 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		D061235B27CC4E430092B66A /* TransactionsListTests */ = {
+			isa = PBXGroup;
+			children = (
+				D061235C27CC4E670092B66A /* TransactionsListInteractorTests.swift */,
+				D061235E27CC4EA10092B66A /* TransactionsListPresenterTests.swift */,
+				D061236027CC4ECE0092B66A /* TransactionsListCoordinatorTests.swift */,
+			);
+			path = TransactionsListTests;
+			sourceTree = "<group>";
+		};
+		D061236227CC4EE90092B66A /* TransactonDetailsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D061236327CC4F1D0092B66A /* TransactionDetailsInteractorTests.swift */,
+				D061236527CC4F490092B66A /* TransactionDetailsPresenterTests.swift */,
+			);
+			path = TransactonDetailsTests;
+			sourceTree = "<group>";
+		};
 		D06861AE27CB2A23003C6128 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +294,8 @@
 		D0FD626227CAC773003FE353 /* DesafioCoraTests */ = {
 			isa = PBXGroup;
 			children = (
+				D061236227CC4EE90092B66A /* TransactonDetailsTests */,
+				D061235B27CC4E430092B66A /* TransactionsListTests */,
 				D0FD628C27CADC0E003FE353 /* Mocks */,
 				D0FD628927CADA3F003FE353 /* LoginTests */,
 			);
@@ -535,9 +566,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D061235A27CC4AEC0092B66A /* LoginPresenterTests.swift in Sources */,
+				D061236627CC4F490092B66A /* TransactionDetailsPresenterTests.swift in Sources */,
+				D061236127CC4ECE0092B66A /* TransactionsListCoordinatorTests.swift in Sources */,
 				D0FD628B27CADB53003FE353 /* LoginCoordinatorTests.swift in Sources */,
 				D06861A727CB2090003C6128 /* LoginInteractorTests.swift in Sources */,
+				D061236427CC4F1D0092B66A /* TransactionDetailsInteractorTests.swift in Sources */,
+				D061235D27CC4E670092B66A /* TransactionsListInteractorTests.swift in Sources */,
 				D0FD628E27CADC1D003FE353 /* ViewControllerMock.swift in Sources */,
+				D061235F27CC4EA10092B66A /* TransactionsListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

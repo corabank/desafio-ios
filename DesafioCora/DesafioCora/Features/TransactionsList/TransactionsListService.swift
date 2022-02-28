@@ -39,6 +39,6 @@ extension TransactionsListService: TransactionsListServicing {
 // Mocked Service
 final class MockedTransactionsListService: TransactionsListServicing {
     func loadTransactions(completion: @escaping (Result<[TransactionModel], ServiceError>) -> Void) {
-            completion(.success(TransactionModel.sampleData()))
+        completion(.success(TransactionModel.sampleData()))
     }
 }

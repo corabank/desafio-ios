@@ -36,12 +36,23 @@ extension TransactionsListInteractor: TransactionsListInteracting {
                 self?.loadedTransactions = transactions
                 self?.presenter.presentTransactionsList()
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.parseError(serviceError: error)
             }
         }
     }
     
     func select(transaction: Int) {
+        guard transaction >= 0 && transaction <= transactions.count else { return }
         presenter.presentDetailsFor(transaction: transactions[transaction])
+    }
+    
+    private func parseError(serviceError: ServiceError) {
+        // Check the error - Very simplified
+        switch serviceError {
+        case .requestError(let serviceErrorData):
+            presenter.presentError(title: serviceErrorData.title, message: serviceErrorData.message)
+        default:
+            presenter.presentError(title: "Ops!", message: serviceError.localizedDescription)
+        }
     }
 }

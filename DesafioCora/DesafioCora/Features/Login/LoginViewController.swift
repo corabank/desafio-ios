@@ -170,7 +170,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginDisplaying {
     func displayLoading(_ display: Bool) {
-        
+        // Implement this
     }
     
     func displayError(title: String?, message: String?) {

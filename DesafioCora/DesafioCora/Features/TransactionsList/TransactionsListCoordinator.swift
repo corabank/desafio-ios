@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum TransactionsListCoordinatorAction {
+enum TransactionsListCoordinatorAction: Equatable {
     case detail(TransactionModel)
 }
 
@@ -24,7 +24,6 @@ final class TransactionsListCoordinator {
 extension TransactionsListCoordinator: TransactionsListCoordinating {
     func perform(action: TransactionsListCoordinatorAction) {
         if case let .detail(transaction) = action {
-            print("Detalhes: \(transaction.value.currency)")
             let vc = TransactionDetailsFactory.make(transaction: transaction)
             let navigation = UINavigationController(rootViewController: vc)
             viewController?.present(navigation, animated: true)

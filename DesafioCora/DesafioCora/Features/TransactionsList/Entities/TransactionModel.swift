@@ -43,7 +43,7 @@ enum PaymentType: String, Decodable {
     }
 }
 
-struct TransactionModel: Decodable {
+struct TransactionModel: Decodable, Equatable {
     let value: Double
     let userName: String
     let userEmail: String
@@ -59,16 +59,16 @@ struct TransactionModel: Decodable {
 extension TransactionModel {
     static func sampleData() -> [TransactionModel] {
         return [
-            TransactionModel(value: 110.0, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("26/02/2022"), tax: 4.99, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 199.90, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("25/02/2022"), tax: 8.92, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 25.80, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .notPaid, paymentType: .creditCard, transactionDate: .dateFrom("24/02/2022"), tax: 1.23, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 45.0, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("24/02/2022"), tax: 2.57, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 110.0, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .waiting, paymentType: .creditCard, transactionDate: .dateFrom("24/02/2022"), tax: 4.99, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 330.46, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .waiting, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 15.45, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 245.10, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .notPaid, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 10.67, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 27.80, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .notPaid, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 0.78, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 99.30, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .waiting, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 4.35, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
-            TransactionModel(value: 110.0, userName: "Cacu Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 4.99, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45")
+            TransactionModel(value: 110.0, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("26/02/2022"), tax: 4.99, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 199.90, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("25/02/2022"), tax: 8.92, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 25.80, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .notPaid, paymentType: .creditCard, transactionDate: .dateFrom("24/02/2022"), tax: 1.23, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 45.0, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("24/02/2022"), tax: 2.57, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 110.0, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .waiting, paymentType: .creditCard, transactionDate: .dateFrom("24/02/2022"), tax: 4.99, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 330.46, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .waiting, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 15.45, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 245.10, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .notPaid, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 10.67, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 27.80, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .notPaid, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 0.78, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 99.30, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .waiting, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 4.35, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45"),
+            TransactionModel(value: 110.0, userName: "Caju Cacau", userEmail: "cacucacau@moip.com.br", paymentStatus: .paid, paymentType: .creditCard, transactionDate: .dateFrom("22/02/2022"), tax: 4.99, id: "sandbox: b4619238mns-1287413 41231231 131231-338741 fhagnuen39sd45")
             
         ]
     }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol TransactionsListDisplaying: AnyObject {
     func displayTransactions()
+    func displayError(title: String?, message: String?)
 }
 
 final class TransactionsListViewController: UIViewController {
@@ -91,5 +92,10 @@ extension TransactionsListViewController: UITableViewDelegate, UITableViewDataSo
 extension TransactionsListViewController: TransactionsListDisplaying {
     func displayTransactions() {
         tableView.reloadData()
+    }
+    
+    func displayError(title: String?, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        present(alert, animated: true)
     }
 }

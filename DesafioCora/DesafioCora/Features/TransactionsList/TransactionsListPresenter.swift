@@ -10,6 +10,7 @@ import Foundation
 protocol TransactionsListPresenting {
     func presentTransactionsList()
     func presentDetailsFor(transaction: TransactionModel)
+    func presentError(title: String?, message: String?)
 }
 
 final class TransactionsListPresenter {
@@ -28,5 +29,9 @@ extension TransactionsListPresenter: TransactionsListPresenting {
     
     func presentDetailsFor(transaction: TransactionModel) {
         coordinator.perform(action: .detail(transaction))
+    }
+    
+    func presentError(title: String?, message: String?) {
+        viewController?.displayError(title: title, message: message)
     }
 }
