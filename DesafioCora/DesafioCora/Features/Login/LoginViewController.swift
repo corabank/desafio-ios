@@ -25,12 +25,14 @@ class LoginViewController: UIViewController {
     private lazy var topLabel: UILabel = {
         let label = UILabel()
         label.text = "AWESOME & Co."
+        label.textColor = .white
+        label.font = .boldSystemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var usernameField: UITextField = {
-        let textField = UITextField()
+    private lazy var usernameField: FormTextField = {
+        let textField = FormTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = .white
         textField.attributedPlaceholder = NSAttributedString(
@@ -38,11 +40,13 @@ class LoginViewController: UIViewController {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         textField.backgroundColor = .textFieldBackground
+        textField.layer.cornerRadius = 12
+        textField.delegate = self
         return textField
     }()
     
-    private lazy var passwordField: UITextField = {
-        let textField = UITextField()
+    private lazy var passwordField: FormTextField = {
+        let textField = FormTextField()
         textField.isSecureTextEntry = true
         textField.textColor = .white
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +55,8 @@ class LoginViewController: UIViewController {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         textField.backgroundColor = .textFieldBackground
+        textField.layer.cornerRadius = 12
+        textField.delegate = self
         return textField
     }()
     
@@ -59,6 +65,8 @@ class LoginViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.isHidden = true
+        label.textColor = .red
+        label.textAlignment = .center
         return label
     }()
     
@@ -69,6 +77,7 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .systemPink
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 12
         return button
     }()
     
@@ -123,9 +132,11 @@ class LoginViewController: UIViewController {
             usernameField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             usernameField.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 48),
             usernameField.bottomAnchor.constraint(equalTo: passwordField.topAnchor, constant: -16),
+            usernameField.heightAnchor.constraint(equalToConstant: 48),
             
             passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            passwordField.heightAnchor.constraint(equalToConstant: 48),
             
             errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
@@ -135,13 +146,14 @@ class LoginViewController: UIViewController {
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             loginButton.bottomAnchor.constraint(equalTo: forgotPasswordButton.topAnchor, constant: -24),
+            loginButton.heightAnchor.constraint(equalToConstant: 48),
             
             forgotPasswordButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             forgotPasswordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
+
     //MARK: Actions
     
     @objc
@@ -164,5 +176,12 @@ extension LoginViewController: LoginDisplaying {
     func displayError(title: String?, message: String?) {
         errorLabel.isHidden = false
         errorLabel.text = message
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

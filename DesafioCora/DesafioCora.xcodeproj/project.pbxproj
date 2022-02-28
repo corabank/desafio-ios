@@ -20,6 +20,7 @@
 		D061235127CC312D0092B66A /* TransactionDetailSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235027CC312D0092B66A /* TransactionDetailSummaryView.swift */; };
 		D061235427CC35FA0092B66A /* SummaryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235327CC35FA0092B66A /* SummaryDetailsViewModel.swift */; };
 		D061235627CC39960092B66A /* TransactionIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235527CC39960092B66A /* TransactionIdView.swift */; };
+		D061235827CC41980092B66A /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235727CC41980092B66A /* FormTextField.swift */; };
 		D06861A327CB15C5003C6128 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A227CB15C5003C6128 /* LoginPresenter.swift */; };
 		D06861A527CB18D1003C6128 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A427CB18D1003C6128 /* LoginFactory.swift */; };
 		D06861A727CB2090003C6128 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A627CB2090003C6128 /* LoginInteractorTests.swift */; };
@@ -84,6 +85,7 @@
 		D061235027CC312D0092B66A /* TransactionDetailSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailSummaryView.swift; sourceTree = "<group>"; };
 		D061235327CC35FA0092B66A /* SummaryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDetailsViewModel.swift; sourceTree = "<group>"; };
 		D061235527CC39960092B66A /* TransactionIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionIdView.swift; sourceTree = "<group>"; };
+		D061235727CC41980092B66A /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		D06861A227CB15C5003C6128 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		D06861A427CB18D1003C6128 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		D06861A627CB2090003C6128 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				D0FD628727CAD7C2003FE353 /* Coordinator.swift */,
 				D06861B327CB2AB7003C6128 /* DispatchQueueType.swift */,
+				D061235727CC41980092B66A /* FormTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				D06861AB27CB29AF003C6128 /* ServiceRequest.swift in Sources */,
 				D09C95C827CBCCAA004DC149 /* TransactionCell.swift in Sources */,
 				D061234F27CC2FCC0092B66A /* UIColor+Extensions.swift in Sources */,
+				D061235827CC41980092B66A /* FormTextField.swift in Sources */,
 				D0FD628827CAD7C2003FE353 /* Coordinator.swift in Sources */,
 				D0FD628527CAD79E003FE353 /* LoginCoordinator.swift in Sources */,
 				D06861B427CB2AB7003C6128 /* DispatchQueueType.swift in Sources */,
