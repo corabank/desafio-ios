@@ -1,5 +1,9 @@
 # Informações importantes
 
+## Fluxo do App
+
+Para testar o App utilize o nome de **usuário "Lucas" e senha "123456"**, esses dados estão mockados no código
+
 ### Arquitetura
 
 A arquitetura utilizada no projeto é baseada em [VIP/CleanSwift](https://clean-swift.com/), porém com algumas simplificações, uso de coordinator e factories.
