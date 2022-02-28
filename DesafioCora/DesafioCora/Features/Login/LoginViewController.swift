@@ -120,10 +120,10 @@ class LoginViewController: UIViewController {
     
     private func setupConstraints() {
         view.addConstraints([
-            logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImage.widthAnchor.constraint(equalToConstant: 128),
-            logoImage.heightAnchor.constraint(equalToConstant: 128),
+            logoImage.widthAnchor.constraint(equalToConstant: 84),
+            logoImage.heightAnchor.constraint(equalToConstant: 84),
             
             topLabel.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 16),
             topLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -150,7 +150,7 @@ class LoginViewController: UIViewController {
             
             forgotPasswordButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            forgotPasswordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            forgotPasswordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
 
