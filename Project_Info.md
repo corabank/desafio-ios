@@ -25,4 +25,6 @@ Foram testadas as camadas Interactor, Presenter e Coordinator.
 Devido a algumas questões técnicas mantive o foco na arquitetura, testes e organização do código, 
 animações e interações mais complexas não foram implementadas, mas podemos rever essas questões mais a frente.
 
+Só foi possível testar em simulador, pois precisei utilizar um serviço em nuvem[\(Macincloud)](https://www.macincloud.com/) para desenvolver o desafio.
+
 ##### **Muito Obrigado, qualquer dúvida estou a disposição**
