@@ -21,6 +21,7 @@
 		D061235427CC35FA0092B66A /* SummaryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235327CC35FA0092B66A /* SummaryDetailsViewModel.swift */; };
 		D061235627CC39960092B66A /* TransactionIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235527CC39960092B66A /* TransactionIdView.swift */; };
 		D061235827CC41980092B66A /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235727CC41980092B66A /* FormTextField.swift */; };
+		D061235A27CC4AEC0092B66A /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061235927CC4AEC0092B66A /* LoginPresenterTests.swift */; };
 		D06861A327CB15C5003C6128 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A227CB15C5003C6128 /* LoginPresenter.swift */; };
 		D06861A527CB18D1003C6128 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A427CB18D1003C6128 /* LoginFactory.swift */; };
 		D06861A727CB2090003C6128 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06861A627CB2090003C6128 /* LoginInteractorTests.swift */; };
@@ -86,6 +87,7 @@
 		D061235327CC35FA0092B66A /* SummaryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDetailsViewModel.swift; sourceTree = "<group>"; };
 		D061235527CC39960092B66A /* TransactionIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionIdView.swift; sourceTree = "<group>"; };
 		D061235727CC41980092B66A /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		D061235927CC4AEC0092B66A /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		D06861A227CB15C5003C6128 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		D06861A427CB18D1003C6128 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		D06861A627CB2090003C6128 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			children = (
 				D0FD628A27CADB53003FE353 /* LoginCoordinatorTests.swift */,
 				D06861A627CB2090003C6128 /* LoginInteractorTests.swift */,
+				D061235927CC4AEC0092B66A /* LoginPresenterTests.swift */,
 			);
 			path = LoginTests;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D061235A27CC4AEC0092B66A /* LoginPresenterTests.swift in Sources */,
 				D0FD628B27CADB53003FE353 /* LoginCoordinatorTests.swift in Sources */,
 				D06861A727CB2090003C6128 /* LoginInteractorTests.swift in Sources */,
 				D0FD628E27CADC1D003FE353 /* ViewControllerMock.swift in Sources */,
