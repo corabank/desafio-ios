@@ -5,7 +5,9 @@ O desafio é bem simples. Para participar, basta criar um fork deste repositóri
 ## Referência
 
 [Referência 1](https://www.figma.com/file/GQx9gkblXwiGp44bn1C3AF/Desafio-iOS-%7C-Pleno---Senior?node-id=0%3A1)
+
 [Referência 2](https://www.figma.com/file/Bf6ul6YwCl7LYgQstchC8Z/Desafio-iOS-%7C-Junior---Pleno?node-id=0%3A1)
+
 [Referência 3](https://www.figma.com/file/22Q1QhHeIN9EOZwUesWdF9/Desafio-iOS-%7C-Senior---Especialista?node-id=0%3A1)
 
 
