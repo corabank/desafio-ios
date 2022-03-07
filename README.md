@@ -10,11 +10,13 @@ O desafio é bem simples. Para participar, basta criar um fork deste repositóri
 
 Abaixo, temos 3 referências de fluxos a serem implementados… cada uma com uma complexidade. Escolha a que melhor se encaixe com seu nível técnico :)
 
+Para acessar os links abaixo é preciso ter uma conta no Figma. Caso não tenha, é só criar uma com algum e-mail pessoal.
+
 ## Referências
 
-[Referência 1](https://www.figma.com/file/GQx9gkblXwiGp44bn1C3AF/Desafio-iOS-%7C-Pleno---Senior?node-id=0%3A1)
+[Referência 1](https://www.figma.com/file/Bf6ul6YwCl7LYgQstchC8Z/Desafio-iOS-%7C-Junior---Pleno?node-id=0%3A1)
 
-[Referência 2](https://www.figma.com/file/Bf6ul6YwCl7LYgQstchC8Z/Desafio-iOS-%7C-Junior---Pleno?node-id=0%3A1)
+[Referência 2](https://www.figma.com/file/GQx9gkblXwiGp44bn1C3AF/Desafio-iOS-%7C-Pleno---Senior?node-id=0%3A1)
 
 [Referência 3](https://www.figma.com/file/22Q1QhHeIN9EOZwUesWdF9/Desafio-iOS-%7C-Senior---Especialista?node-id=0%3A1)
 
@@ -26,9 +28,9 @@ PS: Não precisa se preocupar em consumir nenhuma API. Pode criar mocks para as 
 - Ter pelo menos um pattern de apresentação definido (MVC, MVVM, MVP, Clean Swift…)
 - Ter pelo menos um tipo de teste unitário
 - Teste de Snapshot
-- View code
+- View Code
 - Boa estruturação de layout
 - O máximo possível de APIs nativas
 
 ## Importante
-Se surgir qualquer dúvida durante o desenvolvimento, não hesite em perguntar. Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
+Se surgir qualquer dúvida durante o desenvolvimento, não hesite em perguntar! Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
