@@ -1,8 +1,16 @@
+<div align="center">
+
+  <img src="https://user-images.githubusercontent.com/55195343/153007587-318033ab-05d7-402a-b2aa-2a1ec0f69717.png" width="100" height="100">
+
 # Desafio iOS
 
+ </div>
+  
 O desafio é bem simples. Para participar, basta criar um fork deste repositório e quando finalizar o desenvolvimento, abrir um merge request que iremos avaliar.
 
-## Referência
+Abaixo, temos 3 referências de fluxos a serem implementados… cada uma com uma complexidade. Escolha a que melhor se encaixe com seu nível técnico :)
+
+## Referências
 
 [Referência 1](https://www.figma.com/file/GQx9gkblXwiGp44bn1C3AF/Desafio-iOS-%7C-Pleno---Senior?node-id=0%3A1)
 
@@ -11,21 +19,16 @@ O desafio é bem simples. Para participar, basta criar um fork deste repositóri
 [Referência 3](https://www.figma.com/file/22Q1QhHeIN9EOZwUesWdF9/Desafio-iOS-%7C-Senior---Especialista?node-id=0%3A1)
 
 
-PS: Não precisa se preocupar em consumir nenhuma API. Crie mocks para as requests.
+PS: Não precisa se preocupar em consumir nenhuma API. Pode criar mocks para as requisições.
 
-## O que é obrigatório
+## O que precisa ter no projeto
 - Boa organização de código
-- Ter pelo menos uma arquitetura definida
+- Ter pelo menos um pattern de apresentação definido (MVC, MVVM, MVP, Clean Swift…)
 - Ter pelo menos um tipo de teste (instrumentado, unitário ou de UI)
-
-## Ganha pontos se tiver
-- View Code
-- Quanto mais APIs nativas, melhor 😊
-- Interações e animações bem estruturadas
-- Acessibilidade
-- Testes instrumentados
-- Base de distribuição - CI/CD
-- Documentação
+- Teste de Snapshot
+- View code
+- Boa estruturação de layout
+- O máximo possível de APIs nativas
 
 ## Importante
 Se surgir qualquer dúvida durante o desenvolvimento, não hesite em perguntar. Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
