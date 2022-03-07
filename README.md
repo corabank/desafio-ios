@@ -24,7 +24,7 @@ PS: Não precisa se preocupar em consumir nenhuma API. Pode criar mocks para as 
 ## O que precisa ter no projeto
 - Boa organização de código
 - Ter pelo menos um pattern de apresentação definido (MVC, MVVM, MVP, Clean Swift…)
-- Ter pelo menos um tipo de teste (instrumentado, unitário ou de UI)
+- Ter pelo menos um tipo de teste unitário
 - Teste de Snapshot
 - View code
 - Boa estruturação de layout
