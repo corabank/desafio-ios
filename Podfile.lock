@@ -11,6 +11,7 @@ PODS:
     - iOSSnapshotTestCase (~> 5.0)
     - Nimble (~> 7.0)
   - Quick (4.0.0)
+  - SwiftGen (6.5.1)
   - TinyConstraints (4.0.1)
   - XCoordinator (2.0.7):
     - XCoordinator/Core (= 2.0.7)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Nimble
   - Nimble-Snapshots
   - Quick
+  - SwiftGen
   - TinyConstraints
   - XCoordinator
 
@@ -29,6 +31,7 @@ SPEC REPOS:
     - Nimble
     - Nimble-Snapshots
     - Quick
+    - SwiftGen
     - TinyConstraints
     - XCoordinator
 
@@ -37,9 +40,10 @@ SPEC CHECKSUMS:
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   Nimble-Snapshots: bbd1ab264bacc24a9ce24a8363bc05aac783aeb0
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 6a48fd3388437872a79eb00f2e940673b10d3f31
+PODFILE CHECKSUM: a10e5242c350b475845ba454d319932a9acc8f14
 
 COCOAPODS: 1.11.2
