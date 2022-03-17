@@ -9,6 +9,7 @@ target 'Cora' do
   pod 'TinyConstraints'
   pod 'XCoordinator'
   pod 'SwiftGen'
+  pod 'SwiftLint'
 
   target 'CoraTests' do
     inherit! :search_paths
