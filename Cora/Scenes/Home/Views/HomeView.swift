@@ -3,6 +3,8 @@ import TinyConstraints
 
 final class HomeView: UIView {
 
+    var didTapLogin: (() -> Void)?
+
     private let backgroundImage: UIImageView = {
         let imageView = UIImageView(image: Images.loginBackground.image)
         imageView.contentMode = .bottom
@@ -70,6 +72,7 @@ final class HomeView: UIView {
         backgroundColor = .mainCora
         addViews()
         addConstraints()
+        addActions()
     }
 
     private func addViews() {
@@ -98,5 +101,14 @@ final class HomeView: UIView {
         contentStackView.setCustomSpacing(16, after: signupButton)
 
         loginButton.height(48)
+    }
+
+    private func addActions() {
+        loginButton.addTarget(self, action: #selector(onLoginTapped), for: .touchUpInside)
+    }
+
+    @objc
+    private func onLoginTapped() {
+        didTapLogin?()
     }
 }

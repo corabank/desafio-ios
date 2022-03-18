@@ -13,7 +13,15 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
     }
 
     override func prepareTransition(for route: AppRoute) -> NavigationTransition {
-        let home = HomeController()
-        return .push(home)
+        switch route {
+        case .home:
+            return .push(HomeController(router: unownedRouter))
+        case .login:
+            return .push(LoginController())
+        case .password:
+            return .none()
+        case .invoices:
+            return .none()
+        }
     }
 }

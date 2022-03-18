@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0578DD40B3A78B5F9866256A /* Pods_CoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229BB3DB01D75B0732A8ABF5 /* Pods_CoraTests.framework */; };
 		108120D5080241E9DC383447 /* Pods_Cora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6640B53B69F956BE2E8295B8 /* Pods_Cora.framework */; };
+		4E221CDA27E41B0A003A2346 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E221CD927E41B0A003A2346 /* LoginController.swift */; };
 		4E26919527E3F6AE00370FFB /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26919327E3F6AD00370FFB /* Images.swift */; };
 		4E26919627E3F6AE00370FFB /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26919427E3F6AE00370FFB /* L10n.swift */; };
 		4E26919A27E3FD6200370FFB /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E26919827E3FD6200370FFB /* AvenirLTStd-Book.otf */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		2268E26CB345BB3E24C9E9F7 /* Pods-CoraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraTests.release.xcconfig"; path = "Target Support Files/Pods-CoraTests/Pods-CoraTests.release.xcconfig"; sourceTree = "<group>"; };
 		229BB3DB01D75B0732A8ABF5 /* Pods_CoraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E221CD927E41B0A003A2346 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4E26919327E3F6AD00370FFB /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		4E26919427E3F6AE00370FFB /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		4E26919827E3FD6200370FFB /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 				229BB3DB01D75B0732A8ABF5 /* Pods_CoraTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E221CD827E41AD9003A2346 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4E221CD927E41B0A003A2346 /* LoginController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4E26919227E3F68D00370FFB /* Generated */ = {
@@ -202,6 +212,7 @@
 		4E8E369827E3E1BC006CA829 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4E221CD827E41AD9003A2346 /* Login */,
 				4E8E369B27E3E29D006CA829 /* Home */,
 				4E8E369927E3E1CF006CA829 /* AppCoordinator.swift */,
 			);
@@ -492,6 +503,7 @@
 				4E345FA927DBFB7B005E5887 /* AppDelegate.swift in Sources */,
 				4E2691A527E40EED00370FFB /* SignupButton.swift in Sources */,
 				4E8E369D27E3E2D1006CA829 /* HomeController.swift in Sources */,
+				4E221CDA27E41B0A003A2346 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
