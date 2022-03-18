@@ -9,10 +9,20 @@
 /* Begin PBXBuildFile section */
 		0578DD40B3A78B5F9866256A /* Pods_CoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229BB3DB01D75B0732A8ABF5 /* Pods_CoraTests.framework */; };
 		108120D5080241E9DC383447 /* Pods_Cora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6640B53B69F956BE2E8295B8 /* Pods_Cora.framework */; };
+		4E26919527E3F6AE00370FFB /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26919327E3F6AD00370FFB /* Images.swift */; };
+		4E26919627E3F6AE00370FFB /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26919427E3F6AE00370FFB /* L10n.swift */; };
+		4E26919A27E3FD6200370FFB /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E26919827E3FD6200370FFB /* AvenirLTStd-Book.otf */; };
+		4E26919B27E3FD6200370FFB /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E26919927E3FD6200370FFB /* AvenirLTStd-Roman.otf */; };
+		4E26919D27E3FE2700370FFB /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E26919C27E3FE2700370FFB /* AvenirLTStd-Light.otf */; };
+		4E2691A027E3FF3A00370FFB /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26919F27E3FF3A00370FFB /* UIFont+Ext.swift */; };
+		4E2691A227E4043500370FFB /* UIColors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2691A127E4043500370FFB /* UIColors+Ext.swift */; };
+		4E2691A527E40EED00370FFB /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2691A427E40EED00370FFB /* SignupButton.swift */; };
 		4E345FA927DBFB7B005E5887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E345FA827DBFB7B005E5887 /* AppDelegate.swift */; };
 		4E345FB227DBFB7E005E5887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E345FB127DBFB7E005E5887 /* Assets.xcassets */; };
 		4E345FB527DBFB7F005E5887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E345FB327DBFB7F005E5887 /* LaunchScreen.storyboard */; };
 		4E345FC027DBFB7F005E5887 /* CoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E345FBF27DBFB7F005E5887 /* CoraTests.swift */; };
+		4E40246327E3EBFB00A0CB58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E40246227E3EBFB00A0CB58 /* Localizable.strings */; };
+		4E40246627E3ED7D00A0CB58 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E40246527E3ED7D00A0CB58 /* HomeView.swift */; };
 		4E8E369A27E3E1CF006CA829 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E369927E3E1CF006CA829 /* AppCoordinator.swift */; };
 		4E8E369D27E3E2D1006CA829 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E369C27E3E2D1006CA829 /* HomeController.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +47,14 @@
 /* Begin PBXFileReference section */
 		2268E26CB345BB3E24C9E9F7 /* Pods-CoraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraTests.release.xcconfig"; path = "Target Support Files/Pods-CoraTests/Pods-CoraTests.release.xcconfig"; sourceTree = "<group>"; };
 		229BB3DB01D75B0732A8ABF5 /* Pods_CoraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E26919327E3F6AD00370FFB /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		4E26919427E3F6AE00370FFB /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		4E26919827E3FD6200370FFB /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
+		4E26919927E3FD6200370FFB /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
+		4E26919C27E3FE2700370FFB /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
+		4E26919F27E3FF3A00370FFB /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		4E2691A127E4043500370FFB /* UIColors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColors+Ext.swift"; sourceTree = "<group>"; };
+		4E2691A427E40EED00370FFB /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
 		4E345FA527DBFB7B005E5887 /* Cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E345FA827DBFB7B005E5887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E345FB127DBFB7E005E5887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +63,8 @@
 		4E345FBB27DBFB7F005E5887 /* CoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E345FBF27DBFB7F005E5887 /* CoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraTests.swift; sourceTree = "<group>"; };
 		4E345FC527DBFB7F005E5887 /* CoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E40246227E3EBFB00A0CB58 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4E40246527E3ED7D00A0CB58 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4E8E369927E3E1CF006CA829 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4E8E369C27E3E2D1006CA829 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		6640B53B69F956BE2E8295B8 /* Pods_Cora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +109,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4E26919227E3F68D00370FFB /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4E26919327E3F6AD00370FFB /* Images.swift */,
+				4E26919427E3F6AE00370FFB /* L10n.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		4E26919727E3FCCB00370FFB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4E26919C27E3FE2700370FFB /* AvenirLTStd-Light.otf */,
+				4E26919827E3FD6200370FFB /* AvenirLTStd-Book.otf */,
+				4E26919927E3FD6200370FFB /* AvenirLTStd-Roman.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4E26919E27E3FE5500370FFB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4E26919F27E3FF3A00370FFB /* UIFont+Ext.swift */,
+				4E2691A127E4043500370FFB /* UIColors+Ext.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4E2691A327E40ED100370FFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E40246527E3ED7D00A0CB58 /* HomeView.swift */,
+				4E2691A427E40EED00370FFB /* SignupButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4E345F9C27DBFB7B005E5887 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +170,7 @@
 		4E345FA727DBFB7B005E5887 /* Cora */ = {
 			isa = PBXGroup;
 			children = (
+				4E26919E27E3FE5500370FFB /* Helpers */,
 				4E8E369827E3E1BC006CA829 /* Scenes */,
 				4E8E369727E3E19B006CA829 /* Resources */,
 			);
@@ -130,10 +188,13 @@
 		4E8E369727E3E19B006CA829 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E26919727E3FCCB00370FFB /* Fonts */,
+				4E26919227E3F68D00370FFB /* Generated */,
 				4E345FB627DBFB7F005E5887 /* Info.plist */,
 				4E345FB327DBFB7F005E5887 /* LaunchScreen.storyboard */,
 				4E345FB127DBFB7E005E5887 /* Assets.xcassets */,
 				4E345FA827DBFB7B005E5887 /* AppDelegate.swift */,
+				4E40246227E3EBFB00A0CB58 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -150,6 +211,7 @@
 		4E8E369B27E3E29D006CA829 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4E2691A327E40ED100370FFB /* Views */,
 				4E8E369C27E3E2D1006CA829 /* HomeController.swift */,
 			);
 			path = Home;
@@ -178,6 +240,7 @@
 				4E345FA227DBFB7B005E5887 /* Frameworks */,
 				4E345FA327DBFB7B005E5887 /* Resources */,
 				3516F68BF21F563B13DAF266 /* [CP] Embed Pods Frameworks */,
+				4E40246427E3ED1C00A0CB58 /* ShellScript */,
 				4E40245F27E3E66C00A0CB58 /* ShellScript */,
 			);
 			buildRules = (
@@ -276,7 +339,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E345FB527DBFB7F005E5887 /* LaunchScreen.storyboard in Resources */,
+				4E26919D27E3FE2700370FFB /* AvenirLTStd-Light.otf in Resources */,
+				4E40246327E3EBFB00A0CB58 /* Localizable.strings in Resources */,
 				4E345FB227DBFB7E005E5887 /* Assets.xcassets in Resources */,
+				4E26919B27E3FD6200370FFB /* AvenirLTStd-Roman.otf in Resources */,
+				4E26919A27E3FD6200370FFB /* AvenirLTStd-Book.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +442,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		4E40246427E3ED1C00A0CB58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen >/dev/null; then\n  swiftgen\nfi\n";
+		};
 		5BDD00B12D6E3AC289F99118 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,8 +483,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2691A027E3FF3A00370FFB /* UIFont+Ext.swift in Sources */,
+				4E2691A227E4043500370FFB /* UIColors+Ext.swift in Sources */,
 				4E8E369A27E3E1CF006CA829 /* AppCoordinator.swift in Sources */,
+				4E40246627E3ED7D00A0CB58 /* HomeView.swift in Sources */,
+				4E26919627E3F6AE00370FFB /* L10n.swift in Sources */,
+				4E26919527E3F6AE00370FFB /* Images.swift in Sources */,
 				4E345FA927DBFB7B005E5887 /* AppDelegate.swift in Sources */,
+				4E2691A527E40EED00370FFB /* SignupButton.swift in Sources */,
 				4E8E369D27E3E2D1006CA829 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

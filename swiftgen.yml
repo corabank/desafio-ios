@@ -1,0 +1,14 @@
+input_dir: Cora
+output_dir: Cora
+strings:
+  inputs: Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: Resources/Generated/L10n.swift
+xcassets:
+  - inputs: Resources/Assets.xcassets
+    outputs:
+      - templateName: swift5
+        output: Resources/Generated/Images.swift
+        params:
+          enumName: Images
