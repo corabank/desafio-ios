@@ -17,7 +17,7 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
         case .home:
             return .push(HomeController(router: unownedRouter))
         case .login:
-            return .push(LoginController())
+                return .push(LoginController(router: unownedRouter))
         case .password:
             return .none()
         case .invoices:

@@ -4,3 +4,11 @@
 "Home.Description" = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos.";
 "Home.Button.Signup" = "Quero fazer parte!";
 "Home.Button.Login" = "Já sou cliente";
+
+// MARK: - Login
+"Login.Title" = "Login Cora";
+"Login.Welcome" = "Bem-vindo de volta!";
+"Login.Question.Document" = "Qual seu CPF?";
+"Login.Question.Password" = "Digite sua senha de acesso";
+"Login.ForgotPassword" = "Esqueci minha senha";
+"Login.Button.Next" = "Próximo";

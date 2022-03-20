@@ -25,6 +25,25 @@ internal enum L10n {
       internal static let signup = L10n.tr("Localizable", "Home.Button.Signup")
     }
   }
+
+  internal enum Login {
+    /// Esqueci minha senha
+    internal static let forgotPassword = L10n.tr("Localizable", "Login.ForgotPassword")
+    /// Login Cora
+    internal static let title = L10n.tr("Localizable", "Login.Title")
+    /// Bem-vindo de volta!
+    internal static let welcome = L10n.tr("Localizable", "Login.Welcome")
+    internal enum Button {
+      /// Próximo
+      internal static let next = L10n.tr("Localizable", "Login.Button.Next")
+    }
+    internal enum Question {
+      /// Qual seu CPF?
+      internal static let document = L10n.tr("Localizable", "Login.Question.Document")
+      /// Digite sua senha de acesso
+      internal static let password = L10n.tr("Localizable", "Login.Question.Password")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

@@ -1,17 +1,19 @@
 import UIKit
 
-final class SignupButton: UIView {
+final class NextButton: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = L10n.Home.Button.signup
-        label.font = .body1
-        label.textColor = .mainCora
+        label.text = L10n.Login.Button.next
+        label.font = .body2
+        label.textColor = .white
         return label
     }()
 
     private let arrowImage: UIImageView = {
-        let imageview = UIImageView(image: Images.iconArrowRight.image)
+        let image = Images.iconArrowRight.image.withRenderingMode(.alwaysTemplate)
+        let imageview = UIImageView(image: image)
         imageview.contentMode = .scaleAspectFit
+        imageview.tintColor = .white
         return imageview
     }()
 
@@ -26,8 +28,8 @@ final class SignupButton: UIView {
     }
 
     private func setup() {
-        backgroundColor = .white
-        layer.cornerRadius = 16
+        backgroundColor = .gray2
+        layer.cornerRadius = 12
         addViews()
         addConstraints()
     }
@@ -43,6 +45,6 @@ final class SignupButton: UIView {
 
         arrowImage.edgesToSuperview(excluding: .left, insets: .right(16))
 
-        height(64)
+        height(48)
     }
 }
