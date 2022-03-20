@@ -3,7 +3,7 @@ import XCoordinator
 enum AppRoute: Route {
     case home
     case login
-    case password
+    case password(document: String)
     case invoices
 }
 

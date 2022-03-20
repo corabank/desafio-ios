@@ -1,6 +1,9 @@
 import UIKit
 
 final class NextButton: UIView {
+
+    var onTapped: (() -> Void)?
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.Login.Button.next
@@ -32,6 +35,7 @@ final class NextButton: UIView {
         layer.cornerRadius = 12
         addViews()
         addConstraints()
+        addActions()
     }
 
     private func addViews() {
@@ -46,5 +50,15 @@ final class NextButton: UIView {
         arrowImage.edgesToSuperview(excluding: .left, insets: .right(16))
 
         height(48)
+    }
+
+    private func addActions() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        addGestureRecognizer(tap)
+    }
+
+    @objc
+    private func onTap() {
+        onTapped?()
     }
 }

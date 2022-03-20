@@ -1,15 +1,45 @@
 import UIKit
+import TinyConstraints
 
 final class LoginView: UIView {
-    private let documentView = DocumentView()
-    private let passwordView = PasswordView()
-    private let nextButton = NextButton()
 
-    private let pagerContentStack: UIStackView = {
+    var onNextButtonTapped: ((String) -> Void)?
+
+    private let bottomConstraintInitialConstant: CGFloat = -24
+
+    private let welcomeLabel: UILabel = {
+        let label = UILabel()
+        label.text = L10n.Login.welcome
+        label.font = .body1
+        label.textColor = .gray1
+        return label
+    }()
+
+    private let documentLabel: UILabel = {
+        let label = UILabel()
+        label.text = L10n.Login.Question.document
+        label.font = .title3Bold
+        label.textColor = .gray5
+        return label
+    }()
+
+    private let documentTextField: UITextField = {
+        let textField = UITextField()
+        textField.textColor = .gray1
+        textField.font = .title3
+        textField.tintColor = .gray5
+        textField.keyboardType = .numberPad
+        return textField
+    }()
+
+    private let contentStack: UIStackView = {
         let stack = UIStackView()
-        stack.axis = .horizontal
+        stack.axis = .vertical
         return stack
     }()
+
+    private let nextButton = NextButton()
+    private var bottomConstraint: Constraint?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,20 +55,35 @@ final class LoginView: UIView {
         backgroundColor = .white
         addViews()
         addConstraints()
-        //        addActions()
+        addActions()
+        documentTextField.becomeFirstResponder()
     }
 
     private func addViews() {
-        addSubview(pagerContentStack)
+        addSubview(contentStack)
         addSubview(nextButton)
 
-        pagerContentStack.addArrangedSubview(documentView)
-        pagerContentStack.addArrangedSubview(passwordView)
+        contentStack.addArrangedSubview(welcomeLabel)
+        contentStack.addArrangedSubview(documentLabel)
+        contentStack.addArrangedSubview(documentTextField)
     }
 
     private func addConstraints() {
-        pagerContentStack.edgesToSuperview(excluding: .bottom, insets: .uniform(24), usingSafeArea: true)
+        contentStack.edgesToSuperview(excluding: .bottom, insets: .uniform(24), usingSafeArea: true)
+        contentStack.setCustomSpacing(8, after: welcomeLabel)
+        contentStack.setCustomSpacing(32, after: documentLabel)
 
-        nextButton.edgesToSuperview(excluding: .top, insets: .uniform(24), usingSafeArea: true)
+        nextButton.horizontalToSuperview(insets: .horizontal(24), usingSafeArea: true)
+        bottomConstraint = nextButton.bottomToSuperview(offset: bottomConstraintInitialConstant, usingSafeArea: true)
+    }
+
+    private func addActions() {
+        nextButton.onTapped = { [weak self] in
+            self?.onNextButtonTapped?(self?.documentTextField.text ?? "")
+        }
+    }
+
+    func updateBottomConstraint(keyboardHeight: CGFloat) {
+        bottomConstraint?.constant = bottomConstraintInitialConstant - keyboardHeight
     }
 }
