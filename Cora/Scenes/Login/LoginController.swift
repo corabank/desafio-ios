@@ -2,10 +2,8 @@ import UIKit
 import XCoordinator
 
 final class LoginController: UIViewController {
-    private lazy var contentView = LoginView(navBarHeight: 58)
+    private let contentView = LoginView()
     private let router: UnownedRouter<AppRoute>
-
-    override var preferredStatusBarStyle: UIStatusBarStyle { .darkContent }
 
     init(router: UnownedRouter<AppRoute>) {
         self.router = router
@@ -21,9 +19,34 @@ final class LoginController: UIViewController {
         view = contentView
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        clearNavBar()
+        super.viewWillDisappear(animated)
+    }
+
+    private func setupNavBar() {
+        navigationItem.title = L10n.Login.title
+        navigationController?.navigationBar.backgroundColor = .gray4
+        navigationController?.navigationBar.tintColor = .mainCora
+
+        let textAttributes = [NSAttributedString.Key.font: UIFont.body2,
+                              NSAttributedString.Key.foregroundColor: UIColor.gray1]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+
+        let customBackButton = UIBarButtonItem(image: Images.iconArrowLeft.image,
+                                               style: .plain,
+                                               target: self,
+                                               action: #selector(onBackButtonTapped))
+        navigationItem.leftBarButtonItem = customBackButton
+    }
+
+    private func clearNavBar() {
+        navigationController?.navigationBar.backgroundColor = .clear
     }
 
     @objc

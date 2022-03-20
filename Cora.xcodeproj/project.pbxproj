@@ -30,8 +30,6 @@
 		4EA234C327E68AD700BF8A19 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA234C227E68AD700BF8A19 /* LoginView.swift */; };
 		4EA234C527E68AEB00BF8A19 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA234C427E68AEB00BF8A19 /* PasswordView.swift */; };
 		4EA234C727E68AF900BF8A19 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA234C627E68AF900BF8A19 /* NextButton.swift */; };
-		4EA234C927E68C9A00BF8A19 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA234C827E68C9A00BF8A19 /* NavbarView.swift */; };
-		4EA234CB27E692C400BF8A19 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA234CA27E692C400BF8A19 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +77,6 @@
 		4EA234C227E68AD700BF8A19 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4EA234C427E68AEB00BF8A19 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		4EA234C627E68AF900BF8A19 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
-		4EA234C827E68C9A00BF8A19 /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
-		4EA234CA27E692C400BF8A19 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		6640B53B69F956BE2E8295B8 /* Pods_Cora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73705991D2474CACFB8E424F /* Pods-Cora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cora.debug.xcconfig"; path = "Target Support Files/Pods-Cora/Pods-Cora.debug.xcconfig"; sourceTree = "<group>"; };
 		802752AE38E7FABC0AEF264A /* Pods-CoraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraTests.debug.xcconfig"; path = "Target Support Files/Pods-CoraTests/Pods-CoraTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +152,6 @@
 			children = (
 				4E26919F27E3FF3A00370FFB /* UIFont+Ext.swift */,
 				4E2691A127E4043500370FFB /* UIColors+Ext.swift */,
-				4EA234CA27E692C400BF8A19 /* UIViewController+Ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -249,7 +244,6 @@
 				4EA234C227E68AD700BF8A19 /* LoginView.swift */,
 				4EA234C427E68AEB00BF8A19 /* PasswordView.swift */,
 				4EA234C627E68AF900BF8A19 /* NextButton.swift */,
-				4EA234C827E68C9A00BF8A19 /* NavbarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -522,7 +516,6 @@
 			files = (
 				4E2691A027E3FF3A00370FFB /* UIFont+Ext.swift in Sources */,
 				4E2691A227E4043500370FFB /* UIColors+Ext.swift in Sources */,
-				4EA234C927E68C9A00BF8A19 /* NavbarView.swift in Sources */,
 				4E8E369A27E3E1CF006CA829 /* AppCoordinator.swift in Sources */,
 				4E40246627E3ED7D00A0CB58 /* HomeView.swift in Sources */,
 				4EA234C527E68AEB00BF8A19 /* PasswordView.swift in Sources */,
@@ -534,7 +527,6 @@
 				4E221CDE27E41EF6003A2346 /* DocumentView.swift in Sources */,
 				4E8E369D27E3E2D1006CA829 /* HomeController.swift in Sources */,
 				4EA234C727E68AF900BF8A19 /* NextButton.swift in Sources */,
-				4EA234CB27E692C400BF8A19 /* UIViewController+Ext.swift in Sources */,
 				4E221CDA27E41B0A003A2346 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

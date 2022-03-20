@@ -1,12 +1,9 @@
 import UIKit
 
 final class LoginView: UIView {
-
-    private let navBarView = NavbarView()
     private let documentView = DocumentView()
     private let passwordView = PasswordView()
     private let nextButton = NextButton()
-    private let navBarHeight: CGFloat
 
     private let pagerContentStack: UIStackView = {
         let stack = UIStackView()
@@ -14,9 +11,8 @@ final class LoginView: UIView {
         return stack
     }()
 
-    init(navBarHeight: CGFloat) {
-        self.navBarHeight = navBarHeight
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
 
@@ -29,11 +25,10 @@ final class LoginView: UIView {
         backgroundColor = .white
         addViews()
         addConstraints()
-//        addActions()
+        //        addActions()
     }
 
     private func addViews() {
-        addSubview(navBarView)
         addSubview(pagerContentStack)
         addSubview(nextButton)
 
@@ -42,11 +37,7 @@ final class LoginView: UIView {
     }
 
     private func addConstraints() {
-        navBarView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
-        navBarView.height(navBarHeight)
-
-        pagerContentStack.horizontalToSuperview(insets: .horizontal(24))
-        pagerContentStack.topToBottom(of: navBarView, offset: 24)
+        pagerContentStack.edgesToSuperview(excluding: .bottom, insets: .uniform(24), usingSafeArea: true)
 
         nextButton.edgesToSuperview(excluding: .top, insets: .uniform(24), usingSafeArea: true)
     }
