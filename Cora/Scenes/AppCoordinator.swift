@@ -18,10 +18,13 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             return .push(HomeController(router: unownedRouter))
         case .login:
                 return .push(LoginController(router: unownedRouter))
-        case .password:
-            return .none()
+        case let .password(document):
+                let presenter = PasswordPresenter(document: document)
+                let controller = PasswordController(router: unownedRouter, presenter: presenter)
+                presenter.controller = controller
+                return .push(controller)
         case .invoices:
-            return .none()
+                return .set([HomeController(router: unownedRouter), InvoiceController()])
         }
     }
 }
