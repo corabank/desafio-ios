@@ -27,11 +27,13 @@ final class HomeViewTests: QuickSpec {
                     didTapLogin = true
                 }
 
-                let loginButton = sut.viewwi
+                // swiftlint:disable:next force_cast
+                let loginButton = sut.viewWithTag(35) as! UIButton
+                loginButton.sendActions(for: .touchUpInside)
             }
 
-            it("") {
-
+            it("expect flag to be true") {
+                expect(didTapLogin).to(beTrue())
             }
         }
     }

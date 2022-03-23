@@ -1,7 +1,7 @@
 import UIKit
 import TinyConstraints
 
-final class HomeView: UIView {
+final class HomeView: UIView, HomeViewType {
 
     var didTapLogin: (() -> Void)?
 
@@ -49,7 +49,7 @@ final class HomeView: UIView {
         button.layer.cornerRadius = 12
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
-        button.accessibilityIdentifier = "buttonLogin"
+        button.tag = 35
         return button
     }()
 

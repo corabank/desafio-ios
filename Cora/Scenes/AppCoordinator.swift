@@ -1,6 +1,6 @@
 import XCoordinator
 
-enum AppRoute: Route {
+enum AppRoute: Route, Equatable {
     case home
     case login
     case password(document: String)
@@ -14,16 +14,16 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
 
     override func prepareTransition(for route: AppRoute) -> NavigationTransition {
         switch route {
-        case .home:
-            return .push(HomeController(router: unownedRouter))
-        case .login:
+            case .home:
+                return .push(HomeController(router: unownedRouter))
+            case .login:
                 return .push(LoginController(router: unownedRouter))
-        case let .password(document):
+            case let .password(document):
                 let presenter = PasswordPresenter(document: document)
                 let controller = PasswordController(router: unownedRouter, presenter: presenter)
                 presenter.controller = controller
                 return .push(controller)
-        case .invoices:
+            case .invoices:
                 return .set([HomeController(router: unownedRouter), InvoiceController()])
         }
     }

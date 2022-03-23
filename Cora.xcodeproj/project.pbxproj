@@ -10,7 +10,10 @@
 		19F2674E72AD5185AF636FD7 /* Pods_Cora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D396DA2701375041FEF86C6C /* Pods_Cora.framework */; };
 		4E5BF50327EA9F8A0084BDC0 /* SignupButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BF50227EA9F890084BDC0 /* SignupButtonTests.swift */; };
 		4E5BF50527EAA0F00084BDC0 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BF50427EAA0F00084BDC0 /* HomeViewTests.swift */; };
-		4E5BF50827EAA22F0084BDC0 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BF50727EAA22F0084BDC0 /* UIView+Ext.swift */; };
+		4EACCFCB27EAAA27001C54E6 /* HomeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFCA27EAAA27001C54E6 /* HomeControllerTests.swift */; };
+		4EACCFCF27EAABA6001C54E6 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFCD27EAAAEB001C54E6 /* HomeProtocols.swift */; };
+		4EACCFD327EAAC21001C54E6 /* HomeViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFD227EAAC21001C54E6 /* HomeViewMock.swift */; };
+		4EACCFD527EAB1E1001C54E6 /* AppCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFD427EAB1E1001C54E6 /* AppCoordinatorSpy.swift */; };
 		4EC5B64927EA956F0063242E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5B62627EA956F0063242E /* HomeController.swift */; };
 		4EC5B64A27EA956F0063242E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5B62827EA956F0063242E /* HomeView.swift */; };
 		4EC5B64B27EA956F0063242E /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5B62927EA956F0063242E /* SignupButton.swift */; };
@@ -53,9 +56,12 @@
 /* Begin PBXFileReference section */
 		4E5BF50227EA9F890084BDC0 /* SignupButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButtonTests.swift; sourceTree = "<group>"; };
 		4E5BF50427EAA0F00084BDC0 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
-		4E5BF50727EAA22F0084BDC0 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4E686C5327EA8E6A0072723E /* Cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E686C6927EA8E6C0072723E /* CoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EACCFCA27EAAA27001C54E6 /* HomeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerTests.swift; sourceTree = "<group>"; };
+		4EACCFCD27EAAAEB001C54E6 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		4EACCFD227EAAC21001C54E6 /* HomeViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewMock.swift; sourceTree = "<group>"; };
+		4EACCFD427EAB1E1001C54E6 /* AppCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpy.swift; sourceTree = "<group>"; };
 		4EC5B62627EA956F0063242E /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		4EC5B62827EA956F0063242E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4EC5B62927EA956F0063242E /* SignupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
@@ -144,25 +150,18 @@
 				4EC5B63B27EA956F0063242E /* Resources */,
 				4EC5B62427EA956F0063242E /* Scenes */,
 			);
-			name = Cora;
-			path = "../../../work/desafio-ios/Cora";
+			path = Cora;
 			sourceTree = "<group>";
 		};
 		4E5BF50127EA9F640084BDC0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4EACCFCC27EAAACD001C54E6 /* Doubles */,
 				4E5BF50227EA9F890084BDC0 /* SignupButtonTests.swift */,
 				4E5BF50427EAA0F00084BDC0 /* HomeViewTests.swift */,
+				4EACCFCA27EAAA27001C54E6 /* HomeControllerTests.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		4E5BF50627EAA21C0084BDC0 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				4E5BF50727EAA22F0084BDC0 /* UIView+Ext.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4E686C4A27EA8E6A0072723E = {
@@ -188,10 +187,17 @@
 		4E686C6C27EA8E6C0072723E /* CoraTests */ = {
 			isa = PBXGroup;
 			children = (
-				4E5BF50627EAA21C0084BDC0 /* Helpers */,
 				4EC5B66327EA98230063242E /* Scenes */,
 			);
 			path = CoraTests;
+			sourceTree = "<group>";
+		};
+		4EACCFCC27EAAACD001C54E6 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				4EACCFD227EAAC21001C54E6 /* HomeViewMock.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		4EC5B62427EA956F0063242E /* Scenes */ = {
@@ -211,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				4EC5B62627EA956F0063242E /* HomeController.swift */,
+				4EACCFCD27EAAAEB001C54E6 /* HomeProtocols.swift */,
 				4EC5B62727EA956F0063242E /* Views */,
 			);
 			path = Home;
@@ -305,6 +312,7 @@
 			children = (
 				4E5BF50127EA9F640084BDC0 /* Home */,
 				4EC5B66427EA98230063242E /* AppCoordinatorTests.swift */,
+				4EACCFD427EAB1E1001C54E6 /* AppCoordinatorSpy.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -550,6 +558,7 @@
 				4EC5B64B27EA956F0063242E /* SignupButton.swift in Sources */,
 				4EC5B65A27EA956F0063242E /* Images.swift in Sources */,
 				4EC5B64A27EA956F0063242E /* HomeView.swift in Sources */,
+				4EACCFCF27EAABA6001C54E6 /* HomeProtocols.swift in Sources */,
 				4EC5B65227EA956F0063242E /* LoginView.swift in Sources */,
 				4EC5B65927EA956F0063242E /* L10n.swift in Sources */,
 				4EC5B64D27EA956F0063242E /* PasswordProtocols.swift in Sources */,
@@ -560,10 +569,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E5BF50827EAA22F0084BDC0 /* UIView+Ext.swift in Sources */,
+				4EACCFD327EAAC21001C54E6 /* HomeViewMock.swift in Sources */,
+				4EACCFCB27EAAA27001C54E6 /* HomeControllerTests.swift in Sources */,
 				4E5BF50527EAA0F00084BDC0 /* HomeViewTests.swift in Sources */,
 				4EC5B66527EA98230063242E /* AppCoordinatorTests.swift in Sources */,
 				4E5BF50327EA9F8A0084BDC0 /* SignupButtonTests.swift in Sources */,
+				4EACCFD527EAB1E1001C54E6 /* AppCoordinatorSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
