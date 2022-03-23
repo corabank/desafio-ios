@@ -14,6 +14,15 @@
 		4EACCFCF27EAABA6001C54E6 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFCD27EAAAEB001C54E6 /* HomeProtocols.swift */; };
 		4EACCFD327EAAC21001C54E6 /* HomeViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFD227EAAC21001C54E6 /* HomeViewMock.swift */; };
 		4EACCFD527EAB1E1001C54E6 /* AppCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFD427EAB1E1001C54E6 /* AppCoordinatorSpy.swift */; };
+		4EACCFD827EAB7B4001C54E6 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFD727EAB7B4001C54E6 /* InvoiceCell.swift */; };
+		4EACCFDA27EABCDC001C54E6 /* InvoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFD927EABCDC001C54E6 /* InvoiceViewModel.swift */; };
+		4EACCFDD27EABDDA001C54E6 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFDC27EABDDA001C54E6 /* TransactionModel.swift */; };
+		4EACCFDF27EAC478001C54E6 /* InvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFDE27EAC478001C54E6 /* InvoiceView.swift */; };
+		4EACCFE127EAC69D001C54E6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFE027EAC69D001C54E6 /* DataSource.swift */; };
+		4EACCFE327EAC969001C54E6 /* InvoicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFE227EAC969001C54E6 /* InvoicePresenter.swift */; };
+		4EACCFE527EAC980001C54E6 /* InvoiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFE427EAC980001C54E6 /* InvoiceProtocols.swift */; };
+		4EACCFE727EACA30001C54E6 /* InvoiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFE627EACA30001C54E6 /* InvoiceAdapter.swift */; };
+		4EACCFEA27EACB2D001C54E6 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EACCFE927EACB2D001C54E6 /* TransactionRepository.swift */; };
 		4EC5B64927EA956F0063242E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5B62627EA956F0063242E /* HomeController.swift */; };
 		4EC5B64A27EA956F0063242E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5B62827EA956F0063242E /* HomeView.swift */; };
 		4EC5B64B27EA956F0063242E /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5B62927EA956F0063242E /* SignupButton.swift */; };
@@ -62,6 +71,15 @@
 		4EACCFCD27EAAAEB001C54E6 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		4EACCFD227EAAC21001C54E6 /* HomeViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewMock.swift; sourceTree = "<group>"; };
 		4EACCFD427EAB1E1001C54E6 /* AppCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpy.swift; sourceTree = "<group>"; };
+		4EACCFD727EAB7B4001C54E6 /* InvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
+		4EACCFD927EABCDC001C54E6 /* InvoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewModel.swift; sourceTree = "<group>"; };
+		4EACCFDC27EABDDA001C54E6 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		4EACCFDE27EAC478001C54E6 /* InvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceView.swift; sourceTree = "<group>"; };
+		4EACCFE027EAC69D001C54E6 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		4EACCFE227EAC969001C54E6 /* InvoicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicePresenter.swift; sourceTree = "<group>"; };
+		4EACCFE427EAC980001C54E6 /* InvoiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceProtocols.swift; sourceTree = "<group>"; };
+		4EACCFE627EACA30001C54E6 /* InvoiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceAdapter.swift; sourceTree = "<group>"; };
+		4EACCFE927EACB2D001C54E6 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		4EC5B62627EA956F0063242E /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		4EC5B62827EA956F0063242E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4EC5B62927EA956F0063242E /* SignupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
@@ -146,6 +164,7 @@
 		4E1C7BE327EA934A003368A0 /* Cora */ = {
 			isa = PBXGroup;
 			children = (
+				4EACCFE827EACB10001C54E6 /* Network */,
 				4EC5B63627EA956F0063242E /* Helpers */,
 				4EC5B63B27EA956F0063242E /* Resources */,
 				4EC5B62427EA956F0063242E /* Scenes */,
@@ -200,12 +219,38 @@
 			path = Doubles;
 			sourceTree = "<group>";
 		};
+		4EACCFD627EAB78B001C54E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4EACCFD727EAB7B4001C54E6 /* InvoiceCell.swift */,
+				4EACCFDE27EAC478001C54E6 /* InvoiceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4EACCFDB27EABDC5001C54E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4EACCFDC27EABDDA001C54E6 /* TransactionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4EACCFE827EACB10001C54E6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4EACCFDB27EABDC5001C54E6 /* Models */,
+				4EACCFE927EACB2D001C54E6 /* TransactionRepository.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		4EC5B62427EA956F0063242E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4EC5B62F27EA956F0063242E /* AppCoordinator.swift */,
 				4EC5B62527EA956F0063242E /* Home */,
 				4EC5B62A27EA956F0063242E /* Password */,
-				4EC5B62F27EA956F0063242E /* AppCoordinator.swift */,
 				4EC5B63027EA956F0063242E /* Invoices */,
 				4EC5B63227EA956F0063242E /* Login */,
 			);
@@ -246,7 +291,13 @@
 		4EC5B63027EA956F0063242E /* Invoices */ = {
 			isa = PBXGroup;
 			children = (
+				4EACCFD627EAB78B001C54E6 /* Views */,
 				4EC5B63127EA956F0063242E /* InvoiceController.swift */,
+				4EACCFD927EABCDC001C54E6 /* InvoiceViewModel.swift */,
+				4EACCFE027EAC69D001C54E6 /* DataSource.swift */,
+				4EACCFE227EAC969001C54E6 /* InvoicePresenter.swift */,
+				4EACCFE427EAC980001C54E6 /* InvoiceProtocols.swift */,
+				4EACCFE627EACA30001C54E6 /* InvoiceAdapter.swift */,
 			);
 			path = Invoices;
 			sourceTree = "<group>";
@@ -546,6 +597,8 @@
 				4EC5B65527EA956F0063242E /* NextButton.swift in Sources */,
 				4EC5B65E27EA956F0063242E /* AppDelegate.swift in Sources */,
 				4EC5B65727EA956F0063242E /* BaseLoginController.swift in Sources */,
+				4EACCFE527EAC980001C54E6 /* InvoiceProtocols.swift in Sources */,
+				4EACCFDD27EABDDA001C54E6 /* TransactionModel.swift in Sources */,
 				4EC5B65427EA956F0063242E /* LoginPresenter.swift in Sources */,
 				4EC5B65327EA956F0063242E /* LoginController.swift in Sources */,
 				4EC5B64F27EA956F0063242E /* PasswordController.swift in Sources */,
@@ -557,10 +610,17 @@
 				4EC5B65027EA956F0063242E /* AppCoordinator.swift in Sources */,
 				4EC5B64B27EA956F0063242E /* SignupButton.swift in Sources */,
 				4EC5B65A27EA956F0063242E /* Images.swift in Sources */,
+				4EACCFEA27EACB2D001C54E6 /* TransactionRepository.swift in Sources */,
 				4EC5B64A27EA956F0063242E /* HomeView.swift in Sources */,
+				4EACCFDA27EABCDC001C54E6 /* InvoiceViewModel.swift in Sources */,
+				4EACCFD827EAB7B4001C54E6 /* InvoiceCell.swift in Sources */,
 				4EACCFCF27EAABA6001C54E6 /* HomeProtocols.swift in Sources */,
+				4EACCFDF27EAC478001C54E6 /* InvoiceView.swift in Sources */,
 				4EC5B65227EA956F0063242E /* LoginView.swift in Sources */,
 				4EC5B65927EA956F0063242E /* L10n.swift in Sources */,
+				4EACCFE127EAC69D001C54E6 /* DataSource.swift in Sources */,
+				4EACCFE727EACA30001C54E6 /* InvoiceAdapter.swift in Sources */,
+				4EACCFE327EAC969001C54E6 /* InvoicePresenter.swift in Sources */,
 				4EC5B64D27EA956F0063242E /* PasswordProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
