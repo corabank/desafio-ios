@@ -49,6 +49,7 @@ final class HomeView: UIView {
         button.layer.cornerRadius = 12
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
+        button.accessibilityIdentifier = "buttonLogin"
         return button
     }()
 

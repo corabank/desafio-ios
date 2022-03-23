@@ -72,7 +72,8 @@ class BaseLoginController: UIViewController {
 
     @objc
     private func onKeyboardAppear(_ notification: Notification) {
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        else { return }
         keyboardDidAppear?(keyboardFrame.cgRectValue.height)
     }
 

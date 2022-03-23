@@ -39,7 +39,7 @@ final class SignupButton: UIView {
 
     private func addConstraints() {
         titleLabel.edgesToSuperview(excluding: .right, insets: .left(24))
-        titleLabel.rightToLeft(of: arrowImage, offset: 10, relation: .equalOrLess)
+        titleLabel.rightToLeft(of: arrowImage, offset: -10, relation: .equalOrLess)
 
         arrowImage.edgesToSuperview(excluding: .left, insets: .right(16))
 
