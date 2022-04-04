@@ -9,19 +9,39 @@
 /* Begin PBXBuildFile section */
 		B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4827F76B4C0095E8DC /* AppDelegate.swift */; };
 		B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */; };
-		B1662E4D27F76B4C0095E8DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4C27F76B4C0095E8DC /* ViewController.swift */; };
 		B1662E5227F76B4D0095E8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1662E5127F76B4D0095E8DC /* Assets.xcassets */; };
 		B1662E5527F76B4D0095E8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1662E5327F76B4D0095E8DC /* LaunchScreen.storyboard */; };
+		B1662E7827F771C80095E8DC /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E7227F771C80095E8DC /* LoginCoordinator.swift */; };
+		B1662E7927F771C80095E8DC /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E7327F771C80095E8DC /* LoginFactory.swift */; };
+		B1662E7A27F771C80095E8DC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E7427F771C80095E8DC /* LoginPresenter.swift */; };
+		B1662E7B27F771C80095E8DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E7527F771C80095E8DC /* LoginViewController.swift */; };
+		B1662E7C27F771C80095E8DC /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E7627F771C80095E8DC /* LoginInteractor.swift */; };
+		B1662E8527F775810095E8DC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E7F27F775810095E8DC /* HomeCoordinator.swift */; };
+		B1662E8627F775810095E8DC /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8027F775810095E8DC /* HomeFactory.swift */; };
+		B1662E8727F775810095E8DC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8127F775810095E8DC /* HomePresenter.swift */; };
+		B1662E8827F775810095E8DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8227F775810095E8DC /* HomeViewController.swift */; };
+		B1662E8927F775810095E8DC /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8327F775810095E8DC /* HomeInteractor.swift */; };
+		B1662E8C27F777B00095E8DC /* ViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8B27F777B00095E8DC /* ViewSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B1662E4527F76B4C0095E8DC /* desafio-cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1662E4827F76B4C0095E8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B1662E4C27F76B4C0095E8DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B1662E5127F76B4D0095E8DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1662E5427F76B4D0095E8DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1662E5627F76B4D0095E8DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1662E7227F771C80095E8DC /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		B1662E7327F771C80095E8DC /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
+		B1662E7427F771C80095E8DC /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		B1662E7527F771C80095E8DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B1662E7627F771C80095E8DC /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		B1662E7F27F775810095E8DC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		B1662E8027F775810095E8DC /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		B1662E8127F775810095E8DC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		B1662E8227F775810095E8DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B1662E8327F775810095E8DC /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		B1662E8B27F777B00095E8DC /* ViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +74,40 @@
 		B1662E4727F76B4C0095E8DC /* desafio-cora */ = {
 			isa = PBXGroup;
 			children = (
+				B1662E7E27F775560095E8DC /* Home */,
+				B1662E5C27F770860095E8DC /* Login */,
 				B1662E4827F76B4C0095E8DC /* AppDelegate.swift */,
 				B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */,
-				B1662E4C27F76B4C0095E8DC /* ViewController.swift */,
 				B1662E5127F76B4D0095E8DC /* Assets.xcassets */,
 				B1662E5327F76B4D0095E8DC /* LaunchScreen.storyboard */,
 				B1662E5627F76B4D0095E8DC /* Info.plist */,
+				B1662E8B27F777B00095E8DC /* ViewSetup.swift */,
 			);
 			path = "desafio-cora";
+			sourceTree = "<group>";
+		};
+		B1662E5C27F770860095E8DC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B1662E7227F771C80095E8DC /* LoginCoordinator.swift */,
+				B1662E7327F771C80095E8DC /* LoginFactory.swift */,
+				B1662E7427F771C80095E8DC /* LoginPresenter.swift */,
+				B1662E7527F771C80095E8DC /* LoginViewController.swift */,
+				B1662E7627F771C80095E8DC /* LoginInteractor.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B1662E7E27F775560095E8DC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B1662E7F27F775810095E8DC /* HomeCoordinator.swift */,
+				B1662E8027F775810095E8DC /* HomeFactory.swift */,
+				B1662E8127F775810095E8DC /* HomePresenter.swift */,
+				B1662E8227F775810095E8DC /* HomeViewController.swift */,
+				B1662E8327F775810095E8DC /* HomeInteractor.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +180,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1662E4D27F76B4C0095E8DC /* ViewController.swift in Sources */,
+				B1662E7B27F771C80095E8DC /* LoginViewController.swift in Sources */,
+				B1662E7A27F771C80095E8DC /* LoginPresenter.swift in Sources */,
 				B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */,
+				B1662E8927F775810095E8DC /* HomeInteractor.swift in Sources */,
+				B1662E8727F775810095E8DC /* HomePresenter.swift in Sources */,
+				B1662E8C27F777B00095E8DC /* ViewSetup.swift in Sources */,
+				B1662E7C27F771C80095E8DC /* LoginInteractor.swift in Sources */,
+				B1662E7827F771C80095E8DC /* LoginCoordinator.swift in Sources */,
+				B1662E8527F775810095E8DC /* HomeCoordinator.swift in Sources */,
+				B1662E8827F775810095E8DC /* HomeViewController.swift in Sources */,
 				B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */,
+				B1662E7927F771C80095E8DC /* LoginFactory.swift in Sources */,
+				B1662E8627F775810095E8DC /* HomeFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
