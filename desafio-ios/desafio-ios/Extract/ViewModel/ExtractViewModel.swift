@@ -7,21 +7,37 @@
 
 import Foundation
 
+protocol URLSessionProtocol {
+    func fetchData(with urlRequest: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+extension URLSession: URLSessionProtocol {
+    func fetchData(with urlRequest: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let dataTask = dataTask(with: urlRequest, completionHandler: completionHandler)
+        dataTask.resume()
+    }
+}
+
+enum HTTPClientError: Error {
+    case unexpectedStatusCode
+    case invalidData
+    case decodeError
+    case invalidJson
+}
+
 class ExtractViewModel {
     
+    private let session: URLSessionProtocol
     var days: [DayExtract] = []
+        
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
     
-    func getExtracts(completion: @escaping () -> ()) {
-        if let path = Bundle.main.path(forResource: "days", ofType: "json") {
-            do {
-                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                  if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let dayExtract = jsonResult["day_extract"] as? [DayExtract] {
-                            // do stuff
-                  }
-              } catch {
-                   // handle error
-              }
+    func getExtracts(completion: @escaping (Result<[DayExtract], Error>) -> Void) {
+        guard let path = Bundle.main.path(forResource: "days", ofType: "json") else { return
+            completion(.failure(HTTPClientError.invalidJson))
+        }
         
         let configuration = URLSessionConfiguration.default
 
@@ -31,12 +47,17 @@ class ExtractViewModel {
         
         let task = session.dataTask(with: URL(fileURLWithPath: path)) { data, response, error in
             
-            
             if let error = error {
-                print(error)
+                completion(.failure(error))
             }
             
             guard let data = data else {
+                completion(.failure(HTTPClientError.invalidData))
+                return
+            }
+            
+            guard response != nil else {
+                completion(.failure(HTTPClientError.unexpectedStatusCode))
                 return
             }
             
@@ -45,16 +66,13 @@ class ExtractViewModel {
                 DispatchQueue.main.async {
                     self.days = dayExtract
                 }
-                completion()
+                completion(.success(dayExtract))
             } catch {
-                print(error)
-                
+                completion(.failure(HTTPClientError.decodeError))
+                print(error.localizedDescription)
             }
-            
         }
 
         task.resume()
-        
-    }
-    }
+        }
 }

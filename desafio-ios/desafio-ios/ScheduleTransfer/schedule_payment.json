@@ -1,2 +1,19 @@
-#  <#Title#>
+{
+    "value": 154.00,
+    "date": "Segunda feira - 13/01/2020",
+    "sender": {
+        "name": "Leonardo Mendes",
+        "cpf": "407.130.774-24",
+        "bank": "Banco Itaú",
+        "agency": "2435",
+        "count": "43556-3"
+    },
+    "recipient": {
+        "name": "Lucas Valim da Costa",
+        "cpf": "407.130.563-56",
+        "bank": "Banco Cora",
+        "agency": "6193",
+        "count": "12225-3"
+    }
+}
 

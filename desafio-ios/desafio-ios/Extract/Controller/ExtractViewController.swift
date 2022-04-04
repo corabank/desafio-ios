@@ -51,7 +51,7 @@ class ExtractViewController: UIViewController, UITableViewDataSource, UITableVie
         tableHeaderView.translatesAutoresizingMaskIntoConstraints = false
         tableHeaderView.layoutIfNeeded()
         tableHeaderView.isUserInteractionEnabled = false
-        self.viewModel.getExtracts {
+        self.viewModel.getExtracts { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
