@@ -1,0 +1,70 @@
+[{
+            "day": "Hoje - 6 de Agosto",
+            "total": 3.446,
+            "extracts": [{
+                    "value": 30.00,
+                    "type_transfer": "Transferência recebida",
+                    "name": "Lucas Costa",
+                    "hour": "17:35"
+                },
+                {
+                    "value": 26.00,
+                    "type_transfer": "Pagamento recebido",
+                    "name": "João da Silva",
+                    "hour": "13:17"
+                },
+                {
+                    "value": 26.00,
+                    "type_transfer": "Transferência estornada",
+                    "name": "Daniela Andrade",
+                    "hour": "13:17"
+                },
+                {
+                    "value": 26.00,
+                    "type_transfer": "Boleto pago",
+                    "name": "Aut Arquitetura",
+                    "hour": "09:22"
+                }
+            ]
+        },
+        {
+            "day": "Segunda-feira - 2 de Agosto",
+            "total": 3.110,
+            "extracts": [{
+                    "value": 30.00,
+                    "type_transfer": "Depósito via boleto",
+                    "name": "Leonardo Silva ME",
+                    "hour": "09:22"
+                },
+                {
+                    "value": 26.00,
+                    "type_transfer": "Transferência enviada",
+                    "name": "Stella Moraes",
+                    "hour": "09:22"
+                }
+            ]
+        },
+        {
+            "day": "Sexta-feira - 30 de julho",
+            "total": 3.050,
+            "extracts": [{
+                    "value": 26.00,
+                    "type_transfer": "Pagamento estornado",
+                    "name": "Darlene Edwards",
+                    "hour": "09:22"
+                },
+                {
+                    "value": 30.00,
+                    "type_transfer": "Transferência recebida",
+                    "name": "Guy Edwards",
+                    "hour": "09:22"
+                },
+                {
+                    "value": 26.00,
+                    "type_transfer": "Transferência enviada",
+                    "name": "Theresa Simmmons",
+                    "hour": "09:22"
+                }
+            ]
+        }
+    ]
