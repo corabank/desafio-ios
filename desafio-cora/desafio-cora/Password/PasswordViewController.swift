@@ -1,20 +1,17 @@
 import UIKit
 
 protocol PasswordDisplaying: AnyObject {
-    func displaySomething()
+    //Display Protocol
 }
 
 private extension PasswordViewController.Layout {
-    // example
     enum Size {
         static let imageHeight: CGFloat = 90.0
     }
 }
 
 final class PasswordViewController: UIViewController {
-    fileprivate enum Layout {
-        // template
-    }
+    fileprivate enum Layout {}
     
     private lazy var navBar: UINavigationBar = {
         //acertar layout
@@ -177,7 +174,5 @@ extension PasswordViewController: ViewSetup {
 
 // MARK: - PasswordDisplaying
 extension PasswordViewController: PasswordDisplaying {
-    func displaySomething() {
-        // template
-    }
+    //Para implementar ações na tela por meio de protocolo
 }

@@ -2,7 +2,6 @@ import Foundation
 
 protocol HomePresenting: AnyObject {
     var viewController: HomeDisplaying? { get set }
-    func displaySomething()
     func didNextStep(action: HomeAction)
 }
 
@@ -17,10 +16,6 @@ final class HomePresenter {
 
 // MARK: - HomePresenting
 extension HomePresenter: HomePresenting {
-    func displaySomething() {
-        viewController?.displaySomething()
-    }
-    
     func didNextStep(action: HomeAction) {
         coordinator.perform(action: action)
     }

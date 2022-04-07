@@ -1,21 +1,19 @@
 import UIKit
 
 protocol LoginDisplaying: AnyObject {
-    func displaySomething()
-    
+    //Display Protocol
 }
 
 private extension LoginViewController.Layout {
-    // example
     enum Size {
-        static let imageHeight: CGFloat = 90.0
+        static let navBarHeight: CGFloat = 44.0
+        static let loginTextFieldHeight: CGFloat = 32.0
+        static let loginButtonHeight: CGFloat = 48.0
     }
 }
 
 final class LoginViewController: UIViewController {
-    fileprivate enum Layout { 
-        // template
-    }
+    fileprivate enum Layout {}
     
     private lazy var navBar: UINavigationBar = {
         //acertar layout
@@ -63,6 +61,9 @@ final class LoginViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .phonePad
         textField.placeholder = "Digite aqui seu CPF"
+        textField.backgroundColor = .clear
+        textField.tintColor = Colors.gray4
+        textField.textColor = Colors.offBlack
         textField.borderStyle = .roundedRect
         textField.font = Typography.setFont(.medium(size: 24))()
         textField.delegate = self
@@ -99,6 +100,24 @@ final class LoginViewController: UIViewController {
         }
 }
 
+private extension LoginViewController {
+    func formattedNumber(number: String) -> String {
+        let CPFNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let mask = "###.###.###-##"
+        var result = ""
+        var index = CPFNumber.startIndex
+        for ch in mask where index < CPFNumber.endIndex {
+            if ch == "#" {
+                result.append(CPFNumber[index])
+                index = CPFNumber.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+}
+
 // MARK: - @objc Private Methods
 @objc private extension LoginViewController {
     func backButtonTapped(){
@@ -113,17 +132,23 @@ final class LoginViewController: UIViewController {
 
 
 extension LoginViewController: UITextFieldDelegate {
-    //formatar cpf
-    //fechar ao ter 9 digitos
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.loginTextField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        loginButton.isEnabled = true
-        loginButton.backgroundColor = Colors.backgroundColor
-        return true
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = formattedNumber(number: newString)
+        if textField.text?.count == 14 {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = Colors.backgroundColor
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = Colors.gray2
+        }
+        return false
     }
 }
 
@@ -133,7 +158,7 @@ extension LoginViewController: ViewSetup {
             navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: Spacing.space7),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            navBar.heightAnchor.constraint(equalToConstant: 44.0)
+            navBar.heightAnchor.constraint(equalToConstant: Layout.Size.navBarHeight)
         ])
         
         NSLayoutConstraint.activate([
@@ -146,14 +171,14 @@ extension LoginViewController: ViewSetup {
             loginTextField.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: Spacing.space6),
             loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
             loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
-            loginTextField.heightAnchor.constraint(equalToConstant: 32.0)
+            loginTextField.heightAnchor.constraint(equalToConstant: Layout.Size.loginTextFieldHeight)
         ])
         
         NSLayoutConstraint.activate([
             loginButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Spacing.space5),
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
-            loginButton.heightAnchor.constraint(equalToConstant: 48.0)
+            loginButton.heightAnchor.constraint(equalToConstant: Layout.Size.loginButtonHeight)
         ])
     }
     
@@ -172,7 +197,5 @@ extension LoginViewController: ViewSetup {
 
 // MARK: - LoginDisplaying
 extension LoginViewController: LoginDisplaying {
-    func displaySomething() { 
-        // template
-    }
+    //Para implementar ações na tela por meio de protocolo
 }

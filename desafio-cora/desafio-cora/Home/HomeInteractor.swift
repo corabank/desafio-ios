@@ -1,7 +1,6 @@
 import Foundation
 
 protocol HomeInteracting: AnyObject {
-    func doSomething()
     func loginScene()
     func signUpScene()
 }
@@ -17,10 +16,6 @@ final class HomeInteractor {
 
 // MARK: - HomeInteracting
 extension HomeInteractor: HomeInteracting {
-    func doSomething() {
-        presenter.displaySomething()
-    }
-    
     func loginScene() {
         presenter.didNextStep(action: .login)
     }

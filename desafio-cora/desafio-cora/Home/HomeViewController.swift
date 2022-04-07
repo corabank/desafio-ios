@@ -1,20 +1,18 @@
 import UIKit
 
 protocol HomeDisplaying: AnyObject {
-    func displaySomething()
+    //Display Protocol
 }
 
 private extension HomeViewController.Layout {
-    // example
     enum Size {
-        static let imageHeight: CGFloat = 90.0
+        static let imageBackgroundHeight: CGFloat = 340.0
+        static let buttonsStackViewHeight: CGFloat = 128.0
     }
 }
 
 final class HomeViewController: UIViewController {
-    fileprivate enum Layout {
-        // template
-    }
+    fileprivate enum Layout {}
     private lazy var imageBackground: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "backgroundLogin")
@@ -105,7 +103,6 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.doSomething()
         buildView()
     }
     
@@ -138,7 +135,7 @@ extension HomeViewController: ViewSetup {
             imageBackground.topAnchor.constraint(equalTo: view.topAnchor),
             imageBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageBackground.heightAnchor.constraint(equalToConstant: 340.0)
+            imageBackground.heightAnchor.constraint(equalToConstant: Layout.Size.imageBackgroundHeight)
         ])
         
         NSLayoutConstraint.activate([
@@ -157,7 +154,7 @@ extension HomeViewController: ViewSetup {
             buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Spacing.space7),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
-            buttonsStackView.heightAnchor.constraint(equalToConstant: 128.0)
+            buttonsStackView.heightAnchor.constraint(equalToConstant: Layout.Size.buttonsStackViewHeight)
         ])
     }
     
@@ -175,7 +172,5 @@ extension HomeViewController: ViewSetup {
 
 // MARK: - HomeDisplaying
 extension HomeViewController: HomeDisplaying {
-    func displaySomething() {
-        // template
-    }
+    //Para implementar ações na tela por meio de protocolo
 }
