@@ -2,7 +2,7 @@ import Foundation
 
 protocol LoginPresenting: AnyObject {
     var viewController: LoginDisplaying? { get set }
-    func displaySomething()
+    func presentPasswordScene()
 }
 
 final class LoginPresenter {
@@ -17,7 +17,7 @@ final class LoginPresenter {
 
 // MARK: - LoginPresenting
 extension LoginPresenter: LoginPresenting {
-    func displaySomething() {
-        viewController?.displaySomething()
+    func presentPasswordScene() {
+        coordinator.coordinateToPasswordScene()
     }
 }

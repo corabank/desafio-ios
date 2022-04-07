@@ -1,7 +1,7 @@
 import Foundation
 
 protocol LoginInteracting: AnyObject {
-    func doSomething()
+    func passwordScene()
 }
 
 final class LoginInteractor {
@@ -15,7 +15,7 @@ final class LoginInteractor {
 
 // MARK: - LoginInteracting
 extension LoginInteractor: LoginInteracting {
-    func doSomething() {
-        presenter.displaySomething()
+    func passwordScene() {
+        presenter.presentPasswordScene()
     }
 }

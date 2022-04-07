@@ -12,7 +12,7 @@ private extension HomeViewController.Layout {
 }
 
 final class HomeViewController: UIViewController {
-    fileprivate enum Layout { 
+    fileprivate enum Layout {
         // template
     }
     private lazy var imageBackground: UIImageView = {
@@ -32,46 +32,75 @@ final class HomeViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var homeTitleBold: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = Strings.homeTitleBold
+        label.font = Typography.setFont(.bold(size: 28))()
+        label.numberOfLines = 0
+        label.textColor = Colors.white
+        return label
+    }()
+    
     private lazy var homeTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Conta Digital PJ\nPoderosamente simples"
-        label.font = UIFont.systemFont(ofSize: 28, weight: UIFont.Weight.bold)
+        label.text = Strings.homeTitle
+        label.font = Typography.setFont(.regular(size: 28))()
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = Colors.white
         return label
     }()
     
     private lazy var homeSubtitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos."
-        label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
+        label.text = Strings.homeSubtitle
+        label.font = Typography.setFont(.regular(size: 16))()
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = Colors.white
         return label
+    }()
+    
+    private lazy var labelsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [homeTitleBold, homeTitle, homeSubtitle])
+        stackView.spacing = Spacing.space1
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private lazy var signUpButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Quero fazer parte!", for: [])
+        button.setTitle(Strings.signUpButtonTitle, for: [])
         button.setTitleColor(UIColor(named: "background"), for: [])
         button.layer.cornerRadius = 16
-        button.backgroundColor = .white
+        button.backgroundColor = Colors.white
+        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Já sou cliente", for: [])
+        button.setTitle(Strings.loginButtonTitle, for: [])
         button.setTitleColor(.white, for: [])
         button.layer.cornerRadius = 16
         button.backgroundColor = .clear
-        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderColor = Colors.white?.cgColor
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
+    }()
+    
+    private lazy var buttonsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [signUpButton, loginButton])
+        stackView.spacing = 16
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fillEqually
+        return stackView
     }()
     
     override func viewDidLoad() {
@@ -81,15 +110,26 @@ final class HomeViewController: UIViewController {
     }
     
     private let interactor: HomeInteracting
-        
-        init(interactor: HomeInteracting) {
-            self.interactor = interactor
-            super.init(nibName: nil, bundle: nil)
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    
+    init(interactor: HomeInteracting) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - @objc Private Methods
+@objc private extension HomeViewController {
+    func loginButtonTapped() {
+        interactor.loginScene()
+    }
+    
+    func signUpButtonTapped() {
+        interactor.signUpScene()
+    }
 }
 
 extension HomeViewController: ViewSetup {
@@ -102,55 +142,40 @@ extension HomeViewController: ViewSetup {
         ])
         
         NSLayoutConstraint.activate([
-            imageLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            imageLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            imageLogo.heightAnchor.constraint(equalToConstant: 24.0)
+            imageLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: Spacing.space7),
+            imageLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space6),
+            imageLogo.heightAnchor.constraint(equalToConstant: Spacing.space5)
         ])
         
         NSLayoutConstraint.activate([
-            homeTitle.topAnchor.constraint(equalTo: imageBackground.bottomAnchor, constant: 16),
-            homeTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            homeTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 24)
+            labelsStackView.topAnchor.constraint(equalTo: imageBackground.bottomAnchor, constant: Spacing.space3),
+            labelsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
+            labelsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5)
         ])
         
         NSLayoutConstraint.activate([
-            homeSubtitle.topAnchor.constraint(equalTo: homeTitle.bottomAnchor, constant: 16),
-            homeSubtitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            homeSubtitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
-        ])
-        
-        NSLayoutConstraint.activate([
-            signUpButton.topAnchor.constraint(equalTo: homeSubtitle.bottomAnchor, constant: 24),
-            signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            signUpButton.heightAnchor.constraint(equalToConstant: 64.0)
-        ])
-        
-        NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 24),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            loginButton.heightAnchor.constraint(equalToConstant: 64.0)
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Spacing.space7),
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
+            buttonsStackView.heightAnchor.constraint(equalToConstant: 128.0)
         ])
     }
     
     func setupHierarchy() {
         view.addSubview(imageBackground)
         view.addSubview(imageLogo)
-        view.addSubview(homeTitle)
-        view.addSubview(homeSubtitle)
-        view.addSubview(signUpButton)
-        view.addSubview(loginButton)
+        view.addSubview(labelsStackView)
+        view.addSubview(buttonsStackView)
     }
     
     func setupStyles() {
-        view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = Colors.backgroundColor
     }
 }
 
 // MARK: - HomeDisplaying
 extension HomeViewController: HomeDisplaying {
-    func displaySomething() { 
+    func displaySomething() {
         // template
     }
 }
