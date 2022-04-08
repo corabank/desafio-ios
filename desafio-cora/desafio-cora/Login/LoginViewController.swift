@@ -21,7 +21,7 @@ final class LoginViewController: UIViewController {
         navBar.backgroundColor = Colors.gray4
         navBar.translatesAutoresizingMaskIntoConstraints = false
         let navItem = UINavigationItem(title: Strings.loginNavBarTitle)
-        let backItem = UIBarButtonItem(image: UIImage(named: "leftArrow"), style: .done, target: self, action: #selector(backButtonTapped))
+        let backItem = UIBarButtonItem(image: Images.leftArrow, style: .done, target: self, action: #selector(backButtonTapped))
         backItem.tintColor = Colors.backgroundColor
         navItem.leftBarButtonItem = backItem
         navBar.setItems([navItem], animated: false)

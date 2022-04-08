@@ -15,7 +15,7 @@ final class HomeViewController: UIViewController {
     fileprivate enum Layout {}
     private lazy var imageBackground: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "backgroundLogin")
+        imageView.image = Images.backgroundLogin
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 140
         imageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -25,7 +25,7 @@ final class HomeViewController: UIViewController {
     
     private lazy var imageLogo: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "coraLogo")
+        imageView.image = Images.coraLogo
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -73,8 +73,16 @@ final class HomeViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(Strings.signUpButtonTitle, for: [])
         button.setTitleColor(UIColor(named: "background"), for: [])
+        button.setImage(Images.rightArrow, for: .normal)
         button.layer.cornerRadius = 16
         button.backgroundColor = Colors.white
+        button.semanticContentAttribute = .forceRightToLeft
+        button.configuration?.titleAlignment = .automatic
+        button.contentHorizontalAlignment = .left
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 140, bottom: 0, right: 0)
+        button
+        button.frame.size = CGSize(width: view.widthAnchor.hash, height: 64)
         button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -97,7 +105,7 @@ final class HomeViewController: UIViewController {
         stackView.spacing = 16
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         return stackView
     }()
     

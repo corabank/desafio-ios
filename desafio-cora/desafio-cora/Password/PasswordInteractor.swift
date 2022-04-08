@@ -1,7 +1,6 @@
 import Foundation
 
 protocol PasswordInteracting: AnyObject {
-    func doSomething()
 }
 
 final class PasswordInteractor {
@@ -14,7 +13,4 @@ final class PasswordInteractor {
 
 // MARK: - PasswordInteracting
 extension PasswordInteractor: PasswordInteracting {
-    func doSomething() {
-        presenter.displaySomething()
-    }
 }

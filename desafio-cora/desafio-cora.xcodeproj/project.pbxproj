@@ -17,6 +17,7 @@
 		B1096FF027FEB72800DEA74F /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FEA27FEB72800DEA74F /* PasswordPresenter.swift */; };
 		B1096FF127FEB72800DEA74F /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FEB27FEB72800DEA74F /* PasswordViewController.swift */; };
 		B1096FF227FEB72800DEA74F /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FEC27FEB72800DEA74F /* PasswordInteractor.swift */; };
+		B1096FF527FF2C3900DEA74F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FF427FF2C3900DEA74F /* Images.swift */; };
 		B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4827F76B4C0095E8DC /* AppDelegate.swift */; };
 		B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */; };
 		B1662E5227F76B4D0095E8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1662E5127F76B4D0095E8DC /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		B1096FEA27FEB72800DEA74F /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
 		B1096FEB27FEB72800DEA74F /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		B1096FEC27FEB72800DEA74F /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
+		B1096FF427FF2C3900DEA74F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		B1662E4527F76B4C0095E8DC /* desafio-cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1662E4827F76B4C0095E8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				B1096FE127FE05FD00DEA74F /* Colors.xcassets */,
 				B1662E5127F76B4D0095E8DC /* Assets.xcassets */,
 				B1096FE327FE078B00DEA74F /* Strings.swift */,
+				B1096FF427FF2C3900DEA74F /* Images.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				B1662E8527F775810095E8DC /* HomeCoordinator.swift in Sources */,
 				B1096FF027FEB72800DEA74F /* PasswordPresenter.swift in Sources */,
 				B1096FE427FE078B00DEA74F /* Strings.swift in Sources */,
+				B1096FF527FF2C3900DEA74F /* Images.swift in Sources */,
 				B1096FF227FEB72800DEA74F /* PasswordInteractor.swift in Sources */,
 				B1662E8827F775810095E8DC /* HomeViewController.swift in Sources */,
 				B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */,

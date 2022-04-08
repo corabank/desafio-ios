@@ -2,7 +2,6 @@ import Foundation
 
 protocol PasswordPresenting: AnyObject {
     var viewController: PasswordDisplaying? { get set }
-    func displaySomething()
 }
 
 final class PasswordPresenter {
@@ -16,7 +15,4 @@ final class PasswordPresenter {
 
 // MARK: - PasswordPresenting
 extension PasswordPresenter: PasswordPresenting {
-    func displaySomething() {
-        viewController?.displaySomething()
-    }
 }
