@@ -8,6 +8,11 @@
 import UIKit
 
 enum Strings {
+    // MARK: - Generic
+    static let loginNavBarTitle = "Login Cora"
+    
+    static let nextButtonTitle = "Próximo"
+    
     // MARK: - Home
     static let homeTitleBold = "Conta Digital PJ"
     
@@ -24,12 +29,11 @@ enum Strings {
 
     static let loginSubtitle = "Qual seu CPF?"
     
-    static let loginNavBarTitle = "Login Cora"
-    
-    static let nextButtonTitle = "Próximo"
-    
-    // MARK: - password
+    // MARK: - Password
     static let lostPassword = "Esqueci minha senha"
     
     static let passwordTitle = "Digite sua senha de acesso"
+    
+    // MARK: - Extract
+    static let extractNavBarTitle = "Extrato"
 }

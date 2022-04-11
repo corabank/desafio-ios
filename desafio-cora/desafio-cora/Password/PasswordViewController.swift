@@ -14,14 +14,15 @@ final class PasswordViewController: UIViewController {
     fileprivate enum Layout {}
     
     private lazy var navBar: UINavigationBar = {
-        //acertar layout
         let navBar = UINavigationBar()
-        navBar.backgroundColor = Colors.gray4
-        navBar.translatesAutoresizingMaskIntoConstraints = false
         let navItem = UINavigationItem(title: Strings.loginNavBarTitle)
-        let backItem = UIBarButtonItem(image: UIImage(named: "leftArrow"), style: .done, target: self, action: #selector(backButtonTapped))
+        let backItem = UIBarButtonItem(image: Images.leftArrow, style: .done, target: self, action: #selector(backButtonTapped))
+        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1!]
         backItem.tintColor = Colors.backgroundColor
         navItem.leftBarButtonItem = backItem
+        navBar.backgroundColor = Colors.gray4
+        navBar.titleTextAttributes = textAttributes
+        navBar.translatesAutoresizingMaskIntoConstraints = false
         navBar.setItems([navItem], animated: false)
         return navBar
     }()
@@ -83,7 +84,7 @@ final class PasswordViewController: UIViewController {
         config.buttonSize = .large
         config.cornerStyle = .large
         config.title = Strings.nextButtonTitle
-        config.baseBackgroundColor = Colors.backgroundColor
+        config.baseBackgroundColor = Colors.gray2
         config.titleAlignment = .leading
         config.image = Images.rightArrowWhite
         config.imagePadding = 200
@@ -92,7 +93,11 @@ final class PasswordViewController: UIViewController {
     }()
     
     private lazy var passwordButton: UIButton = {
-        let button = UIButton(configuration: config, primaryAction: nil)
+        let action = UIAction(handler: { action in
+            self.passwordButtonTapped()
+        })
+        let button = UIButton(configuration: config, primaryAction: action)
+        button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -100,6 +105,11 @@ final class PasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        passwordTextField.becomeFirstResponder()
     }
     
     private let interactor: PasswordInteracting
@@ -117,11 +127,11 @@ final class PasswordViewController: UIViewController {
 // MARK: - @objc Private Methods
 @objc private extension PasswordViewController {
     func backButtonTapped(){
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func lostPasswordButtonTapped(sender: UIGestureRecognizer) {
-        print("Perdi minha senha")
+        interactor.lostPassword()
     }
     
     func hidePasswordButtonTapped(sender: UIGestureRecognizer) {
@@ -133,7 +143,7 @@ final class PasswordViewController: UIViewController {
     }
     
     func passwordButtonTapped() {
-        
+        interactor.extractScene()
     }
 }
 
@@ -145,7 +155,7 @@ extension PasswordViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         passwordButton.isEnabled = true
-        passwordButton.backgroundColor = Colors.backgroundColor
+        passwordButton.configuration?.baseBackgroundColor = Colors.backgroundColor
         return true
     }
 }
@@ -153,7 +163,7 @@ extension PasswordViewController: UITextFieldDelegate {
 extension PasswordViewController: ViewSetup {
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: Spacing.space7),
+            navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             navBar.heightAnchor.constraint(equalToConstant: 44.0)

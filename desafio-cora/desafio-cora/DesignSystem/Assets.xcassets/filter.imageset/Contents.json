@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "ic_filter.pdf",
       "idiom" : "universal"
     }
   ],

@@ -1,6 +1,8 @@
 import Foundation
 
 protocol PasswordInteracting: AnyObject {
+    func extractScene()
+    func lostPassword()
 }
 
 final class PasswordInteractor {
@@ -13,4 +15,11 @@ final class PasswordInteractor {
 
 // MARK: - PasswordInteracting
 extension PasswordInteractor: PasswordInteracting {
+    func extractScene() {
+        presenter.presentExtractScene()
+    }
+    
+    func lostPassword() {
+        presenter.presentLostPassword()
+    }
 }

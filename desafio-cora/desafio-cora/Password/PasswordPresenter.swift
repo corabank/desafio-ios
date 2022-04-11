@@ -2,6 +2,8 @@ import Foundation
 
 protocol PasswordPresenting: AnyObject {
     var viewController: PasswordDisplaying? { get set }
+    func presentExtractScene()
+    func presentLostPassword()
 }
 
 final class PasswordPresenter {
@@ -15,4 +17,11 @@ final class PasswordPresenter {
 
 // MARK: - PasswordPresenting
 extension PasswordPresenter: PasswordPresenting {
+    func presentExtractScene() {
+        coordinator.coordinateToExtractScene()
+    }
+    
+    func presentLostPassword() {
+        coordinator.coordinateToLostPassword()
+    }
 }

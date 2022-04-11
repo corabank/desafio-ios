@@ -16,14 +16,15 @@ final class LoginViewController: UIViewController {
     fileprivate enum Layout {}
     
     private lazy var navBar: UINavigationBar = {
-        //acertar layout
         let navBar = UINavigationBar()
-        navBar.backgroundColor = Colors.gray4
-        navBar.translatesAutoresizingMaskIntoConstraints = false
         let navItem = UINavigationItem(title: Strings.loginNavBarTitle)
         let backItem = UIBarButtonItem(image: Images.leftArrow, style: .done, target: self, action: #selector(backButtonTapped))
+        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1!]
         backItem.tintColor = Colors.backgroundColor
         navItem.leftBarButtonItem = backItem
+        navBar.backgroundColor = Colors.gray4
+        navBar.titleTextAttributes = textAttributes
+        navBar.translatesAutoresizingMaskIntoConstraints = false
         navBar.setItems([navItem], animated: false)
         return navBar
     }()
@@ -60,7 +61,7 @@ final class LoginViewController: UIViewController {
         let textField = UITextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .phonePad
-        textField.backgroundColor = Colors.gray4
+        textField.backgroundColor = .clear
         textField.tintColor = Colors.gray4
         textField.textColor = Colors.offBlack
         textField.borderStyle = .none
@@ -87,28 +88,33 @@ final class LoginViewController: UIViewController {
     private lazy var loginButton: UIButton = {
         let action = UIAction(handler: { action in
             self.loginButtonTapped()
-          })
+        })
         let button = UIButton(configuration: config, primaryAction: action)
         button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buildView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loginTextField.becomeFirstResponder()
+    }
+    
     private let interactor: LoginInteracting
-        
-        init(interactor: LoginInteracting) {
-            self.interactor = interactor
-            super.init(nibName: nil, bundle: nil)
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    
+    init(interactor: LoginInteracting) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 private extension LoginViewController {
@@ -132,7 +138,7 @@ private extension LoginViewController {
 // MARK: - @objc Private Methods
 @objc private extension LoginViewController {
     func backButtonTapped(){
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func loginButtonTapped() {
@@ -164,7 +170,7 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController: ViewSetup {
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: Spacing.space7),
+            navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             navBar.heightAnchor.constraint(equalToConstant: Layout.Size.navBarHeight)

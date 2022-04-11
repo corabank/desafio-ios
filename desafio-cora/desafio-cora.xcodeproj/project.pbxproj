@@ -33,6 +33,12 @@
 		B1662E8827F775810095E8DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8227F775810095E8DC /* HomeViewController.swift */; };
 		B1662E8927F775810095E8DC /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8327F775810095E8DC /* HomeInteractor.swift */; };
 		B1662E8C27F777B00095E8DC /* ViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8B27F777B00095E8DC /* ViewSetup.swift */; };
+		B1E09DE628048259000BF599 /* ExtractCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE028048259000BF599 /* ExtractCoordinator.swift */; };
+		B1E09DE728048259000BF599 /* ExtractFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE128048259000BF599 /* ExtractFactory.swift */; };
+		B1E09DE828048259000BF599 /* ExtractPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE228048259000BF599 /* ExtractPresenter.swift */; };
+		B1E09DE928048259000BF599 /* ExtractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE328048259000BF599 /* ExtractViewController.swift */; };
+		B1E09DEA28048259000BF599 /* ExtractInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE428048259000BF599 /* ExtractInteractor.swift */; };
+		B1E09DEB28048259000BF599 /* ExtractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE528048259000BF599 /* ExtractService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +70,12 @@
 		B1662E8227F775810095E8DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B1662E8327F775810095E8DC /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		B1662E8B27F777B00095E8DC /* ViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetup.swift; sourceTree = "<group>"; };
+		B1E09DE028048259000BF599 /* ExtractCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractCoordinator.swift; sourceTree = "<group>"; };
+		B1E09DE128048259000BF599 /* ExtractFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractFactory.swift; sourceTree = "<group>"; };
+		B1E09DE228048259000BF599 /* ExtractPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractPresenter.swift; sourceTree = "<group>"; };
+		B1E09DE328048259000BF599 /* ExtractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewController.swift; sourceTree = "<group>"; };
+		B1E09DE428048259000BF599 /* ExtractInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractInteractor.swift; sourceTree = "<group>"; };
+		B1E09DE528048259000BF599 /* ExtractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 		B1662E4727F76B4C0095E8DC /* desafio-cora */ = {
 			isa = PBXGroup;
 			children = (
+				B1E09DDF28048230000BF599 /* Extract */,
 				B1096FDA27FE02B000DEA74F /* DesignSystem */,
 				B1662E7E27F775560095E8DC /* Home */,
 				B1662E5C27F770860095E8DC /* Login */,
@@ -157,6 +170,19 @@
 				B1662E8327F775810095E8DC /* HomeInteractor.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B1E09DDF28048230000BF599 /* Extract */ = {
+			isa = PBXGroup;
+			children = (
+				B1E09DE028048259000BF599 /* ExtractCoordinator.swift */,
+				B1E09DE128048259000BF599 /* ExtractFactory.swift */,
+				B1E09DE228048259000BF599 /* ExtractPresenter.swift */,
+				B1E09DE328048259000BF599 /* ExtractViewController.swift */,
+				B1E09DE428048259000BF599 /* ExtractInteractor.swift */,
+				B1E09DE528048259000BF599 /* ExtractService.swift */,
+			);
+			path = Extract;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,14 +258,20 @@
 			files = (
 				B1096FDC27FE02E700DEA74F /* Typography.swift in Sources */,
 				B1662E7B27F771C80095E8DC /* LoginViewController.swift in Sources */,
+				B1E09DE728048259000BF599 /* ExtractFactory.swift in Sources */,
 				B1096FDE27FE03B100DEA74F /* Spacing.swift in Sources */,
+				B1E09DEA28048259000BF599 /* ExtractInteractor.swift in Sources */,
 				B1096FEF27FEB72800DEA74F /* PasswordFactory.swift in Sources */,
 				B1662E7A27F771C80095E8DC /* LoginPresenter.swift in Sources */,
+				B1E09DE928048259000BF599 /* ExtractViewController.swift in Sources */,
 				B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */,
+				B1E09DEB28048259000BF599 /* ExtractService.swift in Sources */,
 				B1662E8927F775810095E8DC /* HomeInteractor.swift in Sources */,
 				B1662E8727F775810095E8DC /* HomePresenter.swift in Sources */,
 				B1662E8C27F777B00095E8DC /* ViewSetup.swift in Sources */,
 				B1662E7C27F771C80095E8DC /* LoginInteractor.swift in Sources */,
+				B1E09DE628048259000BF599 /* ExtractCoordinator.swift in Sources */,
+				B1E09DE828048259000BF599 /* ExtractPresenter.swift in Sources */,
 				B1096FE027FE055800DEA74F /* Colors.swift in Sources */,
 				B1662E7827F771C80095E8DC /* LoginCoordinator.swift in Sources */,
 				B1662E8527F775810095E8DC /* HomeCoordinator.swift in Sources */,
