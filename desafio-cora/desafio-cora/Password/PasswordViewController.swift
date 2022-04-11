@@ -36,43 +36,67 @@ final class PasswordViewController: UIViewController {
         return label
     }()
     
+    private lazy var eyeImage: UIImageView = {
+        let image = UIImageView()
+        let action = UITapGestureRecognizer(target: self, action: #selector(hidePasswordButtonTapped))
+        image.image = Images.eyeHidden
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(action)
+        return image
+    }()
+    
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .phonePad
-        textField.placeholder = "Digite aqui sua senha"
-        textField.borderStyle = .roundedRect
+        textField.borderStyle = .none
+        textField.isSecureTextEntry = true
         textField.font = Typography.setFont(.medium(size: 24))()
         textField.delegate = self
         return textField
     }()
     
+    
+    private lazy var passwordStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [passwordTextField, eyeImage])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     private lazy var lostPassword: UILabel = {
         let label = UILabel()
-        //tornar clicavel
+        let action = UITapGestureRecognizer(target: self, action: #selector(lostPasswordButtonTapped))
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.lostPassword
         label.font = Typography.setFont(.regular(size: 14))()
         label.numberOfLines = 0
         label.textColor = Colors.backgroundColor
         label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(lostPasswordButtonTapped)))
+        label.addGestureRecognizer(action)
         return label
     }()
     
-    private lazy var passwordButton: UIButton = {
-        let button = UIButton()
-        //ajustar layout
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Próximo", for: [])
-        button.setTitleColor(Colors.white, for: [])
-        button.layer.cornerRadius = 16
-        button.backgroundColor = Colors.gray2
-        button.addTarget(self, action: #selector(passwordButtonTapped), for: .touchUpInside)
-        button.isEnabled = false
-        return button
+    private lazy var config: UIButton.Configuration = {
+        var config = UIButton.Configuration.filled()
+        config.baseForegroundColor = Colors.white
+        config.buttonSize = .large
+        config.cornerStyle = .large
+        config.title = Strings.nextButtonTitle
+        config.baseBackgroundColor = Colors.backgroundColor
+        config.titleAlignment = .leading
+        config.image = Images.rightArrowWhite
+        config.imagePadding = 200
+        config.imagePlacement = .trailing
+        return config
     }()
     
+    private lazy var passwordButton: UIButton = {
+        let button = UIButton(configuration: config, primaryAction: nil)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         buildView()
@@ -100,14 +124,20 @@ final class PasswordViewController: UIViewController {
         print("Perdi minha senha")
     }
     
+    func hidePasswordButtonTapped(sender: UIGestureRecognizer) {
+        if passwordTextField.isSecureTextEntry {
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    
     func passwordButtonTapped() {
         
     }
 }
 
 extension PasswordViewController: UITextFieldDelegate {
-    //formatar cpf
-    //fechar ao ter 9 digitos
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.passwordTextField.resignFirstResponder()
         return true
@@ -137,14 +167,14 @@ extension PasswordViewController: ViewSetup {
         ])
         
         NSLayoutConstraint.activate([
-            passwordTextField.topAnchor.constraint(equalTo: passwordTitle.bottomAnchor, constant: Spacing.space6),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 32.0)
+            passwordStackView.topAnchor.constraint(equalTo: passwordTitle.bottomAnchor, constant: Spacing.space6),
+            passwordStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
+            passwordStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
+            passwordStackView.heightAnchor.constraint(equalToConstant: 32.0)
         ])
         
         NSLayoutConstraint.activate([
-            lostPassword.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Spacing.space7),
+            lostPassword.topAnchor.constraint(equalTo: passwordStackView.bottomAnchor, constant: Spacing.space7),
             lostPassword.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
             lostPassword.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
             lostPassword.heightAnchor.constraint(equalToConstant: 20.0)
@@ -156,12 +186,17 @@ extension PasswordViewController: ViewSetup {
             passwordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
             passwordButton.heightAnchor.constraint(equalToConstant: 48.0)
         ])
+        
+        NSLayoutConstraint.activate([
+            eyeImage.heightAnchor.constraint(equalToConstant: 32.0),
+            eyeImage.widthAnchor.constraint(equalToConstant: 32.0)
+        ])
     }
     
     func setupHierarchy() {
         view.addSubview(navBar)
         view.addSubview(passwordTitle)
-        view.addSubview(passwordTextField)
+        view.addSubview(passwordStackView)
         view.addSubview(lostPassword)
         view.addSubview(passwordButton)
     }

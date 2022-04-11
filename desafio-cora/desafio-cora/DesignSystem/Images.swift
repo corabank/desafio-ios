@@ -15,4 +15,8 @@ enum Images {
     static let leftArrow = UIImage(named: "leftArrow")
     
     static let rightArrow = UIImage(named: "rightArrow")
+    
+    static let rightArrowWhite = UIImage(named: "rightArrowWhite")
+    
+    static let eyeHidden = UIImage(named: "eyeHidden")
 }

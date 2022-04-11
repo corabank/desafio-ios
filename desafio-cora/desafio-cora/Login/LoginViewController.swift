@@ -60,26 +60,37 @@ final class LoginViewController: UIViewController {
         let textField = UITextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .phonePad
-        textField.placeholder = "Digite aqui seu CPF"
-        textField.backgroundColor = .clear
+        textField.backgroundColor = Colors.gray4
         textField.tintColor = Colors.gray4
         textField.textColor = Colors.offBlack
-        textField.borderStyle = .roundedRect
+        textField.borderStyle = .none
         textField.font = Typography.setFont(.medium(size: 24))()
         textField.delegate = self
         return textField
     }()
     
+    private lazy var config: UIButton.Configuration = {
+        var config = UIButton.Configuration.filled()
+        config.baseForegroundColor = Colors.white
+        config.buttonSize = .large
+        config.cornerStyle = .large
+        config.title = Strings.nextButtonTitle
+        config.baseBackgroundColor = Colors.gray2
+        config.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+        config.titleAlignment = .leading
+        config.image = Images.rightArrowWhite
+        config.imagePadding = 200
+        config.imagePlacement = .trailing
+        return config
+    }()
+    
     private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        //ajustar layout
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Próximo", for: [])
-        button.setTitleColor(Colors.white, for: [])
-        button.layer.cornerRadius = 16
-        button.backgroundColor = Colors.gray2
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        let action = UIAction(handler: { action in
+            self.loginButtonTapped()
+          })
+        let button = UIButton(configuration: config, primaryAction: action)
         button.isEnabled = false
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -129,8 +140,6 @@ private extension LoginViewController {
     }
 }
 
-
-
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.loginTextField.resignFirstResponder()
@@ -143,10 +152,10 @@ extension LoginViewController: UITextFieldDelegate {
         textField.text = formattedNumber(number: newString)
         if textField.text?.count == 14 {
             loginButton.isEnabled = true
-            loginButton.backgroundColor = Colors.backgroundColor
+            loginButton.configuration?.baseBackgroundColor = Colors.backgroundColor
         } else {
             loginButton.isEnabled = false
-            loginButton.backgroundColor = Colors.gray2
+            loginButton.configuration?.baseBackgroundColor = Colors.gray2
         }
         return false
     }

@@ -68,22 +68,30 @@ final class HomeViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var config: UIButton.Configuration = {
+        var config = UIButton.Configuration.filled()
+        config.baseForegroundColor = Colors.white
+        config.buttonSize = .large
+        config.cornerStyle = .large
+        config.title = Strings.signUpButtonTitle
+        config.attributedTitle = AttributedString(Strings.signUpButtonTitle,
+                                                  attributes: AttributeContainer([
+                                                    NSAttributedString.Key.foregroundColor: Colors.backgroundColor!
+                                                  ]))
+        config.baseBackgroundColor = Colors.white
+        config.titleAlignment = .leading
+        config.image = Images.rightArrow
+        config.imagePadding = 120
+        config.imagePlacement = .trailing
+        return config
+    }()
+    
     private lazy var signUpButton: UIButton = {
-        let button = UIButton()
+        let action = UIAction(handler: { action in
+            self.signUpButtonTapped()
+          })
+        let button = UIButton(configuration: config, primaryAction: action)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(Strings.signUpButtonTitle, for: [])
-        button.setTitleColor(UIColor(named: "background"), for: [])
-        button.setImage(Images.rightArrow, for: .normal)
-        button.layer.cornerRadius = 16
-        button.backgroundColor = Colors.white
-        button.semanticContentAttribute = .forceRightToLeft
-        button.configuration?.titleAlignment = .automatic
-        button.contentHorizontalAlignment = .left
-        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 140, bottom: 0, right: 0)
-        button
-        button.frame.size = CGSize(width: view.widthAnchor.hash, height: 64)
-        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -105,7 +113,7 @@ final class HomeViewController: UIViewController {
         stackView.spacing = 16
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         return stackView
     }()
     
@@ -159,10 +167,18 @@ extension HomeViewController: ViewSetup {
         ])
         
         NSLayoutConstraint.activate([
-            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Spacing.space7),
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Spacing.space6),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space5),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.space5),
             buttonsStackView.heightAnchor.constraint(equalToConstant: Layout.Size.buttonsStackViewHeight)
+        ])
+        
+        NSLayoutConstraint.activate([
+            signUpButton.heightAnchor.constraint(equalToConstant: 64)
+        ])
+        
+        NSLayoutConstraint.activate([
+            loginButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     
