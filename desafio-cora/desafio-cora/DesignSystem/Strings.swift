@@ -36,4 +36,12 @@ enum Strings {
     
     // MARK: - Extract
     static let extractNavBarTitle = "Extrato"
+    
+    static let sectionItem1 = "Tudo"
+    
+    static let sectionItem2 = "Entrada"
+
+    static let sectionItem3 = "Saída"
+
+    static let sectionItem4 = "Futuro"
 }

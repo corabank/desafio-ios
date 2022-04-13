@@ -21,4 +21,14 @@ enum Images {
     static let eyeHidden = UIImage(named: "eyeHidden")
     
     static let signOut = UIImage(named: "signOut")
+    
+    static let filter = UIImage(named: "filter")
+    
+    static let barCode = UIImage(named: "barCode")
+
+    static let upArrow = UIImage(named: "upArrow")
+
+    static let returnArrow = UIImage(named: "returnArrow")
+
+    static let downArrow = UIImage(named: "downArrow")
 }

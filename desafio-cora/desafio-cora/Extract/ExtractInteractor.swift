@@ -1,13 +1,14 @@
 import Foundation
 
 protocol ExtractInteracting: AnyObject {
-    func doSomething()
+    func getExtractData()
 }
 
 final class ExtractInteractor {
     private let service: ExtractServicing
     private let presenter: ExtractPresenting
-
+    private var statementData = [StatementData]()
+    
     init(service: ExtractServicing, presenter: ExtractPresenting) {
         self.service = service
         self.presenter = presenter
@@ -16,7 +17,8 @@ final class ExtractInteractor {
 
 // MARK: - ExtractInteracting
 extension ExtractInteractor: ExtractInteracting {
-    func doSomething() {
-        presenter.displaySomething()
+    func getExtractData() {
+        statementData = service.loadData()
+        presenter.displayStatementList(statementData: statementData)
     }
 }

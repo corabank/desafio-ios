@@ -17,8 +17,6 @@ final class HomeViewController: UIViewController {
         let imageView = UIImageView()
         imageView.image = Images.backgroundLogin
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 140
-        imageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         imageView.clipsToBounds = true
         return imageView
     }()

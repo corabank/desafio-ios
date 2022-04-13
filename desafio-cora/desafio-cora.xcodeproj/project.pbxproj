@@ -18,6 +18,7 @@
 		B1096FF127FEB72800DEA74F /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FEB27FEB72800DEA74F /* PasswordViewController.swift */; };
 		B1096FF227FEB72800DEA74F /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FEC27FEB72800DEA74F /* PasswordInteractor.swift */; };
 		B1096FF527FF2C3900DEA74F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FF427FF2C3900DEA74F /* Images.swift */; };
+		B132D89928074D3B007F6E3E /* StatementListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D89828074D3B007F6E3E /* StatementListCell.swift */; };
 		B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4827F76B4C0095E8DC /* AppDelegate.swift */; };
 		B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */; };
 		B1662E5227F76B4D0095E8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1662E5127F76B4D0095E8DC /* Assets.xcassets */; };
@@ -39,6 +40,9 @@
 		B1E09DE928048259000BF599 /* ExtractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE328048259000BF599 /* ExtractViewController.swift */; };
 		B1E09DEA28048259000BF599 /* ExtractInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE428048259000BF599 /* ExtractInteractor.swift */; };
 		B1E09DEB28048259000BF599 /* ExtractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE528048259000BF599 /* ExtractService.swift */; };
+		B1E09DEF28050FB1000BF599 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DEE28050FB1000BF599 /* CustomSegmentedControl.swift */; };
+		B1E09DF62805AD40000BF599 /* StatementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DF52805AD40000BF599 /* StatementData.swift */; };
+		B1E09DF82805BB47000BF599 /* extract.json in Resources */ = {isa = PBXBuildFile; fileRef = B1E09DF72805BB47000BF599 /* extract.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,7 @@
 		B1096FEB27FEB72800DEA74F /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		B1096FEC27FEB72800DEA74F /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
 		B1096FF427FF2C3900DEA74F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		B132D89828074D3B007F6E3E /* StatementListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementListCell.swift; sourceTree = "<group>"; };
 		B1662E4527F76B4C0095E8DC /* desafio-cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1662E4827F76B4C0095E8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +81,9 @@
 		B1E09DE328048259000BF599 /* ExtractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewController.swift; sourceTree = "<group>"; };
 		B1E09DE428048259000BF599 /* ExtractInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractInteractor.swift; sourceTree = "<group>"; };
 		B1E09DE528048259000BF599 /* ExtractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractService.swift; sourceTree = "<group>"; };
+		B1E09DEE28050FB1000BF599 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		B1E09DF52805AD40000BF599 /* StatementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementData.swift; sourceTree = "<group>"; };
+		B1E09DF72805BB47000BF599 /* extract.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = extract.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 				B1662E5127F76B4D0095E8DC /* Assets.xcassets */,
 				B1096FE327FE078B00DEA74F /* Strings.swift */,
 				B1096FF427FF2C3900DEA74F /* Images.swift */,
+				B1E09DEE28050FB1000BF599 /* CustomSegmentedControl.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -114,6 +123,14 @@
 				B1096FEC27FEB72800DEA74F /* PasswordInteractor.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		B132D89728074D28007F6E3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B132D89828074D3B007F6E3E /* StatementListCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B1662E3C27F76B4C0095E8DC = {
@@ -175,6 +192,8 @@
 		B1E09DDF28048230000BF599 /* Extract */ = {
 			isa = PBXGroup;
 			children = (
+				B132D89728074D28007F6E3E /* View */,
+				B1E09DF02805A98E000BF599 /* Model */,
 				B1E09DE028048259000BF599 /* ExtractCoordinator.swift */,
 				B1E09DE128048259000BF599 /* ExtractFactory.swift */,
 				B1E09DE228048259000BF599 /* ExtractPresenter.swift */,
@@ -183,6 +202,15 @@
 				B1E09DE528048259000BF599 /* ExtractService.swift */,
 			);
 			path = Extract;
+			sourceTree = "<group>";
+		};
+		B1E09DF02805A98E000BF599 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1E09DF52805AD40000BF599 /* StatementData.swift */,
+				B1E09DF72805BB47000BF599 /* extract.json */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +274,7 @@
 				B1096FE227FE05FD00DEA74F /* Colors.xcassets in Resources */,
 				B1662E5527F76B4D0095E8DC /* LaunchScreen.storyboard in Resources */,
 				B1662E5227F76B4D0095E8DC /* Assets.xcassets in Resources */,
+				B1E09DF82805BB47000BF599 /* extract.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,11 +288,13 @@
 				B1096FDC27FE02E700DEA74F /* Typography.swift in Sources */,
 				B1662E7B27F771C80095E8DC /* LoginViewController.swift in Sources */,
 				B1E09DE728048259000BF599 /* ExtractFactory.swift in Sources */,
+				B132D89928074D3B007F6E3E /* StatementListCell.swift in Sources */,
 				B1096FDE27FE03B100DEA74F /* Spacing.swift in Sources */,
 				B1E09DEA28048259000BF599 /* ExtractInteractor.swift in Sources */,
 				B1096FEF27FEB72800DEA74F /* PasswordFactory.swift in Sources */,
 				B1662E7A27F771C80095E8DC /* LoginPresenter.swift in Sources */,
 				B1E09DE928048259000BF599 /* ExtractViewController.swift in Sources */,
+				B1E09DF62805AD40000BF599 /* StatementData.swift in Sources */,
 				B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */,
 				B1E09DEB28048259000BF599 /* ExtractService.swift in Sources */,
 				B1662E8927F775810095E8DC /* HomeInteractor.swift in Sources */,
@@ -279,6 +310,7 @@
 				B1096FE427FE078B00DEA74F /* Strings.swift in Sources */,
 				B1096FF527FF2C3900DEA74F /* Images.swift in Sources */,
 				B1096FF227FEB72800DEA74F /* PasswordInteractor.swift in Sources */,
+				B1E09DEF28050FB1000BF599 /* CustomSegmentedControl.swift in Sources */,
 				B1662E8827F775810095E8DC /* HomeViewController.swift in Sources */,
 				B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */,
 				B1096FF127FEB72800DEA74F /* PasswordViewController.swift in Sources */,
