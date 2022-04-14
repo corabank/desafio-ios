@@ -28,12 +28,9 @@ final class ExtractViewController: UIViewController {
     private lazy var navBar: UINavigationBar = {
         let navBar = UINavigationBar()
         let navItem = UINavigationItem(title: Strings.extractNavBarTitle)
-        let backItem = UIBarButtonItem(image: Images.leftArrow, style: .done, target: self, action: #selector(backButtonTapped))
         let signOutItem = UIBarButtonItem(image: Images.signOut, style: .done, target: self, action: #selector(signOutButtonTapped))
         let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1]
-        backItem.tintColor = Colors.backgroundColor
         signOutItem.tintColor = Colors.backgroundColor
-        navItem.leftBarButtonItem = backItem
         navItem.rightBarButtonItem = signOutItem
         navBar.backgroundColor = Colors.gray4
         navBar.titleTextAttributes = textAttributes
@@ -99,16 +96,12 @@ final class ExtractViewController: UIViewController {
 }
 
 @objc private extension ExtractViewController {
-    func backButtonTapped(){
-        navigationController?.popViewController(animated: true)
-    }
-    
     func signOutButtonTapped(){
-        navigationController?.popToRootViewController(animated: true)
+        interactor.signOut()
     }
     
     func filterButtonTapped() {
-        print("Filtro")
+        interactor.showFilter()
     }
 }
 
@@ -132,6 +125,7 @@ extension ExtractViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatementListCell", for: indexPath)
         guard let statementCell = cell as? StatementListCell else { return UITableViewCell()}
         statementCell.setup(model: interactor.getContentCell(index: indexPath))
+        statementCell.selectionStyle = .none
         return cell
     }
     
@@ -158,6 +152,10 @@ extension ExtractViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 112
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor.goToExtractDetail(indexPath: indexPath)
     }
 }
 

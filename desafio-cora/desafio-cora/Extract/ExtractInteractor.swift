@@ -8,6 +8,9 @@ protocol ExtractInteracting: AnyObject {
     func sectionTransactionDay(section: Int) -> String
     func sectionTransactionsValue(section: Int) -> String
     func getContentCell(index: IndexPath) -> StatementListCellModel
+    func goToExtractDetail(indexPath: IndexPath)
+    func signOut()
+    func showFilter()
 }
 
 final class ExtractInteractor {
@@ -19,6 +22,15 @@ final class ExtractInteractor {
     init(service: ExtractServicing, presenter: ExtractPresenting) {
         self.service = service
         self.presenter = presenter
+    }
+}
+
+private extension ExtractInteractor {
+    func checkTransaction(indexPath: IndexPath) -> Bool {
+        if filterStatementData[indexPath.section].transactions[indexPath.row].transactionStatus.transactionType == .transfer || filterStatementData[indexPath.section].transactions[indexPath.row].transactionStatus.transactionType == .payment {
+            return true
+        }
+        return false
     }
 }
 
@@ -85,14 +97,26 @@ extension ExtractInteractor: ExtractInteracting {
     }
     
     func sectionTransactionsValue(section: Int) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.decimal
-        numberFormatter.minimumFractionDigits = 2
-        numberFormatter.groupingSeparator = "."
-        return "R$ \(numberFormatter.string(from: NSNumber(value: filterStatementData[section].transactionTotalValue)) ?? "Valor indefinido")"
+        CurrencyString.getCurrency(.money(value: filterStatementData[section].transactionTotalValue))()
     }
     
     func getContentCell(index: IndexPath) -> StatementListCellModel {
         return StatementListCellModel(transaction: filterStatementData[index.section].transactions[index.row])
+    }
+    
+    func goToExtractDetail(indexPath: IndexPath) {
+        if checkTransaction(indexPath: indexPath) {
+            presenter.didNextStep(action: .ExtractDetailScene(transaction: filterStatementData[indexPath.section].transactions[indexPath.row],
+                                                              transactionDay: filterStatementData[indexPath.section].transactionDay))
+        }
+        
+    }
+    
+    func signOut() {
+        presenter.didNextStep(action: .signOut)
+    }
+    
+    func showFilter() {
+        presenter.didNextStep(action: .filterScene)
     }
 }

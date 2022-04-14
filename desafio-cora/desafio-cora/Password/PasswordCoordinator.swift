@@ -1,9 +1,13 @@
 import UIKit
 
+enum PasswordAction {
+    case extractScene
+    case lostPassword
+}
+
 protocol PasswordCoordinating: AnyObject {
     var viewController: UIViewController? { get set }
-    func coordinateToExtractScene()
-    func coordinateToLostPassword()
+    func perform(action: PasswordAction)
 }
 
 final class PasswordCoordinator {
@@ -12,12 +16,13 @@ final class PasswordCoordinator {
 
 // MARK: - PasswordCoordinating
 extension PasswordCoordinator: PasswordCoordinating {
-    func coordinateToExtractScene() {
-        let vc = ExtractFactory.make()
-        viewController?.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func coordinateToLostPassword() {
-        print("Perdi minha senha")
+    func perform(action: PasswordAction) {
+        switch action {
+        case .extractScene:
+            let vc = ExtractFactory.make()
+            viewController?.navigationController?.pushViewController(vc, animated: true)
+        case .lostPassword:
+            print("Perdi minha senha")
+        }
     }
 }

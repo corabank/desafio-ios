@@ -117,10 +117,11 @@ final class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Private Extension
 private extension LoginViewController {
     func formattedNumber(number: String) -> String {
         let CPFNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-        let mask = "###.###.###-##"
+        let mask = Strings.cpfMask
         var result = ""
         var index = CPFNumber.startIndex
         for ch in mask where index < CPFNumber.endIndex {
@@ -146,6 +147,7 @@ private extension LoginViewController {
     }
 }
 
+// MARK: - TextField
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.loginTextField.resignFirstResponder()
@@ -167,6 +169,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - View Setup
 extension LoginViewController: ViewSetup {
     func setupConstraints() {
         NSLayoutConstraint.activate([

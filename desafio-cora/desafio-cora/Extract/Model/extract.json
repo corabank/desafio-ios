@@ -5,6 +5,20 @@
         "transactions": [
             {
                 "customer_name" : "Lucas Costa",
+                "userSent" : {
+                    "name": "Lucas Costa",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
+                "userRecieved" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
                 "transaction_hour" : "17:35",
                 "transaction_value" : 30.00,
                 "transaction_status" : {
@@ -15,6 +29,20 @@
             },
             {
                 "customer_name" : "João da Silva",
+                "userSent" : {
+                    "name": "João da Silva",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
+                "userRecieved" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
                 "transaction_hour" : "13:17",
                 "transaction_value" : 26.00,
                 "transaction_status" : {
@@ -25,6 +53,20 @@
             },
             {
                 "customer_name" : "Daniela Andrade",
+                "userSent" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
+                "userRecieved" : {
+                    "name": "Daniela Andrade",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
                 "transaction_hour" : "13:17",
                 "transaction_value" : 26.00,
                 "transaction_status" : {
@@ -45,6 +87,20 @@
             },
             {
                 "customer_name" : "Daniel Pretti",
+                "userSent" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
+                "userRecieved" : {
+                    "name": "Daniel Pretti",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
                 "transaction_hour" : "15:17",
                 "transaction_value" : 26.00,
                 "transaction_status" : {
@@ -71,6 +127,20 @@
             },
             {
                 "customer_name" : "Stella Moraes",
+                "userSent" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
+                "userRecieved" : {
+                    "name": "Stella Moraes",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
                 "transaction_hour" : "09:22",
                 "transaction_value" : 26.00,
                 "transaction_status" : {
@@ -87,6 +157,20 @@
         "transactions": [
             {
                 "customer_name" : "Darlene Edwards",
+                "userSent" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
+                "userRecieved" : {
+                    "name": "Darlene Edwards",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
                 "transaction_hour" : "09:22",
                 "transaction_value" : 26.00,
                 "transaction_status" : {
@@ -97,6 +181,20 @@
             },
             {
                 "customer_name" : "Guy Edwards",
+                "userSent" : {
+                    "name": "Guy Edwards",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
+                "userRecieved" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
                 "transaction_hour" : "09:22",
                 "transaction_value" : 30.00,
                 "transaction_status" : {
@@ -107,6 +205,20 @@
             },
             {
                 "customer_name" : "Theresa Simmmons",
+                "userSent" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
+                "userRecieved" : {
+                    "name": "Theresa Simmmons",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
                 "transaction_hour" : "09:22",
                 "transaction_value" : 26.00,
                 "transaction_status" : {
@@ -117,6 +229,20 @@
             },
             {
                 "customer_name" : "Guilherme Silva",
+                "userSent" : {
+                    "name": "Lucas Vallim da Costa",
+                    "cpf": "CPF 407.130.563-56",
+                    "bank": "Cora",
+                    "agency": "6193",
+                    "account": "12225-3"
+                },
+                "userRecieved" : {
+                    "name": "Guilherme Silva",
+                    "cpf": "407.130.774-24",
+                    "bank": "Itáu",
+                    "agency": "2345",
+                    "account": "43556-3"
+                },
                 "transaction_hour" : "09:22",
                 "transaction_value" : 30.00,
                 "transaction_status" : {

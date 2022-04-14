@@ -16,10 +16,10 @@ final class PasswordInteractor {
 // MARK: - PasswordInteracting
 extension PasswordInteractor: PasswordInteracting {
     func extractScene() {
-        presenter.presentExtractScene()
+        presenter.didNextStep(action: .extractScene)
     }
     
     func lostPassword() {
-        presenter.presentLostPassword()
+        presenter.didNextStep(action: .lostPassword)
     }
 }

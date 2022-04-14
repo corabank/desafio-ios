@@ -7,6 +7,7 @@ protocol PasswordDisplaying: AnyObject {
 private extension PasswordViewController.Layout {
     enum Size {
         static let imageHeight: CGFloat = 90.0
+        static let navBarHeight: CGFloat = 44.0
     }
 }
 
@@ -166,7 +167,7 @@ extension PasswordViewController: ViewSetup {
             navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            navBar.heightAnchor.constraint(equalToConstant: 44.0)
+            navBar.heightAnchor.constraint(equalToConstant: Layout.Size.navBarHeight)
         ])
         
         NSLayoutConstraint.activate([

@@ -6,6 +6,8 @@ struct StatementData: Decodable {
 
 struct TransactionDetail: Decodable {
     let customerName: String
+    let userSent: UserData?
+    let userRecieved: UserData?
     let transactionHour: String
     let transactionValue: Float
     let transactionStatus: TransactionStatus
@@ -15,6 +17,14 @@ struct TransactionStatus: Decodable {
     let transactionType: TransactionType
     let status: Status
     let transactionEntry: TransactionEntry
+}
+
+struct UserData: Decodable {
+    let name: String
+    let cpf: String
+    let bank: String
+    let agency: String
+    let account: String
 }
 
 enum TransactionType: String, Decodable {
@@ -29,7 +39,7 @@ enum Status: String, Decodable {
     case future = "FUTURE"
 }
 
-enum TransactionEntry:String, Decodable {
+enum TransactionEntry: String, Decodable {
     case input = "INPUT"
     case output = "OUTPUT"
 }

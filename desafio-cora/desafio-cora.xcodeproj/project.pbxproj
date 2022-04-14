@@ -20,6 +20,16 @@
 		B1096FF527FF2C3900DEA74F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1096FF427FF2C3900DEA74F /* Images.swift */; };
 		B132D89928074D3B007F6E3E /* StatementListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D89828074D3B007F6E3E /* StatementListCell.swift */; };
 		B132D89F280786CE007F6E3E /* StatementListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D89E280786CE007F6E3E /* StatementListCellModel.swift */; };
+		B132D8A92807CF08007F6E3E /* ExtractDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8A32807CF08007F6E3E /* ExtractDetailCoordinator.swift */; };
+		B132D8AA2807CF08007F6E3E /* ExtractDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8A42807CF08007F6E3E /* ExtractDetailFactory.swift */; };
+		B132D8AB2807CF08007F6E3E /* ExtractDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8A52807CF08007F6E3E /* ExtractDetailPresenter.swift */; };
+		B132D8AC2807CF08007F6E3E /* ExtractDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8A62807CF08007F6E3E /* ExtractDetailViewController.swift */; };
+		B132D8AD2807CF08007F6E3E /* ExtractDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8A72807CF08007F6E3E /* ExtractDetailInteractor.swift */; };
+		B132D8B528088432007F6E3E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8B428088432007F6E3E /* UserInfo.swift */; };
+		B132D8B72808990D007F6E3E /* CurrencyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8B62808990D007F6E3E /* CurrencyString.swift */; };
+		B132D8BB28089D26007F6E3E /* TransactionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8BA28089D26007F6E3E /* TransactionText.swift */; };
+		B132D8BD28089E6F007F6E3E /* TransacitonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8BC28089E6F007F6E3E /* TransacitonImage.swift */; };
+		B132D8BF28089F0C007F6E3E /* TransactionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132D8BE28089F0C007F6E3E /* TransactionColor.swift */; };
 		B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4827F76B4C0095E8DC /* AppDelegate.swift */; };
 		B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */; };
 		B1662E5227F76B4D0095E8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1662E5127F76B4D0095E8DC /* Assets.xcassets */; };
@@ -60,6 +70,16 @@
 		B1096FF427FF2C3900DEA74F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		B132D89828074D3B007F6E3E /* StatementListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementListCell.swift; sourceTree = "<group>"; };
 		B132D89E280786CE007F6E3E /* StatementListCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementListCellModel.swift; sourceTree = "<group>"; };
+		B132D8A32807CF08007F6E3E /* ExtractDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailCoordinator.swift; sourceTree = "<group>"; };
+		B132D8A42807CF08007F6E3E /* ExtractDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailFactory.swift; sourceTree = "<group>"; };
+		B132D8A52807CF08007F6E3E /* ExtractDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailPresenter.swift; sourceTree = "<group>"; };
+		B132D8A62807CF08007F6E3E /* ExtractDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailViewController.swift; sourceTree = "<group>"; };
+		B132D8A72807CF08007F6E3E /* ExtractDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailInteractor.swift; sourceTree = "<group>"; };
+		B132D8B428088432007F6E3E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		B132D8B62808990D007F6E3E /* CurrencyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyString.swift; sourceTree = "<group>"; };
+		B132D8BA28089D26007F6E3E /* TransactionText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionText.swift; sourceTree = "<group>"; };
+		B132D8BC28089E6F007F6E3E /* TransacitonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransacitonImage.swift; sourceTree = "<group>"; };
+		B132D8BE28089F0C007F6E3E /* TransactionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionColor.swift; sourceTree = "<group>"; };
 		B1662E4527F76B4C0095E8DC /* desafio-cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1662E4827F76B4C0095E8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1662E4A27F76B4C0095E8DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +131,10 @@
 				B1096FE327FE078B00DEA74F /* Strings.swift */,
 				B1096FF427FF2C3900DEA74F /* Images.swift */,
 				B1E09DEE28050FB1000BF599 /* CustomSegmentedControl.swift */,
+				B132D8B62808990D007F6E3E /* CurrencyString.swift */,
+				B132D8BA28089D26007F6E3E /* TransactionText.swift */,
+				B132D8BC28089E6F007F6E3E /* TransacitonImage.swift */,
+				B132D8BE28089F0C007F6E3E /* TransactionColor.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -136,6 +160,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B132D8A02807CEE2007F6E3E /* ExtractDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B132D8B32808841D007F6E3E /* View */,
+				B132D8A32807CF08007F6E3E /* ExtractDetailCoordinator.swift */,
+				B132D8A42807CF08007F6E3E /* ExtractDetailFactory.swift */,
+				B132D8A52807CF08007F6E3E /* ExtractDetailPresenter.swift */,
+				B132D8A62807CF08007F6E3E /* ExtractDetailViewController.swift */,
+				B132D8A72807CF08007F6E3E /* ExtractDetailInteractor.swift */,
+			);
+			path = ExtractDetail;
+			sourceTree = "<group>";
+		};
+		B132D8B32808841D007F6E3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B132D8B428088432007F6E3E /* UserInfo.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B1662E3C27F76B4C0095E8DC = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +200,7 @@
 		B1662E4727F76B4C0095E8DC /* desafio-cora */ = {
 			isa = PBXGroup;
 			children = (
+				B132D8A02807CEE2007F6E3E /* ExtractDetail */,
 				B1E09DDF28048230000BF599 /* Extract */,
 				B1096FDA27FE02B000DEA74F /* DesignSystem */,
 				B1662E7E27F775560095E8DC /* Home */,
@@ -289,8 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1096FDC27FE02E700DEA74F /* Typography.swift in Sources */,
+				B132D8AB2807CF08007F6E3E /* ExtractDetailPresenter.swift in Sources */,
 				B1662E7B27F771C80095E8DC /* LoginViewController.swift in Sources */,
 				B1E09DE728048259000BF599 /* ExtractFactory.swift in Sources */,
+				B132D8BB28089D26007F6E3E /* TransactionText.swift in Sources */,
 				B132D89928074D3B007F6E3E /* StatementListCell.swift in Sources */,
 				B1096FDE27FE03B100DEA74F /* Spacing.swift in Sources */,
 				B132D89F280786CE007F6E3E /* StatementListCellModel.swift in Sources */,
@@ -302,7 +350,11 @@
 				B1662E4927F76B4C0095E8DC /* AppDelegate.swift in Sources */,
 				B1E09DEB28048259000BF599 /* ExtractService.swift in Sources */,
 				B1662E8927F775810095E8DC /* HomeInteractor.swift in Sources */,
+				B132D8AD2807CF08007F6E3E /* ExtractDetailInteractor.swift in Sources */,
 				B1662E8727F775810095E8DC /* HomePresenter.swift in Sources */,
+				B132D8A92807CF08007F6E3E /* ExtractDetailCoordinator.swift in Sources */,
+				B132D8AC2807CF08007F6E3E /* ExtractDetailViewController.swift in Sources */,
+				B132D8AA2807CF08007F6E3E /* ExtractDetailFactory.swift in Sources */,
 				B1662E8C27F777B00095E8DC /* ViewSetup.swift in Sources */,
 				B1662E7C27F771C80095E8DC /* LoginInteractor.swift in Sources */,
 				B1E09DE628048259000BF599 /* ExtractCoordinator.swift in Sources */,
@@ -312,11 +364,15 @@
 				B1662E8527F775810095E8DC /* HomeCoordinator.swift in Sources */,
 				B1096FF027FEB72800DEA74F /* PasswordPresenter.swift in Sources */,
 				B1096FE427FE078B00DEA74F /* Strings.swift in Sources */,
+				B132D8BF28089F0C007F6E3E /* TransactionColor.swift in Sources */,
 				B1096FF527FF2C3900DEA74F /* Images.swift in Sources */,
 				B1096FF227FEB72800DEA74F /* PasswordInteractor.swift in Sources */,
 				B1E09DEF28050FB1000BF599 /* CustomSegmentedControl.swift in Sources */,
 				B1662E8827F775810095E8DC /* HomeViewController.swift in Sources */,
+				B132D8BD28089E6F007F6E3E /* TransacitonImage.swift in Sources */,
+				B132D8B72808990D007F6E3E /* CurrencyString.swift in Sources */,
 				B1662E4B27F76B4C0095E8DC /* SceneDelegate.swift in Sources */,
+				B132D8B528088432007F6E3E /* UserInfo.swift in Sources */,
 				B1096FF127FEB72800DEA74F /* PasswordViewController.swift in Sources */,
 				B1096FEE27FEB72800DEA74F /* PasswordCoordinator.swift in Sources */,
 				B1662E7927F771C80095E8DC /* LoginFactory.swift in Sources */,

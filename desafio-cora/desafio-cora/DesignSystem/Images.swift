@@ -33,4 +33,6 @@ enum Images {
     static let downArrow = UIImage(named: "downArrow")
     
     static let timeClock = UIImage(named: "timeClock")
+    
+    static let share = UIImage(named: "share")
 }
