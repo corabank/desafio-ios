@@ -44,4 +44,21 @@ enum Strings {
     static let sectionItem3 = "Saída"
 
     static let sectionItem4 = "Futuro"
+    
+    // MARK: - Extract Cell
+    static let paymentRecieved = "Pagamento recebido"
+    
+    static let paymentReversed = "Pagamento estornado"
+
+    static let transferReversed = "Transferência estornada"
+
+    static let transferRecieved = "Transferência recebida"
+
+    static let transferSent = "Transferência enviada"
+    
+    static let transferScheduled = "Transferência Agendada"
+    
+    static let ticketPaid = "Boleto pago"
+
+    static let ticketDeposit = "Depósito via boleto"
 }

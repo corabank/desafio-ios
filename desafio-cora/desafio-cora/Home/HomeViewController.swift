@@ -32,7 +32,7 @@ final class HomeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.homeTitleBold
-        label.font = Typography.setFont(.bold(size: 28))()
+        label.font = Typography.getFont(.bold(size: 28))()
         label.numberOfLines = 0
         label.textColor = Colors.white
         return label
@@ -42,7 +42,7 @@ final class HomeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.homeTitle
-        label.font = Typography.setFont(.regular(size: 28))()
+        label.font = Typography.getFont(.regular(size: 28))()
         label.numberOfLines = 0
         label.textColor = Colors.white
         return label
@@ -52,7 +52,7 @@ final class HomeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.homeSubtitle
-        label.font = Typography.setFont(.regular(size: 16))()
+        label.font = Typography.getFont(.regular(size: 16))()
         label.numberOfLines = 0
         label.textColor = Colors.white
         return label
@@ -74,7 +74,7 @@ final class HomeViewController: UIViewController {
         config.title = Strings.signUpButtonTitle
         config.attributedTitle = AttributedString(Strings.signUpButtonTitle,
                                                   attributes: AttributeContainer([
-                                                    NSAttributedString.Key.foregroundColor: Colors.backgroundColor!
+                                                    NSAttributedString.Key.foregroundColor: Colors.backgroundColor
                                                   ]))
         config.baseBackgroundColor = Colors.white
         config.titleAlignment = .leading
@@ -100,7 +100,7 @@ final class HomeViewController: UIViewController {
         button.setTitleColor(.white, for: [])
         button.layer.cornerRadius = 16
         button.backgroundColor = .clear
-        button.layer.borderColor = Colors.white?.cgColor
+        button.layer.borderColor = Colors.white.cgColor
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button

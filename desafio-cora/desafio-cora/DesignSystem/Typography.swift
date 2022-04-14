@@ -12,7 +12,7 @@ enum Typography {
     case regular(size: CGFloat)
     case medium(size: CGFloat)
     
-    func setFont() -> UIFont {
+    func getFont() -> UIFont {
         switch self {
         case .bold(let size):
             return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.bold)

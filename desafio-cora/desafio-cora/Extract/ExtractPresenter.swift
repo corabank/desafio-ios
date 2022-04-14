@@ -2,7 +2,7 @@ import Foundation
 
 protocol ExtractPresenting: AnyObject {
     var viewController: ExtractDisplaying? { get set }
-    func displayStatementList(statementData: [StatementData])
+    func displayStatementList()
     func didNextStep(action: ExtractAction)
 }
 
@@ -17,8 +17,8 @@ final class ExtractPresenter {
 
 // MARK: - ExtractPresenting
 extension ExtractPresenter: ExtractPresenting {
-    func displayStatementList(statementData: [StatementData]) {
-        viewController?.showStatementList(statementList: statementData)
+    func displayStatementList() {
+        viewController?.showStatementList()
     }
     
     func didNextStep(action: ExtractAction) {

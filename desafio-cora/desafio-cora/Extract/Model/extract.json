@@ -1,96 +1,145 @@
 [
     {
         "transaction_day" : "Hoje - 6 de Agosto",
-        "transaction_total_value" : "R$ 3.446,00",
+        "transaction_total_value" : 3446.00,
         "transactions": [
             {
                 "customer_name" : "Lucas Costa",
-                "transaction_type" : "TRANSFER",
                 "transaction_hour" : "17:35",
                 "transaction_value" : 30.00,
-                "transaction_complete" : true
+                "transaction_status" : {
+                    "transaction_type" : "TRANSFER",
+                    "status": "COMPLETE",
+                    "transactionEntry": "INPUT"
+                }
             },
             {
                 "customer_name" : "João da Silva",
-                "transaction_type" : "PAYMENT",
                 "transaction_hour" : "13:17",
                 "transaction_value" : 26.00,
-                "transaction_complete" : true
+                "transaction_status" : {
+                    "transaction_type" : "PAYMENT",
+                    "status": "COMPLETE",
+                    "transactionEntry": "INPUT"
+                }
             },
             {
                 "customer_name" : "Daniela Andrade",
-                "transaction_type" : "TRANSFER",
                 "transaction_hour" : "13:17",
                 "transaction_value" : 26.00,
-                "transaction_complete" : false
+                "transaction_status" : {
+                    "transaction_type" : "TRANSFER",
+                    "status": "REVERSED",
+                    "transactionEntry": "OUTPUT"
+                }
             },
             {
                 "customer_name" : "Aut Arquitetura",
-                "transaction_type" : "TICKET",
                 "transaction_hour" : "09:22",
-                "transaction_value" : -26.00,
-                "transaction_complete" : true
+                "transaction_value" : 26.00,
+                "transaction_status" : {
+                    "transaction_type" : "TICKET",
+                    "status": "COMPLETE",
+                    "transactionEntry": "OUTPUT"
+                }
+            },
+            {
+                "customer_name" : "Daniel Pretti",
+                "transaction_hour" : "15:17",
+                "transaction_value" : 26.00,
+                "transaction_status" : {
+                    "transaction_type" : "TRANSFER",
+                    "status": "FUTURE",
+                    "transactionEntry": "OUTPUT"
+                }
             }
         ]
     },
     {
         "transaction_day" : "Segunda-feira - 2  de Agosto",
-        "transaction_total_value" : "R$ 3.110,08",
+        "transaction_total_value" : 3110.08,
         "transactions": [
             {
                 "customer_name" : "Leonardo Silva ME",
-                "transaction_type" : "TICKET",
                 "transaction_hour" : "09:22",
                 "transaction_value" : 30.00,
-                "transaction_complete" : true
+                "transaction_status" : {
+                    "transaction_type" : "TICKET",
+                    "status": "COMPLETE",
+                    "transactionEntry": "INPUT"
+                }
             },
             {
                 "customer_name" : "Stella Moraes",
-                "transaction_type" : "TRANSFER",
                 "transaction_hour" : "09:22",
-                "transaction_value" : -26.00,
-                "transaction_complete" : true
+                "transaction_value" : 26.00,
+                "transaction_status" : {
+                    "transaction_type" : "TRANSFER",
+                    "status": "COMPLETE",
+                    "transactionEntry": "OUTPUT"
+                }
             }
         ]
     },
     {
         "transaction_day" : "Sexta-feira - 30 de Julho",
-        "transaction_total_value" : "R$ 3.050,30",
+        "transaction_total_value" : 3050.30,
         "transactions": [
             {
                 "customer_name" : "Darlene Edwards",
-                "transaction_type" : "PAYMENT",
                 "transaction_hour" : "09:22",
-                "transaction_value" : -26.00,
-                "transaction_complete" : false
+                "transaction_value" : 26.00,
+                "transaction_status" : {
+                    "transaction_type" : "PAYMENT",
+                    "status": "REVERSED",
+                    "transactionEntry": "OUTPUT"
+                }
             },
             {
                 "customer_name" : "Guy Edwards",
-                "transaction_type" : "TRANSFER",
                 "transaction_hour" : "09:22",
                 "transaction_value" : 30.00,
-                "transaction_complete" : true
+                "transaction_status" : {
+                    "transaction_type" : "TRANSFER",
+                    "status": "COMPLETE",
+                    "transactionEntry": "INPUT"
+                }
             },
             {
                 "customer_name" : "Theresa Simmmons",
-                "transaction_type" : "TRANSFER",
                 "transaction_hour" : "09:22",
-                "transaction_value" : -26.00,
-                "transaction_complete" : true
+                "transaction_value" : 26.00,
+                "transaction_status" : {
+                    "transaction_type" : "TRANSFER",
+                    "status": "COMPLETE",
+                    "transactionEntry": "OUTPUT"
+                }
+            },
+            {
+                "customer_name" : "Guilherme Silva",
+                "transaction_hour" : "09:22",
+                "transaction_value" : 30.00,
+                "transaction_status" : {
+                    "transaction_type" : "TRANSFER",
+                    "status": "FUTURE",
+                    "transactionEntry": "OUTPUT"
+                }
             }
-            
         ]
     },
     {
         "transaction_day" : "Ontem - 5 de Agosto",
-        "transaction_total_value" : "R$ 3.124,34",
+        "transaction_total_value" : 3124.34,
         "transactions": [
             {
                 "customer_name" : "Judith Cooper",
-                "transaction_type" : "TICKET",
                 "transaction_hour" : "09:22",
-                "transaction_value" : -26.00,
-                "transaction_complete" : true
+                "transaction_value" : 26.00,
+                "transaction_status" : {
+                    "transaction_type" : "TICKET",
+                    "status": "COMPLETE",
+                    "transactionEntry": "OUTPUT"
+                }
             }
         ]
     }

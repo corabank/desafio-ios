@@ -17,7 +17,7 @@ final class PasswordViewController: UIViewController {
         let navBar = UINavigationBar()
         let navItem = UINavigationItem(title: Strings.loginNavBarTitle)
         let backItem = UIBarButtonItem(image: Images.leftArrow, style: .done, target: self, action: #selector(backButtonTapped))
-        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1!]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1]
         backItem.tintColor = Colors.backgroundColor
         navItem.leftBarButtonItem = backItem
         navBar.backgroundColor = Colors.gray4
@@ -31,7 +31,7 @@ final class PasswordViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.passwordTitle
-        label.font = Typography.setFont(.bold(size: 22))()
+        label.font = Typography.getFont(.bold(size: 22))()
         label.numberOfLines = 0
         label.textColor = Colors.offBlack
         return label
@@ -53,7 +53,7 @@ final class PasswordViewController: UIViewController {
         textField.keyboardType = .phonePad
         textField.borderStyle = .none
         textField.isSecureTextEntry = true
-        textField.font = Typography.setFont(.medium(size: 24))()
+        textField.font = Typography.getFont(.medium(size: 24))()
         textField.delegate = self
         return textField
     }()
@@ -70,7 +70,7 @@ final class PasswordViewController: UIViewController {
         let action = UITapGestureRecognizer(target: self, action: #selector(lostPasswordButtonTapped))
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.lostPassword
-        label.font = Typography.setFont(.regular(size: 14))()
+        label.font = Typography.getFont(.regular(size: 14))()
         label.numberOfLines = 0
         label.textColor = Colors.backgroundColor
         label.isUserInteractionEnabled = true

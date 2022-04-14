@@ -8,16 +8,18 @@
 import UIKit
 
 enum Colors {
-    static let backgroundColor = UIColor(named: "background")
+    static let backgroundColor = UIColor(named: "background") ?? .clear
     
-    static let white = UIColor(named: "white")
+    static let white = UIColor(named: "white") ?? .clear
     
-    static let gray1 = UIColor(named: "gray1")
+    static let gray1 = UIColor(named: "gray1") ?? .clear
     
-    static let gray2 = UIColor(named: "gray2")
+    static let gray2 = UIColor(named: "gray2") ?? .clear
     
-    static let gray4 = UIColor(named: "gray4")
+    static let gray4 = UIColor(named: "gray4") ?? .clear
     
-    static let offBlack = UIColor(named: "offBlack")
+    static let offBlack = UIColor(named: "offBlack") ?? .clear
+    
+    static let blue = UIColor(named: "blue") ?? .clear
 }
 

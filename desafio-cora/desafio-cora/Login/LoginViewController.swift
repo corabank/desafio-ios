@@ -19,7 +19,7 @@ final class LoginViewController: UIViewController {
         let navBar = UINavigationBar()
         let navItem = UINavigationItem(title: Strings.loginNavBarTitle)
         let backItem = UIBarButtonItem(image: Images.leftArrow, style: .done, target: self, action: #selector(backButtonTapped))
-        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1!]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1]
         backItem.tintColor = Colors.backgroundColor
         navItem.leftBarButtonItem = backItem
         navBar.backgroundColor = Colors.gray4
@@ -33,7 +33,7 @@ final class LoginViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.loginTitle
-        label.font = Typography.setFont(.regular(size: 16))()
+        label.font = Typography.getFont(.regular(size: 16))()
         label.numberOfLines = 0
         label.textColor = Colors.gray1
         return label
@@ -43,7 +43,7 @@ final class LoginViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Strings.loginSubtitle
-        label.font = Typography.setFont(.bold(size: 22))()
+        label.font = Typography.getFont(.bold(size: 22))()
         label.numberOfLines = 0
         label.textColor = Colors.offBlack
         return label
@@ -65,7 +65,7 @@ final class LoginViewController: UIViewController {
         textField.tintColor = Colors.gray4
         textField.textColor = Colors.offBlack
         textField.borderStyle = .none
-        textField.font = Typography.setFont(.medium(size: 24))()
+        textField.font = Typography.getFont(.medium(size: 24))()
         textField.delegate = self
         return textField
     }()

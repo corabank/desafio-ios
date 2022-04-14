@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ExtractDisplaying: AnyObject {
-    func showStatementList(statementList: [StatementData])
+    func showStatementList()
 }
 
 private extension ExtractViewController.Layout {
@@ -30,7 +30,7 @@ final class ExtractViewController: UIViewController {
         let navItem = UINavigationItem(title: Strings.extractNavBarTitle)
         let backItem = UIBarButtonItem(image: Images.leftArrow, style: .done, target: self, action: #selector(backButtonTapped))
         let signOutItem = UIBarButtonItem(image: Images.signOut, style: .done, target: self, action: #selector(signOutButtonTapped))
-        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1!]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: Colors.gray1]
         backItem.tintColor = Colors.backgroundColor
         signOutItem.tintColor = Colors.backgroundColor
         navItem.leftBarButtonItem = backItem
@@ -51,14 +51,13 @@ final class ExtractViewController: UIViewController {
         return control
     }()
     
-    private lazy var rowsToDisplay = [StatementData]()
-    
     private lazy var filterImage: UIImageView = {
         let image = UIImageView()
         let action = UITapGestureRecognizer(target: self, action: #selector(filterButtonTapped))
         image.image = Images.filter
         image.translatesAutoresizingMaskIntoConstraints = false
         image.isUserInteractionEnabled = true
+        image.contentMode = .center
         image.addGestureRecognizer(action)
         return image
     }()
@@ -66,11 +65,14 @@ final class ExtractViewController: UIViewController {
     private lazy var sectionStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [sectionControl, filterImage])
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
         return stackView
     }()
     
     private lazy var extractTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.register(StatementListCell.self, forCellReuseIdentifier: "StatementListCell")
+        tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -112,32 +114,24 @@ final class ExtractViewController: UIViewController {
 
 extension ExtractViewController: CustomSegmentedControlDelegate {
     func change(to index: Int) {
-//        switch index {
-//        case 1:
-//            rowsToDisplay = [mobileBrand[index]]
-//        case 2:
-//            rowsToDisplay = [mobileBrand[index]]
-//        case 3:
-//            rowsToDisplay = [mobileBrand[index]]
-//        default:
-//            rowsToDisplay = mobileBrand
-//        }
+        interactor.filterData(index: index)
         extractTableView.reloadData()
     }
 }
 
 extension ExtractViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return rowsToDisplay.count
+        return interactor.sectionCount()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowsToDisplay[section].transactions.count
+        return interactor.transactionsCount(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = rowsToDisplay[indexPath.section].transactions[indexPath.row].customerName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StatementListCell", for: indexPath)
+        guard let statementCell = cell as? StatementListCell else { return UITableViewCell()}
+        statementCell.setup(model: interactor.getContentCell(index: indexPath))
         return cell
     }
     
@@ -146,13 +140,13 @@ extension ExtractViewController: UITableViewDataSource, UITableViewDelegate {
         view.backgroundColor = Colors.gray4
         
         let dateLabel = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 32))
-        dateLabel.font = Typography.setFont(.regular(size: 12))()
+        dateLabel.font = Typography.getFont(.regular(size: 12))()
         dateLabel.textColor = Colors.gray1
-        dateLabel.text = rowsToDisplay[section].transactionDay
+        dateLabel.text = interactor.sectionTransactionDay(section: section)
         let valueLabel = UILabel(frame: CGRect(x: view.frame.width - 90, y: 0, width: view.frame.width - 15, height: 32))
-        valueLabel.font = Typography.setFont(.bold(size: 12))()
+        valueLabel.font = Typography.getFont(.bold(size: 12))()
         valueLabel.textColor = Colors.gray1
-        valueLabel.text = rowsToDisplay[section].transactionTotalValue
+        valueLabel.text = interactor.sectionTransactionsValue(section: section)
         view.addSubview(dateLabel)
         view.addSubview(valueLabel)
         return view
@@ -218,7 +212,7 @@ extension ExtractViewController: ViewSetup {
 
 // MARK: - ExtractDisplaying
 extension ExtractViewController: ExtractDisplaying {
-    func showStatementList(statementList: [StatementData]) {
-        rowsToDisplay = statementList
+    func showStatementList() {
+        extractTableView.reloadData()
     }
 }
