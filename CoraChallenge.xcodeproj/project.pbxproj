@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		203644B2B1410E74D7D1EB83 /* Pods_CoraChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF52CF90C6C46A0E79657BE /* Pods_CoraChallenge.framework */; };
+		303DA9AF9412ECD73553B01F /* Pods_CoraChallenge_CoraChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16183D74F21C400528399204 /* Pods_CoraChallenge_CoraChallengeUITests.framework */; };
+		53201F66A3CEA546D491DC75 /* Pods_CoraChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */; };
+		9283813B280E404400842CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813A280E404400842CFD /* AppDelegate.swift */; };
+		9283813D280E404400842CFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813C280E404400842CFD /* SceneDelegate.swift */; };
+		9283813F280E404400842CFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813E280E404400842CFD /* ViewController.swift */; };
+		92838144280E404A00842CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92838143280E404A00842CFD /* Assets.xcassets */; };
+		92838147280E404A00842CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92838145280E404A00842CFD /* LaunchScreen.storyboard */; };
+		92838152280E404A00842CFD /* CoraChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92838151280E404A00842CFD /* CoraChallengeTests.swift */; };
+		9283815C280E404A00842CFD /* CoraChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283815B280E404A00842CFD /* CoraChallengeUITests.swift */; };
+		9283815E280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283815D280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9283814E280E404A00842CFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9283812F280E404300842CFD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92838136280E404400842CFD;
+			remoteInfo = CoraChallenge;
+		};
+		92838158280E404A00842CFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9283812F280E404300842CFD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92838136280E404400842CFD;
+			remoteInfo = CoraChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoraChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16183D74F21C400528399204 /* Pods_CoraChallenge_CoraChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoraChallenge_CoraChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		214AAEFBA058433FE9519DAE /* Pods-CoraChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge.debug.xcconfig"; path = "Target Support Files/Pods-CoraChallenge/Pods-CoraChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		3DF52CF90C6C46A0E79657BE /* Pods_CoraChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoraChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5348CFF0E30F68A9EC9D3F58 /* Pods-CoraChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7341D42D942FB9B5787E6361 /* Pods-CoraChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B4D40BB626ACAA5638D5AEF /* Pods-CoraChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge/Pods-CoraChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		92838137280E404400842CFD /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9283813A280E404400842CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9283813C280E404400842CFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9283813E280E404400842CFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92838143280E404A00842CFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92838146280E404A00842CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92838148280E404A00842CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9283814D280E404A00842CFD /* CoraChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92838151280E404A00842CFD /* CoraChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeTests.swift; sourceTree = "<group>"; };
+		92838157280E404A00842CFD /* CoraChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9283815B280E404A00842CFD /* CoraChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITests.swift; sourceTree = "<group>"; };
+		9283815D280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A72B035E16D5435EB836C173 /* Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoraChallenge-CoraChallengeUITests/Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C31CB9DDA0F1C107519BA600 /* Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge-CoraChallengeUITests/Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92838134280E404400842CFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203644B2B1410E74D7D1EB83 /* Pods_CoraChallenge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9283814A280E404A00842CFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53201F66A3CEA546D491DC75 /* Pods_CoraChallengeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92838154280E404A00842CFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				303DA9AF9412ECD73553B01F /* Pods_CoraChallenge_CoraChallengeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20376E981EAD5E0ED58F2232 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DF52CF90C6C46A0E79657BE /* Pods_CoraChallenge.framework */,
+				16183D74F21C400528399204 /* Pods_CoraChallenge_CoraChallengeUITests.framework */,
+				012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78CC62DCADB0CF91D9C73AA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				214AAEFBA058433FE9519DAE /* Pods-CoraChallenge.debug.xcconfig */,
+				8B4D40BB626ACAA5638D5AEF /* Pods-CoraChallenge.release.xcconfig */,
+				A72B035E16D5435EB836C173 /* Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig */,
+				C31CB9DDA0F1C107519BA600 /* Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig */,
+				5348CFF0E30F68A9EC9D3F58 /* Pods-CoraChallengeTests.debug.xcconfig */,
+				7341D42D942FB9B5787E6361 /* Pods-CoraChallengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9283812E280E404300842CFD = {
+			isa = PBXGroup;
+			children = (
+				92838139280E404400842CFD /* CoraChallenge */,
+				92838150280E404A00842CFD /* CoraChallengeTests */,
+				9283815A280E404A00842CFD /* CoraChallengeUITests */,
+				92838138280E404400842CFD /* Products */,
+				78CC62DCADB0CF91D9C73AA1 /* Pods */,
+				20376E981EAD5E0ED58F2232 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		92838138280E404400842CFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92838137280E404400842CFD /* CoraChallenge.app */,
+				9283814D280E404A00842CFD /* CoraChallengeTests.xctest */,
+				92838157280E404A00842CFD /* CoraChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92838139280E404400842CFD /* CoraChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				9283813A280E404400842CFD /* AppDelegate.swift */,
+				9283813C280E404400842CFD /* SceneDelegate.swift */,
+				9283813E280E404400842CFD /* ViewController.swift */,
+				92838143280E404A00842CFD /* Assets.xcassets */,
+				92838145280E404A00842CFD /* LaunchScreen.storyboard */,
+				92838148280E404A00842CFD /* Info.plist */,
+			);
+			path = CoraChallenge;
+			sourceTree = "<group>";
+		};
+		92838150280E404A00842CFD /* CoraChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				92838151280E404A00842CFD /* CoraChallengeTests.swift */,
+			);
+			path = CoraChallengeTests;
+			sourceTree = "<group>";
+		};
+		9283815A280E404A00842CFD /* CoraChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9283815B280E404A00842CFD /* CoraChallengeUITests.swift */,
+				9283815D280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift */,
+			);
+			path = CoraChallengeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92838136280E404400842CFD /* CoraChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92838161280E404A00842CFD /* Build configuration list for PBXNativeTarget "CoraChallenge" */;
+			buildPhases = (
+				3E50E0536D694679D94F75D3 /* [CP] Check Pods Manifest.lock */,
+				92838133280E404400842CFD /* Sources */,
+				92838134280E404400842CFD /* Frameworks */,
+				92838135280E404400842CFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoraChallenge;
+			productName = CoraChallenge;
+			productReference = 92838137280E404400842CFD /* CoraChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9283814C280E404A00842CFD /* CoraChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92838164280E404A00842CFD /* Build configuration list for PBXNativeTarget "CoraChallengeTests" */;
+			buildPhases = (
+				9CEED37D8364B8AB2EA21C64 /* [CP] Check Pods Manifest.lock */,
+				92838149280E404A00842CFD /* Sources */,
+				9283814A280E404A00842CFD /* Frameworks */,
+				9283814B280E404A00842CFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9283814F280E404A00842CFD /* PBXTargetDependency */,
+			);
+			name = CoraChallengeTests;
+			productName = CoraChallengeTests;
+			productReference = 9283814D280E404A00842CFD /* CoraChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92838156280E404A00842CFD /* CoraChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92838167280E404A00842CFD /* Build configuration list for PBXNativeTarget "CoraChallengeUITests" */;
+			buildPhases = (
+				1BFEB7FFC9694479D33F120C /* [CP] Check Pods Manifest.lock */,
+				92838153280E404A00842CFD /* Sources */,
+				92838154280E404A00842CFD /* Frameworks */,
+				92838155280E404A00842CFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92838159280E404A00842CFD /* PBXTargetDependency */,
+			);
+			name = CoraChallengeUITests;
+			productName = CoraChallengeUITests;
+			productReference = 92838157280E404A00842CFD /* CoraChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9283812F280E404300842CFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					92838136280E404400842CFD = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					9283814C280E404A00842CFD = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 92838136280E404400842CFD;
+					};
+					92838156280E404A00842CFD = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 92838136280E404400842CFD;
+					};
+				};
+			};
+			buildConfigurationList = 92838132280E404400842CFD /* Build configuration list for PBXProject "CoraChallenge" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9283812E280E404300842CFD;
+			productRefGroup = 92838138280E404400842CFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92838136280E404400842CFD /* CoraChallenge */,
+				9283814C280E404A00842CFD /* CoraChallengeTests */,
+				92838156280E404A00842CFD /* CoraChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92838135280E404400842CFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92838147280E404A00842CFD /* LaunchScreen.storyboard in Resources */,
+				92838144280E404A00842CFD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9283814B280E404A00842CFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92838155280E404A00842CFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BFEB7FFC9694479D33F120C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoraChallenge-CoraChallengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E50E0536D694679D94F75D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoraChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CEED37D8364B8AB2EA21C64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoraChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92838133280E404400842CFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9283813F280E404400842CFD /* ViewController.swift in Sources */,
+				9283813B280E404400842CFD /* AppDelegate.swift in Sources */,
+				9283813D280E404400842CFD /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92838149280E404A00842CFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92838152280E404A00842CFD /* CoraChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92838153280E404A00842CFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9283815C280E404A00842CFD /* CoraChallengeUITests.swift in Sources */,
+				9283815E280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9283814F280E404A00842CFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92838136280E404400842CFD /* CoraChallenge */;
+			targetProxy = 9283814E280E404A00842CFD /* PBXContainerItemProxy */;
+		};
+		92838159280E404A00842CFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92838136280E404400842CFD /* CoraChallenge */;
+			targetProxy = 92838158280E404A00842CFD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92838145280E404A00842CFD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92838146280E404A00842CFD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9283815F280E404A00842CFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		92838160280E404A00842CFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92838162280E404A00842CFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 214AAEFBA058433FE9519DAE /* Pods-CoraChallenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HJ6RR33WF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoraChallenge/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fchiarello.CoraChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92838163280E404A00842CFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B4D40BB626ACAA5638D5AEF /* Pods-CoraChallenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HJ6RR33WF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoraChallenge/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fchiarello.CoraChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		92838165280E404A00842CFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5348CFF0E30F68A9EC9D3F58 /* Pods-CoraChallengeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HJ6RR33WF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fchiarello.CoraChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoraChallenge.app/CoraChallenge";
+			};
+			name = Debug;
+		};
+		92838166280E404A00842CFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7341D42D942FB9B5787E6361 /* Pods-CoraChallengeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HJ6RR33WF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fchiarello.CoraChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoraChallenge.app/CoraChallenge";
+			};
+			name = Release;
+		};
+		92838168280E404A00842CFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A72B035E16D5435EB836C173 /* Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HJ6RR33WF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fchiarello.CoraChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoraChallenge;
+			};
+			name = Debug;
+		};
+		92838169280E404A00842CFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C31CB9DDA0F1C107519BA600 /* Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HJ6RR33WF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fchiarello.CoraChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoraChallenge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92838132280E404400842CFD /* Build configuration list for PBXProject "CoraChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9283815F280E404A00842CFD /* Debug */,
+				92838160280E404A00842CFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92838161280E404A00842CFD /* Build configuration list for PBXNativeTarget "CoraChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92838162280E404A00842CFD /* Debug */,
+				92838163280E404A00842CFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92838164280E404A00842CFD /* Build configuration list for PBXNativeTarget "CoraChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92838165280E404A00842CFD /* Debug */,
+				92838166280E404A00842CFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92838167280E404A00842CFD /* Build configuration list for PBXNativeTarget "CoraChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92838168280E404A00842CFD /* Debug */,
+				92838169280E404A00842CFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9283812F280E404300842CFD /* Project object */;
+}
