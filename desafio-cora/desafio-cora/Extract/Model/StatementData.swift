@@ -4,7 +4,7 @@ struct StatementData: Decodable {
     let transactions: [TransactionDetail]
 }
 
-struct TransactionDetail: Decodable {
+struct TransactionDetail: Decodable, Equatable {
     let customerName: String
     let userSent: UserData?
     let userRecieved: UserData?
@@ -13,13 +13,13 @@ struct TransactionDetail: Decodable {
     let transactionStatus: TransactionStatus
 }
 
-struct TransactionStatus: Decodable {
+struct TransactionStatus: Decodable, Equatable {
     let transactionType: TransactionType
     let status: Status
     let transactionEntry: TransactionEntry
 }
 
-struct UserData: Decodable {
+struct UserData: Decodable, Equatable {
     let name: String
     let cpf: String
     let bank: String

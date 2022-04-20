@@ -14,6 +14,6 @@ final class LoginCoordinator {
 extension LoginCoordinator: LoginCoordinating {
     func coordinateToPasswordScene() {
         let vc = PasswordFactory.make()
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        viewController?.show(vc, sender: nil)
     }
 }

@@ -20,7 +20,7 @@ extension PasswordCoordinator: PasswordCoordinating {
         switch action {
         case .extractScene:
             let vc = ExtractFactory.make()
-            viewController?.navigationController?.pushViewController(vc, animated: true)
+            viewController?.show(vc, sender: nil)
         case .lostPassword:
             print("Perdi minha senha")
         }

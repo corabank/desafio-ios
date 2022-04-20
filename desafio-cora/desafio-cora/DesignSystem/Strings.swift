@@ -80,4 +80,6 @@ enum Strings {
     static let description = "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies."
     
     static let share = "Compartilhar comprovante"
+    
+    static let cancelTransfer = "Cancelar agendamento"
 }

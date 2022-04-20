@@ -3,7 +3,6 @@ import UIKit
 enum ExtractAction {
     case signOut
     case filterScene
-    case ExtractDetailScene(transaction: TransactionDetail, transactionDay: String)
 }
 
 protocol ExtractCoordinating: AnyObject {
@@ -21,7 +20,7 @@ final class ExtractCoordinator {
 extension ExtractCoordinator: ExtractCoordinating {
     func coordinateToExtractDetail(transaction: TransactionDetail, transactionDay: String) {
         let vc = ExtractDetailFactory.make(transaction: transaction, transactionDay: transactionDay)
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        viewController?.show(vc, sender: nil)
     }
     
     func perform(action: ExtractAction) {
@@ -30,9 +29,6 @@ extension ExtractCoordinator: ExtractCoordinating {
             viewController?.navigationController?.popToRootViewController(animated: true)
         case .filterScene:
             print("Filtro")
-        case .ExtractDetailScene(let transaction, let transactionDay):
-            let vc = ExtractDetailFactory.make(transaction: transaction, transactionDay: transactionDay)
-            viewController?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

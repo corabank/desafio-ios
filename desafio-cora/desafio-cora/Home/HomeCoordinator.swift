@@ -17,7 +17,7 @@ final class HomeCoordinator {
 private extension HomeCoordinator {
     func showLoginScene() {
         let vc = LoginFactory.make()
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        viewController?.show(vc, sender: nil)
     }
 }
 

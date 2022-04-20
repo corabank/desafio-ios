@@ -189,7 +189,7 @@ final class ExtractDetailViewController: UIViewController {
         let label = UILabel()
         let action = UITapGestureRecognizer(target: self, action: #selector(cancelTransferButtonTapped))
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Strings.lostPassword
+        label.text = Strings.cancelTransfer
         label.font = Typography.getFont(.regular(size: 16))()
         label.numberOfLines = 0
         label.textAlignment = .center

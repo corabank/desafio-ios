@@ -45,6 +45,7 @@
 		B1662E8827F775810095E8DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8227F775810095E8DC /* HomeViewController.swift */; };
 		B1662E8927F775810095E8DC /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8327F775810095E8DC /* HomeInteractor.swift */; };
 		B1662E8C27F777B00095E8DC /* ViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1662E8B27F777B00095E8DC /* ViewSetup.swift */; };
+		B1CE3C1E280DE96A001E5BA7 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE3C1D280DE96A001E5BA7 /* HomeInteractorTests.swift */; };
 		B1E09DE628048259000BF599 /* ExtractCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE028048259000BF599 /* ExtractCoordinator.swift */; };
 		B1E09DE728048259000BF599 /* ExtractFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE128048259000BF599 /* ExtractFactory.swift */; };
 		B1E09DE828048259000BF599 /* ExtractPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DE228048259000BF599 /* ExtractPresenter.swift */; };
@@ -54,7 +55,32 @@
 		B1E09DEF28050FB1000BF599 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DEE28050FB1000BF599 /* CustomSegmentedControl.swift */; };
 		B1E09DF62805AD40000BF599 /* StatementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E09DF52805AD40000BF599 /* StatementData.swift */; };
 		B1E09DF82805BB47000BF599 /* extract.json in Resources */ = {isa = PBXBuildFile; fileRef = B1E09DF72805BB47000BF599 /* extract.json */; };
+		B1ED439C280F3285003A1615 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED439B280F3285003A1615 /* HomePresenterTests.swift */; };
+		B1ED439E280F33BE003A1615 /* HomeCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED439D280F33BE003A1615 /* HomeCoordinatorTests.swift */; };
+		B1ED43A1280F3583003A1615 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43A0280F3583003A1615 /* LoginInteractorTests.swift */; };
+		B1ED43A3280F3624003A1615 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43A2280F3624003A1615 /* LoginPresenterTests.swift */; };
+		B1ED43A6280F3705003A1615 /* PasswordInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43A5280F3705003A1615 /* PasswordInteractorTests.swift */; };
+		B1ED43A8280F3788003A1615 /* PasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43A7280F3788003A1615 /* PasswordPresenterTests.swift */; };
+		B1ED43AB280F3808003A1615 /* ExtractInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43AA280F3808003A1615 /* ExtractInteractorTests.swift */; };
+		B1ED43AD280F45F2003A1615 /* ExtractPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43AC280F45F2003A1615 /* ExtractPresenterTests.swift */; };
+		B1ED43AF280F92B0003A1615 /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43AE280F92B0003A1615 /* ViewControllerSpy.swift */; };
+		B1ED43B1280F9339003A1615 /* LoginCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43B0280F9339003A1615 /* LoginCoordinatorTests.swift */; };
+		B1ED43B32810436B003A1615 /* PasswordCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43B22810436B003A1615 /* PasswordCoordinatorTests.swift */; };
+		B1ED43B52810489E003A1615 /* ExtractCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43B42810489E003A1615 /* ExtractCoordinatorTests.swift */; };
+		B1ED43B828104E00003A1615 /* ExtractDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43B728104E00003A1615 /* ExtractDetailInteractorTests.swift */; };
+		B1ED43BA28104F2E003A1615 /* ExtractDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43B928104F2E003A1615 /* ExtractDetailPresenterTests.swift */; };
+		B1ED43BC28105025003A1615 /* ExtractDetailCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED43BB28105025003A1615 /* ExtractDetailCoordinatorTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1CE3C18280DE924001E5BA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1662E3D27F76B4C0095E8DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1662E4427F76B4C0095E8DC;
+			remoteInfo = "desafio-cora";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B1096FDB27FE02E700DEA74F /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
@@ -97,6 +123,8 @@
 		B1662E8227F775810095E8DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B1662E8327F775810095E8DC /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		B1662E8B27F777B00095E8DC /* ViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetup.swift; sourceTree = "<group>"; };
+		B1CE3C14280DE924001E5BA7 /* desafio-coraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "desafio-coraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1CE3C1D280DE96A001E5BA7 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		B1E09DE028048259000BF599 /* ExtractCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractCoordinator.swift; sourceTree = "<group>"; };
 		B1E09DE128048259000BF599 /* ExtractFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractFactory.swift; sourceTree = "<group>"; };
 		B1E09DE228048259000BF599 /* ExtractPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractPresenter.swift; sourceTree = "<group>"; };
@@ -106,10 +134,32 @@
 		B1E09DEE28050FB1000BF599 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B1E09DF52805AD40000BF599 /* StatementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementData.swift; sourceTree = "<group>"; };
 		B1E09DF72805BB47000BF599 /* extract.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = extract.json; sourceTree = "<group>"; };
+		B1ED439B280F3285003A1615 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		B1ED439D280F33BE003A1615 /* HomeCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorTests.swift; sourceTree = "<group>"; };
+		B1ED43A0280F3583003A1615 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
+		B1ED43A2280F3624003A1615 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		B1ED43A5280F3705003A1615 /* PasswordInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractorTests.swift; sourceTree = "<group>"; };
+		B1ED43A7280F3788003A1615 /* PasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenterTests.swift; sourceTree = "<group>"; };
+		B1ED43AA280F3808003A1615 /* ExtractInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractInteractorTests.swift; sourceTree = "<group>"; };
+		B1ED43AC280F45F2003A1615 /* ExtractPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractPresenterTests.swift; sourceTree = "<group>"; };
+		B1ED43AE280F92B0003A1615 /* ViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
+		B1ED43B0280F9339003A1615 /* LoginCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorTests.swift; sourceTree = "<group>"; };
+		B1ED43B22810436B003A1615 /* PasswordCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinatorTests.swift; sourceTree = "<group>"; };
+		B1ED43B42810489E003A1615 /* ExtractCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractCoordinatorTests.swift; sourceTree = "<group>"; };
+		B1ED43B728104E00003A1615 /* ExtractDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailInteractorTests.swift; sourceTree = "<group>"; };
+		B1ED43B928104F2E003A1615 /* ExtractDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailPresenterTests.swift; sourceTree = "<group>"; };
+		B1ED43BB28105025003A1615 /* ExtractDetailCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractDetailCoordinatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B1662E4227F76B4C0095E8DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1CE3C11280DE924001E5BA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -185,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				B1662E4727F76B4C0095E8DC /* desafio-cora */,
+				B1CE3C15280DE924001E5BA7 /* desafio-coraTests */,
 				B1662E4627F76B4C0095E8DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -193,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				B1662E4527F76B4C0095E8DC /* desafio-cora.app */,
+				B1CE3C14280DE924001E5BA7 /* desafio-coraTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,8 +252,8 @@
 		B1662E4727F76B4C0095E8DC /* desafio-cora */ = {
 			isa = PBXGroup;
 			children = (
-				B132D8A02807CEE2007F6E3E /* ExtractDetail */,
 				B1E09DDF28048230000BF599 /* Extract */,
+				B132D8A02807CEE2007F6E3E /* ExtractDetail */,
 				B1096FDA27FE02B000DEA74F /* DesignSystem */,
 				B1662E7E27F775560095E8DC /* Home */,
 				B1662E5C27F770860095E8DC /* Login */,
@@ -238,6 +290,19 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		B1CE3C15280DE924001E5BA7 /* desafio-coraTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED43AE280F92B0003A1615 /* ViewControllerSpy.swift */,
+				B1ED439A280F325D003A1615 /* HomeTests */,
+				B1ED439F280F3572003A1615 /* LoginTests */,
+				B1ED43A4280F36EB003A1615 /* PasswordTests */,
+				B1ED43A9280F37F4003A1615 /* ExtractTests */,
+				B1ED43B628104DE1003A1615 /* ExtractDetailTests */,
+			);
+			path = "desafio-coraTests";
+			sourceTree = "<group>";
+		};
 		B1E09DDF28048230000BF599 /* Extract */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +327,56 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B1ED439A280F325D003A1615 /* HomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1CE3C1D280DE96A001E5BA7 /* HomeInteractorTests.swift */,
+				B1ED439B280F3285003A1615 /* HomePresenterTests.swift */,
+				B1ED439D280F33BE003A1615 /* HomeCoordinatorTests.swift */,
+			);
+			path = HomeTests;
+			sourceTree = "<group>";
+		};
+		B1ED439F280F3572003A1615 /* LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED43A0280F3583003A1615 /* LoginInteractorTests.swift */,
+				B1ED43A2280F3624003A1615 /* LoginPresenterTests.swift */,
+				B1ED43B0280F9339003A1615 /* LoginCoordinatorTests.swift */,
+			);
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
+		B1ED43A4280F36EB003A1615 /* PasswordTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED43A5280F3705003A1615 /* PasswordInteractorTests.swift */,
+				B1ED43A7280F3788003A1615 /* PasswordPresenterTests.swift */,
+				B1ED43B22810436B003A1615 /* PasswordCoordinatorTests.swift */,
+			);
+			path = PasswordTests;
+			sourceTree = "<group>";
+		};
+		B1ED43A9280F37F4003A1615 /* ExtractTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED43AA280F3808003A1615 /* ExtractInteractorTests.swift */,
+				B1ED43AC280F45F2003A1615 /* ExtractPresenterTests.swift */,
+				B1ED43B42810489E003A1615 /* ExtractCoordinatorTests.swift */,
+			);
+			path = ExtractTests;
+			sourceTree = "<group>";
+		};
+		B1ED43B628104DE1003A1615 /* ExtractDetailTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1ED43B728104E00003A1615 /* ExtractDetailInteractorTests.swift */,
+				B1ED43B928104F2E003A1615 /* ExtractDetailPresenterTests.swift */,
+				B1ED43BB28105025003A1615 /* ExtractDetailCoordinatorTests.swift */,
+			);
+			path = ExtractDetailTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,6 +397,24 @@
 			productReference = B1662E4527F76B4C0095E8DC /* desafio-cora.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B1CE3C13280DE924001E5BA7 /* desafio-coraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1CE3C1A280DE924001E5BA7 /* Build configuration list for PBXNativeTarget "desafio-coraTests" */;
+			buildPhases = (
+				B1CE3C10280DE924001E5BA7 /* Sources */,
+				B1CE3C11280DE924001E5BA7 /* Frameworks */,
+				B1CE3C12280DE924001E5BA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1CE3C19280DE924001E5BA7 /* PBXTargetDependency */,
+			);
+			name = "desafio-coraTests";
+			productName = "desafio-coraTests";
+			productReference = B1CE3C14280DE924001E5BA7 /* desafio-coraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -294,6 +427,10 @@
 				TargetAttributes = {
 					B1662E4427F76B4C0095E8DC = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					B1CE3C13280DE924001E5BA7 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = B1662E4427F76B4C0095E8DC;
 					};
 				};
 			};
@@ -311,6 +448,7 @@
 			projectRoot = "";
 			targets = (
 				B1662E4427F76B4C0095E8DC /* desafio-cora */,
+				B1CE3C13280DE924001E5BA7 /* desafio-coraTests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,6 +462,13 @@
 				B1662E5527F76B4D0095E8DC /* LaunchScreen.storyboard in Resources */,
 				B1662E5227F76B4D0095E8DC /* Assets.xcassets in Resources */,
 				B1E09DF82805BB47000BF599 /* extract.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1CE3C12280DE924001E5BA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +525,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1CE3C10280DE924001E5BA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1ED43B52810489E003A1615 /* ExtractCoordinatorTests.swift in Sources */,
+				B1ED43BA28104F2E003A1615 /* ExtractDetailPresenterTests.swift in Sources */,
+				B1ED43AB280F3808003A1615 /* ExtractInteractorTests.swift in Sources */,
+				B1ED43AF280F92B0003A1615 /* ViewControllerSpy.swift in Sources */,
+				B1ED43A1280F3583003A1615 /* LoginInteractorTests.swift in Sources */,
+				B1CE3C1E280DE96A001E5BA7 /* HomeInteractorTests.swift in Sources */,
+				B1ED43A8280F3788003A1615 /* PasswordPresenterTests.swift in Sources */,
+				B1ED43B1280F9339003A1615 /* LoginCoordinatorTests.swift in Sources */,
+				B1ED439C280F3285003A1615 /* HomePresenterTests.swift in Sources */,
+				B1ED439E280F33BE003A1615 /* HomeCoordinatorTests.swift in Sources */,
+				B1ED43A3280F3624003A1615 /* LoginPresenterTests.swift in Sources */,
+				B1ED43BC28105025003A1615 /* ExtractDetailCoordinatorTests.swift in Sources */,
+				B1ED43AD280F45F2003A1615 /* ExtractPresenterTests.swift in Sources */,
+				B1ED43A6280F3705003A1615 /* PasswordInteractorTests.swift in Sources */,
+				B1ED43B32810436B003A1615 /* PasswordCoordinatorTests.swift in Sources */,
+				B1ED43B828104E00003A1615 /* ExtractDetailInteractorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1CE3C19280DE924001E5BA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1662E4427F76B4C0095E8DC /* desafio-cora */;
+			targetProxy = B1CE3C18280DE924001E5BA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B1662E5327F76B4D0095E8DC /* LaunchScreen.storyboard */ = {
@@ -564,6 +740,42 @@
 			};
 			name = Release;
 		};
+		B1CE3C1B280DE924001E5BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8GU3CF32ZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusPerez.desafio-coraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio-cora.app/desafio-cora";
+			};
+			name = Debug;
+		};
+		B1CE3C1C280DE924001E5BA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8GU3CF32ZF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusPerez.desafio-coraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio-cora.app/desafio-cora";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +793,15 @@
 			buildConfigurations = (
 				B1662E5A27F76B4D0095E8DC /* Debug */,
 				B1662E5B27F76B4D0095E8DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1CE3C1A280DE924001E5BA7 /* Build configuration list for PBXNativeTarget "desafio-coraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1CE3C1B280DE924001E5BA7 /* Debug */,
+				B1CE3C1C280DE924001E5BA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

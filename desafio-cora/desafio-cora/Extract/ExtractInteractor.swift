@@ -17,7 +17,7 @@ final class ExtractInteractor {
     private let service: ExtractServicing
     private let presenter: ExtractPresenting
     private var statementData = [StatementData]()
-    private var filterStatementData = [StatementData]()
+    private(set) var filterStatementData = [StatementData]()
 
     init(service: ExtractServicing, presenter: ExtractPresenting) {
         self.service = service
@@ -27,10 +27,13 @@ final class ExtractInteractor {
 
 private extension ExtractInteractor {
     func checkTransaction(indexPath: IndexPath) -> Bool {
-        if filterStatementData[indexPath.section].transactions[indexPath.row].transactionStatus.transactionType == .transfer || filterStatementData[indexPath.section].transactions[indexPath.row].transactionStatus.transactionType == .payment {
+        let transactionType = filterStatementData[indexPath.section].transactions[indexPath.row].transactionStatus.transactionType
+        switch transactionType {
+        case .transfer, .payment:
             return true
+        case .ticket:
+            return false
         }
-        return false
     }
 }
 
@@ -106,10 +109,9 @@ extension ExtractInteractor: ExtractInteracting {
     
     func goToExtractDetail(indexPath: IndexPath) {
         if checkTransaction(indexPath: indexPath) {
-            presenter.didNextStep(action: .ExtractDetailScene(transaction: filterStatementData[indexPath.section].transactions[indexPath.row],
-                                                              transactionDay: filterStatementData[indexPath.section].transactionDay))
+            presenter.presentExtractDetail(transaction: filterStatementData[indexPath.section].transactions[indexPath.row],
+                                           transactionDay: filterStatementData[indexPath.section].transactionDay)
         }
-        
     }
     
     func signOut() {

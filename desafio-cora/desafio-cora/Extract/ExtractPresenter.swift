@@ -4,6 +4,7 @@ protocol ExtractPresenting: AnyObject {
     var viewController: ExtractDisplaying? { get set }
     func displayStatementList()
     func didNextStep(action: ExtractAction)
+    func presentExtractDetail(transaction: TransactionDetail, transactionDay: String)
 }
 
 final class ExtractPresenter {
@@ -17,6 +18,10 @@ final class ExtractPresenter {
 
 // MARK: - ExtractPresenting
 extension ExtractPresenter: ExtractPresenting {
+    func presentExtractDetail(transaction: TransactionDetail, transactionDay: String) {
+        coordinator.coordinateToExtractDetail(transaction: transaction, transactionDay: transactionDay)
+    }
+    
     func displayStatementList() {
         viewController?.showStatementList()
     }
