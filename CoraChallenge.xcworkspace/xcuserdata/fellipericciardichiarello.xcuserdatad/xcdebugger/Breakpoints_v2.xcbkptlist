@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "22EF0DCB-734B-4C0C-9ABA-49C468466B21"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B0BCC7F-A7CF-4F4F-AD4B-EB573FED0032"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoraChallenge/CoraBaseRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "navigationController"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5B0BCC7F-A7CF-4F4F-AD4B-EB573FED0032 - b9919aa9b985fa95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoraChallenge.CoraBaseRouter.navigationController.getter : Swift.Optional&lt;__C.UINavigationController&gt;"
+                  moduleName = "CoraChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fellipericciardichiarello/projetos/CoraChallenge/CoraChallenge/CoraBaseRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "5B0BCC7F-A7CF-4F4F-AD4B-EB573FED0032 - d5fc7f0dd0eac19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoraChallenge.CoraBaseRouter.navigationController.setter : Swift.Optional&lt;__C.UINavigationController&gt;"
+                  moduleName = "CoraChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fellipericciardichiarello/projetos/CoraChallenge/CoraChallenge/CoraBaseRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "137">
+               </Location>
+               <Location
+                  uuid = "5B0BCC7F-A7CF-4F4F-AD4B-EB573FED0032 - 879810f6ecc59968"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoraChallenge.CoraBaseRouter.navigationController.modify : Swift.Optional&lt;__C.UINavigationController&gt;"
+                  moduleName = "CoraChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fellipericciardichiarello/projetos/CoraChallenge/CoraChallenge/CoraBaseRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "5B0BCC7F-A7CF-4F4F-AD4B-EB573FED0032 - bd00e357f3ef14ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoraChallenge.CoraBaseRouter.navigationController.modify : Swift.Optional&lt;__C.UINavigationController&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CoraChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fellipericciardichiarello/projetos/CoraChallenge/CoraChallenge/CoraBaseRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  uuid = "5B0BCC7F-A7CF-4F4F-AD4B-EB573FED0032 - ce2ed6cf76212522"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoraChallenge.CoraBaseRouter.init() -&gt; CoraChallenge.CoraBaseRouter"
+                  moduleName = "CoraChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fellipericciardichiarello/projetos/CoraChallenge/CoraChallenge/CoraBaseRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
