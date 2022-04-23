@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InitialViewController.swift
 //  CoraChallenge
 //
 //  Created by Fellipe Ricciardi Chiarello on 4/18/22.

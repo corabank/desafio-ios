@@ -10,6 +10,7 @@
 		203644B2B1410E74D7D1EB83 /* Pods_CoraChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF52CF90C6C46A0E79657BE /* Pods_CoraChallenge.framework */; };
 		303DA9AF9412ECD73553B01F /* Pods_CoraChallenge_CoraChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16183D74F21C400528399204 /* Pods_CoraChallenge_CoraChallengeUITests.framework */; };
 		53201F66A3CEA546D491DC75 /* Pods_CoraChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */; };
+		926D6DFC2814AD400073939B /* StatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFB2814AD400073939B /* StatementViewController.swift */; };
 		9283813B280E404400842CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813A280E404400842CFD /* AppDelegate.swift */; };
 		9283813D280E404400842CFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813C280E404400842CFD /* SceneDelegate.swift */; };
 		9283813F280E404400842CFD /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813E280E404400842CFD /* InitialViewController.swift */; };
@@ -22,7 +23,9 @@
 		928381722810EB2A00842CFD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381712810EB2A00842CFD /* UIColor+Extension.swift */; };
 		928381742811B4D500842CFD /* CoraLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381732811B4D500842CFD /* CoraLoginRouter.swift */; };
 		928381782811B6C200842CFD /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381772811B6C200842CFD /* UserLoginViewController.swift */; };
-		9283817C2811BDC100842CFD /* CoraBaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283817B2811BDC100842CFD /* CoraBaseRouter.swift */; };
+		92852BE628134E350004B892 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92852BE528134E350004B892 /* PasswordViewController.swift */; };
+		92EA3C3C2811FB7100C61AF8 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA3C3B2811FB7100C61AF8 /* UITextField+Extension.swift */; };
+		92EA3C3E2812262300C61AF8 /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA3C3D2812262200C61AF8 /* UserLoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,7 @@
 		5348CFF0E30F68A9EC9D3F58 /* Pods-CoraChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7341D42D942FB9B5787E6361 /* Pods-CoraChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		8B4D40BB626ACAA5638D5AEF /* Pods-CoraChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge/Pods-CoraChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		926D6DFB2814AD400073939B /* StatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewController.swift; sourceTree = "<group>"; };
 		92838137280E404400842CFD /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283813A280E404400842CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9283813C280E404400842CFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +70,9 @@
 		928381712810EB2A00842CFD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		928381732811B4D500842CFD /* CoraLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraLoginRouter.swift; sourceTree = "<group>"; };
 		928381772811B6C200842CFD /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
-		9283817B2811BDC100842CFD /* CoraBaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraBaseRouter.swift; sourceTree = "<group>"; };
+		92852BE528134E350004B892 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		92EA3C3B2811FB7100C61AF8 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		92EA3C3D2812262200C61AF8 /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
 		A72B035E16D5435EB836C173 /* Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoraChallenge-CoraChallengeUITests/Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C31CB9DDA0F1C107519BA600 /* Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge-CoraChallengeUITests/Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +128,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		926D6DFA2814AB100073939B /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				926D6DFB2814AD400073939B /* StatementViewController.swift */,
+			);
+			path = Statement;
+			sourceTree = "<group>";
+		};
 		9283812E280E404300842CFD = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +168,6 @@
 				92838143280E404A00842CFD /* Assets.xcassets */,
 				92838145280E404A00842CFD /* LaunchScreen.storyboard */,
 				92838148280E404A00842CFD /* Info.plist */,
-				9283817B2811BDC100842CFD /* CoraBaseRouter.swift */,
 			);
 			path = CoraChallenge;
 			sourceTree = "<group>";
@@ -181,6 +194,7 @@
 			children = (
 				9283816B2810E32E00842CFD /* ViewCodeProtocol.swift */,
 				928381712810EB2A00842CFD /* UIColor+Extension.swift */,
+				92EA3C3B2811FB7100C61AF8 /* UITextField+Extension.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 		928381752811B62800842CFD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				926D6DFA2814AB100073939B /* Statement */,
 				928381762811B63200842CFD /* Login */,
 			);
 			path = Scenes;
@@ -199,6 +214,8 @@
 				9283813E280E404400842CFD /* InitialViewController.swift */,
 				928381732811B4D500842CFD /* CoraLoginRouter.swift */,
 				928381772811B6C200842CFD /* UserLoginViewController.swift */,
+				92EA3C3D2812262200C61AF8 /* UserLoginView.swift */,
+				92852BE528134E350004B892 /* PasswordViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -405,12 +422,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9283817C2811BDC100842CFD /* CoraBaseRouter.swift in Sources */,
+				92EA3C3E2812262300C61AF8 /* UserLoginView.swift in Sources */,
+				92852BE628134E350004B892 /* PasswordViewController.swift in Sources */,
 				928381782811B6C200842CFD /* UserLoginViewController.swift in Sources */,
 				9283813F280E404400842CFD /* InitialViewController.swift in Sources */,
 				9283816C2810E32E00842CFD /* ViewCodeProtocol.swift in Sources */,
+				926D6DFC2814AD400073939B /* StatementViewController.swift in Sources */,
 				9283813B280E404400842CFD /* AppDelegate.swift in Sources */,
 				928381722810EB2A00842CFD /* UIColor+Extension.swift in Sources */,
+				92EA3C3C2811FB7100C61AF8 /* UITextField+Extension.swift in Sources */,
 				9283813D280E404400842CFD /* SceneDelegate.swift in Sources */,
 				928381742811B4D500842CFD /* CoraLoginRouter.swift in Sources */,
 			);

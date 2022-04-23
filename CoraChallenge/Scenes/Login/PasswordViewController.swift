@@ -1,13 +1,13 @@
 //
-//  UserLoginViewController.swift
+//  PasswordViewController.swift
 //  CoraChallenge
 //
-//  Created by Fellipe Ricciardi Chiarello on 4/21/22.
+//  Created by Fellipe Ricciardi Chiarello on 4/22/22.
 //
 
 import UIKit
 
-class UserLoginViewController: UIViewController {
+class PasswordViewController: UIViewController {
     
     lazy var screen: UserLoginView = {
         let view = UserLoginView()
@@ -36,7 +36,7 @@ class UserLoginViewController: UIViewController {
                                        NSAttributedString.Key.foregroundColor : UIColor.coraDarkGray]
         navBar?.backgroundColor = .coraLightGray
         navBar?.tintColor = .coraPink
-        navBar?.backItem?.title = ""
+        navBar?.backItem?.title = nil
         
         let backButtonImage = UIImage(named: "nav_bar_back_button")
         navBar?.backIndicatorImage = backButtonImage
@@ -44,7 +44,7 @@ class UserLoginViewController: UIViewController {
     }
 }
 
-extension UserLoginViewController: ViewCodeProtocol {
+extension PasswordViewController: ViewCodeProtocol {
     func viewCodeHierarchySetup() {
         view.addSubview(screen)
     }
@@ -60,21 +60,21 @@ extension UserLoginViewController: ViewCodeProtocol {
     
     func viewCodeAditionalSetup() {
         view.backgroundColor = .coraBackgroundWhite
-        screen.regularLabelText = "Bem-vindo de volta!"
-        screen.boldLabelText = "Qual o seu CPF?"
+        screen.regularLabelText = nil
+        screen.boldLabelText = "Digite sua senha de acesso"
         screen.nextButton.addTarget(self, action: #selector(self.nextButtonPressed), for: .touchUpInside)
-        screen.isLinkButtonHidden = true
-        screen.isPassword = false
+        screen.isLinkButtonHidden = false
+        screen.isPassword = true
     }
 }
 
-extension UserLoginViewController: UserLoginViewDelegate {
+extension PasswordViewController: UserLoginViewDelegate {
     @objc func missPasswordButton() {
         print("FORGET PASSWORD")
     }
     
     @objc func nextButtonPressed() {
         print("Button NEXT TOUCHED")
-        CoraLoginRouter.goToPassword(from: self)
+        CoraLoginRouter.goToStatement(from: self)
     }
 }

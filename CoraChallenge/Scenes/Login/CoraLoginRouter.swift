@@ -15,4 +15,16 @@ public class CoraLoginRouter: NSObject {
         
         controller.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc public static func goToPassword(from controller: UIViewController) {
+        let vc = PasswordViewController()
+        
+        controller.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc public static func goToStatement(from controller: UIViewController) {
+        let vc = StatementViewController()
+        
+        controller.navigationController?.pushViewController(vc, animated: true)
+    }
 }

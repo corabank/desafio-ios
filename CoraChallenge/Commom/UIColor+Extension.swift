@@ -13,4 +13,5 @@ extension UIColor {
     static let coraDarkGray = UIColor(red: 107/255, green: 112/255, blue: 118/255, alpha: 1)
     static let coraMediumGray = UIColor(red: 199/255, green: 203/255, blue: 207/255, alpha: 1)
     static let coraBackgroundWhite = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
+    static let coraBlack = UIColor(red: 59/255, green: 59/255, blue: 59/255, alpha: 1)
 }
