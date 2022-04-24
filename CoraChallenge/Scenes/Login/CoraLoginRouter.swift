@@ -24,6 +24,11 @@ public class CoraLoginRouter: NSObject {
     
     @objc public static func goToStatement(from controller: UIViewController) {
         let vc = StatementViewController()
+        let repository = StatementRepository()
+        let presenter = StatementPresenter(viewController: vc)
+        let interactor = StatementInteractor(repository: repository, presenter: presenter)
+        
+        vc.interactor = interactor
         
         controller.navigationController?.pushViewController(vc, animated: true)
     }

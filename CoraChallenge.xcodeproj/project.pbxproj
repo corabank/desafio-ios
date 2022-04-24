@@ -11,6 +11,18 @@
 		303DA9AF9412ECD73553B01F /* Pods_CoraChallenge_CoraChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16183D74F21C400528399204 /* Pods_CoraChallenge_CoraChallengeUITests.framework */; };
 		53201F66A3CEA546D491DC75 /* Pods_CoraChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */; };
 		926D6DFC2814AD400073939B /* StatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFB2814AD400073939B /* StatementViewController.swift */; };
+		926D6DFE2814BC450073939B /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFD2814BC450073939B /* StatementTableViewCell.swift */; };
+		926D6E002815990F0073939B /* StatementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFF2815990F0073939B /* StatementModel.swift */; };
+		926D6E0328159C170073939B /* StatementModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E0228159C170073939B /* StatementModelData.swift */; };
+		926D6E0528159C430073939B /* SenderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E0428159C430073939B /* SenderData.swift */; };
+		926D6E0728159C770073939B /* ReceiverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E0628159C770073939B /* ReceiverData.swift */; };
+		926D6E0A28159ECF0073939B /* StatementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E0928159ECF0073939B /* StatementRepository.swift */; };
+		926D6E0F2815D7F10073939B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E0E2815D7F10073939B /* UIColor+Extension.swift */; };
+		926D6E112815D8020073939B /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E102815D8010073939B /* UITextField+Extension.swift */; };
+		926D6E132815D8100073939B /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E122815D8100073939B /* ViewCodeProtocol.swift */; };
+		926D6E152815D8660073939B /* CoraData.json in Resources */ = {isa = PBXBuildFile; fileRef = 926D6E142815D8660073939B /* CoraData.json */; };
+		926D6E172815E5170073939B /* StatementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E162815E5160073939B /* StatementInteractor.swift */; };
+		926D6E192815E6C00073939B /* StatementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E182815E6C00073939B /* StatementPresenter.swift */; };
 		9283813B280E404400842CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813A280E404400842CFD /* AppDelegate.swift */; };
 		9283813D280E404400842CFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813C280E404400842CFD /* SceneDelegate.swift */; };
 		9283813F280E404400842CFD /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813E280E404400842CFD /* InitialViewController.swift */; };
@@ -19,12 +31,9 @@
 		92838152280E404A00842CFD /* CoraChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92838151280E404A00842CFD /* CoraChallengeTests.swift */; };
 		9283815C280E404A00842CFD /* CoraChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283815B280E404A00842CFD /* CoraChallengeUITests.swift */; };
 		9283815E280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283815D280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift */; };
-		9283816C2810E32E00842CFD /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283816B2810E32E00842CFD /* ViewCodeProtocol.swift */; };
-		928381722810EB2A00842CFD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381712810EB2A00842CFD /* UIColor+Extension.swift */; };
 		928381742811B4D500842CFD /* CoraLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381732811B4D500842CFD /* CoraLoginRouter.swift */; };
 		928381782811B6C200842CFD /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381772811B6C200842CFD /* UserLoginViewController.swift */; };
 		92852BE628134E350004B892 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92852BE528134E350004B892 /* PasswordViewController.swift */; };
-		92EA3C3C2811FB7100C61AF8 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA3C3B2811FB7100C61AF8 /* UITextField+Extension.swift */; };
 		92EA3C3E2812262300C61AF8 /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA3C3D2812262200C61AF8 /* UserLoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +63,18 @@
 		7341D42D942FB9B5787E6361 /* Pods-CoraChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		8B4D40BB626ACAA5638D5AEF /* Pods-CoraChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge/Pods-CoraChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		926D6DFB2814AD400073939B /* StatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewController.swift; sourceTree = "<group>"; };
+		926D6DFD2814BC450073939B /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
+		926D6DFF2815990F0073939B /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
+		926D6E0228159C170073939B /* StatementModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModelData.swift; sourceTree = "<group>"; };
+		926D6E0428159C430073939B /* SenderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderData.swift; sourceTree = "<group>"; };
+		926D6E0628159C770073939B /* ReceiverData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverData.swift; sourceTree = "<group>"; };
+		926D6E0928159ECF0073939B /* StatementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementRepository.swift; sourceTree = "<group>"; };
+		926D6E0E2815D7F10073939B /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "../../../../Desktop/UIColor+Extension.swift"; sourceTree = "<group>"; };
+		926D6E102815D8010073939B /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+Extension.swift"; path = "../../../../Desktop/UITextField+Extension.swift"; sourceTree = "<group>"; };
+		926D6E122815D8100073939B /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewCodeProtocol.swift; path = ../../../../Desktop/ViewCodeProtocol.swift; sourceTree = "<group>"; };
+		926D6E142815D8660073939B /* CoraData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CoraData.json; path = ../../../../Desktop/CoraData.json; sourceTree = "<group>"; };
+		926D6E162815E5160073939B /* StatementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractor.swift; sourceTree = "<group>"; };
+		926D6E182815E6C00073939B /* StatementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPresenter.swift; sourceTree = "<group>"; };
 		92838137280E404400842CFD /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283813A280E404400842CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9283813C280E404400842CFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,12 +87,9 @@
 		92838157280E404A00842CFD /* CoraChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283815B280E404A00842CFD /* CoraChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITests.swift; sourceTree = "<group>"; };
 		9283815D280E404A00842CFD /* CoraChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9283816B2810E32E00842CFD /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
-		928381712810EB2A00842CFD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		928381732811B4D500842CFD /* CoraLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraLoginRouter.swift; sourceTree = "<group>"; };
 		928381772811B6C200842CFD /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		92852BE528134E350004B892 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		92EA3C3B2811FB7100C61AF8 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		92EA3C3D2812262200C61AF8 /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
 		A72B035E16D5435EB836C173 /* Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoraChallenge-CoraChallengeUITests/Pods-CoraChallenge-CoraChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C31CB9DDA0F1C107519BA600 /* Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge-CoraChallengeUITests/Pods-CoraChallenge-CoraChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,9 +149,43 @@
 		926D6DFA2814AB100073939B /* Statement */ = {
 			isa = PBXGroup;
 			children = (
+				926D6E0128159BF10073939B /* Models */,
 				926D6DFB2814AD400073939B /* StatementViewController.swift */,
+				926D6DFD2814BC450073939B /* StatementTableViewCell.swift */,
+				926D6E162815E5160073939B /* StatementInteractor.swift */,
+				926D6E182815E6C00073939B /* StatementPresenter.swift */,
 			);
 			path = Statement;
+			sourceTree = "<group>";
+		};
+		926D6E0128159BF10073939B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				926D6DFF2815990F0073939B /* StatementModel.swift */,
+				926D6E0228159C170073939B /* StatementModelData.swift */,
+				926D6E0428159C430073939B /* SenderData.swift */,
+				926D6E0628159C770073939B /* ReceiverData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		926D6E0828159EB50073939B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				926D6E0928159ECF0073939B /* StatementRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		926D6E0D2815D7810073939B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				926D6E142815D8660073939B /* CoraData.json */,
+				926D6E122815D8100073939B /* ViewCodeProtocol.swift */,
+				926D6E102815D8010073939B /* UITextField+Extension.swift */,
+				926D6E0E2815D7F10073939B /* UIColor+Extension.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9283812E280E404300842CFD = {
@@ -161,8 +213,8 @@
 		92838139280E404400842CFD /* CoraChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				926D6E0D2815D7810073939B /* Common */,
 				928381752811B62800842CFD /* Scenes */,
-				9283816A2810E2FE00842CFD /* Commom */,
 				9283813A280E404400842CFD /* AppDelegate.swift */,
 				9283813C280E404400842CFD /* SceneDelegate.swift */,
 				92838143280E404A00842CFD /* Assets.xcassets */,
@@ -189,19 +241,10 @@
 			path = CoraChallengeUITests;
 			sourceTree = "<group>";
 		};
-		9283816A2810E2FE00842CFD /* Commom */ = {
-			isa = PBXGroup;
-			children = (
-				9283816B2810E32E00842CFD /* ViewCodeProtocol.swift */,
-				928381712810EB2A00842CFD /* UIColor+Extension.swift */,
-				92EA3C3B2811FB7100C61AF8 /* UITextField+Extension.swift */,
-			);
-			path = Commom;
-			sourceTree = "<group>";
-		};
 		928381752811B62800842CFD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				926D6E0828159EB50073939B /* Repository */,
 				926D6DFA2814AB100073939B /* Statement */,
 				928381762811B63200842CFD /* Login */,
 			);
@@ -329,6 +372,7 @@
 			files = (
 				92838147280E404A00842CFD /* LaunchScreen.storyboard in Resources */,
 				92838144280E404A00842CFD /* Assets.xcassets in Resources */,
+				926D6E152815D8660073939B /* CoraData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,11 +470,19 @@
 				92852BE628134E350004B892 /* PasswordViewController.swift in Sources */,
 				928381782811B6C200842CFD /* UserLoginViewController.swift in Sources */,
 				9283813F280E404400842CFD /* InitialViewController.swift in Sources */,
-				9283816C2810E32E00842CFD /* ViewCodeProtocol.swift in Sources */,
+				926D6E192815E6C00073939B /* StatementPresenter.swift in Sources */,
+				926D6E172815E5170073939B /* StatementInteractor.swift in Sources */,
 				926D6DFC2814AD400073939B /* StatementViewController.swift in Sources */,
+				926D6E132815D8100073939B /* ViewCodeProtocol.swift in Sources */,
+				926D6E112815D8020073939B /* UITextField+Extension.swift in Sources */,
+				926D6E0A28159ECF0073939B /* StatementRepository.swift in Sources */,
 				9283813B280E404400842CFD /* AppDelegate.swift in Sources */,
-				928381722810EB2A00842CFD /* UIColor+Extension.swift in Sources */,
-				92EA3C3C2811FB7100C61AF8 /* UITextField+Extension.swift in Sources */,
+				926D6E0528159C430073939B /* SenderData.swift in Sources */,
+				926D6E002815990F0073939B /* StatementModel.swift in Sources */,
+				926D6E0F2815D7F10073939B /* UIColor+Extension.swift in Sources */,
+				926D6DFE2814BC450073939B /* StatementTableViewCell.swift in Sources */,
+				926D6E0728159C770073939B /* ReceiverData.swift in Sources */,
+				926D6E0328159C170073939B /* StatementModelData.swift in Sources */,
 				9283813D280E404400842CFD /* SceneDelegate.swift in Sources */,
 				928381742811B4D500842CFD /* CoraLoginRouter.swift in Sources */,
 			);
