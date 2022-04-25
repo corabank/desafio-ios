@@ -12,6 +12,11 @@
 		57340F4028175F260070804E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57340F3F28175F260070804E /* Assets.xcassets */; };
 		57340F4328175F260070804E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57340F4128175F260070804E /* LaunchScreen.storyboard */; };
 		57340F4E28175F260070804E /* BankStatementSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340F4D28175F260070804E /* BankStatementSampleTests.swift */; };
+		57340F7E281764180070804E /* ServiceLocator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340F7D281764180070804E /* ServiceLocator.framework */; };
+		57340F7F281764180070804E /* ServiceLocator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57340F7D281764180070804E /* ServiceLocator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57340F822817642E0070804E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340F812817642E0070804E /* AppCoordinator.swift */; };
+		57340FE2281766F30070804E /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FE1281766F30070804E /* Login.framework */; };
+		57340FE3281766F30070804E /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FE1281766F30070804E /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		57340F80281764180070804E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				57340FE3281766F30070804E /* Login.framework in Embed Frameworks */,
+				57340F7F281764180070804E /* ServiceLocator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		57340F3328175F260070804E /* BankStatementSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankStatementSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340F3628175F260070804E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +61,9 @@
 		57340F4928175F260070804E /* BankStatementSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankStatementSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340F4D28175F260070804E /* BankStatementSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankStatementSampleTests.swift; sourceTree = "<group>"; };
 		57340F5328175F260070804E /* BankStatementSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankStatementSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57340F7D281764180070804E /* ServiceLocator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ServiceLocator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57340F812817642E0070804E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		57340FE1281766F30070804E /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57340FE2281766F30070804E /* Login.framework in Frameworks */,
+				57340F7E281764180070804E /* ServiceLocator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +99,7 @@
 				57340F3528175F260070804E /* BankStatementSample */,
 				57340F4C28175F260070804E /* BankStatementSampleTests */,
 				57340F3428175F260070804E /* Products */,
+				57340F7C281764180070804E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +121,7 @@
 				57340F3F28175F260070804E /* Assets.xcassets */,
 				57340F4128175F260070804E /* LaunchScreen.storyboard */,
 				57340F4428175F260070804E /* Info.plist */,
+				57340F812817642E0070804E /* AppCoordinator.swift */,
 			);
 			path = BankStatementSample;
 			sourceTree = "<group>";
@@ -107,6 +134,15 @@
 			path = BankStatementSampleTests;
 			sourceTree = "<group>";
 		};
+		57340F7C281764180070804E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57340FE1281766F30070804E /* Login.framework */,
+				57340F7D281764180070804E /* ServiceLocator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,6 +153,7 @@
 				57340F2F28175F260070804E /* Sources */,
 				57340F3028175F260070804E /* Frameworks */,
 				57340F3128175F260070804E /* Resources */,
+				57340F80281764180070804E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57340F822817642E0070804E /* AppCoordinator.swift in Sources */,
 				57340F3B28175F260070804E /* ViewController.swift in Sources */,
 				57340F3728175F260070804E /* AppDelegate.swift in Sources */,
 			);
