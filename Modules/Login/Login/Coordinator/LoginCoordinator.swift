@@ -10,7 +10,7 @@ public final class LoginCoordinator: LoginCoordinatorProtocol {
         self.navigation = navigation
     }
     
-    public func start(animated: Bool) {
+    public func start() {
         // todo
     }
     

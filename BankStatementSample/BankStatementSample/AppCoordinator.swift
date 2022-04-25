@@ -17,7 +17,7 @@ class AppCoordinator {
         self.window.makeKeyAndVisible()
     }
     
-    func goToHome() {
+    func goToMainView() {
         // TODO - maybe add some handling for login
     }
 }
