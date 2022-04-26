@@ -1,2 +1,3 @@
-
-import Foundation
+protocol LoginViewModelProtocol {
+    func set(view: LoginViewProtocol)
+}

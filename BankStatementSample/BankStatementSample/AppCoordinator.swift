@@ -1,7 +1,6 @@
 import UIKit
 import Foundation
 import Login
-import ServiceLocator
 
 class AppCoordinator {
     private let window: UIWindow
@@ -18,6 +17,8 @@ class AppCoordinator {
     }
     
     func goToMainView() {
-        // TODO - maybe add some handling for login
+        let loginCoordinator: LoginCoordinatorProtocol = LoginCoordinator()
+        loginCoordinator.set(navigation: self.navigator)
+        loginCoordinator.start()
     }
 }

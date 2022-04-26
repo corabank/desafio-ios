@@ -1,6 +1,6 @@
 import UIKit
 
-protocol LoginCoordinatorProtocol: AnyObject {
+public protocol LoginCoordinatorProtocol: AnyObject {
     func set(navigation: UINavigationController)
     func start()
     func login()

@@ -1,2 +1,5 @@
+import UIKit
 
-import Foundation
+protocol LoginViewProtocol: UIViewController {
+    func set(delegate: LoginViewDelegate)
+}

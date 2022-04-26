@@ -4,6 +4,9 @@ public final class LoginCoordinator: LoginCoordinatorProtocol {
     
     private lazy var navigation: UINavigationController? = nil
     
+    private let loginViewModel: LoginViewModelProtocol & LoginViewDelegate = LoginViewModel()
+    private let loginView: LoginViewProtocol = LoginView()
+    
     public init() {}
     
     public func set(navigation: UINavigationController) {
@@ -11,10 +14,12 @@ public final class LoginCoordinator: LoginCoordinatorProtocol {
     }
     
     public func start() {
-        // todo
+        loginViewModel.set(view: loginView)
+        loginView.set(delegate: loginViewModel)
+        navigation?.pushViewController(loginView, animated: true)
     }
     
-    func login() {
+    public func login() {
         // todo
     }
 }

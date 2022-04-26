@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57142DF1281803AA005DFFA6 /* RegularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142DF0281803AA005DFFA6 /* RegularButton.swift */; };
+		57142DF628180520005DFFA6 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142DF528180520005DFFA6 /* UIButton.swift */; };
 		5734100628176BCF0070804E /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FFD28176BCF0070804E /* Components.framework */; };
 		5734100B28176BCF0070804E /* ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734100A28176BCF0070804E /* ComponentsTests.swift */; };
 		5734100C28176BCF0070804E /* Components.h in Headers */ = {isa = PBXBuildFile; fileRef = 5734100028176BCF0070804E /* Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		57142DF0281803AA005DFFA6 /* RegularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularButton.swift; sourceTree = "<group>"; };
+		57142DF528180520005DFFA6 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		57340FFD28176BCF0070804E /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5734100028176BCF0070804E /* Components.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
 		5734100528176BCF0070804E /* ComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57142DEF2818033F005DFFA6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				57142DF0281803AA005DFFA6 /* RegularButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		57142DF42818050E005DFFA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				57142DF528180520005DFFA6 /* UIButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		57340FF328176BCF0070804E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +108,8 @@
 		57340FFF28176BCF0070804E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				57142DF42818050E005DFFA6 /* Extensions */,
+				57142DEF2818033F005DFFA6 /* Buttons */,
 				5734100028176BCF0070804E /* Components.h */,
 			);
 			path = Components;
@@ -172,6 +194,7 @@
 				TargetAttributes = {
 					57340FFC28176BCF0070804E = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					5734100428176BCF0070804E = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -219,6 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57142DF1281803AA005DFFA6 /* RegularButton.swift in Sources */,
+				57142DF628180520005DFFA6 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +389,7 @@
 		5734101028176BCF0070804E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -383,6 +409,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,6 +418,7 @@
 		5734101128176BCF0070804E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -418,6 +446,7 @@
 		5734101328176BCF0070804E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -433,6 +462,7 @@
 		5734101428176BCF0070804E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

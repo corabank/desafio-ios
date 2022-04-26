@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57142DED2817FE68005DFFA6 /* ViewCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57142DEC2817FE68005DFFA6 /* ViewCode.framework */; };
+		57142DEE2817FE68005DFFA6 /* ViewCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57142DEC2817FE68005DFFA6 /* ViewCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57340F96281764E10070804E /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340F8D281764E10070804E /* Login.framework */; };
 		57340F9B281764E10070804E /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340F9A281764E10070804E /* LoginTests.swift */; };
 		57340F9C281764E10070804E /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = 57340F90281764E10070804E /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,6 +20,7 @@
 		57340FF2281767B60070804E /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340FF1281767B60070804E /* LoginViewModelProtocol.swift */; };
 		5734101C28176C3D0070804E /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101B28176C3D0070804E /* Components.framework */; };
 		5734101D28176C3D0070804E /* Components.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101B28176C3D0070804E /* Components.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5734102028176E260070804E /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734101F28176E260070804E /* LoginViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				57142DEE2817FE68005DFFA6 /* ViewCode.framework in Embed Frameworks */,
 				5734101D28176C3D0070804E /* Components.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -45,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		57142DEC2817FE68005DFFA6 /* ViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340F8D281764E10070804E /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340F90281764E10070804E /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		57340F95281764E10070804E /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +61,7 @@
 		57340FEF281767A90070804E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		57340FF1281767B60070804E /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		5734101B28176C3D0070804E /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5734101F28176E260070804E /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57142DED2817FE68005DFFA6 /* ViewCode.framework in Frameworks */,
 				5734101C28176C3D0070804E /* Components.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +137,7 @@
 			children = (
 				57340FEB281767830070804E /* LoginView.swift */,
 				57340FED281767940070804E /* LoginViewProtocol.swift */,
+				5734101F28176E260070804E /* LoginViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 		5734101A28176C3D0070804E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57142DEC2817FE68005DFFA6 /* ViewCode.framework */,
 				5734101B28176C3D0070804E /* Components.framework */,
 			);
 			name = Frameworks;
@@ -268,6 +277,7 @@
 				57340FEA2817676E0070804E /* LoginCoordinator.swift in Sources */,
 				57340FF0281767A90070804E /* LoginViewModel.swift in Sources */,
 				57340FE82817675A0070804E /* LoginCoordinatorProtocol.swift in Sources */,
+				5734102028176E260070804E /* LoginViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
