@@ -4,8 +4,9 @@ public final class StatementCoordinator {
     
     private var navigation: UINavigationController?
     
-    private let formViewModel: StatementViewModelProtocol & StatementViewDelegate = StatementViewModel()
-    private let formView: StatementViewProtocol = StatementView()
+    private let viewModel: StatementViewModelProtocol & StatementViewDelegate = StatementViewModel()
+    private let dataSource: StatementDataSourceProtocol = StatementDataSource()
+    private let view: StatementViewProtocol = StatementView()
     
     public init() {}
 }
@@ -16,9 +17,9 @@ extension StatementCoordinator: StatementCoordinatorProtocol {
     }
     
     public func start() {
-        formViewModel.set(view: formView)
-        formViewModel.set(coordinator: self)
-        formView.set(delegate: formViewModel)
-        navigation?.pushViewController(formView, animated: true)
+        viewModel.set(view: view)
+        viewModel.set(coordinator: self)
+        view.set(delegate: viewModel)
+        navigation?.pushViewController(view, animated: true)
     }
 }

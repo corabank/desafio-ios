@@ -7,23 +7,16 @@ final class StatementView: UIViewController {
     
     private var viewModel: StatementViewDelegate?
     
-    private lazy var stack: UIStackView = {
-        let stack: UIStackView = UIStackView(frame: .zero)
-        stack.alignment = .center
-        stack.axis = .vertical
-        return stack
-    }()
+    // mock data, remove after
+    private let todos = ["a", "b", "c"]
     
-    private lazy var textField: UITextField = {
-        let field = UITextField(frame: .zero)
-        return field
-    }()
-    
-    private lazy var nextButton: RegularButton = {
-        let button = RegularButton()
-        button.set(title: "Proximo")
-        button.addTarget(self, action: #selector(nextActionCallback), for: .touchUpInside)
-        return button
+    private lazy var table: UITableView = {
+        let table = UITableView(frame: .zero)
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.delegate = self
+        table.dataSource = self
+        table.frame = view.bounds
+        return table
     }()
     
     required init?(coder: NSCoder) { return nil }
@@ -31,24 +24,15 @@ final class StatementView: UIViewController {
         super.init(nibName: nil, bundle: nil)
         setupView()
     }
-    
-    @objc
-    private func nextActionCallback() {
-        nextButton.flash()
-    }
 }
 
 extension StatementView: ViewCode {
     func setSubviews() {
-        view.addSubview(stack)
-        stack.addArrangedSubview(UIView(frame: .zero))
-        stack.addArrangedSubview(nextButton)
+        view.addSubview(table)
     }
     
     func setConstraints() {
-        stack.setAnchorsEqual(to: self.view)
-        nextButton.size(height: 48)
-        nextButton.setWidthEqual(to: stack)
+        table.setAnchorsEqual(to: self.view)
     }
     
     func extraSetups() {
@@ -59,5 +43,35 @@ extension StatementView: ViewCode {
 extension StatementView: StatementViewProtocol {
     func set(delegate: StatementViewDelegate) {
         self.viewModel = delegate
+    }
+}
+
+extension StatementView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.todos.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20.0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.todos.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell: UITableViewCell = self.table.dequeueReusableCell(withIdentifier: "cell") else {
+            return UITableViewCell(frame: .zero)
+        }
+        cell.textLabel?.text = self.todos[indexPath.row]
+        cell.backgroundColor = .red
+        return cell
+    }
+}
+    
+extension StatementView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Tapped cell \(todos[indexPath.row])")
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

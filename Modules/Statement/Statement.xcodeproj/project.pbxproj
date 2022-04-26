@@ -14,6 +14,10 @@
 		57142E3528182B3A005DFFA6 /* StatementViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3428182B3A005DFFA6 /* StatementViewModelProtocol.swift */; };
 		57142E3728182B46005DFFA6 /* StatementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3628182B46005DFFA6 /* StatementCoordinator.swift */; };
 		57142E3928182B55005DFFA6 /* StatementCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */; };
+		57142E3C281840DA005DFFA6 /* StatementDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3B281840DA005DFFA6 /* StatementDataSourceProtocol.swift */; };
+		57142E3E281840F3005DFFA6 /* StatementDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3D281840F3005DFFA6 /* StatementDataSource.swift */; };
+		57142E412818424C005DFFA6 /* MonthSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E402818424C005DFFA6 /* MonthSummary.swift */; };
+		57142E4328184519005DFFA6 /* CardStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E4228184519005DFFA6 /* CardStatement.swift */; };
 		57340FB8281765080070804E /* Statement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FAF281765080070804E /* Statement.framework */; };
 		57340FBD281765080070804E /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340FBC281765080070804E /* StatementTests.swift */; };
 		57340FBE281765080070804E /* Statement.h in Headers */ = {isa = PBXBuildFile; fileRef = 57340FB2281765080070804E /* Statement.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +41,10 @@
 		57142E3428182B3A005DFFA6 /* StatementViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelProtocol.swift; sourceTree = "<group>"; };
 		57142E3628182B46005DFFA6 /* StatementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCoordinator.swift; sourceTree = "<group>"; };
 		57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		57142E3B281840DA005DFFA6 /* StatementDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDataSourceProtocol.swift; sourceTree = "<group>"; };
+		57142E3D281840F3005DFFA6 /* StatementDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDataSource.swift; sourceTree = "<group>"; };
+		57142E402818424C005DFFA6 /* MonthSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSummary.swift; sourceTree = "<group>"; };
+		57142E4228184519005DFFA6 /* CardStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatement.swift; sourceTree = "<group>"; };
 		57340FAF281765080070804E /* Statement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Statement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340FB2281765080070804E /* Statement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		57340FB7281765080070804E /* StatementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +73,8 @@
 		57142E2528182A17005DFFA6 /* Statement */ = {
 			isa = PBXGroup;
 			children = (
+				57142E3F2818421A005DFFA6 /* DataModels */,
+				57142E3A281840C3005DFFA6 /* DataSource */,
 				57142E2828182A34005DFFA6 /* Coordinator */,
 				57142E2728182A2C005DFFA6 /* ViewModel */,
 				57142E2628182A25005DFFA6 /* View */,
@@ -98,6 +108,24 @@
 				57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		57142E3A281840C3005DFFA6 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				57142E3B281840DA005DFFA6 /* StatementDataSourceProtocol.swift */,
+				57142E3D281840F3005DFFA6 /* StatementDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		57142E3F2818421A005DFFA6 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				57142E402818424C005DFFA6 /* MonthSummary.swift */,
+				57142E4228184519005DFFA6 /* CardStatement.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		57340FA5281765080070804E = {
@@ -245,11 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57142E3C281840DA005DFFA6 /* StatementDataSourceProtocol.swift in Sources */,
+				57142E412818424C005DFFA6 /* MonthSummary.swift in Sources */,
 				57142E3328182B2C005DFFA6 /* StatementViewModel.swift in Sources */,
 				57142E2F28182B0F005DFFA6 /* StatementViewProtocol.swift in Sources */,
 				57142E3128182B1A005DFFA6 /* StatementViewDelegate.swift in Sources */,
 				57142E3928182B55005DFFA6 /* StatementCoordinatorProtocol.swift in Sources */,
+				57142E3E281840F3005DFFA6 /* StatementDataSource.swift in Sources */,
 				57142E3528182B3A005DFFA6 /* StatementViewModelProtocol.swift in Sources */,
+				57142E4328184519005DFFA6 /* CardStatement.swift in Sources */,
 				57142E3728182B46005DFFA6 /* StatementCoordinator.swift in Sources */,
 				57142E2D28182B03005DFFA6 /* StatementView.swift in Sources */,
 			);
