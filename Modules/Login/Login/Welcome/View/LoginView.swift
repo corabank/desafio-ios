@@ -17,7 +17,6 @@ final class LoginView: UIViewController {
     private lazy var loginButton: RegularButton = {
         let button = RegularButton()
         button.set(title: "Login")
-        button.flash()
         button.addTarget(self, action: #selector(loginActionCallback), for: .touchUpInside)
         return button
     }()
@@ -25,7 +24,6 @@ final class LoginView: UIViewController {
     private lazy var registerButton: RegularButton = {
         let button = RegularButton()
         button.set(title: "Register")
-        button.flash()
         button.addTarget(self, action: #selector(registerActionCallback), for: .touchUpInside)
         return button
     }()
@@ -38,24 +36,31 @@ final class LoginView: UIViewController {
     
     @objc
     private func loginActionCallback() {
-        print("Login")
+        loginButton.flash()
+        viewModel?.login()
     }
     
     @objc
     private func registerActionCallback() {
-        print("Register")
+        registerButton.flash()
+        viewModel?.register()
     }
 }
 
 extension LoginView: ViewCode {
     func setSubviews() {
         view.addSubview(stack)
+        stack.addArrangedSubview(UIView(frame: .zero))
         stack.addArrangedSubview(loginButton)
         stack.addArrangedSubview(registerButton)
     }
     
     func setConstraints() {
         stack.setAnchorsEqual(to: self.view)
+        loginButton.size(height: 64)
+        loginButton.setWidthEqual(to: stack)
+        registerButton.size(height: 48)
+        registerButton.setWidthEqual(to: stack)
     }
     
     func extraSetups() {

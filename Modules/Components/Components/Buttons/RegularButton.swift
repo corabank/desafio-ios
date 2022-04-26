@@ -3,10 +3,8 @@ import UIKit
 public final class RegularButton: UIButton {
 
     public init() {
-
         super.init(frame: .zero)
         defaultSetups()
-        // setupStyle(shadow)
     }
 
     required init?(coder: NSCoder) {
@@ -20,11 +18,17 @@ public final class RegularButton: UIButton {
     }
 
     private func defaultSetups() {
+        corner()
+        setupShadow()
+        setupStyle(true)
+    }
+    
+    private func corner() {
         self.layer.cornerRadius = 8
     }
 
     private func setupStyle(_ shadow: Bool) {
-        self.backgroundColor = .white
+        self.backgroundColor = .gray
         if shadow { setupShadow() }
     }
 
