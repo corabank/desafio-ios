@@ -1,7 +1,6 @@
 import UIKit
 
-protocol CPFFormCoordinatorProtocol: AnyObject {
+public protocol StatementCoordinatorProtocol: AnyObject {
     func set(navigation: UINavigationController?)
     func start()
-    func login()
 }

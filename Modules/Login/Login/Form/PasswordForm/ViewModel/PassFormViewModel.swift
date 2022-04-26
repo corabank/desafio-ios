@@ -1,5 +1,3 @@
-import Foundation
-
 final class PassFormViewModel {
     private var view: PassFormViewProtocol?
     private var coordinator: PassFormCoordinatorProtocol?
@@ -18,11 +16,7 @@ extension PassFormViewModel: PassFormViewModelProtocol {
 }
 
 extension PassFormViewModel: PassFormViewDelegate {
-    func inputCPF() {
-        // change view
-    }
-    
     func inputPassword() {
-        coordinator?.login()
+        coordinator?.goToStatement()
     }
 }

@@ -1,6 +1,7 @@
 import UIKit
+import Statement
 
-public final class PassFormCoordinator {
+final class PassFormCoordinator {
     
     private var navigation: UINavigationController?
     
@@ -22,7 +23,9 @@ extension PassFormCoordinator: PassFormCoordinatorProtocol {
         navigation?.pushViewController(formView, animated: true)
     }
     
-    public func login() {
-        print("login app =>")
+    public func goToStatement() {
+        let passCoordinator: StatementCoordinatorProtocol = StatementCoordinator()
+        passCoordinator.set(navigation: self.navigation)
+        passCoordinator.start()
     }
 }

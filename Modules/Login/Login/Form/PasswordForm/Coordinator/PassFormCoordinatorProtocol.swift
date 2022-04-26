@@ -1,8 +1,8 @@
 import UIKit
 
-public protocol PassFormCoordinatorProtocol: AnyObject {
+protocol PassFormCoordinatorProtocol: AnyObject {
     func set(navigation: UINavigationController?)
     func start()
-    func login()
+    func goToStatement()
 }
 

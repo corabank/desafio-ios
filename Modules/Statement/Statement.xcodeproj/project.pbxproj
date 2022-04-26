@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57142E2D28182B03005DFFA6 /* StatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E2C28182B03005DFFA6 /* StatementView.swift */; };
+		57142E2F28182B0F005DFFA6 /* StatementViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E2E28182B0F005DFFA6 /* StatementViewProtocol.swift */; };
+		57142E3128182B1A005DFFA6 /* StatementViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3028182B1A005DFFA6 /* StatementViewDelegate.swift */; };
+		57142E3328182B2C005DFFA6 /* StatementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3228182B2C005DFFA6 /* StatementViewModel.swift */; };
+		57142E3528182B3A005DFFA6 /* StatementViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3428182B3A005DFFA6 /* StatementViewModelProtocol.swift */; };
+		57142E3728182B46005DFFA6 /* StatementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3628182B46005DFFA6 /* StatementCoordinator.swift */; };
+		57142E3928182B55005DFFA6 /* StatementCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */; };
 		57340FB8281765080070804E /* Statement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FAF281765080070804E /* Statement.framework */; };
 		57340FBD281765080070804E /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340FBC281765080070804E /* StatementTests.swift */; };
 		57340FBE281765080070804E /* Statement.h in Headers */ = {isa = PBXBuildFile; fileRef = 57340FB2281765080070804E /* Statement.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57142E2C28182B03005DFFA6 /* StatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementView.swift; sourceTree = "<group>"; };
+		57142E2E28182B0F005DFFA6 /* StatementViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewProtocol.swift; sourceTree = "<group>"; };
+		57142E3028182B1A005DFFA6 /* StatementViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewDelegate.swift; sourceTree = "<group>"; };
+		57142E3228182B2C005DFFA6 /* StatementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModel.swift; sourceTree = "<group>"; };
+		57142E3428182B3A005DFFA6 /* StatementViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelProtocol.swift; sourceTree = "<group>"; };
+		57142E3628182B46005DFFA6 /* StatementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCoordinator.swift; sourceTree = "<group>"; };
+		57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		57340FAF281765080070804E /* Statement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Statement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340FB2281765080070804E /* Statement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		57340FB7281765080070804E /* StatementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +62,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57142E2528182A17005DFFA6 /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				57142E2828182A34005DFFA6 /* Coordinator */,
+				57142E2728182A2C005DFFA6 /* ViewModel */,
+				57142E2628182A25005DFFA6 /* View */,
+			);
+			path = Statement;
+			sourceTree = "<group>";
+		};
+		57142E2628182A25005DFFA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57142E2C28182B03005DFFA6 /* StatementView.swift */,
+				57142E2E28182B0F005DFFA6 /* StatementViewProtocol.swift */,
+				57142E3028182B1A005DFFA6 /* StatementViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57142E2728182A2C005DFFA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				57142E3228182B2C005DFFA6 /* StatementViewModel.swift */,
+				57142E3428182B3A005DFFA6 /* StatementViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		57142E2828182A34005DFFA6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				57142E3628182B46005DFFA6 /* StatementCoordinator.swift */,
+				57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		57340FA5281765080070804E = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +121,7 @@
 		57340FB1281765080070804E /* Statement */ = {
 			isa = PBXGroup;
 			children = (
+				57142E2528182A17005DFFA6 /* Statement */,
 				57340FB2281765080070804E /* Statement.h */,
 			);
 			path = Statement;
@@ -144,6 +197,7 @@
 				TargetAttributes = {
 					57340FAE281765080070804E = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					57340FB6281765080070804E = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -191,6 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57142E3328182B2C005DFFA6 /* StatementViewModel.swift in Sources */,
+				57142E2F28182B0F005DFFA6 /* StatementViewProtocol.swift in Sources */,
+				57142E3128182B1A005DFFA6 /* StatementViewDelegate.swift in Sources */,
+				57142E3928182B55005DFFA6 /* StatementCoordinatorProtocol.swift in Sources */,
+				57142E3528182B3A005DFFA6 /* StatementViewModelProtocol.swift in Sources */,
+				57142E3728182B46005DFFA6 /* StatementCoordinator.swift in Sources */,
+				57142E2D28182B03005DFFA6 /* StatementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +397,7 @@
 		57340FC2281765080070804E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -355,6 +417,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +426,7 @@
 		57340FC3281765080070804E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -390,6 +454,7 @@
 		57340FC5281765080070804E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -405,6 +470,7 @@
 		57340FC6281765080070804E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

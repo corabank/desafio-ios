@@ -1,6 +1,6 @@
 import UIKit
 
-public final class CPFFormCoordinator {
+final class CPFFormCoordinator {
     
     private var navigation: UINavigationController?
     

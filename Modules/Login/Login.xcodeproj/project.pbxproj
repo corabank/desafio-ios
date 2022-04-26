@@ -23,6 +23,8 @@
 		57142E2028182777005DFFA6 /* PassFormViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E1F28182777005DFFA6 /* PassFormViewModelProtocol.swift */; };
 		57142E2228182781005DFFA6 /* PassFormCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E2128182781005DFFA6 /* PassFormCoordinator.swift */; };
 		57142E242818278B005DFFA6 /* PassFormCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E232818278B005DFFA6 /* PassFormCoordinatorProtocol.swift */; };
+		57142E2A28182A50005DFFA6 /* Statement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57142E2928182A50005DFFA6 /* Statement.framework */; };
+		57142E2B28182A50005DFFA6 /* Statement.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57142E2928182A50005DFFA6 /* Statement.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57340F96281764E10070804E /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340F8D281764E10070804E /* Login.framework */; };
 		57340F9B281764E10070804E /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340F9A281764E10070804E /* LoginTests.swift */; };
 		57340F9C281764E10070804E /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = 57340F90281764E10070804E /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +58,7 @@
 			files = (
 				57142DEE2817FE68005DFFA6 /* ViewCode.framework in Embed Frameworks */,
 				5734101D28176C3D0070804E /* Components.framework in Embed Frameworks */,
+				57142E2B28182A50005DFFA6 /* Statement.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +81,7 @@
 		57142E1F28182777005DFFA6 /* PassFormViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassFormViewModelProtocol.swift; sourceTree = "<group>"; };
 		57142E2128182781005DFFA6 /* PassFormCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassFormCoordinator.swift; sourceTree = "<group>"; };
 		57142E232818278B005DFFA6 /* PassFormCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassFormCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		57142E2928182A50005DFFA6 /* Statement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Statement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340F8D281764E10070804E /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340F90281764E10070804E /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		57340F95281764E10070804E /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +103,7 @@
 			files = (
 				57142DED2817FE68005DFFA6 /* ViewCode.framework in Frameworks */,
 				5734101C28176C3D0070804E /* Components.framework in Frameworks */,
+				57142E2A28182A50005DFFA6 /* Statement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +281,7 @@
 		5734101A28176C3D0070804E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57142E2928182A50005DFFA6 /* Statement.framework */,
 				57142DEC2817FE68005DFFA6 /* ViewCode.framework */,
 				5734101B28176C3D0070804E /* Components.framework */,
 			);

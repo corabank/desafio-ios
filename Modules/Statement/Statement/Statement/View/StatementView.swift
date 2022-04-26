@@ -3,9 +3,9 @@ import UIKit
 import ViewCode
 import Components
 
-final class PassFormView: UIViewController {
+final class StatementView: UIViewController {
     
-    private var viewModel: PassFormViewDelegate?
+    private var viewModel: StatementViewDelegate?
     
     private lazy var stack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
@@ -35,11 +35,10 @@ final class PassFormView: UIViewController {
     @objc
     private func nextActionCallback() {
         nextButton.flash()
-        viewModel?.inputPassword()
     }
 }
 
-extension PassFormView: ViewCode {
+extension StatementView: ViewCode {
     func setSubviews() {
         view.addSubview(stack)
         stack.addArrangedSubview(UIView(frame: .zero))
@@ -53,12 +52,12 @@ extension PassFormView: ViewCode {
     }
     
     func extraSetups() {
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .white
     }
 }
 
-extension PassFormView: PassFormViewProtocol {
-    func set(delegate: PassFormViewDelegate) {
+extension StatementView: StatementViewProtocol {
+    func set(delegate: StatementViewDelegate) {
         self.viewModel = delegate
     }
 }
