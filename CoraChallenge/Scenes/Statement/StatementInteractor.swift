@@ -8,6 +8,8 @@
 import Foundation
 
 protocol StatementInteractorProtocol {
+    var model: [StatementModelData] { get set }
+    var dailyBalanceArray: [String] { get set }
     func fetchStatementData()
 }
 
@@ -15,6 +17,8 @@ class StatementInteractor:  StatementInteractorProtocol {
     
     var repository: StatementRepository
     var presenter: StatementPresenterProtocol
+    var model: [StatementModelData] = []
+    var dailyBalanceArray: [String] = []
     
     init(repository: StatementRepository, presenter: StatementPresenterProtocol) {
         self.repository = repository
@@ -22,8 +26,25 @@ class StatementInteractor:  StatementInteractorProtocol {
     }
     
     func fetchStatementData() {
-        let response = repository.loadDataFromJason(fileName: StatementRepository.jsonName)
+        guard let response = repository.loadDataFromJason(fileName: StatementRepository.jsonName) else { return }
         
-        print(response)
+        self.model = response
+
+        self.getSectionHeaderData(model: response)
+    }
+    
+    func getSectionHeaderData(model: [StatementModelData]) {
+        var dailyBalance: [String : Double] = [:]
+        
+        model.forEach { item in
+            let date = item.date ?? String()//?.stringToDate(withFormat: "dd/MM/yyyy") ?? String()
+            if let _ = dailyBalance[date] {
+                dailyBalance[date]! += item.value ?? Double()
+            } else {
+                dailyBalance[date] = item.value ?? Double()
+            }
+        }
+        
+        dailyBalanceArray = dailyBalance.map{"\($0)|\($1)"}
     }
 }

@@ -79,6 +79,13 @@ class StatementTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupCell(model: StatementModelData) {
+        guard let valueString = model.value?.doubleToCurrency() else { return }
+        valueLabel.text = valueString
+        statusLabel.text = model.transactionType
+        institutionLabel.text = model.receiver?.institutionName
+    }
 }
 
 extension StatementTableViewCell: ViewCodeProtocol {

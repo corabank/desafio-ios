@@ -14,6 +14,7 @@ struct StatementModelData: Codable {
     var sender: SenderData?
     var receiver: ReceiverData?
     var description: String?
+    var imageName: String?
     
     enum CodingKeys: String, CodingKey {
         case transactionType = "transactionType"
@@ -22,6 +23,7 @@ struct StatementModelData: Codable {
         case sender = "sender"
         case receiver = "receiver"
         case description = "description"
+        case imageName = "imageName"
     }
     
     init(from decoder: Decoder) throws {
@@ -33,6 +35,7 @@ struct StatementModelData: Codable {
         sender = try values.decodeIfPresent(SenderData.self, forKey: .sender)
         receiver = try values.decodeIfPresent(ReceiverData.self, forKey: .receiver)
         description = try values.decodeIfPresent(String.self, forKey: .description)
+        imageName = try values.decodeIfPresent(String.self, forKey: .imageName)
     }
 //    init(transactionType: String,
 //         value: Double,
