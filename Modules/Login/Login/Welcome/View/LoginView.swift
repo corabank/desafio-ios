@@ -13,6 +13,12 @@ final class LoginView: UIViewController {
     private let secondTitle = "Poderosamente simples"
     private let labelDescription = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos."
     
+    private lazy var cover: UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = Colors.pink
+        return view
+    }()
+    
     private lazy var stack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center
@@ -35,7 +41,7 @@ final class LoginView: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.textColor = Colors.white
-        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: Dimensions.fontLarge, weight: .bold)
         return label
     }()
     
@@ -45,7 +51,7 @@ final class LoginView: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.textColor = Colors.white
-        label.font = UIFont.systemFont(ofSize: 28)
+        label.font = UIFont.systemFont(ofSize: Dimensions.fontLarge)
         return label
     }()
     
@@ -55,7 +61,7 @@ final class LoginView: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.textColor = Colors.white
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: Dimensions.fontSmall)
         return label
     }()
     
@@ -94,19 +100,19 @@ final class LoginView: UIViewController {
 
 extension LoginView: ViewCode {
     func setSubviews() {
-        view.addSubview(stack)
+        view.addSubviews([cover, stack])
         stack.addArrangedSubview(UIView(frame: .zero))
         stack.addArrangedSubview(titleStack)
         stack.addArrangedSubview(descriptionLabel)
         stack.addArrangedSubview(Spacer(size: Dimensions.verySmall))
         stack.addArrangedSubview(registerButton)
         stack.addArrangedSubview(loginButton)
-        
         titleStack.addArrangedSubview(mainTitleLabel)
         titleStack.addArrangedSubview(secondTitleLabel)
     }
     
     func setConstraints() {
+        cover.setAnchorsEqual(to: view)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
                      bottom: view.bottomAnchor,
@@ -124,10 +130,6 @@ extension LoginView: ViewCode {
         loginButton.setWidthEqual(to: stack)
         registerButton.size(height: Dimensions.veryLarge)
         registerButton.setWidthEqual(to: stack)
-    }
-    
-    func extraSetups() {
-        view.backgroundColor = Colors.pink
     }
 }
 
