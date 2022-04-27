@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import ViewCode
 import Components
+import Resources
 
 final class LoginView: UIViewController {
     
@@ -20,12 +21,24 @@ final class LoginView: UIViewController {
     }()
     
     private lazy var logo: UIImageView = {
-        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: "cora_Logo"))
+        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: Images.logo))
         return view
     }()
     
     private lazy var person: UIImageView = {
-        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: "cora_eduardo"))
+        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: Images.eduardo))
+        return view
+    }()
+    
+    private lazy var personLeftMask: UIView = {
+        let view: UIView = UIView(frame: .zero)
+        view.backgroundColor = Colors.pink
+        return view
+    }()
+    
+    private lazy var personRaightMask: UIView = {
+        let view: UIView = UIView(frame: .zero)
+        view.backgroundColor = Colors.pink
         return view
     }()
     
@@ -34,6 +47,12 @@ final class LoginView: UIViewController {
         stack.alignment = .center
         stack.axis = .vertical
         stack.spacing = Dimensions.small
+        return stack
+    }()
+    
+    private lazy var coverStack: UIStackView = {
+        let stack: UIStackView = UIStackView(frame: .zero)
+        stack.axis = .vertical
         return stack
     }()
     
@@ -110,7 +129,10 @@ final class LoginView: UIViewController {
 
 extension LoginView: ViewCode {
     func setSubviews() {
-        view.addSubviews([cover, person, stack, logo])
+        view.addSubviews([coverStack, stack, logo])
+        coverStack.addArrangedSubview(person)
+        coverStack.addArrangedSubview(cover)
+        //person.addSubviews([personLeftMask, personRaightMask])
         stack.addArrangedSubview(UIView(frame: .zero))
         stack.addArrangedSubview(titleStack)
         stack.addArrangedSubview(descriptionLabel)
@@ -122,15 +144,15 @@ extension LoginView: ViewCode {
     }
     
     func setConstraints() {
+        coverStack.setAnchorsEqual(to: view)
         logo.anchor(top: view.topAnchor,
                     leading: view.leadingAnchor,
                     paddingTop: Dimensions.medium,
                     paddingLeft: Dimensions.medium)
         logo.size(height: 22.5,width: 90)
         person.setWidthEqual(to: view)
-        person.anchor(top: view.topAnchor)
         person.size(height: 320)
-        cover.setAnchorsEqual(to: view)
+        cover.setWidthEqual(to: coverStack)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
                      bottom: view.bottomAnchor,

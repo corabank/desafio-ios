@@ -11,8 +11,6 @@
 		57340F4028175F260070804E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57340F3F28175F260070804E /* Assets.xcassets */; };
 		57340F4328175F260070804E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57340F4128175F260070804E /* LaunchScreen.storyboard */; };
 		57340F4E28175F260070804E /* BankStatementSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340F4D28175F260070804E /* BankStatementSampleTests.swift */; };
-		57340F7E281764180070804E /* ServiceLocator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340F7D281764180070804E /* ServiceLocator.framework */; };
-		57340F7F281764180070804E /* ServiceLocator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57340F7D281764180070804E /* ServiceLocator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57340F822817642E0070804E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340F812817642E0070804E /* AppCoordinator.swift */; };
 		57340FE2281766F30070804E /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FE1281766F30070804E /* Login.framework */; };
 		57340FE3281766F30070804E /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FE1281766F30070804E /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -43,7 +41,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				57340FE3281766F30070804E /* Login.framework in Embed Frameworks */,
-				57340F7F281764180070804E /* ServiceLocator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				57340FE2281766F30070804E /* Login.framework in Frameworks */,
-				57340F7E281764180070804E /* ServiceLocator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

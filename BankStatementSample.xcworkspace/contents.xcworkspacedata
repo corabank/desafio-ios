@@ -17,9 +17,6 @@
       location = "group:Modules/Login/Login.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Modules/ServiceLocator/ServiceLocator.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "container:BankStatementSample/BankStatementSample.xcodeproj">
    </FileRef>
 </Workspace>
