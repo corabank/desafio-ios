@@ -2,6 +2,7 @@ import UIKit
 
 public enum Dimensions {
     public static let minimal   = CGFloat(1)
+    public static let tiny      = CGFloat(4)
     public static let verySmall = CGFloat(8)
     public static let small     = CGFloat(16)
     public static let medium    = CGFloat(24)

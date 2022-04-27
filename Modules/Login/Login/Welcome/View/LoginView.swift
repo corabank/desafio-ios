@@ -9,7 +9,8 @@ final class LoginView: UIViewController {
     
     private let loginTitle = "Ja sou cliente"
     private let registerTitle = "Quero fazer parte!"
-    private let labelTitle = "Conta Digital PJ\nPoderosamente simples"
+    private let mainTitle = "Conta Digital PJ"
+    private let secondTitle = "Poderosamente simples"
     private let labelDescription = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos."
     
     private lazy var stack: UIStackView = {
@@ -20,14 +21,31 @@ final class LoginView: UIViewController {
         return stack
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var titleStack: UIStackView = {
+        let stack: UIStackView = UIStackView(frame: .zero)
+        stack.alignment = .center
+        stack.axis = .vertical
+        stack.spacing = Dimensions.tiny
+        return stack
+    }()
+    
+    private lazy var mainTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = labelTitle
+        label.text = mainTitle
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.textColor = Colors.white
         label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        //label.font.lineHeight = 24
+        return label
+    }()
+    
+    private lazy var secondTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = secondTitle
+        label.numberOfLines = 0
+        label.textAlignment = .justified
+        label.textColor = Colors.white
+        label.font = UIFont.systemFont(ofSize: 28)
         return label
     }()
     
@@ -78,11 +96,14 @@ extension LoginView: ViewCode {
     func setSubviews() {
         view.addSubview(stack)
         stack.addArrangedSubview(UIView(frame: .zero))
-        stack.addArrangedSubview(titleLabel)
+        stack.addArrangedSubview(titleStack)
         stack.addArrangedSubview(descriptionLabel)
         stack.addArrangedSubview(Spacer(size: Dimensions.verySmall))
         stack.addArrangedSubview(registerButton)
         stack.addArrangedSubview(loginButton)
+        
+        titleStack.addArrangedSubview(mainTitleLabel)
+        titleStack.addArrangedSubview(secondTitleLabel)
     }
     
     func setConstraints() {
@@ -93,7 +114,11 @@ extension LoginView: ViewCode {
                      paddingBottom: Dimensions.small,
                      paddingLeft: Dimensions.medium,
                      paddingRight: Dimensions.medium)
-        titleLabel.setWidthEqual(to: stack)
+        
+        titleStack.setWidthEqual(to: stack)
+        mainTitleLabel.setWidthEqual(to: titleStack)
+        secondTitleLabel.setWidthEqual(to: titleStack)
+        
         descriptionLabel.setWidthEqual(to: stack)
         loginButton.size(height: Dimensions.large)
         loginButton.setWidthEqual(to: stack)
