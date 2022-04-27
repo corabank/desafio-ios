@@ -30,15 +30,8 @@ final class LoginView: UIViewController {
         return view
     }()
     
-    private lazy var personLeftMask: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        view.backgroundColor = Colors.pink
-        return view
-    }()
-    
-    private lazy var personRaightMask: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        view.backgroundColor = Colors.pink
+    private lazy var coverMask: UIImageView = {
+        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: Images.cover))
         return view
     }()
     
@@ -132,7 +125,7 @@ extension LoginView: ViewCode {
         view.addSubviews([coverStack, stack, logo])
         coverStack.addArrangedSubview(person)
         coverStack.addArrangedSubview(cover)
-        //person.addSubviews([personLeftMask, personRaightMask])
+        person.addSubview(coverMask)
         stack.addArrangedSubview(UIView(frame: .zero))
         stack.addArrangedSubview(titleStack)
         stack.addArrangedSubview(descriptionLabel)
@@ -149,9 +142,11 @@ extension LoginView: ViewCode {
                     leading: view.leadingAnchor,
                     paddingTop: Dimensions.medium,
                     paddingLeft: Dimensions.medium)
+        
         logo.size(height: 22.5,width: 90)
         person.setWidthEqual(to: view)
         person.size(height: 320)
+        
         cover.setWidthEqual(to: coverStack)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
@@ -160,6 +155,15 @@ extension LoginView: ViewCode {
                      paddingBottom: Dimensions.small,
                      paddingLeft: Dimensions.medium,
                      paddingRight: Dimensions.medium)
+        
+        coverMask.anchor(leading: person.leadingAnchor,
+                         bottom: person.bottomAnchor,
+                         trailing: person.trailingAnchor,
+                         paddingBottom: -10,
+                         paddingLeft: -20,
+                         paddingRight: -50)
+        
+        coverMask.size(height: 220)
         
         titleStack.setWidthEqual(to: stack)
         mainTitleLabel.setWidthEqual(to: titleStack)
