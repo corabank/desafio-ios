@@ -19,6 +19,16 @@ final class LoginView: UIViewController {
         return view
     }()
     
+    private lazy var logo: UIImageView = {
+        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: "cora_Logo"))
+        return view
+    }()
+    
+    private lazy var person: UIImageView = {
+        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: "cora_eduardo"))
+        return view
+    }()
+    
     private lazy var stack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center
@@ -100,7 +110,7 @@ final class LoginView: UIViewController {
 
 extension LoginView: ViewCode {
     func setSubviews() {
-        view.addSubviews([cover, stack])
+        view.addSubviews([cover, person, stack, logo])
         stack.addArrangedSubview(UIView(frame: .zero))
         stack.addArrangedSubview(titleStack)
         stack.addArrangedSubview(descriptionLabel)
@@ -112,6 +122,14 @@ extension LoginView: ViewCode {
     }
     
     func setConstraints() {
+        logo.anchor(top: view.topAnchor,
+                    leading: view.leadingAnchor,
+                    paddingTop: Dimensions.medium,
+                    paddingLeft: Dimensions.medium)
+        logo.size(height: 22.5,width: 90)
+        person.setWidthEqual(to: view)
+        person.anchor(top: view.topAnchor)
+        person.size(height: 320)
         cover.setAnchorsEqual(to: view)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
