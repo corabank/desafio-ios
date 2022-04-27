@@ -14,6 +14,7 @@ class AppCoordinator {
     func start() {
         self.window.rootViewController = self.navigator
         self.window.makeKeyAndVisible()
+        self.navigator.isNavigationBarHidden = true
     }
     
     func goToMainView() {

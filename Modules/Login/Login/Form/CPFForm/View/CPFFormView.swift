@@ -15,6 +15,11 @@ final class CPFFormView: UIViewController {
         return stack
     }()
     
+    private lazy var navigation: NavigationBar = {
+        let nav = NavigationBar()
+        return nav
+    }()
+
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = "Bem-vindo de volta!"
@@ -42,7 +47,7 @@ final class CPFFormView: UIViewController {
     
     private lazy var nextButton: RegularButton = {
         let button = RegularButton()
-        button.set(title: "Proximo", alignment: .left, style: .pink)
+        button.set(title: "Próximo", alignment: .left, style: .pink, icon: .arrow)
         button.addTarget(self, action: #selector(nextActionCallback), for: .touchUpInside)
         return button
     }()
@@ -63,6 +68,8 @@ final class CPFFormView: UIViewController {
 extension CPFFormView: ViewCode {
     func setSubviews() {
         view.addSubviews([stack, nextButton])
+        stack.addArrangedSubview(navigation)
+        stack.addArrangedSubview(Spacer(size: Dimensions.small))
         stack.addArrangedSubview(welcomeLabel)
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(textField)
@@ -70,17 +77,15 @@ extension CPFFormView: ViewCode {
     }
     
     func setConstraints() {
+        navigation.setWidthEqual(to: view)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
-                     trailing: view.trailingAnchor,
-                     paddingTop: 88,
-                     paddingLeft: Dimensions.medium,
-                     paddingRight: Dimensions.medium)
+                     trailing: view.trailingAnchor)
         
         welcomeLabel.setWidthEqual(to: stack)
         titleLabel.setWidthEqual(to: stack)
         
-        nextButton.size(height: 48)
+        nextButton.size(height: 50)
         nextButton.anchor(leading: view.leadingAnchor,
                           bottom: view.bottomAnchor,
                           trailing: view.trailingAnchor,

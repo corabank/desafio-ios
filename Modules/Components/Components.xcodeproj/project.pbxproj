@@ -16,6 +16,9 @@
 		5784EAE22819A14F00B215A1 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EAE12819A14F00B215A1 /* Dimensions.swift */; };
 		5784EAE42819A57500B215A1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EAE32819A57500B215A1 /* Colors.swift */; };
 		5784EAE92819ABD600B215A1 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EAE82819ABD600B215A1 /* Spacer.swift */; };
+		5784EB052819DD3100B215A1 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5784EB042819DD3100B215A1 /* Resources.framework */; };
+		5784EB062819DD3100B215A1 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5784EB042819DD3100B215A1 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5784EB092819DE7B00B215A1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EB082819DE7B00B215A1 /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5784EB062819DD3100B215A1 /* Resources.framework in Embed Frameworks */,
 				5734101828176C0C0070804E /* ViewCode.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -52,6 +56,8 @@
 		5784EAE12819A14F00B215A1 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		5784EAE32819A57500B215A1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5784EAE82819ABD600B215A1 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
+		5784EB042819DD3100B215A1 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5784EB082819DE7B00B215A1 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5784EB052819DD3100B215A1 /* Resources.framework in Frameworks */,
 				5734101728176C0C0070804E /* ViewCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +118,7 @@
 		57340FFF28176BCF0070804E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5784EB072819DE6800B215A1 /* Navigation */,
 				5784EAE72819ABCA00B215A1 /* Spacer */,
 				5784EAE02819A13D00B215A1 /* Styles */,
 				57142DF42818050E005DFFA6 /* Extensions */,
@@ -123,6 +131,7 @@
 		5734101528176C0C0070804E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5784EB042819DD3100B215A1 /* Resources.framework */,
 				5734101628176C0C0070804E /* ViewCode.framework */,
 			);
 			name = Frameworks;
@@ -143,6 +152,14 @@
 				5784EAE82819ABD600B215A1 /* Spacer.swift */,
 			);
 			path = Spacer;
+			sourceTree = "<group>";
+		};
+		5784EB072819DE6800B215A1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5784EB082819DE7B00B215A1 /* NavigationBar.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +278,7 @@
 				5784EAE42819A57500B215A1 /* Colors.swift in Sources */,
 				57142DF628180520005DFFA6 /* UIButton.swift in Sources */,
 				5784EAE22819A14F00B215A1 /* Dimensions.swift in Sources */,
+				5784EB092819DE7B00B215A1 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

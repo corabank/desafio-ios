@@ -8,7 +8,7 @@ final class LoginView: UIViewController {
     
     private var viewModel: LoginViewDelegate?
     
-    private let loginTitle = "Ja sou cliente"
+    private let loginTitle = "Já sou cliente"
     private let registerTitle = "Quero fazer parte!"
     private let mainTitle = "Conta Digital PJ"
     private let secondTitle = "Poderosamente simples"
@@ -96,7 +96,7 @@ final class LoginView: UIViewController {
     
     private lazy var registerButton: RegularButton = {
         let button = RegularButton()
-        button.set(title: registerTitle, alignment: .left, style: .white)
+        button.set(title: registerTitle, alignment: .left, style: .white, icon: .arrow)
         button.addTarget(self, action: #selector(registerActionCallback), for: .touchUpInside)
         return button
     }()
@@ -159,8 +159,8 @@ extension LoginView: ViewCode {
         coverMask.anchor(leading: person.leadingAnchor,
                          bottom: person.bottomAnchor,
                          trailing: person.trailingAnchor,
-                         paddingBottom: -10,
-                         paddingLeft: -20,
+                         paddingBottom: -130,
+                         paddingLeft: -65,
                          paddingRight: -50)
         
         coverMask.size(height: 220)
