@@ -20,18 +20,18 @@ public final class RegularButton: UIButton {
                                             right: Dimensions.medium)
         self.layer.cornerRadius = Dimensions.border
         self.layer.borderWidth = Dimensions.minimal
-        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderColor = Colors.white.cgColor
         setStyle(style)
     }
     
     private func setStyle(_ style: RegularButtonStyle) {
         switch style {
         case .white:
-            self.backgroundColor = .white
-            self.setTitleColor(.systemPink, for: .normal)
+            self.backgroundColor = Colors.white
+            self.setTitleColor(Colors.pink, for: .normal)
         case .pink:
-            self.backgroundColor = .systemPink
-            self.setTitleColor(.white, for: .normal)
+            self.backgroundColor = Colors.pink
+            self.setTitleColor(Colors.white, for: .normal)
         }
     }
 }

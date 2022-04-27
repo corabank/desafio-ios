@@ -7,6 +7,11 @@ final class LoginView: UIViewController {
     
     private var viewModel: LoginViewDelegate?
     
+    private let loginTitle = "Ja sou cliente"
+    private let registerTitle = "Quero fazer parte!"
+    private let labelTitle = "Conta Digital PJ\nPoderosamente simples"
+    private let labelDescription = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos."
+    
     private lazy var stack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center
@@ -15,16 +20,37 @@ final class LoginView: UIViewController {
         return stack
     }()
     
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = labelTitle
+        label.numberOfLines = 0
+        label.textAlignment = .justified
+        label.textColor = Colors.white
+        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        //label.font.lineHeight = 24
+        return label
+    }()
+    
+    private lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = labelDescription
+        label.numberOfLines = 0
+        label.textAlignment = .justified
+        label.textColor = Colors.white
+        label.font = UIFont.systemFont(ofSize: 16)
+        return label
+    }()
+    
     private lazy var loginButton: RegularButton = {
         let button = RegularButton()
-        button.set(title: "Ja sou cliente", alignment: .center, style: .pink)
+        button.set(title: loginTitle, alignment: .center, style: .pink)
         button.addTarget(self, action: #selector(loginActionCallback), for: .touchUpInside)
         return button
     }()
     
     private lazy var registerButton: RegularButton = {
         let button = RegularButton()
-        button.set(title: "Quero fazer parte!", alignment: .left, style: .white)
+        button.set(title: registerTitle, alignment: .left, style: .white)
         button.addTarget(self, action: #selector(registerActionCallback), for: .touchUpInside)
         return button
     }()
@@ -52,6 +78,9 @@ extension LoginView: ViewCode {
     func setSubviews() {
         view.addSubview(stack)
         stack.addArrangedSubview(UIView(frame: .zero))
+        stack.addArrangedSubview(titleLabel)
+        stack.addArrangedSubview(descriptionLabel)
+        stack.addArrangedSubview(Spacer(size: Dimensions.verySmall))
         stack.addArrangedSubview(registerButton)
         stack.addArrangedSubview(loginButton)
     }
@@ -64,14 +93,16 @@ extension LoginView: ViewCode {
                      paddingBottom: Dimensions.small,
                      paddingLeft: Dimensions.medium,
                      paddingRight: Dimensions.medium)
-        loginButton.size(height: Dimensions.big)
+        titleLabel.setWidthEqual(to: stack)
+        descriptionLabel.setWidthEqual(to: stack)
+        loginButton.size(height: Dimensions.large)
         loginButton.setWidthEqual(to: stack)
-        registerButton.size(height: Dimensions.large)
+        registerButton.size(height: Dimensions.veryLarge)
         registerButton.setWidthEqual(to: stack)
     }
     
     func extraSetups() {
-        view.backgroundColor = .systemPink
+        view.backgroundColor = Colors.pink
     }
 }
 
