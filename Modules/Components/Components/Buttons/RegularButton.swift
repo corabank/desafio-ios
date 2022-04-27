@@ -4,39 +4,36 @@ public final class RegularButton: UIButton {
 
     public init() {
         super.init(frame: .zero)
-        defaultSetups()
     }
 
     required init?(coder: NSCoder) {
         return nil
     }
 
-    public func set(title: String) {
+    public func set(title: String, alignment: UIControl.ContentHorizontalAlignment, style: RegularButtonStyle) {
         self.setTitle(title, for: .normal)
-        self.titleLabel?.textColor = .black
-        self.titleLabel?.textAlignment = .center
-    }
-
-    private func defaultSetups() {
-        corner()
-        setupShadow()
-        setupStyle(true)
+        // self.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        self.contentHorizontalAlignment = alignment
+        self.titleEdgeInsets = UIEdgeInsets(top: 0,
+                                            left: Dimensions.medium,
+                                            bottom: 0,
+                                            right: Dimensions.medium)
+        self.layer.cornerRadius = Dimensions.border
+        self.layer.borderWidth = Dimensions.minimal
+        self.layer.borderColor = UIColor.white.cgColor
+        setStyle(style)
     }
     
-    private func corner() {
-        self.layer.cornerRadius = 8
-    }
-
-    private func setupStyle(_ shadow: Bool) {
-        self.backgroundColor = .gray
-        if shadow { setupShadow() }
-    }
-
-    private func setupShadow() {
-        self.layer.shadowColor = #colorLiteral(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-        self.layer.shadowOffset = CGSize(width: 4, height: 4)
-        self.layer.shadowOpacity = 1
-        self.layer.shadowRadius = 2
-        self.layer.masksToBounds = false
+    private func setStyle(_ style: RegularButtonStyle) {
+        switch style {
+        case .white:
+            self.backgroundColor = .white
+            self.setTitleColor(.systemPink, for: .normal)
+        case .pink:
+            self.backgroundColor = .systemPink
+            self.setTitleColor(.white, for: .normal)
+        }
     }
 }
+
+public enum RegularButtonStyle { case white, pink }

@@ -21,7 +21,7 @@ final class PassFormView: UIViewController {
     
     private lazy var nextButton: RegularButton = {
         let button = RegularButton()
-        button.set(title: "Proximo")
+        button.set(title: "Proximo", alignment: .left, style: .pink)
         button.addTarget(self, action: #selector(nextActionCallback), for: .touchUpInside)
         return button
     }()

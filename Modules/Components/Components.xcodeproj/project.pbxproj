@@ -14,6 +14,7 @@
 		5734100C28176BCF0070804E /* Components.h in Headers */ = {isa = PBXBuildFile; fileRef = 5734100028176BCF0070804E /* Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5734101728176C0C0070804E /* ViewCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101628176C0C0070804E /* ViewCode.framework */; };
 		5734101828176C0C0070804E /* ViewCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101628176C0C0070804E /* ViewCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5784EAE22819A14F00B215A1 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EAE12819A14F00B215A1 /* Dimensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		5734100528176BCF0070804E /* ComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5734100A28176BCF0070804E /* ComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTests.swift; sourceTree = "<group>"; };
 		5734101628176C0C0070804E /* ViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5784EAE12819A14F00B215A1 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		57340FFF28176BCF0070804E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5784EAE02819A13D00B215A1 /* Styles */,
 				57142DF42818050E005DFFA6 /* Extensions */,
 				57142DEF2818033F005DFFA6 /* Buttons */,
 				5734100028176BCF0070804E /* Components.h */,
@@ -129,6 +132,14 @@
 				5734101628176C0C0070804E /* ViewCode.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5784EAE02819A13D00B215A1 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				5784EAE12819A14F00B215A1 /* Dimensions.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +255,7 @@
 			files = (
 				57142DF1281803AA005DFFA6 /* RegularButton.swift in Sources */,
 				57142DF628180520005DFFA6 /* UIButton.swift in Sources */,
+				5784EAE22819A14F00B215A1 /* Dimensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
