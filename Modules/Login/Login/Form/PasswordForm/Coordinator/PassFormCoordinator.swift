@@ -12,6 +12,10 @@ final class PassFormCoordinator {
 }
 
 extension PassFormCoordinator: PassFormCoordinatorProtocol {
+    func back() {
+        self.navigation?.popViewController(animated: true)
+    }
+    
     public func set(navigation: UINavigationController?) {
         self.navigation = navigation
     }

@@ -1,3 +1,4 @@
 protocol PassFormViewDelegate: AnyObject {
-    func inputPassword()
+    func inputPassword(_ value: String)
+    func tapBack()
 }

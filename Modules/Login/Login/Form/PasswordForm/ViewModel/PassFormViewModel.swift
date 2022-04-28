@@ -16,7 +16,11 @@ extension PassFormViewModel: PassFormViewModelProtocol {
 }
 
 extension PassFormViewModel: PassFormViewDelegate {
-    func inputPassword() {
+    func inputPassword(_ value: String) {
         coordinator?.goToStatement()
+    }
+    
+    func tapBack() {
+        coordinator?.back()
     }
 }
