@@ -16,10 +16,12 @@
 		57142E3928182B55005DFFA6 /* StatementCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */; };
 		57142E3C281840DA005DFFA6 /* StatementDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3B281840DA005DFFA6 /* StatementDataSourceProtocol.swift */; };
 		57142E3E281840F3005DFFA6 /* StatementDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E3D281840F3005DFFA6 /* StatementDataSource.swift */; };
-		57142E4328184519005DFFA6 /* CardStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E4228184519005DFFA6 /* CardStatement.swift */; };
+		57142E4328184519005DFFA6 /* StatementItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57142E4228184519005DFFA6 /* StatementItem.swift */; };
 		57340FB8281765080070804E /* Statement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57340FAF281765080070804E /* Statement.framework */; };
 		57340FBD281765080070804E /* StatementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57340FBC281765080070804E /* StatementTests.swift */; };
 		57340FBE281765080070804E /* Statement.h in Headers */ = {isa = PBXBuildFile; fileRef = 57340FB2281765080070804E /* Statement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		579BFD73281B388A007083EC /* StatementSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD72281B388A007083EC /* StatementSection.swift */; };
+		579BFD75281B38A1007083EC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD74281B38A1007083EC /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +44,13 @@
 		57142E3828182B55005DFFA6 /* StatementCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		57142E3B281840DA005DFFA6 /* StatementDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDataSourceProtocol.swift; sourceTree = "<group>"; };
 		57142E3D281840F3005DFFA6 /* StatementDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDataSource.swift; sourceTree = "<group>"; };
-		57142E4228184519005DFFA6 /* CardStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatement.swift; sourceTree = "<group>"; };
+		57142E4228184519005DFFA6 /* StatementItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItem.swift; sourceTree = "<group>"; };
 		57340FAF281765080070804E /* Statement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Statement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340FB2281765080070804E /* Statement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		57340FB7281765080070804E /* StatementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57340FBC281765080070804E /* StatementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
+		579BFD72281B388A007083EC /* StatementSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementSection.swift; sourceTree = "<group>"; };
+		579BFD74281B38A1007083EC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +124,9 @@
 		57142E3F2818421A005DFFA6 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				57142E4228184519005DFFA6 /* CardStatement.swift */,
+				57142E4228184519005DFFA6 /* StatementItem.swift */,
+				579BFD72281B388A007083EC /* StatementSection.swift */,
+				579BFD74281B38A1007083EC /* Person.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -276,10 +282,12 @@
 				57142E3128182B1A005DFFA6 /* StatementViewDelegate.swift in Sources */,
 				57142E3928182B55005DFFA6 /* StatementCoordinatorProtocol.swift in Sources */,
 				57142E3E281840F3005DFFA6 /* StatementDataSource.swift in Sources */,
+				579BFD75281B38A1007083EC /* Person.swift in Sources */,
 				57142E3528182B3A005DFFA6 /* StatementViewModelProtocol.swift in Sources */,
-				57142E4328184519005DFFA6 /* CardStatement.swift in Sources */,
+				57142E4328184519005DFFA6 /* StatementItem.swift in Sources */,
 				57142E3728182B46005DFFA6 /* StatementCoordinator.swift in Sources */,
 				57142E2D28182B03005DFFA6 /* StatementView.swift in Sources */,
+				579BFD73281B388A007083EC /* StatementSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
