@@ -5,4 +5,5 @@ public enum Images {
     public static let arrow    = "cora_arrow"
     public static let back     = "cora_back"
     public static let download = "cora_download"
+    public static let eye      = "cora_eye"
 }

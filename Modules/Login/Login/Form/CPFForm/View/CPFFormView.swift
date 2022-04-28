@@ -61,7 +61,12 @@ final class CPFFormView: UIViewController {
         return label
     }()
     
-    private let textField: UITextField = UITextField(frame: .zero)
+    private let textField: UITextField = {
+        let text = UITextField(frame: .zero)
+        text.keyboardType = .numberPad
+        return text
+    }()
+
     private lazy var keyBoardSize: NSLayoutConstraint? = NSLayoutConstraint(item: keyboardHolder,
                                                                             attribute: .height,
                                                                             relatedBy: .equal,
@@ -119,6 +124,7 @@ extension CPFFormView: ViewCode {
         stack.addArrangedSubview(stackEmbedded)
         stackEmbedded.addArrangedSubview(welcomeLabel)
         stackEmbedded.addArrangedSubview(titleLabel)
+        stackEmbedded.addArrangedSubview(Spacer(size: Dimensions.verySmall))
         stackEmbedded.addArrangedSubview(textField)
         footerStack.addArrangedSubview(nextButton)
         footerStack.addArrangedSubview(keyboardHolder)
@@ -167,7 +173,6 @@ extension CPFFormView: ViewCode {
         textField.addTarget(self, action: #selector(inputValue), for: .editingChanged)
         
         nextButton.state(.disabled)
-        textField.keyboardType = .numberPad
     }
     
     
