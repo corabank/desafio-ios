@@ -21,6 +21,7 @@
 		5784EB092819DE7B00B215A1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EB082819DE7B00B215A1 /* NavigationBar.swift */; };
 		579BFD6D281AA526007083EC /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD6C281AA526007083EC /* NavigationBarDelegate.swift */; };
 		579BFD6F281AA668007083EC /* NavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */; };
+		579BFD71281AF19A007083EC /* RegularButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD70281AF19A007083EC /* RegularButtonProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		5784EB082819DE7B00B215A1 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		579BFD6C281AA526007083EC /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
 		579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProtocol.swift; sourceTree = "<group>"; };
+		579BFD70281AF19A007083EC /* RegularButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularButtonProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				57142DF0281803AA005DFFA6 /* RegularButton.swift */,
+				579BFD70281AF19A007083EC /* RegularButtonProtocol.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57142DF1281803AA005DFFA6 /* RegularButton.swift in Sources */,
+				579BFD71281AF19A007083EC /* RegularButtonProtocol.swift in Sources */,
 				5784EAE92819ABD600B215A1 /* Spacer.swift in Sources */,
 				5784EAE42819A57500B215A1 /* Colors.swift in Sources */,
 				57142DF628180520005DFFA6 /* UIButton.swift in Sources */,

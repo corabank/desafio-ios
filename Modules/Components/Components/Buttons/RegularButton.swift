@@ -30,21 +30,28 @@ public final class RegularButton: UIButton {
         case .white:
             self.backgroundColor = Colors.white
             self.setTitleColor(Colors.pink, for: .normal)
+            self.tintColor = Colors.pink
         case .pink:
             self.backgroundColor = Colors.pink
             self.setTitleColor(Colors.white, for: .normal)
+            self.tintColor = Colors.white
         }
     }
     
     private func setIcon(_ icon: Icon) {
+        var image: UIImage?
+        
         switch icon {
         case .arrow:
-            self.setImage(UIImage(named: Images.arrow), for: .normal)
+            image = UIImage(named: Images.arrow)
         case .share:
-            self.setImage(.actions, for: .normal)
+            image = UIImage(named: Images.download)
         case .nothing:
-            self.setImage(.none, for: .normal)
+            image = nil
         }
+        
+        let tintImage = image?.withRenderingMode(.alwaysTemplate)
+        self.setImage(tintImage, for: .normal)
     }
     
     public override func layoutSubviews() {
@@ -52,6 +59,19 @@ public final class RegularButton: UIButton {
         guard let imageView = imageView else { return }
         imageEdgeInsets = UIEdgeInsets(top: 5, left: (bounds.width - 35), bottom: 5, right: 5)
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: (imageView.frame.width))
+    }
+}
+
+extension RegularButton: RegularButtonProtocol {
+    public func state(_ state: ButtonState) {
+        switch state {
+        case .disabled:
+            self.backgroundColor = Colors.mediumGray
+            self.isEnabled = false
+        case .enabled:
+            self.backgroundColor = .systemPink
+            self.isEnabled = true
+        }
     }
 }
 

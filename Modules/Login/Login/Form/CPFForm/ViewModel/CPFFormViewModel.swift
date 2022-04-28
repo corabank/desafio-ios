@@ -22,7 +22,7 @@ extension CPFFormViewModel: CPFFormViewDelegate {
         coordinator?.back()
     }
     
-    func inputCPF() {
+    func inputCPF(_ value: String) {
         coordinator?.login()
     }
 }

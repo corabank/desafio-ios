@@ -1,4 +1,4 @@
 protocol CPFFormViewDelegate: AnyObject {
-    func inputCPF()
+    func inputCPF(_ value: String)
     func tapBack()
 }

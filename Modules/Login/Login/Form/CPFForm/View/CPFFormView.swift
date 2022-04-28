@@ -68,7 +68,7 @@ final class CPFFormView: UIViewController {
                                                                             toItem: nil,
                                                                             attribute: .height,
                                                                             multiplier: 1,
-                                                                            constant: 250)
+                                                                            constant: view.frame.height/3.2)
     
     private lazy var nextButton: RegularButton = {
         let button = RegularButton()
@@ -92,7 +92,7 @@ final class CPFFormView: UIViewController {
     @objc
     private func nextActionCallback() {
         nextButton.flash()
-        viewModel?.inputCPF()
+        viewModel?.inputCPF(textField.text ?? "")
     }
     
     @objc
@@ -163,10 +163,27 @@ extension CPFFormView: ViewCode {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        textField.addTarget(self, action: #selector(inputValue), for: .editingChanged)
+        
+        nextButton.state(.disabled)
+        textField.keyboardType = .numberPad
+    }
+    
+    
+    @objc
+    func inputValue() {
+        (String(textField.text ?? "").isEmpty) ?
+        changeButtonStatus(.disabled) :
+        changeButtonStatus(.enabled)
     }
 }
 
 extension CPFFormView: CPFFormViewProtocol {
+    func changeButtonStatus(_ value: ButtonState) {
+        nextButton.state(value)
+    }
+    
     func set(delegate: CPFFormViewDelegate) {
         self.viewModel = delegate
     }
