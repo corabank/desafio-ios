@@ -12,9 +12,6 @@
 		53201F66A3CEA546D491DC75 /* Pods_CoraChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */; };
 		926CCFBA281A134A00B32F9F /* StatementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFB9281A134A00B32F9F /* StatementData.swift */; };
 		926CCFBE281A379000B32F9F /* CoraJsonVIII.json in Resources */ = {isa = PBXBuildFile; fileRef = 926CCFBD281A379000B32F9F /* CoraJsonVIII.json */; };
-		926CCFC0281A52E600B32F9F /* StatementInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */; };
-		926CCFC1281A54D000B32F9F /* StatementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E162815E5160073939B /* StatementInteractor.swift */; };
-		926CCFC2281A551000B32F9F /* StatementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E182815E6C00073939B /* StatementPresenter.swift */; };
 		926CCFC4281AB53200B32F9F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFC3281AB53200B32F9F /* BaseViewController.swift */; };
 		926D6DFC2814AD400073939B /* StatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFB2814AD400073939B /* StatementViewController.swift */; };
 		926D6DFE2814BC450073939B /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFD2814BC450073939B /* StatementTableViewCell.swift */; };
@@ -44,6 +41,7 @@
 		928381742811B4D500842CFD /* CoraLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381732811B4D500842CFD /* CoraLoginRouter.swift */; };
 		928381782811B6C200842CFD /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928381772811B6C200842CFD /* UserLoginViewController.swift */; };
 		92852BE628134E350004B892 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92852BE528134E350004B892 /* PasswordViewController.swift */; };
+		92E12766281AD80D00906213 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFC7281AC13300B32F9F /* LoginViewTests.swift */; };
 		92EA3C3E2812262300C61AF8 /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA3C3D2812262200C61AF8 /* UserLoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +72,9 @@
 		8B4D40BB626ACAA5638D5AEF /* Pods-CoraChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge/Pods-CoraChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		926CCFB9281A134A00B32F9F /* StatementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementData.swift; sourceTree = "<group>"; };
 		926CCFBD281A379000B32F9F /* CoraJsonVIII.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoraJsonVIII.json; sourceTree = "<group>"; };
-		926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractorTests.swift; sourceTree = "<group>"; };
 		926CCFC3281AB53200B32F9F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		926CCFC7281AC13300B32F9F /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
+		926CCFDA281ACC4F00B32F9F /* SnapshotTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		926D6DFB2814AD400073939B /* StatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewController.swift; sourceTree = "<group>"; };
 		926D6DFD2814BC450073939B /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
 		926D6DFF2815990F0073939B /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
@@ -144,6 +143,7 @@
 		20376E981EAD5E0ED58F2232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				926CCFDA281ACC4F00B32F9F /* SnapshotTesting.framework */,
 				3DF52CF90C6C46A0E79657BE /* Pods_CoraChallenge.framework */,
 				16183D74F21C400528399204 /* Pods_CoraChallenge_CoraChallengeUITests.framework */,
 				012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */,
@@ -167,7 +167,6 @@
 		926D6DFA2814AB100073939B /* Statement */ = {
 			isa = PBXGroup;
 			children = (
-				926D6E1C281705680073939B /* Views */,
 				926D6E0128159BF10073939B /* Models */,
 				926D6DFB2814AD400073939B /* StatementViewController.swift */,
 				926D6E162815E5160073939B /* StatementInteractor.swift */,
@@ -261,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				92838151280E404A00842CFD /* CoraChallengeTests.swift */,
-				926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */,
+				926CCFC7281AC13300B32F9F /* LoginViewTests.swift */,
 			);
 			path = CoraChallengeTests;
 			sourceTree = "<group>";
@@ -278,6 +277,7 @@
 		928381752811B62800842CFD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				926D6E1C281705680073939B /* Views */,
 				926D6E0828159EB50073939B /* Repository */,
 				926D6DFA2814AB100073939B /* Statement */,
 				928381762811B63200842CFD /* Login */,
@@ -326,6 +326,7 @@
 				92838149280E404A00842CFD /* Sources */,
 				9283814A280E404A00842CFD /* Frameworks */,
 				9283814B280E404A00842CFD /* Resources */,
+				FF339628A210C778FFEB3CA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,6 +494,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FF339628A210C778FFEB3CA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -533,9 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				926CCFC2281A551000B32F9F /* StatementPresenter.swift in Sources */,
-				926CCFC0281A52E600B32F9F /* StatementInteractorTests.swift in Sources */,
-				926CCFC1281A54D000B32F9F /* StatementInteractor.swift in Sources */,
+				92E12766281AD80D00906213 /* LoginViewTests.swift in Sources */,
 				92838152280E404A00842CFD /* CoraChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
