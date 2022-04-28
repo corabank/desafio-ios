@@ -149,6 +149,10 @@ class DetailStamentViewController: BaseViewController {
         viewCodeSetup()
         title = "Detalhes do agendamento"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        title = "Detalhes do agendamento"
+    }
 }
 
 extension DetailStamentViewController: ViewCodeProtocol {

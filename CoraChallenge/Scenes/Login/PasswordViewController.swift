@@ -23,6 +23,10 @@ class PasswordViewController: BaseViewController {
         screen.delegate = self
         title = "Login Cora"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        title = "Login Cora"
+    }
 }
 
 extension PasswordViewController: ViewCodeProtocol {

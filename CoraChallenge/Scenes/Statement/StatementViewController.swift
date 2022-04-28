@@ -96,6 +96,10 @@ class StatementViewController: BaseViewController, StatementViewControllerProtoc
         title = "Extrato"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        title = "Extrato"
+    }
+    
     func setupTableview() {
         statementTableView.register(StatementTableViewCell.self, forCellReuseIdentifier: StatementTableViewCell.cellId)
         statementTableView.delegate = self

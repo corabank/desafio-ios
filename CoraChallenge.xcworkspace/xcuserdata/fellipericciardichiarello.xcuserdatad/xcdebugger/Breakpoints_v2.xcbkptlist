@@ -107,8 +107,8 @@
             filePath = "CoraChallenge/Scenes/Statement/DetailStamentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "setupDetailStatementView(model:date:)"
             landmarkType = "7">
             <Locations>
