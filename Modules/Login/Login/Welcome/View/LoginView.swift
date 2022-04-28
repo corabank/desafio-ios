@@ -145,7 +145,7 @@ extension LoginView: ViewCode {
         
         logo.size(height: 22.5,width: 90)
         person.setWidthEqual(to: view)
-        person.size(height: 320)
+        person.size(height: view.frame.height/2.1)
         
         cover.setWidthEqual(to: coverStack)
         stack.anchor(top: view.topAnchor,
@@ -156,14 +156,14 @@ extension LoginView: ViewCode {
                      paddingLeft: Dimensions.medium,
                      paddingRight: Dimensions.medium)
         
-        coverMask.anchor(leading: person.leadingAnchor,
+        coverMask.anchor(top: person.topAnchor,
+                         leading: person.leadingAnchor,
                          bottom: person.bottomAnchor,
                          trailing: person.trailingAnchor,
+                         paddingTop: 220,
                          paddingBottom: -130,
                          paddingLeft: -65,
                          paddingRight: -50)
-        
-        coverMask.size(height: 220)
         
         titleStack.setWidthEqual(to: stack)
         mainTitleLabel.setWidthEqual(to: titleStack)

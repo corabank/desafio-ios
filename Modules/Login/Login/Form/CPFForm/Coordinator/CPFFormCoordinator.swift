@@ -27,4 +27,8 @@ extension CPFFormCoordinator: CPFFormCoordinatorProtocol {
         passCoordinator.set(navigation: self.navigation)
         passCoordinator.start()
     }
+    
+    public func back() {
+        navigation?.popViewController(animated: true)
+    }
 }

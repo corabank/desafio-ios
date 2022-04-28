@@ -4,14 +4,25 @@ import Resources
 
 public final class NavigationBar: UIView {
     
-    public init() {
+    private var delegate: NavigationBarDelegate?
+    private var share: Bool = false
+    
+    public init(title: String, share: Bool = false) {
         super.init(frame: .zero)
+        self.share = share
+        titleLabel.text = title
         setupView()
     }
 
     required init?(coder: NSCoder) {
         return nil
     }
+    
+    private lazy var nav: UIStackView = {
+        let stack: UIStackView = UIStackView(frame: .zero)
+        stack.axis = .vertical
+        return stack
+    }()
     
     private lazy var stack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
@@ -21,29 +32,22 @@ public final class NavigationBar: UIView {
         return stack
     }()
     
-    private lazy var leadingIconBox: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        return view
+    private lazy var leadingButton: UIButton = {
+        let button: UIButton = UIButton(frame: .zero)
+        button.setImage(UIImage(named: Images.back), for: .normal)
+        button.addTarget(self, action: #selector(tapBack), for: .touchUpInside)
+        return button
     }()
     
-    private lazy var leadingIcon: UIImageView = {
-        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: Images.arrow))
-        return view
-    }()
-    
-    private lazy var trailingIconBox: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        return view
-    }()
-    
-    private lazy var trailingIcon: UIImageView = {
-        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: Images.arrow))
-        return view
+    private lazy var trailingButton: UIButton = {
+        let button: UIButton = UIButton(frame: .zero)
+        if share { button.setImage(UIImage(named: Images.download), for: .normal) }
+        button.addTarget(self, action: #selector(tapShare), for: .touchUpInside)
+        return button
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Extrato"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = Colors.darkGray
@@ -54,39 +58,44 @@ public final class NavigationBar: UIView {
 
 extension NavigationBar: ViewCode {
     public func setSubviews() {
-        self.addSubview(stack)
-        stack.addArrangedSubview(leadingIconBox)
+        self.addSubview(nav)
+        nav.addArrangedSubview(Spacer(size: Dimensions.verySmall))
+        nav.addArrangedSubview(stack)
+        stack.addArrangedSubview(leadingButton)
         stack.addArrangedSubview(titleLabel)
-        stack.addArrangedSubview(trailingIconBox)
-        leadingIconBox.addSubview(leadingIcon)
-        trailingIconBox.addSubview(trailingIcon)
+        stack.addArrangedSubview(trailingButton)
     }
     
     public func setConstraints() {
-        leadingIconBox.size(width: 40)
-        leadingIconBox.anchor(top: stack.topAnchor,
-                              leading: stack.leadingAnchor,
-                              bottom: stack.bottomAnchor)
-        leadingIcon.size(height: Dimensions.medium, width: Dimensions.medium)
-        leadingIcon.anchor(top: leadingIconBox.topAnchor,
-                           leading: leadingIconBox.leadingAnchor,
-                           paddingTop: Dimensions.small,
-                           paddingLeft: Dimensions.small)
+        nav.setWidthEqual(to: self)
+        nav.anchor(top: self.topAnchor,
+                   bottom: self.bottomAnchor)
         
-        trailingIconBox.size(width: 40)
-        trailingIconBox.anchor(top: stack.topAnchor,
-                               bottom: stack.bottomAnchor,
-                               trailing: stack.trailingAnchor)
-        trailingIcon.size(height: Dimensions.medium, width: Dimensions.medium)
-        trailingIcon.anchor(top: trailingIconBox.topAnchor,
-                           trailing: trailingIconBox.trailingAnchor,
-                           paddingTop: Dimensions.small,
-                           paddingRight: Dimensions.small)
+        stack.size(height: 56)
+        stack.setWidthEqual(to: nav)
         
-        self.size(height: 60)
+        titleLabel.setHeightEqual(to: stack)
+        leadingButton.size(height: 40, width: 40)
+        trailingButton.size(height: 40, width: 40)
     }
     
     public func extraSetups() {
         self.backgroundColor = Colors.lightGray
+    }
+}
+
+extension NavigationBar: NavigationBarProtocol {
+    @objc
+    public func tapBack() {
+        delegate?.tapBack()
+    }
+    
+    @objc
+    public func tapShare() {
+        delegate?.tapShare()
+    }
+    
+    public func set(delegate: NavigationBarDelegate) {
+        self.delegate = delegate
     }
 }

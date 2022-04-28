@@ -18,6 +18,10 @@ extension CPFFormViewModel: CPFFormViewModelProtocol {
 }
 
 extension CPFFormViewModel: CPFFormViewDelegate {
+    func tapBack() {
+        coordinator?.back()
+    }
+    
     func inputCPF() {
         coordinator?.login()
     }

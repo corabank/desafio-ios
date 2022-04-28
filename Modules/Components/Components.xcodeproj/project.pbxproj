@@ -19,6 +19,8 @@
 		5784EB052819DD3100B215A1 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5784EB042819DD3100B215A1 /* Resources.framework */; };
 		5784EB062819DD3100B215A1 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5784EB042819DD3100B215A1 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5784EB092819DE7B00B215A1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EB082819DE7B00B215A1 /* NavigationBar.swift */; };
+		579BFD6D281AA526007083EC /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD6C281AA526007083EC /* NavigationBarDelegate.swift */; };
+		579BFD6F281AA668007083EC /* NavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		5784EAE82819ABD600B215A1 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		5784EB042819DD3100B215A1 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5784EB082819DE7B00B215A1 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		579BFD6C281AA526007083EC /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
+		579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				5784EB082819DE7B00B215A1 /* NavigationBar.swift */,
+				579BFD6C281AA526007083EC /* NavigationBarDelegate.swift */,
+				579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -277,6 +283,8 @@
 				5784EAE92819ABD600B215A1 /* Spacer.swift in Sources */,
 				5784EAE42819A57500B215A1 /* Colors.swift in Sources */,
 				57142DF628180520005DFFA6 /* UIButton.swift in Sources */,
+				579BFD6D281AA526007083EC /* NavigationBarDelegate.swift in Sources */,
+				579BFD6F281AA668007083EC /* NavigationBarProtocol.swift in Sources */,
 				5784EAE22819A14F00B215A1 /* Dimensions.swift in Sources */,
 				5784EB092819DE7B00B215A1 /* NavigationBar.swift in Sources */,
 			);

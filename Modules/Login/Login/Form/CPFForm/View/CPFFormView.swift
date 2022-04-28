@@ -16,7 +16,8 @@ final class CPFFormView: UIViewController {
     }()
     
     private lazy var navigation: NavigationBar = {
-        let nav = NavigationBar()
+        let nav = NavigationBar(title: "Extrato")
+        nav.set(delegate: self)
         return nav
     }()
 
@@ -103,4 +104,12 @@ extension CPFFormView: CPFFormViewProtocol {
     func set(delegate: CPFFormViewDelegate) {
         self.viewModel = delegate
     }
+}
+
+extension CPFFormView: NavigationBarDelegate {
+    func tapBack(){
+        viewModel?.tapBack()
+    }
+    
+    func tapShare() {}
 }
