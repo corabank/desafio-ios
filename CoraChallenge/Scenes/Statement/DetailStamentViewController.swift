@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailStamentViewController: UIViewController {
+class DetailStamentViewController: BaseViewController {
     
     lazy var mainScroll: UIScrollView = {
         let scrollView = UIScrollView()
@@ -147,26 +147,7 @@ class DetailStamentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCodeSetup()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupNavigationBar()
-    }
-    
-    func setupNavigationBar() {
-        self.navigationController?.isNavigationBarHidden = false
-
-        let navBar = self.navigationController?.navigationBar
-        self.title = "Detalhes do agendamento"
-        navBar?.titleTextAttributes = [NSAttributedString.Key.font : UIFont(name: "Avenir-Roman", size: 14)!,
-                                       NSAttributedString.Key.foregroundColor : UIColor.coraDarkGray]
-        navBar?.backgroundColor = .coraLightGray
-        navBar?.tintColor = .coraPink
-        navBar?.backItem?.title = ""
-        
-        let backButtonImage = UIImage(named: "nav_bar_back_button")
-        navBar?.backIndicatorImage = backButtonImage
-        navBar?.backIndicatorTransitionMaskImage = backButtonImage
+        title = "Detalhes do agendamento"
     }
 }
 

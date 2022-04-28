@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitialViewController: UIViewController {
+class InitialViewController: BaseViewController {
     
     lazy var mainStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [imageView, titleStack])

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserLoginViewController: UIViewController {
+class UserLoginViewController: BaseViewController {
     
     lazy var screen: UserLoginView = {
         let view = UserLoginView()
@@ -21,26 +21,7 @@ class UserLoginViewController: UIViewController {
         setupNavigationBar()
         viewCodeSetup()
         screen.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupNavigationBar()
-    }
-    
-    func setupNavigationBar() {
-        self.navigationController?.isNavigationBarHidden = false
-
-        let navBar = self.navigationController?.navigationBar
-        self.title = "Login Cora"
-        navBar?.titleTextAttributes = [NSAttributedString.Key.font : UIFont(name: "Avenir-Roman", size: 14)!,
-                                       NSAttributedString.Key.foregroundColor : UIColor.coraDarkGray]
-        navBar?.backgroundColor = .coraLightGray
-        navBar?.tintColor = .coraPink
-        navBar?.backItem?.title = ""
-        
-        let backButtonImage = UIImage(named: "nav_bar_back_button")
-        navBar?.backIndicatorImage = backButtonImage
-        navBar?.backIndicatorTransitionMaskImage = backButtonImage
+        title = "Login Cora"
     }
 }
 

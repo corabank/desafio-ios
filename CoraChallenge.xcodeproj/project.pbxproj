@@ -15,6 +15,7 @@
 		926CCFC0281A52E600B32F9F /* StatementInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */; };
 		926CCFC1281A54D000B32F9F /* StatementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E162815E5160073939B /* StatementInteractor.swift */; };
 		926CCFC2281A551000B32F9F /* StatementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E182815E6C00073939B /* StatementPresenter.swift */; };
+		926CCFC4281AB53200B32F9F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFC3281AB53200B32F9F /* BaseViewController.swift */; };
 		926D6DFC2814AD400073939B /* StatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFB2814AD400073939B /* StatementViewController.swift */; };
 		926D6DFE2814BC450073939B /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFD2814BC450073939B /* StatementTableViewCell.swift */; };
 		926D6E002815990F0073939B /* StatementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFF2815990F0073939B /* StatementModel.swift */; };
@@ -74,6 +75,7 @@
 		926CCFB9281A134A00B32F9F /* StatementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementData.swift; sourceTree = "<group>"; };
 		926CCFBD281A379000B32F9F /* CoraJsonVIII.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoraJsonVIII.json; sourceTree = "<group>"; };
 		926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractorTests.swift; sourceTree = "<group>"; };
+		926CCFC3281AB53200B32F9F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		926D6DFB2814AD400073939B /* StatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewController.swift; sourceTree = "<group>"; };
 		926D6DFD2814BC450073939B /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
 		926D6DFF2815990F0073939B /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				926D6E0E2815D7F10073939B /* UIColor+Extension.swift */,
 				926D6E1A2815F9700073939B /* String+Extension.swift */,
 				926D6E1F28177F290073939B /* Double+Extensions.swift */,
+				926CCFC3281AB53200B32F9F /* BaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				926D6E132815D8100073939B /* ViewCodeProtocol.swift in Sources */,
 				926D6E112815D8020073939B /* UITextField+Extension.swift in Sources */,
 				926D6E0A28159ECF0073939B /* StatementRepository.swift in Sources */,
+				926CCFC4281AB53200B32F9F /* BaseViewController.swift in Sources */,
 				9283813B280E404400842CFD /* AppDelegate.swift in Sources */,
 				926D6E0528159C430073939B /* SenderData.swift in Sources */,
 				926D6E24281857DB0073939B /* DetailStamentViewController.swift in Sources */,

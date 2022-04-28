@@ -16,7 +16,7 @@ protocol StatementViewControllerProtocol {
     var dailyBalanceArray: [String]? {  get set }
 }
 
-class StatementViewController: UIViewController, StatementViewControllerProtocol {
+class StatementViewController: BaseViewController, StatementViewControllerProtocol {
     lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView(frame: self.view.frame)
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -93,6 +93,7 @@ class StatementViewController: UIViewController, StatementViewControllerProtocol
         setupTableview()
         viewCodeSetup()
         interactor?.fetchStatementData()
+        title = "Extrato"
     }
     
     func setupTableview() {
