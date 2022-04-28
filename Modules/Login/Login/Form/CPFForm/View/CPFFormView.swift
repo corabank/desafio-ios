@@ -61,10 +61,14 @@ final class CPFFormView: UIViewController {
         return label
     }()
     
-    private lazy var textField: UITextField = {
-        let field = UITextField(frame: .zero)
-        return field
-    }()
+    private let textField: UITextField = UITextField(frame: .zero)
+    private lazy var keyBoardSize: NSLayoutConstraint? = NSLayoutConstraint(item: keyboardHolder,
+                                                                            attribute: .height,
+                                                                            relatedBy: .equal,
+                                                                            toItem: nil,
+                                                                            attribute: .height,
+                                                                            multiplier: 1,
+                                                                            constant: 250)
     
     private lazy var nextButton: RegularButton = {
         let button = RegularButton()
@@ -75,6 +79,7 @@ final class CPFFormView: UIViewController {
     
     private lazy var keyboardHolder: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -92,12 +97,12 @@ final class CPFFormView: UIViewController {
     
     @objc
     private func keyboardWillShow() {
-        footerStack.addArrangedSubview(keyboardHolder)
+        keyBoardSize?.isActive = true
     }
     
     @objc
     private func keyboardWillHide() {
-        keyboardHolder.removeFromSuperview()
+        keyBoardSize?.isActive = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -116,6 +121,7 @@ extension CPFFormView: ViewCode {
         stackEmbedded.addArrangedSubview(titleLabel)
         stackEmbedded.addArrangedSubview(textField)
         footerStack.addArrangedSubview(nextButton)
+        footerStack.addArrangedSubview(keyboardHolder)
     }
     
     func setConstraints() {
@@ -143,7 +149,11 @@ extension CPFFormView: ViewCode {
                            paddingBottom: Dimensions.mediumSmall,
                            paddingLeft: Dimensions.medium,
                            paddingRight: Dimensions.medium)
-        keyboardHolder.size(height: 250)
+        
+        if let constraint = keyBoardSize {
+            keyboardHolder.addConstraints([constraint])
+            keyBoardSize?.isActive = false
+        }
     }
     
     func extraSetups() {
