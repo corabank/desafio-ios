@@ -19,6 +19,7 @@ extension StatementCoordinator: StatementCoordinatorProtocol {
     public func start() {
         viewModel.set(view: view)
         viewModel.set(coordinator: self)
+        viewModel.set(dataSource: dataSource)
         view.set(delegate: viewModel)
         navigation?.pushViewController(view, animated: true)
     }

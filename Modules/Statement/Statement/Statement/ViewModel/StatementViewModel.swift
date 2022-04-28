@@ -23,6 +23,10 @@ extension StatementViewModel: StatementViewModelProtocol {
 }
 
 extension StatementViewModel: StatementViewDelegate {
+    func getData() -> [StatementSection]? {
+        dataSource?.getStatements()
+    }
+    
     func tapBack() {
         coordinator?.back()
     }

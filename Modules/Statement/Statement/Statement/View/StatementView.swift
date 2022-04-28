@@ -6,15 +6,7 @@ import Components
 final class StatementView: UIViewController {
     
     private var viewModel: StatementViewDelegate?
-    
-    // mock data, remove after
-    private let todos = [
-        ["a", "b", "c"],
-        ["1", "2", "3"],
-        ["31a", "22b", "41c"],
-        ["aaaa", "bbbbb", "ccccc"],
-        ["31a", "22b", "41c"],
-    ]
+    private lazy var sections: [StatementSection] = []
     
     private let navTitle = "Extrato"
     
@@ -47,7 +39,7 @@ final class StatementView: UIViewController {
     
     private lazy var table: UITableView = {
         let table = UITableView(frame: .zero)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(StatementItemCell.self, forCellReuseIdentifier: "statement_cell")
         table.sectionHeaderHeight = 0
         table.delegate = self
         table.dataSource = self
@@ -87,6 +79,15 @@ extension StatementView: ViewCode {
         view.backgroundColor = Colors.white
         filterStack.backgroundColor = .red
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setData()
+    }
+    
+    private func setData() {
+        guard let data = viewModel?.getData() else { return }
+        sections = data
+    }
 }
 
 extension StatementView: StatementViewProtocol {
@@ -97,7 +98,7 @@ extension StatementView: StatementViewProtocol {
 
 extension StatementView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tapped cell \(todos[indexPath.row])")
+        print("Tapped cell \(sections[indexPath.row])")
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -106,19 +107,18 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.todos[section].count
+        return self.sections[section].itens.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.todos.count
+        return self.sections.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: UITableViewCell = self.table.dequeueReusableCell(withIdentifier: "cell") else {
+        guard let cell: StatementItemCell = self.table.dequeueReusableCell(withIdentifier: "statement_cell") as? StatementItemCell else {
             return UITableViewCell(frame: .zero)
         }
-        cell.textLabel?.text = self.todos[indexPath.section][indexPath.row]
-        cell.backgroundColor = .red
+        cell.set(statement: sections[indexPath.section].itens[indexPath.section])
         return cell
     }
 }
