@@ -10,6 +10,11 @@
 		203644B2B1410E74D7D1EB83 /* Pods_CoraChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF52CF90C6C46A0E79657BE /* Pods_CoraChallenge.framework */; };
 		303DA9AF9412ECD73553B01F /* Pods_CoraChallenge_CoraChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16183D74F21C400528399204 /* Pods_CoraChallenge_CoraChallengeUITests.framework */; };
 		53201F66A3CEA546D491DC75 /* Pods_CoraChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012AE708ED9C8EA8C1FDBD91 /* Pods_CoraChallengeTests.framework */; };
+		926CCFBA281A134A00B32F9F /* StatementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFB9281A134A00B32F9F /* StatementData.swift */; };
+		926CCFBE281A379000B32F9F /* CoraJsonVIII.json in Resources */ = {isa = PBXBuildFile; fileRef = 926CCFBD281A379000B32F9F /* CoraJsonVIII.json */; };
+		926CCFC0281A52E600B32F9F /* StatementInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */; };
+		926CCFC1281A54D000B32F9F /* StatementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E162815E5160073939B /* StatementInteractor.swift */; };
+		926CCFC2281A551000B32F9F /* StatementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E182815E6C00073939B /* StatementPresenter.swift */; };
 		926D6DFC2814AD400073939B /* StatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFB2814AD400073939B /* StatementViewController.swift */; };
 		926D6DFE2814BC450073939B /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFD2814BC450073939B /* StatementTableViewCell.swift */; };
 		926D6E002815990F0073939B /* StatementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DFF2815990F0073939B /* StatementModel.swift */; };
@@ -20,12 +25,13 @@
 		926D6E0F2815D7F10073939B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E0E2815D7F10073939B /* UIColor+Extension.swift */; };
 		926D6E112815D8020073939B /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E102815D8010073939B /* UITextField+Extension.swift */; };
 		926D6E132815D8100073939B /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E122815D8100073939B /* ViewCodeProtocol.swift */; };
-		926D6E152815D8660073939B /* CoraData.json in Resources */ = {isa = PBXBuildFile; fileRef = 926D6E142815D8660073939B /* CoraData.json */; };
 		926D6E172815E5170073939B /* StatementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E162815E5160073939B /* StatementInteractor.swift */; };
 		926D6E192815E6C00073939B /* StatementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E182815E6C00073939B /* StatementPresenter.swift */; };
 		926D6E1B2815F9700073939B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E1A2815F9700073939B /* String+Extension.swift */; };
 		926D6E1E281705D90073939B /* StatementHeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E1D281705D90073939B /* StatementHeaderSectionView.swift */; };
 		926D6E2028177F290073939B /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E1F28177F290073939B /* Double+Extensions.swift */; };
+		926D6E24281857DB0073939B /* DetailStamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E23281857DB0073939B /* DetailStamentViewController.swift */; };
+		926D6E2628185B970073939B /* StatementDetailLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6E2528185B970073939B /* StatementDetailLabelsView.swift */; };
 		9283813B280E404400842CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813A280E404400842CFD /* AppDelegate.swift */; };
 		9283813D280E404400842CFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813C280E404400842CFD /* SceneDelegate.swift */; };
 		9283813F280E404400842CFD /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283813E280E404400842CFD /* InitialViewController.swift */; };
@@ -65,6 +71,9 @@
 		5348CFF0E30F68A9EC9D3F58 /* Pods-CoraChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7341D42D942FB9B5787E6361 /* Pods-CoraChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-CoraChallengeTests/Pods-CoraChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		8B4D40BB626ACAA5638D5AEF /* Pods-CoraChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoraChallenge.release.xcconfig"; path = "Target Support Files/Pods-CoraChallenge/Pods-CoraChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		926CCFB9281A134A00B32F9F /* StatementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementData.swift; sourceTree = "<group>"; };
+		926CCFBD281A379000B32F9F /* CoraJsonVIII.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoraJsonVIII.json; sourceTree = "<group>"; };
+		926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractorTests.swift; sourceTree = "<group>"; };
 		926D6DFB2814AD400073939B /* StatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewController.swift; sourceTree = "<group>"; };
 		926D6DFD2814BC450073939B /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
 		926D6DFF2815990F0073939B /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
@@ -75,12 +84,13 @@
 		926D6E0E2815D7F10073939B /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "../../../../Desktop/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		926D6E102815D8010073939B /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+Extension.swift"; path = "../../../../Desktop/UITextField+Extension.swift"; sourceTree = "<group>"; };
 		926D6E122815D8100073939B /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewCodeProtocol.swift; path = ../../../../Desktop/ViewCodeProtocol.swift; sourceTree = "<group>"; };
-		926D6E142815D8660073939B /* CoraData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CoraData.json; path = ../../../../Desktop/CoraData.json; sourceTree = "<group>"; };
 		926D6E162815E5160073939B /* StatementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractor.swift; sourceTree = "<group>"; };
 		926D6E182815E6C00073939B /* StatementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPresenter.swift; sourceTree = "<group>"; };
 		926D6E1A2815F9700073939B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		926D6E1D281705D90073939B /* StatementHeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementHeaderSectionView.swift; sourceTree = "<group>"; };
 		926D6E1F28177F290073939B /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		926D6E23281857DB0073939B /* DetailStamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStamentViewController.swift; sourceTree = "<group>"; };
+		926D6E2528185B970073939B /* StatementDetailLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailLabelsView.swift; sourceTree = "<group>"; };
 		92838137280E404400842CFD /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283813A280E404400842CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9283813C280E404400842CFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 				926D6DFB2814AD400073939B /* StatementViewController.swift */,
 				926D6E162815E5160073939B /* StatementInteractor.swift */,
 				926D6E182815E6C00073939B /* StatementPresenter.swift */,
+				926D6E23281857DB0073939B /* DetailStamentViewController.swift */,
 			);
 			path = Statement;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 				926D6E0228159C170073939B /* StatementModelData.swift */,
 				926D6E0428159C430073939B /* SenderData.swift */,
 				926D6E0628159C770073939B /* ReceiverData.swift */,
+				926CCFB9281A134A00B32F9F /* StatementData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,7 +198,7 @@
 		926D6E0D2815D7810073939B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				926D6E142815D8660073939B /* CoraData.json */,
+				926CCFBD281A379000B32F9F /* CoraJsonVIII.json */,
 				926D6E122815D8100073939B /* ViewCodeProtocol.swift */,
 				926D6E102815D8010073939B /* UITextField+Extension.swift */,
 				926D6E0E2815D7F10073939B /* UIColor+Extension.swift */,
@@ -201,6 +213,7 @@
 			children = (
 				926D6DFD2814BC450073939B /* StatementTableViewCell.swift */,
 				926D6E1D281705D90073939B /* StatementHeaderSectionView.swift */,
+				926D6E2528185B970073939B /* StatementDetailLabelsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				92838151280E404A00842CFD /* CoraChallengeTests.swift */,
+				926CCFBF281A52E600B32F9F /* StatementInteractorTests.swift */,
 			);
 			path = CoraChallengeTests;
 			sourceTree = "<group>";
@@ -388,8 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92838147280E404A00842CFD /* LaunchScreen.storyboard in Resources */,
+				926CCFBE281A379000B32F9F /* CoraJsonVIII.json in Resources */,
 				92838144280E404A00842CFD /* Assets.xcassets in Resources */,
-				926D6E152815D8660073939B /* CoraData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92EA3C3E2812262300C61AF8 /* UserLoginView.swift in Sources */,
+				926CCFBA281A134A00B32F9F /* StatementData.swift in Sources */,
 				92852BE628134E350004B892 /* PasswordViewController.swift in Sources */,
 				928381782811B6C200842CFD /* UserLoginViewController.swift in Sources */,
 				9283813F280E404400842CFD /* InitialViewController.swift in Sources */,
@@ -497,7 +512,9 @@
 				926D6E0A28159ECF0073939B /* StatementRepository.swift in Sources */,
 				9283813B280E404400842CFD /* AppDelegate.swift in Sources */,
 				926D6E0528159C430073939B /* SenderData.swift in Sources */,
+				926D6E24281857DB0073939B /* DetailStamentViewController.swift in Sources */,
 				926D6E002815990F0073939B /* StatementModel.swift in Sources */,
+				926D6E2628185B970073939B /* StatementDetailLabelsView.swift in Sources */,
 				926D6E0F2815D7F10073939B /* UIColor+Extension.swift in Sources */,
 				926D6DFE2814BC450073939B /* StatementTableViewCell.swift in Sources */,
 				926D6E0728159C770073939B /* ReceiverData.swift in Sources */,
@@ -512,6 +529,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926CCFC2281A551000B32F9F /* StatementPresenter.swift in Sources */,
+				926CCFC0281A52E600B32F9F /* StatementInteractorTests.swift in Sources */,
+				926CCFC1281A54D000B32F9F /* StatementInteractor.swift in Sources */,
 				92838152280E404A00842CFD /* CoraChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol StatementViewControllerDelegate: AnyObject {
+    func setupDetailStatementView(model: StatementModelData, date: String)
+}
+
 protocol StatementViewControllerProtocol {
-    
+    var model: [StatementModel]? { get set }
+    var dailyBalanceArray: [String]? {  get set }
 }
 
 class StatementViewController: UIViewController, StatementViewControllerProtocol {
@@ -78,6 +83,10 @@ class StatementViewController: UIViewController, StatementViewControllerProtocol
     }()
     
     var interactor: StatementInteractorProtocol?
+    weak var delegate: StatementViewControllerDelegate?
+    
+    var model: [StatementModel]?
+    var dailyBalanceArray: [String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,12 +100,16 @@ class StatementViewController: UIViewController, StatementViewControllerProtocol
         statementTableView.delegate = self
         statementTableView.dataSource = self
     }
+    
+    func getNumberOfRowsInSection(rowsInDate: [String : Int]) -> [String : Int] {
+        return rowsInDate
+    }
 }
 
 extension StatementViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let number = interactor?.dailyBalanceArray {
-            return number.count
+        if let section = self.model {
+            return section.count
         } else {
             return 0
         }
@@ -104,7 +117,7 @@ extension StatementViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = StatementHeaderSectionView()
-        if let data = interactor?.dailyBalanceArray[section] {
+        if let data = self.dailyBalanceArray?[section] {
             view.setupHeader(data: data)
         }
         view.heightAnchor.constraint(equalToConstant: 32).isActive = true
@@ -112,19 +125,26 @@ extension StatementViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return interactor?.dailyBalanceArray.count ?? 0
+        return model?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = statementTableView.dequeueReusableCell(withIdentifier: StatementTableViewCell.cellId, for: indexPath) as! StatementTableViewCell
-        if let data = interactor?.model[indexPath.item] {
-            cell.setupCell(model: data)
+        if let data = self.model?[indexPath.section].info {
+            cell.setupCell(model: data[indexPath.row])
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select cell at \(indexPath.row)")
+        if let model = self.model?[indexPath.section] {
+            if let info = model.info?[indexPath.item] {
+                let viewController = DetailStamentViewController()
+                delegate = viewController
+                delegate?.setupDetailStatementView(model: info, date: model.date ?? "")
+                CoraLoginRouter.goToStatementDetail(from: self, to: viewController)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

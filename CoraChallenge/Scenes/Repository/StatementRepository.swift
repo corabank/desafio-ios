@@ -9,15 +9,15 @@ import Foundation
 
 class StatementRepository {
     
-    static let jsonName = "CoraData"
+    static let jsonName = "CoraJsonVIII"
     
-    func loadDataFromJason(fileName: String) -> [StatementModelData]? {
+    func loadDataFromJason(fileName: String) -> [StatementModel]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
-                let jsonData = try decoder.decode(StatementModel.self, from: data)
-                return jsonData.data ?? []
+                let jsonData = try decoder.decode(StatementData.self, from: data)
+                return jsonData.data
             } catch {
                 print("error:\(error)")
             }

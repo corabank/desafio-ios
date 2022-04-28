@@ -1,0 +1,260 @@
+{
+    "data": [
+        {
+        "date": "2022-04-12T14:11:00.000Z",
+        "info": [
+            {
+                "transactionType": "Transferência recebida",
+                "value": 1234.56,
+                "sender": {
+                    "name": "Sender Um da Silva",
+                    "documentNumber": "45645645600",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "02373",
+                    "accountNumber": "010456-4"
+                },
+                "receiver": {
+                    "name": "Clente Cora da Silva",
+                    "documentNumber": "12312312300",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "00001",
+                    "accountNumber": "01522-0"
+                },
+                "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                "imageName": "enviado"
+            },
+            {
+                "transactionType": "Pagamento recebido",
+                "value": 5555.56,
+                "sender": {
+                    "name": "Sender Dois da Silva",
+                    "documentNumber": "45645645600",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "02373",
+                    "accountNumber": "010456-4"
+                },
+                "receiver": {
+                    "name": "Clente Cora da Silva",
+                    "documentNumber": "12312312300",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "00001",
+                    "accountNumber": "01522-0"
+                },
+                "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                "imageName": "recebido"
+            },
+            {
+                "transactionType": "Pagamento recebido",
+                "value": 5555.56,
+                "sender": {
+                    "name": "Sender Dois da Silva",
+                    "documentNumber": "45645645600",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "02373",
+                    "accountNumber": "010456-4"
+                },
+                "receiver": {
+                    "name": "Clente Cora da Silva",
+                    "documentNumber": "12312312300",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "00001",
+                    "accountNumber": "01522-0"
+                },
+                "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                "imageName": "recebido"
+            },
+            {
+                "transactionType": "Transferência recebida",
+                "value": 1234.56,
+                "sender": {
+                    "name": "Sender Um da Silva",
+                    "documentNumber": "45645645600",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "02373",
+                    "accountNumber": "010456-4"
+                },
+                "receiver": {
+                    "name": "Clente Cora da Silva",
+                    "documentNumber": "12312312300",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "00001",
+                    "accountNumber": "01522-0"
+                },
+                "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                "imageName": "enviado"
+            },
+            {
+                "transactionType": "Pagamento recebido",
+                "value": 5555.56,
+                "sender": {
+                    "name": "Sender Dois da Silva",
+                    "documentNumber": "45645645600",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "02373",
+                    "accountNumber": "010456-4"
+                },
+                "receiver": {
+                    "name": "Clente Cora da Silva",
+                    "documentNumber": "12312312300",
+                    "institutionName": "Banco Itaú",
+                    "agencyNumber": "00001",
+                    "accountNumber": "01522-0"
+                },
+                "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                "imageName": "recebido"
+            }
+        ]
+        },
+        {
+            "date": "2022-04-14T14:11:00.000Z",
+            "info": [
+                {
+                    "transactionType": "Transferência recebida",
+                    "value": 1234.56,
+                    "sender": {
+                        "name": "Sender Um da Silva",
+                        "documentNumber": "45645645600",
+                        "institutionName": "Banco Itaú",
+                        "agencyNumber": "02373",
+                        "accountNumber": "010456-4"
+                    },
+                    "receiver": {
+                        "name": "Clente Cora da Silva",
+                        "documentNumber": "12312312300",
+                        "institutionName": "Banco Itaú",
+                        "agencyNumber": "00001",
+                        "accountNumber": "01522-0"
+                    },
+                    "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                    "imageName": "enviado"
+                },
+                {
+                    "transactionType": "Pagamento recebido",
+                    "value": 5555.56,
+                    "sender": {
+                        "name": "Sender Dois da Silva",
+                        "documentNumber": "45645645600",
+                        "institutionName": "Banco Itaú",
+                        "agencyNumber": "02373",
+                        "accountNumber": "010456-4"
+                    },
+                    "receiver": {
+                        "name": "Clente Cora da Silva",
+                        "documentNumber": "12312312300",
+                        "institutionName": "Banco Itaú",
+                        "agencyNumber": "00001",
+                        "accountNumber": "01522-0"
+                    },
+                    "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                    "imageName": "recebido"
+                },
+                {
+                    "transactionType": "Pagamento recebido",
+                    "value": 5555.56,
+                    "sender": {
+                        "name": "Sender Dois da Silva",
+                        "documentNumber": "45645645600",
+                        "institutionName": "Banco Itaú",
+                        "agencyNumber": "02373",
+                        "accountNumber": "010456-4"
+                    },
+                    "receiver": {
+                        "name": "Clente Cora da Silva",
+                        "documentNumber": "12312312300",
+                        "institutionName": "Banco Itaú",
+                        "agencyNumber": "00001",
+                        "accountNumber": "01522-0"
+                    },
+                    "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                    "imageName": "recebido"
+                }
+            ]
+            },
+            {
+                "date": "2022-04-18T15:11:00.000Z",
+                "info": [
+                    {
+                        "transactionType": "Transferência recebida",
+                        "value": 1234.56,
+                        "sender": {
+                            "name": "Sender Um da Silva",
+                            "documentNumber": "45645645600",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "02373",
+                            "accountNumber": "010456-4"
+                        },
+                        "receiver": {
+                            "name": "Clente Cora da Silva",
+                            "documentNumber": "12312312300",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "00001",
+                            "accountNumber": "01522-0"
+                        },
+                        "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                        "imageName": "enviado"
+                    },
+                    {
+                        "transactionType": "Pagamento recebido",
+                        "value": 5555.56,
+                        "sender": {
+                            "name": "Sender Dois da Silva",
+                            "documentNumber": "45645645600",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "02373",
+                            "accountNumber": "010456-4"
+                        },
+                        "receiver": {
+                            "name": "Clente Cora da Silva",
+                            "documentNumber": "12312312300",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "00001",
+                            "accountNumber": "01522-0"
+                        },
+                        "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                        "imageName": "recebido"
+                    },
+                    {
+                        "transactionType": "Pagamento recebido",
+                        "value": 5555.56,
+                        "sender": {
+                            "name": "Sender Dois da Silva",
+                            "documentNumber": "45645645600",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "02373",
+                            "accountNumber": "010456-4"
+                        },
+                        "receiver": {
+                            "name": "Clente Cora da Silva",
+                            "documentNumber": "12312312300",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "00001",
+                            "accountNumber": "01522-0"
+                        },
+                        "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                        "imageName": "recebido"
+                    },
+                    {
+                        "transactionType": "Transferência recebida",
+                        "value": 1234.56,
+                        "sender": {
+                            "name": "Sender Um da Silva",
+                            "documentNumber": "45645645600",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "02373",
+                            "accountNumber": "010456-4"
+                        },
+                        "receiver": {
+                            "name": "Clente Cora da Silva",
+                            "documentNumber": "12312312300",
+                            "institutionName": "Banco Itaú",
+                            "agencyNumber": "00001",
+                            "accountNumber": "01522-0"
+                        },
+                        "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.",
+                        "imageName": "enviado"
+                    }
+                ]
+                }
+
+    ]
+}

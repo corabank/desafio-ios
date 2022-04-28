@@ -23,8 +23,8 @@ class PasswordViewController: UIViewController {
         screen.delegate = self
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar()
     }
     
     func setupNavigationBar() {
@@ -36,7 +36,7 @@ class PasswordViewController: UIViewController {
                                        NSAttributedString.Key.foregroundColor : UIColor.coraDarkGray]
         navBar?.backgroundColor = .coraLightGray
         navBar?.tintColor = .coraPink
-        navBar?.backItem?.title = nil
+        navBar?.backItem?.title = ""
         
         let backButtonImage = UIImage(named: "nav_bar_back_button")
         navBar?.backIndicatorImage = backButtonImage

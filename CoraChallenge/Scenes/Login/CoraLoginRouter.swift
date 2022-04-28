@@ -32,4 +32,9 @@ public class CoraLoginRouter: NSObject {
         
         controller.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc public static func goToStatementDetail(from controller: UIViewController, to destination: UIViewController) {
+        controller.navigationController?.pushViewController(destination, animated: true)
+    }
+    
 }

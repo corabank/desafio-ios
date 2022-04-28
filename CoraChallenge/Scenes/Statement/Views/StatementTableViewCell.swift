@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum TransactionType {
+    case recebido
+    case enviado
+    case estornado
+}
+
 class StatementTableViewCell: UITableViewCell {
     
     lazy var mainStack: UIStackView = {
@@ -19,7 +25,7 @@ class StatementTableViewCell: UITableViewCell {
     }()
     
     lazy var icon: UIImageView = {
-       let icon = UIImageView(image: UIImage(named: "ic_eye-hidden"))
+       let icon = UIImageView()
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.heightAnchor.constraint(equalToConstant: 24).isActive = true
         icon.widthAnchor.constraint(equalToConstant: 24).isActive = true
@@ -69,6 +75,25 @@ class StatementTableViewCell: UITableViewCell {
         return label
     }()
     
+    var type: TransactionType = .recebido {
+        didSet{
+            switch type {
+            case .recebido:
+                self.valueLabel.textColor = .coraBlue
+                self.statusLabel.textColor = .coraBlue
+            case .enviado:
+                self.valueLabel.textColor = .coraBlack
+                self.statusLabel.textColor = .coraBlack
+            case .estornado:
+                let attributeString = NSMutableAttributedString(string: valueLabel.text ?? String())
+                attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
+                self.valueLabel.attributedText = attributeString
+                self.valueLabel.textColor = .coraBlack
+                self.statusLabel.textColor = .coraBlack
+            }
+        }
+    }
+    
     static let cellId = "StatementTableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -85,6 +110,21 @@ class StatementTableViewCell: UITableViewCell {
         valueLabel.text = valueString
         statusLabel.text = model.transactionType
         institutionLabel.text = model.receiver?.institutionName
+        let image = UIImage(named: model.imageName ?? String())
+        icon.image = image
+        formatValue(value: model.value ?? Double(), type: model.transactionType ?? String())
+    }
+    
+    func formatValue(value: Double, type: String) {
+        if value > 0 {
+            self.type = .recebido
+        } else {
+            if type.contains("estornad") {
+                self.type = .estornado
+            } else {
+                self.type = .enviado
+            }
+        }
     }
 }
 

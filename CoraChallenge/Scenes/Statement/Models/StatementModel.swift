@@ -8,15 +8,18 @@
 import Foundation
 
 struct StatementModel: Codable {
-    var data: [StatementModelData]?
+    var info: [StatementModelData]?
+    var date: String?
     
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case info = "info"
+        case date = "date"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        data = try values.decodeIfPresent([StatementModelData].self, forKey: .data)
+        info = try values.decodeIfPresent([StatementModelData].self, forKey: .info)
+        date = try values.decodeIfPresent(String.self, forKey: .date)
     }
 }

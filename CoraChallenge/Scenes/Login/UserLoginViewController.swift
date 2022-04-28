@@ -23,8 +23,8 @@ class UserLoginViewController: UIViewController {
         screen.delegate = self
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar()
     }
     
     func setupNavigationBar() {

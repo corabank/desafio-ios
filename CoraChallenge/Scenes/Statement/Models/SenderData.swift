@@ -31,16 +31,4 @@ struct SenderData: Codable {
         agencyNumber = try values.decodeIfPresent(String.self, forKey: .agencyNumber)
         accountNumber = try values.decodeIfPresent(String.self, forKey: .accountNumber)
     }
-    
-//    init(name: String,
-//         documentNumber: String,
-//         institutionName: String,
-//         agencyNumber: String?,
-//         accountNumber: String?) {
-//        self.name = name
-//        self.documentNumber = documentNumber
-//        self.institutionName = institutionName
-//        self.agencyNumber = agencyNumber
-//        self.accountNumber = accountNumber
-//    }
 }

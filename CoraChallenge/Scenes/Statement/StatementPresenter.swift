@@ -7,8 +7,9 @@
 
 import Foundation
 
-protocol StatementPresenterProtocol {
-    func fillTableview()
+protocol StatementPresenterProtocol {    
+    func fillTableViewHeader(dailyBalance: [String : Double])
+    func fillModel(model: [StatementModel])
 }
 
 class StatementPresenter: StatementPresenterProtocol {
@@ -18,7 +19,13 @@ class StatementPresenter: StatementPresenterProtocol {
         self.viewController = viewController
     }
     
-    func fillTableview() {
-        
+    func fillTableViewHeader(dailyBalance: [String : Double]) {
+        var dailyBalanceArray: [String] = []
+        dailyBalanceArray = dailyBalance.map{"\($0)|\($1)"}
+        viewController.dailyBalanceArray = dailyBalanceArray
+    }
+    
+    func fillModel(model: [StatementModel]) {
+        viewController.model = model
     }
 }

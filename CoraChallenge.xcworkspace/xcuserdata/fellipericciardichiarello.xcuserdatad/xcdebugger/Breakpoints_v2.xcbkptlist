@@ -97,5 +97,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8078866-FFFB-4E57-87D8-B84B3F4C32AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoraChallenge/Scenes/Statement/DetailStamentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "setupDetailStatementView(model:date:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C8078866-FFFB-4E57-87D8-B84B3F4C32AA - 2e2447180ad1d667"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoraChallenge.DetailStamentViewController.setupStatementView(model: CoraChallenge.StatementModelData) -&gt; ()"
+                  moduleName = "CoraChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fellipericciardichiarello/projetos/CoraChallenge/CoraChallenge/Scenes/Statement/DetailStamentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "C8078866-FFFB-4E57-87D8-B84B3F4C32AA - 2e2447180ad1d667"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoraChallenge.DetailStamentViewController.setupStatementView(model: CoraChallenge.StatementModelData) -&gt; ()"
+                  moduleName = "CoraChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fellipericciardichiarello/projetos/CoraChallenge/CoraChallenge/Scenes/Statement/DetailStamentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "185">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
