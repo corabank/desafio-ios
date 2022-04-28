@@ -114,6 +114,12 @@ final class CPFFormView: UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textField.text = ""
+        textField.becomeFirstResponder()
+        changeButtonStatus(.disabled)
+    }
 }
 
 extension CPFFormView: ViewCode {
@@ -131,7 +137,7 @@ extension CPFFormView: ViewCode {
     }
     
     func setConstraints() {
-        navigation.setWidthEqual(to: view)
+        navigation.setWidthEqual(to: stack)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
                      trailing: view.trailingAnchor)

@@ -22,4 +22,8 @@ extension StatementCoordinator: StatementCoordinatorProtocol {
         view.set(delegate: viewModel)
         navigation?.pushViewController(view, animated: true)
     }
+    
+    public func back() {
+        navigation?.popViewController(animated: true)
+    }
 }

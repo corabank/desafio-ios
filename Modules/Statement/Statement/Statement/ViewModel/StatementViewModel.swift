@@ -23,4 +23,11 @@ extension StatementViewModel: StatementViewModelProtocol {
 }
 
 extension StatementViewModel: StatementViewDelegate {
+    func tapBack() {
+        coordinator?.back()
+    }
+    
+    func tapShare() {
+        print("share")
+    }
 }

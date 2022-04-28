@@ -132,16 +132,22 @@ final class PassFormView: UIViewController {
         textField.isSecureTextEntry = !textField.isSecureTextEntry
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     @objc
     func inputValue() {
         (String(textField.text ?? "").isEmpty) ?
         changeButtonStatus(.disabled) :
         changeButtonStatus(.enabled)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textField.text = ""
+        textField.becomeFirstResponder()
+        changeButtonStatus(.disabled)
     }
 }
 
@@ -163,7 +169,7 @@ extension PassFormView: ViewCode {
     }
     
     func setConstraints() {
-        navigation.setWidthEqual(to: view)
+        navigation.setWidthEqual(to: stack)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
                      trailing: view.trailingAnchor)
