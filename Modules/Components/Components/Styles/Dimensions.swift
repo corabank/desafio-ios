@@ -12,8 +12,9 @@ public enum Dimensions {
     
     public static let border  = CGFloat(18)
     
-    public static let fontTiny   = CGFloat(14)
-    public static let fontSmall  = CGFloat(16)
-    public static let fontMedium = CGFloat(22)
-    public static let fontLarge  = CGFloat(28)
+    public static let fontMinimal = CGFloat(12)
+    public static let fontTiny    = CGFloat(14)
+    public static let fontSmall   = CGFloat(16)
+    public static let fontMedium  = CGFloat(22)
+    public static let fontLarge   = CGFloat(28)
 }

@@ -92,7 +92,6 @@ extension StatementItemCell: ViewCode {
                      trailing: self.trailingAnchor,
                      paddingTop: Dimensions.medium,
                      paddingBottom: Dimensions.medium)
-        //stack.setAnchorsEqual(to: self)
         iconBox.size(width: 64)
         iconBox.setHeightEqual(to: stack)
         timeBox.size(width: 64)

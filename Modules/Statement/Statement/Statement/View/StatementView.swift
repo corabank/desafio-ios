@@ -6,7 +6,7 @@ import Components
 final class StatementView: UIViewController {
     
     private var viewModel: StatementViewDelegate?
-    private lazy var sections: [StatementSection] = []
+    var sections: [StatementSection] = []
     
     private let navTitle = "Extrato"
     
@@ -37,10 +37,11 @@ final class StatementView: UIViewController {
         return nav
     }()
     
-    private lazy var table: UITableView = {
+    lazy var table: UITableView = {
         let table = UITableView(frame: .zero)
         table.register(StatementItemCell.self, forCellReuseIdentifier: "statement_cell")
         table.sectionHeaderHeight = 0
+        table.sectionFooterHeight = 0
         table.delegate = self
         table.dataSource = self
         table.frame = view.bounds
@@ -93,34 +94,6 @@ extension StatementView: ViewCode {
 extension StatementView: StatementViewProtocol {
     func set(delegate: StatementViewDelegate) {
         self.viewModel = delegate
-    }
-}
-
-extension StatementView: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tapped cell \(sections[indexPath.row])")
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.sections[section].itens.count
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return self.sections.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: StatementItemCell = self.table.dequeueReusableCell(withIdentifier: "statement_cell") as? StatementItemCell else {
-            return UITableViewCell(frame: .zero)
-        }
-        let item = sections[indexPath.section].itens[indexPath.row]
-        cell.set(statement: item)
-        return cell
     }
 }
 
