@@ -118,7 +118,8 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
         guard let cell: StatementItemCell = self.table.dequeueReusableCell(withIdentifier: "statement_cell") as? StatementItemCell else {
             return UITableViewCell(frame: .zero)
         }
-        cell.set(statement: sections[indexPath.section].itens[indexPath.section])
+        let item = sections[indexPath.section].itens[indexPath.row]
+        cell.set(statement: item)
         return cell
     }
 }
