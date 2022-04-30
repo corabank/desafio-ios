@@ -10,4 +10,5 @@ public enum Images {
     public static let income   = "cora_income"
     public static let reverse  = "cora_reverse"
     public static let ticket   = "cora_ticket"
+    public static let clock    = "cora_clock"
 }

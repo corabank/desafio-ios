@@ -12,6 +12,7 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let item = StatementTableSection()
+        // TODO: review this
         item.set(date: sections[section].date.toBrDate(),
                  value: String(sections[section].total().toReal()))
         return item
@@ -34,7 +35,8 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: StatementItemCell = self.table.dequeueReusableCell(withIdentifier: "statement_cell") as? StatementItemCell else {
+        guard let cell: StatementItemCell =
+                self.table.dequeueReusableCell(withIdentifier: "statement_cell") as? StatementItemCell else {
             return UITableViewCell(frame: .zero)
         }
         let item = sections[indexPath.section].itens[indexPath.row]

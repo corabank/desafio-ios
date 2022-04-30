@@ -53,6 +53,7 @@ final class StatementItemCell: UITableViewCell {
     
     private lazy var icon: UIImageView = {
         let view: UIImageView = UIImageView()
+        view.image = view.image?.withRenderingMode(.alwaysTemplate)
         return view
     }()
     
@@ -81,28 +82,48 @@ final class StatementItemCell: UITableViewCell {
         statusLabel.text = statement.status
         nameLabel.text = statement.person.name
         timeLabel.text = statement.time
-        if (statement.state == StateType.income) {
-            valueLabel.textColor = Colors.blue
-            statusLabel.textColor = Colors.blue
-            nameLabel.textColor = Colors.blue
-        }
-        if (statement.paymentStatus == .reversal) {
-            valueLabel.strikeThrough()
-        }
-        setIcon(statement.paymentType)
+        setStyle(statement)
     }
     
-    private func setIcon(_ type: PaymentType) {
-        switch type {
-        case .income:
-            icon.image = UIImage(imageLiteralResourceName: Images.income)
+    private func setStyle(_ statement: StatementItem) {
+        switch statement.paymentType {
+        case .pay:
+            setPaymentStyle(statement.paymentStatus)
         case .ticket:
-            icon.image = UIImage(imageLiteralResourceName: Images.ticket)
-        case .outcome:
-            icon.image = UIImage(imageLiteralResourceName: Images.outcome)
+            setTicketStyle(statement.paymentStatus)
         case .reversal:
-            icon.image = UIImage(imageLiteralResourceName: Images.reverse)
+            setReversalStyle()
+        case .future:
+            icon.image = UIImage(imageLiteralResourceName: Images.clock)
         }
+    }
+    
+    private func setPaymentStyle(_ status: PaymentStatus) {
+        if (status == .income) {
+            icon.image = UIImage(imageLiteralResourceName: Images.income)
+            blueText()
+        } else {
+            icon.image = UIImage(imageLiteralResourceName: Images.outcome)
+        }
+    }
+    
+    private func setTicketStyle(_ status: PaymentStatus) {
+        icon.image = UIImage(imageLiteralResourceName: Images.ticket)
+        if (status == .income) {
+            blueText()
+            icon.tintColor = Colors.blue
+        }
+    }
+    
+    private func setReversalStyle() {
+        valueLabel.strikeThrough()
+        icon.image = UIImage(imageLiteralResourceName: Images.reverse)
+    }
+    
+    private func blueText() {
+        valueLabel.textColor = Colors.blue
+        statusLabel.textColor = Colors.blue
+        nameLabel.textColor = Colors.blue
     }
 }
 
