@@ -13,15 +13,9 @@ struct StatementItem {
 }
 
 struct StatementDay {
+    let total: String
     let date: Date
     let itens: [StatementItem]
-
-    func total() -> Float {
-        return itens.map({
-            ($0.paymentStatus != .reverse) ?
-            $0.realValue() : 0
-        }).reduce(0, +)
-    }
 }
 
 enum PaymentType { case pay, ticket, reversal, future }

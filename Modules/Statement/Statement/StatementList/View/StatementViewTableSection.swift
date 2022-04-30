@@ -12,9 +12,7 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let item = StatementTableSection()
-        // TODO: review this
-        item.set(date: sections[section].date.toBrDate(),
-                 value: String(sections[section].total().toReal()))
+        item.set(date: sections[section].date.toBrDate(), value: sections[section].total)
         return item
     }
     

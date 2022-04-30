@@ -37,6 +37,14 @@
 		5734101C28176C3D0070804E /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101B28176C3D0070804E /* Components.framework */; };
 		5734101D28176C3D0070804E /* Components.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101B28176C3D0070804E /* Components.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5734102028176E260070804E /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734101F28176E260070804E /* LoginViewDelegate.swift */; };
+		57787D67281DF1E5001D008D /* LoginViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D66281DF1E5001D008D /* LoginViewMock.swift */; };
+		57787D69281DF2EE001D008D /* LoginCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D68281DF2EE001D008D /* LoginCoordinatorMock.swift */; };
+		57787D6B281DF5B9001D008D /* CPFFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D6A281DF5B9001D008D /* CPFFormTests.swift */; };
+		57787D70281DF60D001D008D /* CPFFormViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D6F281DF60D001D008D /* CPFFormViewMock.swift */; };
+		57787D72281DF61D001D008D /* CPFFormCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D71281DF61D001D008D /* CPFFormCoordinatorMock.swift */; };
+		57787D74281DF8F1001D008D /* PassFormViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D73281DF8F1001D008D /* PassFormViewMock.swift */; };
+		57787D76281DF908001D008D /* PassFormCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D75281DF908001D008D /* PassFormCoordinatorMock.swift */; };
+		57787D78281DFA16001D008D /* PassFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57787D77281DFA16001D008D /* PassFormTests.swift */; };
 		5784EB002819B78800B215A1 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5784EAFF2819B78800B215A1 /* Resources.framework */; };
 		5784EB012819B78800B215A1 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5784EAFF2819B78800B215A1 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -97,6 +105,14 @@
 		57340FF1281767B60070804E /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		5734101B28176C3D0070804E /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5734101F28176E260070804E /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
+		57787D66281DF1E5001D008D /* LoginViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewMock.swift; sourceTree = "<group>"; };
+		57787D68281DF2EE001D008D /* LoginCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorMock.swift; sourceTree = "<group>"; };
+		57787D6A281DF5B9001D008D /* CPFFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFFormTests.swift; sourceTree = "<group>"; };
+		57787D6F281DF60D001D008D /* CPFFormViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFFormViewMock.swift; sourceTree = "<group>"; };
+		57787D71281DF61D001D008D /* CPFFormCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFFormCoordinatorMock.swift; sourceTree = "<group>"; };
+		57787D73281DF8F1001D008D /* PassFormViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassFormViewMock.swift; sourceTree = "<group>"; };
+		57787D75281DF908001D008D /* PassFormCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassFormCoordinatorMock.swift; sourceTree = "<group>"; };
+		57787D77281DFA16001D008D /* PassFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassFormTests.swift; sourceTree = "<group>"; };
 		5784EAFF2819B78800B215A1 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -250,7 +266,10 @@
 		57340F99281764E10070804E /* LoginTests */ = {
 			isa = PBXGroup;
 			children = (
+				57787D65281DF1D3001D008D /* Mocks */,
 				57340F9A281764E10070804E /* LoginTests.swift */,
+				57787D6A281DF5B9001D008D /* CPFFormTests.swift */,
+				57787D77281DFA16001D008D /* PassFormTests.swift */,
 			);
 			path = LoginTests;
 			sourceTree = "<group>";
@@ -292,6 +311,43 @@
 				5734101B28176C3D0070804E /* Components.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57787D65281DF1D3001D008D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				57787D6E281DF5F4001D008D /* PasswordForm */,
+				57787D6D281DF5ED001D008D /* CPFForm */,
+				57787D6C281DF5E3001D008D /* Login */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		57787D6C281DF5E3001D008D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				57787D66281DF1E5001D008D /* LoginViewMock.swift */,
+				57787D68281DF2EE001D008D /* LoginCoordinatorMock.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		57787D6D281DF5ED001D008D /* CPFForm */ = {
+			isa = PBXGroup;
+			children = (
+				57787D6F281DF60D001D008D /* CPFFormViewMock.swift */,
+				57787D71281DF61D001D008D /* CPFFormCoordinatorMock.swift */,
+			);
+			path = CPFForm;
+			sourceTree = "<group>";
+		};
+		57787D6E281DF5F4001D008D /* PasswordForm */ = {
+			isa = PBXGroup;
+			children = (
+				57787D73281DF8F1001D008D /* PassFormViewMock.swift */,
+				57787D75281DF908001D008D /* PassFormCoordinatorMock.swift */,
+			);
+			path = PasswordForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +489,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57787D74281DF8F1001D008D /* PassFormViewMock.swift in Sources */,
+				57787D76281DF908001D008D /* PassFormCoordinatorMock.swift in Sources */,
+				57787D67281DF1E5001D008D /* LoginViewMock.swift in Sources */,
+				57787D6B281DF5B9001D008D /* CPFFormTests.swift in Sources */,
 				57340F9B281764E10070804E /* LoginTests.swift in Sources */,
+				57787D78281DFA16001D008D /* PassFormTests.swift in Sources */,
+				57787D69281DF2EE001D008D /* LoginCoordinatorMock.swift in Sources */,
+				57787D72281DF61D001D008D /* CPFFormCoordinatorMock.swift in Sources */,
+				57787D70281DF60D001D008D /* CPFFormViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,15 @@ final class StatementView: UIViewController {
         return stack
     }()
     
+    private lazy var filterPicker: UISearchBar = {
+        let picker: UISearchBar = UISearchBar(frame: .zero)
+        picker.delegate = self
+        //picker.showsScopeBar = true
+        //picker.searchRe
+        picker.scopeButtonTitles  = ["Tudo", "Entrada", "Saída", "Future"]
+        return picker
+    }()
+    
     private lazy var navigation: NavigationBar = {
         let nav = NavigationBar(title: navTitle, share: true)
         nav.set(delegate: self)
@@ -45,6 +54,7 @@ final class StatementView: UIViewController {
         table.separatorColor = .clear
         table.delegate = self
         table.dataSource = self
+        table.sectionHeaderTopPadding = 0
         table.frame = view.bounds
         return table
     }()
@@ -62,6 +72,7 @@ extension StatementView: ViewCode {
         stack.addArrangedSubview(header)
         header.addArrangedSubview(navigation)
         header.addArrangedSubview(filterStack)
+        filterStack.addArrangedSubview(filterPicker)
     }
     
     func setConstraints() {
@@ -75,6 +86,7 @@ extension StatementView: ViewCode {
         
         filterStack.setWidthEqual(to: header)
         filterStack.size(height: 56)
+        filterPicker.setHeightEqual(to: filterStack)
     }
     
     func extraSetups() {
@@ -90,6 +102,9 @@ extension StatementView: ViewCode {
         guard let data = viewModel?.getData() else { return }
         sections = data
     }
+}
+
+extension StatementView: UISearchBarDelegate {
 }
 
 extension StatementView: StatementViewProtocol {
