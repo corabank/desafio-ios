@@ -1,4 +1,4 @@
-struct StatementItem {
+public struct StatementItem {
     let person: Person
     let status: String
     let paymentType: PaymentType

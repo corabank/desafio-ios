@@ -2,8 +2,9 @@ import UIKit
 
 extension StatementView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(sections[indexPath.section].itens[indexPath.row])
+        let item = sections[indexPath.section].itens[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel?.selectItem(item: item)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

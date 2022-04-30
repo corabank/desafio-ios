@@ -5,7 +5,7 @@ import Components
 
 final class StatementView: UIViewController {
     
-    private var viewModel: StatementViewDelegate?
+    var viewModel: StatementViewDelegate?
     var sections: [StatementDay] = []
     
     private let navTitle = "Extrato"

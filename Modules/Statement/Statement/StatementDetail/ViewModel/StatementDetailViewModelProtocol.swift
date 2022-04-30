@@ -1,5 +1,5 @@
 protocol StatementDetailViewModelProtocol {
-    func tapBack()
-    func tapShare()
-    func tapCancel()
+    func set(view: StatementDetailViewProtocol)
+    func set(coordinator: StatementDetailCoordinatorProtocol)
+    func set(statement: StatementItem)
 }

@@ -27,4 +27,10 @@ extension StatementCoordinator: StatementCoordinatorProtocol {
     public func back() {
         navigation?.popViewController(animated: true)
     }
+    
+    public func goToDetail(item: StatementItem) {
+        let coordinator = StatementDetailCoordinator()
+        coordinator.set(navigation: navigation)
+        coordinator.start(statement: item)
+    }
 }

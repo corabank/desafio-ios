@@ -23,6 +23,10 @@ extension StatementViewModel: StatementViewModelProtocol {
 }
 
 extension StatementViewModel: StatementViewDelegate {
+    func selectItem(item: StatementItem) {
+        coordinator?.goToDetail(item: item)
+    }
+    
     func getData() -> [StatementDay]? {
         dataSource?.getStatements()
     }

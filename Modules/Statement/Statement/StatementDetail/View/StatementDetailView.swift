@@ -18,10 +18,11 @@ final class StatementDetailView: UIViewController {
     }()
     
     required init?(coder: NSCoder) { return nil }
-    init(navTitle: String) {
+    init() {
         super.init(nibName: nil, bundle: nil)
-        self.navTitle = navTitle
+        self.navTitle = "test"
         setupView()
+        self.view.backgroundColor = .cyan
     }
 }
 

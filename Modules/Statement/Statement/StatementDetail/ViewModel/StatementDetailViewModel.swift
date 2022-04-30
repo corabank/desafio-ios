@@ -1,20 +1,35 @@
 final class StatementDetailViewModel {
+    private var view: StatementDetailViewProtocol?
+    private var coordinator: StatementDetailCoordinatorProtocol?
+    private var statement: StatementItem?
+
+    init() {}
 }
 
 extension StatementDetailViewModel: StatementDetailViewModelProtocol {
-    func tapBack() {
-        //
+    func set(view: StatementDetailViewProtocol) {
+        self.view = view
     }
     
-    func tapShare() {
-        //
+    func set(coordinator: StatementDetailCoordinatorProtocol) {
+        self.coordinator = coordinator
     }
     
-    func tapCancel() {
-        //
+    func set(statement: StatementItem) {
+        self.statement = statement
     }
 }
 
 extension StatementDetailViewModel: StatementDetailViewDelegate {
+    func tapBack() {
+        coordinator?.back()
+    }
     
+    func tapShare() {
+        print("share")
+    }
+    
+    func tapCancel() {
+        print("cancel")
+    }
 }
