@@ -12,9 +12,8 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let item = StatementTableSection()
-        let mock = "Sext-feira whatever"
-        //item.set(date: sections[section].date, value: String(sections[section].total()))
-        item.set(date: mock, value: String(sections[section].total()))
+        item.set(date: sections[section].date.toBrDate(),
+                 value: String(sections[section].total().toReal()))
         return item
     }
     

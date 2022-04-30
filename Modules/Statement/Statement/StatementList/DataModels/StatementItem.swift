@@ -23,6 +23,7 @@ struct StatementDay {
 }
 
 enum StateType { case income, outcome, future }
-enum PaymentType { case transfer, ticket, payement }
+//enum PaymentType { case transfer, ticket, payement }
+enum PaymentType { case income, ticket, outcome, reversal }
 enum PaymentStatus { case sent, reversal }
 enum BankType { case cpf, cnpj }

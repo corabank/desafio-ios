@@ -6,4 +6,8 @@ public enum Images {
     public static let back     = "cora_back"
     public static let download = "cora_download"
     public static let eye      = "cora_eye"
+    public static let outcome  = "cora_outcome"
+    public static let income   = "cora_income"
+    public static let reverse  = "cora_reverse"
+    public static let ticket   = "cora_ticket"
 }
