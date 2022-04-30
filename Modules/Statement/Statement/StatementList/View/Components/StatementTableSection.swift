@@ -53,9 +53,7 @@ final class StatementTableSection: UIView {
 extension StatementTableSection: ViewCode {
     func setSubviews() {
         self.addSubview(contentWrapper)
-        //contentWrapper.addArrangedSubview(Spacer(size: 8))
         contentWrapper.addArrangedSubview(stack)
-        //contentWrapper.addArrangedSubview(Spacer(size: 12))
         stack.addArrangedSubview(dateLabel)
         stack.addArrangedSubview(valueLabel)
     }

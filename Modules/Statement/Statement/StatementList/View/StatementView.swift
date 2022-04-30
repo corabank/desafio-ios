@@ -6,7 +6,7 @@ import Components
 final class StatementView: UIViewController {
     
     private var viewModel: StatementViewDelegate?
-    var sections: [StatementSection] = []
+    var sections: [StatementDay] = []
     
     private let navTitle = "Extrato"
     
@@ -42,6 +42,7 @@ final class StatementView: UIViewController {
         table.register(StatementItemCell.self, forCellReuseIdentifier: "statement_cell")
         table.sectionHeaderHeight = 0
         table.sectionFooterHeight = 0
+        table.separatorColor = .clear
         table.delegate = self
         table.dataSource = self
         table.frame = view.bounds

@@ -1,4 +1,4 @@
 protocol StatementDataSourceProtocol {
-    func getStatements() -> [StatementSection]
+    func getStatements() -> [StatementDay]
     func getUser() -> Person
 }

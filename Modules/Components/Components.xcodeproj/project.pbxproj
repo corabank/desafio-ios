@@ -22,6 +22,7 @@
 		579BFD6D281AA526007083EC /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD6C281AA526007083EC /* NavigationBarDelegate.swift */; };
 		579BFD6F281AA668007083EC /* NavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */; };
 		579BFD71281AF19A007083EC /* RegularButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD70281AF19A007083EC /* RegularButtonProtocol.swift */; };
+		57C36089281D533900F84358 /* StackScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C36088281D533900F84358 /* StackScroll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		579BFD6C281AA526007083EC /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
 		579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProtocol.swift; sourceTree = "<group>"; };
 		579BFD70281AF19A007083EC /* RegularButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularButtonProtocol.swift; sourceTree = "<group>"; };
+		57C36088281D533900F84358 /* StackScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackScroll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		57340FFF28176BCF0070804E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				57C36087281D531600F84358 /* StackScroll */,
 				5784EB072819DE6800B215A1 /* Navigation */,
 				5784EAE72819ABCA00B215A1 /* Spacer */,
 				5784EAE02819A13D00B215A1 /* Styles */,
@@ -169,6 +172,14 @@
 				579BFD6E281AA668007083EC /* NavigationBarProtocol.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		57C36087281D531600F84358 /* StackScroll */ = {
+			isa = PBXGroup;
+			children = (
+				57C36088281D533900F84358 /* StackScroll.swift */,
+			);
+			path = StackScroll;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				5784EAE92819ABD600B215A1 /* Spacer.swift in Sources */,
 				5784EAE42819A57500B215A1 /* Colors.swift in Sources */,
 				57142DF628180520005DFFA6 /* UIButton.swift in Sources */,
+				57C36089281D533900F84358 /* StackScroll.swift in Sources */,
 				579BFD6D281AA526007083EC /* NavigationBarDelegate.swift in Sources */,
 				579BFD6F281AA668007083EC /* NavigationBarProtocol.swift in Sources */,
 				5784EAE22819A14F00B215A1 /* Dimensions.swift in Sources */,

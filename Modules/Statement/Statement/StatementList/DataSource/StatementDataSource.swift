@@ -1,12 +1,23 @@
 final class StatementDataSource {
+    
+    private func dayCreate(_ date: String) -> Date? {
+        let parseStrategy = Date.ParseStrategy(
+            format: "\(day: .twoDigits)-\(month: .twoDigits)-\(year: .defaultDigits)",
+            locale: Locale(identifier: "es"),
+            timeZone: .current
+        )
+        
+        return try? Date("01-08-2021", strategy: parseStrategy)
+    }
+    
     private lazy var sections = [
-        section1,
-        section2,
-        section3,
-        section4,
+        day1,
+        day2,
+        day3,
+        day4,
     ]
     
-    private lazy var section1 = StatementSection(date: "Hoje - 6 de Agosto", total: 3446, itens: [
+    private lazy var day1 = StatementDay(date: dayCreate("06-08-2022")!, itens: [
         StatementItem(person: person1, status: "Transferência recebida",
                       paymentType: .transfer, paymentStatus: .sent,
                       value: 30, time: "17:35", state: .income, type: .cpf),
@@ -23,8 +34,8 @@ final class StatementDataSource {
                       paymentType: .ticket, paymentStatus: .sent,
                       value: 26, time: "9:22", state: .outcome, type: .cnpj),
     ])
-
-    private lazy var section2 = StatementSection(date: "Segunda-feira - 2  de Agosto", total: 3110.08, itens: [
+    
+    private lazy var day2 = StatementDay(date: dayCreate("02-08-2022")!, itens: [
         StatementItem(person: person5, status: "Depósito via boleto",
                       paymentType: .ticket, paymentStatus: .sent,
                       value: 30, time: "9:22", state: .income,type: .cpf),
@@ -32,10 +43,9 @@ final class StatementDataSource {
         StatementItem(person: person6, status: "Transferência enviada",
                       paymentType: .transfer, paymentStatus: .sent,
                       value: 26, time: "9:22", state: .outcome, type: .cpf),
-        
     ])
     
-    private lazy var section3 = StatementSection(date: "Sexta-feira - 30 de Julho", total: 3050.3, itens: [
+    private lazy var day3 = StatementDay(date: dayCreate("20-08-2022")!, itens: [
         StatementItem(person: person7, status: "Pagamento estornado",
                       paymentType: .payement, paymentStatus: .reversal,
                       value: 26, time: "9:22", state: .outcome, type: .cpf),
@@ -49,7 +59,7 @@ final class StatementDataSource {
                       value: 26, time: "9:22", state: .outcome,type: .cpf),
     ])
     
-    private lazy var section4 = StatementSection(date: "Ontem - 5 de Agosto", total: 3124.34, itens: [
+    private lazy var day4 = StatementDay(date: dayCreate("05-08-2022")!, itens: [
         StatementItem(person: person10, status: "Boleto pago",
                       paymentType: .ticket, paymentStatus: .sent,
                       value: 26, time: "9:22", state: .outcome,type: .cpf),
@@ -90,7 +100,7 @@ final class StatementDataSource {
 }
 
 extension StatementDataSource: StatementDataSourceProtocol {
-    func getStatements() -> [StatementSection] {
+    func getStatements() -> [StatementDay] {
         return sections
     }
     

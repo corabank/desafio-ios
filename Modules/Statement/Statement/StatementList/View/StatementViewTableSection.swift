@@ -2,7 +2,7 @@ import UIKit
 
 extension StatementView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tapped cell \(sections[indexPath.row])")
+        print(sections[indexPath.section].itens[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -12,7 +12,9 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let item = StatementTableSection()
-        item.set(date: sections[section].date, value: String(sections[section].total))
+        let mock = "Sext-feira whatever"
+        //item.set(date: sections[section].date, value: String(sections[section].total()))
+        item.set(date: mock, value: String(sections[section].total()))
         return item
     }
     
