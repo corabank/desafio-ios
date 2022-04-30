@@ -86,6 +86,9 @@ final class StatementItemCell: UITableViewCell {
             statusLabel.textColor = Colors.blue
             nameLabel.textColor = Colors.blue
         }
+        if (statement.paymentStatus == .reversal) {
+            valueLabel.strikeThrough()
+        }
         setIcon(statement.paymentType)
     }
     

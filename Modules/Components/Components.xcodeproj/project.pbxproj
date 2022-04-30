@@ -13,6 +13,7 @@
 		5734100C28176BCF0070804E /* Components.h in Headers */ = {isa = PBXBuildFile; fileRef = 5734100028176BCF0070804E /* Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5734101728176C0C0070804E /* ViewCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101628176C0C0070804E /* ViewCode.framework */; };
 		5734101828176C0C0070804E /* ViewCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5734101628176C0C0070804E /* ViewCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5737623E281DBDB800B6C92D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737623D281DBDB800B6C92D /* UILabel.swift */; };
 		5784EAE22819A14F00B215A1 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EAE12819A14F00B215A1 /* Dimensions.swift */; };
 		5784EAE42819A57500B215A1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EAE32819A57500B215A1 /* Colors.swift */; };
 		5784EAE92819ABD600B215A1 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784EAE82819ABD600B215A1 /* Spacer.swift */; };
@@ -57,6 +58,7 @@
 		5734100028176BCF0070804E /* Components.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
 		5734100528176BCF0070804E /* ComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5734101628176C0C0070804E /* ViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5737623D281DBDB800B6C92D /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5784EAE12819A14F00B215A1 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		5784EAE32819A57500B215A1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5784EAE82819ABD600B215A1 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				57142DF528180520005DFFA6 /* UIButton.swift */,
+				5737623D281DBDB800B6C92D /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				57142DF1281803AA005DFFA6 /* RegularButton.swift in Sources */,
 				579BFD71281AF19A007083EC /* RegularButtonProtocol.swift in Sources */,
 				5784EAE92819ABD600B215A1 /* Spacer.swift in Sources */,
+				5737623E281DBDB800B6C92D /* UILabel.swift in Sources */,
 				5784EAE42819A57500B215A1 /* Colors.swift in Sources */,
 				57142DF628180520005DFFA6 /* UIButton.swift in Sources */,
 				57C36089281D533900F84358 /* StackScroll.swift in Sources */,
