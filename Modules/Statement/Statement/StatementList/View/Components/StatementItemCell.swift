@@ -53,7 +53,6 @@ final class StatementItemCell: UITableViewCell {
     
     private lazy var icon: UIImageView = {
         let view: UIImageView = UIImageView()
-        view.image = view.image?.withRenderingMode(.alwaysTemplate)
         return view
     }()
     
@@ -104,28 +103,27 @@ final class StatementItemCell: UITableViewCell {
             blueText()
         } else {
             icon.image = UIImage(imageLiteralResourceName: Images.outcome)
-            grayText()
         }
     }
     
     private func setTicketStyle(_ status: PaymentStatus) {
-        icon.image = UIImage(imageLiteralResourceName: Images.ticket)
+        let image = UIImage(imageLiteralResourceName: Images.ticket)
         if (status == .income) {
             blueText()
-            icon.tintColor = Colors.blue
+            let tintImage = image.withRenderingMode(.alwaysTemplate)
+            tintImage.withTintColor(Colors.blue)
+            icon.image = tintImage
         } else {
-            grayText()
+            icon.image = image
         }
     }
     
     private func setReversalStyle() {
-        grayText()
         valueLabel.strikeThrough()
         icon.image = UIImage(imageLiteralResourceName: Images.reverse)
     }
     
     private func setFutureStyle() {
-        grayText()
         icon.image = UIImage(imageLiteralResourceName: Images.clock)
     }
     
@@ -133,12 +131,6 @@ final class StatementItemCell: UITableViewCell {
         valueLabel.textColor = Colors.blue
         statusLabel.textColor = Colors.blue
         nameLabel.textColor = Colors.blue
-    }
-    
-    private func grayText() {
-        valueLabel.textColor = Colors.black
-        statusLabel.textColor = Colors.black
-        nameLabel.textColor = Colors.darkGray
     }
 }
 
