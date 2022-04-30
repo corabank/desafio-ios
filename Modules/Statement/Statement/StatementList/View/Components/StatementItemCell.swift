@@ -94,7 +94,7 @@ final class StatementItemCell: UITableViewCell {
         case .reversal:
             setReversalStyle()
         case .future:
-            icon.image = UIImage(imageLiteralResourceName: Images.clock)
+            setFutureStyle()
         }
     }
     
@@ -104,6 +104,7 @@ final class StatementItemCell: UITableViewCell {
             blueText()
         } else {
             icon.image = UIImage(imageLiteralResourceName: Images.outcome)
+            grayText()
         }
     }
     
@@ -112,18 +113,32 @@ final class StatementItemCell: UITableViewCell {
         if (status == .income) {
             blueText()
             icon.tintColor = Colors.blue
+        } else {
+            grayText()
         }
     }
     
     private func setReversalStyle() {
+        grayText()
         valueLabel.strikeThrough()
         icon.image = UIImage(imageLiteralResourceName: Images.reverse)
+    }
+    
+    private func setFutureStyle() {
+        grayText()
+        icon.image = UIImage(imageLiteralResourceName: Images.clock)
     }
     
     private func blueText() {
         valueLabel.textColor = Colors.blue
         statusLabel.textColor = Colors.blue
         nameLabel.textColor = Colors.blue
+    }
+    
+    private func grayText() {
+        valueLabel.textColor = Colors.black
+        statusLabel.textColor = Colors.black
+        nameLabel.textColor = Colors.darkGray
     }
 }
 

@@ -35,12 +35,12 @@ extension StatementView: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: StatementItemCell =
-                self.table.dequeueReusableCell(withIdentifier: "statement_cell") as? StatementItemCell else {
-            return UITableViewCell(frame: .zero)
-        }
+        return StatementItemCell(style: .default, reuseIdentifier: "statement_cell")
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? StatementItemCell else { return }
         let item = sections[indexPath.section].itens[indexPath.row]
         cell.set(statement: item)
-        return cell
     }
 }

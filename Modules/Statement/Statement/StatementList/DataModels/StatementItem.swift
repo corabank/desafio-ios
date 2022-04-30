@@ -15,7 +15,7 @@ struct StatementItem {
 struct StatementDay {
     let date: Date
     let itens: [StatementItem]
-    
+
     func total() -> Float {
         return itens.map({
             ($0.paymentStatus != .reverse) ?
