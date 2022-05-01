@@ -31,6 +31,6 @@ extension StatementCoordinator: StatementCoordinatorProtocol {
     public func goToDetail(item: StatementItem) {
         let coordinator = StatementDetailCoordinator()
         coordinator.set(navigation: navigation)
-        coordinator.start(statement: item)
+        coordinator.start(statement: item, owner: dataSource.getUser())
     }
 }

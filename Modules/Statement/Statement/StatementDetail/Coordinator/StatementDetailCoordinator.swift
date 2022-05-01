@@ -15,10 +15,10 @@ extension StatementDetailCoordinator: StatementDetailCoordinatorProtocol {
         self.navigation = navigation
     }
     
-    func start(statement: StatementItem) {
+    func start(statement: StatementItem, owner: Person) {
         viewModel.set(view: view)
         viewModel.set(coordinator: self)
-        viewModel.set(statement: statement)
+        viewModel.set(statement: statement, owner: owner)
         view.set(delegate: viewModel)
         navigation?.pushViewController(view, animated: true)
     }

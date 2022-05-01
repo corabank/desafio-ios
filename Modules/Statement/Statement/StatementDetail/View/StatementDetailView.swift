@@ -10,6 +10,7 @@ final class StatementDetailView: UIViewController {
     private lazy var navTitle: String = ""
     
     private lazy var stackScroll: StackScrollView = StackScrollView(spacing: Dimensions.medium)
+    private lazy var backGround: UIView = UIView(frame: .zero)
     
     private lazy var mainStack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
@@ -43,60 +44,11 @@ final class StatementDetailView: UIViewController {
         return view
     }()
     
-    private lazy var valueStack: UIStackView = {
-        let stack: UIStackView = UIStackView(frame: .zero)
-        stack.alignment = .center
-        stack.axis = .vertical
-        return stack
-    }()
-    
-    private lazy var valueTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Valor"
-        label.numberOfLines = 0
-        label.textAlignment = .justified
-        label.textColor = Colors.darkGray
-        label.font = UIFont.systemFont(ofSize: Dimensions.fontTiny)
-        return label
-    }()
-    
-    private lazy var valueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "R$ 150,00"
-        label.numberOfLines = 0
-        label.textAlignment = .justified
-        label.textColor = Colors.black
-        label.font = UIFont.systemFont(ofSize: Dimensions.fontSmall, weight: .bold)
-        return label
-    }()
-    
-    private lazy var dateStack: UIStackView = {
-        let stack: UIStackView = UIStackView(frame: .zero)
-        stack.alignment = .center
-        stack.axis = .vertical
-        return stack
-    }()
-    
-    private lazy var personFromStack: UIStackView = {
-        let stack: UIStackView = UIStackView(frame: .zero)
-        stack.alignment = .center
-        stack.axis = .vertical
-        return stack
-    }()
-    
-    private lazy var personToStack: UIStackView = {
-        let stack: UIStackView = UIStackView(frame: .zero)
-        stack.alignment = .center
-        stack.axis = .vertical
-        return stack
-    }()
-    
-    private lazy var descriptionStack: UIStackView = {
-        let stack: UIStackView = UIStackView(frame: .zero)
-        stack.alignment = .center
-        stack.axis = .vertical
-        return stack
-    }()
+    private lazy var valueSection: TitleDescSection = TitleDescSection()
+    private lazy var dateSection: TitleDescSection = TitleDescSection()
+    private lazy var personFrom: MultiLabelSection = MultiLabelSection()
+    private lazy var personTo: MultiLabelSection = MultiLabelSection()
+    private lazy var descriptionSection: TitleDescSection = TitleDescSection()
     
     private lazy var buttonStack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
@@ -121,26 +73,30 @@ final class StatementDetailView: UIViewController {
 
 extension StatementDetailView: ViewCode {
     func setSubviews() {
-        view.addSubview(stackScroll)
-        stackScroll.addView(view: navigation)
+        view.addSubviews([backGround, navigation, stackScroll])
         stackScroll.addView(view: mainStack)
         mainStack.addArrangedSubview(titleStack)
-        mainStack.addArrangedSubview(valueStack)
-        mainStack.addArrangedSubview(dateStack)
-        mainStack.addArrangedSubview(personFromStack)
-        mainStack.addArrangedSubview(personToStack)
-        mainStack.addArrangedSubview(descriptionStack)
+        mainStack.addArrangedSubview(dateSection)
+        mainStack.addArrangedSubview(valueSection)
+        mainStack.addArrangedSubview(personFrom)
+        mainStack.addArrangedSubview(personTo)
+        mainStack.addArrangedSubview(descriptionSection)
         mainStack.addArrangedSubview(buttonStack)
         
         titleStack.addArrangedSubview(titleIcon)
         titleStack.addArrangedSubview(titleLabel)
-        
-        valueStack.addArrangedSubview(valueTitleLabel)
-        valueStack.addArrangedSubview(valueLabel)
     }
     
     func setConstraints() {
-        stackScroll.setAnchorsEqual(to: view)
+        backGround.setAnchorsEqual(to: view)
+        navigation.anchor(top: view.safeAreaLayoutGuide.topAnchor)
+        navigation.setWidthEqual(to: view)
+        
+        stackScroll.anchor(top: navigation.bottomAnchor,
+                           leading: view.leadingAnchor,
+                           bottom: view.bottomAnchor,
+                           trailing: view.trailingAnchor)
+
         mainStack.setHeightEqual(to: stackScroll)
         mainStack.anchor(leading: stackScroll.leadingAnchor,
                          trailing: stackScroll.trailingAnchor,
@@ -148,31 +104,39 @@ extension StatementDetailView: ViewCode {
                          paddingRight: Dimensions.medium)
         
         titleStack.setWidthEqual(to: mainStack)
-        valueStack.setWidthEqual(to: mainStack)
-        dateStack.setWidthEqual(to: mainStack)
-        personFromStack.setWidthEqual(to: mainStack)
-        personToStack.setWidthEqual(to: mainStack)
-        descriptionStack.setWidthEqual(to: mainStack)
+        valueSection.setWidthEqual(to: mainStack)
+        dateSection.setWidthEqual(to: mainStack)
+        personFrom.setWidthEqual(to: mainStack)
+        personTo.setWidthEqual(to: mainStack)
+        descriptionSection.setWidthEqual(to: mainStack)
         buttonStack.setWidthEqual(to: mainStack)
         
         titleIcon.size(height: Dimensions.medium, width: Dimensions.medium)
-        valueTitleLabel.size(height: 20)
-        valueTitleLabel.setWidthEqual(to: valueStack)
-        valueLabel.size(height: Dimensions.medium)
-        valueLabel.setWidthEqual(to: valueStack)
     }
     
     func extraSetups() {
-        self.view.backgroundColor = Colors.white
-        setNeedsStatusBarAppearanceUpdate()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        backGround.backgroundColor = Colors.lightGray
+        stackScroll.backgroundColor = Colors.white
     }
 }
 
 extension StatementDetailView: StatementDetailViewProtocol {
+    func setInto(statement: StatementItem, owner: Person) {
+        valueSection.set(title: "Valor", desc: statement.value.toReal())
+        // mock
+        dateSection.set(title: "Data da tranferência", desc: "Segunda-feira - 13/01/2020")
+        personFrom.set(title: "De", name: statement.person.name,
+                       cpf: "CPF \(statement.person.cpf)", bank: statement.person.bank,
+                       account: "Agência \(statement.person.agency) - Conta \(statement.person.account)")
+        
+        personTo.set(title: "To", name: owner.name,
+                     cpf: "CPF \(owner.cpf)", bank: owner.bank,
+                     account: "Agência \(owner.agency) - Conta \(owner.account)")
+        
+        // mock
+        descriptionSection.set(title: "Descrição", desc: "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.", plain: true)
+    }
+    
     func set(delegate: StatementDetailViewDelegate) {
         self.viewModel = delegate
     }

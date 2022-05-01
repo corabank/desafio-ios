@@ -1,7 +1,6 @@
 final class StatementDetailViewModel {
     private var view: StatementDetailViewProtocol?
     private var coordinator: StatementDetailCoordinatorProtocol?
-    private var statement: StatementItem?
 
     init() {}
 }
@@ -15,8 +14,8 @@ extension StatementDetailViewModel: StatementDetailViewModelProtocol {
         self.coordinator = coordinator
     }
     
-    func set(statement: StatementItem) {
-        self.statement = statement
+    func set(statement: StatementItem, owner: Person) {
+        view?.setInto(statement: statement, owner: owner)
     }
 }
 

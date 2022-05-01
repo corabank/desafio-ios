@@ -26,6 +26,8 @@
 		5737623C281DAFBB00B6C92D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737623B281DAFBB00B6C92D /* Date.swift */; };
 		579BFD75281B38A1007083EC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD74281B38A1007083EC /* Person.swift */; };
 		579BFD78281B4943007083EC /* StatementItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD77281B4943007083EC /* StatementItemCell.swift */; };
+		579C5591281EBC0D00566C5A /* TitleDescSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C5590281EBC0D00566C5A /* TitleDescSection.swift */; };
+		579C5593281EBC2D00566C5A /* MultiLabelSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C5592281EBC2D00566C5A /* MultiLabelSection.swift */; };
 		57C3607A281D526500F84358 /* StatementDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C36079281D526500F84358 /* StatementDetailViewProtocol.swift */; };
 		57C3607C281D527000F84358 /* StatementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3607B281D527000F84358 /* StatementDetailView.swift */; };
 		57C3607E281D527C00F84358 /* StatementDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3607D281D527C00F84358 /* StatementDetailViewModelProtocol.swift */; };
@@ -88,6 +90,8 @@
 		5737623B281DAFBB00B6C92D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		579BFD74281B38A1007083EC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		579BFD77281B4943007083EC /* StatementItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemCell.swift; sourceTree = "<group>"; };
+		579C5590281EBC0D00566C5A /* TitleDescSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescSection.swift; sourceTree = "<group>"; };
+		579C5592281EBC2D00566C5A /* MultiLabelSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLabelSection.swift; sourceTree = "<group>"; };
 		57C36079281D526500F84358 /* StatementDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailViewProtocol.swift; sourceTree = "<group>"; };
 		57C3607B281D527000F84358 /* StatementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailView.swift; sourceTree = "<group>"; };
 		57C3607D281D527C00F84358 /* StatementDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -238,6 +242,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		579C558F281EBBEF00566C5A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				579C5590281EBC0D00566C5A /* TitleDescSection.swift */,
+				579C5592281EBC2D00566C5A /* MultiLabelSection.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		57C36074281D51E400F84358 /* StatementDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +264,7 @@
 		57C36075281D523300F84358 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				579C558F281EBBEF00566C5A /* Components */,
 				57C3607B281D527000F84358 /* StatementDetailView.swift */,
 				57C36079281D526500F84358 /* StatementDetailViewProtocol.swift */,
 				57C36085281D52D900F84358 /* StatementDetailViewDelegate.swift */,
@@ -416,10 +430,12 @@
 				579BFD75281B38A1007083EC /* Person.swift in Sources */,
 				57142E3528182B3A005DFFA6 /* StatementViewModelProtocol.swift in Sources */,
 				579BFD78281B4943007083EC /* StatementItemCell.swift in Sources */,
+				579C5593281EBC2D00566C5A /* MultiLabelSection.swift in Sources */,
 				570CA52C281C1943007C318A /* StatementViewTableSection.swift in Sources */,
 				57142E4328184519005DFFA6 /* StatementItem.swift in Sources */,
 				57142E3728182B46005DFFA6 /* StatementCoordinator.swift in Sources */,
 				57142E2D28182B03005DFFA6 /* StatementView.swift in Sources */,
+				579C5591281EBC0D00566C5A /* TitleDescSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
