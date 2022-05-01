@@ -22,7 +22,6 @@ final class StatementDetailView: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "mock"
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.textColor = Colors.black
@@ -30,12 +29,7 @@ final class StatementDetailView: UIViewController {
         return label
     }()
     
-    private lazy var titleIcon: UIImageView = {
-        let view: UIImageView = UIImageView()
-        view.image = UIImage(imageLiteralResourceName: Images.clock)
-        return view
-    }()
-    
+    private lazy var titleIcon: UIImageView = UIImageView()
     private lazy var valueSection: TitleDescSection = TitleDescSection()
     private lazy var dateSection: TitleDescSection = TitleDescSection()
     private lazy var personFrom: MultiLabelSection = MultiLabelSection()
@@ -84,6 +78,49 @@ final class StatementDetailView: UIViewController {
     private func cancelActionCallback() {
         cancelAction()
     }
+    
+    private func titleString(_ type: PaymentType) -> String {
+        switch type {
+        case .pay:
+            return "Data da tranferência"
+        case .ticket:
+            return "Data do boleto"
+        case .reversal:
+            return "Data do estorno"
+        case .future:
+            return "Data da tranferência"
+        }
+    }
+    
+    private func setIconImage(_ type: PaymentType, _ status: PaymentStatus) {
+        var image = UIImage()
+        switch type {
+        case .pay:
+            (status == .income) ?
+            (image = UIImage(imageLiteralResourceName: Images.income)) :
+            (image = UIImage(imageLiteralResourceName: Images.outcome))
+        case .ticket:
+            image = UIImage(imageLiteralResourceName: Images.ticket)
+        case .reversal:
+            image = UIImage(imageLiteralResourceName: Images.reverse)
+        case .future:
+            image = UIImage(imageLiteralResourceName: Images.clock)
+        }
+        
+        let tintImage = image.withRenderingMode(.alwaysTemplate)
+        tintImage.withTintColor(Colors.black)
+        titleIcon.image = tintImage
+    }
+    
+    private func setPersons(_ person: Person, _ owner: Person) {
+        personFrom.set(title: "De", name: person.name,
+                       cpf: "CPF \(person.cpf)", bank: person.bank,
+                       account: "Agência \(person.agency) - Conta \(person.account)")
+        
+        personTo.set(title: "To", name: owner.name,
+                     cpf: "CPF \(owner.cpf)", bank: owner.bank,
+                     account: "Agência \(owner.agency) - Conta \(owner.account)")
+    }
 }
 
 extension StatementDetailView: ViewCode {
@@ -92,8 +129,8 @@ extension StatementDetailView: ViewCode {
         
         stackScroll.addView(Spacer(size: Dimensions.small))
         stackScroll.addView(titleStack, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
-        stackScroll.addView(dateSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
         stackScroll.addView(valueSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(dateSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
         stackScroll.addView(personFrom, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
         stackScroll.addView(personTo, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
         stackScroll.addView(descriptionSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
@@ -132,18 +169,17 @@ extension StatementDetailView: ViewCode {
 extension StatementDetailView: StatementDetailViewProtocol {
     func setInto(statement: StatementItem, owner: Person) {
         navTitle = "test"
+        titleLabel.text = statement.status
         valueSection.set(title: "Valor", desc: statement.value.toReal())
-        // mock
-        dateSection.set(title: "Data da tranferência", desc: statement.date.toBrDateDetail())
-        personFrom.set(title: "De", name: statement.person.name,
-                       cpf: "CPF \(statement.person.cpf)", bank: statement.person.bank,
-                       account: "Agência \(statement.person.agency) - Conta \(statement.person.account)")
+        dateSection.set(title: titleString(statement.paymentType), desc: statement.date.toBrDateDetail())
         
-        personTo.set(title: "To", name: owner.name,
-                     cpf: "CPF \(owner.cpf)", bank: owner.bank,
-                     account: "Agência \(owner.agency) - Conta \(owner.account)")
+        (statement.paymentStatus == .income) ?
+        setPersons(statement.person, owner) :
+        setPersons(owner, statement.person)
         
         descriptionSection.set(title: "Descrição", desc: statement.desc, plain: true)
+        setIconImage(statement.paymentType, statement.paymentStatus)
+        cancelButton.isHidden = !(statement.paymentType == .future)
     }
     
     func set(delegate: StatementDetailViewDelegate) {
@@ -151,11 +187,11 @@ extension StatementDetailView: StatementDetailViewProtocol {
     }
     
     func shareAction() {
-        
+        self.viewModel?.tapShare()
     }
     
     func cancelAction() {
-        
+        self.viewModel?.tapCancel()
     }
 }
 
