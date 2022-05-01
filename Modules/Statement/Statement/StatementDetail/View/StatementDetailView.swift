@@ -12,14 +12,6 @@ final class StatementDetailView: UIViewController {
     private lazy var stackScroll: StackScrollView = StackScrollView(spacing: Dimensions.medium)
     private lazy var backGround: UIView = UIView(frame: .zero)
     
-    private lazy var mainStack: UIStackView = {
-        let stack: UIStackView = UIStackView(frame: .zero)
-        stack.alignment = .center
-        stack.axis = .vertical
-        stack.spacing = Dimensions.medium
-        return stack
-    }()
-    
     private lazy var titleStack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center
@@ -63,28 +55,54 @@ final class StatementDetailView: UIViewController {
         return nav
     }()
     
+    private lazy var shareButton: RegularButton = {
+        let button = RegularButton()
+        button.set(title: "Compartilhar comprovante ", alignment: .left, style: .pink, icon: .share)
+        button.addTarget(self, action: #selector(shareActionCallback), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var cancelButton: RegularButton = {
+        let button = RegularButton()
+        button.set(title: "Cancelar agendamento", alignment: .center, style: .white)
+        button.addTarget(self, action: #selector(cancelActionCallback), for: .touchUpInside)
+        return button
+    }()
+    
     required init?(coder: NSCoder) { return nil }
     init() {
         super.init(nibName: nil, bundle: nil)
-        self.navTitle = "test"
         setupView()
+    }
+    
+    @objc
+    private func shareActionCallback() {
+        shareAction()
+    }
+    
+    @objc
+    private func cancelActionCallback() {
+        cancelAction()
     }
 }
 
 extension StatementDetailView: ViewCode {
     func setSubviews() {
         view.addSubviews([backGround, navigation, stackScroll])
-        stackScroll.addView(view: mainStack)
-        mainStack.addArrangedSubview(titleStack)
-        mainStack.addArrangedSubview(dateSection)
-        mainStack.addArrangedSubview(valueSection)
-        mainStack.addArrangedSubview(personFrom)
-        mainStack.addArrangedSubview(personTo)
-        mainStack.addArrangedSubview(descriptionSection)
-        mainStack.addArrangedSubview(buttonStack)
         
+        stackScroll.addView(Spacer(size: Dimensions.small))
+        stackScroll.addView(titleStack, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(dateSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(valueSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(personFrom, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(personTo, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(descriptionSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(buttonStack, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
+        stackScroll.addView(Spacer(size: Dimensions.verySmall))
         titleStack.addArrangedSubview(titleIcon)
         titleStack.addArrangedSubview(titleLabel)
+        buttonStack.addArrangedSubview(shareButton)
+        buttonStack.addArrangedSubview(cancelButton)
     }
     
     func setConstraints() {
@@ -96,21 +114,12 @@ extension StatementDetailView: ViewCode {
                            leading: view.leadingAnchor,
                            bottom: view.bottomAnchor,
                            trailing: view.trailingAnchor)
-
-        mainStack.setHeightEqual(to: stackScroll)
-        mainStack.anchor(leading: stackScroll.leadingAnchor,
-                         trailing: stackScroll.trailingAnchor,
-                         paddingLeft: Dimensions.medium,
-                         paddingRight: Dimensions.medium)
         
-        titleStack.setWidthEqual(to: mainStack)
-        valueSection.setWidthEqual(to: mainStack)
-        dateSection.setWidthEqual(to: mainStack)
-        personFrom.setWidthEqual(to: mainStack)
-        personTo.setWidthEqual(to: mainStack)
-        descriptionSection.setWidthEqual(to: mainStack)
-        buttonStack.setWidthEqual(to: mainStack)
-        
+        buttonStack.setWidthEqual(to: view)
+        shareButton.size(height: Dimensions.large)
+        shareButton.setWidthEqual(to: buttonStack)
+        cancelButton.size(height: Dimensions.veryLarge)
+        cancelButton.setWidthEqual(to: buttonStack)
         titleIcon.size(height: Dimensions.medium, width: Dimensions.medium)
     }
     
@@ -122,9 +131,10 @@ extension StatementDetailView: ViewCode {
 
 extension StatementDetailView: StatementDetailViewProtocol {
     func setInto(statement: StatementItem, owner: Person) {
+        navTitle = "test"
         valueSection.set(title: "Valor", desc: statement.value.toReal())
         // mock
-        dateSection.set(title: "Data da tranferência", desc: "Segunda-feira - 13/01/2020")
+        dateSection.set(title: "Data da tranferência", desc: statement.date.toBrDateDetail())
         personFrom.set(title: "De", name: statement.person.name,
                        cpf: "CPF \(statement.person.cpf)", bank: statement.person.bank,
                        account: "Agência \(statement.person.agency) - Conta \(statement.person.account)")
@@ -133,12 +143,19 @@ extension StatementDetailView: StatementDetailViewProtocol {
                      cpf: "CPF \(owner.cpf)", bank: owner.bank,
                      account: "Agência \(owner.agency) - Conta \(owner.account)")
         
-        // mock
-        descriptionSection.set(title: "Descrição", desc: "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.", plain: true)
+        descriptionSection.set(title: "Descrição", desc: statement.desc, plain: true)
     }
     
     func set(delegate: StatementDetailViewDelegate) {
         self.viewModel = delegate
+    }
+    
+    func shareAction() {
+        
+    }
+    
+    func cancelAction() {
+        
     }
 }
 

@@ -6,10 +6,8 @@ public struct StatementItem {
     let value: Float
     let time: String
     let type: BankType
-    
-    func realValue() -> Float {
-        return (paymentStatus == .outcome) ? (value * -1) : value
-    }
+    let date: Date
+    let desc: String
 }
 
 struct StatementDay {

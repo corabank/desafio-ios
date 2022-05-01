@@ -20,7 +20,7 @@ public final class StackScrollView: UIScrollView {
         mainStack.spacing = spacing
     }
 
-    public func addView(view: UIView,
+    public func addView(_ view: UIView,
                         paddingTop: CGFloat = 0,
                         paddingBottom: CGFloat = 0,
                         paddingLeft: CGFloat = 0,
