@@ -7,8 +7,6 @@ final class StatementDetailView: UIViewController {
     
     private var viewModel: StatementDetailViewDelegate?
     
-    private lazy var navTitle: String = ""
-    
     private lazy var stackScroll: StackScrollView = StackScrollView(spacing: Dimensions.medium)
     private lazy var backGround: UIView = UIView(frame: .zero)
     
@@ -22,7 +20,6 @@ final class StatementDetailView: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
         label.textAlignment = .justified
         label.textColor = Colors.black
         label.font = UIFont.systemFont(ofSize: Dimensions.fontSmall, weight: .bold)
@@ -44,7 +41,7 @@ final class StatementDetailView: UIViewController {
     }()
     
     private lazy var navigation: NavigationBar = {
-        let nav = NavigationBar(title: navTitle)
+        let nav = NavigationBar()
         nav.set(delegate: self)
         return nav
     }()
@@ -79,19 +76,6 @@ final class StatementDetailView: UIViewController {
         cancelAction()
     }
     
-    private func titleString(_ type: PaymentType) -> String {
-        switch type {
-        case .pay:
-            return "Data da tranferência"
-        case .ticket:
-            return "Data do boleto"
-        case .reversal:
-            return "Data do estorno"
-        case .future:
-            return "Data da tranferência"
-        }
-    }
-    
     private func setIconImage(_ type: PaymentType, _ status: PaymentStatus) {
         var image = UIImage()
         switch type {
@@ -107,27 +91,29 @@ final class StatementDetailView: UIViewController {
             image = UIImage(imageLiteralResourceName: Images.clock)
         }
         
-        let tintImage = image.withRenderingMode(.alwaysTemplate)
-        tintImage.withTintColor(Colors.black)
-        titleIcon.image = tintImage
+        titleIcon.image = image
+        titleIcon.image = titleIcon.image?.withRenderingMode(.alwaysTemplate)
+        titleIcon.tintColor = Colors.black
     }
     
-    private func setPersons(_ person: Person, _ owner: Person) {
-        personFrom.set(title: "De", name: person.name,
-                       cpf: "CPF \(person.cpf)", bank: person.bank,
-                       account: "Agência \(person.agency) - Conta \(person.account)")
+    private func setPersons(_ from: Person, _ to: Person) {
+        personFrom.set(title: "De", name: from.name,
+                       cpf: "CPF \(from.cpf)", bank: from.bank,
+                       account: "Agência \(from.agency) - Conta \(from.account)")
         
-        personTo.set(title: "To", name: owner.name,
-                     cpf: "CPF \(owner.cpf)", bank: owner.bank,
-                     account: "Agência \(owner.agency) - Conta \(owner.account)")
+        personTo.set(title: "To", name: to.name,
+                     cpf: "CPF \(to.cpf)", bank: to.bank,
+                     account: "Agência \(to.agency) - Conta \(to.account)")
+    }
+    
+    private func setNavTitle(_ status: String) {
     }
 }
 
 extension StatementDetailView: ViewCode {
     func setSubviews() {
         view.addSubviews([backGround, navigation, stackScroll])
-        
-        stackScroll.addView(Spacer(size: Dimensions.small))
+        stackScroll.addView(Spacer(size: Dimensions.verySmall))
         stackScroll.addView(titleStack, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
         stackScroll.addView(valueSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
         stackScroll.addView(dateSection, paddingLeft: Dimensions.medium, paddingRight: Dimensions.medium)
@@ -153,9 +139,9 @@ extension StatementDetailView: ViewCode {
                            trailing: view.trailingAnchor)
         
         buttonStack.setWidthEqual(to: view)
-        shareButton.size(height: Dimensions.large)
+        shareButton.size(height: Dimensions.veryLarge)
         shareButton.setWidthEqual(to: buttonStack)
-        cancelButton.size(height: Dimensions.veryLarge)
+        cancelButton.size(height: Dimensions.large)
         cancelButton.setWidthEqual(to: buttonStack)
         titleIcon.size(height: Dimensions.medium, width: Dimensions.medium)
     }
@@ -167,16 +153,13 @@ extension StatementDetailView: ViewCode {
 }
 
 extension StatementDetailView: StatementDetailViewProtocol {
-    func setInto(statement: StatementItem, owner: Person) {
-        navTitle = "test"
+    func setInto(statement: StatementItem, from: Person, to: Person, navigationTitle: String, title: String) {
+        navigation.set(title: navigationTitle)
         titleLabel.text = statement.status
         valueSection.set(title: "Valor", desc: statement.value.toReal())
-        dateSection.set(title: titleString(statement.paymentType), desc: statement.date.toBrDateDetail())
+        dateSection.set(title: title, desc: statement.date.toBrDateDetail())
         
-        (statement.paymentStatus == .income) ?
-        setPersons(statement.person, owner) :
-        setPersons(owner, statement.person)
-        
+        setPersons(from, to)
         descriptionSection.set(title: "Descrição", desc: statement.desc, plain: true)
         setIconImage(statement.paymentType, statement.paymentStatus)
         cancelButton.isHidden = !(statement.paymentType == .future)

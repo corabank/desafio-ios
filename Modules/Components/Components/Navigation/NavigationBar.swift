@@ -7,7 +7,7 @@ public final class NavigationBar: UIView {
     private var delegate: NavigationBarDelegate?
     private var share: Bool = false
     
-    public init(title: String, share: Bool = false) {
+    public init(title: String = "", share: Bool = false) {
         super.init(frame: .zero)
         self.share = share
         titleLabel.text = title
@@ -96,5 +96,9 @@ extension NavigationBar: NavigationBarProtocol {
     
     public func set(delegate: NavigationBarDelegate) {
         self.delegate = delegate
+    }
+    
+    public func set(title: String) {
+        titleLabel.text = title
     }
 }

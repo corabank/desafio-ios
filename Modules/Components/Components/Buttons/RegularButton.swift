@@ -45,7 +45,7 @@ public final class RegularButton: UIButton {
         case .arrow:
             image = UIImage(named: Images.arrow)
         case .share:
-            image = UIImage(named: Images.download)
+            image = UIImage(named: Images.share)
         case .nothing:
             image = nil
         }
@@ -57,7 +57,7 @@ public final class RegularButton: UIButton {
     public override func layoutSubviews() {
         super.layoutSubviews()
         guard let imageView = imageView else { return }
-        imageEdgeInsets = UIEdgeInsets(top: 5, left: (bounds.width - 35), bottom: 5, right: 5)
+        imageEdgeInsets = UIEdgeInsets(top: 5, left: (bounds.width - 40), bottom: 5, right: 5)
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: (imageView.frame.width))
     }
 }
