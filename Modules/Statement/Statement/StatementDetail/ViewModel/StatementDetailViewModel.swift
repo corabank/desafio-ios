@@ -4,24 +4,11 @@ final class StatementDetailViewModel {
 
     init() {}
     
-    private func titleString(_ type: PaymentType) -> String {
-        switch type {
-        case .pay:
-            return "Data da tranferência"
-        case .ticket:
-            return "Data do boleto"
-        case .reversal:
-            return "Data do estorno"
-        case .future:
-            return "Data da tranferência"
-        }
-    }
-    
-    private func navigationTitle(_ status: String) -> String {
+    private func textGenerate(_ status: String, _ firstWord: String) -> String {
         let first = status.split(separator: " ").first?.lowercased()
         let connection = (first?.last == "a") ? "da" : "do"
         guard let first = first else { return "" }
-        return "Detalhe \(connection) \(first)"
+        return "\(firstWord) \(connection) \(first)"
     }
 }
 
@@ -38,13 +25,13 @@ extension StatementDetailViewModel: StatementDetailViewModelProtocol {
         if (statement.paymentStatus == .income) {
             view?.setInto(statement: statement,
                           from: statement.person, to: owner,
-                          navigationTitle: navigationTitle(statement.status),
-                          title: titleString(statement.paymentType))
+                          navigationTitle: textGenerate(statement.status, "Detalhe"),
+                          title: textGenerate(statement.status, "Data"))
         } else {
             view?.setInto(statement: statement,
                           from: owner, to: statement.person,
-                          navigationTitle: navigationTitle(statement.status),
-                          title: titleString(statement.paymentType))
+                          navigationTitle: textGenerate(statement.status, "Detalhe"),
+                          title: textGenerate(statement.status, "Data"))
         }
     }
 }
