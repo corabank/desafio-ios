@@ -109,14 +109,12 @@ final class LoginView: UIViewController {
     
     @objc
     private func loginActionCallback() {
-        loginButton.flash()
-        viewModel?.login()
+        tapLogin()
     }
     
     @objc
     private func registerActionCallback() {
-        registerButton.flash()
-        viewModel?.register()
+        tapRegister()
     }
 }
 
@@ -178,6 +176,16 @@ extension LoginView: ViewCode {
 }
 
 extension LoginView: LoginViewProtocol {
+    func tapLogin() {
+        loginButton.flash()
+        viewModel?.login()
+    }
+    
+    func tapRegister() {
+        registerButton.flash()
+        viewModel?.register()
+    }
+    
     func set(delegate: LoginViewDelegate) {
         self.viewModel = delegate
     }

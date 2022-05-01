@@ -19,13 +19,13 @@ class LoginTests: XCTestCase {
     
     func test_navigate_to_form() {
         setup()
-        model.login()
+        view.tapLogin()
         XCTAssertTrue(coordinator.goToLogin)
     }
     
     func test_navigate_to_register() {
         setup()
-        model.register()
+        view.tapRegister()
         XCTAssertTrue(coordinator.goToRegister)
     }
     

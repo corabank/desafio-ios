@@ -9,4 +9,12 @@ final class LoginViewMock: UIViewController, LoginViewProtocol {
     func set(delegate: LoginViewDelegate) {
         self.delegate = delegate
     }
+    
+    func tapLogin() {
+        delegate?.login()
+    }
+    
+    func tapRegister() {
+        delegate?.register()
+    }
 }
