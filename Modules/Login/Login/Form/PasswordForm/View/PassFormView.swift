@@ -13,6 +13,8 @@ final class PassFormView: UIViewController {
     private let titleLabelString = "Digite sua senha de acesso"
     private let forgotPassword   = "Esqueci minha senha"
     
+    private lazy var backGround: UIView = UIView(frame: .zero)
+    
     private lazy var stack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center
@@ -153,7 +155,7 @@ final class PassFormView: UIViewController {
 
 extension PassFormView: ViewCode {
     func setSubviews() {
-        view.addSubviews([stack, footerStack])
+        view.addSubviews([backGround, stack, footerStack])
         stack.addArrangedSubview(navigation)
         stack.addArrangedSubview(Spacer(size: Dimensions.small))
         stack.addArrangedSubview(stackEmbedded)
@@ -170,9 +172,12 @@ extension PassFormView: ViewCode {
     
     func setConstraints() {
         navigation.setWidthEqual(to: stack)
-        stack.anchor(top: view.topAnchor,
+        stack.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                      leading: view.leadingAnchor,
                      trailing: view.trailingAnchor)
+        
+        backGround.setWidthEqual(to: view)
+        backGround.anchor(top: stack.topAnchor, bottom: view.bottomAnchor)
         
         stackEmbedded.anchor(leading: stack.leadingAnchor,
                              trailing: stack.trailingAnchor,
@@ -194,7 +199,7 @@ extension PassFormView: ViewCode {
         nextButton.size(height: 50)
         nextButton.setWidthEqual(to: footerStack)
         footerStack.anchor(leading: view.leadingAnchor,
-                           bottom: view.bottomAnchor,
+                           bottom: view.safeAreaLayoutGuide.bottomAnchor,
                            trailing: view.trailingAnchor,
                            paddingBottom: Dimensions.mediumSmall,
                            paddingLeft: Dimensions.medium,
@@ -217,6 +222,9 @@ extension PassFormView: ViewCode {
         textField.addTarget(self, action: #selector(inputValue), for: .editingChanged)
         
         nextButton.state(.disabled)
+        
+        backGround.backgroundColor = Colors.white
+        view.backgroundColor = Colors.lightGray
     }
 }
 

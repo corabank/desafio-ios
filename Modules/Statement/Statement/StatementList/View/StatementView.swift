@@ -76,7 +76,7 @@ extension StatementView: ViewCode {
     }
     
     func setConstraints() {
-        stack.anchor(top: view.topAnchor)
+        stack.anchor(top: view.safeAreaLayoutGuide.topAnchor)
         stack.setWidthEqual(to: view)
         header.setWidthEqual(to: stack)
         navigation.setWidthEqual(to: header)
@@ -90,7 +90,7 @@ extension StatementView: ViewCode {
     }
     
     func extraSetups() {
-        view.backgroundColor = Colors.white
+        view.backgroundColor = Colors.lightGray
         filterStack.backgroundColor = .red
     }
     

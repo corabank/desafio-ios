@@ -138,7 +138,7 @@ extension LoginView: ViewCode {
     
     func setConstraints() {
         coverStack.setAnchorsEqual(to: view)
-        logo.anchor(top: view.topAnchor,
+        logo.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                     leading: view.leadingAnchor,
                     paddingTop: Dimensions.medium,
                     paddingLeft: Dimensions.medium)
@@ -150,7 +150,7 @@ extension LoginView: ViewCode {
         cover.setWidthEqual(to: coverStack)
         stack.anchor(top: view.topAnchor,
                      leading: view.leadingAnchor,
-                     bottom: view.bottomAnchor,
+                     bottom: view.safeAreaLayoutGuide.bottomAnchor,
                      trailing: view.trailingAnchor,
                      paddingBottom: Dimensions.small,
                      paddingLeft: Dimensions.medium,

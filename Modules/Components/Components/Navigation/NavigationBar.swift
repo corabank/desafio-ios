@@ -59,7 +59,6 @@ public final class NavigationBar: UIView {
 extension NavigationBar: ViewCode {
     public func setSubviews() {
         self.addSubview(nav)
-        nav.addArrangedSubview(Spacer(size: Dimensions.verySmall))
         nav.addArrangedSubview(stack)
         stack.addArrangedSubview(leadingButton)
         stack.addArrangedSubview(titleLabel)
