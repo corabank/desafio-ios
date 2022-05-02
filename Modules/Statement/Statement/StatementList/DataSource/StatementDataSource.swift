@@ -1,13 +1,14 @@
 final class StatementDataSource {
     
-    private func dayCreate(_ date: String) -> Date? {
+    private func dayCreate(_ date: String) -> Date {
         let parseStrategy = Date.ParseStrategy(
             format: "\(day: .twoDigits)-\(month: .twoDigits)-\(year: .defaultDigits)",
             locale: Locale(identifier: "es"),
             timeZone: .current
         )
         
-        return try? Date(date, strategy: parseStrategy)
+        let date = try? Date(date, strategy: parseStrategy)
+        return date ?? Date.now
     }
     
     private lazy var sections = [
@@ -15,55 +16,62 @@ final class StatementDataSource {
         day2,
         day3,
         day4,
+        day5
     ]
     
-    private lazy var day1 = StatementDay(total: "R$ 3.446,00", date: dayCreate("06-08-2022")!, itens: [
+    private lazy var day1 = StatementDay(total: "R$ 3.446,00", date: dayCreate("06-08-2021"), itens: [
         StatementItem(person: person1, status: "Transferência recebida",
                       paymentType: .pay, paymentStatus: .income,
                       value: 30, time: "17:35", type: .cpf,
-                      date: dayCreate("06-08-2022")!, desc: "Descrição do item aqui!"),
+                      date: dayCreate("06-08-2021"), desc: "Descrição do item aqui!"),
         
         StatementItem(person: person2, status: "Pagamento recebido",
                       paymentType: .pay, paymentStatus: .income,
-                      value: 26, time: "13:17", type: .cpf, date: dayCreate("06-08-2022")!, desc: "Descrição do item aqui!"),
+                      value: 26, time: "13:17", type: .cpf, date: dayCreate("06-08-2021"), desc: "Descrição do item aqui!"),
         
         StatementItem(person: person3, status: "Transferência estornada",
                       paymentType: .reversal, paymentStatus: .reverse,
-                      value: 26, time: "13:17", type: .cpf, date: dayCreate("06-08-2022")!, desc: "Descrição do item aqui!"),
+                      value: 26, time: "13:17", type: .cpf, date: dayCreate("06-08-2021"), desc: "Descrição do item aqui!"),
         
         StatementItem(person: person4, status: "Boleto pago",
                       paymentType: .ticket, paymentStatus: .outcome,
-                      value: 26, time: "9:22", type: .cnpj, date: dayCreate("06-08-2022")!, desc: "Descrição do item aqui!"),
+                      value: 26, time: "9:22", type: .cnpj, date: dayCreate("06-08-2021"), desc: "Descrição do item aqui!"),
     ])
     
-    private lazy var day2 = StatementDay(total: "R$ 3.110,08", date: dayCreate("02-08-2022")!, itens: [
+    private lazy var day2 = StatementDay(total: "R$ 3.110,08", date: dayCreate("02-08-2021"), itens: [
         StatementItem(person: person5, status: "Depósito via boleto",
                       paymentType: .ticket, paymentStatus: .income,
-                      value: 30, time: "9:22", type: .cpf, date: dayCreate("02-08-2022")!, desc: "Descrição do item aqui!"),
+                      value: 30, time: "9:22", type: .cpf, date: dayCreate("02-08-2021"), desc: "Descrição do item aqui!"),
         
         StatementItem(person: person6, status: "Transferência enviada",
                       paymentType: .pay, paymentStatus: .outcome,
-                      value: 26, time: "9:22", type: .cpf, date: dayCreate("02-08-2022")!, desc: "Descrição do item aqui!"),
+                      value: 26, time: "9:22", type: .cpf, date: dayCreate("02-08-2021"), desc: "Descrição do item aqui!"),
     ])
     
-    private lazy var day3 = StatementDay(total: "R$ 3.050,30", date: dayCreate("30-07-2022")!, itens: [
+    private lazy var day3 = StatementDay(total: "R$ 3.050,30", date: dayCreate("30-07-2021"), itens: [
         StatementItem(person: person7, status: "Pagamento estornado",
                       paymentType: .reversal, paymentStatus: .reverse,
-                      value: 26, time: "9:22", type: .cpf, date: dayCreate("30-07-2022")!, desc: "Descrição do item aqui!"),
+                      value: 26, time: "9:22", type: .cpf, date: dayCreate("30-07-2021"), desc: "Descrição do item aqui!"),
         
         StatementItem(person: person8, status: "Transferência recebida",
                       paymentType: .pay, paymentStatus: .income,
-                      value: 30, time: "9:22", type: .cpf, date: dayCreate("30-07-2022")!, desc: "Descrição do item aqui!"),
+                      value: 30, time: "9:22", type: .cpf, date: dayCreate("30-07-2021"), desc: "Descrição do item aqui!"),
         
         StatementItem(person: person9, status: "Transferência enviada",
                       paymentType: .pay, paymentStatus: .outcome,
-                      value: 26, time: "9:22", type: .cpf, date: dayCreate("30-07-2022")!, desc: "Descrição do item aqui!"),
+                      value: 26, time: "9:22", type: .cpf, date: dayCreate("30-07-2021"), desc: "Descrição do item aqui!"),
     ])
     
-    private lazy var day4 = StatementDay(total: "R$ 3.124,34", date: dayCreate("05-08-2022")!, itens: [
+    private lazy var day4 = StatementDay(total: "R$ 3.124,34", date: dayCreate("05-08-2021"), itens: [
         StatementItem(person: person10, status: "Boleto pago",
                       paymentType: .ticket, paymentStatus: .outcome,
-                      value: 26, time: "9:22", type: .cpf, date: dayCreate("05-08-2022")!, desc: "Descrição do item aqui!"),
+                      value: 26, time: "9:22", type: .cpf, date: dayCreate("05-08-2021"), desc: "Descrição do item aqui!"),
+    ])
+    
+    private lazy var day5 = StatementDay(total: "R$ 2.124,34", date: dayCreate("02-06-2021"), itens: [
+        StatementItem(person: person10, status: "Transferência agendada",
+                      paymentType: .future, paymentStatus: .future,
+                      value: 100, time: "9:22", type: .cpf, date: dayCreate("02-01-2021"), desc: "Descrição do item aqui!"),
     ])
     
     private lazy var person1 = Person(name: "Lucas Costa", cpf: "457.131.063-26",
