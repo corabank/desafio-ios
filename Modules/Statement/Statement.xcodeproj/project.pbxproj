@@ -28,6 +28,9 @@
 		573B420D281F275900729C3A /* StatementSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B420C281F275900729C3A /* StatementSegmentControl.swift */; };
 		578F9FAB282055A90079683B /* StatementViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F9FAA282055A90079683B /* StatementViewMock.swift */; };
 		578F9FAD282055BB0079683B /* StatementCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F9FAC282055BB0079683B /* StatementCoordinatorMock.swift */; };
+		578F9FAF28205DB50079683B /* StatementDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F9FAE28205DB50079683B /* StatementDetailTests.swift */; };
+		578F9FB128205DFE0079683B /* StatementDetailViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F9FB028205DFE0079683B /* StatementDetailViewMock.swift */; };
+		578F9FB328205E0C0079683B /* StatementDetailCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F9FB228205E0C0079683B /* StatementDetailCoordinatorMock.swift */; };
 		579BFD75281B38A1007083EC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD74281B38A1007083EC /* Person.swift */; };
 		579BFD78281B4943007083EC /* StatementItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD77281B4943007083EC /* StatementItemCell.swift */; };
 		579C5591281EBC0D00566C5A /* TitleDescSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C5590281EBC0D00566C5A /* TitleDescSection.swift */; };
@@ -96,6 +99,9 @@
 		573B420C281F275900729C3A /* StatementSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementSegmentControl.swift; sourceTree = "<group>"; };
 		578F9FAA282055A90079683B /* StatementViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewMock.swift; sourceTree = "<group>"; };
 		578F9FAC282055BB0079683B /* StatementCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCoordinatorMock.swift; sourceTree = "<group>"; };
+		578F9FAE28205DB50079683B /* StatementDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailTests.swift; sourceTree = "<group>"; };
+		578F9FB028205DFE0079683B /* StatementDetailViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailViewMock.swift; sourceTree = "<group>"; };
+		578F9FB228205E0C0079683B /* StatementDetailCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailCoordinatorMock.swift; sourceTree = "<group>"; };
 		579BFD74281B38A1007083EC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		579BFD77281B4943007083EC /* StatementItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemCell.swift; sourceTree = "<group>"; };
 		579C5590281EBC0D00566C5A /* TitleDescSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescSection.swift; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 			children = (
 				578F9FA9282055950079683B /* Mocks */,
 				57340FBC281765080070804E /* StatementTests.swift */,
+				578F9FAE28205DB50079683B /* StatementDetailTests.swift */,
 			);
 			path = StatementTests;
 			sourceTree = "<group>";
@@ -256,6 +263,8 @@
 			children = (
 				578F9FAA282055A90079683B /* StatementViewMock.swift */,
 				578F9FAC282055BB0079683B /* StatementCoordinatorMock.swift */,
+				578F9FB028205DFE0079683B /* StatementDetailViewMock.swift */,
+				578F9FB228205E0C0079683B /* StatementDetailCoordinatorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -473,6 +482,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578F9FB128205DFE0079683B /* StatementDetailViewMock.swift in Sources */,
+				578F9FB328205E0C0079683B /* StatementDetailCoordinatorMock.swift in Sources */,
+				578F9FAF28205DB50079683B /* StatementDetailTests.swift in Sources */,
 				578F9FAB282055A90079683B /* StatementViewMock.swift in Sources */,
 				57340FBD281765080070804E /* StatementTests.swift in Sources */,
 				578F9FAD282055BB0079683B /* StatementCoordinatorMock.swift in Sources */,

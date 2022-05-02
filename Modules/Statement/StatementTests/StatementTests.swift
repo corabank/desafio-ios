@@ -20,6 +20,12 @@ class StatementTests: XCTestCase {
         view.set(delegate: model)
     }
     
+    func test_navigate_back() {
+        setup()
+        model.tapBack()
+        XCTAssertTrue(coordinator.backWasTapped)
+    }
+    
     func test_navigate_to_detail() {
         setup()
         let item = dataSource.getStatements().first!.itens.first

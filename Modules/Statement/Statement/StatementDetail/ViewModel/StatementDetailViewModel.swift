@@ -22,7 +22,7 @@ extension StatementDetailViewModel: StatementDetailViewModelProtocol {
     }
     
     func set(statement: StatementItem, owner: Person) {
-        if (statement.paymentStatus == .income) {
+        if (statement.paymentStatus != .outcome) {
             view?.setInto(statement: statement,
                           from: statement.person, to: owner,
                           navigationTitle: textGenerate(statement.status, "Detalhe"),
