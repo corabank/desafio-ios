@@ -1,9 +1,9 @@
 import Foundation
 
 final class StatementViewModel {
-    private var view: StatementViewProtocol?
+    private weak var view: StatementViewProtocol?
+    private weak var dataSource: StatementDataSourceProtocol?
     private var coordinator: StatementCoordinatorProtocol?
-    private var dataSource: StatementDataSourceProtocol?
     
     private lazy var statements: [StatementDay] = []
     

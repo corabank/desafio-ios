@@ -1,4 +1,4 @@
-protocol LoginViewDelegate: AnyObject {
+protocol LoginViewDelegate {
     func login()
     func register()
 }

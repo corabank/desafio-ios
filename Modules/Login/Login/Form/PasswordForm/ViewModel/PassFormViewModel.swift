@@ -1,5 +1,5 @@
 final class PassFormViewModel {
-    private var view: PassFormViewProtocol?
+    private weak var view: PassFormViewProtocol?
     private var coordinator: PassFormCoordinatorProtocol?
     
     init() {}

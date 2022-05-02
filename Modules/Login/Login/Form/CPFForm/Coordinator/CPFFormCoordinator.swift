@@ -4,9 +4,6 @@ final class CPFFormCoordinator {
     
     private var navigation: UINavigationController?
     
-    private let formViewModel: CPFFormViewModelProtocol & CPFFormViewDelegate = CPFFormViewModel()
-    private let formView: CPFFormViewProtocol = CPFFormView()
-    
     public init() {}
 }
 
@@ -16,6 +13,9 @@ extension CPFFormCoordinator: CPFFormCoordinatorProtocol {
     }
     
     public func start() {
+        let formViewModel: CPFFormViewModelProtocol & CPFFormViewDelegate = CPFFormViewModel()
+        let formView: CPFFormViewProtocol = CPFFormView()
+
         formViewModel.set(view: formView)
         formViewModel.set(coordinator: self)
         formView.set(delegate: formViewModel)

@@ -1,7 +1,7 @@
 import Foundation
 
 final class CPFFormViewModel {
-    private var view: CPFFormViewProtocol?
+    private weak var view: CPFFormViewProtocol?
     private var coordinator: CPFFormCoordinatorProtocol?
     
     init() {}

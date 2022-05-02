@@ -105,9 +105,6 @@ final class StatementDetailView: UIViewController {
                      cpf: "CPF \(to.cpf)", bank: to.bank,
                      account: "Agência \(to.agency) - Conta \(to.account)")
     }
-    
-    private func setNavTitle(_ status: String) {
-    }
 }
 
 extension StatementDetailView: ViewCode {

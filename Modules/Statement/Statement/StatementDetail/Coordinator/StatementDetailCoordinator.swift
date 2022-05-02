@@ -4,10 +4,8 @@ final class StatementDetailCoordinator {
 
     private var navigation: UINavigationController?
     
-    private let viewModel: StatementDetailViewModelProtocol & StatementDetailViewDelegate = StatementDetailViewModel()
-    private let view: StatementDetailViewProtocol = StatementDetailView()
-    
     public init() {}
+    
 }
 
 extension StatementDetailCoordinator: StatementDetailCoordinatorProtocol {
@@ -16,6 +14,9 @@ extension StatementDetailCoordinator: StatementDetailCoordinatorProtocol {
     }
     
     func start(statement: StatementItem, owner: Person) {
+        let viewModel: StatementDetailViewModelProtocol & StatementDetailViewDelegate = StatementDetailViewModel()
+        let view: StatementDetailViewProtocol = StatementDetailView()
+
         viewModel.set(view: view)
         viewModel.set(coordinator: self)
         viewModel.set(statement: statement, owner: owner)

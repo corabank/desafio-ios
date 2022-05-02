@@ -1,6 +1,6 @@
 import UIKit
 
-protocol CPFFormCoordinatorProtocol: AnyObject {
+protocol CPFFormCoordinatorProtocol {
     func set(navigation: UINavigationController?)
     func back()
     func start()

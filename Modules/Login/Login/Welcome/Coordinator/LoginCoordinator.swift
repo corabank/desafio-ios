@@ -4,9 +4,6 @@ public final class LoginCoordinator {
     
     private var navigation: UINavigationController?
     
-    private let loginViewModel: LoginViewModelProtocol & LoginViewDelegate = LoginViewModel()
-    private let loginView: LoginViewProtocol = LoginView()
-    
     public init() {}
 }
 
@@ -16,6 +13,9 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
     }
     
     public func start() {
+        let loginViewModel: LoginViewModelProtocol & LoginViewDelegate = LoginViewModel()
+        let loginView: LoginViewProtocol = LoginView()
+
         loginViewModel.set(view: loginView)
         loginViewModel.set(coordinator: self)
         loginView.set(delegate: loginViewModel)

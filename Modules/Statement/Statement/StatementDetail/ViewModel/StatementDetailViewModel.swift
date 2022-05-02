@@ -1,5 +1,5 @@
 final class StatementDetailViewModel {
-    private var view: StatementDetailViewProtocol?
+    private weak var view: StatementDetailViewProtocol?
     private var coordinator: StatementDetailCoordinatorProtocol?
 
     init() {}

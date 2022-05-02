@@ -1,4 +1,4 @@
-protocol StatementDetailViewDelegate: AnyObject {
+protocol StatementDetailViewDelegate {
     func tapBack()
     func tapShare()
     func tapCancel()

@@ -5,7 +5,7 @@ import Components
 
 final class StatementSegmentControl: UIView {
     
-    private var delegate: StatementSegmentControlDelegate?
+    private weak var delegate: StatementSegmentControlDelegate?
     
     private lazy var mainStack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)

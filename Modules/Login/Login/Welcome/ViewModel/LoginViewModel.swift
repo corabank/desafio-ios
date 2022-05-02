@@ -1,7 +1,7 @@
 import Foundation
 
 final class LoginViewModel {
-    private var view: LoginViewProtocol?
+    private weak var view: LoginViewProtocol?
     private var coordinator: LoginCoordinatorProtocol?
     
     init() {}

@@ -1,4 +1,4 @@
-protocol StatementViewDelegate: AnyObject {
+protocol StatementViewDelegate {
     func tapBack()
     func tapShare()
     func selectItem(item: StatementItem)

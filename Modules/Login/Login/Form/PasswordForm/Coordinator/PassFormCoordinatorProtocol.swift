@@ -1,6 +1,6 @@
 import UIKit
 
-protocol PassFormCoordinatorProtocol: AnyObject {
+protocol PassFormCoordinatorProtocol {
     func set(navigation: UINavigationController?)
     func back()
     func start()

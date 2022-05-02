@@ -3,10 +3,7 @@ import UIKit
 public final class StatementCoordinator {
     
     private var navigation: UINavigationController?
-    
-    private let viewModel: StatementViewModelProtocol & StatementViewDelegate = StatementViewModel()
     private let dataSource: StatementDataSourceProtocol = StatementDataSource()
-    private let view: StatementViewProtocol = StatementView()
     
     public init() {}
 }
@@ -17,6 +14,9 @@ extension StatementCoordinator: StatementCoordinatorProtocol {
     }
     
     public func start() {
+        let viewModel: StatementViewModelProtocol & StatementViewDelegate = StatementViewModel()
+        let view: StatementViewProtocol = StatementView()
+
         viewModel.set(view: view)
         viewModel.set(coordinator: self)
         viewModel.set(dataSource: dataSource)

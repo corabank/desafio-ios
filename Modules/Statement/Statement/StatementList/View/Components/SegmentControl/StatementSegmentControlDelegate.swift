@@ -1,7 +1,7 @@
 import UIKit
 import ViewCode
 
-protocol StatementSegmentControlDelegate {
+protocol StatementSegmentControlDelegate: AnyObject {
     func tapAll()
     func tapIncome()
     func tapOutcome()

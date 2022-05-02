@@ -4,7 +4,7 @@ import Resources
 
 public final class NavigationBar: UIView {
     
-    private var delegate: NavigationBarDelegate?
+    private weak var delegate: NavigationBarDelegate?
     private var share: Bool = false
     
     public init(title: String = "", share: Bool = false) {
