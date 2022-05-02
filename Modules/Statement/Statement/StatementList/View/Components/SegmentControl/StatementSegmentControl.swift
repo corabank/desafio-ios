@@ -18,7 +18,7 @@ final class StatementSegmentControl: UIView {
     private lazy var buttonAll: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Tudo", for: .normal)
-        button.setTitleColor(Colors.mediumGray, for: .normal)
+        button.setTitleColor(Colors.pink, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
         button.addTarget(self, action: #selector(tapAll), for: .touchUpInside)
         return button
@@ -28,7 +28,7 @@ final class StatementSegmentControl: UIView {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Entrada", for: .normal)
         button.setTitleColor(Colors.mediumGray, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .regular)
         button.addTarget(self, action: #selector(tapIncome), for: .touchUpInside)
         return button
     }()
@@ -37,7 +37,7 @@ final class StatementSegmentControl: UIView {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Saída", for: .normal)
         button.setTitleColor(Colors.mediumGray, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .regular)
         button.addTarget(self, action: #selector(tapOutcome), for: .touchUpInside)
         return button
     }()
@@ -46,7 +46,7 @@ final class StatementSegmentControl: UIView {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Futuro", for: .normal)
         button.setTitleColor(Colors.mediumGray, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .regular)
         button.addTarget(self, action: #selector(tapFuture), for: .touchUpInside)
         return button
     }()
@@ -78,7 +78,7 @@ final class StatementSegmentControl: UIView {
     private func tapAll() {
         grayOut()
         buttonAll.setTitleColor(Colors.pink, for: .normal)
-        //buttonAll.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
+        buttonAll.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
         delegate?.tapAll()
     }
     

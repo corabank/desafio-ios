@@ -16,6 +16,7 @@ final class StatementItemCell: UITableViewCell {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center
         stack.axis = .vertical
+        stack.distribution = .fillEqually
         return stack
     }()
     
