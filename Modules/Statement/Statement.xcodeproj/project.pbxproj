@@ -24,6 +24,8 @@
 		57340FBE281765080070804E /* Statement.h in Headers */ = {isa = PBXBuildFile; fileRef = 57340FB2281765080070804E /* Statement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5737623A281DAED800B6C92D /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57376239281DAED800B6C92D /* Float.swift */; };
 		5737623C281DAFBB00B6C92D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737623B281DAFBB00B6C92D /* Date.swift */; };
+		573B420B281F274900729C3A /* StatementSegmentControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B420A281F274900729C3A /* StatementSegmentControlDelegate.swift */; };
+		573B420D281F275900729C3A /* StatementSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B420C281F275900729C3A /* StatementSegmentControl.swift */; };
 		579BFD75281B38A1007083EC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD74281B38A1007083EC /* Person.swift */; };
 		579BFD78281B4943007083EC /* StatementItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFD77281B4943007083EC /* StatementItemCell.swift */; };
 		579C5591281EBC0D00566C5A /* TitleDescSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C5590281EBC0D00566C5A /* TitleDescSection.swift */; };
@@ -88,6 +90,8 @@
 		57340FBC281765080070804E /* StatementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTests.swift; sourceTree = "<group>"; };
 		57376239281DAED800B6C92D /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		5737623B281DAFBB00B6C92D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		573B420A281F274900729C3A /* StatementSegmentControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementSegmentControlDelegate.swift; sourceTree = "<group>"; };
+		573B420C281F275900729C3A /* StatementSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementSegmentControl.swift; sourceTree = "<group>"; };
 		579BFD74281B38A1007083EC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		579BFD77281B4943007083EC /* StatementItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemCell.swift; sourceTree = "<group>"; };
 		579C5590281EBC0D00566C5A /* TitleDescSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescSection.swift; sourceTree = "<group>"; };
@@ -233,9 +237,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		573B4209281F271100729C3A /* SegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				573B420A281F274900729C3A /* StatementSegmentControlDelegate.swift */,
+				573B420C281F275900729C3A /* StatementSegmentControl.swift */,
+			);
+			path = SegmentControl;
+			sourceTree = "<group>";
+		};
 		579BFD76281B492D007083EC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				573B4209281F271100729C3A /* SegmentControl */,
 				579BFD77281B4943007083EC /* StatementItemCell.swift */,
 				570CA52D281C19FC007C318A /* StatementTableSection.swift */,
 			);
@@ -411,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573B420B281F274900729C3A /* StatementSegmentControlDelegate.swift in Sources */,
 				5737623C281DAFBB00B6C92D /* Date.swift in Sources */,
 				5737623A281DAED800B6C92D /* Float.swift in Sources */,
 				57C36080281D528B00F84358 /* StatementDetailViewModel.swift in Sources */,
@@ -423,6 +438,7 @@
 				57142E3128182B1A005DFFA6 /* StatementViewDelegate.swift in Sources */,
 				57C3607C281D527000F84358 /* StatementDetailView.swift in Sources */,
 				57C36086281D52D900F84358 /* StatementDetailViewDelegate.swift in Sources */,
+				573B420D281F275900729C3A /* StatementSegmentControl.swift in Sources */,
 				57142E3928182B55005DFFA6 /* StatementCoordinatorProtocol.swift in Sources */,
 				57142E3E281840F3005DFFA6 /* StatementDataSource.swift in Sources */,
 				57C3607E281D527C00F84358 /* StatementDetailViewModelProtocol.swift in Sources */,

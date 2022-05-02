@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import ViewCode
 import Components
+import Resources
 
 final class StatementView: UIViewController {
     
@@ -27,17 +28,20 @@ final class StatementView: UIViewController {
     private lazy var filterStack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center
+        stack.spacing = Dimensions.medium
         stack.axis = .horizontal
         return stack
     }()
     
-    private lazy var filterPicker: UISearchBar = {
-        let picker: UISearchBar = UISearchBar(frame: .zero)
-        picker.delegate = self
-        //picker.showsScopeBar = true
-        //picker.searchRe
-        picker.scopeButtonTitles  = ["Tudo", "Entrada", "Saída", "Future"]
-        return picker
+    private lazy var filterIcon: UIImageView = {
+        let view: UIImageView = UIImageView(image: UIImage(imageLiteralResourceName: Images.filter))
+        return view
+    }()
+    
+    private lazy var filterPicker: StatementSegmentControl = {
+        let filter: StatementSegmentControl = StatementSegmentControl()
+        filter.set(delegate: self)
+        return filter
     }()
     
     private lazy var navigation: NavigationBar = {
@@ -73,6 +77,7 @@ extension StatementView: ViewCode {
         header.addArrangedSubview(navigation)
         header.addArrangedSubview(filterStack)
         filterStack.addArrangedSubview(filterPicker)
+        filterStack.addArrangedSubview(filterIcon)
     }
     
     func setConstraints() {
@@ -85,13 +90,19 @@ extension StatementView: ViewCode {
         table.setWidthEqual(to: view)
         
         filterStack.setWidthEqual(to: header)
+        filterStack.anchor(leading: header.leadingAnchor,
+                           trailing: header.trailingAnchor,
+                           paddingLeft: Dimensions.medium,
+                           paddingRight: Dimensions.medium)
         filterStack.size(height: 56)
         filterPicker.setHeightEqual(to: filterStack)
+        filterIcon.size(height: Dimensions.medium, width: Dimensions.medium)
     }
     
     func extraSetups() {
         view.backgroundColor = Colors.lightGray
-        filterStack.backgroundColor = .red
+        filterStack.backgroundColor = Colors.white
+        header.backgroundColor = Colors.white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,9 +113,6 @@ extension StatementView: ViewCode {
         guard let data = viewModel?.getData() else { return }
         sections = data
     }
-}
-
-extension StatementView: UISearchBarDelegate {
 }
 
 extension StatementView: StatementViewProtocol {
@@ -120,5 +128,23 @@ extension StatementView: NavigationBarDelegate {
     
     func tapShare() {
         viewModel?.tapShare()
+    }
+}
+
+extension StatementView: StatementSegmentControlDelegate {
+    func tapAll() {
+        print("all")
+    }
+    
+    func tapIncome() {
+        print("income")
+    }
+    
+    func tapOutcome() {
+        print("outcome")
+    }
+    
+    func tapFuture() {
+        print("future")
     }
 }

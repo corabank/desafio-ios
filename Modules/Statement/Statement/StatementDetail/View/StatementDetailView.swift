@@ -9,7 +9,7 @@ final class StatementDetailView: UIViewController {
     
     private lazy var stackScroll: StackScrollView = StackScrollView(spacing: Dimensions.medium)
     private lazy var backGround: UIView = UIView(frame: .zero)
-    
+
     private lazy var titleStack: UIStackView = {
         let stack: UIStackView = UIStackView(frame: .zero)
         stack.alignment = .center

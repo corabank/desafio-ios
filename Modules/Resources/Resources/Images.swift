@@ -12,4 +12,5 @@ public enum Images {
     public static let ticket   = "cora_ticket"
     public static let clock    = "cora_clock"
     public static let share    = "cora_share"
+    public static let filter   = "cora_filter"
 }
