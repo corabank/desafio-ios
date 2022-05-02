@@ -28,9 +28,4 @@ class LoginTests: XCTestCase {
         view.tapRegister()
         XCTAssertTrue(coordinator.goToRegister)
     }
-    
-    func test_chenge_button_state() {
-        setup()
-        
-    }
 }

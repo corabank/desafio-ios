@@ -2,28 +2,51 @@ import XCTest
 @testable import Statement
 
 class StatementTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var model: (StatementViewModelProtocol & StatementViewDelegate)!
+    private var view: StatementViewMock!
+    private var coordinator: StatementCoordinatorMock!
+    private var dataSource: StatementDataSource!
+    
+    func setup() {
+        model = StatementViewModel()
+        view = StatementViewMock()
+        coordinator = StatementCoordinatorMock()
+        dataSource = StatementDataSource()
+        
+        model.set(view: view)
+        model.set(coordinator: coordinator)
+        model.set(dataSource: dataSource)
+        view.set(delegate: model)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_navigate_to_detail() {
+        setup()
+        let item = dataSource.getStatements().first!.itens.first
+        model.selectItem(item: item!)
+        XCTAssertTrue(coordinator.detailItem?.uuid == item?.uuid)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_navigate_filter() {
+        setup()
+        XCTAssertTrue(model?.allStatements().count == 5)
+        
+        model?.incomeStatements().forEach {
+            $0.itens.forEach {
+                XCTAssertTrue($0.paymentStatus == .income)
+            }
+        }
+        
+        model?.outcomeStatements().forEach {
+            $0.itens.forEach {
+                XCTAssertTrue($0.paymentStatus == .outcome)
+            }
+        }
+        
+        model?.futureStatements().forEach {
+            $0.itens.forEach {
+                XCTAssertTrue($0.paymentStatus == .future)
+            }
         }
     }
-
 }

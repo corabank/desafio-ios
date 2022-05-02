@@ -15,4 +15,12 @@ final class PassFormViewMock: UIViewController, PassFormViewProtocol {
     func changeButtonStatus(_ value: ButtonState) {
         buttonStatus = value
     }
+    
+    func nextWithInput(input: String) {
+        delegate?.inputPassword(input)
+    }
+    
+    func goBack() {
+        delegate?.tapBack()
+    }
 }

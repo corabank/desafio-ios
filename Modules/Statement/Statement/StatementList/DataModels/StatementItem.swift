@@ -1,4 +1,5 @@
 public struct StatementItem {
+    let uuid: UUID
     let person: Person
     let status: String
     let paymentType: PaymentType
@@ -11,6 +12,7 @@ public struct StatementItem {
 }
 
 struct StatementDay {
+    let uuid: UUID
     let total: String
     let date: Date
     var itens: [StatementItem]

@@ -99,7 +99,7 @@ final class CPFFormView: UIViewController {
     @objc
     private func nextActionCallback() {
         nextButton.flash()
-        viewModel?.inputCPF(textField.text ?? "")
+        nextWithInput(input: textField.text ?? "")
     }
     
     @objc
@@ -198,6 +198,10 @@ extension CPFFormView: ViewCode {
 }
 
 extension CPFFormView: CPFFormViewProtocol {
+    func nextWithInput(input: String) {
+        viewModel?.inputCPF(input)
+    }
+    
     func changeButtonStatus(_ value: ButtonState) {
         nextButton.state(value)
     }
@@ -205,11 +209,15 @@ extension CPFFormView: CPFFormViewProtocol {
     func set(delegate: CPFFormViewDelegate) {
         self.viewModel = delegate
     }
+    
+    func goBack() {
+        viewModel?.tapBack()
+    }
 }
 
 extension CPFFormView: NavigationBarDelegate {
     func tapBack(){
-        viewModel?.tapBack()
+        goBack()
     }
     
     func tapShare() {}

@@ -19,13 +19,13 @@ class PassFormTests: XCTestCase {
     
     func test_navigate_to_next_form() {
         setup()
-        model.inputPassword("123")
+        view.nextWithInput(input: "123")
         XCTAssertTrue(coordinator.gotToStatementWasTapped)
     }
     
     func test_navigate_back() {
         setup()
-        model.tapBack()
+        view.goBack()
         XCTAssertTrue(coordinator.backWasTapped)
     }
 }

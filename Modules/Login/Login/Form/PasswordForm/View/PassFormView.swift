@@ -116,7 +116,7 @@ final class PassFormView: UIViewController {
     @objc
     private func nextActionCallback() {
         nextButton.flash()
-        viewModel?.inputPassword(textField.text ?? "")
+        nextWithInput(input: textField.text ?? "")
     }
     
     @objc
@@ -229,6 +229,14 @@ extension PassFormView: ViewCode {
 }
 
 extension PassFormView: PassFormViewProtocol {
+    func nextWithInput(input: String) {
+        viewModel?.inputPassword(textField.text ?? "")
+    }
+    
+    func goBack() {
+        viewModel?.tapBack()
+    }
+    
     func changeButtonStatus(_ value: ButtonState) {
         nextButton.state(value)
     }
@@ -240,7 +248,7 @@ extension PassFormView: PassFormViewProtocol {
 
 extension PassFormView: NavigationBarDelegate {
     func tapBack(){
-        viewModel?.tapBack()
+        goBack()
     }
     
     func tapShare() {}

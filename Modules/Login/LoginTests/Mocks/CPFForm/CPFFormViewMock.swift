@@ -15,4 +15,12 @@ final class CPFFormViewMock: UIViewController, CPFFormViewProtocol {
     func changeButtonStatus(_ value: ButtonState) {
         buttonStatus = value
     }
+    
+    func nextWithInput(input: String) {
+        delegate?.inputCPF(input)
+    }
+    
+    func goBack() {
+        delegate?.tapBack()
+    }
 }
