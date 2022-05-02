@@ -101,7 +101,7 @@ final class StatementDetailView: UIViewController {
                        cpf: "CPF \(from.cpf)", bank: from.bank,
                        account: "Agência \(from.agency) - Conta \(from.account)")
         
-        personTo.set(title: "To", name: to.name,
+        personTo.set(title: "Para", name: to.name,
                      cpf: "CPF \(to.cpf)", bank: to.bank,
                      account: "Agência \(to.agency) - Conta \(to.account)")
     }

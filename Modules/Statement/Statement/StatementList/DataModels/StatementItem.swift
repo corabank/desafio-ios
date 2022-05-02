@@ -13,9 +13,13 @@ public struct StatementItem {
 struct StatementDay {
     let total: String
     let date: Date
-    let itens: [StatementItem]
+    var itens: [StatementItem]
+    
+    mutating func setItens(new: [StatementItem]) {
+        itens = new
+    }
 }
 
 enum PaymentType { case pay, ticket, reversal, future }
-enum PaymentStatus { case income, outcome, reverse }
+enum PaymentStatus { case income, outcome, reverse, future }
 enum BankType { case cpf, cnpj }

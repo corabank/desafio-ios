@@ -1,6 +1,9 @@
 protocol StatementViewDelegate: AnyObject {
     func tapBack()
     func tapShare()
-    func getData() -> [StatementDay]?
     func selectItem(item: StatementItem)
+    func allStatements() -> [StatementDay]
+    func incomeStatements() -> [StatementDay]
+    func outcomeStatements() -> [StatementDay]
+    func futureStatements() -> [StatementDay]
 }

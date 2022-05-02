@@ -5,7 +5,19 @@ final class StatementViewModel {
     private var coordinator: StatementCoordinatorProtocol?
     private var dataSource: StatementDataSourceProtocol?
     
+    private lazy var statements: [StatementDay] = []
+    
     init() {}
+    
+    private func filterItens(_ status: PaymentStatus) -> [StatementDay] {
+        var filtered = statements
+        
+        for i in filtered.indices {
+            filtered[i].setItens(new: filtered[i].itens.filter { $0.paymentStatus == status })
+        }
+
+        return filtered.filter { $0.itens.count > 0 }
+    }
 }
 
 extension StatementViewModel: StatementViewModelProtocol {
@@ -23,12 +35,25 @@ extension StatementViewModel: StatementViewModelProtocol {
 }
 
 extension StatementViewModel: StatementViewDelegate {
-    func selectItem(item: StatementItem) {
-        coordinator?.goToDetail(item: item)
+    func allStatements() -> [StatementDay] {
+        if (statements.count == 0) { statements = dataSource?.getStatements() ?? [] }
+        return statements
     }
     
-    func getData() -> [StatementDay]? {
-        dataSource?.getStatements()
+    func incomeStatements() -> [StatementDay] {
+        return filterItens(.income)
+    }
+    
+    func outcomeStatements() -> [StatementDay] {
+        return filterItens(.outcome)
+    }
+    
+    func futureStatements() -> [StatementDay] {
+        return filterItens(.future)
+    }
+    
+    func selectItem(item: StatementItem) {
+        coordinator?.goToDetail(item: item)
     }
     
     func tapBack() {

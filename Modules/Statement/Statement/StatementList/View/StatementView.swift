@@ -110,7 +110,7 @@ extension StatementView: ViewCode {
     }
     
     private func setData() {
-        guard let data = viewModel?.getData() else { return }
+        guard let data = viewModel?.allStatements() else { return }
         sections = data
     }
 }
@@ -134,17 +134,29 @@ extension StatementView: NavigationBarDelegate {
 extension StatementView: StatementSegmentControlDelegate {
     func tapAll() {
         print("all")
+        guard let statements = viewModel?.allStatements() else { return }
+        self.sections = statements
+        table.reloadData()
     }
     
     func tapIncome() {
         print("income")
+        guard let statements = viewModel?.incomeStatements() else { return }
+        self.sections = statements
+        table.reloadData()
     }
     
     func tapOutcome() {
         print("outcome")
+        guard let statements = viewModel?.outcomeStatements() else { return }
+        self.sections = statements
+        table.reloadData()
     }
     
     func tapFuture() {
         print("future")
+        guard let statements = viewModel?.futureStatements() else { return }
+        self.sections = statements
+        table.reloadData()
     }
 }

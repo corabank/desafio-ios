@@ -15,7 +15,6 @@ final class StatementSegmentControl: UIView {
         return stack
     }()
     
-    private lazy var lineAll: UIView = UIView()
     private lazy var buttonAll: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Tudo", for: .normal)
@@ -25,7 +24,6 @@ final class StatementSegmentControl: UIView {
         return button
     }()
     
-    private lazy var lineIncome: UIView = UIView()
     private lazy var buttonIncome: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Entrada", for: .normal)
@@ -35,7 +33,6 @@ final class StatementSegmentControl: UIView {
         return button
     }()
     
-    private lazy var lineOutcome: UIView = UIView()
     private lazy var buttonOutcome: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Saída", for: .normal)
@@ -45,7 +42,6 @@ final class StatementSegmentControl: UIView {
         return button
     }()
     
-    private lazy var lineFuture: UIView = UIView()
     private lazy var buttonFuture: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.setTitle("Futuro", for: .normal)
@@ -71,11 +67,18 @@ final class StatementSegmentControl: UIView {
         buttonFuture.setTitleColor(Colors.mediumGray, for: .normal)
     }
     
+    private func enableAll() {
+        buttonAll.isEnabled = true
+        buttonIncome.isEnabled = true
+        buttonOutcome.isEnabled = true
+        buttonFuture.isEnabled = true
+    }
+    
     @objc
     private func tapAll() {
         grayOut()
         buttonAll.setTitleColor(Colors.pink, for: .normal)
-        buttonAll.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
+        //buttonAll.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
         delegate?.tapAll()
     }
     
@@ -112,10 +115,6 @@ extension StatementSegmentControl: ViewCode {
         mainStack.addArrangedSubview(buttonIncome)
         mainStack.addArrangedSubview(buttonOutcome)
         mainStack.addArrangedSubview(buttonFuture)
-//        buttonAll.addSubview(lineAll)
-//        buttonIncome.addSubview(lineIncome)
-//        buttonOutcome.addSubview(lineOutcome)
-//        buttonFuture.addSubview(lineFuture)
     }
     
     func setConstraints() {
