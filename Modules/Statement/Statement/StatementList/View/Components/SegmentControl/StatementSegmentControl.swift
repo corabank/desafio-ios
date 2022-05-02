@@ -20,6 +20,7 @@ final class StatementSegmentControl: UIView {
         button.setTitle("Tudo", for: .normal)
         button.setTitleColor(Colors.pink, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
+        button.setAttributedTitle(addUnderline("Tudo"), for: .normal)
         button.addTarget(self, action: #selector(tapAll), for: .touchUpInside)
         return button
     }()
@@ -74,31 +75,58 @@ final class StatementSegmentControl: UIView {
         buttonFuture.isEnabled = true
     }
     
+    private func addUnderline(_ text: String?) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: text ?? "", attributes: [
+            .font: UIFont.systemFont(ofSize: Dimensions.fontTiny, weight: .bold),
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ])
+    }
+    
+    private func removeUnderline(_ text: String?) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: text ?? "", attributes: [
+            .font: UIFont.systemFont(ofSize: Dimensions.fontTiny, weight: .regular)
+        ])
+    }
+    
+    private func removeUnderlineFromAll() {
+        buttonAll.setAttributedTitle(removeUnderline(buttonAll.titleLabel?.text), for: .normal)
+        buttonIncome.setAttributedTitle(removeUnderline(buttonIncome.titleLabel?.text), for: .normal)
+        buttonOutcome.setAttributedTitle(removeUnderline(buttonOutcome.titleLabel?.text), for: .normal)
+        buttonFuture.setAttributedTitle(removeUnderline(buttonFuture.titleLabel?.text), for: .normal)
+    }
+    
     @objc
     private func tapAll() {
         grayOut()
+        removeUnderlineFromAll()
         buttonAll.setTitleColor(Colors.pink, for: .normal)
-        buttonAll.titleLabel?.font = .systemFont(ofSize: Dimensions.fontTiny, weight: .bold)
+        buttonAll.setAttributedTitle(addUnderline(buttonAll.titleLabel?.text), for: .normal)
         delegate?.tapAll()
     }
     
     @objc
     private func tapIncome() {
         grayOut()
+        removeUnderlineFromAll()
         buttonIncome.setTitleColor(Colors.pink, for: .normal)
+        buttonIncome.setAttributedTitle(addUnderline(buttonIncome.titleLabel?.text), for: .normal)
         delegate?.tapIncome()
     }
     
     @objc
     private func tapOutcome() {
         grayOut()
+        removeUnderlineFromAll()
         buttonOutcome.setTitleColor(Colors.pink, for: .normal)
+        buttonOutcome.setAttributedTitle(addUnderline(buttonOutcome.titleLabel?.text), for: .normal)
         delegate?.tapOutcome()
     }
     
     @objc
     private func tapFuture() {
         grayOut()
+        removeUnderlineFromAll()
+        buttonFuture.setAttributedTitle(addUnderline(buttonFuture.titleLabel?.text), for: .normal)
         buttonFuture.setTitleColor(Colors.pink, for: .normal)
         delegate?.tapFuture()
     }
