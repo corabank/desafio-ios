@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592A22D0282DAFF3003B4AE3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A22CF282DAFF3003B4AE3 /* Strings.swift */; };
 		59C0EEE8282B43020037E3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE7282B43020037E3BB /* AppDelegate.swift */; };
 		59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE9282B43020037E3BB /* SceneDelegate.swift */; };
 		59C0EEEC282B43020037E3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEEB282B43020037E3BB /* ViewController.swift */; };
 		59C0EEF1282B43040037E3BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C0EEF0282B43040037E3BB /* Assets.xcassets */; };
 		59C0EEF4282B43040037E3BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C0EEF2282B43040037E3BB /* LaunchScreen.storyboard */; };
-		59C0EEFF282B43050037E3BB /* Desafio_CoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEFE282B43050037E3BB /* Desafio_CoraTests.swift */; };
-		59C0EF09282B43050037E3BB /* Desafio_CoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EF08282B43050037E3BB /* Desafio_CoraUITests.swift */; };
-		59C0EF0B282B43050037E3BB /* Desafio_CoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EF0A282B43050037E3BB /* Desafio_CoraUITestsLaunchTests.swift */; };
+		59C0EEFF282B43050037E3BB /* DesafioCoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEFE282B43050037E3BB /* DesafioCoraTests.swift */; };
+		59C0EF09282B43050037E3BB /* DesafioCoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EF08282B43050037E3BB /* DesafioCoraUITests.swift */; };
+		59C0EF0B282B43050037E3BB /* DesafioCoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EF0A282B43050037E3BB /* DesafioCoraUITestsLaunchTests.swift */; };
 		59C0EF18282B45CA0037E3BB /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EF17282B45CA0037E3BB /* RootCoordinator.swift */; };
 		59C0EF1B282B46320037E3BB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EF1A282B46320037E3BB /* Coordinator.swift */; };
 		59C0EF21282B4C630037E3BB /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EF20282B4C630037E3BB /* LoginCoordinator.swift */; };
@@ -25,6 +26,10 @@
 		59C85F69282C4AEE00D83844 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C85F68282C4AEE00D83844 /* IntroViewController.swift */; };
 		59C85F6B282C4B0700D83844 /* IntroScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C85F6A282C4B0700D83844 /* IntroScreen.swift */; };
 		59C85F6D282C4BB400D83844 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C85F6C282C4BB400D83844 /* CodeView.swift */; };
+		59D8B404282C9D88004D9D5A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B403282C9D88004D9D5A /* Fonts.swift */; };
+		59D8B406282C9D93004D9D5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B405282C9D93004D9D5A /* Colors.swift */; };
+		59D8B408282C9DC9004D9D5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59D8B407282C9DC9004D9D5A /* Colors.xcassets */; };
+		59D8B40A282CA260004D9D5A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B409282CA260004D9D5A /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		592A22CF282DAFF3003B4AE3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		59C0EEE4282B43020037E3BB /* Desafio Cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio Cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C0EEE7282B43020037E3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C0EEE9282B43020037E3BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,10 +59,10 @@
 		59C0EEF3282B43040037E3BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59C0EEF5282B43040037E3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59C0EEFA282B43050037E3BB /* Desafio CoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desafio CoraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59C0EEFE282B43050037E3BB /* Desafio_CoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_CoraTests.swift; sourceTree = "<group>"; };
+		59C0EEFE282B43050037E3BB /* DesafioCoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraTests.swift; sourceTree = "<group>"; };
 		59C0EF04282B43050037E3BB /* Desafio CoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desafio CoraUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59C0EF08282B43050037E3BB /* Desafio_CoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_CoraUITests.swift; sourceTree = "<group>"; };
-		59C0EF0A282B43050037E3BB /* Desafio_CoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_CoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59C0EF08282B43050037E3BB /* DesafioCoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraUITests.swift; sourceTree = "<group>"; };
+		59C0EF0A282B43050037E3BB /* DesafioCoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioCoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59C0EF17282B45CA0037E3BB /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		59C0EF1A282B46320037E3BB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		59C0EF20282B4C630037E3BB /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -67,6 +73,10 @@
 		59C85F68282C4AEE00D83844 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		59C85F6A282C4B0700D83844 /* IntroScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreen.swift; sourceTree = "<group>"; };
 		59C85F6C282C4BB400D83844 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		59D8B403282C9D88004D9D5A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		59D8B405282C9D93004D9D5A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		59D8B407282C9DC9004D9D5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		59D8B409282CA260004D9D5A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,13 +127,12 @@
 		59C0EEE6282B43020037E3BB /* Desafio Cora */ = {
 			isa = PBXGroup;
 			children = (
-				59C0EEEB282B43020037E3BB /* ViewController.swift */,
+				59D8B402282C9D77004D9D5A /* DesignSystem */,
 				59C0EF29282B641A0037E3BB /* Features */,
 				59C0EF19282B461A0037E3BB /* Coordinator */,
 				59C0EF28282B63DC0037E3BB /* System */,
-				59C0EEF0282B43040037E3BB /* Assets.xcassets */,
 				59C0EEF2282B43040037E3BB /* LaunchScreen.storyboard */,
-				59C85F6C282C4BB400D83844 /* CodeView.swift */,
+				59C0EEEB282B43020037E3BB /* ViewController.swift */,
 			);
 			path = "Desafio Cora";
 			sourceTree = "<group>";
@@ -131,7 +140,7 @@
 		59C0EEFD282B43050037E3BB /* Desafio CoraTests */ = {
 			isa = PBXGroup;
 			children = (
-				59C0EEFE282B43050037E3BB /* Desafio_CoraTests.swift */,
+				59C0EEFE282B43050037E3BB /* DesafioCoraTests.swift */,
 			);
 			path = "Desafio CoraTests";
 			sourceTree = "<group>";
@@ -139,8 +148,8 @@
 		59C0EF07282B43050037E3BB /* Desafio CoraUITests */ = {
 			isa = PBXGroup;
 			children = (
-				59C0EF08282B43050037E3BB /* Desafio_CoraUITests.swift */,
-				59C0EF0A282B43050037E3BB /* Desafio_CoraUITestsLaunchTests.swift */,
+				59C0EF08282B43050037E3BB /* DesafioCoraUITests.swift */,
+				59C0EF0A282B43050037E3BB /* DesafioCoraUITestsLaunchTests.swift */,
 			);
 			path = "Desafio CoraUITests";
 			sourceTree = "<group>";
@@ -177,9 +186,9 @@
 		59C0EF2A282B64240037E3BB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				59C85F63282C361700D83844 /* LoginScreen.swift */,
 				59C0EF20282B4C630037E3BB /* LoginCoordinator.swift */,
 				59C0EF24282B5A960037E3BB /* LoginViewController.swift */,
+				59C85F63282C361700D83844 /* LoginScreen.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -192,6 +201,20 @@
 				59C85F6A282C4B0700D83844 /* IntroScreen.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		59D8B402282C9D77004D9D5A /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				59D8B407282C9DC9004D9D5A /* Colors.xcassets */,
+				59C0EEF0282B43040037E3BB /* Assets.xcassets */,
+				59C85F6C282C4BB400D83844 /* CodeView.swift */,
+				59D8B403282C9D88004D9D5A /* Fonts.swift */,
+				59D8B405282C9D93004D9D5A /* Colors.swift */,
+				59D8B409282CA260004D9D5A /* Images.swift */,
+				592A22CF282DAFF3003B4AE3 /* Strings.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D8B408282C9DC9004D9D5A /* Colors.xcassets in Resources */,
 				59C0EEF4282B43040037E3BB /* LaunchScreen.storyboard in Resources */,
 				59C0EEF1282B43040037E3BB /* Assets.xcassets in Resources */,
 			);
@@ -324,6 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D8B404282C9D88004D9D5A /* Fonts.swift in Sources */,
+				59D8B406282C9D93004D9D5A /* Colors.swift in Sources */,
 				59C0EF25282B5A960037E3BB /* LoginViewController.swift in Sources */,
 				59C0EF18282B45CA0037E3BB /* RootCoordinator.swift in Sources */,
 				59C85F64282C361800D83844 /* LoginScreen.swift in Sources */,
@@ -334,7 +360,9 @@
 				59C0EF1B282B46320037E3BB /* Coordinator.swift in Sources */,
 				59C0EEE8282B43020037E3BB /* AppDelegate.swift in Sources */,
 				59C0EF27282B5BBD0037E3BB /* ViewControllerCoordinator.swift in Sources */,
+				592A22D0282DAFF3003B4AE3 /* Strings.swift in Sources */,
 				59C85F69282C4AEE00D83844 /* IntroViewController.swift in Sources */,
+				59D8B40A282CA260004D9D5A /* Images.swift in Sources */,
 				59C0EF21282B4C630037E3BB /* LoginCoordinator.swift in Sources */,
 				59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */,
 			);
@@ -344,7 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59C0EEFF282B43050037E3BB /* Desafio_CoraTests.swift in Sources */,
+				59C0EEFF282B43050037E3BB /* DesafioCoraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,8 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59C0EF09282B43050037E3BB /* Desafio_CoraUITests.swift in Sources */,
-				59C0EF0B282B43050037E3BB /* Desafio_CoraUITestsLaunchTests.swift in Sources */,
+				59C0EF09282B43050037E3BB /* DesafioCoraUITests.swift in Sources */,
+				59C0EF0B282B43050037E3BB /* DesafioCoraUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

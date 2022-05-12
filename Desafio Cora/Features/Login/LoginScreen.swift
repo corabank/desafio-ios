@@ -8,7 +8,7 @@
 import UIKit
 
 final class LoginScreen: UIView {
-    
+
     lazy var button: UIButton = {
         let btn = UIButton(frame: .zero)
         btn.backgroundColor = .red
@@ -16,12 +16,12 @@ final class LoginScreen: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
-    
+
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setupView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -31,7 +31,7 @@ extension LoginScreen: CodeView {
     func buildViewHierarchy() {
         addSubview(button)
     }
-    
+
     func setupConstraints() {
         button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
         button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
@@ -39,10 +39,8 @@ extension LoginScreen: CodeView {
         button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
 
     }
-    
+
     func setupAdditionalConfigaration() {
         backgroundColor = .darkGray
     }
-    
-    
 }

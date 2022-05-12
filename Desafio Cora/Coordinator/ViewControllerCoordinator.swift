@@ -18,9 +18,8 @@ class ViewControllerCoordinator: NSObject, Coordinator {
     }
 
     func start() {
-        let vc = ViewController()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewC = ViewController()
+        viewC.coordinator = self
+        navigationController.pushViewController(viewC, animated: true)
     }
-    
 }

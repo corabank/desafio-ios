@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public class RootCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
-    
+
     // MARK: - Properties
     public var navigationController: UINavigationController = UINavigationController()
     public var rootViewController: UIViewController { navigationController }
@@ -27,9 +27,9 @@ public class RootCoordinator: NSObject, Coordinator, UINavigationControllerDeleg
 
     public func start() {
         navigationController.delegate = self
-        let lc = LoginCoordinator(navigationController: navigationController)
-        addChild(lc)
-        lc.start()
+        let introCoordinator = IntroCoordinator(navigationController: navigationController)
+        addChild(introCoordinator)
+        introCoordinator.start()
     }
 
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
@@ -46,8 +46,7 @@ public class RootCoordinator: NSObject, Coordinator, UINavigationControllerDeleg
         // We’re still here – it means we’re popping the view controller, so we can check whether it’s a buy view controller
         if let buyViewController = fromViewController as? ViewController {
             // We're popping a buy view controller; end its coordinator
-            removeChild(buyViewController.coordinator) // transformar em base view controller
+            removeChild(buyViewController.coordinator)
         }
     }
 }
-

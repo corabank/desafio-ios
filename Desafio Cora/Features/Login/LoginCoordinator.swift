@@ -18,14 +18,14 @@ class LoginCoordinator: NSObject, Coordinator {
     }
 
     func start() {
-        let vc = LoginViewController()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let loginVC = LoginViewController()
+        loginVC.coordinator = self
+        navigationController.pushViewController(loginVC, animated: true)
     }
 
     func addAnother() {
-        let vc = ViewControllerCoordinator(navigationController: navigationController)
-        self.addChild(vc)
-        vc.start()
+        let viewC = ViewControllerCoordinator(navigationController: navigationController)
+        self.addChild(viewC)
+        viewC.start()
     }
 }
