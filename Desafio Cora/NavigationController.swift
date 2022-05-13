@@ -31,5 +31,6 @@ public class NavigationController: UINavigationController {
         backButtonAppearence.normal.titleTextAttributes = titleTextAttributes
         backButtonAppearence.highlighted.titleTextAttributes = titleTextAttributes
         appearance.backButtonAppearance = backButtonAppearence
+        self.navigationBar.sizeToFit()
     }
 }

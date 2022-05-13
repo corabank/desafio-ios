@@ -25,7 +25,7 @@ class PasswordCoordinator: NSObject, Coordinator {
 
     func goToInvoice() {
         let invoiceC = InvoiceCoordinator(navigationController: navigationController)
-        setRootCoordinator(invoiceC)
+        addChild(invoiceC)
         invoiceC.start()
     }
 }

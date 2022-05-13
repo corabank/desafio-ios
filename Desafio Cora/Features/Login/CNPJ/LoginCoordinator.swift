@@ -21,7 +21,6 @@ class LoginCoordinator: NSObject, Coordinator {
         let loginVC = LoginViewController()
         loginVC.coordinator = self
         navigationController.isNavigationBarHidden = false
-        navigationController.setNavigationAppearence(color: .black)
         navigationController.pushViewController(loginVC, animated: true)
     }
 

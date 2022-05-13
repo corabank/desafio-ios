@@ -20,5 +20,6 @@ class InvoiceCoordinator: NSObject, Coordinator {
         let invoiceVC = InvoiceViewController()
         invoiceVC.coordinator = self
         navigationController.viewControllers = [invoiceVC]
+        navigationController.navigationBar.backgroundColor = .red
     }
 }
