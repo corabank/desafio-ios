@@ -10,15 +10,17 @@ import UIKit
 class IntroCoordinator: NSObject, Coordinator {
     var childCoordinators = [Coordinator]()
     weak var parent: Coordinator?
-    var navigationController: UINavigationController
+    var navigationController: NavigationController
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: NavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
         let introVC = IntroViewController()
         introVC.coordinator = self
+        navigationController.isNavigationBarHidden = true
+        navigationController.setNavigationAppearence(color: .gray2)
         navigationController.pushViewController(introVC, animated: true)
     }
 

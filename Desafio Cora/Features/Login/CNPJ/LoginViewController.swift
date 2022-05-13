@@ -10,14 +10,15 @@ import UIKit
 
 class LoginViewController: UIViewController {
     weak var coordinator: LoginCoordinator?
+    var screen: LoginScreen?
 
     override func loadView() {
-        let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = .blue
-        self.view = view
+        screen = LoginScreen()
+        self.view = screen
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Login Cora"
     }
 }

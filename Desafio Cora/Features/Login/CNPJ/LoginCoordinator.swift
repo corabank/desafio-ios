@@ -11,15 +11,17 @@ import UIKit
 class LoginCoordinator: NSObject, Coordinator {
     var childCoordinators = [Coordinator]()
     weak var parent: Coordinator?
-    var navigationController: UINavigationController
+    var navigationController: NavigationController
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: NavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
         let loginVC = LoginViewController()
         loginVC.coordinator = self
+        navigationController.isNavigationBarHidden = false
+        navigationController.setNavigationAppearence(color: .black)
         navigationController.pushViewController(loginVC, animated: true)
     }
 

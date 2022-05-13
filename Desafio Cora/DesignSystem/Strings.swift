@@ -14,5 +14,10 @@ struct Strings {
     static let introBody = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos."
     static let buttonSignUpTitle = "Quero fazer parte!"
     static let buttonSignInTitle = "Já sou cliente"
+    
+    // MARK: - Login
+    static let loginTitle = "Bem-vindo de volta!"
+    static let loginSubtitle = "Qual seu CNPJ?"
+    static let loginButtonTitle = "Próximo"
 
 }

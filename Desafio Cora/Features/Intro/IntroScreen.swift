@@ -36,7 +36,7 @@ final class IntroScreen: UIView {
         label.text = Strings.introTitle
         label.font = Fonts.getFont(.bold(size: 28))()
         label.numberOfLines = 0
-        label.textColor = Colors.white
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -46,7 +46,7 @@ final class IntroScreen: UIView {
         label.text = Strings.introSubTitle
         label.font = Fonts.getFont(.regular(size: 28))()
         label.numberOfLines = 0
-        label.textColor = Colors.white
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -56,7 +56,7 @@ final class IntroScreen: UIView {
         label.text = Strings.introBody
         label.font = Fonts.getFont(.regular(size: 16))()
         label.numberOfLines = 0
-        label.textColor = Colors.white
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -72,10 +72,11 @@ final class IntroScreen: UIView {
     private lazy var signUpButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.setTitle(Strings.buttonSignUpTitle, for: .normal)
-        button.setTitleColor(Colors.primary, for: [])
+        button.setTitleColor(.primary, for: [])
         button.layer.cornerRadius = 16
-        button.layer.borderColor = Colors.white.cgColor
-        button.backgroundColor = Colors.white
+        button.layer.borderColor = UIColor.white.cgColor
+        button.backgroundColor = .white
+        button.addImageOnRightSide(Images.rightArrowPink)
         button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -87,7 +88,7 @@ final class IntroScreen: UIView {
         button.setTitleColor(.white, for: [])
         button.layer.cornerRadius = 16
         button.backgroundColor = .clear
-        button.layer.borderColor = Colors.white.cgColor
+        button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -138,7 +139,6 @@ extension IntroScreen: CodeView {
         introBackground.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         introBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         introBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        introBackground.heightAnchor.constraint(equalToConstant: 336).isActive = true
 
         coraLogo.topAnchor.constraint(equalTo: self.topAnchor, constant: 48).isActive = true
         coraLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
@@ -152,17 +152,15 @@ extension IntroScreen: CodeView {
         introBody.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
         introBody.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24).isActive = true
         
-        buttonsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -64).isActive = true
+        buttonsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -48).isActive = true
         buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
         buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24).isActive = true
-        buttonsStackView.heightAnchor.constraint(equalToConstant: 128).isActive = true
 
         signUpButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
-
         loginButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
     }
 
     func setupAdditionalConfigaration() {
-        backgroundColor = Colors.primary
+        backgroundColor = .primary
     }
 }

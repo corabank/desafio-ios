@@ -10,4 +10,6 @@ import UIKit
 enum Images {
     static let introBackground = UIImage(named: "personBackground")
     static let coraLogo = UIImage(named: "coraLogo")
+    static let rightArrowPink = UIImage(named: "rightArrowPink")
+    static let rightArrowWhite = UIImage(named: "rightArrowWhite")
 }

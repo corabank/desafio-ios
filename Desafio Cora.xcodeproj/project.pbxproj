@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		592A22D0282DAFF3003B4AE3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A22CF282DAFF3003B4AE3 /* Strings.swift */; };
+		5972EE42282E9C2D00E87EC9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE41282E9C2D00E87EC9 /* UIButton.swift */; };
+		5972EE46282EA20300E87EC9 /* PasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE45282EA20300E87EC9 /* PasswordScreen.swift */; };
+		5972EE48282EA26F00E87EC9 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE47282EA26F00E87EC9 /* PasswordCoordinator.swift */; };
+		5972EE4A282EA28000E87EC9 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE49282EA28000E87EC9 /* PasswordViewController.swift */; };
 		59C0EEE8282B43020037E3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE7282B43020037E3BB /* AppDelegate.swift */; };
 		59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE9282B43020037E3BB /* SceneDelegate.swift */; };
 		59C0EEEC282B43020037E3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEEB282B43020037E3BB /* ViewController.swift */; };
@@ -30,6 +34,8 @@
 		59D8B406282C9D93004D9D5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B405282C9D93004D9D5A /* Colors.swift */; };
 		59D8B408282C9DC9004D9D5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59D8B407282C9DC9004D9D5A /* Colors.xcassets */; };
 		59D8B40A282CA260004D9D5A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B409282CA260004D9D5A /* Images.swift */; };
+		59E0DECB282DEA52007DF393 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0DECA282DEA52007DF393 /* NavigationController.swift */; };
+		59E0DECE282E006B007DF393 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0DECD282E006B007DF393 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,10 @@
 
 /* Begin PBXFileReference section */
 		592A22CF282DAFF3003B4AE3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		5972EE41282E9C2D00E87EC9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		5972EE45282EA20300E87EC9 /* PasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreen.swift; sourceTree = "<group>"; };
+		5972EE47282EA26F00E87EC9 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
+		5972EE49282EA28000E87EC9 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		59C0EEE4282B43020037E3BB /* Desafio Cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio Cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C0EEE7282B43020037E3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C0EEE9282B43020037E3BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +87,8 @@
 		59D8B405282C9D93004D9D5A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		59D8B407282C9DC9004D9D5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		59D8B409282CA260004D9D5A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		59E0DECA282DEA52007DF393 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		59E0DECD282E006B007DF393 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5972EE43282EA1A200E87EC9 /* CNPJ */ = {
+			isa = PBXGroup;
+			children = (
+				59C0EF20282B4C630037E3BB /* LoginCoordinator.swift */,
+				59C0EF24282B5A960037E3BB /* LoginViewController.swift */,
+				59C85F63282C361700D83844 /* LoginScreen.swift */,
+			);
+			path = CNPJ;
+			sourceTree = "<group>";
+		};
+		5972EE44282EA1BA00E87EC9 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				5972EE47282EA26F00E87EC9 /* PasswordCoordinator.swift */,
+				5972EE49282EA28000E87EC9 /* PasswordViewController.swift */,
+				5972EE45282EA20300E87EC9 /* PasswordScreen.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
 		59C0EEDB282B43020037E3BB = {
 			isa = PBXGroup;
 			children = (
@@ -127,12 +159,14 @@
 		59C0EEE6282B43020037E3BB /* Desafio Cora */ = {
 			isa = PBXGroup;
 			children = (
+				59E0DECC282E0051007DF393 /* Extensions */,
 				59D8B402282C9D77004D9D5A /* DesignSystem */,
 				59C0EF29282B641A0037E3BB /* Features */,
 				59C0EF19282B461A0037E3BB /* Coordinator */,
 				59C0EF28282B63DC0037E3BB /* System */,
 				59C0EEF2282B43040037E3BB /* LaunchScreen.storyboard */,
 				59C0EEEB282B43020037E3BB /* ViewController.swift */,
+				59E0DECA282DEA52007DF393 /* NavigationController.swift */,
 			);
 			path = "Desafio Cora";
 			sourceTree = "<group>";
@@ -186,9 +220,8 @@
 		59C0EF2A282B64240037E3BB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				59C0EF20282B4C630037E3BB /* LoginCoordinator.swift */,
-				59C0EF24282B5A960037E3BB /* LoginViewController.swift */,
-				59C85F63282C361700D83844 /* LoginScreen.swift */,
+				5972EE43282EA1A200E87EC9 /* CNPJ */,
+				5972EE44282EA1BA00E87EC9 /* Password */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -215,6 +248,15 @@
 				592A22CF282DAFF3003B4AE3 /* Strings.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		59E0DECC282E0051007DF393 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59E0DECD282E006B007DF393 /* String.swift */,
+				5972EE41282E9C2D00E87EC9 /* UIButton.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,14 +395,20 @@
 				59C0EF25282B5A960037E3BB /* LoginViewController.swift in Sources */,
 				59C0EF18282B45CA0037E3BB /* RootCoordinator.swift in Sources */,
 				59C85F64282C361800D83844 /* LoginScreen.swift in Sources */,
+				59E0DECE282E006B007DF393 /* String.swift in Sources */,
+				59E0DECB282DEA52007DF393 /* NavigationController.swift in Sources */,
 				59C85F67282C4ADF00D83844 /* IntroCoordinator.swift in Sources */,
 				59C85F6B282C4B0700D83844 /* IntroScreen.swift in Sources */,
+				5972EE48282EA26F00E87EC9 /* PasswordCoordinator.swift in Sources */,
 				59C0EEEC282B43020037E3BB /* ViewController.swift in Sources */,
 				59C85F6D282C4BB400D83844 /* CodeView.swift in Sources */,
 				59C0EF1B282B46320037E3BB /* Coordinator.swift in Sources */,
+				5972EE46282EA20300E87EC9 /* PasswordScreen.swift in Sources */,
 				59C0EEE8282B43020037E3BB /* AppDelegate.swift in Sources */,
 				59C0EF27282B5BBD0037E3BB /* ViewControllerCoordinator.swift in Sources */,
 				592A22D0282DAFF3003B4AE3 /* Strings.swift in Sources */,
+				5972EE42282E9C2D00E87EC9 /* UIButton.swift in Sources */,
+				5972EE4A282EA28000E87EC9 /* PasswordViewController.swift in Sources */,
 				59C85F69282C4AEE00D83844 /* IntroViewController.swift in Sources */,
 				59D8B40A282CA260004D9D5A /* Images.swift in Sources */,
 				59C0EF21282B4C630037E3BB /* LoginCoordinator.swift in Sources */,

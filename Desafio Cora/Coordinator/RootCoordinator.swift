@@ -11,7 +11,7 @@ import UIKit
 public class RootCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
 
     // MARK: - Properties
-    public var navigationController: UINavigationController = UINavigationController()
+    public var navigationController: NavigationController = NavigationController()
     public var rootViewController: UIViewController { navigationController }
     public var childCoordinators = [Coordinator]()
     public var parent: Coordinator?
