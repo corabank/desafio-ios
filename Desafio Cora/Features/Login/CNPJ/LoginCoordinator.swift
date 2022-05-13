@@ -25,9 +25,9 @@ class LoginCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(loginVC, animated: true)
     }
 
-    func addAnother() {
-        let viewC = ViewControllerCoordinator(navigationController: navigationController)
-        self.addChild(viewC)
-        viewC.start()
+    func goToPassword() {
+        let passwordC = PasswordCoordinator(navigationController: navigationController)
+        self.addChild(passwordC)
+        passwordC.start()
     }
 }

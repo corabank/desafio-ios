@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol LoginScreenDelegate: AnyObject {
+    func nextButtonPressed()
+}
+
 final class LoginScreen: UIView {
+    weak var delegate: LoginScreenDelegate?
 
     private lazy var loginTitle: UILabel = {
         let label = UILabel()
@@ -74,7 +79,8 @@ final class LoginScreen: UIView {
     }
     
     @objc func nextButtonTapped() {
-        
+        endEditing(true)
+        delegate?.nextButtonPressed()
     }
 }
 
@@ -99,6 +105,22 @@ extension LoginScreen: CodeView {
             loginTextField.heightAnchor.constraint(equalToConstant: 32)
         ])
         
+        if #available(iOS 15.0, *) {
+            NSLayoutConstraint.activate([
+                nextButton.bottomAnchor.constraint(equalTo: self.keyboardLayoutGuide.topAnchor, constant: -24),
+                nextButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
+                nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
+                nextButton.heightAnchor.constraint(equalToConstant: 48)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                nextButton.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 128),
+                nextButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
+                nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
+                nextButton.heightAnchor.constraint(equalToConstant: 48)
+            ])
+        }
+
         if #available(iOS 15.0, *) {
             NSLayoutConstraint.activate([
                 nextButton.bottomAnchor.constraint(equalTo: self.keyboardLayoutGuide.topAnchor, constant: -24),

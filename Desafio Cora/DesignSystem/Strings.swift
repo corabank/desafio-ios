@@ -20,4 +20,9 @@ struct Strings {
     static let loginSubtitle = "Qual seu CNPJ?"
     static let loginButtonTitle = "Próximo"
 
+    // MARK: - Password
+    static let passwordTitle = "Bem-vindo de volta!"
+    static let forgotPasswordTitle = "Qual seu CNPJ?"
+    static let nextButtonTitle = "Login!"
+
 }

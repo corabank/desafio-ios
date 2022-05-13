@@ -12,4 +12,5 @@ enum Images {
     static let coraLogo = UIImage(named: "coraLogo")
     static let rightArrowPink = UIImage(named: "rightArrowPink")
     static let rightArrowWhite = UIImage(named: "rightArrowWhite")
+    static let eyeHidden = UIImage(named: "eyeHidden")
 }

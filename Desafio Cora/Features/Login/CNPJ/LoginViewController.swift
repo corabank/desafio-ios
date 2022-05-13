@@ -14,11 +14,18 @@ class LoginViewController: UIViewController {
 
     override func loadView() {
         screen = LoginScreen()
+        screen?.delegate = self
         self.view = screen
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login Cora"
+    }
+}
+
+extension LoginViewController: LoginScreenDelegate {
+    func nextButtonPressed() {
+        coordinator?.goToPassword()
     }
 }

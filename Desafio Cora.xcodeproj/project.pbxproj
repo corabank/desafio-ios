@@ -12,6 +12,8 @@
 		5972EE46282EA20300E87EC9 /* PasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE45282EA20300E87EC9 /* PasswordScreen.swift */; };
 		5972EE48282EA26F00E87EC9 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE47282EA26F00E87EC9 /* PasswordCoordinator.swift */; };
 		5972EE4A282EA28000E87EC9 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE49282EA28000E87EC9 /* PasswordViewController.swift */; };
+		59AA52BD282EEB93003DDE81 /* InvoiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */; };
+		59AA52BF282EEBD3003DDE81 /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */; };
 		59C0EEE8282B43020037E3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE7282B43020037E3BB /* AppDelegate.swift */; };
 		59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE9282B43020037E3BB /* SceneDelegate.swift */; };
 		59C0EEEC282B43020037E3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEEB282B43020037E3BB /* ViewController.swift */; };
@@ -61,6 +63,8 @@
 		5972EE45282EA20300E87EC9 /* PasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreen.swift; sourceTree = "<group>"; };
 		5972EE47282EA26F00E87EC9 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
 		5972EE49282EA28000E87EC9 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCoordinator.swift; sourceTree = "<group>"; };
+		59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		59C0EEE4282B43020037E3BB /* Desafio Cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio Cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C0EEE7282B43020037E3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C0EEE9282B43020037E3BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,15 @@
 				5972EE45282EA20300E87EC9 /* PasswordScreen.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		59AA52BB282EEB74003DDE81 /* Invoices */ = {
+			isa = PBXGroup;
+			children = (
+				59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */,
+				59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */,
+			);
+			path = Invoices;
 			sourceTree = "<group>";
 		};
 		59C0EEDB282B43020037E3BB = {
@@ -213,6 +226,7 @@
 			children = (
 				59C85F65282C4AC000D83844 /* Intro */,
 				59C0EF2A282B64240037E3BB /* Login */,
+				59AA52BB282EEB74003DDE81 /* Invoices */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -406,12 +420,14 @@
 				5972EE46282EA20300E87EC9 /* PasswordScreen.swift in Sources */,
 				59C0EEE8282B43020037E3BB /* AppDelegate.swift in Sources */,
 				59C0EF27282B5BBD0037E3BB /* ViewControllerCoordinator.swift in Sources */,
+				59AA52BD282EEB93003DDE81 /* InvoiceCoordinator.swift in Sources */,
 				592A22D0282DAFF3003B4AE3 /* Strings.swift in Sources */,
 				5972EE42282E9C2D00E87EC9 /* UIButton.swift in Sources */,
 				5972EE4A282EA28000E87EC9 /* PasswordViewController.swift in Sources */,
 				59C85F69282C4AEE00D83844 /* IntroViewController.swift in Sources */,
 				59D8B40A282CA260004D9D5A /* Images.swift in Sources */,
 				59C0EF21282B4C630037E3BB /* LoginCoordinator.swift in Sources */,
+				59AA52BF282EEBD3003DDE81 /* InvoiceViewController.swift in Sources */,
 				59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
