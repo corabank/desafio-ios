@@ -7,7 +7,6 @@ strings:
     output: Strings.swift
     params:
       enumName: "Strings"
-      bundle: CoraResources.resourcesBundle
 xcassets:
   - inputs: Design System/Assets/Colors.xcassets
     outputs:
@@ -15,11 +14,9 @@ xcassets:
         output: Colors.swift
         params:
           enumName: Colors
-          bundle: CoraResources.resourcesBundle
   - inputs: Design System/Assets/Images.xcassets
     outputs:
       - templateName: swift5
         output: Images.swift
         params:
           enumName: "Images"
-          bundle: CoraResources.resourcesBundle

@@ -18,7 +18,8 @@ internal enum Strings {
     internal static let signIn = Strings.tr("Localizable", "home.signIn")
     /// Quero fazer parte!
     internal static let signUp = Strings.tr("Localizable", "home.signUp")
-    /// Conta Digital PJ/nPoderosamente simples
+    /// Conta Digital PJ
+    /// Poderosamente simples
     internal static let title = Strings.tr("Localizable", "home.title")
   }
 }
@@ -29,7 +30,19 @@ internal enum Strings {
 
 extension Strings {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
-    let format = CoraResources.resourcesBundle.localizedString(forKey: key, value: nil, table: table)
+    let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
     return String(format: format, locale: Locale.current, arguments: args)
   }
 }
+
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle: Bundle = {
+    #if SWIFT_PACKAGE
+    return Bundle.module
+    #else
+    return Bundle(for: BundleToken.self)
+    #endif
+  }()
+}
+// swiftlint:enable convenience_type
