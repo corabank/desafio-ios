@@ -24,5 +24,7 @@ class BaseViewController<Interactor>: UIViewController, BuildableView {
     
     func setupConstraints() { }
     
-    func setupStyles() { }
+    func setupStyles() {
+        navigationController?.isNavigationBarHidden = true
+    }
 }

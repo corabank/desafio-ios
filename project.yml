@@ -1,7 +1,7 @@
 name: Cora
 options: 
   deploymentTarget: 
-    iOS: 14.0
+    iOS: 15.0
   generateEmptyDirectories: true
 
 targets: 
@@ -9,7 +9,7 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: 
-      iOS: 14.0
+      iOS: 15.0
     sources: Sources
     settings:
       base:
@@ -21,7 +21,7 @@ targets:
     type: bundle.unit-test
     platform: iOS
     deploymentTarget: 
-      iOS: 14.0
+      iOS: 15.0
     sources: Tests
     dependencies: 
       - target: Cora

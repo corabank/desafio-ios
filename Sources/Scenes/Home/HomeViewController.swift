@@ -36,17 +36,58 @@ final class HomeViewController: BaseViewController<HomeInteracting> {
     private lazy var textsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptonLabel])
         stackView.axis = .vertical
-        stackView.spacing = 16
+        stackView.spacing = Spacing.space03
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 24, right: 24)
+        stackView.layoutMargins = UIEdgeInsets(top: Spacing.space03,
+                                               left: Spacing.space04,
+                                               bottom: Spacing.space04,
+                                               right: Spacing.space04)
+        return stackView
+    }()
+    
+    private lazy var signUpButton: Button = {
+        let action = UIAction { _ in print("Sign Up Clicked") }
+        let button = Button(title: Localizable.signUp,
+                            titleColor: Colors.branding00.color,
+                            action: action,
+                            icon: Images.icArrowRight.image,
+                            style: .large)
+        button.backgroundColor = Colors.white.color
+        button.border(radius: Radius.large)
+        return button
+    }()
+    
+    private lazy var signInButton: Button = {
+        let action = UIAction { [weak self] _ in
+            self?.interactor.goSignInScene()
+        }
+        let button = Button(title: Localizable.signIn,
+                            titleColor: Colors.white.color,
+                            action: action,
+                            style: .medium)
+        button.backgroundColor = .clear
+        button.border(color: Colors.white.color, radius: Radius.medium)
+        return button
+    }()
+    
+    private lazy var buttonsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [signUpButton, signInButton])
+        stackView.axis = .vertical
+        stackView.spacing = Spacing.space03
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: .zero,
+                                               left: Spacing.space04,
+                                               bottom: Spacing.space03,
+                                               right: Spacing.space04)
         return stackView
     }()
     
     // MARK: BuildableView
     
     override func setupHierarchy() {
-        view.addSubviews(bannerImage, logoImage, textsStackView)
+        view.addSubviews(bannerImage, logoImage, textsStackView, buttonsStackView)
     }
     
     override func setupConstraints() {
@@ -57,8 +98,9 @@ final class HomeViewController: BaseViewController<HomeInteracting> {
         ])
         
         NSLayoutConstraint.activate([
-            logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
-            logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24)
+            logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                           constant: Spacing.space04),
+            logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.space04)
         ])
         
         NSLayoutConstraint.activate([
@@ -66,9 +108,17 @@ final class HomeViewController: BaseViewController<HomeInteracting> {
             textsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             textsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         ])
+        
+        NSLayoutConstraint.activate([
+            buttonsStackView.topAnchor.constraint(greaterThanOrEqualTo: textsStackView.bottomAnchor),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Spacing.space03)
+        ])
     }
     
     override func setupStyles() {
+        super.setupStyles()
         view.backgroundColor = Colors.branding00.color
     }
 }
