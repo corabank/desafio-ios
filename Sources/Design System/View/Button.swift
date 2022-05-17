@@ -21,8 +21,32 @@ final class Button: UIButton {
         height(style.rawValue)
     }
     
+    var imageTintColor: UIColor = .clear {
+        didSet {
+            configuration?.baseForegroundColor = imageTintColor
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setImagePadding()
+    }
+    
+    private func setImagePadding() {
+        guard configuration?.image != nil,
+              configuration?.imagePadding == .zero,
+              let titleWidth = titleLabel?.frame.width else {
+            return
+        }
+        let buttonWidth = frame.width
+        let iconSize: CGFloat = 24
+        let spacing = Spacing.space04 * 2
+        
+        configuration?.imagePadding = buttonWidth - titleWidth - spacing - iconSize
     }
     
     private func defaultConfiguration(
@@ -42,7 +66,6 @@ final class Button: UIButton {
         if let icon = icon {
             config.image = icon
             config.imagePlacement = .trailing
-            config.imagePadding = 150
             config.titleAlignment = .leading
         } else {
             config.titleAlignment = .center

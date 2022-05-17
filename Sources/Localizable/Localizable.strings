@@ -4,3 +4,10 @@
 "home.description" = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos.";
 "home.signUp" = "Quero fazer parte!";
 "home.signIn" = "Já sou cliente";
+
+//MARK: SignIn
+
+"signIn.title" = "Login Cora";
+"signIn.welcome" = "Bem-vindo de volta!";
+"signIn.cpfSolicitation" = "Qual seu CPF?";
+"signIn.nextStep" = "Próximo";

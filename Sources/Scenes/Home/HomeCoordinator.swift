@@ -10,6 +10,7 @@ final class HomeCoordinator {
 
 extension HomeCoordinator: HomeCoordinating {
     func coordinateToSignInScene() {
-        
+        let scene = SignInFactory.make()
+        viewController?.show(scene, sender: nil)
     }
 }

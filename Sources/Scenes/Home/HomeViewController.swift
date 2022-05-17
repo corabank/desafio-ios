@@ -54,6 +54,7 @@ final class HomeViewController: BaseViewController<HomeInteracting> {
                             icon: Images.icArrowRight.image,
                             style: .large)
         button.backgroundColor = Colors.white.color
+        button.imageTintColor = Colors.branding00.color
         button.border(radius: Radius.large)
         return button
     }()
@@ -118,7 +119,6 @@ final class HomeViewController: BaseViewController<HomeInteracting> {
     }
     
     override func setupStyles() {
-        super.setupStyles()
         view.backgroundColor = Colors.branding00.color
     }
 }
