@@ -1,0 +1,36 @@
+name: Cora
+options: 
+  deploymentTarget: 
+    iOS: 14.0
+  generateEmptyDirectories: true
+
+targets: 
+  Cora:
+    type: application
+    platform: iOS
+    deploymentTarget: 
+      iOS: 14.0
+    sources: Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cora
+  CoraTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: 
+      iOS: 14.0
+    sources: Tests
+    dependencies: 
+      - target: Cora
+
+schemes:
+  Cora:
+    build: 
+      targets: 
+        Cora: all
+    test: 
+      targets: 
+        - name: CoraTests
+          parallelizable: false
+          randomExecutionOrder: true 
+      gatherCoverageData: true
