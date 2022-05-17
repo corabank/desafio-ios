@@ -94,3 +94,6 @@ iOSInjectionProject/
 ## Ignore project files as we generate them with xcodegen (https://github.com/yonaskolb/XcodeGen)
 *.xcodeproj
 *.xcworkspace
+
+## Ignore generated files (SwiftGen)
+Sources/Generated
