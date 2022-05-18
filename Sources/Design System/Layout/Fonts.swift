@@ -16,6 +16,9 @@ enum Font {
         /// Bold 16
         static let tertiaryTitle = UIFont(name: FontName.bold, size: 16)
         
+        /// Regular 14
+        static let primarySubtitle = UIFont(name: FontName.bold, size: 14)
+        
         /// Bold 12
         static let secondarySubtitle = UIFont(name: FontName.bold, size: 12)
     }

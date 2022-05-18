@@ -56,10 +56,6 @@ class BaseViewController<Interactor>: UIViewController, BuildableView {
         buildView()
     }
     
-    @objc private func didTapBackButton() {
-        navigationController?.popViewController(animated: true)
-    }
-    
     func setupCustomNavigationBar() {
         view.addSubviews(customNavBar, statusBarBackgroundView)
         
@@ -77,6 +73,14 @@ class BaseViewController<Interactor>: UIViewController, BuildableView {
         ])
     }
     
+    /// override didTapRightButton to implement item action
+    func setRightButtonItem(icon: UIImage) {
+        customNavigationItem.rightBarButtonItem = UIBarButtonItem(image: icon,
+                                                                  style: .plain,
+                                                                  target: self,
+                                                                  action: #selector(didTapRightButton))
+    }
+    
     // MARK: BuildableView
     
     func setupHierarchy() { }
@@ -84,4 +88,16 @@ class BaseViewController<Interactor>: UIViewController, BuildableView {
     func setupConstraints() { }
     
     func setupStyles() { }
+    
+    // MARK: Objc functions
+    
+    @objc private func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func didTapRightButton() {
+        // to be overrited
+    }
 }
+
+

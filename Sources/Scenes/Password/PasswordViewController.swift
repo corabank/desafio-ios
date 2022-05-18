@@ -51,7 +51,7 @@ final class PasswordViewController: BaseViewController<PasswordInteracting> {
     }()
     
     private lazy var nextStepButton: Button = {
-        let action = UIAction { _ in print("Next Step Clicked") }
+        let action = UIAction { _ in  self.interactor.performNextStep() }
         let button = Button(title: Localizable.nextStep,
                             titleColor: Colors.white.color,
                             action: action,

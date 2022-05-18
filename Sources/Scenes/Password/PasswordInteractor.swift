@@ -1,5 +1,3 @@
-import Foundation
-
 protocol PasswordInteracting: AnyObject {
     func didChangeText(to newText: String)
     func performNextStep()

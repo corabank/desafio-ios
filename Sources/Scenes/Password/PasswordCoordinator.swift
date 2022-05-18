@@ -1,4 +1,4 @@
-import UIKit
+import class UIKit.UIViewController
 
 protocol PasswordCoordinating: AnyObject {
     func coordinateToBankStatement()
@@ -10,6 +10,7 @@ final class PasswordCoordinator {
 
 extension PasswordCoordinator: PasswordCoordinating {
     func coordinateToBankStatement() {
-        
+        let scene = BankStatementFactory.make()
+        viewController?.show(scene, sender: nil)
     }
 }

@@ -18,3 +18,10 @@
 "password.solicitation" = "Digite sua senha de acesso";
 "password.forgotPassword" = "Esqueci minha senha";
 "password.nextStep" = "Próximo";
+
+//MARK: Bank Statement
+"bankStatement.title" = "Extrato";
+"bankStatement.segment.all" = "Tudo";
+"bankStatement.segment.input" = "Entrada";
+"bankStatement.segment.output" = "Saída";
+"bankStatement.segment.future" = "Futuro";
