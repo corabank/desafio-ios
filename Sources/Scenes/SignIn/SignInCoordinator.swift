@@ -10,6 +10,7 @@ final class SignInCoordinator {
 
 extension SignInCoordinator: SignInCoordinating {
     func coordinateToPasswordScene() {
-        
+        let scene = PasswordFactory.make()
+        viewController?.show(scene, sender: nil)
     }
 }

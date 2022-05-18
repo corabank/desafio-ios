@@ -1,6 +1,6 @@
 protocol SignInInteracting: AnyObject {
     func didChangeText(to newText: String)
-    func nextStepTapped()
+    func performNextStep()
 }
 
 final class SignInInteractor {
@@ -16,7 +16,7 @@ extension SignInInteractor: SignInInteracting {
         presenter.presentMaskedField(basedOn: newText)
     }
     
-    func nextStepTapped() {
+    func performNextStep() {
         presenter.presentPasswordScene()
     }
 }

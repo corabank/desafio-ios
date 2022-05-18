@@ -1,9 +1,9 @@
-import UIKit
+import class UIKit.UIViewController
 
 enum SignInFactory {
     static func make() -> UIViewController {
         let coordinator = SignInCoordinator()
-        let presenter: SignInPresenting = SignInPresenter(coordinator: coordinator)
+        let presenter = SignInPresenter(coordinator: coordinator)
         let interactor = SignInInteractor(presenter: presenter)
         let viewController = SignInViewController(interactor: interactor)
 

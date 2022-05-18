@@ -5,9 +5,16 @@
 "home.signUp" = "Quero fazer parte!";
 "home.signIn" = "Já sou cliente";
 
-//MARK: SignIn
+//MARK: Sign In
 
 "signIn.title" = "Login Cora";
 "signIn.welcome" = "Bem-vindo de volta!";
 "signIn.cpfSolicitation" = "Qual seu CPF?";
 "signIn.nextStep" = "Próximo";
+
+//MARK: Password
+
+"password.title" = "Login Cora";
+"password.solicitation" = "Digite sua senha de acesso";
+"password.forgotPassword" = "Esqueci minha senha";
+"password.nextStep" = "Próximo";

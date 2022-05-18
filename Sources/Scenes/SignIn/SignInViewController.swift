@@ -38,7 +38,7 @@ final class SignInViewController: BaseViewController<SignInInteracting> {
     }()
     
     private lazy var nextStepButton: Button = {
-        let action = UIAction { _ in print("Next Step Clicked") }
+        let action = UIAction { _ in self.interactor.performNextStep() }
         let button = Button(title: Localizable.nextStep,
                             titleColor: Colors.white.color,
                             action: action,
@@ -69,8 +69,8 @@ final class SignInViewController: BaseViewController<SignInInteracting> {
         setupCustomNavigationBar()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         cpfField.becomeFirstResponder()
     }
     
@@ -92,8 +92,7 @@ final class SignInViewController: BaseViewController<SignInInteracting> {
             cpfField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                constant: -Spacing.space04),
             cpfField.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                              constant: Spacing.space04),
-            cpfField.heightAnchor.constraint(equalToConstant: 32)
+                                              constant: Spacing.space04)
         ])
         
         NSLayoutConstraint.activate([

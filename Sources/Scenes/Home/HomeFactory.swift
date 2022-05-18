@@ -1,4 +1,4 @@
-import UIKit
+import class UIKit.UIViewController
 
 enum HomeFactory {
     static func make() -> UIViewController {

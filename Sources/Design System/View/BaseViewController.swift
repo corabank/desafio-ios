@@ -16,8 +16,9 @@ class BaseViewController<Interactor>: UIViewController, BuildableView {
         let navBar = UINavigationBar()
         navBar.titleTextAttributes = navBarTitleAttributes
         navBar.shadowImage = UIImage()
+        navBar.setBackgroundImage(UIImage(), for: .default)
         navBar.tintColor = Colors.branding00.color
-        navBar.barTintColor = Colors.gray04.color
+        navBar.backgroundColor = Colors.gray04.color
         navBar.setItems([customNavigationItem], animated: false)
         navBar.translatesAutoresizingMaskIntoConstraints = false
         return navBar

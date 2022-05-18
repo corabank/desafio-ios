@@ -1,5 +1,4 @@
 protocol SignInPresenting: AnyObject {
-    var viewController: SignInDisplaying? { get set }
     func presentMaskedField(basedOn userInput: String)
     func presentPasswordScene()
 }
@@ -7,7 +6,7 @@ protocol SignInPresenting: AnyObject {
 final class SignInPresenter {
     private let coordinator: SignInCoordinating
     weak var viewController: SignInDisplaying?
-
+    
     init(coordinator: SignInCoordinating) {
         self.coordinator = coordinator
     }

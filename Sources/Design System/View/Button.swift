@@ -4,6 +4,7 @@ final class Button: UIButton {
     enum Style: CGFloat {
         case large = 64
         case medium = 48
+        case small = 20
     }
     
     init(title: String,
@@ -66,11 +67,7 @@ final class Button: UIButton {
         if let icon = icon {
             config.image = icon
             config.imagePlacement = .trailing
-            config.titleAlignment = .leading
-        } else {
-            config.titleAlignment = .center
         }
-        
         return config
     }
 }

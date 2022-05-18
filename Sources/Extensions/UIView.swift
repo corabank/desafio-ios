@@ -30,6 +30,14 @@ extension UIView {
             parent.trailingAnchor.constraint(equalTo: trailingAnchor, constant: insets.right)
         ])
     }
+    
+    func size(_ size: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: size),
+            widthAnchor.constraint(equalToConstant: size)
+        ])
+    }
 
     func height(_ height: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
