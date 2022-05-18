@@ -9,30 +9,41 @@ import UIKit
 
 class InvoiceViewController: UIViewController {
     weak var coordinator: InvoiceCoordinator?
+    var screen: InvoiceScreen?
 
+    override func loadView() {
+        screen = InvoiceScreen(data: [])
+        screen?.delegate = self
+        self.view = screen
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Faturas"
-        self.view.backgroundColor = .blue
         setupInvoiceNavigationBar()
     }
+}
+
+extension InvoiceViewController: InvoiceScreenDelegate {
+    func payButtonPressed() {
+        coordinator?.showAlert(title: "Pagar Fatura!", message: "Pagar Fatura!")
+    }
     
-    @objc func didTapEditButton(sender: AnyObject){
-
+    func automaticDebitPressed() {
+        coordinator?.showAlert(title: "Débito Automático!", message: "Débito Automático!")
     }
 
-    @objc func didTapSearchButton(sender: AnyObject){
-
+    func barChartPressed() {
+        coordinator?.showAlert(title: "Alterando Mês!", message: "Alterando Mês!")
     }
+}
 
+extension InvoiceViewController {
     func setupInvoiceNavigationBar() {
-        let editImage    = Images.rightArrowPink
-        let searchImage  = Images.rightArrowPink
+        let downloadInvoiceButton = UIBarButtonItem(image: Images.rightArrowPink, style: .plain, target: self, action: #selector(downloadInvoiceButtonTapped))
+        let infoButton = UIBarButtonItem(image: Images.rightArrowPink, style: .plain, target: self, action: #selector(infoButtonTapped))
 
-        let editButton   = UIBarButtonItem(image: editImage, style: .plain, target: self, action: #selector(didTapEditButton))
-        let searchButton = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(didTapSearchButton))
-
-        self.navigationItem.rightBarButtonItems = [editButton, searchButton]
+        self.navigationItem.rightBarButtonItems = [infoButton, downloadInvoiceButton]
         
         let appearance = UINavigationBarAppearance()
         UINavigationBar.appearance().tintColor = .primary
@@ -44,5 +55,12 @@ class InvoiceViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
-    
+
+    @objc func downloadInvoiceButtonTapped(sender: AnyObject){
+        coordinator?.showAlert(title: "Fatura Baixada!", message: "Fatura Baixada!")
+    }
+
+    @objc func infoButtonTapped(sender: AnyObject){
+        coordinator?.showAlert(title: "Informações", message: "Infos")
+    }
 }

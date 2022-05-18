@@ -14,6 +14,8 @@
 		5972EE4A282EA28000E87EC9 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE49282EA28000E87EC9 /* PasswordViewController.swift */; };
 		59AA52BD282EEB93003DDE81 /* InvoiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */; };
 		59AA52BF282EEBD3003DDE81 /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */; };
+		59BCA47228341CFF00C07378 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BCA47128341CFF00C07378 /* HeaderView.swift */; };
+		59BCA47528347A7600C07378 /* InvoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BCA47428347A7600C07378 /* InvoiceModel.swift */; };
 		59C0EEE8282B43020037E3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE7282B43020037E3BB /* AppDelegate.swift */; };
 		59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEE9282B43020037E3BB /* SceneDelegate.swift */; };
 		59C0EEEC282B43020037E3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0EEEB282B43020037E3BB /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 		59D8B40A282CA260004D9D5A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B409282CA260004D9D5A /* Images.swift */; };
 		59E0DECB282DEA52007DF393 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0DECA282DEA52007DF393 /* NavigationController.swift */; };
 		59E0DECE282E006B007DF393 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0DECD282E006B007DF393 /* String.swift */; };
+		59EE73B82831AE7A00506FE6 /* InvoiceRowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE73B72831AE7A00506FE6 /* InvoiceRowViewCell.swift */; };
+		59EE73BA2831B6B300506FE6 /* InvoiceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE73B92831B6B300506FE6 /* InvoiceScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,8 @@
 		5972EE49282EA28000E87EC9 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCoordinator.swift; sourceTree = "<group>"; };
 		59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
+		59BCA47128341CFF00C07378 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		59BCA47428347A7600C07378 /* InvoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceModel.swift; sourceTree = "<group>"; };
 		59C0EEE4282B43020037E3BB /* Desafio Cora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio Cora.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C0EEE7282B43020037E3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C0EEE9282B43020037E3BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,8 @@
 		59D8B409282CA260004D9D5A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		59E0DECA282DEA52007DF393 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		59E0DECD282E006B007DF393 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		59EE73B72831AE7A00506FE6 /* InvoiceRowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceRowViewCell.swift; sourceTree = "<group>"; };
+		59EE73B92831B6B300506FE6 /* InvoiceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +151,21 @@
 		59AA52BB282EEB74003DDE81 /* Invoices */ = {
 			isa = PBXGroup;
 			children = (
+				59BCA47328347A6500C07378 /* Model */,
+				59EE73B62831AE4300506FE6 /* Cells */,
 				59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */,
 				59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */,
+				59EE73B92831B6B300506FE6 /* InvoiceScreen.swift */,
 			);
 			path = Invoices;
+			sourceTree = "<group>";
+		};
+		59BCA47328347A6500C07378 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59BCA47428347A7600C07378 /* InvoiceModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		59C0EEDB282B43020037E3BB = {
@@ -271,6 +290,15 @@
 				5972EE41282E9C2D00E87EC9 /* UIButton.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		59EE73B62831AE4300506FE6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				59EE73B72831AE7A00506FE6 /* InvoiceRowViewCell.swift */,
+				59BCA47128341CFF00C07378 /* HeaderView.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,12 +437,14 @@
 				59C0EF25282B5A960037E3BB /* LoginViewController.swift in Sources */,
 				59C0EF18282B45CA0037E3BB /* RootCoordinator.swift in Sources */,
 				59C85F64282C361800D83844 /* LoginScreen.swift in Sources */,
+				59EE73B82831AE7A00506FE6 /* InvoiceRowViewCell.swift in Sources */,
 				59E0DECE282E006B007DF393 /* String.swift in Sources */,
 				59E0DECB282DEA52007DF393 /* NavigationController.swift in Sources */,
 				59C85F67282C4ADF00D83844 /* IntroCoordinator.swift in Sources */,
 				59C85F6B282C4B0700D83844 /* IntroScreen.swift in Sources */,
 				5972EE48282EA26F00E87EC9 /* PasswordCoordinator.swift in Sources */,
 				59C0EEEC282B43020037E3BB /* ViewController.swift in Sources */,
+				59BCA47528347A7600C07378 /* InvoiceModel.swift in Sources */,
 				59C85F6D282C4BB400D83844 /* CodeView.swift in Sources */,
 				59C0EF1B282B46320037E3BB /* Coordinator.swift in Sources */,
 				5972EE46282EA20300E87EC9 /* PasswordScreen.swift in Sources */,
@@ -426,9 +456,11 @@
 				5972EE4A282EA28000E87EC9 /* PasswordViewController.swift in Sources */,
 				59C85F69282C4AEE00D83844 /* IntroViewController.swift in Sources */,
 				59D8B40A282CA260004D9D5A /* Images.swift in Sources */,
+				59EE73BA2831B6B300506FE6 /* InvoiceScreen.swift in Sources */,
 				59C0EF21282B4C630037E3BB /* LoginCoordinator.swift in Sources */,
 				59AA52BF282EEBD3003DDE81 /* InvoiceViewController.swift in Sources */,
 				59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */,
+				59BCA47228341CFF00C07378 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

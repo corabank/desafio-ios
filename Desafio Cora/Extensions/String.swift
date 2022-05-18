@@ -8,7 +8,7 @@ import Foundation
 
 extension String {
     func isValidCNPJ() -> Bool { // replace by a valid validator
-        self.count == 18
+        self.count > 16
     }
 
     func formatCNPJ() -> String {
