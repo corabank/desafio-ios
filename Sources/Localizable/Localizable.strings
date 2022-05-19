@@ -25,3 +25,11 @@
 "bankStatement.segment.input" = "Entrada";
 "bankStatement.segment.output" = "Saída";
 "bankStatement.segment.future" = "Futuro";
+"bankStatement.transactionDescription.billetDeposit" = "Boleto via boleto";
+"bankStatement.transactionDescription.billetPaid" = "Boleto Pago";
+"bankStatement.transactionDescription.paymentReceived" = "Pagamento recebido";
+"bankStatement.transactionDescription.paymentReversed" = "Pagamento estornado";
+"bankStatement.transactionDescription.transferReceived" = "Transfêrencia recebida";
+"bankStatement.transactionDescription.trasferReversed" = "Transfêrencia estornada";
+"bankStatement.transactionDescription.trasferSent" = "Transfêrencia enviada";
+"bankStatement.transactionDescription.trasferScheduled" = "Transfêrencia agendada";

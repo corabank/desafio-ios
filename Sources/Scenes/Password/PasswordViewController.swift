@@ -129,7 +129,7 @@ extension PasswordViewController: PasswordDisplaying {
             animations: {
             self.nextStepButton.isEnabled = isEnabled
             self.nextStepButton.backgroundColor = backgroundColor
-        }, completion: nil)
+        })
     }
     
     func displayPassword(isVisible: Bool, fieldImage: UIImage) {

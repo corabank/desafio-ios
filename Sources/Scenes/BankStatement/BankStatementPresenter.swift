@@ -1,5 +1,5 @@
 protocol BankStatementPresenting: AnyObject {
-    func displaySomething()
+    func presentTransactions()
 }
 
 final class BankStatementPresenter {
@@ -12,7 +12,7 @@ final class BankStatementPresenter {
 }
 
 extension BankStatementPresenter: BankStatementPresenting {
-    func displaySomething() {
-        viewController?.displaySomething()
+    func presentTransactions() {
+        viewController?.displayTransactions()
     }
 }

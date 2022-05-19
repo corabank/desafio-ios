@@ -1,14 +1,14 @@
 import UIKit
 
 protocol BankStatementDisplaying: AnyObject {
-    func displaySomething()
+    func displayTransactions()
 }
 
 final class BankStatementViewController: BaseViewController<BankStatementInteracting> {
     private typealias Localizable = Strings.BankStatement
     
     private lazy var segmentedControl: SegmentedControl = {
-        let titles = [Localizable.Segment.all, Localizable.Segment.input, Localizable.Segment.output, Localizable.Segment.future]
+        let titles = BankStatementSegment.allCases.map { $0.description }
         let segmentedControl = SegmentedControl(titles: titles, selectedIndex: 0)
         segmentedControl.delegate = self
         return segmentedControl
@@ -37,6 +37,18 @@ final class BankStatementViewController: BaseViewController<BankStatementInterac
         return stackView
     }()
     
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        tableView.showsVerticalScrollIndicator = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.sectionFooterHeight = 24
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         title = Localizable.title
         super.viewDidLoad()
@@ -45,7 +57,7 @@ final class BankStatementViewController: BaseViewController<BankStatementInterac
     }
     
     override func setupHierarchy() {
-        view.addSubview(segmentsStackView)
+        view.addSubviews(segmentsStackView, tableView)
     }
     
     override func setupConstraints() {
@@ -54,6 +66,13 @@ final class BankStatementViewController: BaseViewController<BankStatementInterac
             segmentsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             segmentsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             segmentsStackView.heightAnchor.constraint(equalToConstant: 52)
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: segmentsStackView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         filterButton.size(24)
@@ -65,13 +84,49 @@ final class BankStatementViewController: BaseViewController<BankStatementInterac
 }
 
 extension BankStatementViewController: BankStatementDisplaying {
-    func displaySomething() { 
-        // template
+    func displayTransactions() {
+        UIView.transition(with: tableView,
+                          duration: 0.15,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.tableView.reloadData()
+        })
     }
 }
 
 extension BankStatementViewController: SegmentedControlDelegate {
     func didChangeSelection(to index: Int) {
-        print("Selected index: \(index)")
+        interactor.selectSegment(at: index)
+    }
+}
+
+extension BankStatementViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return StatementHeaderView(content: interactor.dayInfo(for: section))
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        32
+    }
+}
+
+extension BankStatementViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        interactor.numberOfDays()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        interactor.numberOfTransactions(at: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = String(describing: StatementItemCell.self)
+        let cell = StatementItemCell(style: .default, reuseIdentifier: identifier)
+        cell.setup(content: interactor.transactionInfo(section: indexPath.section, at: indexPath.row))
+        return cell
     }
 }

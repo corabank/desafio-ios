@@ -109,7 +109,7 @@ private extension SegmentedControl {
         let xPosition = segments[selectedIndex].frame.origin.x + ((buttonWidth - newWidth) / 2)
         let yPosition = segments[selectedIndex].frame.maxY
         
-        UIView.animate(withDuration: 0.2,
+        UIView.animate(withDuration: 0.15,
                        delay: 0,
                        options: .curveEaseIn,
                        animations: {
@@ -117,7 +117,7 @@ private extension SegmentedControl {
             self.selectIndicator.frame.origin.y = yPosition
             self.selectIndicator.frame.size.width = newWidth
             self.selectIndicator.frame.size.height = 1
-        }, completion: nil)
+        })
     }
 }
 

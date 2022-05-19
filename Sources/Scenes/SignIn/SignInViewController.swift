@@ -119,7 +119,7 @@ extension SignInViewController: SignInDisplaying {
             animations: {
             self.nextStepButton.isEnabled = isEnabled
             self.nextStepButton.backgroundColor = backgroundColor
-        }, completion: nil)
+        })
     }
     
     func displayMaskedField(text: String) {
