@@ -42,4 +42,13 @@ struct TransactionDetailViewModel {
     var shouldShowCancelButton: Bool {
         transactionDetail.type == .scheduled
     }
+    
+    var senderContent: TransactionUserContent {
+        TransactionUserContent(transactionPerson: transactionDetail.sender, title: Localizable.sender)
+    }
+    
+    var receiverContent: TransactionUserContent {
+        TransactionUserContent(transactionPerson: transactionDetail.receiver, title: Localizable.receiver)
+    }
+
 }

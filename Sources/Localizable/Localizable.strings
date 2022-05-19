@@ -33,9 +33,8 @@
 "transactionDetail.paymentDate" = "Data do pagamento";
 "transactionDetail.sender" = "De";
 "transactionDetail.receiver" = "Para";
-"transactionDetail.cpf" = "CPF";
-"transactionDetail.bankAgency" = "Agência";
-"transactionDetail.bankAccount" = "Conta";
+"transactionDetail.cpf" = "CPF %@";
+"transactionDetail.bankInfo" = "Agência %@ - Conta %@";
 "transactionDetail.descriptionTitle" = "Descrição";
 "transactionDetail.description" = "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.";
 "transactionDetail.shareReceipt" = "Compartilhar comprovante";

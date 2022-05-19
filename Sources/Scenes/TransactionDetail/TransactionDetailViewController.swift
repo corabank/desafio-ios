@@ -94,10 +94,19 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
         return stackView
     }()
     
+    private lazy var senderUserView = TransactionUserView()
+    private lazy var receiverUserView = TransactionUserView()
+    
     private lazy var rootStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [transactionStackView, valueStackView, dateStackView, descriptionStackView])
+        let stackView = UIStackView(arrangedSubviews: [transactionStackView,
+                                                       valueStackView,
+                                                       dateStackView,
+                                                       senderUserView,
+                                                       receiverUserView,
+                                                       descriptionStackView])
         stackView.axis = .vertical
-        stackView.spacing = Spacing.space04
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 0
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: Spacing.space04,
                                                left: Spacing.space04,
@@ -155,6 +164,11 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
         interactor.fetchContent()
         setupCustomNavigationBar()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollView.contentSize = CGSize(width: rootStackView.frame.width, height: rootStackView.frame.height)
+    }
 
     // MARK: BuildableView
     
@@ -168,7 +182,7 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: navigationBarHeight),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: buttonsStackView.bottomAnchor)
+            scrollView.bottomAnchor.constraint(equalTo: buttonsStackView.topAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -196,5 +210,7 @@ extension TransactionDetailViewController: TransactionDetailDisplaying {
         dateTitle.text = viewModel.dateTitle
         dateLabel.text = viewModel.formattedDate
         cancelScheduleButton.isHidden = !viewModel.shouldShowCancelButton
+        senderUserView.setup(content: viewModel.senderContent)
+        receiverUserView.setup(content: viewModel.receiverContent)
     }
 }
