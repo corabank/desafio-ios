@@ -36,6 +36,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
         let label = UILabel()
         label.font = Fonts.getFont(.bold(size: 12))()
         label.textColor = .gray1
+        label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,8 +53,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
     private lazy var transactionStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [dateLabel, descriptionLabel, valueLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fillProportionally
-        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -69,6 +69,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
         let stackView = UIStackView(arrangedSubviews: [emptyView, obsDescriptionLabel, obsValueLabel])
         stackView.axis = .horizontal
         stackView.alignment = .center
+        stackView.distribution = .fillEqually
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -91,11 +92,22 @@ public final class InvoiceRowViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func passData(model: InvoiceModel) {
-        dateLabel.text = "05/02/2022"
-        descriptionLabel.text = "hahahah"
-        valueLabel.text = "456.00"
-        obsStackView.isHidden = true
+    func passData(model: Transaction) {
+        dateLabel.text = model.date
+        descriptionLabel.text = model.transactionDescription
+        valueLabel.text = model.value.description
+        obsDescriptionLabel.text = model.observationDescription
+        obsValueLabel.text = model.observationValue?.description
+
+        dateLabel.textColor = model.textColor()
+        descriptionLabel.textColor = model.textColor()
+        valueLabel.textColor = model.textColor()
+
+        if ((model.observationDescription?.isEmpty) == nil) {
+            obsStackView.isHidden = true
+        } else {
+            obsStackView.isHidden = false
+        }
     }
 }
 

@@ -99,7 +99,7 @@ final class PasswordScreen: UIView {
         } else {
             passwordTextField.isSecureTextEntry = false
         }
-        tfButton.isSelected = !tfButton.isSelected
+        tfButton.isSelected.toggle()
     }
     
 }

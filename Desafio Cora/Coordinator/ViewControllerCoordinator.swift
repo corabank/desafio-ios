@@ -12,9 +12,11 @@ class ViewControllerCoordinator: NSObject, Coordinator {
     var childCoordinators = [Coordinator]()
     weak var parent: Coordinator?
     var navigationController: NavigationController
+    private var networkServices: NetworkCoordinator?
 
-    init(navigationController: NavigationController) {
+    init(navigationController: NavigationController, networkServices: NetworkCoordinator?) {
         self.navigationController = navigationController
+        self.networkServices = networkServices
     }
 
     func start() {

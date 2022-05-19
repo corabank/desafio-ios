@@ -25,7 +25,6 @@ class HeaderView: UIView {
 
     private lazy var totalValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "Teste Teste"
         label.font = Fonts.getFont(.bold(size: 22))()
         label.textColor = .secondaryLight
         return label
@@ -33,7 +32,6 @@ class HeaderView: UIView {
 
     private lazy var labelDescription: UILabel = {
         let label = UILabel()
-        label.text = "Teste Teste"
         label.font = Fonts.getFont(.regular(size: 14))()
         label.textColor = .white
         return label
@@ -41,7 +39,6 @@ class HeaderView: UIView {
 
     private lazy var labelDescription1: UILabel = {
         let label = UILabel()
-        label.text = "Teste Teste"
         label.font = Fonts.getFont(.regular(size: 14))()
         label.textColor = .white
         return label
@@ -49,7 +46,6 @@ class HeaderView: UIView {
 
     private lazy var labelDescription2: UILabel = {
         let label = UILabel()
-        label.text = "Teste Teste"
         label.font = Fonts.getFont(.regular(size: 14))()
         label.textColor = .white
         return label
@@ -117,6 +113,15 @@ class HeaderView: UIView {
     func barChartPressed() {
         delegate?.barChartPressed()
     }
+
+    func configure(data: InvoiceResume?) {
+        guard let data = data else {
+            return
+        }
+        totalValueLabel.text = "R$ \(data.infos.totalValue.description)"
+        labelDescription1.text = data.infos.totalValue.description
+        labelDescription2.text = "Vencimento em \(data.infos.expirationDate)"
+    }
 }
 
 extension HeaderView: CodeView {
@@ -156,6 +161,5 @@ extension HeaderView: CodeView {
     
     func setupAdditionalConfigaration() {
         backgroundColor = .black
-        
     }
 }

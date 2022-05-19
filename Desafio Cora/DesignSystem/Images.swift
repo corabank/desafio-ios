@@ -13,4 +13,7 @@ enum Images {
     static let rightArrowPink = UIImage(named: "rightArrowPink")
     static let rightArrowWhite = UIImage(named: "rightArrowWhite")
     static let eyeHidden = UIImage(named: "eyeHidden")
+    static let exportIcon = UIImage(named: "exportIcon")
+    static let questionIcon = UIImage(named: "questionIcon")
+    static let chevronDownIcon = UIImage(named: "chevronDownIcon")
 }

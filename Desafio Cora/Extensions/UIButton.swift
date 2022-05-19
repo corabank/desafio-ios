@@ -14,6 +14,12 @@ extension UIButton {
         self.imageView?.translatesAutoresizingMaskIntoConstraints = false
         self.imageView?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0.0).isActive = true
         self.imageView?.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
-        
+    }
+
+    func addImageOnRightSide(){
+        self.contentHorizontalAlignment = .left
+        self.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        self.imageView?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0.0).isActive = true
+        self.imageView?.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
     }
 }

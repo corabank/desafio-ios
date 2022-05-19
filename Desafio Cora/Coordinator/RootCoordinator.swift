@@ -15,9 +15,11 @@ public class RootCoordinator: NSObject, Coordinator, UINavigationControllerDeleg
     public var rootViewController: UIViewController { navigationController }
     public var childCoordinators = [Coordinator]()
     public var parent: Coordinator?
+    private var networkServices: NetworkCoordinator
     private weak var window: UIWindow?
 
     public init(window: UIWindow?) {
+        networkServices = NetworkCoordinator(navigationController: navigationController)
         self.window = window
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -27,7 +29,7 @@ public class RootCoordinator: NSObject, Coordinator, UINavigationControllerDeleg
 
     public func start() {
         navigationController.delegate = self
-        let introCoordinator = IntroCoordinator(navigationController: navigationController)
+        let introCoordinator = IntroCoordinator(navigationController: navigationController, networkServices: networkServices)
         addChild(introCoordinator)
         introCoordinator.start()
     }

@@ -12,7 +12,7 @@ class InvoiceViewController: UIViewController {
     var screen: InvoiceScreen?
 
     override func loadView() {
-        screen = InvoiceScreen(data: [])
+        screen = InvoiceScreen()
         screen?.delegate = self
         self.view = screen
     }
@@ -21,6 +21,11 @@ class InvoiceViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Faturas"
         setupInvoiceNavigationBar()
+        coordinator?.getInvoiceData(onSuccess: { result in
+            self.screen?.configure(data: result )
+        }, onFailure: { _ in
+
+        })
     }
 }
 
@@ -40,8 +45,8 @@ extension InvoiceViewController: InvoiceScreenDelegate {
 
 extension InvoiceViewController {
     func setupInvoiceNavigationBar() {
-        let downloadInvoiceButton = UIBarButtonItem(image: Images.rightArrowPink, style: .plain, target: self, action: #selector(downloadInvoiceButtonTapped))
-        let infoButton = UIBarButtonItem(image: Images.rightArrowPink, style: .plain, target: self, action: #selector(infoButtonTapped))
+        let downloadInvoiceButton = UIBarButtonItem(image: Images.exportIcon, style: .plain, target: self, action: #selector(downloadInvoiceButtonTapped))
+        let infoButton = UIBarButtonItem(image: Images.questionIcon, style: .plain, target: self, action: #selector(infoButtonTapped))
 
         self.navigationItem.rightBarButtonItems = [infoButton, downloadInvoiceButton]
         

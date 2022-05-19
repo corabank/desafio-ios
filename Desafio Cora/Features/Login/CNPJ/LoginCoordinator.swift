@@ -12,9 +12,11 @@ class LoginCoordinator: NSObject, Coordinator {
     var childCoordinators = [Coordinator]()
     weak var parent: Coordinator?
     var navigationController: NavigationController
+    private weak var networkServices: NetworkCoordinator?
 
-    init(navigationController: NavigationController) {
+    init(navigationController: NavigationController, networkServices: NetworkCoordinator?) {
         self.navigationController = navigationController
+        self.networkServices = networkServices
     }
 
     func start() {
@@ -25,7 +27,7 @@ class LoginCoordinator: NSObject, Coordinator {
     }
 
     func goToPassword() {
-        let passwordC = PasswordCoordinator(navigationController: navigationController)
+        let passwordC = PasswordCoordinator(navigationController: navigationController, networkService: networkServices)
         self.addChild(passwordC)
         passwordC.start()
     }
