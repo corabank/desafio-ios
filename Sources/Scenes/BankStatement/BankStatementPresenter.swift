@@ -1,5 +1,6 @@
 protocol BankStatementPresenting: AnyObject {
     func presentTransactions()
+    func presentTransactionDetail(id: Int)
 }
 
 final class BankStatementPresenter {
@@ -14,5 +15,9 @@ final class BankStatementPresenter {
 extension BankStatementPresenter: BankStatementPresenting {
     func presentTransactions() {
         viewController?.displayTransactions()
+    }
+    
+    func presentTransactionDetail(id: Int) {
+        coordinator.coordinateToTransactionDetail(id: id)
     }
 }

@@ -1,9 +1,5 @@
 import Foundation
 
-struct BankStatement: Decodable {
-    let dailyTransations: [DailyTransactions]
-}
-
 struct DailyTransactions: Decodable {
     let dayInfo: DayInfo
     let transactions: [Transation]
@@ -33,6 +29,6 @@ enum TransationType: String, Decodable {
 enum TransationMethod: String, Decodable {
     case billet = "BILLET"
     case payment = "PAYMENT"
-    case tranfer = "TRANFER"
+    case transfer = "TRANSFER"
 }
 

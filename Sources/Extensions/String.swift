@@ -15,4 +15,12 @@ extension String {
         fullString.addAttributes(boldFontAttribute, range: range)
         return fullString
     }
+    
+    func currencyWithBoldValue() -> NSMutableAttributedString? {
+        let boldText = replacingOccurrences(of: "R$", with: "")
+        let attributedText = withBoldText(text: boldText,
+                                          regularFont: Font.Regular.tertiaryTitle,
+                                          boldFont: Font.Highlighted.tertiaryTitle)
+        return attributedText
+    }
 }

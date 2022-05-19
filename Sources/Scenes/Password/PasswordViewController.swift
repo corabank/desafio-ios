@@ -79,8 +79,8 @@ final class PasswordViewController: BaseViewController<PasswordInteracting> {
     }()
     
     override func viewDidLoad() {
-        title = Localizable.title
         super.viewDidLoad()
+        title = Localizable.title
         setupCustomNavigationBar()
     }
 

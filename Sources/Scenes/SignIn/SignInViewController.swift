@@ -64,8 +64,8 @@ final class SignInViewController: BaseViewController<SignInInteracting> {
     }()
     
     override func viewDidLoad() {
-        title = Localizable.title
         super.viewDidLoad()
+        title = Localizable.title
         setupCustomNavigationBar()
     }
     

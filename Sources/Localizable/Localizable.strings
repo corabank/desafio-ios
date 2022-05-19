@@ -25,11 +25,29 @@
 "bankStatement.segment.input" = "Entrada";
 "bankStatement.segment.output" = "Saída";
 "bankStatement.segment.future" = "Futuro";
-"bankStatement.transactionDescription.billetDeposit" = "Boleto via boleto";
-"bankStatement.transactionDescription.billetPaid" = "Boleto Pago";
-"bankStatement.transactionDescription.paymentReceived" = "Pagamento recebido";
-"bankStatement.transactionDescription.paymentReversed" = "Pagamento estornado";
-"bankStatement.transactionDescription.transferReceived" = "Transfêrencia recebida";
-"bankStatement.transactionDescription.trasferReversed" = "Transfêrencia estornada";
-"bankStatement.transactionDescription.trasferSent" = "Transfêrencia enviada";
-"bankStatement.transactionDescription.trasferScheduled" = "Transfêrencia agendada";
+
+//MARK: Transaction Detail
+"transactionDetail.title" = "Detalhes da operação";
+"transactionDetail.value" = "Valor";
+"transactionDetail.transferDate" = "Data da transaferência";
+"transactionDetail.paymentDate" = "Data do pagamento";
+"transactionDetail.sender" = "De";
+"transactionDetail.receiver" = "Para";
+"transactionDetail.cpf" = "CPF";
+"transactionDetail.bankAgency" = "Agência";
+"transactionDetail.bankAccount" = "Conta";
+"transactionDetail.descriptionTitle" = "Descrição";
+"transactionDetail.description" = "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.";
+"transactionDetail.shareReceipt" = "Compartilhar comprovante";
+"transactionDetail.cancelTransferSchedule" = "Cancelar agedamento";
+
+//MARK: Transaction Description
+
+"transactionDescription.billetDeposit" = "Boleto via boleto";
+"transactionDescription.billetPaid" = "Boleto Pago";
+"transactionDescription.paymentReceived" = "Pagamento recebido";
+"transactionDescription.paymentReversed" = "Pagamento estornado";
+"transactionDescription.transferReceived" = "Transfêrencia recebida";
+"transactionDescription.trasferReversed" = "Transfêrencia estornada";
+"transactionDescription.trasferSent" = "Transfêrencia enviada";
+"transactionDescription.trasferScheduled" = "Transfêrencia agendada";

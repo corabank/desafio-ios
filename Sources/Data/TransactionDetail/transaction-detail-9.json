@@ -1,0 +1,20 @@
+{
+    "type": "OUTPUT",
+    "method": "TRANSFER",
+    "value": 30.00,
+    "date": "2022-08-13",
+    "sender": {
+        "name": "Theresa Simmons",
+        "cpf": "407.130.987.87",
+        "bank_name": "Banco Itaú",
+        "bank_agency": "6193",
+        "bank_account": "12225-3"
+    },
+    "receiver": {
+        "name": "Maria Eduarda Porto",
+        "cpf": "222.222.222.22",
+        "bank_name": "Banco Cora",
+        "bank_agency": "0001",
+        "bank_account": "12345-6"
+    }
+}

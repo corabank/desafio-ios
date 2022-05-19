@@ -1,4 +1,5 @@
 import Foundation
+
 extension Double {
     func getCurrencyString() -> String {
         let numberFormatter = NumberFormatter()

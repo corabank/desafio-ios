@@ -50,8 +50,8 @@ final class BankStatementViewController: BaseViewController<BankStatementInterac
     }()
     
     override func viewDidLoad() {
-        title = Localizable.title
         super.viewDidLoad()
+        title = Localizable.title
         setupCustomNavigationBar()
         setRightButtonItem(icon: Images.icDownload.image)
     }
@@ -102,7 +102,7 @@ extension BankStatementViewController: SegmentedControlDelegate {
 
 extension BankStatementViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        interactor.didSelectTransaction(section: indexPath.section, at: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

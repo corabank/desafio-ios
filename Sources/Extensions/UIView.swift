@@ -24,7 +24,7 @@ extension UIView {
 
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: parent.topAnchor, constant: insets.top),
+            topAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.topAnchor, constant: insets.top),
             leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: insets.left),
             parent.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom),
             parent.trailingAnchor.constraint(equalTo: trailingAnchor, constant: insets.right)
@@ -44,5 +44,5 @@ extension UIView {
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: height)
         ])
-        }
     }
+}

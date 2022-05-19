@@ -1,14 +1,14 @@
 import Foundation
 
-protocol BankStatementServicing {
-    func getBankStatementData() -> [DailyTransactions]
+protocol TransactionDetailServicing {
+    func getTransactionDetailData(id: Int) -> TransactionDetail?
 }
 
-final class BankStatementService: BankStatementServicing {
-    func getBankStatementData() -> [DailyTransactions] {
-        let filePath = "bank-statement-data"
+final class TransactionDetailService: TransactionDetailServicing {
+    func getTransactionDetailData(id: Int) -> TransactionDetail? {
+        let filePath = "transaction-detail-\(id)"
         guard let url = Bundle.main.url(forResource: filePath, withExtension: "json") else {
-            return []
+            return nil
         }
         
         do {
@@ -16,11 +16,11 @@ final class BankStatementService: BankStatementServicing {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             decoder.dateDecodingStrategy = .formatted(DateFormatter.decoderDateFormatter)
-            let decodedData = try decoder.decode([DailyTransactions].self, from: data)
+            let decodedData = try decoder.decode(TransactionDetail.self, from: data)
             return decodedData
         } catch {
             print("error: \(error)")
-            return []
+            return nil
         }
     }
 }
