@@ -23,11 +23,11 @@ final class PasswordScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private lazy var passwordTextField: UITextField = { // criar um componente para isso para usar no futuro
         let textField = UITextField(frame: .zero)
         let button = UIButton(type: .custom)
-        
+
         button.setImage(Images.eyeHidden, for: .normal)
         button.setImage(Images.rightArrowPink, for: .selected)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
@@ -35,10 +35,10 @@ final class PasswordScreen: UIView {
         button.addTarget(self, action: #selector(hideShowPassword), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isSelected = false
-        
+
         textField.rightView = button
         textField.rightViewMode = .always
-        
+
         textField.keyboardType = .numberPad
         textField.borderStyle = .none
         textField.isSecureTextEntry = true
@@ -47,7 +47,7 @@ final class PasswordScreen: UIView {
         textField.delegate = self
         return textField
     }()
-    
+
     private lazy var lostPasswordButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(lostPasswordButtonTapped), for: .touchUpInside)
@@ -81,18 +81,21 @@ final class PasswordScreen: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func lostPasswordButtonTapped() {
+
+    @objc
+    func lostPasswordButtonTapped() {
         endEditing(true)
         delegate?.lostPasswordButtonTapped()
     }
 
-    @objc func nextButtonTapped() {
+    @objc
+    func nextButtonTapped() {
         endEditing(true)
         delegate?.nextButtonPressed()
     }
 
-    @objc func hideShowPassword() {
+    @objc
+    func hideShowPassword() {
         guard let tfButton = passwordTextField.rightView as? UIButton else { return }
         if tfButton.isSelected {
             passwordTextField.isSecureTextEntry = true
@@ -101,7 +104,6 @@ final class PasswordScreen: UIView {
         }
         tfButton.isSelected.toggle()
     }
-    
 }
 
 extension PasswordScreen: CodeView {
@@ -111,7 +113,7 @@ extension PasswordScreen: CodeView {
         addSubview(lostPasswordButton)
         addSubview(nextButton)
     }
-    
+
     func setupConstraints() {
         NSLayoutConstraint.activate([
             passwordTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
@@ -147,7 +149,7 @@ extension PasswordScreen: CodeView {
             ])
         }
     }
-    
+
     func setupAdditionalConfigaration() {
         backgroundColor = .white
         passwordTextField.becomeFirstResponder()

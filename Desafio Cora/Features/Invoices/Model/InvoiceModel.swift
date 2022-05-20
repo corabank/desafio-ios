@@ -10,8 +10,8 @@ import Foundation
 // MARK: - Body
 struct InvoiceModel: Codable {
     let invoiceResume: InvoiceResume?
-    let mainTransactions: [Transaction]?
-    let cards: [Card]?
+    let mainTransactions: [Transaction]
+    let cards: [Card]
 }
 
 // MARK: - Card
@@ -38,11 +38,11 @@ struct Transaction: Codable {
 }
 
 enum TransactionType: String, Codable {
-    case reversal = "reversal"
-    case spent = "spent"
-    case balance = "balance"
-    case payment = "payment"
-    case charges = "charges"
+    case reversal
+    case spent
+    case balance
+    case payment
+    case charges
 }
 
 // MARK: - InvoiceResume
@@ -54,7 +54,7 @@ struct InvoiceResume: Codable {
 // MARK: - Chart
 struct Chart: Codable {
     let month: String
-    let value: Float
+    let value: Double
 }
 
 // MARK: - Infos

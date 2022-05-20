@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Login Cora"
+        self.title = Strings.coraLogin
     }
 }
 

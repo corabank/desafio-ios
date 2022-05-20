@@ -23,7 +23,7 @@ final class LoginScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private lazy var loginSubtitle: UILabel = {
         let label = UILabel()
         label.text = Strings.loginSubtitle
@@ -33,7 +33,7 @@ final class LoginScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private lazy var labelsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [loginTitle, loginSubtitle])
         stackView.spacing = 4
@@ -41,7 +41,7 @@ final class LoginScreen: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
+
     private lazy var loginTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.keyboardType = .numberPad
@@ -77,8 +77,9 @@ final class LoginScreen: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func nextButtonTapped() {
+
+    @objc
+    func nextButtonTapped() {
         endEditing(true)
         delegate?.nextButtonPressed()
     }
@@ -97,14 +98,14 @@ extension LoginScreen: CodeView {
             labelsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
             labelsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24)
         ])
-        
+
         NSLayoutConstraint.activate([
             loginTextField.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: 32),
             loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
             loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
             loginTextField.heightAnchor.constraint(equalToConstant: 32)
         ])
-        
+
         if #available(iOS 15.0, *) {
             NSLayoutConstraint.activate([
                 nextButton.bottomAnchor.constraint(equalTo: self.keyboardLayoutGuide.topAnchor, constant: -24),

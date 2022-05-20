@@ -87,7 +87,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -103,7 +103,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
         descriptionLabel.textColor = model.textColor()
         valueLabel.textColor = model.textColor()
 
-        if ((model.observationDescription?.isEmpty) == nil) {
+        if (model.observationDescription?.isEmpty) == nil {
             obsStackView.isHidden = true
         } else {
             obsStackView.isHidden = false
@@ -115,16 +115,16 @@ extension InvoiceRowViewCell: CodeView {
     func buildViewHierarchy() {
         addSubview(cellStackView)
     }
-    
+
     func setupConstraints() {
         NSLayoutConstraint.activate([
             cellStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
             cellStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
             cellStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
-            cellStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            cellStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
         ])
     }
-    
+
     func setupAdditionalConfigaration() {
         contentView.backgroundColor = .clear
     }

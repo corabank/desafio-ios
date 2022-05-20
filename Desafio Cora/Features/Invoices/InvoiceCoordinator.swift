@@ -15,7 +15,7 @@ class InvoiceCoordinator: NSObject, Coordinator {
     var childCoordinators = [Coordinator]()
     weak var parent: Coordinator?
     var navigationController: NavigationController
-    
+
     weak var networkServices: NetworkCoordinator?
 
     init(navigationController: NavigationController, networkServices: NetworkCoordinator?) {

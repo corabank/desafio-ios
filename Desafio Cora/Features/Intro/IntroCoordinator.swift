@@ -12,7 +12,7 @@ class IntroCoordinator: NSObject, Coordinator {
     weak var parent: Coordinator?
     var navigationController: NavigationController
     private weak var networkServices: NetworkCoordinator?
-    
+
     init(navigationController: NavigationController, networkServices: NetworkCoordinator?) {
         self.navigationController = navigationController
         self.networkServices = networkServices

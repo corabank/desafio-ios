@@ -16,12 +16,12 @@ extension String {
         let mask = "##.###.###/####-##"
         var result = ""
         var index = newString.startIndex
-        for ch in mask where index < newString.endIndex {
-            if ch == "#" {
+        for char in mask where index < newString.endIndex {
+            if char == "#" {
                 result.append(newString[index])
                 index = newString.index(after: index)
             } else {
-                result.append(ch)
+                result.append(char)
             }
         }
         return result

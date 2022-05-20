@@ -20,7 +20,7 @@ class PasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Login Cora"
+        self.title = Strings.coraLogin
     }
 }
 
@@ -28,7 +28,7 @@ extension PasswordViewController: PasswordScreenDelegate {
     func lostPasswordButtonTapped() {
         coordinator?.showAlert(title: "Email Enviado!", message: "Confira sua caixa de entrada!")
     }
-    
+
     func nextButtonPressed() {
         coordinator?.goToInvoice()
     }

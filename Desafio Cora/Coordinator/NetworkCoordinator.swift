@@ -11,7 +11,7 @@ public class NetworkCoordinator: NSObject, Coordinator {
     public var childCoordinators: [Coordinator] = []
     public var parent: Coordinator?
     public var navigationController: NavigationController
-    
+
     // MARK: Services
     private let invoiceService: InvoiceService
 

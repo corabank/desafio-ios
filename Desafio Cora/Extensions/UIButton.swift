@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIButton {
-    func addImageOnRightSide(_ image: UIImage?){
+    func addImageOnRightSide(_ image: UIImage?) {
         self.setImage(image, for: [])
         self.contentHorizontalAlignment = .left
         self.imageView?.translatesAutoresizingMaskIntoConstraints = false
@@ -16,7 +16,7 @@ extension UIButton {
         self.imageView?.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
     }
 
-    func addImageOnRightSide(){
+    func addImageOnRightSide() {
         self.contentHorizontalAlignment = .left
         self.imageView?.translatesAutoresizingMaskIntoConstraints = false
         self.imageView?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0.0).isActive = true

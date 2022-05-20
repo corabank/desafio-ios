@@ -147,11 +147,11 @@ extension IntroScreen: CodeView {
         labelsStackView.topAnchor.constraint(equalTo: introBackground.bottomAnchor, constant: 16).isActive = true
         labelsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
         labelsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24).isActive = true
-        
+
         introBody.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: 16).isActive = true
         introBody.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
         introBody.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24).isActive = true
-        
+
         buttonsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -48).isActive = true
         buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
         buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24).isActive = true

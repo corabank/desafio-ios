@@ -9,11 +9,11 @@ import UIKit
 
 public class NavigationController: UINavigationController {
 
-    public override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setNavigationAppearence()
     }
-    
+
     func setNavigationAppearence(color: UIColor = .red) {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = color
@@ -25,7 +25,7 @@ public class NavigationController: UINavigationController {
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().isTranslucent = false
-        
+
         let backButtonAppearence = UIBarButtonItemAppearance()
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
         backButtonAppearence.normal.titleTextAttributes = titleTextAttributes

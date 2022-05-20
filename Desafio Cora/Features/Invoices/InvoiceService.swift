@@ -12,7 +12,7 @@ protocol InvoiceServiceDelegate {
 }
 
 final class InvoiceService {
-    @Published var invoiceData = InvoiceModel(invoiceResume: nil, mainTransactions: [], cards: nil)
+    @Published var invoiceData = InvoiceModel(invoiceResume: nil, mainTransactions: [], cards: [])
 }
 
 // MARK: - ExtractServicing
@@ -30,6 +30,6 @@ extension InvoiceService: InvoiceServiceDelegate {
                 print(error)
             }
         }
-        return InvoiceModel(invoiceResume: nil, mainTransactions: [], cards: nil)
+        return InvoiceModel(invoiceResume: nil, mainTransactions: [], cards: [])
     }
 }

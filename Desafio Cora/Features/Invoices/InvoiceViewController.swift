@@ -16,10 +16,10 @@ class InvoiceViewController: UIViewController {
         screen?.delegate = self
         self.view = screen
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Faturas"
+        self.title = Strings.invoice
         setupInvoiceNavigationBar()
         coordinator?.getInvoiceData(onSuccess: { result in
             self.screen?.configure(data: result )
@@ -30,10 +30,14 @@ class InvoiceViewController: UIViewController {
 }
 
 extension InvoiceViewController: InvoiceScreenDelegate {
+    func getInfoByCard(index: Int) {
+        coordinator?.showAlert(title: "Cartão \(index) Selecionado!", message: "Cartão \(index) Selecionado!")
+    }
+
     func payButtonPressed() {
         coordinator?.showAlert(title: "Pagar Fatura!", message: "Pagar Fatura!")
     }
-    
+
     func automaticDebitPressed() {
         coordinator?.showAlert(title: "Débito Automático!", message: "Débito Automático!")
     }
@@ -49,7 +53,7 @@ extension InvoiceViewController {
         let infoButton = UIBarButtonItem(image: Images.questionIcon, style: .plain, target: self, action: #selector(infoButtonTapped))
 
         self.navigationItem.rightBarButtonItems = [infoButton, downloadInvoiceButton]
-        
+
         let appearance = UINavigationBarAppearance()
         UINavigationBar.appearance().tintColor = .primary
         appearance.configureWithOpaqueBackground()
@@ -61,11 +65,13 @@ extension InvoiceViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 
-    @objc func downloadInvoiceButtonTapped(sender: AnyObject){
+    @objc
+    func downloadInvoiceButtonTapped(sender: AnyObject) {
         coordinator?.showAlert(title: "Fatura Baixada!", message: "Fatura Baixada!")
     }
 
-    @objc func infoButtonTapped(sender: AnyObject){
+    @objc
+    func infoButtonTapped(sender: AnyObject) {
         coordinator?.showAlert(title: "Informações", message: "Infos")
     }
 }

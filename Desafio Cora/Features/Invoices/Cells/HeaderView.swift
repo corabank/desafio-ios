@@ -16,11 +16,11 @@ protocol HeaderViewDelegate: AnyObject {
 class HeaderView: UIView {
     weak var delegate: HeaderViewDelegate?
 
-    private lazy var chart: UIView = {
-        let view = UIView()
-        view.backgroundColor = .secondaryLight
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private lazy var chart: BarChartView = {
+        let chart = BarChartView()
+        chart.delegate = self
+        chart.translatesAutoresizingMaskIntoConstraints = false
+        return chart
     }()
 
     private lazy var totalValueLabel: UILabel = {
@@ -53,7 +53,7 @@ class HeaderView: UIView {
 
     private lazy var payInvoiceButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Pagar Fatura", for: [])
+        button.setTitle(Strings.payInvoiceButtonTitle, for: [])
         button.titleLabel?.font = Fonts.getFont(.regular(size: 14))()
         button.backgroundColor = .primary
         button.layer.cornerRadius = 8
@@ -67,7 +67,7 @@ class HeaderView: UIView {
 
     private lazy var autoDebitButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Débito automatico ativo", for: [])
+        button.setTitle(Strings.automaticDebitButtonTitle, for: [])
         button.setTitleColor(.white, for: [])
         button.addImageOnRightSide(Images.rightArrowPink)
         button.backgroundColor = .offBlack
@@ -101,12 +101,14 @@ class HeaderView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func payInvoiceTapped() {
+
+    @objc
+    func payInvoiceTapped() {
         delegate?.payButtonPressed()
     }
 
-    @objc func autoDebitTapped() {
+    @objc
+    func autoDebitTapped() {
         delegate?.automaticDebitPRessed()
     }
 
@@ -120,7 +122,8 @@ class HeaderView: UIView {
         }
         totalValueLabel.text = "R$ \(data.infos.totalValue.description)"
         labelDescription1.text = data.infos.totalValue.description
-        labelDescription2.text = "Vencimento em \(data.infos.expirationDate)"
+        labelDescription2.text = Strings.expirationData(data.infos.expirationDate)
+        chart.setData(data.chart)
     }
 }
 
@@ -130,10 +133,10 @@ extension HeaderView: CodeView {
         addSubview(infoStackView)
         addSubview(autoDebitButton)
     }
-    
+
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            chart.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            chart.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
             chart.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             chart.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             chart.heightAnchor.constraint(equalToConstant: 128)
@@ -142,7 +145,7 @@ extension HeaderView: CodeView {
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: chart.bottomAnchor, constant: 12),
             infoStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-            infoStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
+            infoStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24)
         ])
 
         NSLayoutConstraint.activate([
@@ -158,8 +161,14 @@ extension HeaderView: CodeView {
             payInvoiceButton.heightAnchor.constraint(equalTo: infoStackView.heightAnchor, multiplier: 0.4)
         ])
     }
-    
+
     func setupAdditionalConfigaration() {
         backgroundColor = .black
+    }
+}
+
+extension HeaderView: BarChartViewDelegate {
+    func barClicked(barIndex: Int) {
+        // Callback to call the reloadTableView or send to ViewController to make a new request pelo delegate
     }
 }

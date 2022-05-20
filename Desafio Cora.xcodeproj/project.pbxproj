@@ -39,11 +39,12 @@
 		59C85F6B282C4B0700D83844 /* IntroScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C85F6A282C4B0700D83844 /* IntroScreen.swift */; };
 		59C85F6D282C4BB400D83844 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C85F6C282C4BB400D83844 /* CodeView.swift */; };
 		59D8B404282C9D88004D9D5A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B403282C9D88004D9D5A /* Fonts.swift */; };
-		59D8B406282C9D93004D9D5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B405282C9D93004D9D5A /* Colors.swift */; };
+		59D8B406282C9D93004D9D5A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B405282C9D93004D9D5A /* UIColor.swift */; };
 		59D8B408282C9DC9004D9D5A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59D8B407282C9DC9004D9D5A /* Colors.xcassets */; };
 		59D8B40A282CA260004D9D5A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8B409282CA260004D9D5A /* Images.swift */; };
 		59E0DECB282DEA52007DF393 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0DECA282DEA52007DF393 /* NavigationController.swift */; };
 		59E0DECE282E006B007DF393 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0DECD282E006B007DF393 /* String.swift */; };
+		59E7875C28371F7000C848AA /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7875B28371F7000C848AA /* BarChartView.swift */; };
 		59EE73B82831AE7A00506FE6 /* InvoiceRowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE73B72831AE7A00506FE6 /* InvoiceRowViewCell.swift */; };
 		59EE73BA2831B6B300506FE6 /* InvoiceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE73B92831B6B300506FE6 /* InvoiceScreen.swift */; };
 /* End PBXBuildFile section */
@@ -102,11 +103,12 @@
 		59C85F6A282C4B0700D83844 /* IntroScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreen.swift; sourceTree = "<group>"; };
 		59C85F6C282C4BB400D83844 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		59D8B403282C9D88004D9D5A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		59D8B405282C9D93004D9D5A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		59D8B405282C9D93004D9D5A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		59D8B407282C9DC9004D9D5A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		59D8B409282CA260004D9D5A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		59E0DECA282DEA52007DF393 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		59E0DECD282E006B007DF393 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		59E7875B28371F7000C848AA /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		59EE73B72831AE7A00506FE6 /* InvoiceRowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceRowViewCell.swift; sourceTree = "<group>"; };
 		59EE73B92831B6B300506FE6 /* InvoiceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -288,7 +290,7 @@
 				59C0EEF0282B43040037E3BB /* Assets.xcassets */,
 				59C85F6C282C4BB400D83844 /* CodeView.swift */,
 				59D8B403282C9D88004D9D5A /* Fonts.swift */,
-				59D8B405282C9D93004D9D5A /* Colors.swift */,
+				59D8B405282C9D93004D9D5A /* UIColor.swift */,
 				59D8B409282CA260004D9D5A /* Images.swift */,
 				592A22CF282DAFF3003B4AE3 /* Strings.swift */,
 			);
@@ -309,6 +311,7 @@
 			children = (
 				59EE73B72831AE7A00506FE6 /* InvoiceRowViewCell.swift */,
 				59BCA47128341CFF00C07378 /* HeaderView.swift */,
+				59E7875B28371F7000C848AA /* BarChartView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				59C0EEE0282B43020037E3BB /* Sources */,
 				59C0EEE1282B43020037E3BB /* Frameworks */,
 				59C0EEE2282B43020037E3BB /* Resources */,
+				59E7875D28372D6600C848AA /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -440,6 +444,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59E7875D28372D6600C848AA /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59C0EEE0282B43020037E3BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -447,7 +472,7 @@
 			files = (
 				59D8B404282C9D88004D9D5A /* Fonts.swift in Sources */,
 				5992CC612835CC1C00225B2A /* NetworkCoordinator.swift in Sources */,
-				59D8B406282C9D93004D9D5A /* Colors.swift in Sources */,
+				59D8B406282C9D93004D9D5A /* UIColor.swift in Sources */,
 				59C0EF25282B5A960037E3BB /* LoginViewController.swift in Sources */,
 				59C0EF18282B45CA0037E3BB /* RootCoordinator.swift in Sources */,
 				59C85F64282C361800D83844 /* LoginScreen.swift in Sources */,
@@ -477,6 +502,7 @@
 				59AA52BF282EEBD3003DDE81 /* InvoiceViewController.swift in Sources */,
 				59C0EEEA282B43020037E3BB /* SceneDelegate.swift in Sources */,
 				59BCA47228341CFF00C07378 /* HeaderView.swift in Sources */,
+				59E7875C28371F7000C848AA /* BarChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

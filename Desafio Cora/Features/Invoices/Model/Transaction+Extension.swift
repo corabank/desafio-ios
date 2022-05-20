@@ -21,16 +21,17 @@ extension Transaction {
 extension InvoiceModel {
     var dataForTable: [Card] {
         var cards = [Card]()
-        cards.append(Card(cardName: "", finalCardNumber: "", transactions: self.mainTransactions ?? [] ))
-        for card in self.cards ?? [] {
+        cards.append(Card(cardName: "", finalCardNumber: "", transactions: self.mainTransactions ))
+        for card in self.cards {
             cards.append(card)
         }
         return cards
     }
+
     func formatDataForTable() -> [Card] {
         var cards = [Card]()
-        cards.append(Card(cardName: "", finalCardNumber: "", transactions: self.mainTransactions ?? [] ))
-        for card in self.cards ?? [] {
+        cards.append(Card(cardName: "", finalCardNumber: "", transactions: self.mainTransactions ))
+        for card in self.cards {
             cards.append(card)
         }
         return cards

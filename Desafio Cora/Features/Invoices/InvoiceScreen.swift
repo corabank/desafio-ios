@@ -11,9 +11,10 @@ protocol InvoiceScreenDelegate: AnyObject {
     func payButtonPressed()
     func automaticDebitPressed()
     func barChartPressed()
+    func getInfoByCard(index: Int)
 }
 
-final class InvoiceScreen : UIView {
+final class InvoiceScreen: UIView {
     private let maxHeaderHeight: CGFloat = 300
     private let minHeaderHeight: CGFloat = 0
     private var previousScrollOffset: CGFloat = 0
@@ -21,7 +22,7 @@ final class InvoiceScreen : UIView {
     private var cardView: UIView?
 
     private var data: InvoiceModel?
-    
+
     weak var delegate: InvoiceScreenDelegate?
 
     private lazy var scrollView: UIScrollView = {
@@ -40,8 +41,8 @@ final class InvoiceScreen : UIView {
     private lazy var cardSelector: UIButton = {
         let button = UIButton(frame: .zero)
         button.backgroundColor = .systemGray4
-        button.setTitle("Todos os Cartoes", for: .normal)
-        button.setTitle("Todos os Cartoes", for: .selected)
+        button.setTitle(Strings.allCardsButtonTitle, for: .normal)
+        button.setTitle(Strings.allCardsButtonTitle, for: .selected)
         button.titleLabel?.font = Fonts.getFont(.bold(size: 14))()
         button.setTitleColor(.primary, for: [])
         button.setImage(Images.chevronDownIcon, for: .normal)
@@ -61,7 +62,7 @@ final class InvoiceScreen : UIView {
     }()
 
     private lazy var headerHeightConstraint: NSLayoutConstraint = {
-        return headerView.constraints.filter{$0.firstAttribute == .height}.first!
+        headerView.constraints.filter { $0.firstAttribute == .height }.first!
     }()
 
     private lazy var tableView: UITableView = {
@@ -91,13 +92,13 @@ final class InvoiceScreen : UIView {
 
     private func addNewView(to container: UIView) -> UIView { // making this static for now
         let label1 = UILabel()
-        label1.text = self.data?.cards?[0].cardName
+        label1.text = self.data?.cards[0].cardName
         label1.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(card1Clicked))
         label1.addGestureRecognizer(tap)
 
         let label2 = UILabel()
-        label2.text = self.data?.cards?[1].cardName
+        label2.text = self.data?.cards[1].cardName
         label2.isUserInteractionEnabled = true
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(card2Clicked))
         label2.addGestureRecognizer(tap2)
@@ -112,7 +113,8 @@ final class InvoiceScreen : UIView {
         return stack
     }
 
-    @objc private func cardSelectorViewPressed() {
+    @objc
+    private func cardSelectorViewPressed() {
         if cardSelector.isSelected {
             cardView?.removeFromSuperview()
         } else {
@@ -121,14 +123,22 @@ final class InvoiceScreen : UIView {
         cardSelector.isSelected.toggle()
     }
 
-    @objc private func card1Clicked() {
+    @objc
+    private func card1Clicked() {
         // CTA to filter table data
+        cardView?.removeFromSuperview()
+        cardSelector.isSelected.toggle()
+        delegate?.getInfoByCard(index: 1)
     }
 
-    @objc private func card2Clicked() {
+    @objc
+    private func card2Clicked() {
         // CTA to filter table data
+        cardView?.removeFromSuperview()
+        cardSelector.isSelected.toggle()
+        delegate?.getInfoByCard(index: 2)
     }
-    
+
     func configure(data: InvoiceModel) {
         self.data = data
         headerView.configure(data: data.invoiceResume)
@@ -172,7 +182,7 @@ extension InvoiceScreen: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceRowViewCell", for: indexPath)
         guard let rowCell = cell as? InvoiceRowViewCell,
-              let data = data?.dataForTable[indexPath.section].transactions[indexPath.row] else {  return UITableViewCell() }
+              let data = data?.dataForTable[indexPath.section].transactions[indexPath.row] else { return UITableViewCell() }
         rowCell.passData(model: data)
         rowCell.selectionStyle = .none
         return cell
@@ -191,8 +201,8 @@ extension InvoiceScreen: UITableViewDelegate {
 
         guard heightDiff == 0 else { return }
 
-        let absoluteTop: CGFloat = 0;
-        let absoluteBottom: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height;
+        let absoluteTop: CGFloat = 0
+        let absoluteBottom: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height
 
         let isScrollingDown = scrollDiff > 0 && scrollView.contentOffset.y > absoluteTop
         let isScrollingUp = scrollDiff < 0 && scrollView.contentOffset.y < absoluteBottom
@@ -239,18 +249,18 @@ extension InvoiceScreen: UITableViewDelegate {
 
     func collapseHeader() {
         self.layoutIfNeeded()
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.2) {
             self.headerHeightConstraint.constant = self.minHeaderHeight
             self.layoutIfNeeded()
-        })
+        }
     }
 
     func expandHeader() {
         self.layoutIfNeeded()
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.2) {
             self.headerHeightConstraint.constant = self.maxHeaderHeight
             self.layoutIfNeeded()
-        })
+        }
     }
 
     func setScrollPosition(_ position: CGFloat) {
@@ -267,7 +277,7 @@ extension InvoiceScreen: HeaderViewDelegate {
     }
 
     func barChartPressed() {
-        
+        // CTA for bar chart pressed
     }
 }
 
@@ -285,7 +295,7 @@ extension InvoiceScreen: CodeView {
             scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
         ])
 
         NSLayoutConstraint.activate([
@@ -303,7 +313,7 @@ extension InvoiceScreen: CodeView {
             headerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             headerView.heightAnchor.constraint(equalToConstant: 300)
         ])
-    
+
         NSLayoutConstraint.activate([
             cardSelector.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0),
             cardSelector.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
@@ -316,7 +326,7 @@ extension InvoiceScreen: CodeView {
             tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
-            tableView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            tableView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
 
