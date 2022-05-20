@@ -69,9 +69,24 @@ final class SignInViewController: BaseViewController<SignInInteracting> {
         setupCustomNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBottomButton()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         cpfField.becomeFirstResponder()
+    }
+    
+    private func setupBottomButton() {
+        NSLayoutConstraint.activate([
+            nextStepButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Spacing.space03),
+            nextStepButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                     constant: -Spacing.space04),
+            nextStepButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                    constant: Spacing.space04)
+        ])
     }
     
     // MARK: BuildableView
@@ -95,13 +110,7 @@ final class SignInViewController: BaseViewController<SignInInteracting> {
                                               constant: Spacing.space04)
         ])
         
-        NSLayoutConstraint.activate([
-            nextStepButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Spacing.space03),
-            nextStepButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -Spacing.space04),
-            nextStepButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                    constant: Spacing.space04)
-        ])
+        setupBottomButton()
     }
     
     override func setupStyles() {

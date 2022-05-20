@@ -17,8 +17,10 @@ final class HomeViewController: BaseViewController<HomeInteracting> {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = Localizable.title
-        label.font = Font.Highlighted.primaryTitle
+        let boldText = Localizable.title.components(separatedBy: "\n")[0]
+        label.attributedText = Localizable.title.withBoldText(text: boldText,
+                                                              regularFont: Font.Regular.primaryTitle,
+                                                              boldFont: Font.Highlighted.primaryTitle)
         label.textColor = Colors.white.color
         label.numberOfLines = 0
         return label

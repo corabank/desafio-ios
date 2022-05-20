@@ -42,7 +42,7 @@
 
 //MARK: Transaction Description
 
-"transactionDescription.billetDeposit" = "Boleto via boleto";
+"transactionDescription.billetDeposit" = "Depósito via boleto";
 "transactionDescription.billetPaid" = "Boleto Pago";
 "transactionDescription.paymentReceived" = "Pagamento recebido";
 "transactionDescription.paymentReversed" = "Pagamento estornado";

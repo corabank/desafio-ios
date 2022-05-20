@@ -20,10 +20,8 @@ struct TransactionDetailViewModel {
         switch transactionDetail.method {
         case .transfer:
             return Localizable.transferDate
-        case .payment:
+        case .payment, .billet:
             return Localizable.paymentDate
-        case .billet:
-            return ""
         }
     }
     

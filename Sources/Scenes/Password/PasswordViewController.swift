@@ -84,11 +84,25 @@ final class PasswordViewController: BaseViewController<PasswordInteracting> {
         setupCustomNavigationBar()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBottomButton()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         passwordField.becomeFirstResponder()
     }
     
+    private func setupBottomButton() {
+        NSLayoutConstraint.activate([
+            nextStepButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Spacing.space03),
+            nextStepButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                     constant: -Spacing.space04),
+            nextStepButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                    constant: Spacing.space04)
+        ])
+    }
     // MARK: BuildableView
     
     override func setupHierarchy() {
@@ -102,16 +116,10 @@ final class PasswordViewController: BaseViewController<PasswordInteracting> {
             fieldStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
         
-        NSLayoutConstraint.activate([
-            nextStepButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Spacing.space03),
-            nextStepButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -Spacing.space04),
-            nextStepButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                    constant: Spacing.space04),
-            nextStepButton.topAnchor.constraint(greaterThanOrEqualTo: forgotPasswordButton.bottomAnchor)
-        ])
-        
+        setupBottomButton()
         togglePasswordButton.size(32)
+        
+        view.keyboardLayoutGuide.followsUndockedKeyboard = true
     }
     
     override func setupStyles() {

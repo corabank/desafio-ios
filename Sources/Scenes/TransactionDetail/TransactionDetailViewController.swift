@@ -106,7 +106,8 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
                                                        descriptionStackView])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.spacing = 0
+        stackView.spacing = Spacing.space04
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: Spacing.space04,
                                                left: Spacing.space04,
@@ -117,7 +118,6 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.showsVerticalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
@@ -151,7 +151,7 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
         stackView.spacing = Spacing.space03
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: .zero,
+        stackView.layoutMargins = UIEdgeInsets(top: Spacing.space03,
                                                left: Spacing.space04,
                                                bottom: Spacing.space03,
                                                right: Spacing.space04)
@@ -163,11 +163,6 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
         title = Localizable.title
         interactor.fetchContent()
         setupCustomNavigationBar()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        scrollView.contentSize = CGSize(width: rootStackView.frame.width, height: rootStackView.frame.height)
     }
 
     // MARK: BuildableView
@@ -191,8 +186,15 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
             buttonsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-        rootStackView.fitToParent()
-        rootStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            rootStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            rootStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            rootStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            rootStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            rootStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+
+        ])
+        
         iconImage.size(24)
     }
     
