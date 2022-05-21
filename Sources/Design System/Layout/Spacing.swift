@@ -1,4 +1,4 @@
-import UIKit
+import struct UIKit.CGFloat
 
 enum Spacing {
     /// 4

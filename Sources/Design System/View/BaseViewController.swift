@@ -99,5 +99,3 @@ class BaseViewController<Interactor>: UIViewController, BuildableView {
         // to be overrited
     }
 }
-
-

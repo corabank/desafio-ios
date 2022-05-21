@@ -1,8 +1,8 @@
 {
     "type": "INPUT",
     "method": "TRANSFER",
-    "value": 26.00,
-    "date": "2022-08-13",
+    "value": 30.00,
+    "date": "2022-05-19",
     "sender": {
         "name": "Guy Edwards",
         "cpf": "407.130.987.87",

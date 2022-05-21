@@ -1,20 +1,20 @@
 {
-    "type": "INPUT",
+    "type": "OUTPUT",
     "method": "BILLET",
     "value": 26.00,
-    "date": "2022-08-17",
+    "date": "2022-05-18",
     "sender": {
-        "name": "Judith Cooper",
-        "cpf": "407.130.987.87",
-        "bank_name": "Banco Itaú",
-        "bank_agency": "6193",
-        "bank_account": "12225-3"
-    },
-    "receiver": {
         "name": "Maria Eduarda Porto",
         "cpf": "222.222.222.22",
         "bank_name": "Banco Cora",
         "bank_agency": "0001",
         "bank_account": "12345-6"
+    },
+    "receiver": {
+        "name": "Judith Cooper",
+        "cpf": "407.130.987.87",
+        "bank_name": "Banco Itaú",
+        "bank_agency": "6193",
+        "bank_account": "12225-3"
     }
 }

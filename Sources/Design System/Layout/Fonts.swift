@@ -1,4 +1,4 @@
-import UIKit
+import class UIKit.UIFont
 
 fileprivate enum FontName {
     static let bold = "Avenir-Heavy"

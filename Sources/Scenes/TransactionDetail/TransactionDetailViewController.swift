@@ -192,7 +192,6 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
             rootStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             rootStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             rootStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-
         ])
         
         iconImage.size(24)
