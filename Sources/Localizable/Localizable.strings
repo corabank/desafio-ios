@@ -29,7 +29,7 @@
 //MARK: Transaction Detail
 "transactionDetail.title" = "Detalhes da operação";
 "transactionDetail.value" = "Valor";
-"transactionDetail.transferDate" = "Data da transaferência";
+"transactionDetail.transferDate" = "Data da transferência";
 "transactionDetail.paymentDate" = "Data do pagamento";
 "transactionDetail.sender" = "De";
 "transactionDetail.receiver" = "Para";

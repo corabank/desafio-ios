@@ -1,7 +1,8 @@
-import Foundation
+import UIKit
 
 protocol TransactionDetailPresenting: AnyObject {
     func presentContent(transactionDetail: TransactionDetail)
+    func presentActivityController(shareItem: UIImage)
 }
 
 final class TransactionDetailPresenter {
@@ -17,5 +18,9 @@ extension TransactionDetailPresenter: TransactionDetailPresenting {
     func presentContent(transactionDetail: TransactionDetail) {
         let viewModel = TransactionDetailViewModel(transactionDetail: transactionDetail)
         viewController?.displayContent(viewModel: viewModel)
+    }
+    
+    func presentActivityController(shareItem: UIImage) {
+        coordinator.showActivityController(shareItem: shareItem)
     }
 }

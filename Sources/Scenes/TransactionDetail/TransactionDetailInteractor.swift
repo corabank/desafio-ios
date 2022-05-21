@@ -1,7 +1,9 @@
 import Foundation
+import class UIKit.UIImage
 
 protocol TransactionDetailInteracting: AnyObject {
     func fetchContent()
+    func share(receipt: UIImage)
 }
 
 final class TransactionDetailInteractor {
@@ -20,5 +22,10 @@ extension TransactionDetailInteractor: TransactionDetailInteracting {
     func fetchContent() {
         guard let transactionDetail = service.getTransactionDetailData(id: transactionId) else { return }
         presenter.presentContent(transactionDetail: transactionDetail)
+    }
+    
+    
+    func share(receipt: UIImage) {
+        presenter.presentActivityController(shareItem: receipt)
     }
 }

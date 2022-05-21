@@ -123,7 +123,7 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
     }()
     
     private lazy var shareButton: Button = {
-        let action = UIAction { _ in print("Share Clicked") }
+        let action = UIAction { _ in self.didTapShareReceipt() }
         let button = Button(title: Localizable.shareReceipt,
                             titleColor: Colors.white.color,
                             action: action,
@@ -164,7 +164,7 @@ final class TransactionDetailViewController: BaseViewController<TransactionDetai
         interactor.fetchContent()
         setupCustomNavigationBar()
     }
-
+    
     // MARK: BuildableView
     
     override func setupHierarchy() {
@@ -214,5 +214,21 @@ extension TransactionDetailViewController: TransactionDetailDisplaying {
         cancelScheduleButton.isHidden = !viewModel.shouldShowCancelButton
         senderUserView.setup(content: viewModel.senderContent)
         receiverUserView.setup(content: viewModel.receiverContent)
+    }
+}
+
+private extension TransactionDetailViewController {
+    func getReceiptImage() -> UIImage? {
+        UIGraphicsBeginImageContext(rootStackView.frame.size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        rootStackView.layer.render(in: context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+    func didTapShareReceipt() {
+        guard let image = getReceiptImage() else { return }
+        interactor.share(receipt: image)
     }
 }
