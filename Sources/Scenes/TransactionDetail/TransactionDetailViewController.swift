@@ -218,12 +218,7 @@ extension TransactionDetailViewController: TransactionDetailDisplaying {
 
 private extension TransactionDetailViewController {
     func getReceiptImage() -> UIImage? {
-        UIGraphicsBeginImageContext(rootStackView.frame.size)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        rootStackView.layer.render(in: context)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
+        rootStackView.getScreenshot()
     }
     
     func didTapShareReceipt() {

@@ -1,6 +1,6 @@
 import Foundation
 
-struct TransactionDetail: Decodable {
+struct TransactionDetail: Decodable, Equatable {
     let type: TransactionType
     let method: TransactionMethod
     let value: Double
@@ -9,7 +9,7 @@ struct TransactionDetail: Decodable {
     let receiver: TransactionPerson
 }
 
-struct TransactionPerson: Decodable {
+struct TransactionPerson: Decodable, Equatable {
     let name: String
     let cpf: String
     let bankName: String

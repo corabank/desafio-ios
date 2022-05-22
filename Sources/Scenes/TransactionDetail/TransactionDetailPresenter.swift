@@ -21,6 +21,6 @@ extension TransactionDetailPresenter: TransactionDetailPresenting {
     }
     
     func presentActivityController(shareItem: UIImage) {
-        coordinator.showActivityController(shareItem: shareItem)
+        coordinator.coordinateToActivityController(shareItem: shareItem)
     }
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-struct TransactionDetailViewModel {
+struct TransactionDetailViewModel: Equatable {
     private typealias Localizable = Strings.TransactionDetail
     private let transactionDetail: TransactionDetail
     

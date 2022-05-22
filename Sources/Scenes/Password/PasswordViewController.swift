@@ -141,8 +141,13 @@ extension PasswordViewController: PasswordDisplaying {
     }
     
     func displayPassword(isVisible: Bool, fieldImage: UIImage) {
-        passwordField.isSecureTextEntry = !isVisible
-        togglePasswordButton.setImage(fieldImage, for: [])
+        UIView.transition(with: passwordField,
+                          duration: 0.15,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.passwordField.isSecureTextEntry = !isVisible
+            self.togglePasswordButton.setImage(fieldImage, for: [])
+        })
     }
 }
 

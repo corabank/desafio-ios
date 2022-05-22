@@ -1,6 +1,6 @@
 import UIKit
 
-struct StatementItemContent {
+struct StatementItemContent: Equatable {
     private let transaction: Transaction
     
     init(transaction: Transaction) {

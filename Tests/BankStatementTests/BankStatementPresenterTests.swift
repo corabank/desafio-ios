@@ -42,4 +42,3 @@ final class BankStatementPresenterTests: XCTestCase {
         XCTAssertEqual(coordinatorSpy.calledId, 1)
     }
 }
-

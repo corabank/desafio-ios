@@ -1,7 +1,7 @@
 import UIKit
 
 protocol TransactionDetailCoordinating: AnyObject {
-    func showActivityController(shareItem: UIImage)
+    func coordinateToActivityController(shareItem: UIImage)
 }
 
 final class TransactionDetailCoordinator {
@@ -9,7 +9,7 @@ final class TransactionDetailCoordinator {
 }
 
 extension TransactionDetailCoordinator: TransactionDetailCoordinating {
-    func showActivityController(shareItem: UIImage) {
+    func coordinateToActivityController(shareItem: UIImage) {
         let items = [shareItem as Any]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         viewController?.present(activityViewController, animated: true)

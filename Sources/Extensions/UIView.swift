@@ -15,6 +15,15 @@ extension UIView {
         }
     }
     
+    func getScreenshot() -> UIImage? {
+        UIGraphicsBeginImageContext(frame.size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        layer.render(in: context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
     // MARK: Constraints
     
     func fitToParent(with insets: UIEdgeInsets = .zero) {

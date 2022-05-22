@@ -95,7 +95,7 @@ class BaseViewController<Interactor>: UIViewController, BuildableView {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc private func didTapRightButton() {
+    @objc func didTapRightButton() {
         // to be overrited
     }
 }

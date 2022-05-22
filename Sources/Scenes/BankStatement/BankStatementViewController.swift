@@ -60,6 +60,8 @@ final class BankStatementViewController: BaseViewController<BankStatementInterac
         view.addSubviews(segmentsStackView, tableView)
     }
     
+    // MARK: BuildableView
+    
     override func setupConstraints() {
         NSLayoutConstraint.activate([
             segmentsStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: navigationBarHeight),

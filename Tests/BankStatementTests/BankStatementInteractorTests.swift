@@ -30,12 +30,13 @@ private final class BankStatementServiceMock: BankStatementServicing {
 final class BankStatementInteractorTests: XCTestCase {
     private let dailyTransactionsMock: [DailyTransactions] = [.mock, .mock2]
     private let presenterSpy = BankStatementPresenterSpy()
-    private let serviceMock = BankStatementServiceMock()
-    private lazy var sut: BankStatementInteractor = {
-        serviceMock.bankStatementExpectedResult = dailyTransactionsMock
-        let interactor = BankStatementInteractor(service: serviceMock, presenter: presenterSpy)
-        return interactor
+    private lazy var serviceMock: BankStatementServiceMock = {
+        let service = BankStatementServiceMock()
+        service.bankStatementExpectedResult = dailyTransactionsMock
+        return service
     }()
+    
+    private lazy var sut = BankStatementInteractor(service: serviceMock, presenter: presenterSpy)
     
     func testDayInfoForSection_ShouldReturnStatementHeaderContent() {
         let section = 1
@@ -103,16 +104,5 @@ final class BankStatementInteractorTests: XCTestCase {
         
         XCTAssertEqual(presenterSpy.callPresentTransactionsCount, 1)
         XCTAssertTrue(sut.segmentedDailyTransactions.allSatisfy { $0.transactions.allSatisfy { $0.type == .scheduled }})
-    }
-}
-
-extension StatementItemContent: Equatable {
-    public static func == (lhs: StatementItemContent, rhs: StatementItemContent) -> Bool {
-        lhs.name == rhs.name
-        && lhs.formattedValue == lhs.formattedValue
-        && lhs.hour == rhs.hour
-        && lhs.icon == rhs.icon
-        && lhs.description == rhs.description
-        && lhs.tintColor == rhs.tintColor
     }
 }
