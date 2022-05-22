@@ -1,32 +1,32 @@
 import Foundation
 
-struct DailyTransactions: Decodable {
+struct DailyTransactions: Decodable, Equatable {
     let dayInfo: DayInfo
-    let transactions: [Transation]
+    let transactions: [Transaction]
 }
 
-struct DayInfo: Decodable {
+struct DayInfo: Decodable, Equatable {
     let date: Date
     let dayBalance: Double
 }
 
-struct Transation: Decodable {
+struct Transaction: Decodable, Equatable {
     let id: Int
     let name: String
     let hour: String
     let value: Double
-    let type: TransationType
-    let method: TransationMethod
+    let type: TransactionType
+    let method: TransactionMethod
 }
 
-enum TransationType: String, Decodable {
+enum TransactionType: String, Decodable {
     case input = "INPUT"
     case output = "OUTPUT"
     case reversed = "REVERSED"
     case scheduled = "SCHEDULED"
 }
 
-enum TransationMethod: String, Decodable {
+enum TransactionMethod: String, Decodable {
     case billet = "BILLET"
     case payment = "PAYMENT"
     case transfer = "TRANSFER"

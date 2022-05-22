@@ -14,7 +14,7 @@ final class BankStatementInteractor {
     private let presenter: BankStatementPresenting
     
     private let dailyTransactions: [DailyTransactions]
-    private var segmentedDailyTransactions: [DailyTransactions]
+    private(set) var segmentedDailyTransactions: [DailyTransactions]
 
     init(service: BankStatementServicing, presenter: BankStatementPresenting) {
         self.service = service
@@ -64,7 +64,7 @@ extension BankStatementInteractor: BankStatementInteracting {
 }
 
 private extension BankStatementInteractor {
-    func segmentDailyTransactions(by types: [TransationType]) {
+    func segmentDailyTransactions(by types: [TransactionType]) {
         segmentedDailyTransactions.removeAll()
         dailyTransactions.forEach { dailyTransaction in
             let filteredTransactions = dailyTransaction.transactions.filter { types.contains($0.type) }

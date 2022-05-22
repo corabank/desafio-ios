@@ -3,7 +3,7 @@ import class UIKit.UIImage
 enum TransactionFormatterHelper {
     // MARK: Icons
     
-    static func icon(for method: TransationMethod, type: TransationType) -> UIImage {
+    static func icon(for method: TransactionMethod, type: TransactionType) -> UIImage {
         switch method {
         case .transfer, .payment:
             return transferIcon(for: type)
@@ -12,7 +12,7 @@ enum TransactionFormatterHelper {
         }
     }
     
-    private static func transferIcon(for type: TransationType) ->  UIImage {
+    private static func transferIcon(for type: TransactionType) ->  UIImage {
         switch type {
         case .input:
             return Images.icArrowDownIn.image
@@ -29,7 +29,7 @@ enum TransactionFormatterHelper {
     
     private typealias Localizable = Strings.TransactionDescription
     
-    static func description(for method: TransationMethod, type: TransationType) -> String {
+    static func description(for method: TransactionMethod, type: TransactionType) -> String {
         switch method {
         case .transfer:
             return transferDescription(for: type)
@@ -40,7 +40,7 @@ enum TransactionFormatterHelper {
         }
     }
     
-    private static func transferDescription(for type: TransationType) -> String {
+    private static func transferDescription(for type: TransactionType) -> String {
         switch type {
         case .input:
             return Localizable.transferReceived
@@ -53,7 +53,7 @@ enum TransactionFormatterHelper {
         }
     }
     
-    private static func paymentDescription(for type: TransationType) -> String {
+    private static func paymentDescription(for type: TransactionType) -> String {
         switch type {
         case .input:
             return Localizable.paymentReceived
@@ -64,7 +64,7 @@ enum TransactionFormatterHelper {
         }
     }
     
-    private static func billetDescription(for type: TransationType) -> String {
+    private static func billetDescription(for type: TransactionType) -> String {
         switch type {
         case .input:
             return Localizable.billetDeposit

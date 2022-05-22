@@ -9,7 +9,7 @@ final class PasswordCoordinatorTests: XCTestCase {
         return coordinator
     }()
     
-    func testCoordinateToBankStatement_ShouldBankStatementInScene() {
+    func testCoordinateToBankStatement_ShouldBankStatementScene() {
         sut.coordinateToBankStatement()
         
         XCTAssertEqual(viewControllerSpy.callShowCount, 1)

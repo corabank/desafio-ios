@@ -1,8 +1,8 @@
 import Foundation
 
 struct TransactionDetail: Decodable {
-    let type: TransationType
-    let method: TransationMethod
+    let type: TransactionType
+    let method: TransactionMethod
     let value: Double
     let date: Date
     let sender: TransactionPerson

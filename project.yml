@@ -22,7 +22,8 @@ targets:
     platform: iOS
     deploymentTarget: 
       iOS: 15.0
-    sources: Tests
+    sources: 
+      - path: Tests
     dependencies: 
       - target: Cora
 

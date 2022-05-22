@@ -1,9 +1,9 @@
 import UIKit
 
 struct StatementItemContent {
-    private let transaction: Transation
+    private let transaction: Transaction
     
-    init(transaction: Transation) {
+    init(transaction: Transaction) {
         self.transaction = transaction
     }
     
