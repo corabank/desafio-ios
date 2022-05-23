@@ -15,6 +15,8 @@ protocol InvoiceScreenDelegate: AnyObject {
 }
 
 final class InvoiceScreen: UIView {
+
+    // MARK: - Private vars
     private let maxHeaderHeight: CGFloat = 300
     private let minHeaderHeight: CGFloat = 0
     private var previousScrollOffset: CGFloat = 0
@@ -22,6 +24,7 @@ final class InvoiceScreen: UIView {
     private var cardView: UIView?
 
     private var data: InvoiceModel?
+    private var filteredData = [Card]()
 
     weak var delegate: InvoiceScreenDelegate?
 
@@ -62,7 +65,7 @@ final class InvoiceScreen: UIView {
     }()
 
     private lazy var headerHeightConstraint: NSLayoutConstraint = {
-        headerView.constraints.filter { $0.firstAttribute == .height }.first!
+        headerView.constraints.first { $0.firstAttribute == .height } ?? NSLayoutConstraint()
     }()
 
     private lazy var tableView: UITableView = {
@@ -90,7 +93,14 @@ final class InvoiceScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addNewView(to container: UIView) -> UIView { // making this static for now
+    private func addNewView(to container: UIView) -> UIView { // making this static for now just to show the view!
+        // to make this dynamic i'll create the views programatically according the qtd of cards!
+        let allLabel = UILabel()
+        allLabel.text = "Todos"
+        allLabel.isUserInteractionEnabled = true
+        let tapAll = UITapGestureRecognizer(target: self, action: #selector(allClicked))
+        allLabel.addGestureRecognizer(tapAll)
+
         let label1 = UILabel()
         label1.text = self.data?.cards[0].cardName
         label1.isUserInteractionEnabled = true
@@ -103,7 +113,7 @@ final class InvoiceScreen: UIView {
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(card2Clicked))
         label2.addGestureRecognizer(tap2)
 
-        let stack = UIStackView(arrangedSubviews: [label1, label2])
+        let stack = UIStackView(arrangedSubviews: [allLabel, label1, label2])
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.alignment = .center
@@ -124,6 +134,14 @@ final class InvoiceScreen: UIView {
     }
 
     @objc
+    private func allClicked() {
+        // CTA to filter table data
+        cardView?.removeFromSuperview()
+        cardSelector.isSelected.toggle()
+        delegate?.getInfoByCard(index: 0)
+    }
+
+    @objc
     private func card1Clicked() {
         // CTA to filter table data
         cardView?.removeFromSuperview()
@@ -141,18 +159,25 @@ final class InvoiceScreen: UIView {
 
     func configure(data: InvoiceModel) {
         self.data = data
+        self.filteredData = data.formatDataForTable()
         headerView.configure(data: data.invoiceResume)
+        tableView.reloadData()
+    }
+
+    func filterCard(filteredTransactions: [Card]) {
+        self.filteredData = filteredTransactions
         tableView.reloadData()
     }
 }
 
+// MARK: - Extensions
 extension InvoiceScreen: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data?.dataForTable[section].transactions.count ?? 0
+        filteredData[section].transactions.count
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        data?.dataForTable.count ?? 0
+        filteredData.count
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -168,9 +193,7 @@ extension InvoiceScreen: UITableViewDataSource {
         let label = UILabel(frame: CGRect(x: 20, y: 0, width: view.frame.width, height: 32))
         label.font = Fonts.getFont(.regular(size: 14))()
         label.textColor = .gray1
-        guard let cardName = data?.dataForTable[section].cardName,
-              let number = data?.dataForTable[section].finalCardNumber else { return nil }
-        label.text = "\(cardName) •••• \(number)"
+        label.text = "\(filteredData[section].cardName) •••• \(filteredData[section].finalCardNumber)"
         view.addSubview(label)
         return view
     }
@@ -181,8 +204,8 @@ extension InvoiceScreen: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceRowViewCell", for: indexPath)
-        guard let rowCell = cell as? InvoiceRowViewCell,
-              let data = data?.dataForTable[indexPath.section].transactions[indexPath.row] else { return UITableViewCell() }
+        guard let rowCell = cell as? InvoiceRowViewCell else { return UITableViewCell() }
+        let data = filteredData[indexPath.section].transactions[indexPath.row]
         rowCell.passData(model: data)
         rowCell.selectionStyle = .none
         return cell

@@ -14,6 +14,7 @@ protocol LoginScreenDelegate: AnyObject {
 final class LoginScreen: UIView {
     weak var delegate: LoginScreenDelegate?
 
+    // MARK: - Private vars
     private lazy var loginTitle: UILabel = {
         let label = UILabel()
         label.text = Strings.loginTitle
@@ -85,6 +86,7 @@ final class LoginScreen: UIView {
     }
 }
 
+// MARK: - Extensions
 extension LoginScreen: CodeView {
     func buildViewHierarchy() {
         addSubview(labelsStackView)

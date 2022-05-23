@@ -8,6 +8,7 @@
 import UIKit
 
 public final class InvoiceRowViewCell: UITableViewCell {
+    // MARK: - Private vars
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = Fonts.getFont(.regular(size: 12))()
@@ -95,9 +96,9 @@ public final class InvoiceRowViewCell: UITableViewCell {
     func passData(model: Transaction) {
         dateLabel.text = model.date
         descriptionLabel.text = model.transactionDescription
-        valueLabel.text = model.value.description
+        valueLabel.text = model.value.description.realAmountFormatter()
         obsDescriptionLabel.text = model.observationDescription
-        obsValueLabel.text = model.observationValue?.description
+        obsValueLabel.text = model.observationValue?.description.realAmountFormatter()
 
         dateLabel.textColor = model.textColor()
         descriptionLabel.textColor = model.textColor()
@@ -111,6 +112,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Extensions
 extension InvoiceRowViewCell: CodeView {
     func buildViewHierarchy() {
         addSubview(cellStackView)

@@ -25,24 +25,24 @@
     "infos": {
       "value": 7425.83,
       "totalValue": 10000.00,
-      "expirationDate": "03/11/2022"
+      "expirationDate": "03/11"
     }
   },
   "mainTransactions": [
     {
-      "date": "02/05/2022",
+      "date": "02/05",
       "description": "Pagamento",
       "value": -3000.00,
       "transactionType": "payment"
     },
     {
-      "date": "02/05/2022",
+      "date": "02/05",
       "description": "Saldo",
       "value": 2000.00,
       "transactionType": "balance"
     },
     {
-      "date": "02/05/2022",
+      "date": "02/05",
       "description": "Encargos por atraso",
       "value": 150.00,
       "transactionType": "charges"
@@ -54,43 +54,61 @@
       "finalCardNumber": "9876",
       "transactions": [
         {
-          "date": "30/01/2022",
-          "description": "desc1",
+          "date": "30/01",
+          "description": "Varanda Frutas V Olimp",
           "value": 450.23,
           "transactionType": "spent"
         },
         {
-          "date": "30/01/2022",
-          "description": "desc2",
+          "date": "30/01",
+          "description": "TAM Site YYFGTC ",
           "value": 667,
           "transactionType": "spent"
         },
         {
-          "date": "30/01/2022",
-          "description": "desc3",
+          "date": "30/01",
+          "description": "Varanda Frutas V Olimp",
           "value": 19.9,
           "transactionType": "spent"
         },
         {
-          "date": "28/01/2022",
-          "description": "desc4",
+          "date": "28/01",
+          "description": "Vila Olimpia",
           "value": 59000.25,
           "transactionType": "spent"
         },
         {
-          "date": "28/01/2022",
-          "description": "desc4",
+          "date": "28/01",
+          "description": "Estorno 2/3 Rappi Brasil Inter",
           "value": -17.4,
           "transactionType": "reversal"
         },
         {
-          "date": "27/01/2022",
-          "description": "desc4",
+          "date": "27/01",
+          "description": "Notion Labs Inc",
           "value": 26.62,
           "transactionType": "spent",
           "observationDescription": "Conversão - R$ 5.72",
           "observationValue": 5.0,
           "observationCurrency": "USD"
+        },
+        {
+            "date": "20/01",
+            "description": "Varanda Frutas V Olimp",
+            "value": 19.29,
+            "transactionType": "spent"
+        },
+        {
+            "date": "20/01",
+            "description": "Vila Olimpia",
+            "value": 19.29,
+            "transactionType": "spent"
+        },
+        {
+            "date": "19/01",
+            "description": "UBER BR Uber Trip Help",
+            "value": 19.29,
+            "transactionType": "spent"
         }
       ]
     },
@@ -98,38 +116,95 @@
       "cardName": "Ana Luiza",
       "finalCardNumber": "1234",
       "transactions": [
+          {
+            "date": "30/01",
+            "description": "Varanda Frutas V Olimp",
+            "value": 450.23,
+            "transactionType": "spent"
+          },
+          {
+            "date": "30/01",
+            "description": "TAM Site YYFGTC ",
+            "value": 667,
+            "transactionType": "spent"
+          },
+          {
+            "date": "30/01",
+            "description": "Varanda Frutas V Olimp",
+            "value": 19.9,
+            "transactionType": "spent"
+          },
+          {
+            "date": "28/01",
+            "description": "Vila Olimpia",
+            "value": 59000.25,
+            "transactionType": "spent"
+          },
+          {
+            "date": "28/01",
+            "description": "Estorno 2/3 Rappi Brasil Inter",
+            "value": -17.4,
+            "transactionType": "reversal"
+          },
+          {
+            "date": "27/01",
+            "description": "Notion Labs Inc",
+            "value": 26.62,
+            "transactionType": "spent",
+            "observationDescription": "Conversão - R$ 5.72",
+            "observationValue": 5.0,
+            "observationCurrency": "USD"
+          },
+          {
+              "date": "20/01",
+              "description": "Varanda Frutas V Olimp",
+              "value": 19.29,
+              "transactionType": "spent"
+          },
+          {
+              "date": "20/01",
+              "description": "Vila Olimpia",
+              "value": 19.29,
+              "transactionType": "spent"
+          },
+          {
+              "date": "19/01",
+              "description": "UBER BR Uber Trip Help",
+              "value": 19.29,
+              "transactionType": "spent"
+          },
         {
-          "date": "30/01/2022",
+          "date": "30/01",
           "description": "desc1",
           "value": 450.23,
           "transactionType": "spent"
         },
         {
-          "date": "30/01/2022",
+          "date": "30/01",
           "description": "desc2",
           "value": 667,
           "transactionType": "spent"
         },
         {
-          "date": "30/01/2022",
+          "date": "30/01",
           "description": "desc3",
           "value": 19.9,
           "transactionType": "spent"
         },
         {
-          "date": "28/01/2022",
+          "date": "28/01",
           "description": "desc4",
           "value": 59000.25,
           "transactionType": "spent"
         },
         {
-          "date": "28/01/2022",
+          "date": "28/01",
           "description": "desc4",
           "value": -17.4,
           "transactionType": "reversal"
         },
         {
-          "date": "27/01/2022",
+          "date": "27/01",
           "description": "desc4",
           "value": 26.62,
           "transactionType": "spent",

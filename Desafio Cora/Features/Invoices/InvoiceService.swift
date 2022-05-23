@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable class_delegate_protocol
 protocol InvoiceServiceDelegate {
     func loadData() -> InvoiceModel
 }

@@ -15,6 +15,7 @@ protocol PasswordScreenDelegate: AnyObject {
 final class PasswordScreen: UIView {
     weak var delegate: PasswordScreenDelegate?
 
+    // MARK: - Private vars
     private lazy var passwordTitle: UILabel = {
         let label = UILabel()
         label.text = Strings.passwordTitle
@@ -106,6 +107,7 @@ final class PasswordScreen: UIView {
     }
 }
 
+// MARK: - Extensions
 extension PasswordScreen: CodeView {
     func buildViewHierarchy() {
         addSubview(passwordTitle)

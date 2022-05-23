@@ -13,7 +13,7 @@ public class NetworkCoordinator: NSObject, Coordinator {
     public var navigationController: NavigationController
 
     // MARK: Services
-    private let invoiceService: InvoiceService
+    private var invoiceService: InvoiceServiceDelegate
 
     init(navigationController: NavigationController) {
         self.navigationController = navigationController
@@ -26,5 +26,11 @@ public class NetworkCoordinator: NSObject, Coordinator {
 
     func getInvoiceInfo(onSuccess: @escaping (InvoiceModel) -> Void, onFailure: ((Error) -> Void)?) {
          onSuccess(invoiceService.loadData())
+    }
+}
+
+extension NetworkCoordinator {
+    func configureUnitTests(service: InvoiceServiceDelegate) {
+        invoiceService = service
     }
 }

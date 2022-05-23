@@ -60,6 +60,6 @@ struct Chart: Codable {
 // MARK: - Infos
 struct Infos: Codable {
     let value: Double
-    let totalValue: Int
+    let totalValue: Double
     let expirationDate: String
 }

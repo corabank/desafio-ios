@@ -10,6 +10,7 @@ import UIKit
 class InvoiceViewController: UIViewController {
     weak var coordinator: InvoiceCoordinator?
     var screen: InvoiceScreen?
+    private var data: InvoiceModel?
 
     override func loadView() {
         screen = InvoiceScreen()
@@ -22,6 +23,7 @@ class InvoiceViewController: UIViewController {
         self.title = Strings.invoice
         setupInvoiceNavigationBar()
         coordinator?.getInvoiceData(onSuccess: { result in
+            self.data = result
             self.screen?.configure(data: result )
         }, onFailure: { _ in
 
@@ -29,9 +31,18 @@ class InvoiceViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension InvoiceViewController: InvoiceScreenDelegate {
     func getInfoByCard(index: Int) {
-        coordinator?.showAlert(title: "Cartão \(index) Selecionado!", message: "Cartão \(index) Selecionado!")
+        guard let data = self.data?.dataForTable else { return }
+        if index == 0 {
+            self.screen?.filterCard(filteredTransactions: data)
+        } else {
+            let indexSet = [0, index]
+            let result = indexSet.map { data[$0] }
+            self.screen?.filterCard(filteredTransactions: result)
+            coordinator?.showAlert(title: "Cartão \(index) Selecionado!", message: "Cartão \(index) Selecionado!")
+        }
     }
 
     func payButtonPressed() {

@@ -16,6 +16,7 @@ protocol HeaderViewDelegate: AnyObject {
 class HeaderView: UIView {
     weak var delegate: HeaderViewDelegate?
 
+    // MARK: - Private vars
     private lazy var chart: BarChartView = {
         let chart = BarChartView()
         chart.delegate = self
@@ -120,13 +121,14 @@ class HeaderView: UIView {
         guard let data = data else {
             return
         }
-        totalValueLabel.text = "R$ \(data.infos.totalValue.description)"
-        labelDescription1.text = data.infos.totalValue.description
+        totalValueLabel.text = data.infos.totalValue.description.realAmountFormatter()
+        labelDescription1.text = data.infos.totalValue.description.realAmountFormatter()
         labelDescription2.text = Strings.expirationData(data.infos.expirationDate)
         chart.setData(data.chart)
     }
 }
 
+// MARK: - Extensions
 extension HeaderView: CodeView {
     func buildViewHierarchy() {
         addSubview(chart)

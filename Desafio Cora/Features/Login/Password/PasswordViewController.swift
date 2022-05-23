@@ -24,6 +24,7 @@ class PasswordViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension PasswordViewController: PasswordScreenDelegate {
     func lostPasswordButtonTapped() {
         coordinator?.showAlert(title: "Email Enviado!", message: "Confira sua caixa de entrada!")

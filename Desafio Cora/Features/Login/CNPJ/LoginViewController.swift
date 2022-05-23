@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension LoginViewController: LoginScreenDelegate {
     func nextButtonPressed() {
         coordinator?.goToPassword()

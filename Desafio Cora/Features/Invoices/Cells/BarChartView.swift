@@ -14,6 +14,7 @@ protocol BarChartViewDelegate: AnyObject {
 class BarChartView: UIView {
     weak var delegate: BarChartViewDelegate?
 
+    // MARK: - Private vars
     private let TAG = 1_000
 
     private var data = [Chart]()
@@ -51,16 +52,6 @@ class BarChartView: UIView {
 
     deinit {
         removeGestureRecognizer(tapRecognizer)
-    }
-
-    func setData(_ dataPoints: [Chart]) {
-        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBarTap))
-        addGestureRecognizer(tapRecognizer)
-        backgroundColor = UIColor.clear
-        self.data = dataPoints
-        clearViews()
-        guard maxY > 0.0 else { return }
-        createChart()
     }
 
     private func clearViews() {
@@ -142,5 +133,15 @@ class BarChartView: UIView {
                 }
             }
         }
+    }
+
+    func setData(_ dataPoints: [Chart]) {
+        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBarTap))
+        addGestureRecognizer(tapRecognizer)
+        backgroundColor = UIColor.clear
+        self.data = dataPoints
+        clearViews()
+        guard maxY > 0.0 else { return }
+        createChart()
     }
 }
