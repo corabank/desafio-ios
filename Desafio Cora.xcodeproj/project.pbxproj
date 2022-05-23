@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		592A22D0282DAFF3003B4AE3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A22CF282DAFF3003B4AE3 /* Strings.swift */; };
 		5968ADD4283C3A8800B0B1DC /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5968ADD3283C3A8800B0B1DC /* StringTests.swift */; };
+		5968ADD6283C426500B0B1DC /* LoginCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5968ADD5283C426500B0B1DC /* LoginCoordinatorTests.swift */; };
 		5972EE42282E9C2D00E87EC9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE41282E9C2D00E87EC9 /* UIButton.swift */; };
 		5972EE46282EA20300E87EC9 /* PasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE45282EA20300E87EC9 /* PasswordScreen.swift */; };
 		5972EE48282EA26F00E87EC9 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972EE47282EA26F00E87EC9 /* PasswordCoordinator.swift */; };
@@ -19,7 +20,7 @@
 		5992CC612835CC1C00225B2A /* NetworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992CC602835CC1C00225B2A /* NetworkCoordinator.swift */; };
 		59A1E431283831AE00DF0F6F /* BaseCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A1E430283831AE00DF0F6F /* BaseCoordinatorTests.swift */; };
 		59A1E4332838336F00DF0F6F /* IntroCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A1E4322838336F00DF0F6F /* IntroCoordinatorTests.swift */; };
-		59A1E4352838377600DF0F6F /* InvoiceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A1E4342838377600DF0F6F /* InvoiceServiceTests.swift */; };
+		59A1E4352838377600DF0F6F /* InvoiceCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A1E4342838377600DF0F6F /* InvoiceCoordinatorTests.swift */; };
 		59AA52BD282EEB93003DDE81 /* InvoiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */; };
 		59AA52BF282EEBD3003DDE81 /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */; };
 		59BCA47228341CFF00C07378 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BCA47128341CFF00C07378 /* HeaderView.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		592A22CF282DAFF3003B4AE3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5968ADD3283C3A8800B0B1DC /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		5968ADD5283C426500B0B1DC /* LoginCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorTests.swift; sourceTree = "<group>"; };
 		5972EE41282E9C2D00E87EC9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		5972EE45282EA20300E87EC9 /* PasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreen.swift; sourceTree = "<group>"; };
 		5972EE47282EA26F00E87EC9 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
@@ -81,7 +83,7 @@
 		5992CC602835CC1C00225B2A /* NetworkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCoordinator.swift; sourceTree = "<group>"; };
 		59A1E430283831AE00DF0F6F /* BaseCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorTests.swift; sourceTree = "<group>"; };
 		59A1E4322838336F00DF0F6F /* IntroCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinatorTests.swift; sourceTree = "<group>"; };
-		59A1E4342838377600DF0F6F /* InvoiceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceServiceTests.swift; sourceTree = "<group>"; };
+		59A1E4342838377600DF0F6F /* InvoiceCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCoordinatorTests.swift; sourceTree = "<group>"; };
 		59AA52BC282EEB93003DDE81 /* InvoiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCoordinator.swift; sourceTree = "<group>"; };
 		59AA52BE282EEBD3003DDE81 /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		59BCA47128341CFF00C07378 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -221,10 +223,11 @@
 		59C0EEFD282B43050037E3BB /* Desafio CoraTests */ = {
 			isa = PBXGroup;
 			children = (
-				59C0EEFE282B43050037E3BB /* DesafioCoraTests.swift */,
 				59A1E430283831AE00DF0F6F /* BaseCoordinatorTests.swift */,
+				59C0EEFE282B43050037E3BB /* DesafioCoraTests.swift */,
 				59A1E4322838336F00DF0F6F /* IntroCoordinatorTests.swift */,
-				59A1E4342838377600DF0F6F /* InvoiceServiceTests.swift */,
+				5968ADD5283C426500B0B1DC /* LoginCoordinatorTests.swift */,
+				59A1E4342838377600DF0F6F /* InvoiceCoordinatorTests.swift */,
 				5968ADD3283C3A8800B0B1DC /* StringTests.swift */,
 			);
 			path = "Desafio CoraTests";
@@ -516,8 +519,9 @@
 			files = (
 				59A1E4332838336F00DF0F6F /* IntroCoordinatorTests.swift in Sources */,
 				5968ADD4283C3A8800B0B1DC /* StringTests.swift in Sources */,
-				59A1E4352838377600DF0F6F /* InvoiceServiceTests.swift in Sources */,
+				59A1E4352838377600DF0F6F /* InvoiceCoordinatorTests.swift in Sources */,
 				59C0EEFF282B43050037E3BB /* DesafioCoraTests.swift in Sources */,
+				5968ADD6283C426500B0B1DC /* LoginCoordinatorTests.swift in Sources */,
 				59A1E431283831AE00DF0F6F /* BaseCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

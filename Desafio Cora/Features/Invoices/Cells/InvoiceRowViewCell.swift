@@ -54,7 +54,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
     private lazy var transactionStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [dateLabel, descriptionLabel, valueLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -70,7 +70,7 @@ public final class InvoiceRowViewCell: UITableViewCell {
         let stackView = UIStackView(arrangedSubviews: [emptyView, obsDescriptionLabel, obsValueLabel])
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -123,7 +123,10 @@ extension InvoiceRowViewCell: CodeView {
             cellStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
             cellStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
             cellStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
-            cellStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
+            cellStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+
+            dateLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.1),
+            emptyView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.1)
         ])
     }
 

@@ -33,8 +33,8 @@ class InvoiceServiceTests: BaseCoordinatorTests {
     }
 
     func test_invoiceServiceTestAPICall() {
-        let introCoordinator = InvoiceCoordinator(navigationController: navigationController, networkServices: networkServices)
-        introCoordinator.getInvoiceData { result in
+        let invoiceCoordinator = InvoiceCoordinator(navigationController: navigationController, networkServices: networkServices)
+        invoiceCoordinator.getInvoiceData { result in
             XCTAssertEqual(result.cards.count, 1)
             XCTAssertEqual(result.invoiceResume?.infos.value, 100)
         } onFailure: { _ in
@@ -43,8 +43,8 @@ class InvoiceServiceTests: BaseCoordinatorTests {
     }
 
     func test_formatTransactions() {
-        let introCoordinator = InvoiceCoordinator(navigationController: navigationController, networkServices: networkServices)
-        introCoordinator.getInvoiceData { result in
+        let invoiceCoordinator = InvoiceCoordinator(navigationController: navigationController, networkServices: networkServices)
+        invoiceCoordinator.getInvoiceData { result in
             XCTAssertEqual(result.dataForTable.count, 2)
         } onFailure: { _ in
             // pass
