@@ -34,3 +34,10 @@ PS: Não precisa se preocupar em consumir nenhuma API. Pode criar mocks para as 
 
 ## Importante
 Se surgir qualquer dúvida durante o desenvolvimento, não hesite em perguntar! Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
+
+## Comentários
+
+- Teste de Snapshot seria feito com Quick & Nimble, mas preferi deixar sem para não usar libs externas
+
+### Melhorias
+- Usar o Snapkit para facilitar a criação de constraints e criar um arquivo de Espaçamento para deixar tudo centralizado
