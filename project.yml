@@ -1,0 +1,53 @@
+name: DesafioiOS
+options: 
+  deploymentTarget: 
+    iOS: 15.0
+  generateEmptyDirectories: true
+
+packages: 
+  SnapshotTesting:        
+    url: https://github.com/pointfreeco/swift-snapshot-testing.git
+    from: 1.9.0
+
+targets: 
+  DesafioiOS:
+    type: application
+    platform: iOS
+    deploymentTarget: 
+      iOS: 15.0
+    sources: DesafioiOS
+    settings:
+      base:
+        MARKETING_VERSION: "1.0.0"
+        SWIFT_VERSION: 5.0
+        PRODUCT_BUNDLE_IDENTIFIER: allana.castenharo.DesafioiOS
+    preBuildScripts:
+      - path: swiftgen.sh
+        name: SwiftGen
+  DesafioiOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: 
+      iOS: 15.0
+    sources: 
+      - path: DesafioiOSTests
+        excludes: 
+          - "**/*.png"
+          - "**/__Snapshots__"
+    dependencies: 
+      - target: DesafioiOS
+      - package: SnapshotTesting
+
+schemes:
+  DesafioiOS:
+    build: 
+      targets:
+        DesafioiOS: [run, test]
+      parallelizeBuild: true
+      buildImplicitDependencies: true
+    test: 
+      gatherCoverageData: true
+      coverageTargets: 
+        - DesafioiOS
+      targets: 
+        - DesafioiOSTests 

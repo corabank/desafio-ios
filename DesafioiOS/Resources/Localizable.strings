@@ -1,0 +1,58 @@
+/*
+  Localizable.strings
+  DesafioiOS
+
+  Created by Allana Castenharo Santamaria on 04/06/22.
+  
+*/
+
+// Intro
+
+"Intro.titleLabel" = "Conta Digital PJ\nPoderosamente simples";
+"Intro.descriptionLabel" = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos.";
+"Intro.buttonRegister" = "Quero fazer parte!";
+"Intro.buttonLogin" = "Já sou cliente";
+
+// Login
+
+"Login.buttonNext" = "Próximo";
+"Login.titleNavigation" = "Login Cora";
+"Login.cpfForm.title" = "Bem-vindo de volta!";
+"Login.cpfForm.titleTextField" = "Qual seu CPF?";
+"Login.cpfForm.placeholder" = "000.000.000-00";
+"Login.cpfForm.mask" = "ccc.ccc.ccc-cc";
+"Login.passwordForm.titleTextField" = "Digite sua senha de acesso";
+"Login.passwordForm.placeholder" = "Senha";
+"Login.passwordForm.buttontitle" = "Esqueci minha senha";
+
+// Extract
+
+"Extract.navigationTitle" = "Extrato";
+
+// Alert
+
+"Alert.authorized.title" = "Sucesso!";
+"Alert.authorized.message" = "Sua foto foi salva na galeria";
+"Alert.denied.title" = "Acesso Negado!!";
+"Alert.denied.message" = "Verifique o acesso à biblioteca para este aplicativo em Configurações > Privacidade";
+"Alert.limited.title" = "Memória cheia!";
+"Alert.limited.message" = "Libere espaço do seu armazenamento e tente novamente";
+"Alert.actionOK.title" = "OK";
+
+// Receipt
+
+"Receipt.navigationTitle" = "Detalhes do agendamento";
+
+// ReceiptButtonsCell
+
+"ReceiptButtonsCell.shareReceipt" = "Compartilhar comprovante";
+"ReceiptButtonsCell.cancelScheduling" = "Cancelar agendamento";
+
+// ReceiptDescriptionCell
+
+"ReceiptDescriptionCell.title" = "Descrição";
+
+// ReceiptInfoCell
+
+"ReceiptInfoCell.valueTitle" = "Valor";
+"ReceiptInfoCell.dateTitle" = "Data da tranferência";

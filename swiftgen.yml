@@ -1,0 +1,13 @@
+strings:
+  inputs: DesafioiOS/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      params:
+        enumName: Localization
+      output: DesafioiOS/Resources/Generated/Strings.swift
+xcassets:
+  inputs:
+    - DesafioiOS/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: DesafioiOS/Resources/Generated/Images.swift
