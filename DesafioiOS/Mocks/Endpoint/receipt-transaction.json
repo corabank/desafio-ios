@@ -1,0 +1,21 @@
+{
+  "icon": "time-clock",
+  "status": "Transferência Agendada",
+  "value": "R$ 154,00",
+  "date": "Sexta-feira - 30 de julho",
+  "addresseeInfo": {
+    "title": "De",
+    "name": "Leonardo Mendes",
+    "cpf": "CPF 407.130.563-56",
+    "bank": "Banco Cora",
+    "account": "Agência 2435 - Conta 43556-3"
+  },
+  "beneficiaryInfo": {
+    "title": "Para",
+    "name": "Lucas Vallim da Costa",
+    "cpf": "CPF 407.130.774-24",
+    "bank": "Banco Nubank",
+    "account": "Agência 6193 - Conta 12225-3"
+  },
+  "description": "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies."
+}

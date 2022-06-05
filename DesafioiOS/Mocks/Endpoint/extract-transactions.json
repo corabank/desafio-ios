@@ -1,0 +1,108 @@
+{
+  "days": [
+    {
+      "day": "Hoje - 6 de Agosto",
+      "balance": "3050.30",
+      "transactions": [
+        {
+          "type": "entry",
+          "value": "R$ 30,00",
+          "name": "Lucas Costa",
+          "time": "17:35",
+          "icon": "arrow-down-in",
+          "description": "Transferência recebida"
+        },
+        {
+          "type": "entry",
+          "value": "R$ 26.00",
+          "name": "João da Silva",
+          "time": "13:17",
+          "icon": "arrow-down-in",
+          "description": "Pagamento recebido"
+        },
+        {
+          "type": "refund",
+          "value": "R$ 26,00",
+          "name": "Daniela Andrade",
+          "time": "13:17",
+          "icon": "arrow-return",
+          "description": "Transferência estornada"
+        },
+        {
+          "type": "output",
+          "value": "R$ 26.00",
+          "name": "Aut Arquitetura",
+          "time": "09:22",
+          "icon": "bar-code",
+          "description": "Boleto pago"
+        }
+      ]
+    },
+    {
+      "day": "Segunda-feira - 2 de Agosto",
+      "balance": "3110.08",
+      "transactions": [
+        {
+          "type": "refund",
+          "value": "R$ 30.00",
+          "name": "Leonardo Silva ME",
+          "time": "09:22",
+          "icon": "bar-code",
+          "description": "Depósito via boleto"
+        },
+        {
+          "type": "entry",
+          "value": "R$ 26.00",
+          "name": "Stella Moraes",
+          "time": "09:22",
+          "icon": "arrow-up-out",
+          "description": "Transferência enviada"
+        }
+      ]
+    },
+    {
+      "day": "Sexta-feira - 30 de Julho",
+      "balance": "3050.30",
+      "transactions": [
+        {
+          "type": "entry",
+          "value": "R$ 26.00",
+          "name": "Darlene Edwards",
+          "time": "09:22",
+          "icon": "arrow-return",
+          "description": "Pagamento estornado"
+        },
+        {
+          "type": "refund",
+          "value": "R$ 30.00",
+          "name": "Guy Edwards",
+          "time": "09:22",
+          "icon": "arrow-down-in",
+          "description": "Transferência recebida"
+        },
+        {
+          "type": "entry",
+          "value": "R$ 26.00",
+          "name": "Theresa Simmmons",
+          "time": "09:22",
+          "icon": "arrow-up-out",
+          "description": "Transferência enviada"
+        }
+      ]
+    },
+    {
+      "day": "Segunda-feira - 2 de Agosto",
+      "balance": "3110.08",
+      "transactions": [
+        {
+          "type": "refund",
+          "value": "R$ 26.00",
+          "name": "Leonardo Silva ME",
+          "time": "09:22",
+          "icon": "bar-code",
+          "description": "Depósito via boleto"
+        }
+      ]
+    },
+  ]
+}
