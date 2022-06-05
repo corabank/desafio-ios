@@ -12,6 +12,16 @@ Abaixo, temos 3 referências de fluxos a serem implementados… cada uma com uma
 
 Para acessar os links abaixo é preciso ter uma conta no Figma. Caso não tenha, é só criar uma com algum e-mail pessoal.
 
+## Como executar o projeto
+
+- Necessário ter o XcodeGen e o Cocoa Pods instalado na máquina. 
+  - https://github.com/yonaskolb/XcodeGen
+  - https://cocoapods.org
+
+- Executar projeto no xcode 13.3 ou superior
+- Executar os testes unitários no iphone 11 ou iPod Touch (Snapshot)
+- Executar o comando 'make gen' na raiz do projeto
+
 ## Referências
 
 [Referência 1](https://www.figma.com/file/Bf6ul6YwCl7LYgQstchC8Z/Desafio-iOS-%7C-Junior---Pleno?node-id=0%3A1)
