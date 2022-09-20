@@ -46,5 +46,9 @@
         {
 		"name": "Bruno",
 		"squad": "Growth"
+	},
+	{
+		"name": "Duda",
+		"squad": "Conta Digital"
 	}
 ]
