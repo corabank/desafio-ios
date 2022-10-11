@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Modules/Resources/Resources.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/Components/Components.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/ViewCode/ViewCode.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/Statement/Statement.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/Login/Login.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:BankStatementSample/BankStatementSample.xcodeproj">
+   </FileRef>
+</Workspace>
