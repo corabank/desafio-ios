@@ -1,0 +1,123 @@
+[
+  {
+     "day_info": {
+        "date": "2022-05-23",
+        "day_balance": 3446.0
+     },
+     "transactions": [
+        {
+           "id": 1,
+           "value": 30.0,
+           "type": "INPUT",
+           "method": "TRANSFER",
+           "name": "Lucas Costa",
+           "hour": "17:35"
+        },
+        {
+           "id": 2,
+           "value": 26.0,
+           "type": "INPUT",
+           "method": "PAYMENT",
+           "name": "João da Silva",
+           "hour": "13:17"
+        },
+        {
+           "id": 3,
+           "value": 26.0,
+           "type": "REVERSED",
+           "method": "TRANSFER",
+           "name": "Daniela Andrade",
+           "hour": "13:17"
+        },
+        {
+           "id": 4,
+           "value": 26.0,
+           "type": "OUTPUT",
+           "method": "BILLET",
+           "name": "Aut Arquitetura",
+           "hour": "09:22"
+        }
+     ]
+  },
+  {
+     "day_info": {
+        "date": "2022-05-20",
+        "day_balance": 3110.08
+     },
+     "transactions": [
+        {
+           "id": 5,
+           "value": 30.0,
+           "type": "INPUT",
+           "method": "BILLET",
+           "name": "Leonardo Silva ME",
+           "hour": "09:22"
+        },
+        {
+           "id": 6,
+           "value": 26.0,
+           "type": "OUTPUT",
+           "method": "TRANSFER",
+           "name": "Stella Moraes",
+           "hour": "09:22"
+        }
+     ]
+  },
+  {
+     "day_info": {
+        "date": "2022-05-19",
+        "day_balance": 3050.3
+     },
+     "transactions": [
+        {
+           "id": 7,
+           "value": 26.0,
+           "type": "REVERSED",
+           "method": "PAYMENT",
+           "name": "Darlene Edwards",
+           "hour": "09:22"
+        },
+        {
+           "id": 8,
+           "value": 30.0,
+           "type": "INPUT",
+           "method": "TRANSFER",
+           "name": "Guy Edwards",
+           "hour": "09:22"
+        },
+        {
+           "id": 9,
+           "value": 26.0,
+           "type": "OUTPUT",
+           "method": "TRANSFER",
+           "name": "Theresa Simmmons",
+           "hour": "09:22"
+        }
+     ]
+  },
+  {
+     "day_info": {
+        "date": "2022-05-18",
+        "day_balance": 3124.34
+     },
+     "transactions": [
+        {
+           "id": 10,
+           "value": 26.0,
+           "type": "OUTPUT",
+           "method": "BILLET",
+           "name": "Judith Cooper",
+           "hour": "09:22"
+        },
+        {
+           "id": 11,
+           "value": 154.0,
+           "type": "SCHEDULED",
+           "method": "TRANSFER",
+           "name": "Leonardo Mendes",
+           "hour": "09:22"
+        }
+     ]
+  }
+]
+

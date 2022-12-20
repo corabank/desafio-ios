@@ -1,0 +1,52 @@
+//MARK: Home
+
+"home.title" = "Conta Digital PJ\nPoderosamente simples";
+"home.description" = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos.";
+"home.signUp" = "Quero fazer parte!";
+"home.signIn" = "Já sou cliente";
+
+//MARK: Sign In
+
+"signIn.title" = "Login Cora";
+"signIn.welcome" = "Bem-vindo de volta!";
+"signIn.cpfSolicitation" = "Qual seu CPF?";
+"signIn.nextStep" = "Próximo";
+
+//MARK: Password
+
+"password.title" = "Login Cora";
+"password.solicitation" = "Digite sua senha de acesso";
+"password.forgotPassword" = "Esqueci minha senha";
+"password.nextStep" = "Próximo";
+
+//MARK: Bank Statement
+"bankStatement.title" = "Extrato";
+"bankStatement.segment.all" = "Tudo";
+"bankStatement.segment.input" = "Entrada";
+"bankStatement.segment.output" = "Saída";
+"bankStatement.segment.future" = "Futuro";
+
+//MARK: Transaction Detail
+"transactionDetail.title" = "Detalhes da operação";
+"transactionDetail.value" = "Valor";
+"transactionDetail.transferDate" = "Data da transferência";
+"transactionDetail.paymentDate" = "Data do pagamento";
+"transactionDetail.sender" = "De";
+"transactionDetail.receiver" = "Para";
+"transactionDetail.cpf" = "CPF %@";
+"transactionDetail.bankInfo" = "Agência %@ - Conta %@";
+"transactionDetail.descriptionTitle" = "Descrição";
+"transactionDetail.description" = "Developed by the Intel Corporation, HDCP stands for high-bandwidth digital content protection. As the descriptive name implies.";
+"transactionDetail.shareReceipt" = "Compartilhar comprovante";
+"transactionDetail.cancelTransferSchedule" = "Cancelar agedamento";
+
+//MARK: Transaction Description
+
+"transactionDescription.billetDeposit" = "Depósito via boleto";
+"transactionDescription.billetPaid" = "Boleto Pago";
+"transactionDescription.paymentReceived" = "Pagamento recebido";
+"transactionDescription.paymentReversed" = "Pagamento estornado";
+"transactionDescription.transferReceived" = "Transfêrencia recebida";
+"transactionDescription.trasferReversed" = "Transfêrencia estornada";
+"transactionDescription.trasferSent" = "Transfêrencia enviada";
+"transactionDescription.trasferScheduled" = "Transfêrencia agendada";

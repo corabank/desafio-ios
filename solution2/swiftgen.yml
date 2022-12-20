@@ -1,0 +1,22 @@
+input_dir: Sources
+output_dir: Sources/Generated/
+strings:
+  inputs: Localizable/Localizable.strings
+  outputs:
+    templateName: structured-swift5
+    output: Strings.swift
+    params:
+      enumName: "Strings"
+xcassets:
+  - inputs: Design System/Assets/Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: Colors.swift
+        params:
+          enumName: Colors
+  - inputs: Design System/Assets/Images.xcassets
+    outputs:
+      - templateName: swift5
+        output: Images.swift
+        params:
+          enumName: "Images"

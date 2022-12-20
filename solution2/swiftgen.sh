@@ -1,0 +1,2 @@
+# Generate swiftgen resources
+swiftgen
