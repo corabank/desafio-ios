@@ -28,7 +28,7 @@ O layout pode ser acessado [aqui](https://www.figma.com/file/mfScPv5hxIqg25obhaH
 
 ### Bonus (opcional)
 - SwiftUI
-- XCTUITest
+- XCUITest
 - Arquitetura modular
 - Documentação
 
