@@ -5,32 +5,180 @@
 # Desafio iOS
 
  </div>
-  
-O desafio é bem simples. Para participar, basta criar um fork deste repositório e quando finalizar o desenvolvimento, abrir um merge request que iremos avaliar.
+ 
+ > Para participar, basta criar um fork deste repositório e quando finalizar o desenvolvimento, abrir um merge request que iremos avaliar.
 
-Abaixo, temos 3 referências de fluxos a serem implementados… cada uma com uma complexidade. Escolha a que melhor se encaixe com seu nível técnico :)
+O desafio consiste em implementar dois fluxos simples de tela, sendo um de autenticação e um de lista + detalhes.
 
-Para acessar os links abaixo é preciso ter uma conta no Figma. Caso não tenha, é só criar uma com algum e-mail pessoal.
+O layout pode ser acessado [aqui](https://www.figma.com/file/mfScPv5hxIqg25obhaHNNB/SR?type=design&node-id=0%3A1&mode=dev&t=aqdh9RprKrYpateD-1)
 
-## Referências
-
-[Referência 1](https://www.figma.com/file/Bf6ul6YwCl7LYgQstchC8Z/Desafio-iOS-%7C-Junior---Pleno?node-id=0%3A1)
-
-[Referência 2](https://www.figma.com/file/GQx9gkblXwiGp44bn1C3AF/Desafio-iOS-%7C-Pleno---Senior?node-id=0%3A1)
-
-[Referência 3](https://www.figma.com/file/22Q1QhHeIN9EOZwUesWdF9/Desafio-iOS-%7C-Senior---Especialista?node-id=0%3A1)
-
-
-PS: Não precisa se preocupar em consumir nenhuma API. Pode criar mocks para as requisições.
-
-## O que precisa ter no projeto
-- Boa organização de código
-- Ter pelo menos um pattern de apresentação definido (MVC, MVVM, MVP, Clean Swift…)
-- Ter pelo menos um tipo de teste unitário
-- Teste de Snapshot
+## Requisitos
 - View Code
-- Boa estruturação de layout
-- O máximo possível de APIs nativas
+- Não utilizar libs externas
+- Teste unitário
 
-## Importante
-Se surgir qualquer dúvida durante o desenvolvimento, não hesite em perguntar! Pode adicionar um comentário aqui mesmo no repositório que nosso time vai estar pronto a lhe auxiliar 😊
+### Aqui iremos avaliar:
+- Atenção aos casos de uso
+- Organização do projeto
+- Organização de código
+- Boas práticas de desenvolvimento
+- Definição da arquitetura e utilização de Design Patterns
+- Aplicação dos conceitos de SOLID
+- Conhecimento dos recursos nativos para estruturação de UI, acesso a dados (local e remoto) e concorrência
+
+### Bonus (opcional)
+- SwiftUI
+- XCTUITest
+- Arquitetura modular
+- Documentação
+
+## Casos de uso
+### Login
+- No passo de CPF, habilitar o botão apenas se digitar um CPF válido
+- No passo de senha, habilitar o botão apenas se a senha tiver 6 dígitos
+
+No passo de senha, ao tocar no botão "Próximo", é preciso fazer a request:
+
+```
+POST https://api.web.cora.com.br/challenge/auth
+{
+  "cpf": "{{CPF}}",
+  "password": "{{SENHA}}"
+}
+```
+
+Caso os dados estejam corretos, a request irá retornar:
+
+```
+200 https://api.web.cora.com.br/challenge/auth
+{
+    "token": "{{TOKEN}}"
+}
+```
+> Será necessário armazenar o token recebido para ser utilizado depois
+
+Caso os dados estejam incorretos, o retorno será:
+
+```
+401 https://api.web.cora.com.br/challenge/auth
+```
+
+### Token
+O Token possui uma validade de 1 minuto. Então a cada 1 minuto é necessário fazer a request de autenticação novamente, mas dessa vez enviando o token antigo:
+> Importante garantir uma boa gestão de concorrência para evitar que outra request seja feita enquanto o token estiver sendo atualizado.
+
+```
+POST https://api.web.cora.com.br/challenge/auth
+{
+  "token": "{{TOKEN}}"
+}
+```
+
+Caso o token seja validado corretamente, a request irá retornar um novo token:
+
+```
+200 https://api.web.cora.com.br/challenge/auth
+{
+    "token": "{{TOKEN}}"
+}
+```
+
+Caso o token não seja validado, o retorno será:
+
+```
+401 https://api.web.cora.com.br/challenge/auth
+```
+
+### Lista
+- Deverá exibir um placeholder enquanto a request estiver sendo feita
+- Deverá implementar um *pull to refresh*
+
+Pra trazer os dados da lista, será necessário fazer a request:
+
+```
+GET https://api.web.cora.com.br/challenge/list
+-- header 'token: {{TOKEN}}'
+```
+Caso seja um token válido, a request irá retornar:
+
+```
+200 https://api.web.cora.com.br/challenge/list
+{
+  "results": [
+    {
+      "items": [
+        {
+          "id": "abc123def456ghi789",
+          "description": "Compra de produtos eletrônicos",
+          "label": "Compra aprovada",
+          "entry": "DEBIT",
+          "amount": 150000,
+          "name": "João da Silva",
+          "dateEvent": "2024-02-01T08:15:17Z",
+          "status": "COMPLETED"
+        }
+      ],
+      "date": "2024-02-01"
+    }
+  ],
+  "itemsTotal": 1
+}
+```
+Caso o token não seja válido, o retorno será: 
+
+```
+401 https://api.web.cora.com.br/challenge/list
+```
+
+### Detalhes
+- Deverá exibir um placeholder enquanto a request estiver sendo feita
+
+Pra trazer os detalhes de um item, será necessário fazer a request:
+
+```
+GET https://api.web.cora.com.br/challenge/details/:id
+-- header 'token: {{TOKEN}}'
+```
+
+Caso seja um token válido, a request irá retornar:
+
+```
+200 https://api.web.cora.com.br/challenge/details/:id
+{
+  "description": "Pagamento por serviços prestados",
+  "label": "Pagamento recebido",
+  "amount": 150000,
+  "counterPartyName": "Empresa ABC LTDA",
+  "id": "abcdef12-3456-7890-abcd-ef1234567890",
+  "dateEvent": "2024-02-05T14:30:45Z",
+  "recipient": {
+    "bankName": "Banco XYZ",
+    "bankNumber": "001",
+    "documentNumber": "11223344000155",
+    "documentType": "CNPJ",
+    "accountNumberDigit": "9",
+    "agencyNumberDigit": "7",
+    "agencyNumber": "1234",
+    "name": "Empresa ABC LTDA",
+    "accountNumber": "987654"
+  },
+  "sender": {
+    "bankName": "Banco ABC",
+    "bankNumber": "002",
+    "documentNumber": "99887766000112",
+    "documentType": "CNPJ",
+    "accountNumberDigit": "3",
+    "agencyNumberDigit": "1",
+    "agencyNumber": "5678",
+    "name": "Empresa XYZ LTDA",
+    "accountNumber": "543210"
+  },
+  "status": "COMPLETED"
+}
+```
+
+Caso o token não seja válido, o retorno será: 
+
+```
+401 https://api.web.cora.com.br/challenge/details/:id
+```
