@@ -40,7 +40,7 @@ O layout pode ser acessado [aqui](https://www.figma.com/file/mfScPv5hxIqg25obhaH
 No passo de senha, ao tocar no botão "Próximo", é preciso fazer a request:
 
 ```
-POST https://api.web.cora.com.br/challenge/auth
+POST https://api.web.stage.cora.com.br/challenge/auth
 {
   "cpf": "{{CPF}}",
   "password": "{{SENHA}}"
@@ -50,7 +50,7 @@ POST https://api.web.cora.com.br/challenge/auth
 Caso os dados estejam corretos, a request irá retornar:
 
 ```
-200 https://api.web.cora.com.br/challenge/auth
+200 https://api.web.stage.cora.com.br/challenge/auth
 {
     "token": "{{TOKEN}}"
 }
@@ -60,7 +60,7 @@ Caso os dados estejam corretos, a request irá retornar:
 Caso os dados estejam incorretos, o retorno será:
 
 ```
-401 https://api.web.cora.com.br/challenge/auth
+401 https://api.web.stage.cora.com.br/challenge/auth
 ```
 
 ### Token
@@ -68,7 +68,7 @@ O Token possui uma validade de 1 minuto. Então a cada 1 minuto é necessário f
 > Importante garantir uma boa gestão de concorrência para evitar que outra request seja feita enquanto o token estiver sendo atualizado.
 
 ```
-POST https://api.web.cora.com.br/challenge/auth
+POST https://api.web.stage.cora.com.br/challenge/auth
 {
   "token": "{{TOKEN}}"
 }
@@ -77,7 +77,7 @@ POST https://api.web.cora.com.br/challenge/auth
 Caso o token seja validado corretamente, a request irá retornar um novo token:
 
 ```
-200 https://api.web.cora.com.br/challenge/auth
+200 https://api.web.stage.cora.com.br/challenge/auth
 {
     "token": "{{TOKEN}}"
 }
@@ -86,7 +86,7 @@ Caso o token seja validado corretamente, a request irá retornar um novo token:
 Caso o token não seja validado, o retorno será:
 
 ```
-401 https://api.web.cora.com.br/challenge/auth
+401 https://api.web.stage.cora.com.br/challenge/auth
 ```
 
 ### Lista
@@ -96,13 +96,13 @@ Caso o token não seja validado, o retorno será:
 Pra trazer os dados da lista, será necessário fazer a request:
 
 ```
-GET https://api.web.cora.com.br/challenge/list
+GET https://api.web.stage.cora.com.br/challenge/list
 -- header 'token: {{TOKEN}}'
 ```
 Caso seja um token válido, a request irá retornar:
 
 ```
-200 https://api.web.cora.com.br/challenge/list
+200 https://api.web.stage.cora.com.br/challenge/list
 {
   "results": [
     {
@@ -127,7 +127,7 @@ Caso seja um token válido, a request irá retornar:
 Caso o token não seja válido, o retorno será: 
 
 ```
-401 https://api.web.cora.com.br/challenge/list
+401 https://api.web.stage.cora.com.br/challenge/list
 ```
 
 ### Detalhes
@@ -136,14 +136,14 @@ Caso o token não seja válido, o retorno será:
 Pra trazer os detalhes de um item, será necessário fazer a request:
 
 ```
-GET https://api.web.cora.com.br/challenge/details/:id
+GET https://api.web.stage.cora.com.br/challenge/details/:id
 -- header 'token: {{TOKEN}}'
 ```
 
 Caso seja um token válido, a request irá retornar:
 
 ```
-200 https://api.web.cora.com.br/challenge/details/:id
+200 https://api.web.stage.cora.com.br/challenge/details/:id
 {
   "description": "Pagamento por serviços prestados",
   "label": "Pagamento recebido",
@@ -180,5 +180,5 @@ Caso seja um token válido, a request irá retornar:
 Caso o token não seja válido, o retorno será: 
 
 ```
-401 https://api.web.cora.com.br/challenge/details/:id
+401 https://api.web.stage.cora.com.br/challenge/details/:id
 ```
