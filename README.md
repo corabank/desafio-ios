@@ -41,6 +41,7 @@ No passo de senha, ao tocar no botão "Próximo", é preciso fazer a request:
 
 ```
 POST https://api.challenge.stage.cora.com.br/challenge/auth
+-- header 'apikey: {{API_KEY}}'
 {
   "cpf": "{{CPF}}",
   "password": "{{SENHA}}"
@@ -69,6 +70,7 @@ O Token possui uma validade de 1 minuto. Então a cada 1 minuto é necessário f
 
 ```
 POST https://api.challenge.stage.cora.com.br/challenge/auth
+-- header 'apikey: {{API_KEY}}'
 {
   "token": "{{TOKEN}}"
 }
@@ -97,6 +99,7 @@ Pra trazer os dados da lista, será necessário fazer a request:
 
 ```
 GET https://api.challenge.stage.cora.com.br/challenge/list
+-- header 'apikey: {{API_KEY}}'
 -- header 'token: {{TOKEN}}'
 ```
 Caso seja um token válido, a request irá retornar:
@@ -137,6 +140,7 @@ Pra trazer os detalhes de um item, será necessário fazer a request:
 
 ```
 GET https://api.challenge.stage.cora.com.br/challenge/details/:id
+-- header 'apikey: {{API_KEY}}'
 -- header 'token: {{TOKEN}}'
 ```
 
