@@ -19,6 +19,7 @@
 		A542486D2BA21E03008D5632 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = A542486C2BA21E03008D5632 /* Core */; };
 		A5A5551B2BA2220F00595332 /* Extract in Frameworks */ = {isa = PBXBuildFile; productRef = A5A5551A2BA2220F00595332 /* Extract */; };
 		A5A5551E2BA2222000595332 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = A5A5551D2BA2222000595332 /* Login */; };
+		A5A555212BA2282400595332 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = A5A555202BA2282400595332 /* Network */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A5551E2BA2222000595332 /* Login in Frameworks */,
+				A5A555212BA2282400595332 /* Network in Frameworks */,
 				A5A5551B2BA2220F00595332 /* Extract in Frameworks */,
 				A542486D2BA21E03008D5632 /* Core in Frameworks */,
 			);
@@ -153,6 +155,7 @@
 				A542486C2BA21E03008D5632 /* Core */,
 				A5A5551A2BA2220F00595332 /* Extract */,
 				A5A5551D2BA2222000595332 /* Login */,
+				A5A555202BA2282400595332 /* Network */,
 			);
 			productName = app;
 			productReference = A54248352BA21CA7008D5632 /* app.app */;
@@ -230,6 +233,7 @@
 				A542486B2BA21E03008D5632 /* XCLocalSwiftPackageReference "../Modules/Core" */,
 				A5A555192BA2220F00595332 /* XCLocalSwiftPackageReference "../Modules/Extract" */,
 				A5A5551C2BA2222000595332 /* XCLocalSwiftPackageReference "../Modules/Login" */,
+				A5A5551F2BA2282400595332 /* XCLocalSwiftPackageReference "../Modules/Network" */,
 			);
 			productRefGroup = A54248362BA21CA7008D5632 /* Products */;
 			projectDirPath = "";
@@ -643,6 +647,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Modules/Login;
 		};
+		A5A5551F2BA2282400595332 /* XCLocalSwiftPackageReference "../Modules/Network" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Modules/Network;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -657,6 +665,10 @@
 		A5A5551D2BA2222000595332 /* Login */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Login;
+		};
+		A5A555202BA2282400595332 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
