@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import Core
+import Network
+import Login
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    var appNavigationService: NavigationService?
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        registerDependenciesToInject()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -47,6 +51,49 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    
+    private func registerDependenciesToInject() {
+        guard let navigationController = window?.rootViewController as? UINavigationController else { return }
+        
+        navigationController.setNavigationBarHidden(true, animated: false)
+        let container = DIContainer()
+        
+        registerNavigationDependencies(to: container, navigationController: navigationController)
+        registerRepositoryDependencies(to: container, navigationController: navigationController)
+        registerUseCasesDependencies(to: container, navigationController: navigationController)
+        registerViewModelsDependencies(to: container, navigationController: navigationController)
+        
+        appNavigationService = container.resolve(type: NavigationService.self)!
+    }
+    
+    private func registerNavigationDependencies(to container: DIContainerService, navigationController: UINavigationController) {
+        container.register(type: NavigationService.self) { _ in
+            AppNavigation(navigationController: navigationController, container: container)
+        }
+        
+        container.register(type: LoginNavigationService.self) { container in
+            LoginNavigation(container: container, navigationController: navigationController)
+        }
+        
+        appNavigationService = container.resolve(type: NavigationService.self)!
+    }
+    
+    private func registerRepositoryDependencies(to container: DIContainerService, navigationController: UINavigationController) {
+        container.register(type: LoginRepositoryProtocol.self) { container in
+            DefaultLoginRepository(networkService: DefaultNetworkService())
+        }
+    }
+    
+    private func registerUseCasesDependencies(to container: DIContainerService, navigationController: UINavigationController) {
+        container.register(type: LogUserUseCase.self) { container in
+            DefaultLogUserUseCase(repository: container.resolve(type: LoginRepositoryProtocol.self)!)
+        }
+    }
+    
+    private func registerViewModelsDependencies(to container: DIContainerService, navigationController: UINavigationController) {
+        container.register(type: LoginViewModelProtocol.self) { container in
+            DefaultLoginViewModel(loginUseCase: container.resolve(type: LogUserUseCase.self)!)
+        }
+    }
 }
 

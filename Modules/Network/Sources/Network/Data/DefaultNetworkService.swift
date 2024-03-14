@@ -9,9 +9,9 @@ import Foundation
 import Core
 
 public class DefaultNetworkService: NetworkServiceProtocol {
-    internal let urlSession: URLSession
+    public let urlSession: URLSession
     
-    init(urlSession: URLSession = URLSession.shared) {
+    public init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
     
@@ -25,7 +25,7 @@ public class DefaultNetworkService: NetworkServiceProtocol {
     ///
     /// - Returns:
     ///   The decoded data of the specified type.
-    func request<T: Decodable>(_ type: T.Type, router: Router, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
+    public func request<T: Decodable>(_ type: T.Type, router: Router, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
         let urlRequest = try router.asURLRequest()
         try request(type, request: urlRequest, completionHandler: completionHandler)
     }
@@ -40,7 +40,7 @@ public class DefaultNetworkService: NetworkServiceProtocol {
     ///
     /// - Returns:
     ///   The decoded data of the specified type.
-    func request<T: Decodable>(_ type: T.Type, request: URLRequest, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
+    public func request<T: Decodable>(_ type: T.Type, request: URLRequest, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
         urlSession.dataTask(with: request) { data, response, requestError in
             guard let data, let response, requestError == nil else {
                 completionHandler(.failure(.generic(error: requestError)))

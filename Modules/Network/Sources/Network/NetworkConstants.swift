@@ -14,6 +14,6 @@ public struct NetworkConstants {
     
     public static let defaultRequestHeaders: RequestHeader = [
         "Content-Type": "application/json",
-        "apikey": "09522c5956d056819807bee05197c6bd" // In prod code, this api should be stored in the keychain, its here just to simplify the flow
+        "apikey": "09522c5956d056819807bee05197c6bd" // In prod code, this api key should be stored in the keychain, its here just to simplify the flow
     ]
 }

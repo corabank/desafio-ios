@@ -8,23 +8,26 @@
 import Foundation
 import Core
 
-enum AuthRoute: Router {
+public enum AuthRoute: Router {
     case requestNewToken(oldToken: String)
+    case loginUser(data: Encodable)
     
-    var baseUri: String { NetworkConstants.baseAPIUri }
+    public var baseUri: String { NetworkConstants.baseAPIUri }
     
-    var endpoint: String { "auth" }
+    public var endpoint: String { "auth" }
     
-    var method: RequestMethod { .post }
+    public var method: RequestMethod { .post }
     
-    var headers: RequestHeader { NetworkConstants.defaultRequestHeaders }
+    public var headers: RequestHeader { NetworkConstants.defaultRequestHeaders }
     
-    var queryItems: RequestHeader { [:] }
+    public var queryItems: RequestHeader { [:] }
     
-    var parameters: Encodable? {
+    public var parameters: Encodable? {
         switch self {
         case .requestNewToken(let oldToken):
             return [Constants.tokenKey: oldToken]
+        case.loginUser(let data):
+            return data
         }
     }
 }

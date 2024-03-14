@@ -9,13 +9,13 @@ import Foundation
 import Core
 
 final class DefaultTokenValidationService: TokenValidationServiceProtocol {
-    private let queue = OperationQueue()
+    static private let queue = OperationQueue()
     
     weak var networkService: NetworkServiceProtocol?
     
     init(networkService: NetworkServiceProtocol) {
         self.networkService = networkService
-        queue.maxConcurrentOperationCount = 1
+        Self.queue.maxConcurrentOperationCount = 1
     }
     
     func requestTokenAndRetry<T: Decodable>(request: URLRequest, decodeToType type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
@@ -27,19 +27,23 @@ final class DefaultTokenValidationService: TokenValidationServiceProtocol {
             try? networkService?.request(
                 TokenRevalidationResponse.self,
                 router: AuthRoute.requestNewToken(oldToken: oldToken ?? "")
-            ) { [weak queue] result in
+            ) { result in
                 switch result {
                 case .success(let data):
                     UserDefaults.standard.set(data.token, forKey: Constants.accessTokenUserDefaultKey)
                 case .failure(let failure):
                     completionHandler(.failure(failure))
-                    queue?.cancelAllOperations() // dont execute the retry block
+                    DefaultTokenValidationService.queue.cancelAllOperations() // dont execute the retry block
                 }
             }
         }
         
         let retryBlock = BlockOperation { [weak self] in
             guard let self else { return }
+            var request = request
+            
+            let newToken = UserDefaults.standard.string(forKey: Constants.accessTokenUserDefaultKey)
+            request.setValue(newToken, forHTTPHeaderField: Constants.tokenKey)
             
             try? networkService?.request(
                 type.self,
@@ -49,6 +53,6 @@ final class DefaultTokenValidationService: TokenValidationServiceProtocol {
         }
         
         retryBlock.addDependency(tokenBlock)
-        queue.addOperations([tokenBlock, retryBlock], waitUntilFinished: true)
+        Self.queue.addOperations([tokenBlock, retryBlock], waitUntilFinished: true)
     }
 }

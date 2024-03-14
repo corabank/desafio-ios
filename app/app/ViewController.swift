@@ -11,7 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.async { [weak self] in
+            if let sceneDelegate = self?.view.window?.windowScene?.delegate as? SceneDelegate {
+                sceneDelegate.appNavigationService?.openLoginViewController()
+            }
+        }
     }
 
 
