@@ -10,6 +10,7 @@ import Foundation
 /// Application constants
 public struct Constants {
     private init() {}
-    
-    public static let baseAPIUri = "http://dumbUri/example"
+        
+    public static let tokenKey = "token"
+    public static let accessTokenUserDefaultKey = "accessToken"
 }

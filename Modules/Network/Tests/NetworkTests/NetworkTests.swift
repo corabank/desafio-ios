@@ -4,7 +4,7 @@ import XCTest
 final class NetworkTests: XCTestCase {
     var router: Router!
     var urlSession: URLSession!
-    var service: NetworkService!
+    var service: NetworkServiceProtocol!
     var mockCat: CatModel!
     var mockData: Data!
     
@@ -14,7 +14,7 @@ final class NetworkTests: XCTestCase {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
         urlSession = URLSession(configuration: config)
-        service = NetworkService(urlSession: urlSession)
+        service = DefaultNetworkService(urlSession: urlSession)
         
         mockCat = CatModel(id: "d0q", url: "https://cdn2.thecatapi.com/images/d0q.jpg")
         mockData = try! JSONEncoder().encode(mockCat)

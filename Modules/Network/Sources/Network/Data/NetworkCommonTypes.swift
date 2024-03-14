@@ -17,14 +17,3 @@ public enum NetworkError: Error {
     case dataConversionError
     case generic(error: Error?)
 }
-
-/// Represents a type that can be converted to `URLRequest` type
-public protocol URLRequestConvertible {
-    func asURLRequest() throws -> URLRequest
-}
-
-/// Possible error cases when converting to `URLRequest`
-public enum URLRequestConvertibleError: Error {
-    case routerConversionError
-}
-
