@@ -12,7 +12,7 @@ import Login
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var appNavigationService: NavigationService?
+    var appNavigationService: NavigationCoordinator?
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -54,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func registerDependenciesToInject() {
         guard let navigationController = window?.rootViewController as? UINavigationController else { return }
-        
+        navigationController.navigationBar.tintColor = AppColors.primary
         navigationController.setNavigationBarHidden(true, animated: false)
         let container = DIContainer()
         
@@ -63,19 +63,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         registerUseCasesDependencies(to: container, navigationController: navigationController)
         registerViewModelsDependencies(to: container, navigationController: navigationController)
         
-        appNavigationService = container.resolve(type: NavigationService.self)!
+        appNavigationService = container.resolve(type: NavigationCoordinator.self)!
     }
     
     private func registerNavigationDependencies(to container: DIContainerService, navigationController: UINavigationController) {
-        container.register(type: NavigationService.self) { _ in
+        container.register(type: NavigationCoordinator.self) { _ in
             AppNavigation(navigationController: navigationController, container: container)
         }
         
-        container.register(type: LoginNavigationService.self) { container in
+        container.register(type: LoginCoordinator.self) { container in
             LoginNavigation(container: container, navigationController: navigationController)
         }
         
-        appNavigationService = container.resolve(type: NavigationService.self)!
+        appNavigationService = container.resolve(type: NavigationCoordinator.self)!
     }
     
     private func registerRepositoryDependencies(to container: DIContainerService, navigationController: UINavigationController) {

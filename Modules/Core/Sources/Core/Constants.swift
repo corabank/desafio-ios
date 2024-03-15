@@ -13,4 +13,6 @@ public struct Constants {
         
     public static let tokenKey = "token"
     public static let accessTokenUserDefaultKey = "accessToken"
+    
+    public static let defaultPadding: CGFloat = 24.0
 }
