@@ -53,7 +53,10 @@ public class LoginNavigation: LoginCoordinator {
     }
     
     public func openPasswordScreen(viewModel: LoginViewModelProtocol) {
-        let passViewController = LoginPasswordViewController()
+        let passViewController = LoginPasswordViewController(
+            viewModel: viewModel,
+            navigationService: container.resolve(type: LoginCoordinator.self)!
+        )
         navigationController?.pushViewController(passViewController, animated: true)
     }
     

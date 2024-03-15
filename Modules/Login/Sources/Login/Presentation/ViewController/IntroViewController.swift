@@ -105,7 +105,8 @@ class IntroViewController: UIViewController, PresentableLoginView {
     private let alreadyClientButton: ButtonView = {
         let button = ButtonView()
         button.text = "Já sou cliente"
-        button.style = .secondary
+        button.style = .secondaryWhite
+        button.textAlignment = .center
         return button
     }()
     

@@ -144,6 +144,7 @@ class LoginCPFViewController: UIViewController {
         ])
         
         textField.becomeFirstResponder()
+        
         continueButton.didTapButton = { [unowned self] in
             navigationService?.openPasswordScreen(viewModel: viewModel)
         }

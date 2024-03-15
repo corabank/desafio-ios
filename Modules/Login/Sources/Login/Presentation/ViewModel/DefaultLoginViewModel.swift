@@ -35,4 +35,8 @@ public class DefaultLoginViewModel: LoginViewModelProtocol {
             .replacingOccurrences(of: ".", with: "")
             .count == 11
     }
+    
+    public func isValid(password: String) -> Bool {
+        return !password.isEmpty
+    }
 }

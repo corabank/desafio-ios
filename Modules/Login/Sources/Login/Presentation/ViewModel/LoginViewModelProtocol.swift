@@ -10,6 +10,7 @@ import Core
 
 public protocol LoginViewModelInput: AnyObject {
     func isValid(cpf: String) -> Bool
+    func isValid(password: String) -> Bool
     func didSubmit(login: LoginData)
 }
 

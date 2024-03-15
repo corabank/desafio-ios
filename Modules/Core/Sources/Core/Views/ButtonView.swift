@@ -11,7 +11,8 @@ public class ButtonView: UIView {
     //MARK: - enums
     
     public enum Style {
-        case primary, primaryWhite, secondary
+        case primary, primaryWhite
+        case secondary, secondaryWhite
     }
     
     public enum State {
@@ -47,6 +48,10 @@ public class ButtonView: UIView {
     }
     
     public var size: Size = .medium {
+        didSet { updateStyle() }
+    }
+    
+    public var textAlignment: NSTextAlignment = .natural {
         didSet { updateStyle() }
     }
     
@@ -121,7 +126,7 @@ public class ButtonView: UIView {
         imageViewLeadingAnchor.constant = image == nil ? .zero : -(ButtonConstants.hPadding - 4)
         
         titleLabel.text = text
-        titleLabel.textAlignment = style.textAlignment
+        titleLabel.textAlignment = textAlignment
 
         widthConstaint.constant = size.frame.width
         heightConstraint.constant = size.frame.height
@@ -178,26 +183,17 @@ extension ButtonView.Style {
             return AppColors.primary
         case .primaryWhite:
             return AppColors.secondary
-        case .secondary:
+        case .secondary, .secondaryWhite:
             return .clear
         }
     }
     
     var textColor: UIColor {
         switch self {
-        case .primary, .secondary:
+        case .primary, .secondaryWhite:
             return AppColors.secondary
-        case .primaryWhite:
+        case .primaryWhite, .secondary:
             return AppColors.primary
-        }
-    }
-    
-    var textAlignment: NSTextAlignment {
-        switch self {
-        case .primary, .primaryWhite:
-            return .natural
-        case .secondary:
-            return .center
         }
     }
 }
