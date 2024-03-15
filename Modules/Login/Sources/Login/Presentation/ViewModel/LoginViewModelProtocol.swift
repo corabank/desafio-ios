@@ -9,6 +9,7 @@ import Foundation
 import Core
 
 public protocol LoginViewModelInput: AnyObject {
+    func isValid(cpf: String) -> Bool
     func didSubmit(login: LoginData)
 }
 

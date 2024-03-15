@@ -55,7 +55,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func registerDependenciesToInject() {
         guard let navigationController = window?.rootViewController as? UINavigationController else { return }
         navigationController.navigationBar.tintColor = AppColors.primary
-        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.navigationBar.backgroundColor = AppColors.navigationBarBackground
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: AppColors.navigationTitleColor]
         let container = DIContainer()
         
         registerNavigationDependencies(to: container, navigationController: navigationController)

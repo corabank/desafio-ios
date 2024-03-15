@@ -97,7 +97,7 @@ class IntroViewController: UIViewController, PresentableLoginView {
         let button = ButtonView()
         button.text = "Quero fazer parte!"
         button.style = .primaryWhite
-        button.image = Images.General.rightArrow
+        button.image = Images.General.rightArrowRed
         button.size = .big
         return button
     }()
@@ -119,6 +119,11 @@ class IntroViewController: UIViewController, PresentableLoginView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationService?.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidLoad() {

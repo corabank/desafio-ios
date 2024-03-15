@@ -29,4 +29,10 @@ public class DefaultLoginViewModel: LoginViewModelProtocol {
         }
     }
     
+    public func isValid(cpf: String) -> Bool {
+        return cpf
+            .replacingOccurrences(of: "-", with: "")
+            .replacingOccurrences(of: ".", with: "")
+            .count == 11
+    }
 }

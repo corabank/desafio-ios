@@ -114,24 +114,27 @@ public class ButtonView: UIView {
     }
     
     private func updateStyle() {
+        isUserInteractionEnabled = state == .normal
+        layer.cornerRadius = size.cornerRadius
+
         rightImageView.image = image
         imageViewLeadingAnchor.constant = image == nil ? .zero : -(ButtonConstants.hPadding - 4)
         
         titleLabel.text = text
         titleLabel.textAlignment = style.textAlignment
 
-        layer.cornerRadius = size.cornerRadius
         widthConstaint.constant = size.frame.width
         heightConstraint.constant = size.frame.height
         
         titleLabel.textColor = style.textColor
                 
-        if let newBackgroundColor = state.secondaryBackgroundColor {
-            backgroundColor = newBackgroundColor
-        } else {
-            backgroundColor = style.backgroundColor
+        UIView.animate(withDuration: 0.3) {
+            if let newBackgroundColor = self.state.secondaryBackgroundColor {
+                self.backgroundColor = newBackgroundColor
+            } else {
+                self.backgroundColor = self.style.backgroundColor
+            }
         }
-        
     }
     
     @objc
@@ -209,7 +212,7 @@ extension ButtonView.State {
         case .normal:
             return nil
         case .inactive:
-            return AppColors.deactivateBackground
+            return AppColors.deactivatedBackground
         }
     }
 }

@@ -44,9 +44,11 @@ public class LoginNavigation: LoginCoordinator {
     
     public func openCPFScreen() {
         navigationController?.isNavigationBarHidden = false
-        navigationController?.title = "Login Cora"
-
-        let cpfViewController = LoginCPFViewController()
+        
+        let cpfViewController = LoginCPFViewController(
+            viewModel: container.resolve(type: LoginViewModelProtocol.self)!,
+            navigationService: container.resolve(type: LoginCoordinator.self)!
+        )
         navigationController?.pushViewController(cpfViewController, animated: true)
     }
     
