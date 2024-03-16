@@ -115,6 +115,15 @@ class LoginPasswordViewController: UIViewController {
         prepareTexts()
         prepareInputs()
         prepareIcons()
+        
+        viewModel.onLoginError = {
+            print("[ERROR while trying to login]: \($0)")
+        }
+        
+        viewModel.onLoginSuccess = { [weak self] response in
+            UserDefaults.standard.setValue(response.token, forKey: Constants.accessTokenUserDefaultKey)
+            self?.navigationService?.openExtractViewController()
+        }
     }
     
     private func prepareContainer() {
@@ -160,7 +169,8 @@ class LoginPasswordViewController: UIViewController {
         textField.becomeFirstResponder()
         
         continueButton.didTapButton = { [unowned self] in
-            navigationService?.openExtractViewController()
+            viewModel.loginData.password = textField.text ?? ""
+            viewModel.didSubmit(login: viewModel.loginData)
         }
     }
     

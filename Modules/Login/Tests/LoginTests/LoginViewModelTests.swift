@@ -18,7 +18,7 @@ struct MockUseCase: LogUserUseCase {
             return
         }
         
-        completion(.success(.init(token: "12345")))
+        completion(.success(.init(token: "123456")))
     }
 }
 
@@ -54,19 +54,19 @@ final class LoginViewModelTests: XCTestCase {
     }
     
     func testValidPass() throws {
-        let mockPass = "12345"
+        let mockPass = "123456"
         let isValid = sut.isValid(password: mockPass)
         XCTAssertTrue(isValid)
     }
     
     func testInvalidPass() throws {
-        let mockPass = ""
+        let mockPass = "12345"
         let isValid = sut.isValid(password: mockPass)
         XCTAssertFalse(isValid)
     }
     
     func testLoginSuccess() throws {
-        let mockData = LoginData(cpf:  "977.656.400-38", password: "12345")
+        let mockData = LoginData(cpf:  "977.656.400-38", password: "123456")
         
         let expectation = XCTestExpectation(description: "login success")
         

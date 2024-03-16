@@ -8,6 +8,6 @@
 import Foundation
 
 public struct LoginData: Codable {
-    public let cpf: String
-    public let password: String
+    public var cpf: String
+    public var password: String
 }

@@ -14,6 +14,8 @@ public class DefaultLoginViewModel: LoginViewModelProtocol {
     public var onLoginSuccess: ((TokenRevalidationResponse) -> Void)?
     public var onLoginError: ((Error) -> Void)?
     
+    public var loginData: LoginData = .init(cpf: "", password: "")
+    
     public init(loginUseCase: LogUserUseCase) {
         self.loginUseCase = loginUseCase
     }
@@ -37,6 +39,6 @@ public class DefaultLoginViewModel: LoginViewModelProtocol {
     }
     
     public func isValid(password: String) -> Bool {
-        return !password.isEmpty
+        return password.count == 6
     }
 }

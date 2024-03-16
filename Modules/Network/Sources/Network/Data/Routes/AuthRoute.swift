@@ -10,7 +10,7 @@ import Core
 
 public enum AuthRoute: Router {
     case requestNewToken(oldToken: String)
-    case loginUser(data: Encodable)
+    case loginUser(data: [String: Any])
     
     public var baseUri: String { NetworkConstants.baseAPIUri }
     
@@ -22,10 +22,10 @@ public enum AuthRoute: Router {
     
     public var queryItems: RequestHeader { [:] }
     
-    public var parameters: Encodable? {
+    public var parameters: [String: Any]? {
         switch self {
         case .requestNewToken(let oldToken):
-            return [Constants.tokenKey: oldToken]
+            return [Constants.tokenHeaderField: oldToken]
         case.loginUser(let data):
             return data
         }

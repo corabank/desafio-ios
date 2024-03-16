@@ -18,7 +18,7 @@ public final class DefaultLoginRepository: LoginRepositoryProtocol {
     
     public func executeLogin(with data: LoginData, completionHandler: @escaping ((Result<TokenRevalidationResponse, NetworkError>) -> Void)) {
         do {
-            try networkService.request(TokenRevalidationResponse.self, router: AuthRoute.loginUser(data: data), completionHandler: completionHandler)
+            try networkService.request(TokenRevalidationResponse.self, router: AuthRoute.loginUser(data: data.asDictionary ?? [:]), completionHandler: completionHandler)
         } catch {
             completionHandler(.failure(.generic(error: error)))
         }

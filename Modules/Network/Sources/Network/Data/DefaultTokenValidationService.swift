@@ -43,7 +43,7 @@ final class DefaultTokenValidationService: TokenValidationServiceProtocol {
             var request = request
             
             let newToken = UserDefaults.standard.string(forKey: Constants.accessTokenUserDefaultKey)
-            request.setValue(newToken, forHTTPHeaderField: Constants.tokenKey)
+            request.setValue(newToken, forHTTPHeaderField: Constants.tokenHeaderField)
             
             try? networkService?.request(
                 type.self,

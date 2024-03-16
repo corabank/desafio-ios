@@ -41,6 +41,8 @@ public class DefaultNetworkService: NetworkServiceProtocol {
     /// - Returns:
     ///   The decoded data of the specified type.
     public func request<T: Decodable>(_ type: T.Type, request: URLRequest, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
+        printToDebug(request)
+        
         urlSession.dataTask(with: request) { data, response, requestError in
             guard let data, let response, requestError == nil else {
                 completionHandler(.failure(.generic(error: requestError)))
@@ -77,5 +79,14 @@ public class DefaultNetworkService: NetworkServiceProtocol {
                 completionHandler(.failure(.dataConversionError))
             }
         }.resume()
+    }
+    
+    private func printToDebug(_ request: URLRequest) {
+        // NOTE: In production an OSLog should be used to prevent users to see the request data when
+        // plugging the phone into xcode
+        #if DEBUG
+        print("[REQUEST]:: Request being made")
+        dump(request)
+        #endif
     }
 }

@@ -43,7 +43,7 @@ public protocol Router: URLRequestConvertible {
     var method: RequestMethod { get }
     var headers: RequestHeader { get }
     var queryItems: RequestHeader { get }
-    var parameters: Encodable? { get }
+    var parameters: [String: Any]? { get }
 }
 
 public extension Router {
@@ -64,7 +64,7 @@ public extension Router {
         }
         
         if let parameters {
-            request.httpBody = try? JSONEncoder().encode(parameters)
+            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
         }
         
         return request

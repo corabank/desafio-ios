@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import XCTest
 
 /// Class to make possible to mock URL's responses
 class MockURLProtocol: URLProtocol {
@@ -22,7 +21,7 @@ class MockURLProtocol: URLProtocol {
     
     override func startLoading() {
         guard let handler = MockURLProtocol.requestHandler else {
-            XCTFail("No handler set")
+            fatalError("no handler set")
             return
         }
         

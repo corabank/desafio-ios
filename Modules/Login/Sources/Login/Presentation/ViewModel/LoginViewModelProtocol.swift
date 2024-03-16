@@ -19,4 +19,6 @@ public protocol LoginViewModelOutput: AnyObject {
     var onLoginError: ((Error) -> Void)? { get set }
 }
 
-public protocol LoginViewModelProtocol: LoginViewModelInput & LoginViewModelOutput {}
+public protocol LoginViewModelProtocol: LoginViewModelInput & LoginViewModelOutput {
+    var loginData: LoginData { get set }
+}

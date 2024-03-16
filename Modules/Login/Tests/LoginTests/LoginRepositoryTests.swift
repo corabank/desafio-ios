@@ -31,8 +31,8 @@ final class LoginRepositoryTests: XCTestCase {
         mockResponse = TokenRevalidationResponse(token: "token-mock")
         mockData = try! JSONEncoder().encode(mockResponse)
         
-        sendData = .init(cpf: "000.000.000-00", password: "12345")
-        route = AuthRoute.loginUser(data: sendData)
+        sendData = .init(cpf: "000.000.000-00", password: "123456")
+        route = AuthRoute.loginUser(data: sendData.asDictionary!)
         
         sut = DefaultLoginRepository(networkService: service)
         
