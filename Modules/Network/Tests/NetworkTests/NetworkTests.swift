@@ -80,7 +80,7 @@ final class NetworkTests: XCTestCase {
             try service.request(CatModel.self, router: MockRoute.catSearch) { result in
                 switch result {
                 case .success(_):
-                    XCTAssertThrowsError("It should not be success")
+                    XCTFail("It should not be success")
                     expectation.fulfill()
                 case .failure(let failure):
                     XCTAssertEqual(NetworkError.requestFailed(statusCode: 400).localizedDescription, failure.localizedDescription)
