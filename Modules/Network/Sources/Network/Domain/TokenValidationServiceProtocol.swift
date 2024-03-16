@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TokenValidationServiceProtocol: AnyObject {
+public protocol TokenValidationServiceProtocol: AnyObject {
     func requestTokenAndRetry<T: Decodable>(request: URLRequest, decodeToType type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws
 }
 

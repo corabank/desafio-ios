@@ -8,17 +8,17 @@
 import Foundation
 import Core
 
-final class DefaultTokenValidationService: TokenValidationServiceProtocol {
+final public class DefaultTokenValidationService: TokenValidationServiceProtocol {
     static private let queue = OperationQueue()
     
     weak var networkService: NetworkServiceProtocol?
     
-    init(networkService: NetworkServiceProtocol) {
+    public init(networkService: NetworkServiceProtocol) {
         self.networkService = networkService
         Self.queue.maxConcurrentOperationCount = 1
     }
     
-    func requestTokenAndRetry<T: Decodable>(request: URLRequest, decodeToType type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
+    public func requestTokenAndRetry<T: Decodable>(request: URLRequest, decodeToType type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
         let tokenBlock = BlockOperation { [weak self] in
             guard let self else { return }
 

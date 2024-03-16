@@ -80,8 +80,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func registerRepositoryDependencies(to container: DIContainerService, navigationController: UINavigationController) {
+        container.register(type: NetworkServiceProtocol.self) { container in
+            let service = DefaultNetworkService()
+            service.tokenValidationService = DefaultTokenValidationService(networkService: service)
+            return service
+        }
+        
         container.register(type: LoginRepositoryProtocol.self) { container in
-            DefaultLoginRepository(networkService: DefaultNetworkService())
+            DefaultLoginRepository(networkService: container.resolve(type: NetworkServiceProtocol.self)!)
         }
     }
     

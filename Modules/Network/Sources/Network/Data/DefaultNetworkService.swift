@@ -11,6 +11,8 @@ import Core
 public class DefaultNetworkService: NetworkServiceProtocol {
     public let urlSession: URLSession
     
+    public var tokenValidationService: TokenValidationServiceProtocol?
+    
     public init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
@@ -43,7 +45,7 @@ public class DefaultNetworkService: NetworkServiceProtocol {
     public func request<T: Decodable>(_ type: T.Type, request: URLRequest, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) throws {
         printToDebug(request)
         
-        urlSession.dataTask(with: request) { data, response, requestError in
+        urlSession.dataTask(with: request) { [weak self] data, response, requestError in
             guard let data, let response, requestError == nil else {
                 completionHandler(.failure(.generic(error: requestError)))
                 return
@@ -64,7 +66,11 @@ public class DefaultNetworkService: NetworkServiceProtocol {
                     return
                 }
                 
-                // validate token
+                do {
+                    try self?.tokenValidationService?.requestTokenAndRetry(request: request, decodeToType: type, completionHandler: completionHandler)
+                } catch {
+                    completionHandler(.failure(.requestFailed(statusCode: 401)))
+                }
                 break
             default:
                 completionHandler(.failure(.requestFailed(statusCode: httpResponse.statusCode)))
