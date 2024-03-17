@@ -7,6 +7,7 @@
 
 import UIKit
 import Core
+import Network
 
 public protocol ExtractCoordinator {
     var container: DIContainerService { get set }
@@ -29,8 +30,23 @@ public class ExtractNavigator: ExtractCoordinator {
     }
     
     private func registerViewControllers() {
+        container.register(type: ExtractRepositoryProtocol.self) { container in
+            DefaultExtractRepository(networkService: container.resolve(type: NetworkServiceProtocol.self)!)
+        }
+        
+        container.register(type: LoadExtractsUseCase.self) { container in
+            DefaultLoadExtractsUseCase(repository: container.resolve(type: ExtractRepositoryProtocol.self)!)
+        }
+        
+        container.register(type: ExtractViewModelProtocol.self) { container in
+            DefaultExtractViewModel(fetchDataUseCase: container.resolve(type: LoadExtractsUseCase.self)!)
+        }
+        
         container.register(type: PresentableExtractView.self) { container in
-            ExtractViewController(navigationService: container.resolve(type: ExtractCoordinator.self)!)
+            ExtractViewController(
+                navigationService: container.resolve(type: ExtractCoordinator.self)!,
+                viewModel: container.resolve(type: ExtractViewModelProtocol.self)!
+            )
         }
     }
     

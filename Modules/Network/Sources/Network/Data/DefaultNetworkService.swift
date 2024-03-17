@@ -80,6 +80,8 @@ public class DefaultNetworkService: NetworkServiceProtocol {
             let decoder = JSONDecoder()
             do {
                 let decodedData = try decoder.decode(type, from: data)
+                self?.printToDebug(decodedData)
+                
                 completionHandler(.success(decodedData))
             } catch {
                 completionHandler(.failure(.dataConversionError))
@@ -91,8 +93,17 @@ public class DefaultNetworkService: NetworkServiceProtocol {
         // NOTE: In production an OSLog should be used to prevent users to see the request data when
         // plugging the phone into xcode
         #if DEBUG
-        print("[REQUEST]:: Request being made")
+        print("[REQUEST]:: START")
         dump(request)
+        #endif
+    }
+    
+    private func printToDebug<T>(_ result: T) {
+        // NOTE: In production an OSLog should be used to prevent users to see the request data when
+        // plugging the phone into xcode
+        #if DEBUG
+        print("[REQUEST]:: FINISH")
+        dump(result)
         #endif
     }
 }

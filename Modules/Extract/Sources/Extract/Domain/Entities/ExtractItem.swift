@@ -9,7 +9,7 @@ import Foundation
 
 struct ExtractItem: Codable {
     let id: String
-    let descrption: String?
+    let description: String?
     let label: String
     let entry: String
     let amount: Int
