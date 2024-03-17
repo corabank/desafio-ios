@@ -6,9 +6,11 @@
 //
 
 import UIKit
+
 import Core
 import Network
 import Login
+import Extract
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -74,6 +76,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         container.register(type: LoginCoordinator.self) { container in
             LoginNavigation(container: container, navigationController: navigationController)
+        }
+        
+        container.register(type: ExtractCoordinator.self) { container in
+            ExtractNavigator(container: container, navigationController: navigationController)
         }
         
         appNavigationService = container.resolve(type: NavigationCoordinator.self)!

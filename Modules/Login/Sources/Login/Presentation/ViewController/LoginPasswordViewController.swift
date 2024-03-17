@@ -122,7 +122,10 @@ class LoginPasswordViewController: UIViewController {
         
         viewModel.onLoginSuccess = { [weak self] response in
             UserDefaults.standard.setValue(response.token, forKey: Constants.accessTokenUserDefaultKey)
-            self?.navigationService?.openExtractViewController()
+            
+            DispatchQueue.main.async {
+                self?.navigationService?.openExtractViewController()
+            }
         }
     }
     

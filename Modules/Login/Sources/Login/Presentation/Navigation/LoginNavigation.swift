@@ -61,6 +61,7 @@ public class LoginNavigation: LoginCoordinator {
     }
     
     public func openExtractViewController() {
-        let viewController = container.resolve(type: PresentableExtractView.self)!
+        let appNavigation = container.resolve(type: NavigationCoordinator.self)!
+        appNavigation.openExtractViewController()
     }
 }
