@@ -18,6 +18,8 @@ class ExtractViewController: UIViewController, PresentableExtractView {
     
     private let navigationService: ExtractCoordinator
     
+    let data = ExtractList.mock
+    
     //MARK: - views
     
     private lazy var filterBarView: FilterBarView = {
@@ -30,6 +32,16 @@ class ExtractViewController: UIViewController, PresentableExtractView {
         return filterBarView
     }()
     
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.register(ExtractListItemCell.self, forCellReuseIdentifier: ExtractListItemCell.identifier)
+        return tableView
+    }()
     //MARK: - setup
     
     init(navigationService: ExtractCoordinator) {
@@ -55,6 +67,16 @@ class ExtractViewController: UIViewController, PresentableExtractView {
     
     private func prepareView() {
         view.backgroundColor = AppColors.navigationBarBackground
+        
+        prepareFilterBarView()
+        prepareTableView()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    private func prepareFilterBarView() {
         view.addSubview(filterBarView)
         
         NSLayoutConstraint.activate([
@@ -62,5 +84,44 @@ class ExtractViewController: UIViewController, PresentableExtractView {
             filterBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             filterBarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         ])
+    }
+    
+    private func prepareTableView() {
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: filterBarView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+}
+
+//MARK: - table view data source
+
+extension ExtractViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard section < data.itemsTotal else { return .zero }
+        return data.results[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExtractListItemCell.identifier, for: indexPath) as? ExtractListItemCell else { return UITableViewCell() }
+        cell.prepare(item: data.results[indexPath.section].items[indexPath.row])
+        cell.selectionStyle = .none
+        return cell
+    }
+}
+
+//MARK: - table view delegate
+
+extension ExtractViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tap::")
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Segunda feira - 2 de Agosto"
     }
 }
