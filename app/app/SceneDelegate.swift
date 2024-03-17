@@ -58,7 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let navigationController = window?.rootViewController as? UINavigationController else { return }
         navigationController.navigationBar.tintColor = AppColors.primary
         navigationController.navigationBar.backgroundColor = AppColors.navigationBarBackground
-        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: AppColors.navigationTitleColor]
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: AppColors.textSecondaryColor]
         let container = DIContainer()
         
         registerNavigationDependencies(to: container, navigationController: navigationController)

@@ -17,7 +17,5 @@ public struct AppColors {
     public static let navigationBarBackground = UIColor(hex: 0xFF0F4F8)
     
     public static let textColorOnWhite = UIColor(hex: 0xF3B3B3B)
-    public static let navigationTitleColor = UIColor(hex: 0xF6B7076)
-    
-
+    public static let textSecondaryColor = UIColor(hex: 0xF6B7076)
 }

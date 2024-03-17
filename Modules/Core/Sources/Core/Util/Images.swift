@@ -24,4 +24,11 @@ public struct Images {
     public struct Login {
         public static let backgroundImage = UIImage(named: "login-image")!
     }
+    
+    //MARK: - extract
+    
+    public struct Extract {
+        public static let icFilterIcon = UIImage(named: "ic_filter")!
+        public static let signOutIcon = UIImage(named: "sign-out")!
+    }
 }

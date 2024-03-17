@@ -36,6 +36,6 @@ public class ExtractNavigator: ExtractCoordinator {
     
     public func openExtractScreen() {
         let viewController = container.resolve(type: PresentableExtractView.self)!
-        navigationController?.setViewControllers([viewController.toPresent()], animated: true)
+        navigationController?.pushViewController(viewController.toPresent(), animated: true)
     }
 }
