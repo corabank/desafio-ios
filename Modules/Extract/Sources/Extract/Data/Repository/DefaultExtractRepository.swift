@@ -18,7 +18,7 @@ final class DefaultExtractRepository: ExtractRepositoryProtocol {
     
     func executeLoad(completionHandler: @escaping ((Result<ExtractList, NetworkError>) -> Void)) {
         do {
-            try networkService.request(ExtractList.self, router: ExtractListRoute.fetchData, completionHandler: completionHandler)
+            try networkService.request(ExtractList.self, router: ExtractRoute.fetchData, completionHandler: completionHandler)
         } catch {
             completionHandler(.failure(.generic(error: error)))
         }

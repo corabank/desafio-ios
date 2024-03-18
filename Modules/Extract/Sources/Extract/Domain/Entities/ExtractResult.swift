@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import Core
 
 struct ExtractList: Codable {
-    let results: [ExtractResult]
-    let itemsTotal: Int
+    @DefaultEmptyArray var results: [ExtractResult]
+    @DefaultInt var itemsTotal: Int
 }
 
 struct ExtractResult: Codable {
-    let items: [ExtractItem]
-    let date: String
+    @DefaultEmptyArray var items: [ExtractItem]
+    @DefaultString var date: String
 }
 
 

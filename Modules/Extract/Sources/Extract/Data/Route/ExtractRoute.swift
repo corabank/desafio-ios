@@ -9,15 +9,25 @@ import Foundation
 import Network
 import Core
 
-enum ExtractListRoute: Router {
+enum ExtractRoute: Router {
     case fetchData
+    case loadDetails(id: String)
     
     private var authToken: String {
         return UserDefaults.standard.string(forKey: Constants.accessTokenUserDefaultKey) ?? ""
     }
 
     var baseUri: String { NetworkConstants.baseAPIUri }
-    var endpoint: String { "list" }
+    
+    var endpoint: String {
+        switch self {
+        case .fetchData:
+            return "list"
+        case .loadDetails(let id):
+            return "details/\(id)"
+        }
+    }
+    
     var method: Network.RequestMethod { .get }
     
     var headers: Network.RequestHeader {
@@ -25,5 +35,6 @@ enum ExtractListRoute: Router {
     }
     
     var queryItems: Network.RequestHeader { [:] }
+    
     var parameters: [String : Any]? { nil }
 }
