@@ -21,7 +21,7 @@ class ExtractListItemCell: UITableViewCell {
     
     //MARK: - views
     
-    private let container: UIView = {
+    let container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -112,7 +112,8 @@ class ExtractListItemCell: UITableViewCell {
         ])
     }
     
-    func prepare(item: ExtractItem) {
+    func prepare(item: ExtractItem) 
+    {
         self.item = item
         
         leftImageView.image = item.leftIcon
@@ -123,5 +124,31 @@ class ExtractListItemCell: UITableViewCell {
         
         valueLabel.textColor = item.textColor
         transferTypeLabel.textColor = item.textColor
+        hideShimmerAnimation()
+    }
+    
+    func showShimmerAnimation() {
+        leftImageView.image = Images.Extract.arrowDownIn
+        valueLabel.text = "dummy text"
+        transferTypeLabel.text = "dummy text"
+        personLabel.text = "dummy text"
+        
+        hourLabel.isHidden = true
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            leftImageView.startShimmeringAnimation()
+            textsStackView.startShimmeringAnimation()
+        }
+    }
+    
+    private func hideShimmerAnimation() {
+        hourLabel.isHidden = false
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            leftImageView.stopShimmeringAnimation()
+            textsStackView.stopShimmeringAnimation()
+        }
     }
 }

@@ -18,7 +18,7 @@ class ExtractViewController: UIViewController, PresentableExtractView {
     
     private let navigationService: ExtractCoordinator
     private let viewModel: ExtractViewModelProtocol
-        
+    
     //MARK: - views
     
     private lazy var filterBarView: FilterBarView = {
@@ -73,7 +73,7 @@ class ExtractViewController: UIViewController, PresentableExtractView {
                 self?.tableView.reloadData()
             }
         }
-
+        
         viewModel.fetchData()
     }
     
@@ -117,6 +117,11 @@ class ExtractViewController: UIViewController, PresentableExtractView {
     
     @objc
     private func didPullRefresh() {
+        tableView.visibleCells.forEach {
+            guard let cell = $0 as? ExtractListItemCell else { return }
+            cell.showShimmerAnimation()
+        }
+        
         viewModel.fetchData()
     }
 }
@@ -125,20 +130,24 @@ class ExtractViewController: UIViewController, PresentableExtractView {
 
 extension ExtractViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let listData = viewModel.listData else { return .zero }
+        guard let listData = viewModel.listData else { return 5 }
         return listData.results.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let listData = viewModel.listData else { return .zero }
+        guard let listData = viewModel.listData else { return 1 }
         return listData.results[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let listData = viewModel.listData else { return UITableViewCell() }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ExtractListItemCell.identifier, for: indexPath) as? ExtractListItemCell else { return UITableViewCell() }
-        
-        cell.prepare(item: listData.results[indexPath.section].items[indexPath.row])
+
+        if let listData = viewModel.listData {
+            cell.prepare(item: listData.results[indexPath.section].items[indexPath.row])
+        } else {
+            cell.showShimmerAnimation()
+        }
+
         cell.selectionStyle = .none
         return cell
     }
