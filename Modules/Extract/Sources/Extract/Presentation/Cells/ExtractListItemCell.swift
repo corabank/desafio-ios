@@ -115,10 +115,13 @@ class ExtractListItemCell: UITableViewCell {
     func prepare(item: ExtractItem) {
         self.item = item
         
-        leftImageView.image = Images.General.rightArrowRed
-        valueLabel.text = "\(item.amount / 100)"
+        leftImageView.image = item.leftIcon
+        valueLabel.text = item.amount.asCurrency
         transferTypeLabel.text = item.label
         personLabel.text = item.name
-        hourLabel.text = "12:37"
+        hourLabel.text = item.dateEvent.asDate()
+        
+        valueLabel.textColor = item.textColor
+        transferTypeLabel.textColor = item.textColor
     }
 }

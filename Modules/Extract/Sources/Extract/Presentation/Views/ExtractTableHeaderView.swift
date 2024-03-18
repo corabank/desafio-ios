@@ -43,7 +43,7 @@ class ExtractTableHeaderView: UIView {
         backgroundColor = AppColors.navigationBarBackground
         addSubview(textLabel)
         
-        textLabel.text = dateString
+        textLabel.text = dateString.asDate(currentFormat: "YYYY-MM-dd", toFormat: "EEEE - dd 'de' MMMM")
         
         NSLayoutConstraint.activate([
             textLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.defaultPadding),

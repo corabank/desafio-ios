@@ -18,4 +18,6 @@ public struct AppColors {
     
     public static let textColorOnWhite = UIColor(hex: 0xF3B3B3B)
     public static let textSecondaryColor = UIColor(hex: 0xF6B7076)
+    
+    public static let receivedTransferColor = UIColor(hex: 0xF1A93DA)
 }

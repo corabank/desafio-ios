@@ -38,9 +38,15 @@ class ExtractViewController: UIViewController, PresentableExtractView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.separatorInset = .init(top: Constants.defaultPadding / 4, left: .zero, bottom: Constants.defaultPadding / 4, right: .zero)
         tableView.register(ExtractListItemCell.self, forCellReuseIdentifier: ExtractListItemCell.identifier)
+        tableView.refreshControl = refreshControl
+        if #available(iOS 15.0, *) { tableView.sectionHeaderTopPadding = 0 }
         return tableView
     }()
+    
+    private let refreshControl = UIRefreshControl()
+    
     //MARK: - setup
     
     init(navigationService: ExtractCoordinator, viewModel: ExtractViewModelProtocol) {
@@ -61,9 +67,10 @@ class ExtractViewController: UIViewController, PresentableExtractView {
             print("[ERROR]:: \($0)")
         }
         
-        viewModel.onFetchSuccess = { [weak tableView] _ in
+        viewModel.onFetchSuccess = { [weak self] _ in
             DispatchQueue.main.async {
-                tableView?.reloadData()
+                self?.refreshControl.endRefreshing()
+                self?.tableView.reloadData()
             }
         }
 
@@ -82,6 +89,9 @@ class ExtractViewController: UIViewController, PresentableExtractView {
         
         prepareFilterBarView()
         prepareTableView()
+        
+        refreshControl.tintColor = AppColors.primary
+        refreshControl.addTarget(self, action: #selector(didPullRefresh), for: .valueChanged)
     }
     
     private func prepareFilterBarView() {
@@ -103,6 +113,11 @@ class ExtractViewController: UIViewController, PresentableExtractView {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    @objc
+    private func didPullRefresh() {
+        viewModel.fetchData()
     }
 }
 

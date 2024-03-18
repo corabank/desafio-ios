@@ -30,5 +30,8 @@ public struct Images {
     public struct Extract {
         public static let icFilterIcon = UIImage(named: "ic_filter")!
         public static let signOutIcon = UIImage(named: "sign-out")!
+        public static let arrowUpOut = UIImage(named: "ic_arrow-up-out")!
+        public static let arrowDownIn = UIImage(named: "ic_arrow-down-in")!
+        public static let arrowReturn = UIImage(named: "ic_arrow-return")!
     }
 }
