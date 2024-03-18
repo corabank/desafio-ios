@@ -166,7 +166,7 @@ extension ExtractViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let listData = viewModel.listData else { return .leastNonzeroMagnitude }
+        guard let _ = viewModel.listData else { return .leastNonzeroMagnitude }
         return Constants.defaultPadding * 1.25
     }
     

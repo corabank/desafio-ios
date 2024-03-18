@@ -17,8 +17,8 @@ struct ExtractDetails: Codable {
     @DefaultInt var amount: Int
     @DefaultExtractStatus var status: ExtractStatus
     
-    var recipient: BankDetails
-    var sender: BankDetails
+    var recipient: BankDetails?
+    var sender: BankDetails?
 }
 
 struct BankDetails: Codable {

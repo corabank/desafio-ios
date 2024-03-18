@@ -14,12 +14,20 @@ import XCTest
 //MARK: - tests
 
 struct SuccessMockExtractRepository: ExtractRepositoryProtocol {
+    func executeLoad(forId id: String, completionHandler: @escaping ((Result<Extract.ExtractDetails, Network.NetworkError>) -> Void)) {
+        completionHandler(.success(ExtractDetails(id: "12345", description: "mock", label: "mock", counterPartyName: "mock", dateEvent: "mock", amount: 0, status: .completed, recipient: nil, sender: nil)))
+    }
+    
     func executeLoad(completionHandler: @escaping ((Result<Extract.ExtractList, Network.NetworkError>) -> Void)) {
         completionHandler(.success(.init(results: [], itemsTotal: 0)))
     }
 }
 
 struct FailureMockExtractRepository: ExtractRepositoryProtocol {
+    func executeLoad(forId id: String, completionHandler: @escaping ((Result<Extract.ExtractDetails, Network.NetworkError>) -> Void)) {
+        completionHandler(.failure(.requestFailed(statusCode: 401)))
+    }
+    
     func executeLoad(completionHandler: @escaping ((Result<Extract.ExtractList, Network.NetworkError>) -> Void)) {
         completionHandler(.failure(.requestFailed(statusCode: 401)))
     }

@@ -10,6 +10,7 @@ import Core
 import Network
 
 //MARK: - protocol
+
 protocol LoadExtractsUseCase {
     func run(completionHandler: @escaping (Result<ExtractList, NetworkError>) -> Void)
 }
