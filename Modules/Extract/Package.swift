@@ -14,16 +14,19 @@ let package = Package(
             name: "Extract",
             targets: ["Extract"]),
     ],
-    dependencies: [.package(name: "Core", path: "../Core")],
+    dependencies: [
+        .package(name: "Core", path: "../Core"),
+        .package(name: "Network", path: "../Network")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Extract",
-            dependencies: ["Core"]
+            dependencies: ["Core", "Network"]
         ),
         .testTarget(
             name: "ExtractTests",
-            dependencies: ["Core", "Extract"]),
+            dependencies: ["Core", "Network", "Extract"]),
     ]
 )
