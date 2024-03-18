@@ -69,12 +69,10 @@ public class ButtonView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: ButtonConstants.rightImageSize).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: ButtonConstants.rightImageSize).isActive = true
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private lazy var widthConstaint = widthAnchor.constraint(equalToConstant: .zero)
     private lazy var heightConstraint = heightAnchor.constraint(equalToConstant: .zero)
     private lazy var imageViewLeadingAnchor = rightImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: .zero)
 
@@ -98,7 +96,6 @@ public class ButtonView: UIView {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapView)))
         
         clipsToBounds = true
-        widthConstaint.isActive = true
         heightConstraint.isActive = true
         
         addSubview(titleLabel)
@@ -128,7 +125,6 @@ public class ButtonView: UIView {
         titleLabel.text = text
         titleLabel.textAlignment = textAlignment
 
-        widthConstaint.constant = size.frame.width
         heightConstraint.constant = size.frame.height
         
         titleLabel.textColor = style.textColor

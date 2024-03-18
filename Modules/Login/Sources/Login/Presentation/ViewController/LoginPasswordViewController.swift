@@ -214,11 +214,20 @@ class LoginPasswordViewController: UIViewController {
 
 extension LoginPasswordViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (string.isEmpty && range.length > 0), (textField.text ?? "").count <= 1 {
-            continueButton.state = .inactive
-        } else {
+        let isDeleting = (string.isEmpty && range.length > 0)
+        
+        guard isDeleting else {
             continueButton.state = viewModel.isValid(password: "\(textField.text ?? "")\(string)") ? .normal : .inactive
+            return true
         }
+        
+        if (textField.text ?? "").count <= 1 {
+            continueButton.state = .inactive
+            return true
+        }
+        
+        let newText = String((textField.text ?? "").dropLast())
+        continueButton.state = viewModel.isValid(password: newText) ? .normal : .inactive
 
         return true
     }
