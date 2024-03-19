@@ -157,7 +157,11 @@ extension ExtractViewController: UITableViewDataSource {
 
 extension ExtractViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tap::")
+        guard let listData = viewModel.listData else { return }
+        guard indexPath.section < listData.results.count else { return }
+        guard indexPath.row < listData.results[indexPath.section].items.count else { return }
+        
+        navigationService.openExtractDetails(withId: listData.results[indexPath.section].items[indexPath.row].id)
     }
         
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

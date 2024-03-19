@@ -33,5 +33,6 @@ public struct Images {
         public static let arrowUpOut = UIImage(named: "ic_arrow-up-out")!
         public static let arrowDownIn = UIImage(named: "ic_arrow-down-in")!
         public static let arrowReturn = UIImage(named: "ic_arrow-return")!
+        public static let shareIcon = UIImage(named: "ic_share-ios")!
     }
 }

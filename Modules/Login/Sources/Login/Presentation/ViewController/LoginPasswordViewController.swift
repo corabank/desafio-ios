@@ -21,6 +21,9 @@ class LoginPasswordViewController: UIViewController {
     
     private let defaultButtonBottomAnchorConstant = -Constants.defaultPadding / 1.25
     
+    /// Sinalizes if the continue button can send another request
+    private var isDoingRequest = false
+    
     //MARK: - views
     
     private let container: UIView = {
@@ -116,11 +119,14 @@ class LoginPasswordViewController: UIViewController {
         prepareInputs()
         prepareIcons()
         
-        viewModel.onLoginError = {
+        viewModel.onLoginError = { [weak self] in
+            self?.isDoingRequest = false
             print("[ERROR while trying to login]: \($0)")
         }
         
         viewModel.onLoginSuccess = { [weak self] response in
+            self?.isDoingRequest = false
+            
             UserDefaults.standard.setValue(response.token, forKey: Constants.accessTokenUserDefaultKey)
             
             DispatchQueue.main.async {
@@ -172,6 +178,9 @@ class LoginPasswordViewController: UIViewController {
         textField.becomeFirstResponder()
         
         continueButton.didTapButton = { [unowned self] in
+            guard !isDoingRequest else { return }
+            
+            isDoingRequest = true
             viewModel.loginData.password = textField.text ?? ""
             viewModel.didSubmit(login: viewModel.loginData)
         }

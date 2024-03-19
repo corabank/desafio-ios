@@ -32,3 +32,45 @@ struct BankDetails: Codable {
     @DefaultString var agencyNumber: String
     @DefaultString var name: String
 }
+
+//MARK: - mock
+
+extension ExtractDetails {
+    static func getMock() -> ExtractDetails {
+        let data = """
+        {
+          "description": "Pagamento por serviços prestados",
+          "label": "Pagamento recebido",
+          "amount": 150000,
+          "counterPartyName": "Empresa ABC LTDA",
+          "id": "id-mock-teste",
+          "dateEvent": "2024-02-05T14:30:45Z",
+          "recipient": {
+            "bankName": "Banco XYZ",
+            "bankNumber": "001",
+            "documentNumber": "11223344000155",
+            "documentType": "CNPJ",
+            "accountNumberDigit": "9",
+            "agencyNumberDigit": "7",
+            "agencyNumber": "1234",
+            "name": "Empresa ABC LTDA",
+            "accountNumber": "987654"
+          },
+          "sender": {
+            "bankName": "Banco ABC",
+            "bankNumber": "002",
+            "documentNumber": "99887766000112",
+            "documentType": "CNPJ",
+            "accountNumberDigit": "3",
+            "agencyNumberDigit": "1",
+            "agencyNumber": "5678",
+            "name": "Empresa XYZ LTDA",
+            "accountNumber": "543210"
+          },
+          "status": "COMPLETED"
+        }
+        """.data(using: .utf8)!
+        
+        return try! JSONDecoder().decode(ExtractDetails.self, from: data)
+    }
+}
