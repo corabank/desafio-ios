@@ -81,6 +81,7 @@ class ExtractViewController: UIViewController, PresentableExtractView {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title = ""
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.Extract.signOutIcon, style: .plain, target: nil, action: nil)
+        navigationItem.title = "Extrato"
         title = "Extrato"
     }
     
