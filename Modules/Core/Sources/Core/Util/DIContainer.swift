@@ -9,10 +9,13 @@ import Foundation
 
 typealias Factory = (DIContainerService) -> Any
 
-protocol ServiceEntryProtocol: AnyObject{
+/// An object that can be used as a DI service
+protocol ServiceEntryProtocol: AnyObject {
     var factory: Factory { get }
     var instance: Any? { get set }
 }
+
+//MARK: - entry implementation
 
 final public class ServiceEntry: ServiceEntryProtocol {
     var instance: Any?
@@ -25,6 +28,9 @@ final public class ServiceEntry: ServiceEntryProtocol {
     }
 }
 
+//MARK: - DIContainer
+
+/// A container that can register and resolve services entries
 public protocol DIContainerService {
     func register<Service>(type: Service.Type, name: String?, factory: @escaping (DIContainerService) -> Service) -> ServiceEntry
     func resolve<Service>(type: Service.Type, name: String?) -> Service?
@@ -41,6 +47,7 @@ extension DIContainerService {
     }
 }
 
+//MARK: - Default container
 
 final public class DIContainer: DIContainerService {
     private var services: [String: ServiceEntryProtocol] = [:]

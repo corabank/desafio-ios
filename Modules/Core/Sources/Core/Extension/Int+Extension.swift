@@ -8,6 +8,7 @@
 import Foundation
 
 public extension Int {
+    /// Converts the current value to currency (pt_BR) format.
     public var asCurrency: String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency

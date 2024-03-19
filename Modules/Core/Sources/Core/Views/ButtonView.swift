@@ -7,7 +7,9 @@
 
 import UIKit
 
+/// Custom personalized button
 public class ButtonView: UIView {
+    
     //MARK: - enums
     
     public enum Style {

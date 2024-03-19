@@ -12,6 +12,11 @@ public extension DateFormatter {
 }
 
 public extension Date {
+    /**
+        Gets the day of the week for current date. It uses the `EEEE` dateFormat
+     
+        - Returns: The day of the week, or `nil` if not possible.
+     */
     func dayOfWeek() -> String? {
         let dateFormatter = DateFormatter.shared
         dateFormatter.dateFormat = "EEEE"

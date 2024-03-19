@@ -14,6 +14,7 @@ public extension UIView {
         case rightToLeft = 3
     }
     
+    /// Starts a shimmering animation. This animation is used for showing 'skeleton' of the current content when loading.
     func startShimmeringAnimation(
         animationSpeed: Float = 1.4,
         direction: Direction = .leftToRight,

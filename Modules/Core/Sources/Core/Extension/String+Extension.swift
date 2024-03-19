@@ -20,6 +20,7 @@ public extension String {
 }
 
 public extension String {
+    /// Validates if the current string is a valid CPF
     var isCPF: Bool {
         let numbers = self.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         guard numbers.count == 11 else { return false }
