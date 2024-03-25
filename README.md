@@ -97,7 +97,7 @@ Este método permite que o processo de atualização do token ocorra de forma as
 
 ## Logs
 
-Para identificar o funcionamento, adicionar "Prints" a cada requisição e update das operações. Seguindo esse padrão:
+Para identificar o funcionamento, adicionamos "Prints" a cada requisição e update das operações. Seguindo esse padrão:
 
 ### Exemplo 01
 
