@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,18 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desafio iOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ery-4U-GYb">
-                                <rect key="frame" x="152" y="415.66666666666669" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="3EZ-M0-VyF">
+                                <rect key="frame" x="26" y="255.33333333333334" width="341.33333333333331" height="341.33333333333326"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="light_gray"/>
                         <constraints>
-                            <constraint firstItem="ery-4U-GYb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VP5-zd-JmQ"/>
-                            <constraint firstItem="ery-4U-GYb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jEW-ba-c1r"/>
+                            <constraint firstItem="3EZ-M0-VyF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="b4y-c9-fZ1"/>
+                            <constraint firstItem="3EZ-M0-VyF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dQx-kP-cze"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,8 +34,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="logo_onboarding" width="341.33334350585938" height="341.33334350585938"/>
+        <namedColor name="light_gray">
+            <color red="0.94117647058823528" green="0.95686274509803926" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

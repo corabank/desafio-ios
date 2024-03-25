@@ -36,6 +36,8 @@ extension ExtractListView {
         // MARK: - Public Methods
         
         func signOut() {
+            print("🚫 STOP: <TOKEN>")
+            print("🛜 ------------------------------------------- 🛜")
             customTask?.cancel()
         }
         
@@ -50,11 +52,17 @@ extension ExtractListView {
                 DispatchQueue.main.asyncAndWait {
                     self.extractList = extractResponse
                     self.status = .success
+                    
+                    print("✅ Success: <LISTA EXTRATO>")
+                    print("🛜 ------------------------------------------- 🛜")
                 }
                 
             } catch {
                 DispatchQueue.main.async {
                     self.status = .error
+                    
+                    print("🚫 ERROR: <LISTA EXTRATO>")
+                    print("🛜 ------------------------------------------- 🛜")
                 }
             }
         }
@@ -66,6 +74,9 @@ extension ExtractListView {
                     do {
                         try await Task.sleep(nanoseconds: 5 * 1_000_000_000)
                         try await service.updateToken()
+                        
+                        print("✅ Success: <UPDATE TOKEN>")
+                        print("🛜 ------------------------------------------- 🛜")
                     } catch {
                         DispatchQueue.main.asyncAndWait {
                             if task.isCancelled {

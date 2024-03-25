@@ -25,6 +25,8 @@ final class LoginOperation: BaseOperation {
     // MARK: - Public Methods
     
     func fetchLogin() async throws -> Token {
+        print("🛜 ------------------------------------------- 🛜")
+        print("🛜 Fetching: <LOGIN>")
         let body = try requestData.convert(to: .body)
         async let requestData = mainOperation.buildRequestData(
             url: .auth,

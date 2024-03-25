@@ -23,23 +23,30 @@ final class ExtractListOperation: BaseOperation {
     // MARK: - Public Methods
     
     func fetchAllExtract() async throws -> ExtractResponse {
+        print("🛜 ------------------------------------------- 🛜")
+        print("Fetching: <LISTA EXTRATO>")
         let requestData = await mainOperation.buildRequestData(
             url: .extractList,
             type: .get,
             parameters: nil
         )
         
-        print("Token: \(await mainOperation.getActualToken().token)")
+        print("🟢 TOKEN UTILIZADO: \(await mainOperation.getActualToken().token)")
         
         return try await mainOperation.performRequest(data: requestData)
     }
     
     func fetchExtractDetails(id: String) async throws -> ExtractDetailsResponse {
+        print("🛜 ------------------------------------------- 🛜")
+        print("Fetching: <EXTRATO DETALHES>")
+        
         let requestData = await mainOperation.buildRequestData(
             url: .extractDetails(id),
             type: .get,
             parameters: nil
         )
+        
+        print("🟢 TOKEN UTILIZADO: \(await mainOperation.getActualToken().token)")
         
         return try await mainOperation.performRequest(data: requestData)
     }

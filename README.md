@@ -28,6 +28,7 @@ Além disso, foram desenvolvidos Targets (Frameworks) dedicados para funcionalid
 O projeto adota diferentes arquiteturas para diferentes partes do aplicativo:
 
 VIP-C (Clean Swift): Foi adotado para as telas de onboarding, login e senha, utilizando UIKit. Esta escolha foi motivada pela facilidade em cobrir toda a camada de teste e pelo gerenciamento eficiente dos ciclos do aplicativo por meio de eventos.
+
 MVVM-C (Model-View-ViewModel-Coordinator): Optamos por esta arquitetura para as telas de lista de extratos e detalhes, utilizando SwiftUI. A integração com o SwiftUI proporcionou uma perfeita sintonia, pois a biblioteca é gerenciada através de estados. Nossa ViewModel fica responsável por gerenciar as Wrapped Properties e o estado da view, evitando problemas com a camada Presenter, como ocorreria no VIP-C.
 
 ## Observação
@@ -39,13 +40,19 @@ Sinta-se à vontade para explorar o código-fonte e entender melhor as decisões
 
 ## Inicializar o projeto
 Antes de inicar o projeto, certifique-se:
+
 **- Xcodegen SwiftGen instalado**
+
 **- Versão Minima Xcode 15.4**
+
 **- Testes Snapshots acontecem no iPhone 15 Pro - iOS 17.4**
 
+
 ### Passos
-1)Entre na raiz do projeto
+1)Entre na raiz do projeto..
+
 2)Com o terminal aberto, rode esse comando: 
+
 (Caso for M1)
  ```
  xcodegen generate && arch -x86_64 pod install && swiftgen config

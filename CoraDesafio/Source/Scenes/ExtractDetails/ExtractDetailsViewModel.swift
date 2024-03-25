@@ -44,11 +44,17 @@ extension ExtractDetailsView {
                 DispatchQueue.main.asyncAndWait {
                     self.extractDetails = extractResponse
                     self.status = .success
+                    
+                    print("✅ Success: <EXTRATO DETALHES>")
+                    print("🛜 ------------------------------------------- 🛜")
                 }
                 
             } catch {
                 DispatchQueue.main.asyncAndWait {
                     self.status = .error
+                    
+                    print("🚫 Error: <EXTRATO DETALHES>")
+                    print("🛜 ------------------------------------------- 🛜")
                 }
             }
         }

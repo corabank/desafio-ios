@@ -41,17 +41,23 @@ extension PasswordInteractor: PasswordInteracting {
             do {
                 guard let data = LoginBuilderHelper.shared.loginRequest else { throw BaseError.inputLoginDataError}
                 let request = LoginRequest(cpf: data.cpf, password: data.password)
-                let token = try await service.fetchLogin(request: request)
+                
+                let _ = try await service.fetchLogin(request: request)
                 
                 DispatchQueue.main.async {[weak self] in
                     guard let self = self else { return }
                     self.presenter.showExtractView(service: self.service)
+                    print("✅ Success: <LOGIN>")
+                    print("🛜 ------------------------------------------- 🛜")
                 }
             
             } catch {
                 DispatchQueue.main.async {[weak self] in
                     guard let self = self else { return }
                     self.presenter.stopLoadingButton()
+                    
+                    print("🚫 ERROR: <LOGIN>")
+                    print("🛜 ------------------------------------------- 🛜")
                 }
             }
         }

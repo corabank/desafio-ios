@@ -35,6 +35,7 @@ internal enum CoraAssets {
   internal static let icArrowDownIn = ImageAsset(name: "ic_arrow-down-in")
   internal static let icArrowReturn = ImageAsset(name: "ic_arrow-return")
   internal static let icBarCode = ImageAsset(name: "ic_bar-code")
+  internal static let logoOnboarding = ImageAsset(name: "logo_onboarding")
   internal static let onboardingPessoa = ImageAsset(name: "onboarding_pessoa")
   internal static let signOut = ImageAsset(name: "sign_out")
 }

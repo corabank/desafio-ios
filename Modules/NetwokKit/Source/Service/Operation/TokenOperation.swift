@@ -22,6 +22,8 @@ final class TokenOperation: BaseOperation {
     // MARK: - Public Methods
     
     func updateToken() async throws {
+        print("🛜 ------------------------------------------- 🛜")
+        print("Fetching: <TOKEN>")
         let oldToken = try await mainOperation.getActualToken().convert(to: .body)
         let requestData = await mainOperation.buildRequestData(
             url: .auth,
@@ -29,7 +31,8 @@ final class TokenOperation: BaseOperation {
             parameters: oldToken
         )
         let newToken: Token = try await mainOperation.performRequest(data: requestData)
-        print("OLD TOKEN: \(oldToken)\nNEW TOKEN: \(newToken.token)")
+        
+        print("🔴OLD TOKEN: \(oldToken.bodyParameters)\n🟢NEW TOKEN: \(newToken.token)")
         await mainOperation.updateToken(newToken)
     }
 }
