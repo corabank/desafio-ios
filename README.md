@@ -2,187 +2,109 @@
 
   <img src="https://user-images.githubusercontent.com/55195343/153007587-318033ab-05d7-402a-b2aa-2a1ec0f69717.png" width="100" height="100">
 
-# Desafio iOS
+# Desafio iOS - Erik Santos
 
  </div>
  
- > Para participar, basta criar um fork deste repositório e quando finalizar o desenvolvimento, abrir um merge request que iremos avaliar.
+Este Desafio foi desenvolvido com foco na organização e flexibilidade da arquitetura, destacando as diferenças entre o VIP-C (Clean Swift) e o MVVM-C (Model-View-ViewModel-Coordinator), além de demonstrar o impacto de cada uma dessas abordagens no desenvolvimento do aplicativo.
 
-O desafio consiste em implementar dois fluxos simples de tela, sendo um de autenticação e um de lista + detalhes.
+## Organização do Projeto & Arquitetura Modular
 
-O layout pode ser acessado [aqui](https://www.figma.com/file/mfScPv5hxIqg25obhaHNNB/SR?type=design&node-id=0%3A1&mode=dev&t=aqdh9RprKrYpateD-1)
+O projeto foi estruturado utilizando o XcodeGen para configurar o workspace, dependências, targets e esquemas, proporcionando uma base sólida para o desenvolvimento.
 
-## Requisitos
-- View Code
-- Não utilizar libs externas
-- Teste unitário
+O Desafio é baseada no conceito de MonoRepo, onde múltiplos projetos são gerenciados dentro de um único repositório. Isso proporciona uma visão unificada do código e simplifica a colaboração entre equipes.
 
-### Aqui iremos avaliar:
-- Atenção aos casos de uso
-- Organização do projeto
-- Organização de código
-- Boas práticas de desenvolvimento
-- Definição da arquitetura e utilização de Design Patterns
-- Aplicação dos conceitos de SOLID
-- Conhecimento dos recursos nativos para estruturação de UI, acesso a dados (local e remoto) e concorrência
+Além disso, foram desenvolvidos Targets (Frameworks) dedicados para funcionalidades específicas:
 
-### Bonus (opcional)
-- SwiftUI
-- XCUITest
-- Arquitetura modular
-- Documentação
+- DesignKit: Contém elementos de design compartilhados, como cores, fontes, estilos de botões, etc., para garantir uma consistência visual em todo o aplicativo.
 
-## Casos de uso
-### Login
-- No passo de CPF, habilitar o botão apenas se digitar um CPF válido
-- No passo de senha, habilitar o botão apenas se a senha tiver 6 dígitos
+- NetworkKit: Gerencia todas as operações de rede, incluindo requisições HTTP, autenticação, e tratamento de respostas, promovendo uma separação clara das responsabilidades e facilitando a reutilização do código.
 
-No passo de senha, ao tocar no botão "Próximo", é preciso fazer a request:
+- CoreKit: Provê funcionalidades essenciais do aplicativo, como armazenamento local, manipulação de dados, e lógica de negócios centralizada. Este framework serve como a espinha dorsal do projeto, promovendo a coesão e a reusabilidade do código.
 
-```
-POST https://api.challenge.stage.cora.com.br/challenge/auth
--- header 'apikey: {{API_KEY}}'
-{
-  "cpf": "{{CPF}}",
-  "password": "{{SENHA}}"
-}
-```
 
-Caso os dados estejam corretos, a request irá retornar:
+## Arquitetura Utilizada
 
-```
-200 https://api.challenge.stage.cora.com.br/challenge/auth
-{
-    "token": "{{TOKEN}}"
-}
-```
-> Será necessário armazenar o token recebido para ser utilizado depois
+O projeto adota diferentes arquiteturas para diferentes partes do aplicativo:
 
-Caso os dados estejam incorretos, o retorno será:
+VIP-C (Clean Swift): Foi adotado para as telas de onboarding, login e senha, utilizando UIKit. Esta escolha foi motivada pela facilidade em cobrir toda a camada de teste e pelo gerenciamento eficiente dos ciclos do aplicativo por meio de eventos.
 
-```
-401 https://api.challenge.stage.cora.com.br/challenge/auth
-```
+MVVM-C (Model-View-ViewModel-Coordinator): Optamos por esta arquitetura para as telas de lista de extratos e detalhes, utilizando SwiftUI. A integração com o SwiftUI proporcionou uma perfeita sintonia, pois a biblioteca é gerenciada através de estados. Nossa ViewModel fica responsável por gerenciar as Wrapped Properties e o estado da view, evitando problemas com a camada Presenter, como ocorreria no VIP-C.
 
-### Token
-O Token possui uma validade de 1 minuto. Então a cada 1 minuto é necessário fazer a request de autenticação novamente, mas dessa vez enviando o token antigo:
-> Importante garantir uma boa gestão de concorrência para evitar que outra request seja feita enquanto o token estiver sendo atualizado.
+## Observação
 
-```
-POST https://api.challenge.stage.cora.com.br/challenge/auth
--- header 'apikey: {{API_KEY}}'
-{
-  "token": "{{TOKEN}}"
-}
-```
+Ao flexibilizar as arquiteturas e bibliotecas utilizadas, pudemos evidenciar a facilidade de desenvolvimento e os diferentes impactos que cada abordagem pode ter no projeto.
 
-Caso o token seja validado corretamente, a request irá retornar um novo token:
+Sinta-se à vontade para explorar o código-fonte e entender melhor as decisões de arquitetura tomadas durante o desenvolvimento.
 
-```
-200 https://api.challenge.stage.cora.com.br/challenge/auth
-{
-    "token": "{{TOKEN}}"
-}
-```
 
-Caso o token não seja validado, o retorno será:
+## Inicializar o projeto
+Antes de inicar o projeto, certifique-se:
 
-```
-401 https://api.challenge.stage.cora.com.br/challenge/auth
-```
+**- Xcodegen & SwiftGen instalado**
 
-### Lista
-- Deverá exibir um placeholder enquanto a request estiver sendo feita
-- Deverá implementar um *pull to refresh*
+**- Versão Minima Xcode 15.4**
 
-Pra trazer os dados da lista, será necessário fazer a request:
+**- Testes Snapshots acontecem no iPhone 15 Pro - iOS 17.4**
 
-```
-GET https://api.challenge.stage.cora.com.br/challenge/list
--- header 'apikey: {{API_KEY}}'
--- header 'token: {{TOKEN}}'
-```
-Caso seja um token válido, a request irá retornar:
 
-```
-200 https://api.challenge.stage.cora.com.br/challenge/list
-{
-  "results": [
-    {
-      "items": [
-        {
-          "id": "abc123def456ghi789",
-          "description": "Compra de produtos eletrônicos",
-          "label": "Compra aprovada",
-          "entry": "DEBIT",
-          "amount": 150000,
-          "name": "João da Silva",
-          "dateEvent": "2024-02-01T08:15:17Z",
-          "status": "COMPLETED"
-        }
-      ],
-      "date": "2024-02-01"
-    }
-  ],
-  "itemsTotal": 1
-}
-```
-Caso o token não seja válido, o retorno será: 
+### Passos
+1)Entre na raiz do projeto..
 
-```
-401 https://api.challenge.stage.cora.com.br/challenge/list
-```
+2)Com o terminal aberto, rode esse comando: 
 
-### Detalhes
-- Deverá exibir um placeholder enquanto a request estiver sendo feita
+(Caso for M1)
+ ```
+ xcodegen generate && arch -x86_64 pod install && swiftgen config
+ ```
 
-Pra trazer os detalhes de um item, será necessário fazer a request:
+(Outros Processadores)
+ ```
+ xcodegen generate && pod install && swiftgen config
+ ```
 
-```
-GET https://api.challenge.stage.cora.com.br/challenge/details/:id
--- header 'apikey: {{API_KEY}}'
--- header 'token: {{TOKEN}}'
-```
+### Concorrência
 
-Caso seja um token válido, a request irá retornar:
+Para lidar com a concorrência, adotamos o moderno conceito de async/await e Actors, introduzido no Swift 5.5. Esta abordagem oferece uma melhor performance em comparação com completionsHandler tradicionais e proporciona um gerenciamento mais assertivo de Threads e Processos no sistema operacional.
 
-```
-200 https://api.challenge.stage.cora.com.br/challenge/details/:id
-{
-  "description": "Pagamento por serviços prestados",
-  "label": "Pagamento recebido",
-  "amount": 150000,
-  "counterPartyName": "Empresa ABC LTDA",
-  "id": "abcdef12-3456-7890-abcd-ef1234567890",
-  "dateEvent": "2024-02-05T14:30:45Z",
-  "recipient": {
-    "bankName": "Banco XYZ",
-    "bankNumber": "001",
-    "documentNumber": "11223344000155",
-    "documentType": "CNPJ",
-    "accountNumberDigit": "9",
-    "agencyNumberDigit": "7",
-    "agencyNumber": "1234",
-    "name": "Empresa ABC LTDA",
-    "accountNumber": "987654"
-  },
-  "sender": {
-    "bankName": "Banco ABC",
-    "bankNumber": "002",
-    "documentNumber": "99887766000112",
-    "documentType": "CNPJ",
-    "accountNumberDigit": "3",
-    "agencyNumberDigit": "1",
-    "agencyNumber": "5678",
-    "name": "Empresa XYZ LTDA",
-    "accountNumber": "543210"
-  },
-  "status": "COMPLETED"
-}
-```
+A utilização de async/await simplifica o código assíncrono, tornando-o mais legível e fácil de manter. Além disso, os Actors fornecem uma maneira segura de lidar com a concorrência, evitando problemas comuns como Race Conditions e Deadlocks.
 
-Caso o token não seja válido, o retorno será: 
+### Actor CachedHeaderActor
 
-```
-401 https://api.challenge.stage.cora.com.br/challenge/details/:id
-```
+O Actor `CachedHeaderActor` é um tipo de referência que desempenha um papel crucial na gestão do acesso à memória do sistema operacional. Ao contrário das classes tradicionais, este Actor é projetado para garantir a segurança e a consistência dos dados compartilhados em ambientes concorrentes.
+
+Tecnicamente, o `CachedHeaderActor` permite apenas um acesso à variável por Thread, enquanto outras Threads aguardam a conclusão da operação para acessar o Actor novamente. Isso ocorre de forma transparente em segundo plano, o que melhora significativamente a eficiência e a estabilidade do sistema.
+
+### Update Token
+Fizemos uso da gestão manual de uma tarefa (Task) do Swift para realizar a atualização do token. No método `updateToken()` da classe `ExtractListViewModel`, empregamos uma abordagem assíncrona (async), garantindo que o processo ocorra automaticamente na thread de background.
+
+Para garantir um controle preciso do fluxo de execução, criamos uma tarefa personalizada chamada `customTask`. Esta tarefa é responsável por verificar se a operação está em andamento ou se foi cancelada. Em caso de logout do usuário, cancelamos essa tarefa, assegurando que não continue executando no sistema operacional.
+
+Este método permite que o processo de atualização do token ocorra de forma assíncrona e controlada, oferecendo maior segurança e confiabilidade na gestão das operações do aplicativo.
+
+### COMPORTAMENTOS EVIDÊNCIAS
+**CPU:**
+![Alt text](/ImagesREADME/CPU.png)
+![Alt text](/ImagesREADME/LOG+CPU.png)
+
+**THREADS:**
+![Alt text](/ImagesREADME/Threads.png)
+
+**MEMORIA:**
+![Alt text](/ImagesREADME/Memoria.png)
+
+**Observação:** é importante ressaltar que durante a execução deste método, não foram observados comportamentos anormais no sistema operacional. Não houve indicações de sobrecarga de threads, vazamentos de memória ou outros problemas que possam surgir devido a uma gestão inadequada das operações do sistema. Isso demonstra a eficácia da abordagem adotada na garantia da estabilidade e do bom funcionamento do aplicativo.
+
+## Logs
+
+Para identificar o funcionamento, adicionamos "Prints" a cada requisição e update das operações. Seguindo esse padrão:
+
+### Exemplo 01
+
+1) Aqui vemos uma atualização do Token
+![Alt text](/ImagesREADME/Token.png)
+
+### Exemplo 02
+
+2) Aqui vemos uma requisição a lista de Extrato, utilizando o Token Atualizado.
+![Alt text](/ImagesREADME/Lista+Token.png)

@@ -1,0 +1,5 @@
+packages:
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing
+    from: 1.12.0
+  

@@ -1,0 +1,122 @@
+# Targets
+targets:
+  CoraDesafio:
+    platform: iOS
+    type: application
+
+    preBuildScripts:
+      - script: "${PODS_ROOT}/SwiftGen/bin/swiftgen"
+        name: SwiftGen
+
+    sources:
+      - path: ../CoraDesafio
+
+    resources:
+      fonts:
+        - name: "Lato-Regular.ttf"
+          tags: ["regular"]
+          path: ../CoraDesafio/Resources/Fonts
+
+        - name: "Lato-Bold.ttf"
+          tags: ["bold"]
+          path: ../CoraDesafio/Resources/Fonts
+    
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER:  br.com.Cora.CoraDesafio
+      CODE_SIGN_STYLE: 'Automatic'
+      PROVISIONING_PROFILE: "Erik Santos"
+      API_URL: "https://api.challenge.stage.cora.com.br/"
+
+    info:
+      path: ../CoraDesafio/Resources/Info.plist
+      properties:
+        ServerUrl: "${API_URL}"
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        LSRequiresIPhoneOS: YES
+        UIApplicationSupportsIndirectInputEvents: YES
+        UILaunchStoryboardName: "LaunchScreen"
+        UIApplicationSceneManifest: 
+          UIApplicationSupportsMultipleScenes: NO
+          UISceneConfigurations: 
+            UIWindowSceneSessionRoleApplication: 
+              - UISceneConfigurationName: "Default Configuration" 
+                UISceneDelegateClassName: "$(PRODUCT_MODULE_NAME).SceneDelegate"
+        UISupportedInterfaceOrientations~iphone: [UIInterfaceOrientationPortrait]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait]
+        UIAppFonts:
+          - Lato-Bold.ttf
+          - Lato-Regular.ttf
+      
+    dependencies:
+      - target: DesignKit
+      - target: NetwokKit
+      - target: CoreKit
+      
+#######################
+  DesignKit:
+    platform: iOS
+    type: framework
+    sources:
+      - path: ../Modules/DesignKit
+    info:
+      path: ../Modules/DesignKit/Info.plist
+
+    dependencies:
+      - target: CoreKit
+
+#######################
+
+  NetwokKit:
+    platform: iOS
+    type: framework
+    sources:
+      - path: ../Modules/NetwokKit
+    info:
+      path: ../Modules/NetwokKit/Info.plist
+      
+    dependencies:
+      - target: CoreKit
+
+#######################
+
+  CoreKit:
+    platform: iOS
+    type: framework
+    sources:
+      - path: ../Modules/CoreKit
+    info:
+      path: ../Modules/CoreKit/Info.plist
+#######################
+
+  CoraDesafioTests:
+    platform: iOS
+    type: bundle.unit-test
+      
+    sources:
+      - path: ../CoraDesafioTests
+    
+    dependencies:
+      - target: CoraDesafio
+      - target: DesignKit
+      - target: NetwokKit
+      - target: CoreKit
+      - package: SnapshotTesting
+    
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER:  br.com.Cora.CoraDesafioTests
+      
+    info:
+      path: ../CoraDesafioTests/Info.plist
+      properties:
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        LSRequiresIPhoneOS: YES
+        UILaunchScreen: ""
+        UIApplicationSupportsIndirectInputEvents: YES
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: YES
+        UISupportedInterfaceOrientations~iphone:
+          [UIInterfaceOrientationPortrait]
+        UISupportedInterfaceOrientations~ipad:
+          [UIInterfaceOrientationPortrait]

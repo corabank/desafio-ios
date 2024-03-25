@@ -1,0 +1,23 @@
+# Schemes
+schemes:
+  CoraDesafio:
+    build:
+      targets:
+        CoraDesafio: [run, test]
+        CoraDesafioTests: [test]
+      parallelizedBuild: true
+      buildImplicitDependencies: true
+    
+    run:
+      config: Debug
+
+    environmentVariables:
+      IDEPreferLogStreaming: false
+
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - CoraDesafio
+      targets:
+        - CoraDesafioTests
