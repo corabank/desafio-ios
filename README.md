@@ -41,7 +41,7 @@ Sinta-se à vontade para explorar o código-fonte e entender melhor as decisões
 ## Inicializar o projeto
 Antes de inicar o projeto, certifique-se:
 
-**- Xcodegen SwiftGen instalado**
+**- Xcodegen & SwiftGen instalado**
 
 **- Versão Minima Xcode 15.4**
 
@@ -62,3 +62,48 @@ Antes de inicar o projeto, certifique-se:
  ```
  xcodegen generate && pod install && swiftgen config
  ```
+
+### Concorrência
+
+Para lidar com a concorrência, adotamos o moderno conceito de async/await e Actors, introduzido no Swift 5.5. Esta abordagem oferece uma melhor performance em comparação com completionsHandler tradicionais e proporciona um gerenciamento mais assertivo de Threads e Processos no sistema operacional.
+
+A utilização de async/await simplifica o código assíncrono, tornando-o mais legível e fácil de manter. Além disso, os Actors fornecem uma maneira segura de lidar com a concorrência, evitando problemas comuns como Race Conditions e Deadlocks.
+
+### Actor CachedHeaderActor
+
+O Actor `CachedHeaderActor` é um tipo de referência que desempenha um papel crucial na gestão do acesso à memória do sistema operacional. Ao contrário das classes tradicionais, este Actor é projetado para garantir a segurança e a consistência dos dados compartilhados em ambientes concorrentes.
+
+Tecnicamente, o `CachedHeaderActor` permite apenas um acesso à variável por Thread, enquanto outras Threads aguardam a conclusão da operação para acessar o Actor novamente. Isso ocorre de forma transparente em segundo plano, o que melhora significativamente a eficiência e a estabilidade do sistema.
+
+### Update Token
+Fizemos uso da gestão manual de uma tarefa (Task) do Swift para realizar a atualização do token. No método `updateToken()` da classe `ExtractListViewModel`, empregamos uma abordagem assíncrona (async), garantindo que o processo ocorra automaticamente na thread de background.
+
+Para garantir um controle preciso do fluxo de execução, criamos uma tarefa personalizada chamada `customTask`. Esta tarefa é responsável por verificar se a operação está em andamento ou se foi cancelada. Em caso de logout do usuário, cancelamos essa tarefa, assegurando que não continue executando no sistema operacional.
+
+Este método permite que o processo de atualização do token ocorra de forma assíncrona e controlada, oferecendo maior segurança e confiabilidade na gestão das operações do aplicativo.
+
+### COMPORTAMENTOS EVIDÊNCIAS
+**CPU:**
+![Alt text](/ImagesREADME/CPU.png)
+
+**THREADS:**
+![Alt text](/ImagesREADME/Threads.png)
+
+**MEMORIA:**
+![Alt text](/ImagesREADME/Memoria.png)
+
+**Observação:** é importante ressaltar que durante a execução deste método, não foram observados comportamentos anormais no sistema operacional. Não houve indicações de sobrecarga de threads, vazamentos de memória ou outros problemas que possam surgir devido a uma gestão inadequada das operações do sistema. Isso demonstra a eficácia da abordagem adotada na garantia da estabilidade e do bom funcionamento do aplicativo.
+
+## Logs
+
+Para identificar o funcionamento, adicionar "Prints" a cada requisição e update das operações. Seguindo esse padrão:
+
+### Exemplo 01
+
+1) Aqui vemos uma atualização do Token
+![Alt text](/ImagesREADME/Token.png)
+
+### Exemplo 02
+
+2) Aqui vemos uma requisição a lista de Extrato, utilizando o Token Atualizado.
+![Alt text](/ImagesREADME/Lista+Token.png)
