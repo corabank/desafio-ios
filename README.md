@@ -85,6 +85,7 @@ Este método permite que o processo de atualização do token ocorra de forma as
 ### COMPORTAMENTOS EVIDÊNCIAS
 **CPU:**
 ![Alt text](/ImagesREADME/CPU.png)
+![Alt text](/ImagesREADME/LOG+CPU.png)
 
 **THREADS:**
 ![Alt text](/ImagesREADME/Threads.png)
