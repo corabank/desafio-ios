@@ -2,187 +2,56 @@
 
   <img src="https://user-images.githubusercontent.com/55195343/153007587-318033ab-05d7-402a-b2aa-2a1ec0f69717.png" width="100" height="100">
 
-# Desafio iOS
+# Desafio iOS - Erik Santos
 
  </div>
  
- > Para participar, basta criar um fork deste repositório e quando finalizar o desenvolvimento, abrir um merge request que iremos avaliar.
+Este Desafio foi desenvolvido com foco na organização e flexibilidade da arquitetura, destacando as diferenças entre o VIP-C (Clean Swift) e o MVVM-C (Model-View-ViewModel-Coordinator), além de demonstrar o impacto de cada uma dessas abordagens no desenvolvimento do aplicativo.
 
-O desafio consiste em implementar dois fluxos simples de tela, sendo um de autenticação e um de lista + detalhes.
+## Organização do Projeto & Arquitetura Modular
 
-O layout pode ser acessado [aqui](https://www.figma.com/file/mfScPv5hxIqg25obhaHNNB/SR?type=design&node-id=0%3A1&mode=dev&t=aqdh9RprKrYpateD-1)
+O projeto foi estruturado utilizando o XcodeGen para configurar o workspace, dependências, targets e esquemas, proporcionando uma base sólida para o desenvolvimento.
 
-## Requisitos
-- View Code
-- Não utilizar libs externas
-- Teste unitário
+O Desafio é baseada no conceito de MonoRepo, onde múltiplos projetos são gerenciados dentro de um único repositório. Isso proporciona uma visão unificada do código e simplifica a colaboração entre equipes.
 
-### Aqui iremos avaliar:
-- Atenção aos casos de uso
-- Organização do projeto
-- Organização de código
-- Boas práticas de desenvolvimento
-- Definição da arquitetura e utilização de Design Patterns
-- Aplicação dos conceitos de SOLID
-- Conhecimento dos recursos nativos para estruturação de UI, acesso a dados (local e remoto) e concorrência
+Além disso, foram desenvolvidos Targets (Frameworks) dedicados para funcionalidades específicas:
 
-### Bonus (opcional)
-- SwiftUI
-- XCUITest
-- Arquitetura modular
-- Documentação
+- DesignKit: Contém elementos de design compartilhados, como cores, fontes, estilos de botões, etc., para garantir uma consistência visual em todo o aplicativo.
 
-## Casos de uso
-### Login
-- No passo de CPF, habilitar o botão apenas se digitar um CPF válido
-- No passo de senha, habilitar o botão apenas se a senha tiver 6 dígitos
+- NetworkKit: Gerencia todas as operações de rede, incluindo requisições HTTP, autenticação, e tratamento de respostas, promovendo uma separação clara das responsabilidades e facilitando a reutilização do código.
 
-No passo de senha, ao tocar no botão "Próximo", é preciso fazer a request:
+- CoreKit: Provê funcionalidades essenciais do aplicativo, como armazenamento local, manipulação de dados, e lógica de negócios centralizada. Este framework serve como a espinha dorsal do projeto, promovendo a coesão e a reusabilidade do código.
 
-```
-POST https://api.challenge.stage.cora.com.br/challenge/auth
--- header 'apikey: {{API_KEY}}'
-{
-  "cpf": "{{CPF}}",
-  "password": "{{SENHA}}"
-}
-```
 
-Caso os dados estejam corretos, a request irá retornar:
+## Arquitetura Utilizada
 
-```
-200 https://api.challenge.stage.cora.com.br/challenge/auth
-{
-    "token": "{{TOKEN}}"
-}
-```
-> Será necessário armazenar o token recebido para ser utilizado depois
+O projeto adota diferentes arquiteturas para diferentes partes do aplicativo:
 
-Caso os dados estejam incorretos, o retorno será:
+VIP-C (Clean Swift): Foi adotado para as telas de onboarding, login e senha, utilizando UIKit. Esta escolha foi motivada pela facilidade em cobrir toda a camada de teste e pelo gerenciamento eficiente dos ciclos do aplicativo por meio de eventos.
+MVVM-C (Model-View-ViewModel-Coordinator): Optamos por esta arquitetura para as telas de lista de extratos e detalhes, utilizando SwiftUI. A integração com o SwiftUI proporcionou uma perfeita sintonia, pois a biblioteca é gerenciada através de estados. Nossa ViewModel fica responsável por gerenciar as Wrapped Properties e o estado da view, evitando problemas com a camada Presenter, como ocorreria no VIP-C.
 
-```
-401 https://api.challenge.stage.cora.com.br/challenge/auth
-```
+## Observação
 
-### Token
-O Token possui uma validade de 1 minuto. Então a cada 1 minuto é necessário fazer a request de autenticação novamente, mas dessa vez enviando o token antigo:
-> Importante garantir uma boa gestão de concorrência para evitar que outra request seja feita enquanto o token estiver sendo atualizado.
+Ao flexibilizar as arquiteturas e bibliotecas utilizadas, pudemos evidenciar a facilidade de desenvolvimento e os diferentes impactos que cada abordagem pode ter no projeto.
 
-```
-POST https://api.challenge.stage.cora.com.br/challenge/auth
--- header 'apikey: {{API_KEY}}'
-{
-  "token": "{{TOKEN}}"
-}
-```
+Sinta-se à vontade para explorar o código-fonte e entender melhor as decisões de arquitetura tomadas durante o desenvolvimento.
 
-Caso o token seja validado corretamente, a request irá retornar um novo token:
 
-```
-200 https://api.challenge.stage.cora.com.br/challenge/auth
-{
-    "token": "{{TOKEN}}"
-}
-```
+## Inicializar o projeto
+Antes de inicar o projeto, certifique-se:
+**- Xcodegen SwiftGen instalado**
+**- Versão Minima Xcode 15.4**
+**- Testes Snapshots acontecem no iPhone 15 Pro - iOS 17.4**
 
-Caso o token não seja validado, o retorno será:
+### Passos
+1)Entre na raiz do projeto
+2)Com o terminal aberto, rode esse comando: 
+(Caso for M1)
+ ```
+ xcodegen generate && arch -x86_64 pod install && swiftgen config
+ ```
 
-```
-401 https://api.challenge.stage.cora.com.br/challenge/auth
-```
-
-### Lista
-- Deverá exibir um placeholder enquanto a request estiver sendo feita
-- Deverá implementar um *pull to refresh*
-
-Pra trazer os dados da lista, será necessário fazer a request:
-
-```
-GET https://api.challenge.stage.cora.com.br/challenge/list
--- header 'apikey: {{API_KEY}}'
--- header 'token: {{TOKEN}}'
-```
-Caso seja um token válido, a request irá retornar:
-
-```
-200 https://api.challenge.stage.cora.com.br/challenge/list
-{
-  "results": [
-    {
-      "items": [
-        {
-          "id": "abc123def456ghi789",
-          "description": "Compra de produtos eletrônicos",
-          "label": "Compra aprovada",
-          "entry": "DEBIT",
-          "amount": 150000,
-          "name": "João da Silva",
-          "dateEvent": "2024-02-01T08:15:17Z",
-          "status": "COMPLETED"
-        }
-      ],
-      "date": "2024-02-01"
-    }
-  ],
-  "itemsTotal": 1
-}
-```
-Caso o token não seja válido, o retorno será: 
-
-```
-401 https://api.challenge.stage.cora.com.br/challenge/list
-```
-
-### Detalhes
-- Deverá exibir um placeholder enquanto a request estiver sendo feita
-
-Pra trazer os detalhes de um item, será necessário fazer a request:
-
-```
-GET https://api.challenge.stage.cora.com.br/challenge/details/:id
--- header 'apikey: {{API_KEY}}'
--- header 'token: {{TOKEN}}'
-```
-
-Caso seja um token válido, a request irá retornar:
-
-```
-200 https://api.challenge.stage.cora.com.br/challenge/details/:id
-{
-  "description": "Pagamento por serviços prestados",
-  "label": "Pagamento recebido",
-  "amount": 150000,
-  "counterPartyName": "Empresa ABC LTDA",
-  "id": "abcdef12-3456-7890-abcd-ef1234567890",
-  "dateEvent": "2024-02-05T14:30:45Z",
-  "recipient": {
-    "bankName": "Banco XYZ",
-    "bankNumber": "001",
-    "documentNumber": "11223344000155",
-    "documentType": "CNPJ",
-    "accountNumberDigit": "9",
-    "agencyNumberDigit": "7",
-    "agencyNumber": "1234",
-    "name": "Empresa ABC LTDA",
-    "accountNumber": "987654"
-  },
-  "sender": {
-    "bankName": "Banco ABC",
-    "bankNumber": "002",
-    "documentNumber": "99887766000112",
-    "documentType": "CNPJ",
-    "accountNumberDigit": "3",
-    "agencyNumberDigit": "1",
-    "agencyNumber": "5678",
-    "name": "Empresa XYZ LTDA",
-    "accountNumber": "543210"
-  },
-  "status": "COMPLETED"
-}
-```
-
-Caso o token não seja válido, o retorno será: 
-
-```
-401 https://api.challenge.stage.cora.com.br/challenge/details/:id
-```
+(Outros Processadores)
+ ```
+ xcodegen generate && pod install && swiftgen config
+ ```
