@@ -1,0 +1,16 @@
+strings:
+  inputs: CoraDesafio/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      params:
+        enumName: CoraStrings
+      output: CoraDesafio/Resources/Generated/CoraStrings.swift
+
+xcassets:
+  inputs:
+    - CoraDesafio/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+        enumName: CoraAssets
+      output: CoraDesafio/Resources/Generated/CoraAssets.swift

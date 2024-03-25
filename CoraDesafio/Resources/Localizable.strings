@@ -1,0 +1,60 @@
+// MARK: - Icons
+
+"Icons.arrowRight" = "arrow.right";
+"Icons.arrowLeft" = "arrow.left";
+"Icons.chevronLeft" = "chevron.left";
+"Icons.shareUp" = "square.and.arrow.up";
+"Icons.signOut" = "square.and.arrow.down";
+
+// MARK: - Fonts
+
+"Fonts.regular" = "Lato-Regular";
+"Fonts.bold" = "Lato-Bold";
+
+// MARK: - Commons
+
+"Commons.next" = "Próximo";
+"Commons.Navigation.loginCora" = "Login Cora";
+"Commons.getIn" = "Entrar";
+"Commons.concurrency" = "R$";
+"Commons.valor" = "Valor";
+"Commons.date" = "Data";
+"Commons.of" = "De";
+"Commons.for" = "Para";
+
+// MARK: - Onboarding
+
+    /// OnboadingView
+"OnboardingView.titleLabel" = "Conta Digital PJ\nPoderosamente simples";
+"OnboardingView.titleLabelBold" = "Conta Digital PJ";
+"OnboardingView.descriptionLabel" = "Sua empresa livre burocracias e de taxas para\ngerar boletos, fazer transferências e\npagamentos.";
+"OnboardingView.registerButton" = "Quero fazer parte!";
+"OnboardingView.loginButton" = "Já sou cliente";
+
+
+// MARK: - Login
+
+    /// LoginView
+"LoginView.welcomeDescription" = "Bem-vindo de volta!";
+"LoginView.cpfDesciption" = "Qual seu CPF?";
+
+
+// MARK: - Password
+
+    /// PasswordView
+"PasswordView.titleLabel" = "Digite sua senha de acesso";
+"PasswordView.forgotPasswordButton" = "Esqueci minha senha";
+
+// MARK: - Extract List
+
+    /// ExtractListView
+"ExtractListView.navigationTitle" = "Extrato";
+"ExtractListView.button.all" = "Tudo";
+"ExtractListView.button.entrency" = "Entrada";
+"ExtractListView.button.exit" = "Saida";
+"ExtractListView.button.future" = "Futuro";
+
+    /// ExtractDetailsView
+"ExtractDetailsView.navigationTitle" = "Detalhes da transferência";
+"ExtractDetailsView.button.title" = "Compartilhar comprovante";
+"ExtractDetailsView.description" = "Descrição";
